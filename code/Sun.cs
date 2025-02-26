@@ -45,7 +45,7 @@ public sealed class Sun : Component,Component.ExecuteInEditor
         const float dayStart = 360f;    // Commence à 360° (lever de soleil)
 
         // Loguer le pitch pour le débogage
-        Log.Info($"Current Pitch: {currentPitch}");
+       // Log.Info($"Current Pitch: {currentPitch}");
 
         // Déterminer si c'est la nuit ou le jour
         if (currentPitch >= nightStart && currentPitch < 360f)
