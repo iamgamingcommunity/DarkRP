@@ -9,10 +9,29 @@
       {
         "__type": "Sandbox.SkinnedModelRenderer",
         "__guid": "1c4f939a-38aa-4312-bd78-f2b09adba55d",
+        "AnimationGraph": null,
         "BodyGroups": 341,
+        "BoneMergeTarget": null,
+        "CreateAttachments": false,
         "CreateBoneObjects": false,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
         "Model": "models/citizen/citizen.vmdl",
         "Morphs": {},
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Parameters": {
+          "bools": {},
+          "ints": {},
+          "floats": {},
+          "vectors": {},
+          "rotations": {}
+        },
+        "PlaybackRate": 1,
         "RenderOptions": {
           "GameLayer": true,
           "OverlayLayer": false,
@@ -20,6 +39,9 @@
           "AfterUILayer": false
         },
         "RenderType": "On",
+        "Sequence": {
+          "Name": null
+        },
         "Tint": "1,1,1,1",
         "UseAnimGraph": true
       },
@@ -31,6 +53,12 @@
         "GroundAngle": 45,
         "Height": 64,
         "IgnoreLayers": "nocollide",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
         "Radius": 16,
         "StepHeight": 18,
         "UseCollisionRules": false
@@ -45,7 +73,19 @@
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
+        "Height": null,
+        "IkLeftFoot": null,
+        "IkLeftHand": null,
+        "IkRightFoot": null,
+        "IkRightHand": null,
+        "LookAt": null,
         "LookAtEnabled": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
         "Target": {
           "_type": "component",
           "component_id": "1c4f939a-38aa-4312-bd78-f2b09adba55d",
@@ -56,10 +96,47 @@
       {
         "__type": "Sandbox.Voice",
         "__guid": "ec6c78ca-d23a-4cc2-987f-408d2efe9f23",
+        "Distance": 15000,
+        "Falloff": [
+          {
+            "x": 0,
+            "y": 1,
+            "in": 0,
+            "out": -1.8,
+            "mode": "Mirrored"
+          },
+          {
+            "x": 0.05,
+            "y": 0.22,
+            "in": 3.5,
+            "out": -3.5,
+            "mode": "Mirrored"
+          },
+          {
+            "x": 0.2,
+            "y": 0.04,
+            "in": 0.16,
+            "out": -0.16,
+            "mode": "Mirrored"
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "in": 0,
+            "out": 0,
+            "mode": "Mirrored"
+          }
+        ],
         "Loopback": false,
         "Mode": "PushToTalk",
         "MorphScale": 3,
         "MorphSmoothTime": 0.1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
         "PushToTalkInput": "voice",
         "Renderer": {
           "_type": "component",
@@ -67,12 +144,22 @@
           "go": "2f0c5e5d-2852-453b-8cda-f6bb92e65678",
           "component_type": "SkinnedModelRenderer"
         },
+        "VoiceMixer": {
+          "Name": "unknown",
+          "Id": "00000000-0000-0000-0000-000000000000"
+        },
         "Volume": 2,
         "WorldspacePlayback": true
       },
       {
         "__type": "Sandbox.Entities.Interactable.Props.PropToolManager",
         "__guid": "c88c69d7-76bc-4f09-8a4e-6b6c01da46ae",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
         "PropLimit": 25,
         "PropPrefab": {
           "_type": "gameobject",
@@ -83,15 +170,11 @@
           "go": "ad6ed4b5-d799-468d-a0e1-546cb904eaa8"
         },
         "SpawnProtectionTimeWindow": 1,
-        "UseCloudProps": false
+        "UseCloudProps": true
       },
       {
         "__type": "Sandbox.GameSystems.Player.Player",
         "__guid": "10039fed-00a3-4ce6-8416-281a841a2ee3",
-        "DefaultItems": [
-          "weapons/default/hands/hands.weapon",
-          "weapons/default/camera/camera.weapon"
-        ],
         "_salaryTimerSeconds": 60,
         "_starvingTimerSeconds": 20,
         "AnimationHelper": {
@@ -108,7 +191,12 @@
           "go": "2f0c5e5d-2852-453b-8cda-f6bb92e65678",
           "component_type": "CharacterController"
         },
+        "Collider": null,
         "Dead": false,
+        "DefaultItems": [
+          "weapons/default/hands/hands.weapon",
+          "weapons/default/camera/camera.weapon"
+        ],
         "Doors": [],
         "DrawDebugInteract": false,
         "EyesLocked": false,
@@ -126,6 +214,12 @@
         },
         "MaxHealth": 100,
         "NoClipSpeed": 500,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
         "PlayerHud": {
           "_type": "component",
           "component_id": "c37f901d-9dcc-4287-ac82-22e6b6bf1ceb",
@@ -150,6 +244,12 @@
         "HoldDistance": 55,
         "InteractRange": 150,
         "MaxReleaseVelocity": 500,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
         "Player": {
           "_type": "component",
           "component_id": "10039fed-00a3-4ce6-8416-281a841a2ee3",
@@ -162,6 +262,12 @@
       {
         "__type": "PlayerFootsteps",
         "__guid": "be61e14b-6a30-4769-8e6c-0fbe22ca663c",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
         "Source": {
           "_type": "component",
           "component_id": "1c4f939a-38aa-4312-bd78-f2b09adba55d",
@@ -181,9 +287,22 @@
             "__type": "Sandbox.BoxCollider",
             "__guid": "cfb0d94e-cd3d-487d-bba9-ae064622a37a",
             "Center": "0,0,32",
+            "Friction": null,
             "IsTrigger": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
             "Scale": "32,32,64",
-            "Static": false
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
           }
         ]
       },
@@ -197,9 +316,13 @@
             "__type": "Sandbox.ScreenPanel",
             "__guid": "53b84b42-dc6a-49dc-aaeb-f9a86b9092c5",
             "AutoScreenScale": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
             "OnComponentFixedUpdate": {
-              "__version": 7,
+              "__version": 9,
               "__guid": "c56d28f3-33ce-4f1f-8c8b-c5904cd8255a",
+              "__changeId": 0,
               "UserData": {
                 "Title": "On Component Fixed Update",
                 "ReferencedComponentTypes": [
@@ -276,6 +399,7 @@
                   "DstName": "condition"
                 },
                 {
+                  "Id": 12,
                   "Value": "Score",
                   "DstId": 2,
                   "DstName": "action"
@@ -293,6 +417,7 @@
                   "DstName": "_target"
                 },
                 {
+                  "Id": 13,
                   "Value": true,
                   "DstId": 6,
                   "DstName": "_value"
@@ -310,6 +435,7 @@
                   "DstName": "_target"
                 },
                 {
+                  "Id": 14,
                   "Value": false,
                   "DstId": 7,
                   "DstName": "_value"
@@ -323,8 +449,9 @@
               ]
             },
             "OnComponentStart": {
-              "__version": 7,
+              "__version": 9,
               "__guid": "66e36109-b932-4366-bccb-5ccfa0d61af1",
+              "__changeId": 0,
               "UserData": {
                 "Title": "On Component Start",
                 "ReferencedComponentTypes": []
@@ -433,6 +560,7 @@
                 }
               ]
             },
+            "OnComponentUpdate": null,
             "Opacity": 1,
             "Scale": 1,
             "ScaleStrategy": "ConsistentHeight",
@@ -442,7 +570,13 @@
             "__type": "PlayerHUD",
             "__guid": "c37f901d-9dcc-4287-ac82-22e6b6bf1ceb",
             "__enabled": false,
-            "MyStringValue": "Press \u0022TAB\u0022 to open the MENU",
+            "MyStringValue": "Press \"TAB\" to open the MENU",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
             "PlayerPrefab": {
               "_type": "gameobject",
               "go": "2f0c5e5d-2852-453b-8cda-f6bb92e65678"
@@ -465,10 +599,12 @@
               "Door menu: Hold R"
             ],
             "InfoCredits": "We extend our thanks to all the contributors for their efforts: Sousou, QueenPM, Stefan, HankKitts, dancore, Bozy, IRLadderGoat, Mangrogred, Dada, Red (SebbeJohansson), goodmittens, EuroBlue, Dimmer, Grepid, and Fnasp.",
-            "InfoNotes": "Welcome to DarkRP, an open-source, non-serious and fun roleplay game. We\u0027re drawing inspiration from the well-known game mode available on Garry\u0027s Mod. This game is still work in progress so please expect some bugs and inconsistencies.\n\nIf you\u0027d like to help out, you can join us on Discord or GitHub. Whether you\u0027re a developer, designer, or just a player, your involvement is highly valuable to us!",
+            "InfoNotes": "Welcome to DarkRP, an open-source, non-serious and fun roleplay game. We're drawing inspiration from the well-known game mode available on Garry's Mod. This game is still work in progress so please expect some bugs and inconsistencies.\n\nIf you'd like to help out, you can join us on Discord or GitHub. Whether you're a developer, designer, or just a player, your involvement is highly valuable to us!",
+            "OnComponentDestroy": null,
             "OnComponentDisabled": {
-              "__version": 7,
+              "__version": 9,
               "__guid": "86ae15ed-598d-40f6-8392-45ff34f3d151",
+              "__changeId": 0,
               "UserData": {
                 "Title": "On Component Disabled",
                 "ReferencedComponentTypes": []
@@ -534,6 +670,7 @@
                   "DstName": "_this"
                 },
                 {
+                  "Id": 6,
                   "Value": "sounds/kenney/ui/ui.navigate.back.sound",
                   "DstId": 1,
                   "DstName": "soundEvent"
@@ -565,8 +702,9 @@
               ]
             },
             "OnComponentEnabled": {
-              "__version": 7,
+              "__version": 9,
               "__guid": "77d47dbb-f4ce-44f1-94d3-54578333f7ec",
+              "__changeId": 0,
               "UserData": {
                 "Title": "On Component Enabled",
                 "ReferencedComponentTypes": []
@@ -632,6 +770,7 @@
                   "DstName": "_this"
                 },
                 {
+                  "Id": 6,
                   "Value": "sounds/kenney/ui/ui.navigate.forward.sound",
                   "DstId": 1,
                   "DstName": "soundEvent"
@@ -662,6 +801,9 @@
                 }
               ]
             },
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
             "Player": {
               "_type": "component",
               "component_id": "10039fed-00a3-4ce6-8416-281a841a2ee3",
@@ -695,7 +837,13 @@
           {
             "__type": "LeaderBoard",
             "__guid": "a85a180c-7fbf-44df-a018-2d27256c984c",
-            "__enabled": false
+            "__enabled": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
           }
         ]
       },
@@ -712,6 +860,12 @@
             "HorizontalAlign": "Center",
             "InteractionRange": 1000,
             "LookAtCamera": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
             "PanelSize": "800,250",
             "RenderOptions": {
               "GameLayer": true,
@@ -725,9 +879,14 @@
           {
             "__type": "Nameplates",
             "__guid": "1d680a3c-87ed-4a89-b2a6-cd08f38931ed",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
             "OnComponentStart": {
-              "__version": 7,
+              "__version": 9,
               "__guid": "214aed12-7b14-446d-8052-42752a9b6e74",
+              "__changeId": 0,
               "UserData": {
                 "Title": "On Component Start",
                 "ReferencedComponentTypes": []
@@ -833,7 +992,8 @@
                   "DstIndex": 0
                 }
               ]
-            }
+            },
+            "OnComponentUpdate": null
           }
         ]
       },
@@ -852,23 +1012,53 @@
             "Attenuation": 7.37,
             "ConeInner": 64.88,
             "ConeOuter": 22.95,
+            "Cookie": null,
             "FogMode": "Enabled",
             "FogStrength": 1,
             "LightColor": "0.91373,0.98039,1,1",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
             "Radius": 700,
             "Shadows": false
           },
           {
             "__type": "Sandbox.SoundPointComponent",
             "__guid": "4f91538b-962b-48ab-b29f-e8ce958d31e8",
+            "Distance": 512,
             "DistanceAttenuation": false,
             "DistanceAttenuationOverride": false,
+            "Falloff": [
+              {
+                "x": 0,
+                "y": 1,
+                "in": 3.1415927,
+                "out": -3.1415927,
+                "mode": "Mirrored"
+              },
+              {
+                "x": 1,
+                "y": 0,
+                "in": 0,
+                "out": 0,
+                "mode": "Mirrored"
+              }
+            ],
             "Force2d": false,
             "MaxRepeatTime": 1,
             "MinRepeatTime": 1,
             "Occlusion": false,
             "OcclusionOverride": false,
             "OcclusionRadius": 32,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
             "Pitch": 1,
             "PlayOnStart": false,
             "ReflectionOverride": false,
@@ -903,16 +1093,46 @@
               "component_id": "4f91538b-962b-48ab-b29f-e8ce958d31e8",
               "go": "4cd83b94-b253-4955-8123-0a7e28793b4a",
               "component_type": "SoundPointComponent"
-            }
+            },
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
           }
         ]
       }
     ],
-    "__variables": []
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [],
   "__version": 1

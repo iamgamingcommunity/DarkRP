@@ -17,7 +17,7 @@
     <div class="key-instructions">@MyStringValue</div>
 
     <div class="player-card">
-        <div class="name">@Rpc.Caller.DisplayName</div>
+        <div class="name">@Network.Owner.DisplayName.Truncate(13)</div>
         <div class="player-details-container">
             <div class="money">$ @(stats.Balance.ToString("N0"))</div>
             <div class="job"> @(GameController.Instance.GetMe().Job.Name) </div>
