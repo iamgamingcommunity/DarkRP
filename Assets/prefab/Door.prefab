@@ -1,17 +1,23 @@
 {
   "RootObject": {
     "__guid": "0d3c6985-290a-4400-9505-0d59d586a655",
+    "__version": 1,
     "Flags": 0,
     "Name": "door",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
     "Tags": "interact",
     "Enabled": true,
     "NetworkMode": 1,
+    "NetworkInterpolation": true,
     "NetworkOrphaned": 1,
     "OwnerTransfer": 0,
     "Components": [
       {
         "__type": "Entity.Interactable.Door.DoorLogic",
         "__guid": "be1b80f3-03a0-4019-b81f-83972765c1c6",
+        "__enabled": true,
         "CanBePickedUp": false,
         "CanOwn": [],
         "Door": {
@@ -41,7 +47,9 @@
       {
         "__type": "Sandbox.BoxCollider",
         "__guid": "a29b4042-5d91-4d65-b1b1-480e3cae11e6",
+        "__enabled": true,
         "Center": "0,-18.79998,43.10012",
+        "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
         "OnComponentDestroy": null,
@@ -54,6 +62,7 @@
         "OnObjectTriggerExit": null,
         "OnTriggerEnter": null,
         "OnTriggerExit": null,
+        "RollingResistance": null,
         "Scale": "2.099964,36.40015,86.00031",
         "Static": false,
         "Surface": null,
@@ -62,6 +71,7 @@
       {
         "__type": "Sandbox.HighlightOutline",
         "__guid": "4c520a1d-93e7-49e2-9816-231be2e085e5",
+        "__enabled": true,
         "Color": "1,1,1,0",
         "InsideColor": "0,0,0,0",
         "InsideObscuredColor": "0,0,0,0",
@@ -73,25 +83,36 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
+        "OverrideTargets": false,
+        "Targets": null,
         "Width": 0.25
       }
     ],
     "Children": [
       {
         "__guid": "244484dd-fb97-4cc3-b1af-8d3adb675e91",
+        "__version": 1,
         "Flags": 0,
         "Name": "Door",
+        "Position": "0,0,0",
         "Rotation": "0,0,-1,0.0000001947072",
         "Scale": "1,1,0.9",
+        "Tags": "",
         "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
             "__guid": "1f59113c-d475-48d9-a702-548a5e5f361f",
+            "__enabled": true,
             "BodyGroups": 18446744073709551615,
             "CreateAttachments": false,
             "MaterialGroup": null,
             "MaterialOverride": null,
+            "Materials": null,
             "Model": "models/props_doors/temp_door_001a_44_92.vmdl",
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -108,19 +129,28 @@
             "RenderType": "On",
             "Tint": "0.23256,0.15583,0.0887,1"
           }
-        ]
+        ],
+        "Children": []
       },
       {
         "__guid": "8b3e3286-3749-4f35-8d43-a58dcea8cb12",
+        "__version": 1,
         "Flags": 0,
         "Name": "Panel (1)",
         "Position": "-1.214411,-18.3967,56.29179",
         "Rotation": "0,0,1,-0.00000004371139",
+        "Scale": "1,1,1",
+        "Tags": "",
         "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
         "Components": [
           {
             "__type": "Sandbox.WorldPanel",
             "__guid": "e5a41cfc-bd67-458f-b547-7377c05d1132",
+            "__enabled": true,
             "HorizontalAlign": "Center",
             "InteractionRange": 1000,
             "LookAtCamera": false,
@@ -143,6 +173,7 @@
           {
             "__type": "Door",
             "__guid": "251cfeb4-92aa-4a1b-8dcb-ae0110711d1c",
+            "__enabled": true,
             "DoorPrefab": {
               "_type": "gameobject",
               "go": "0d3c6985-290a-4400-9505-0d59d586a655"
@@ -154,18 +185,28 @@
             "OnComponentStart": null,
             "OnComponentUpdate": null
           }
-        ]
+        ],
+        "Children": []
       },
       {
         "__guid": "02c41d63-7d0f-4433-ab3d-68dbe61ce2e2",
+        "__version": 1,
         "Flags": 0,
         "Name": "Panel",
         "Position": "1.248956,-18.3967,56.29179",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
         "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
         "Components": [
           {
             "__type": "Sandbox.WorldPanel",
             "__guid": "a60c17ce-27b2-4efc-a78e-75f9624f42f5",
+            "__enabled": true,
             "HorizontalAlign": "Center",
             "InteractionRange": 1000,
             "LookAtCamera": false,
@@ -188,6 +229,7 @@
           {
             "__type": "Door",
             "__guid": "7a45bb87-a00d-452b-b911-db150f21225c",
+            "__enabled": true,
             "DoorPrefab": {
               "_type": "gameobject",
               "go": "0d3c6985-290a-4400-9505-0d59d586a655"
@@ -199,17 +241,28 @@
             "OnComponentStart": null,
             "OnComponentUpdate": null
           }
-        ]
+        ],
+        "Children": []
       },
       {
         "__guid": "65c94105-c13a-4fcb-ac07-f20576d7cbce",
+        "__version": 1,
         "Flags": 0,
         "Name": "Door Menu",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
         "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
         "Components": [
           {
             "__type": "Sandbox.ScreenPanel",
             "__guid": "44626550-0579-47e6-8a65-da21fa443f15",
+            "__enabled": true,
             "AutoScreenScale": true,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -220,11 +273,13 @@
             "Opacity": 1,
             "Scale": 1,
             "ScaleStrategy": "ConsistentHeight",
+            "TargetCamera": null,
             "ZIndex": 101
           },
           {
             "__type": "DoorMenu",
             "__guid": "dc1598e1-98ec-4c9e-ab79-600289d64efc",
+            "__enabled": true,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -232,19 +287,14 @@
             "OnComponentStart": null,
             "OnComponentUpdate": null
           }
-        ]
+        ],
+        "Children": []
       }
     ],
-    "__variables": [],
     "__properties": {
-      "FixedUpdateFrequency": 50,
-      "MaxFixedUpdates": 5,
-      "NetworkFrequency": 30,
       "NetworkInterpolation": true,
-      "PhysicsSubSteps": 1,
-      "ThreadedAnimation": true,
       "TimeScale": 1,
-      "UseFixedUpdate": true,
+      "WantsSystemScene": true,
       "Metadata": {},
       "NavMesh": {
         "Enabled": false,
@@ -258,13 +308,14 @@
         "ExcludedBodies": "",
         "IncludedBodies": ""
       }
-    }
+    },
+    "__variables": []
   },
+  "ResourceVersion": 2,
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
-  "ResourceVersion": 1,
   "__references": [],
-  "__version": 1
+  "__version": 2
 }

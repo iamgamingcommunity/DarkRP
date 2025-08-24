@@ -1,0 +1,1663 @@
+{
+  "RootObject": {
+    "__guid": "715b5d3a-c021-4364-8cc3-ae238a6ca27f",
+    "__version": 1,
+    "Flags": 0,
+    "Name": "microwave",
+    "Position": "0,0,0.2590749",
+    "Rotation": "0,0,0,1",
+    "Scale": "100,100,100",
+    "Tags": "entity,prop,occludable,no_collide_item,pocket_item",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "0748e0a4-3bbe-4fdf-815e-23059351138b",
+        "__enabled": true,
+        "AnimationGraph": "prefab/teaguy/microwave/animgraphs/microwave_anim.vanmgrph",
+        "BodyGroups": 18446744073709551615,
+        "BoneMergeTarget": null,
+        "CreateAttachments": false,
+        "CreateBoneObjects": false,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Materials": null,
+        "Model": "prefab/teaguy/microwave/microwave_animv8.vmdl",
+        "Morphs": {},
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Parameters": {
+          "bools": {
+            "IsOpen?": true
+          },
+          "ints": {},
+          "floats": {},
+          "vectors": {},
+          "rotations": {}
+        },
+        "PlaybackRate": 1,
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Sequence": {
+          "Name": null,
+          "Looping": true,
+          "Blending": false
+        },
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "d04e5c70-4a9c-4e8f-9b6d-1659a664a250",
+        "__enabled": true,
+        "Center": "0.02,-0.025,0.066",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": {
+          "__version": 9,
+          "__guid": "c4538db1-24b5-4746-8867-74145ce937bf",
+          "__changeId": 806,
+          "UserData": {
+            "Title": "On Component Fixed Update Microwave",
+            "ReferencedComponentTypes": [
+              "TeaAddon.MicrowaveInteraction"
+            ],
+            "Description": "Checks to do Microwave item Spin animation.",
+            "Icon": "code",
+            "Category": "Entity"
+          },
+          "Variables": [
+            {
+              "Name": "ForRangeMaxInt",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "MicrowaveFloat0",
+              "Type": "System.Object"
+            },
+            {
+              "Name": "MicrowaveTimeVar",
+              "Type": "System.Single"
+            },
+            {
+              "Name": "MicrowaveTurningFloat",
+              "Type": "System.Single"
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-1452,12"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "nop",
+              "UserData": {
+                "Position": "468,216"
+              }
+            },
+            {
+              "Id": 11,
+              "Type": "geom.slerp",
+              "UserData": {
+                "Position": "1224,732"
+              }
+            },
+            {
+              "Id": 36,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTurningFloat"
+              },
+              "UserData": {
+                "Position": "1476,432"
+              }
+            },
+            {
+              "Id": 39,
+              "Type": "time.delta",
+              "UserData": {
+                "Position": "1560,456"
+              }
+            },
+            {
+              "Id": 40,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTurningFloat"
+              },
+              "UserData": {
+                "Position": "-1092,12"
+              }
+            },
+            {
+              "Id": 48,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTimeVar"
+              },
+              "UserData": {
+                "Position": "-732,12"
+              }
+            },
+            {
+              "Id": 80,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTimeVar"
+              },
+              "UserData": {
+                "Position": "1080,972"
+              }
+            },
+            {
+              "Id": 97,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTimeVar"
+              },
+              "UserData": {
+                "Position": "1044,804"
+              }
+            },
+            {
+              "Id": 108,
+              "Type": "op.multiply",
+              "UserData": {
+                "Position": "1692,432"
+              }
+            },
+            {
+              "Id": 109,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "RotateAroundAxis",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "1272,912"
+              }
+            },
+            {
+              "Id": 115,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "RotateAroundAxis",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "1776,324"
+              }
+            },
+            {
+              "Id": 116,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldRotation",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "504,636"
+              }
+            },
+            {
+              "Id": 118,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTimeVar"
+              },
+              "UserData": {
+                "Position": "540,696"
+              }
+            },
+            {
+              "Id": 119,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "576,744"
+              }
+            },
+            {
+              "Id": 121,
+              "Type": "property",
+              "Properties": {
+                "_name": "Up",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "732,552"
+              }
+            },
+            {
+              "Id": 126,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "1788,12"
+              }
+            },
+            {
+              "Id": 148,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveFloat0"
+              },
+              "UserData": {
+                "Position": "-432,12"
+              }
+            },
+            {
+              "Id": 476,
+              "Type": "var",
+              "Properties": {
+                "_var": "ForRangeMaxInt"
+              },
+              "UserData": {
+                "Position": "1524,312"
+              }
+            },
+            {
+              "Id": 497,
+              "Type": "if",
+              "UserData": {
+                "Position": "132,12"
+              }
+            },
+            {
+              "Id": 515,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "-96,12"
+              }
+            },
+            {
+              "Id": 547,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "84,144"
+              }
+            },
+            {
+              "Id": 548,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsCooking",
+                "_type": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "72,108"
+              }
+            },
+            {
+              "Id": 549,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "-60,396"
+              }
+            },
+            {
+              "Id": 550,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObjectRef",
+                "_type": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "-60,360"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 550,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "in"
+            },
+            {
+              "Id": 560,
+              "Value": "0,0,0,1",
+              "DstId": 11,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 97,
+              "SrcName": "_result",
+              "DstId": 11,
+              "DstName": "amount"
+            },
+            {
+              "Id": 561,
+              "Value": "-0,0,1,-0.00000004371139",
+              "DstId": 11,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 40,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 562,
+              "Value": 30,
+              "DstId": 40,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 40,
+              "SrcName": "_signal",
+              "DstId": 48,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 563,
+              "Value": 0.1,
+              "DstId": 48,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 36,
+              "SrcName": "_result",
+              "DstId": 108,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 39,
+              "SrcName": "_result",
+              "DstId": 108,
+              "DstName": "b"
+            },
+            {
+              "Id": 564,
+              "Value": "0,0,0,1",
+              "DstId": 109,
+              "DstName": "_target"
+            },
+            {
+              "Id": 565,
+              "Value": "0,1,0",
+              "DstId": 109,
+              "DstName": "axis"
+            },
+            {
+              "SrcId": 80,
+              "SrcName": "_result",
+              "DstId": 109,
+              "DstName": "degrees"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "_target"
+            },
+            {
+              "Id": 566,
+              "Value": "0,0,-1",
+              "DstId": 115,
+              "DstName": "axis"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "degrees"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "out",
+              "DstId": 116,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_result",
+              "DstId": 121,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 497,
+              "SrcName": "true",
+              "DstId": 126,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "out",
+              "DstId": 126,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 115,
+              "SrcName": "_result",
+              "DstId": 126,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 48,
+              "SrcName": "_signal",
+              "DstId": 148,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 567,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 0
+              },
+              "DstId": 148,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 515,
+              "SrcName": "_signal",
+              "DstId": 497,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 548,
+              "SrcName": "_result",
+              "DstId": 497,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 148,
+              "SrcName": "_signal",
+              "DstId": 515,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 568,
+              "Value": 1,
+              "DstId": 515,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 515,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 547,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 547,
+              "SrcName": "_result",
+              "DstId": 548,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 549,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 549,
+              "SrcName": "_result",
+              "DstId": 550,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": {
+          "__version": 9,
+          "__guid": "5f82c76c-254a-44c0-8ab2-5c184a11c2ca",
+          "__changeId": 1309,
+          "UserData": {
+            "Title": "On Object Enter Microwave",
+            "ReferencedComponentTypes": [
+              "Sandbox.SkinnedModelRenderer",
+              "TeaAddon.MicrowaveInteraction",
+              "SudoEntityTeacup"
+            ],
+            "Description": "Microwave Logic that 'Microwaves' the Item in it.",
+            "Category": "Entity",
+            "Icon": "microwave"
+          },
+          "Variables": [
+            {
+              "Name": "String",
+              "Type": "System.String"
+            },
+            {
+              "Name": "TagToSearchMicrowaveable",
+              "Type": "System.String"
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-1668,-24"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "-48,252"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "property",
+              "Properties": {
+                "_name": "Parameters",
+                "_type": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "-24,216"
+              }
+            },
+            {
+              "Id": 31,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Set",
+                "_type": {
+                  "$type": "Nested",
+                  "DeclaringType": "Sandbox.SkinnedModelRenderer",
+                  "Name": "ParameterAccessor"
+                }
+              },
+              "UserData": {
+                "Position": "408,204"
+              }
+            },
+            {
+              "Id": 44,
+              "Type": "var",
+              "Properties": {
+                "_var": "String"
+              },
+              "UserData": {
+                "Position": "264,252"
+              }
+            },
+            {
+              "Id": 45,
+              "Type": "var",
+              "Properties": {
+                "_var": "String"
+              },
+              "UserData": {
+                "Position": "276,48"
+              }
+            },
+            {
+              "Id": 70,
+              "Type": "if",
+              "UserData": {
+                "Position": "-828,-24"
+              }
+            },
+            {
+              "Id": 121,
+              "Type": "property",
+              "Properties": {
+                "_name": "Tags",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-1404,60"
+              }
+            },
+            {
+              "Id": 122,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Has",
+                "_type": "Sandbox.GameTags"
+              },
+              "UserData": {
+                "Position": "-1164,72"
+              }
+            },
+            {
+              "Id": 125,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "IsAncestor",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-1296,192"
+              }
+            },
+            {
+              "Id": 155,
+              "Type": "nop",
+              "UserData": {
+                "Position": "-1392,132"
+              }
+            },
+            {
+              "Id": 156,
+              "Type": "var",
+              "Properties": {
+                "_var": "TagToSearchMicrowaveable"
+              },
+              "UserData": {
+                "Position": "-1428,120"
+              }
+            },
+            {
+              "Id": 162,
+              "Type": "nop",
+              "UserData": {
+                "Position": "432,708"
+              }
+            },
+            {
+              "Id": 294,
+              "Type": "log.info",
+              "UserData": {
+                "Position": "300,-72"
+              }
+            },
+            {
+              "Id": 303,
+              "Type": "var",
+              "Properties": {
+                "_var": "TagToSearchMicrowaveable"
+              },
+              "UserData": {
+                "Position": "-1332,-24"
+              }
+            },
+            {
+              "Id": 353,
+              "Type": "scene.ref",
+              "UserData": {
+                "Position": "624,408"
+              }
+            },
+            {
+              "Id": 390,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "768,276"
+              }
+            },
+            {
+              "Id": 391,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "756,372"
+              }
+            },
+            {
+              "Id": 640,
+              "Type": "forrange",
+              "UserData": {
+                "Position": "3048,588"
+              }
+            },
+            {
+              "Id": 650,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "3396,612"
+              }
+            },
+            {
+              "Id": 660,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "3504,804"
+              }
+            },
+            {
+              "Id": 661,
+              "Type": "if",
+              "UserData": {
+                "Position": "3648,612"
+              }
+            },
+            {
+              "Id": 672,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "4560,648"
+              }
+            },
+            {
+              "Id": 757,
+              "Type": "if",
+              "UserData": {
+                "Position": "-408,12"
+              }
+            },
+            {
+              "Id": 758,
+              "Type": "property",
+              "Properties": {
+                "_name": "Tags",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-744,108"
+              }
+            },
+            {
+              "Id": 759,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Has",
+                "_type": "Sandbox.GameTags"
+              },
+              "UserData": {
+                "Position": "-504,84"
+              }
+            },
+            {
+              "Id": 760,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "IsAncestor",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-708,216"
+              }
+            },
+            {
+              "Id": 781,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "1032,324"
+              }
+            },
+            {
+              "Id": 782,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsCooking",
+                "_type": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "1320,276"
+              }
+            },
+            {
+              "Id": 784,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "1500,384"
+              }
+            },
+            {
+              "Id": 785,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObjectRef",
+                "_type": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "1728,360"
+              }
+            },
+            {
+              "Id": 786,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "2016,456"
+              }
+            },
+            {
+              "Id": 787,
+              "Type": "property",
+              "Properties": {
+                "_name": "MicrowaveItemSound",
+                "_type": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "2028,432"
+              }
+            },
+            {
+              "Id": 789,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "2112,360"
+              }
+            },
+            {
+              "Id": 790,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Stop",
+                "_type": "Sandbox.SoundHandle"
+              },
+              "UserData": {
+                "Position": "4020,648"
+              }
+            },
+            {
+              "Id": 791,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "SudoEntityTeacup"
+              },
+              "UserData": {
+                "Position": "1908,636"
+              }
+            },
+            {
+              "Id": 792,
+              "Type": "property",
+              "Properties": {
+                "_name": "MicrowaveTime",
+                "_type": "SudoEntityTeacup"
+              },
+              "UserData": {
+                "Position": "2244,636"
+              }
+            },
+            {
+              "Id": 793,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "4500,744"
+              }
+            },
+            {
+              "Id": 794,
+              "Type": "property",
+              "Properties": {
+                "_name": "MicrowaveDoneSound",
+                "_type": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "4452,708"
+              }
+            },
+            {
+              "Id": 795,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4404,552",
+                "Size": "384,300",
+                "Title": "Microwave Done SFX Logic",
+                "Layer": 1,
+                "Description": "This fires a sound.",
+                "Color": 3
+              }
+            },
+            {
+              "Id": 796,
+              "Type": "nop",
+              "UserData": {
+                "Position": "4344,912"
+              }
+            },
+            {
+              "Id": 797,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "4896,672"
+              }
+            },
+            {
+              "Id": 798,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsCooking",
+                "_type": "TeaAddon.MicrowaveInteraction"
+              },
+              "UserData": {
+                "Position": "5136,648"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 20,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_result",
+              "DstId": 21,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 45,
+              "SrcName": "_signal",
+              "DstId": 31,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_result",
+              "DstId": 31,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 44,
+              "SrcName": "_result",
+              "DstId": 31,
+              "DstName": "v"
+            },
+            {
+              "Id": 808,
+              "Value": false,
+              "DstId": 31,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 757,
+              "SrcName": "true",
+              "DstId": 45,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 809,
+              "Value": "IsOpen?",
+              "DstId": 45,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 303,
+              "SrcName": "_signal",
+              "DstId": 70,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 122,
+              "SrcName": "_result",
+              "DstId": 70,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 121,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 121,
+              "SrcName": "_result",
+              "DstId": 122,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 125,
+              "SrcName": "_result",
+              "DstId": 122,
+              "DstName": "includeAncestors"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "_result",
+              "DstId": 122,
+              "DstName": "tag"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 125,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 155,
+              "SrcName": "out",
+              "DstId": 125,
+              "DstName": "ancestor"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 155,
+              "DstName": "in"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 162,
+              "DstName": "in"
+            },
+            {
+              "SrcId": 70,
+              "SrcName": "false",
+              "DstId": 294,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 810,
+              "Value": "TEST",
+              "DstId": 294,
+              "DstName": "format"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 303,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 811,
+              "Value": "microwaveable",
+              "DstId": 303,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 31,
+              "SrcName": "_signal",
+              "DstId": 390,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 162,
+              "SrcName": "out",
+              "DstId": 390,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 391,
+              "SrcName": "_result",
+              "DstId": 390,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 353,
+              "SrcName": "_result",
+              "DstId": 391,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 789,
+              "SrcName": "_signal",
+              "DstId": 640,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 792,
+              "SrcName": "_result",
+              "DstId": 640,
+              "DstName": "count"
+            },
+            {
+              "Id": 812,
+              "Value": 1,
+              "DstId": 640,
+              "DstName": "start"
+            },
+            {
+              "SrcId": 640,
+              "SrcName": "body",
+              "DstId": 650,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 813,
+              "Value": 1,
+              "DstId": 650,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 650,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 640,
+              "SrcName": "body.value",
+              "DstId": 660,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 792,
+              "SrcName": "_result",
+              "DstId": 660,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 650,
+              "SrcName": "_signal",
+              "DstId": 661,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 660,
+              "SrcName": "_result",
+              "DstId": 661,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 790,
+              "SrcName": "_signal",
+              "DstId": 672,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 672,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 794,
+              "SrcName": "_result",
+              "DstId": 672,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 70,
+              "SrcName": "true",
+              "DstId": 757,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 759,
+              "SrcName": "_result",
+              "DstId": 757,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 758,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 758,
+              "SrcName": "_result",
+              "DstId": 759,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 760,
+              "SrcName": "_result",
+              "DstId": 759,
+              "DstName": "includeAncestors"
+            },
+            {
+              "Id": 814,
+              "Value": "filled",
+              "DstId": 759,
+              "DstName": "tag"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 760,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 760,
+              "DstName": "ancestor"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 781,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 390,
+              "SrcName": "_signal",
+              "DstId": 782,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 781,
+              "SrcName": "_result",
+              "DstId": 782,
+              "DstName": "_target"
+            },
+            {
+              "Id": 815,
+              "Value": true,
+              "DstId": 782,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 784,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 782,
+              "SrcName": "_signal",
+              "DstId": 785,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 784,
+              "SrcName": "_result",
+              "DstId": 785,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 162,
+              "SrcName": "out",
+              "DstId": 785,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 786,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 786,
+              "SrcName": "_result",
+              "DstId": 787,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 785,
+              "SrcName": "_signal",
+              "DstId": 789,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 789,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 787,
+              "SrcName": "_result",
+              "DstId": 789,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 661,
+              "SrcName": "true",
+              "DstId": 790,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 789,
+              "SrcName": "_result",
+              "DstId": 790,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 162,
+              "SrcName": "out",
+              "DstId": 791,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 791,
+              "SrcName": "_result",
+              "DstId": 792,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 793,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 793,
+              "SrcName": "_result",
+              "DstId": 794,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 162,
+              "SrcName": "out",
+              "DstId": 796,
+              "DstName": "in"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 797,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 672,
+              "SrcName": "_signal",
+              "DstId": 798,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 797,
+              "SrcName": "_result",
+              "DstId": 798,
+              "DstName": "_target"
+            },
+            {
+              "Id": 816,
+              "Value": false,
+              "DstId": 798,
+              "DstName": "_value"
+            }
+          ],
+          "Defaults": {
+            "$353.gameobject": {
+              "_type": "gameobject",
+              "go": "4e38db42-1b4d-441c-8f42-09e14c106a8f"
+            }
+          }
+        },
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.1,0.13,0.1",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "dc70cf56-d18d-40e8-bbbd-f7754135c750",
+        "__enabled": true,
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "159f958d-6177-4dcf-b7eb-00764c721664",
+        "__enabled": true,
+        "Center": "0.005,0,0.122",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.15,0.2,0.01",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "cbdc42e3-ab2e-4e91-bdcc-d4f13d9a7451",
+        "__enabled": true,
+        "Center": "0.005,0,0.005",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.15,0.2,0.01",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "02fc5c7d-b96f-4c7d-bba0-62d3b56f2b8b",
+        "__enabled": true,
+        "Center": "0.005,0.075,0.066",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.145,0.05,0.12",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "c0f2ad72-393e-4f2a-ac39-41e8708a7417",
+        "__enabled": true,
+        "Center": "-0.06,0,0.066",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.01,0.2,0.12",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "6c841fe6-269c-4b7f-901f-a2d582f5a593",
+        "__enabled": true,
+        "Center": "-0,-0.1,0.066",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.13,0.01,0.12",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "TeaAddon.MicrowaveInteraction",
+        "__guid": "49575dc2-04d7-433f-80c1-2169557153d5",
+        "__enabled": true,
+        "GameObjectRef": null,
+        "Graph": null,
+        "IsCooking": false,
+        "MicrowaveDoneSound": "sounds/impacts/melee/impact-melee-cloth.sound",
+        "MicrowaveItemSound": "prefab/teaguy/microwave/microwaving.sound",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Prefab": null,
+        "Renderer": {
+          "_type": "component",
+          "component_id": "0748e0a4-3bbe-4fdf-815e-23059351138b",
+          "go": "715b5d3a-c021-4364-8cc3-ae238a6ca27f",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "TargetObject": {
+          "_type": "gameobject",
+          "prefab": "prefab/teaguy/teacup/teacup.prefab"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "4e38db42-1b4d-441c-8f42-09e14c106a8f",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "MicrowaveItemSpot",
+        "Position": "0,-0.03,0.025",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}
