@@ -1,0 +1,88 @@
+@import "../../../styles.scss";
+
+JobTabMenuSection {
+  .job-group-list {
+    height: 100%;
+  }
+
+  .job-group {
+    padding: $space-4;
+    background-color: rgba($color-secondary, 0.1);
+    margin-bottom: $space-4;
+    border-radius: $space-2;
+  }
+
+  .job-group-title {
+    font-weight: bold;
+    padding: $space-2;
+    border-radius: $space-2;
+    text-align: center;
+  }
+
+  .job-list {
+    gap: $space-4;
+  }
+
+  .job-entry {
+    background-color: rgba($color-secondary, 0.2);
+    border-radius: $space-2;
+    transition: all 0.2s ease;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      background-color: rgba($color-secondary, 0.3);
+      transform: translateY(-2px);
+    }
+
+    &.disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      pointer-events: none;
+      background-color: rgba($color-secondary, 0.1);
+
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+
+  .label-container {
+    padding: $space-3 $space-4 $space-4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .label {
+    font-weight: bold;
+    font-size: $text-base;
+    flex-shrink: 0;
+    margin-bottom: $space-2;
+  }
+
+  .job-stats {
+    display: flex;
+    gap: $space-2;
+    margin-bottom: $space-2;
+  }
+
+  .player-count {
+    color: $color-gray-400;
+    font-size: $text-sm;
+
+    &.full {
+      color: $color-bad;
+    }
+  }
+
+  .vote-badge {
+    color: $color-accent;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    color: $color-gray-400;
+  }
+}

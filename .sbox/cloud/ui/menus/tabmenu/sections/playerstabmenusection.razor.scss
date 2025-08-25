@@ -1,0 +1,108 @@
+@import "../../../styles.scss";
+
+PlayersTabMenuSection {
+  .player-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    max-height: 99%;
+
+    .header {
+      display: flex;
+      color: $color-gray-400;
+      text-transform: uppercase;
+      font-size: $text-sm;
+      padding: $space-3 0;
+      border-bottom: 1px solid rgba($color-gray-400, 0.2);
+      background: $color-primary;
+      top: 0;
+      z-index: 10;
+      align-items: center;
+    }
+
+    .row {
+      display: flex;
+      padding: $space-3 0;
+      border-bottom: 1px solid rgba($color-gray-400, 0.2);
+      align-items: center;
+      color: white;
+
+      min-height: 45px;
+
+      &.local-player {
+        background-color: rgba($color-accent, 0.01);
+      }
+    }
+
+    // Column definitions
+    .cell-quick {
+      width: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .cell-role {
+      width: 120px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cell-player {
+      flex: 1; // Takes remaining space
+      min-width: 150px;
+      display: flex;
+      align-items: center;
+
+      .player-info {
+        display: flex;
+        align-items: center;
+        gap: $space-3;
+
+        .player-name {
+          color: white;
+          font-size: $text-lg;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .cell-job {
+      width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        padding: $space-1 $space-2;
+        border-radius: $space-1;
+      }
+    }
+
+    .cell-actions {
+      width: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cell-default {
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+
+  PlayerAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: $space-2;
+    flex-shrink: 0;
+  }
+}
