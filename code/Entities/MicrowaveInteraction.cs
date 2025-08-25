@@ -1,6 +1,6 @@
 using Sandbox;
 using System;
-namespace TeaAddon;
+//namespace TeaAddon;
 public sealed class MicrowaveInteraction : Component, Component.IPressable
 {
 	[Property, Title("Skinned Model Renderer")]
