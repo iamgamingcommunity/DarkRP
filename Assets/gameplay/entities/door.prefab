@@ -1,0 +1,282 @@
+{
+  "RootObject": {
+    "__guid": "79771431-1ea1-4fef-9e7b-9cec0f79dbde",
+    "__version": 1,
+    "Flags": 0,
+    "Name": "door",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "216e1eaf-7a02-4f41-83fe-c8bc69e8c99d",
+        "__enabled": true,
+        "BodyGroups": 18446744073709551615,
+        "CreateAttachments": false,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Materials": null,
+        "Model": "models/props/trim_sheets/doors/wooden_doors/wooden_door_01c.vmdl",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "door",
+        "__guid": "58c2c8e4-be61-447a-afac-c5ad583298c4",
+        "__enabled": true,
+        "BlacklistedJobDoorGroups": [],
+        "DoorBuyAmount": 30,
+        "Interacted": {
+          "__version": 9,
+          "__guid": "ac4fa954-f43f-4392-a00b-1e33a082d31d",
+          "__changeId": 34,
+          "UserData": {
+            "Title": "Interacted With Door",
+            "Description": "Interaction Logic With Doors",
+            "Category": "Entity",
+            "Icon": "sensor_door",
+            "ReferencedComponentTypes": [
+              "DarkrpPlayerInfo",
+              "door"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "60,108"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "property",
+              "Properties": {
+                "_name": "SteamId",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "384,108"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "444,36"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerSteamIDWhoOwnsDoor",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "648,-0"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "sys.tostring",
+              "UserData": {
+                "Position": "648,108"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1176,120"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerSteamIDWhoOwnsDoor",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1188,96"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "log.info",
+              "UserData": {
+                "Position": "1260,-0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "LastInteractingPlayer",
+              "DstId": 1,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 3,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "input"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 6,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_signal",
+              "DstId": 8,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "format"
+            }
+          ]
+        },
+        "IsDoorPurchasable": true,
+        "IsInteractable": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "PlayerFriendsSteamIDWhoOwnsDoor": [],
+        "PlayerSteamIDWhoOwnsDoor": null,
+        "WhitelistedJobDoorGroups": []
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "964512c7-8f6b-4229-bd12-4bb14f15fb49",
+        "__enabled": true,
+        "Center": "1,-22.70001,54.09995",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "3.4,48,108",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      }
+    ],
+    "Children": [],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [
+    "facepunch.wooden_door_01c#107464"
+  ],
+  "__version": 2
+}

@@ -1,0 +1,2231 @@
+{
+  "RootObject": {
+    "__guid": "715b5d3a-c021-4364-8cc3-ae238a6ca27f",
+    "__version": 1,
+    "Flags": 0,
+    "Name": "microwave",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "100,100,100",
+    "Tags": "entity,prop,occludable,no_collide_item,pocket_item,grab",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "0748e0a4-3bbe-4fdf-815e-23059351138b",
+        "__enabled": true,
+        "AnimationGraph": "gameplay/entities/jobs/teaguy/microwave/animgraphs/microwave_anim.vanmgrph",
+        "BodyGroups": 18446744073709551615,
+        "BoneMergeTarget": null,
+        "CreateAttachments": false,
+        "CreateBoneObjects": false,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Materials": null,
+        "Model": "gameplay/entities/jobs/teaguy/microwave/microwave_animv8.vmdl",
+        "Morphs": {},
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Parameters": {
+          "bools": {
+            "IsOpen?": false
+          },
+          "ints": {},
+          "floats": {},
+          "vectors": {},
+          "rotations": {}
+        },
+        "PlaybackRate": 1,
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Sequence": {
+          "Name": null,
+          "Looping": true,
+          "Blending": false
+        },
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "d04e5c70-4a9c-4e8f-9b6d-1659a664a250",
+        "__enabled": true,
+        "Center": "0.024,-0.025,0.066",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": {
+          "__version": 9,
+          "__guid": "c4538db1-24b5-4746-8867-74145ce937bf",
+          "__changeId": 838,
+          "UserData": {
+            "Title": "On Component Fixed Update Microwave",
+            "ReferencedComponentTypes": [
+              "Microwave"
+            ],
+            "Description": "Checks to do Microwave item Spin animation.",
+            "Icon": "code",
+            "Category": "Entity"
+          },
+          "Variables": [
+            {
+              "Name": "ForRangeMaxInt",
+              "Type": "System.Int32"
+            },
+            {
+              "Name": "MicrowaveFloat0",
+              "Type": "System.Object"
+            },
+            {
+              "Name": "MicrowaveTimeVar",
+              "Type": "System.Single"
+            },
+            {
+              "Name": "MicrowaveTurningFloat",
+              "Type": "System.Single"
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-1452,12"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "nop",
+              "UserData": {
+                "Position": "468,216"
+              }
+            },
+            {
+              "Id": 11,
+              "Type": "geom.slerp",
+              "UserData": {
+                "Position": "1224,732"
+              }
+            },
+            {
+              "Id": 36,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTurningFloat"
+              },
+              "UserData": {
+                "Position": "1476,432"
+              }
+            },
+            {
+              "Id": 39,
+              "Type": "time.delta",
+              "UserData": {
+                "Position": "1560,456"
+              }
+            },
+            {
+              "Id": 40,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTurningFloat"
+              },
+              "UserData": {
+                "Position": "-1092,12"
+              }
+            },
+            {
+              "Id": 48,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTimeVar"
+              },
+              "UserData": {
+                "Position": "-732,12"
+              }
+            },
+            {
+              "Id": 80,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTimeVar"
+              },
+              "UserData": {
+                "Position": "1080,972"
+              }
+            },
+            {
+              "Id": 97,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTimeVar"
+              },
+              "UserData": {
+                "Position": "1044,804"
+              }
+            },
+            {
+              "Id": 108,
+              "Type": "op.multiply",
+              "UserData": {
+                "Position": "1692,432"
+              }
+            },
+            {
+              "Id": 109,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "RotateAroundAxis",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "1272,912"
+              }
+            },
+            {
+              "Id": 115,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "RotateAroundAxis",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "1776,324"
+              }
+            },
+            {
+              "Id": 116,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldRotation",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "504,636"
+              }
+            },
+            {
+              "Id": 118,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveTimeVar"
+              },
+              "UserData": {
+                "Position": "540,696"
+              }
+            },
+            {
+              "Id": 119,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "576,744"
+              }
+            },
+            {
+              "Id": 121,
+              "Type": "property",
+              "Properties": {
+                "_name": "Up",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "732,552"
+              }
+            },
+            {
+              "Id": 126,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "1788,12"
+              }
+            },
+            {
+              "Id": 148,
+              "Type": "var",
+              "Properties": {
+                "_var": "MicrowaveFloat0"
+              },
+              "UserData": {
+                "Position": "-432,12"
+              }
+            },
+            {
+              "Id": 476,
+              "Type": "var",
+              "Properties": {
+                "_var": "ForRangeMaxInt"
+              },
+              "UserData": {
+                "Position": "1524,312"
+              }
+            },
+            {
+              "Id": 497,
+              "Type": "if",
+              "UserData": {
+                "Position": "132,12"
+              }
+            },
+            {
+              "Id": 515,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "-96,12"
+              }
+            },
+            {
+              "Id": 600,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "36,108"
+              }
+            },
+            {
+              "Id": 601,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsCooking",
+                "_type": "Microwave"
+              },
+              "UserData": {
+                "Position": "36,84"
+              }
+            },
+            {
+              "Id": 602,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "48,288"
+              }
+            },
+            {
+              "Id": 603,
+              "Type": "property",
+              "Properties": {
+                "_name": "ObjectRef",
+                "_type": "Microwave"
+              },
+              "UserData": {
+                "Position": "60,264"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 603,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "in"
+            },
+            {
+              "Id": 613,
+              "Value": "0,0,0,1",
+              "DstId": 11,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 97,
+              "SrcName": "_result",
+              "DstId": 11,
+              "DstName": "amount"
+            },
+            {
+              "Id": 614,
+              "Value": "-0,0,1,-0.00000004371139",
+              "DstId": 11,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 40,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 615,
+              "Value": 30,
+              "DstId": 40,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 40,
+              "SrcName": "_signal",
+              "DstId": 48,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 616,
+              "Value": 0.1,
+              "DstId": 48,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 36,
+              "SrcName": "_result",
+              "DstId": 108,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 39,
+              "SrcName": "_result",
+              "DstId": 108,
+              "DstName": "b"
+            },
+            {
+              "Id": 617,
+              "Value": "0,0,0,1",
+              "DstId": 109,
+              "DstName": "_target"
+            },
+            {
+              "Id": 618,
+              "Value": "0,1,0",
+              "DstId": 109,
+              "DstName": "axis"
+            },
+            {
+              "SrcId": 80,
+              "SrcName": "_result",
+              "DstId": 109,
+              "DstName": "degrees"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "_target"
+            },
+            {
+              "Id": 619,
+              "Value": "0,0,-1",
+              "DstId": 115,
+              "DstName": "axis"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "degrees"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "out",
+              "DstId": 116,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_result",
+              "DstId": 121,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 497,
+              "SrcName": "true",
+              "DstId": 126,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "out",
+              "DstId": 126,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 115,
+              "SrcName": "_result",
+              "DstId": 126,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 48,
+              "SrcName": "_signal",
+              "DstId": 148,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 620,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 0
+              },
+              "DstId": 148,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 515,
+              "SrcName": "_signal",
+              "DstId": 497,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 601,
+              "SrcName": "_result",
+              "DstId": 497,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 148,
+              "SrcName": "_signal",
+              "DstId": 515,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 621,
+              "Value": 1,
+              "DstId": 515,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 515,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 600,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 600,
+              "SrcName": "_result",
+              "DstId": 601,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 602,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 602,
+              "SrcName": "_result",
+              "DstId": 603,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": {
+          "__version": 9,
+          "__guid": "5f82c76c-254a-44c0-8ab2-5c184a11c2ca",
+          "__changeId": 1537,
+          "UserData": {
+            "Title": "On Object Enter Microwave",
+            "ReferencedComponentTypes": [
+              "Sandbox.SkinnedModelRenderer",
+              "Microwave",
+              "CookableItem",
+              "Sandbox.Rigidbody"
+            ],
+            "Description": "Microwave Logic that 'Microwaves' the Item in it.",
+            "Category": "Entity",
+            "Icon": "microwave"
+          },
+          "Variables": [
+            {
+              "Name": "String",
+              "Type": "System.String"
+            },
+            {
+              "Name": "TagToSearchMicrowaveable",
+              "Type": "System.String"
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-1668,-24"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "36,276"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "property",
+              "Properties": {
+                "_name": "Parameters",
+                "_type": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "60,240"
+              }
+            },
+            {
+              "Id": 31,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Set",
+                "_type": {
+                  "$type": "Nested",
+                  "DeclaringType": "Sandbox.SkinnedModelRenderer",
+                  "Name": "ParameterAccessor"
+                }
+              },
+              "UserData": {
+                "Position": "492,228"
+              }
+            },
+            {
+              "Id": 44,
+              "Type": "var",
+              "Properties": {
+                "_var": "String"
+              },
+              "UserData": {
+                "Position": "348,276"
+              }
+            },
+            {
+              "Id": 45,
+              "Type": "var",
+              "Properties": {
+                "_var": "String"
+              },
+              "UserData": {
+                "Position": "-60,36"
+              }
+            },
+            {
+              "Id": 70,
+              "Type": "if",
+              "UserData": {
+                "Position": "-828,-24"
+              }
+            },
+            {
+              "Id": 121,
+              "Type": "property",
+              "Properties": {
+                "_name": "Tags",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-1404,60"
+              }
+            },
+            {
+              "Id": 122,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Has",
+                "_type": "Sandbox.GameTags"
+              },
+              "UserData": {
+                "Position": "-1164,72"
+              }
+            },
+            {
+              "Id": 125,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "IsAncestor",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-1296,192"
+              }
+            },
+            {
+              "Id": 155,
+              "Type": "nop",
+              "UserData": {
+                "Position": "-1392,132"
+              }
+            },
+            {
+              "Id": 156,
+              "Type": "var",
+              "Properties": {
+                "_var": "TagToSearchMicrowaveable"
+              },
+              "UserData": {
+                "Position": "-1428,120"
+              }
+            },
+            {
+              "Id": 162,
+              "Type": "nop",
+              "UserData": {
+                "Position": "420,720"
+              }
+            },
+            {
+              "Id": 294,
+              "Type": "log.info",
+              "UserData": {
+                "Position": "300,-72"
+              }
+            },
+            {
+              "Id": 303,
+              "Type": "var",
+              "Properties": {
+                "_var": "TagToSearchMicrowaveable"
+              },
+              "UserData": {
+                "Position": "-1332,-24"
+              }
+            },
+            {
+              "Id": 390,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "768,276"
+              }
+            },
+            {
+              "Id": 391,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "756,372"
+              }
+            },
+            {
+              "Id": 640,
+              "Type": "forrange",
+              "UserData": {
+                "Position": "3048,588"
+              }
+            },
+            {
+              "Id": 650,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "3396,612"
+              }
+            },
+            {
+              "Id": 660,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "3504,804"
+              }
+            },
+            {
+              "Id": 661,
+              "Type": "if",
+              "UserData": {
+                "Position": "3648,612"
+              }
+            },
+            {
+              "Id": 672,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "4548,648"
+              }
+            },
+            {
+              "Id": 757,
+              "Type": "if",
+              "UserData": {
+                "Position": "-408,12"
+              }
+            },
+            {
+              "Id": 758,
+              "Type": "property",
+              "Properties": {
+                "_name": "Tags",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-744,108"
+              }
+            },
+            {
+              "Id": 759,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Has",
+                "_type": "Sandbox.GameTags"
+              },
+              "UserData": {
+                "Position": "-504,84"
+              }
+            },
+            {
+              "Id": 760,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "IsAncestor",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-708,216"
+              }
+            },
+            {
+              "Id": 789,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "2148,288"
+              }
+            },
+            {
+              "Id": 790,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Stop",
+                "_type": "Sandbox.SoundHandle"
+              },
+              "UserData": {
+                "Position": "4020,648"
+              }
+            },
+            {
+              "Id": 795,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4392,552",
+                "Size": "384,300",
+                "Title": "Microwave Done SFX Logic",
+                "Layer": 1,
+                "Description": "This fires a sound.",
+                "Color": 3
+              }
+            },
+            {
+              "Id": 796,
+              "Type": "nop",
+              "UserData": {
+                "Position": "4344,912"
+              }
+            },
+            {
+              "Id": 827,
+              "Type": "nop",
+              "UserData": {
+                "Position": "2700,708"
+              }
+            },
+            {
+              "Id": 870,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "1116,360"
+              }
+            },
+            {
+              "Id": 871,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsCooking",
+                "_type": "Microwave"
+              },
+              "UserData": {
+                "Position": "1188,276"
+              }
+            },
+            {
+              "Id": 873,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "1452,312"
+              }
+            },
+            {
+              "Id": 874,
+              "Type": "property",
+              "Properties": {
+                "_name": "ObjectRef",
+                "_type": "Microwave"
+              },
+              "UserData": {
+                "Position": "1668,276"
+              }
+            },
+            {
+              "Id": 875,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "2124,372"
+              }
+            },
+            {
+              "Id": 876,
+              "Type": "property",
+              "Properties": {
+                "_name": "MicrowaveItemSound",
+                "_type": "Microwave"
+              },
+              "UserData": {
+                "Position": "2028,348"
+              }
+            },
+            {
+              "Id": 877,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "CookableItem"
+              },
+              "UserData": {
+                "Position": "1920,648"
+              }
+            },
+            {
+              "Id": 878,
+              "Type": "property",
+              "Properties": {
+                "_name": "ItemCookTime",
+                "_type": "CookableItem"
+              },
+              "UserData": {
+                "Position": "2292,672"
+              }
+            },
+            {
+              "Id": 879,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "4428,732"
+              }
+            },
+            {
+              "Id": 880,
+              "Type": "property",
+              "Properties": {
+                "_name": "MicrowaveDoneSound",
+                "_type": "Microwave"
+              },
+              "UserData": {
+                "Position": "4428,696"
+              }
+            },
+            {
+              "Id": 881,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "4956,672"
+              }
+            },
+            {
+              "Id": 882,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsCooking",
+                "_type": "Microwave"
+              },
+              "UserData": {
+                "Position": "5172,648"
+              }
+            },
+            {
+              "Id": 903,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "648,372"
+              }
+            },
+            {
+              "Id": 923,
+              "Type": "scene.ref",
+              "UserData": {
+                "Position": "-144,132"
+              }
+            },
+            {
+              "Id": 925,
+              "Type": "property",
+              "Properties": {
+                "_name": "Enabled",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "120,108"
+              }
+            },
+            {
+              "Id": 927,
+              "Type": "scene.ref",
+              "UserData": {
+                "Position": "5460,672"
+              }
+            },
+            {
+              "Id": 928,
+              "Type": "property",
+              "Properties": {
+                "_name": "Enabled",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "5688,648"
+              }
+            },
+            {
+              "Id": 951,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.Rigidbody"
+              },
+              "UserData": {
+                "Position": "408,48"
+              }
+            },
+            {
+              "Id": 952,
+              "Type": "property",
+              "Properties": {
+                "_name": "Enabled",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "708,24"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 20,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_result",
+              "DstId": 21,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 925,
+              "SrcName": "_signal",
+              "DstId": 31,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_result",
+              "DstId": 31,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 44,
+              "SrcName": "_result",
+              "DstId": 31,
+              "DstName": "v"
+            },
+            {
+              "Id": 965,
+              "Value": false,
+              "DstId": 31,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 757,
+              "SrcName": "true",
+              "DstId": 45,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 966,
+              "Value": "IsOpen?",
+              "DstId": 45,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 303,
+              "SrcName": "_signal",
+              "DstId": 70,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 122,
+              "SrcName": "_result",
+              "DstId": 70,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 121,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 121,
+              "SrcName": "_result",
+              "DstId": 122,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 125,
+              "SrcName": "_result",
+              "DstId": 122,
+              "DstName": "includeAncestors"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "_result",
+              "DstId": 122,
+              "DstName": "tag"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 125,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 155,
+              "SrcName": "out",
+              "DstId": 125,
+              "DstName": "ancestor"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 155,
+              "DstName": "in"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 162,
+              "DstName": "in"
+            },
+            {
+              "SrcId": 70,
+              "SrcName": "false",
+              "DstId": 294,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 967,
+              "Value": "TEST",
+              "DstId": 294,
+              "DstName": "format"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 303,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 968,
+              "Value": "microwaveable",
+              "DstId": 303,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 31,
+              "SrcName": "_signal",
+              "DstId": 390,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 162,
+              "SrcName": "out",
+              "DstId": 390,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 391,
+              "SrcName": "_result",
+              "DstId": 390,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 903,
+              "SrcName": "_result",
+              "DstId": 391,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 789,
+              "SrcName": "_signal",
+              "DstId": 640,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 827,
+              "SrcName": "out",
+              "DstId": 640,
+              "DstName": "count"
+            },
+            {
+              "Id": 969,
+              "Value": 1,
+              "DstId": 640,
+              "DstName": "start"
+            },
+            {
+              "SrcId": 640,
+              "SrcName": "body",
+              "DstId": 650,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 970,
+              "Value": 1,
+              "DstId": 650,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 650,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 640,
+              "SrcName": "body.value",
+              "DstId": 660,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 827,
+              "SrcName": "out",
+              "DstId": 660,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 650,
+              "SrcName": "_signal",
+              "DstId": 661,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 660,
+              "SrcName": "_result",
+              "DstId": 661,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 790,
+              "SrcName": "_signal",
+              "DstId": 672,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 672,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 880,
+              "SrcName": "_result",
+              "DstId": 672,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 70,
+              "SrcName": "true",
+              "DstId": 757,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 759,
+              "SrcName": "_result",
+              "DstId": 757,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 758,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 758,
+              "SrcName": "_result",
+              "DstId": 759,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 760,
+              "SrcName": "_result",
+              "DstId": 759,
+              "DstName": "includeAncestors"
+            },
+            {
+              "Id": 971,
+              "Value": "filled",
+              "DstId": 759,
+              "DstName": "tag"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 760,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 760,
+              "DstName": "ancestor"
+            },
+            {
+              "SrcId": 874,
+              "SrcName": "_signal",
+              "DstId": 789,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 789,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 876,
+              "SrcName": "_result",
+              "DstId": 789,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 661,
+              "SrcName": "true",
+              "DstId": 790,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 789,
+              "SrcName": "_result",
+              "DstId": 790,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 162,
+              "SrcName": "out",
+              "DstId": 796,
+              "DstName": "in"
+            },
+            {
+              "SrcId": 878,
+              "SrcName": "_result",
+              "DstId": 827,
+              "DstName": "in"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 870,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 390,
+              "SrcName": "_signal",
+              "DstId": 871,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 870,
+              "SrcName": "_result",
+              "DstId": 871,
+              "DstName": "_target"
+            },
+            {
+              "Id": 972,
+              "Value": true,
+              "DstId": 871,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 873,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 871,
+              "SrcName": "_signal",
+              "DstId": 874,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 873,
+              "SrcName": "_result",
+              "DstId": 874,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 162,
+              "SrcName": "out",
+              "DstId": 874,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 875,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 875,
+              "SrcName": "_result",
+              "DstId": 876,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 162,
+              "SrcName": "out",
+              "DstId": 877,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 877,
+              "SrcName": "_result",
+              "DstId": 878,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 879,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 879,
+              "SrcName": "_result",
+              "DstId": 880,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 881,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 672,
+              "SrcName": "_signal",
+              "DstId": 882,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 881,
+              "SrcName": "_result",
+              "DstId": 882,
+              "DstName": "_target"
+            },
+            {
+              "Id": 973,
+              "Value": false,
+              "DstId": 882,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 45,
+              "SrcName": "_signal",
+              "DstId": 925,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 923,
+              "SrcName": "_result",
+              "DstId": 925,
+              "DstName": "_target"
+            },
+            {
+              "Id": 974,
+              "Value": true,
+              "DstId": 925,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 882,
+              "SrcName": "_signal",
+              "DstId": 928,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 927,
+              "SrcName": "_result",
+              "DstId": 928,
+              "DstName": "_target"
+            },
+            {
+              "Id": 975,
+              "Value": false,
+              "DstId": 928,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 162,
+              "SrcName": "out",
+              "DstId": 951,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 951,
+              "SrcName": "_result",
+              "DstId": 952,
+              "DstName": "_target"
+            },
+            {
+              "Id": 976,
+              "Value": false,
+              "DstId": 952,
+              "DstName": "_value"
+            }
+          ],
+          "Defaults": {
+            "$923.component": {
+              "_type": "component",
+              "component_id": "78a55e4e-f092-4ad9-adf0-469d7e79d579",
+              "go": "715b5d3a-c021-4364-8cc3-ae238a6ca27f",
+              "component_type": "BoxCollider"
+            },
+            "$927.component": {
+              "_type": "component",
+              "component_id": "78a55e4e-f092-4ad9-adf0-469d7e79d579",
+              "go": "715b5d3a-c021-4364-8cc3-ae238a6ca27f",
+              "component_type": "BoxCollider"
+            }
+          }
+        },
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.1209457,0.13,0.09999999",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "dc70cf56-d18d-40e8-bbbd-f7754135c750",
+        "__enabled": true,
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "159f958d-6177-4dcf-b7eb-00764c721664",
+        "__enabled": true,
+        "Center": "0.005,0,0.122",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.15,0.2,0.01",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "cbdc42e3-ab2e-4e91-bdcc-d4f13d9a7451",
+        "__enabled": true,
+        "Center": "0.005,0,0.005",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.15,0.2,0.01",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "02fc5c7d-b96f-4c7d-bba0-62d3b56f2b8b",
+        "__enabled": true,
+        "Center": "0.005,0.075,0.066",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.145,0.05,0.12",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "c0f2ad72-393e-4f2a-ac39-41e8708a7417",
+        "__enabled": true,
+        "Center": "-0.06,0,0.066",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.01,0.2,0.12",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "6c841fe6-269c-4b7f-901f-a2d582f5a593",
+        "__enabled": true,
+        "Center": "-0,-0.1,0.066",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.13,0.01,0.12",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Microwave",
+        "__guid": "9b37bd7c-d07a-4d72-8629-4b4befb71381",
+        "__enabled": true,
+        "Interacted": {
+          "__version": 9,
+          "__guid": "2b8580c7-48b6-4e89-92fe-6218228b79b3",
+          "__changeId": 104,
+          "UserData": {
+            "Title": "Interacted With Microwave",
+            "ReferencedComponentTypes": [
+              "Microwave",
+              "Sandbox.SkinnedModelRenderer"
+            ],
+            "Description": "Microwave Interaction Logic",
+            "Category": "Entity",
+            "Icon": "restaurant"
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsCooking",
+                "_type": "Microwave"
+              },
+              "UserData": {
+                "Position": "336,84"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "if",
+              "UserData": {
+                "Position": "372,0"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "336,108"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "720,156"
+              }
+            },
+            {
+              "Id": 9,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "708,132"
+              }
+            },
+            {
+              "Id": 11,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "GetBool",
+                "_type": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "732,48"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "if",
+              "UserData": {
+                "Position": "1068,48"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "1728,-120"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "1716,-144"
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Set",
+                "_type": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "1728,-240"
+              }
+            },
+            {
+              "Id": 33,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Microwave"
+              },
+              "UserData": {
+                "Position": "1716,396"
+              }
+            },
+            {
+              "Id": 34,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "1704,372"
+              }
+            },
+            {
+              "Id": 35,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Set",
+                "_type": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "1716,264"
+              }
+            },
+            {
+              "Id": 49,
+              "Type": "scene.ref",
+              "UserData": {
+                "Position": "2160,-216"
+              }
+            },
+            {
+              "Id": 50,
+              "Type": "property",
+              "Properties": {
+                "_name": "Enabled",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "2388,-204"
+              }
+            },
+            {
+              "Id": 52,
+              "Type": "scene.ref",
+              "UserData": {
+                "Position": "2292,180"
+              }
+            },
+            {
+              "Id": 53,
+              "Type": "property",
+              "Properties": {
+                "_name": "Enabled",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "2520,192"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 4,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 8,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "_result",
+              "DstId": 9,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "false",
+              "DstId": 11,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 9,
+              "SrcName": "_result",
+              "DstId": 11,
+              "DstName": "_target"
+            },
+            {
+              "Id": 61,
+              "Value": "IsOpen?",
+              "DstId": 11,
+              "DstName": "v"
+            },
+            {
+              "SrcId": 11,
+              "SrcName": "_signal",
+              "DstId": 19,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 11,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 20,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_result",
+              "DstId": 21,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "true",
+              "DstId": 22,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_result",
+              "DstId": 22,
+              "DstName": "_target"
+            },
+            {
+              "Id": 62,
+              "Value": "IsOpen?",
+              "DstId": 22,
+              "DstName": "v"
+            },
+            {
+              "Id": 63,
+              "Value": false,
+              "DstId": 22,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 33,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 33,
+              "SrcName": "_result",
+              "DstId": 34,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "false",
+              "DstId": 35,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 34,
+              "SrcName": "_result",
+              "DstId": 35,
+              "DstName": "_target"
+            },
+            {
+              "Id": 64,
+              "Value": "IsOpen?",
+              "DstId": 35,
+              "DstName": "v"
+            },
+            {
+              "Id": 65,
+              "Value": true,
+              "DstId": 35,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 49,
+              "SrcName": "_result",
+              "DstId": 50,
+              "DstName": "_target"
+            },
+            {
+              "Id": 66,
+              "Value": false,
+              "DstId": 50,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 52,
+              "SrcName": "_result",
+              "DstId": 53,
+              "DstName": "_target"
+            },
+            {
+              "Id": 67,
+              "Value": true,
+              "DstId": 53,
+              "DstName": "_value"
+            }
+          ],
+          "Defaults": {
+            "$49.component": {
+              "_type": "component",
+              "component_id": "78a55e4e-f092-4ad9-adf0-469d7e79d579",
+              "go": "715b5d3a-c021-4364-8cc3-ae238a6ca27f",
+              "component_type": "BoxCollider"
+            },
+            "$52.component": {
+              "_type": "component",
+              "component_id": "78a55e4e-f092-4ad9-adf0-469d7e79d579",
+              "go": "715b5d3a-c021-4364-8cc3-ae238a6ca27f",
+              "component_type": "BoxCollider"
+            }
+          }
+        },
+        "IsCooking": false,
+        "IsInteractable": true,
+        "MicrowaveDoneSound": "sounds/kenney/ui/ui.downvote.sound",
+        "MicrowaveItemSound": "gameplay/entities/jobs/teaguy/microwave/microwaving.sound",
+        "ObjectRef": null,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Renderer": {
+          "_type": "component",
+          "component_id": "0748e0a4-3bbe-4fdf-815e-23059351138b",
+          "go": "715b5d3a-c021-4364-8cc3-ae238a6ca27f",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "TargetObject": {
+          "_type": "gameobject",
+          "prefab": "gameplay/entities/teaguy/teacup/teacup.prefab"
+        }
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "78a55e4e-f092-4ad9-adf0-469d7e79d579",
+        "__enabled": false,
+        "Center": "0.08,0,0.07",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "0.01,0.15,0.095",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "4e38db42-1b4d-441c-8f42-09e14c106a8f",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "MicrowaveItemSpot",
+        "Position": "0,-0.03,0.025",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
+      },
+      {
+        "__guid": "6d6fd5ea-a41a-49f8-befc-99480db88d3b",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "MicrowaveDoorBlock",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "4358375d-b862-433b-a17a-fd199e2ec62f",
+            "__enabled": true,
+            "Center": "0.08,0,0.07",
+            "Elasticity": null,
+            "Friction": null,
+            "IsTrigger": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RollingResistance": null,
+            "Scale": "0.01,0.15,0.071",
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

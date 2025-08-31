@@ -1,0 +1,1024 @@
+{
+  "RootObject": {
+    "__guid": "873a37bf-f47c-4489-84e8-0e04a8004867",
+    "__version": 1,
+    "Flags": 0,
+    "Name": "teaboxwinings",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "4ccd2be9-cc16-4d9f-b16f-4e3e83cb2667",
+        "__enabled": true,
+        "BodyGroups": 18446744073709551615,
+        "CreateAttachments": false,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Materials": null,
+        "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "d3980c9c-95d6-4655-b6a8-524dba008808",
+        "__enabled": true,
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "HealthComponent",
+        "__guid": "f56d1f92-a570-4da7-b20f-331c836e3799",
+        "__enabled": true,
+        "Armor": 0,
+        "ArmorInfo": false,
+        "Health": 15,
+        "HungerSystem": false,
+        "IsGodMode": false,
+        "IsHungerEnabled": false,
+        "IsThirstEnabled": false,
+        "MaxArmor": 0,
+        "MaxHealth": 0,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "PlayerHunger": 80,
+        "PlayerHungerMax": 100,
+        "PlayerThirst": 80,
+        "PlayerThirstMax": 100
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "7d9b8ebd-6c0a-4d11-b86b-c87473959246",
+        "__enabled": true,
+        "Center": "0,0,1.900001",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "8.000019,4.200002,3.1",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Shipment",
+        "__guid": "38773694-407f-44ab-8667-901aa60ec8aa",
+        "__enabled": true,
+        "Interacted": {
+          "__version": 9,
+          "__guid": "462c594b-308e-4d82-8799-10a3b57dd410",
+          "__changeId": 359,
+          "UserData": {
+            "Title": "Interacted",
+            "ReferencedComponentTypes": [
+              "Shipment",
+              "Sandbox.Rigidbody"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "48,-12"
+              }
+            },
+            {
+              "Id": 1,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Shipment"
+              },
+              "UserData": {
+                "Position": "3648,192"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "property",
+              "Properties": {
+                "_name": "ShipmentSpawnEntityAmount",
+                "_type": "Shipment"
+              },
+              "UserData": {
+                "Position": "3636,216"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "3984,216"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "if",
+              "UserData": {
+                "Position": "3984,132"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "scene.instantiate",
+              "UserData": {
+                "Position": "2328,36"
+              }
+            },
+            {
+              "Id": 9,
+              "Type": "property",
+              "Properties": {
+                "_name": "ShipmentEntity",
+                "_type": "Shipment"
+              },
+              "UserData": {
+                "Position": "2040,72"
+              }
+            },
+            {
+              "Id": 10,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Shipment"
+              },
+              "UserData": {
+                "Position": "1872,72"
+              }
+            },
+            {
+              "Id": 13,
+              "Type": "scene.ref",
+              "UserData": {
+                "Position": "1260,120"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Shipment"
+              },
+              "UserData": {
+                "Position": "3108,492"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "property",
+              "Properties": {
+                "_name": "ShipmentSpawnEntityAmount",
+                "_type": "Shipment"
+              },
+              "UserData": {
+                "Position": "3252,444"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "3636,456"
+              }
+            },
+            {
+              "Id": 23,
+              "Type": "property",
+              "Properties": {
+                "_name": "ShipmentSpawnEntityAmount",
+                "_type": "Shipment"
+              },
+              "UserData": {
+                "Position": "3480,132"
+              }
+            },
+            {
+              "Id": 24,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Destroy",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "4188,120"
+              }
+            },
+            {
+              "Id": 75,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "1332,264"
+              }
+            },
+            {
+              "Id": 76,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "1512,156"
+              }
+            },
+            {
+              "Id": 77,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalScale",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "1464,240"
+              }
+            },
+            {
+              "Id": 83,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "1320,384"
+              }
+            },
+            {
+              "Id": 84,
+              "Type": "property",
+              "ParentId": 83,
+              "Properties": {
+                "_name": "z",
+                "_type": "Vector3"
+              }
+            },
+            {
+              "Id": 87,
+              "Type": "property",
+              "Properties": {
+                "_name": "z",
+                "_type": "Vector3"
+              },
+              "UserData": {
+                "Position": "1884,360"
+              }
+            },
+            {
+              "Id": 88,
+              "Type": "property",
+              "ParentId": 75,
+              "Properties": {
+                "_name": "z",
+                "_type": "Vector3"
+              }
+            },
+            {
+              "Id": 91,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "1632,396"
+              }
+            },
+            {
+              "Id": 94,
+              "Type": "property",
+              "Properties": {
+                "_name": "ShipmentSpawnEntityPosAdjustment",
+                "_type": "Shipment"
+              },
+              "UserData": {
+                "Position": "1512,552"
+              }
+            },
+            {
+              "Id": 95,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Shipment"
+              },
+              "UserData": {
+                "Position": "1356,600"
+              }
+            },
+            {
+              "Id": 96,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "1776,420"
+              }
+            },
+            {
+              "Id": 106,
+              "Type": "scene.ref",
+              "UserData": {
+                "Position": "2400,312"
+              }
+            },
+            {
+              "Id": 128,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "2952,36"
+              }
+            },
+            {
+              "Id": 130,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "2940,156"
+              }
+            },
+            {
+              "Id": 131,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.Rigidbody"
+              },
+              "UserData": {
+                "Position": "2232,408"
+              }
+            },
+            {
+              "Id": 132,
+              "Type": "property",
+              "Properties": {
+                "_name": "MotionEnabled",
+                "_type": "Sandbox.Rigidbody"
+              },
+              "UserData": {
+                "Position": "2544,48"
+              }
+            },
+            {
+              "Id": 135,
+              "Type": "property",
+              "Properties": {
+                "_name": "MotionEnabled",
+                "_type": "Sandbox.Rigidbody"
+              },
+              "UserData": {
+                "Position": "3204,-108"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 1,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "a"
+            },
+            {
+              "Id": 118,
+              "Value": 0,
+              "DstId": 3,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 23,
+              "SrcName": "_signal",
+              "DstId": 7,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 8,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 119,
+              "Value": "teabag",
+              "DstId": 8,
+              "DstName": "name"
+            },
+            {
+              "SrcId": 87,
+              "SrcName": "_target",
+              "DstId": 8,
+              "DstName": "position"
+            },
+            {
+              "SrcId": 9,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "prefab"
+            },
+            {
+              "SrcId": 76,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "rotation"
+            },
+            {
+              "SrcId": 77,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "scale"
+            },
+            {
+              "Id": 120,
+              "Value": true,
+              "DstId": 8,
+              "DstName": "startEnabled"
+            },
+            {
+              "SrcId": 10,
+              "SrcName": "_result",
+              "DstId": 9,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 10,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 19,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 20,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_result",
+              "DstId": 21,
+              "DstName": "a"
+            },
+            {
+              "Id": 121,
+              "Value": 1,
+              "DstId": 21,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 135,
+              "SrcName": "_signal",
+              "DstId": 23,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 23,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_result",
+              "DstId": 23,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "true",
+              "DstId": 24,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 24,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 75,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 76,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 77,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 83,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 83,
+              "SrcName": "_result",
+              "DstId": 84,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 83,
+              "SrcName": "_result",
+              "DstId": 87,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 96,
+              "SrcName": "_result",
+              "DstId": 87,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 75,
+              "SrcName": "_result",
+              "DstId": 88,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 88,
+              "SrcName": "_result",
+              "DstId": 91,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 84,
+              "SrcName": "_result",
+              "DstId": 91,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 95,
+              "SrcName": "_result",
+              "DstId": 94,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 95,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 91,
+              "SrcName": "_result",
+              "DstId": 96,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 94,
+              "SrcName": "_result",
+              "DstId": 96,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 132,
+              "SrcName": "_signal",
+              "DstId": 128,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 139,
+              "Value": 5,
+              "DstId": 128,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 130,
+              "SrcName": "_result",
+              "DstId": 128,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "_result",
+              "DstId": 131,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "_signal",
+              "DstId": 132,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 131,
+              "SrcName": "_result",
+              "DstId": 132,
+              "DstName": "_target"
+            },
+            {
+              "Id": 134,
+              "Value": false,
+              "DstId": 132,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 128,
+              "SrcName": "_signal",
+              "DstId": 135,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 131,
+              "SrcName": "_result",
+              "DstId": 135,
+              "DstName": "_target"
+            },
+            {
+              "Id": 138,
+              "Value": true,
+              "DstId": 135,
+              "DstName": "_value"
+            }
+          ],
+          "Defaults": {
+            "$13.gameobject": {
+              "_type": "gameobject",
+              "go": "a9fe3906-c15e-4cb4-86a4-10192f4a9d2a"
+            },
+            "$106.component": {
+              "_type": "component",
+              "component_id": "d3980c9c-95d6-4655-b6a8-524dba008808",
+              "go": "873a37bf-f47c-4489-84e8-0e04a8004867",
+              "component_type": "Rigidbody"
+            }
+          }
+        },
+        "IsInteractable": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": {
+          "__version": 9,
+          "__guid": "b0877ddf-aaa0-4673-b5cc-4f3a882ec3d2",
+          "__changeId": 86,
+          "UserData": {
+            "Title": "On Component Start Shipment",
+            "ReferencedComponentTypes": [
+              "Shipment",
+              "Sandbox.ModelRenderer"
+            ],
+            "Description": "Adjusts the spawn/model when spawned in.",
+            "Category": "Entity",
+            "Icon": "check_box_outline_blank"
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-420,-408"
+              }
+            },
+            {
+              "Id": 13,
+              "Type": "scene.ref",
+              "UserData": {
+                "Position": "-204,84"
+              }
+            },
+            {
+              "Id": 18,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-156,180"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "144,-60"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "property",
+              "Properties": {
+                "_name": "z",
+                "_type": "Vector3"
+              },
+              "UserData": {
+                "Position": "132,156"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Shipment"
+              },
+              "UserData": {
+                "Position": "84,240"
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "property",
+              "Properties": {
+                "_name": "ShipmentSpawnEntityPosAdjustment",
+                "_type": "Shipment"
+              },
+              "UserData": {
+                "Position": "72,216"
+              }
+            },
+            {
+              "Id": 23,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "372,156"
+              }
+            },
+            {
+              "Id": 26,
+              "Type": "property",
+              "Properties": {
+                "_name": "Model",
+                "_type": "Sandbox.ModelRenderer"
+              },
+              "UserData": {
+                "Position": "720,-60"
+              }
+            },
+            {
+              "Id": 28,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Shipment"
+              },
+              "UserData": {
+                "Position": "636,48"
+              }
+            },
+            {
+              "Id": 30,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.ModelRenderer"
+              },
+              "UserData": {
+                "Position": "456,-36"
+              }
+            },
+            {
+              "Id": 32,
+              "Type": "property",
+              "Properties": {
+                "_name": "ShipmentCrateModel",
+                "_type": "Shipment"
+              },
+              "UserData": {
+                "Position": "672,12"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 18,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 19,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 23,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 18,
+              "SrcName": "_result",
+              "DstId": 20,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 21,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_result",
+              "DstId": 22,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_result",
+              "DstId": 23,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 22,
+              "SrcName": "_result",
+              "DstId": 23,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_signal",
+              "DstId": 26,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 30,
+              "SrcName": "_result",
+              "DstId": 26,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 32,
+              "SrcName": "_result",
+              "DstId": 26,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 28,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 30,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 28,
+              "SrcName": "_result",
+              "DstId": 32,
+              "DstName": "_target"
+            }
+          ],
+          "Defaults": {
+            "$13.gameobject": {
+              "_type": "gameobject",
+              "go": "a9fe3906-c15e-4cb4-86a4-10192f4a9d2a"
+            }
+          }
+        },
+        "OnComponentUpdate": null,
+        "ShipmentCrateModel": "gameplay/entities/teaguy/teabox/winingsteabox.vmdl",
+        "ShipmentEntity": "gameplay/entities/teaguy/teabag/teabag.prefab",
+        "ShipmentSpawnEntityAmount": 5,
+        "ShipmentSpawnEntityPosAdjustment": 0
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "a9fe3906-c15e-4cb4-86a4-10192f4a9d2a",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "ShipmentEntitySpawnPos",
+        "Position": "0,0,45.60683",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [
+    "facepunch.wooden_crate#108393"
+  ],
+  "__version": 2
+}
