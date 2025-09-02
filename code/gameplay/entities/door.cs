@@ -7,24 +7,46 @@ using System;
 		[Property, Feature("Door Info")]
 		public bool IsDoorPurchasable { get; set; }
 
+
+
+
+		//Door System Related Vars
+		[Property, Feature("Door Info")]
+		public bool IsDoorLocked { get; set; }
+		
+		public bool IsDoorOpen { get; set; }
+		//Needed Vars for having dooring open/close correctly
+		public bool DoorInt0OpeningBool { get; set; }
+
+		public bool DoorInt0ClosingBool { get; set; }
+
+		public bool DoorInt1OpeningBool { get; set; }
+
+		public bool DoorInt1ClosingBool { get; set; }
+
 		[Property, Feature( "Door Info" ), ShowIf ( nameof( IsDoorPurchasable ), true)]
 		public int DoorBuyAmount { get; set; }
+
+
+		[Property, Feature( "Door Info" ), ShowIf ( nameof( IsDoorPurchasable ), true)]
+		public string PlayerDisplayName { get; set; }
 
 		[Property, Feature( "Door Info" ), ShowIf ( nameof( IsDoorPurchasable ), true)]
 		public string PlayerSteamIDWhoOwnsDoor { get; set; }
 
+
 		[Property, Feature("Door Info"), ShowIf ( nameof( IsDoorPurchasable ), true)]
 		public string[] PlayerFriendsSteamIDWhoOwnsDoor { get; set; }
 		
-		[Property, Feature( "Door Info" ), ShowIf ( nameof( IsDoorPurchasable ), true)]
+		[Property, Feature( "Door Info" )]
 		public string[] WhitelistedJobDoorGroups { get; set; }
 		
-		[Property, Feature("Door Info"), ShowIf ( nameof( IsDoorPurchasable ), true)]
+		[Property, Feature("Door Info")]
 		public string[] BlacklistedJobDoorGroups { get; set; }
 
 
 		// Called every frame while the player is looking at this object.
-	public bool Look( Ray ray ) => true;
+		public bool Look( Ray ray ) => true;
 
 		// Called once when the player starts looking at this object.
 		public void Hover() { }

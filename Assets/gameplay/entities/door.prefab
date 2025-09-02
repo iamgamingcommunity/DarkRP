@@ -20,6 +20,7 @@
         "__enabled": true,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
+        "LodOverride": null,
         "MaterialGroup": null,
         "MaterialOverride": null,
         "Materials": null,
@@ -48,170 +49,2917 @@
         "Interacted": {
           "__version": 9,
           "__guid": "ac4fa954-f43f-4392-a00b-1e33a082d31d",
-          "__changeId": 34,
+          "__changeId": 1046,
           "UserData": {
             "Title": "Interacted With Door",
             "Description": "Interaction Logic With Doors",
             "Category": "Entity",
             "Icon": "sensor_door",
             "ReferencedComponentTypes": [
-              "DarkrpPlayerInfo",
-              "door"
+              "door",
+              "DarkrpPlayerInfo"
             ]
           },
-          "Variables": [],
+          "Variables": [
+            {
+              "Name": "DoorInt0Opening",
+              "Type": "System.Boolean"
+            },
+            {
+              "Name": "DoorLocalRotationRef",
+              "Type": "Rotation"
+            }
+          ],
           "Nodes": [
             {
               "Id": 0,
-              "Type": "input"
+              "Type": "input",
+              "UserData": {
+                "Position": "-588,-0"
+              }
             },
             {
-              "Id": 1,
+              "Id": 9,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "-360,72"
+              }
+            },
+            {
+              "Id": 10,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsDoorLocked",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "-192,72"
+              }
+            },
+            {
+              "Id": 11,
+              "Type": "if",
+              "UserData": {
+                "Position": "-108,-0"
+              }
+            },
+            {
+              "Id": 12,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "3156,-468"
+              }
+            },
+            {
+              "Id": 14,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "LerpTo",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "3780,-444"
+              }
+            },
+            {
+              "Id": 25,
+              "Type": "while",
+              "UserData": {
+                "Position": "2844,-672"
+              }
+            },
+            {
+              "Id": 32,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "3108,-648"
+              }
+            },
+            {
+              "Id": 47,
+              "Type": "if",
+              "UserData": {
+                "Position": "4308,-612"
+              }
+            },
+            {
+              "Id": 57,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "3156,-912"
+              }
+            },
+            {
+              "Id": 59,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "LerpTo",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "3888,-876"
+              }
+            },
+            {
+              "Id": 65,
+              "Type": "if",
+              "UserData": {
+                "Position": "4404,-1044"
+              }
+            },
+            {
+              "Id": 103,
               "Type": "scene.get",
               "Properties": {
                 "T": "DarkrpPlayerInfo"
               },
               "UserData": {
-                "Position": "60,108"
+                "Position": "-240,168"
               }
             },
             {
-              "Id": 2,
+              "Id": 104,
               "Type": "property",
               "Properties": {
-                "_name": "SteamId",
+                "_name": "PlayerDoorInt",
                 "_type": "DarkrpPlayerInfo"
               },
               "UserData": {
-                "Position": "384,108"
+                "Position": "120,156"
               }
             },
             {
-              "Id": 3,
+              "Id": 105,
+              "Type": "switch",
+              "Properties": {
+                "cases": {
+                  "$type": "Array",
+                  "ElementType": "System.Int32",
+                  "Items": [
+                    0,
+                    1
+                  ]
+                }
+              },
+              "UserData": {
+                "Position": "240,48"
+              }
+            },
+            {
+              "Id": 108,
               "Type": "scene.get",
               "Properties": {
                 "T": "door"
               },
               "UserData": {
-                "Position": "444,36"
+                "Position": "1104,-864"
               }
             },
             {
-              "Id": 4,
+              "Id": 109,
               "Type": "property",
               "Properties": {
-                "_name": "PlayerSteamIDWhoOwnsDoor",
+                "_name": "IsDoorOpen",
                 "_type": "door"
               },
               "UserData": {
-                "Position": "648,-0"
+                "Position": "1104,-888"
               }
             },
             {
-              "Id": 5,
-              "Type": "sys.tostring",
+              "Id": 110,
+              "Type": "if",
               "UserData": {
-                "Position": "648,108"
+                "Position": "1104,-960"
               }
             },
             {
-              "Id": 6,
+              "Id": 125,
+              "Type": "while",
+              "UserData": {
+                "Position": "2796,-1044"
+              }
+            },
+            {
+              "Id": 130,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "3072,-1020"
+              }
+            },
+            {
+              "Id": 135,
               "Type": "scene.get",
               "Properties": {
                 "T": "door"
               },
               "UserData": {
-                "Position": "1176,120"
+                "Position": "2136,1392"
               }
             },
             {
-              "Id": 7,
+              "Id": 137,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "LerpTo",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "4368,1356"
+              }
+            },
+            {
+              "Id": 138,
               "Type": "property",
               "Properties": {
-                "_name": "PlayerSteamIDWhoOwnsDoor",
+                "_name": "LocalRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "4476,1224"
+              }
+            },
+            {
+              "Id": 139,
+              "Type": "while",
+              "UserData": {
+                "Position": "2952,1152"
+              }
+            },
+            {
+              "Id": 140,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "3132,1188"
+              }
+            },
+            {
+              "Id": 143,
+              "Type": "if",
+              "UserData": {
+                "Position": "5148,1296"
+              }
+            },
+            {
+              "Id": 146,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "3348,300"
+              }
+            },
+            {
+              "Id": 147,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "4044,192"
+              }
+            },
+            {
+              "Id": 148,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "LerpTo",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "4116,288"
+              }
+            },
+            {
+              "Id": 154,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "684,504"
+              }
+            },
+            {
+              "Id": 155,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsDoorOpen",
                 "_type": "door"
               },
               "UserData": {
-                "Position": "1188,96"
+                "Position": "684,480"
               }
             },
             {
-              "Id": 8,
+              "Id": 156,
+              "Type": "if",
+              "UserData": {
+                "Position": "684,408"
+              }
+            },
+            {
+              "Id": 158,
+              "Type": "while",
+              "UserData": {
+                "Position": "3096,168"
+              }
+            },
+            {
+              "Id": 161,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "3384,204"
+              }
+            },
+            {
+              "Id": 190,
+              "Type": "var",
+              "Properties": {
+                "_var": "DoorInt0Opening"
+              },
+              "UserData": {
+                "Position": "2400,1152"
+              }
+            },
+            {
+              "Id": 201,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "984,240"
+              }
+            },
+            {
+              "Id": 202,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsDoorOpen",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "984,156"
+              }
+            },
+            {
+              "Id": 204,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsDoorOpen",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "948,1140"
+              }
+            },
+            {
+              "Id": 208,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "948,1212"
+              }
+            },
+            {
+              "Id": 211,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1380,-1272"
+              }
+            },
+            {
+              "Id": 212,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsDoorOpen",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1380,-1356"
+              }
+            },
+            {
+              "Id": 213,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsDoorOpen",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1500,-696"
+              }
+            },
+            {
+              "Id": 214,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1512,-624"
+              }
+            },
+            {
+              "Id": 376,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "2268,1308"
+              }
+            },
+            {
+              "Id": 377,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "2280,1344"
+              }
+            },
+            {
+              "Id": 378,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1824,168"
+              }
+            },
+            {
+              "Id": 379,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1764,264"
+              }
+            },
+            {
+              "Id": 382,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "2076,1164"
+              }
+            },
+            {
+              "Id": 383,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "2016,1260"
+              }
+            },
+            {
+              "Id": 390,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "5508,1320"
+              }
+            },
+            {
+              "Id": 391,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "5448,1416"
+              }
+            },
+            {
+              "Id": 402,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "3036,252"
+              }
+            },
+            {
+              "Id": 403,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "3036,228"
+              }
+            },
+            {
+              "Id": 404,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1692,1236"
+              }
+            },
+            {
+              "Id": 405,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1740,1152"
+              }
+            },
+            {
+              "Id": 408,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "2088,228"
+              }
+            },
+            {
+              "Id": 409,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "2352,168"
+              }
+            },
+            {
+              "Id": 414,
+              "Type": "time.delta",
+              "UserData": {
+                "Position": "3852,492"
+              }
+            },
+            {
+              "Id": 415,
+              "Type": "op.multiply",
+              "UserData": {
+                "Position": "3984,468"
+              }
+            },
+            {
+              "Id": 437,
+              "Type": "time.delta",
+              "UserData": {
+                "Position": "3876,1476"
+              }
+            },
+            {
+              "Id": 438,
+              "Type": "op.multiply",
+              "UserData": {
+                "Position": "4284,1464"
+              }
+            },
+            {
+              "Id": 447,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1236,1416"
+              }
+            },
+            {
+              "Id": 451,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1152,1140"
+              }
+            },
+            {
+              "Id": 452,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1416,1140"
+              }
+            },
+            {
+              "Id": 457,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1308,432"
+              }
+            },
+            {
+              "Id": 458,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1224,156"
+              }
+            },
+            {
+              "Id": 459,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1488,156"
+              }
+            },
+            {
+              "Id": 464,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "2004,-696"
+              }
+            },
+            {
+              "Id": 465,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1944,-600"
+              }
+            },
+            {
+              "Id": 466,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "2208,-612"
+              }
+            },
+            {
+              "Id": 467,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "2292,-696"
+              }
+            },
+            {
+              "Id": 468,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1836,-420"
+              }
+            },
+            {
+              "Id": 469,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1704,-696"
+              }
+            },
+            {
+              "Id": 470,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "2580,-696"
+              }
+            },
+            {
+              "Id": 479,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "2892,-312"
+              }
+            },
+            {
+              "Id": 480,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "2712,-960"
+              }
+            },
+            {
+              "Id": 481,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "2784,-612"
+              }
+            },
+            {
+              "Id": 482,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "2712,-924"
+              }
+            },
+            {
+              "Id": 485,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1668,-1356"
+              }
+            },
+            {
+              "Id": 486,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1608,-1260"
+              }
+            },
+            {
+              "Id": 487,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1872,-1272"
+              }
+            },
+            {
+              "Id": 488,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "1956,-1356"
+              }
+            },
+            {
+              "Id": 489,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "1740,-1080"
+              }
+            },
+            {
+              "Id": 490,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "2520,-1344"
+              }
+            },
+            {
+              "Id": 491,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "2232,-1356"
+              }
+            },
+            {
+              "Id": 525,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "5028,324"
+              }
+            },
+            {
+              "Id": 526,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt0ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "5016,240"
+              }
+            },
+            {
+              "Id": 530,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "4728,-492"
+              }
+            },
+            {
+              "Id": 531,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1OpeningBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "4740,-588"
+              }
+            },
+            {
+              "Id": 535,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "4800,-936"
+              }
+            },
+            {
+              "Id": 536,
+              "Type": "property",
+              "Properties": {
+                "_name": "DoorInt1ClosingBool",
+                "_type": "door"
+              },
+              "UserData": {
+                "Position": "4824,-1020"
+              }
+            },
+            {
+              "Id": 542,
+              "Type": "time.delta",
+              "UserData": {
+                "Position": "3540,-324"
+              }
+            },
+            {
+              "Id": 543,
+              "Type": "op.multiply",
+              "UserData": {
+                "Position": "3672,-348"
+              }
+            },
+            {
+              "Id": 546,
+              "Type": "time.delta",
+              "UserData": {
+                "Position": "3612,-744"
+              }
+            },
+            {
+              "Id": 547,
+              "Type": "op.multiply",
+              "UserData": {
+                "Position": "3744,-768"
+              }
+            },
+            {
+              "Id": 1089,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "3324,444"
+              }
+            },
+            {
+              "Id": 1090,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "3264,-324"
+              }
+            },
+            {
+              "Id": 1096,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "2688,1548"
+              }
+            },
+            {
+              "Id": 1103,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "3948,372"
+              }
+            },
+            {
+              "Id": 1111,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "4368,-492"
+              }
+            },
+            {
+              "Id": 1154,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "3564,-444"
+              }
+            },
+            {
+              "Id": 1158,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "3504,-852"
+              }
+            },
+            {
+              "Id": 1162,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "4476,-852"
+              }
+            },
+            {
+              "Id": 1260,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "3660,300"
+              }
+            },
+            {
+              "Id": 1261,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "2280,1452"
+              }
+            },
+            {
+              "Id": 1262,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "3276,-444"
+              }
+            },
+            {
+              "Id": 1263,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "3360,-768"
+              }
+            },
+            {
+              "Id": 1264,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "3672,-1104"
+              }
+            },
+            {
+              "Id": 1265,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "3600,-636"
+              }
+            },
+            {
+              "Id": 1542,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "4308,300"
+              }
+            },
+            {
+              "Id": 1554,
+              "Type": "if",
+              "UserData": {
+                "Position": "4692,228"
+              }
+            },
+            {
+              "Id": 1676,
+              "Type": "op.andalso",
+              "UserData": {
+                "Position": "4728,312"
+              }
+            },
+            {
+              "Id": 1716,
+              "Type": "op.greaterthanorequal",
+              "UserData": {
+                "Position": "4584,312"
+              }
+            },
+            {
+              "Id": 1734,
+              "Type": "op.lessthanorequal",
+              "UserData": {
+                "Position": "4584,372"
+              }
+            },
+            {
+              "Id": 1740,
+              "Type": "op.andalso",
+              "UserData": {
+                "Position": "5172,1392"
+              }
+            },
+            {
+              "Id": 1741,
+              "Type": "op.greaterthanorequal",
+              "UserData": {
+                "Position": "5028,1392"
+              }
+            },
+            {
+              "Id": 1742,
+              "Type": "op.lessthanorequal",
+              "UserData": {
+                "Position": "5028,1452"
+              }
+            },
+            {
+              "Id": 1747,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "4572,1380"
+              }
+            },
+            {
+              "Id": 1748,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "3120,1284"
+              }
+            },
+            {
+              "Id": 1749,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "2640,1416"
+              }
+            },
+            {
+              "Id": 1750,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "3360,1416"
+              }
+            },
+            {
+              "Id": 1753,
               "Type": "log.info",
               "UserData": {
-                "Position": "1260,-0"
+                "Position": "3564,1200"
+              }
+            },
+            {
+              "Id": 1754,
+              "Type": "var",
+              "Properties": {
+                "_var": "DoorLocalRotationRef"
+              },
+              "UserData": {
+                "Position": "2652,1152"
+              }
+            },
+            {
+              "Id": 1755,
+              "Type": "var",
+              "Properties": {
+                "_var": "DoorLocalRotationRef"
+              },
+              "UserData": {
+                "Position": "2880,1452"
+              }
+            },
+            {
+              "Id": 1756,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "3060,1452"
+              }
+            },
+            {
+              "Id": 1757,
+              "Type": "var",
+              "Properties": {
+                "_var": "DoorLocalRotationRef"
+              },
+              "UserData": {
+                "Position": "4356,1560"
+              }
+            },
+            {
+              "Id": 1758,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "4536,1560"
+              }
+            },
+            {
+              "Id": 1759,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "4800,1560"
+              }
+            },
+            {
+              "Id": 1766,
+              "Type": "var",
+              "Properties": {
+                "_var": "DoorLocalRotationRef"
+              },
+              "UserData": {
+                "Position": "4344,1704"
+              }
+            },
+            {
+              "Id": 1767,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "4524,1704"
+              }
+            },
+            {
+              "Id": 1768,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "4788,1704"
+              }
+            },
+            {
+              "Id": 1772,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "4896,1332"
+              }
+            },
+            {
+              "Id": 1774,
+              "Type": "var",
+              "Properties": {
+                "_var": "DoorLocalRotationRef"
+              },
+              "UserData": {
+                "Position": "3252,1572"
+              }
+            },
+            {
+              "Id": 1775,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "3432,1572"
+              }
+            },
+            {
+              "Id": 1776,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "3696,1572"
+              }
+            },
+            {
+              "Id": 1780,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": true,
+                "_name": "FromYaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "3816,1212"
+              }
+            },
+            {
+              "Id": 1910,
+              "Type": "var",
+              "Properties": {
+                "_var": "DoorLocalRotationRef"
+              },
+              "UserData": {
+                "Position": "4104,432"
+              }
+            },
+            {
+              "Id": 1911,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "4284,432"
+              }
+            },
+            {
+              "Id": 1913,
+              "Type": "var",
+              "Properties": {
+                "_var": "DoorLocalRotationRef"
+              },
+              "UserData": {
+                "Position": "4200,636"
+              }
+            },
+            {
+              "Id": 1914,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Yaw",
+                "_type": "Rotation"
+              },
+              "UserData": {
+                "Position": "4380,636"
+              }
+            },
+            {
+              "Id": 1920,
+              "Type": "var",
+              "Properties": {
+                "_var": "DoorLocalRotationRef"
+              },
+              "UserData": {
+                "Position": "2736,168"
+              }
+            },
+            {
+              "Id": 1921,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "door"
+              },
+              "UserData": {
+                "Position": "2724,240"
+              }
+            },
+            {
+              "Id": 1922,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalRotation",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "2724,216"
               }
             }
           ],
           "Links": [
             {
               "SrcId": 0,
-              "SrcName": "LastInteractingPlayer",
-              "DstId": 1,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 1,
-              "SrcName": "_result",
-              "DstId": 2,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 0,
               "SrcName": "_target",
-              "DstId": 3,
+              "DstId": 9,
               "DstName": "_this"
+            },
+            {
+              "SrcId": 9,
+              "SrcName": "_result",
+              "DstId": 10,
+              "DstName": "_target"
             },
             {
               "SrcId": 0,
               "SrcName": "_signal",
-              "DstId": 4,
+              "DstId": 11,
               "DstName": "_signal"
             },
             {
-              "SrcId": 3,
+              "SrcId": 10,
               "SrcName": "_result",
-              "DstId": 4,
+              "DstId": 11,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 12,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 1090,
+              "SrcName": "_result",
+              "DstId": 14,
               "DstName": "_target"
             },
             {
-              "SrcId": 5,
+              "SrcId": 543,
               "SrcName": "_result",
-              "DstId": 4,
+              "DstId": 14,
+              "DstName": "frac"
+            },
+            {
+              "SrcId": 1154,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 470,
+              "SrcName": "_signal",
+              "DstId": 25,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 481,
+              "SrcName": "_result",
+              "DstId": 25,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 25,
+              "SrcName": "body",
+              "DstId": 32,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 1867,
+              "Value": 0.01,
+              "DstId": 32,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 32,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 1265,
+              "SrcName": "_signal",
+              "DstId": 47,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1111,
+              "SrcName": "_result",
+              "DstId": 47,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 57,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 1090,
+              "SrcName": "_result",
+              "DstId": 59,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 547,
+              "SrcName": "_result",
+              "DstId": 59,
+              "DstName": "frac"
+            },
+            {
+              "SrcId": 1158,
+              "SrcName": "_result",
+              "DstId": 59,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 1264,
+              "SrcName": "_signal",
+              "DstId": 65,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1162,
+              "SrcName": "_result",
+              "DstId": 65,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "LastInteractingPlayer",
+              "DstId": 103,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 104,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 11,
+              "SrcName": "false",
+              "DstId": 105,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "_result",
+              "DstId": 105,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 108,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "_result",
+              "DstId": 109,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "i:0",
+              "DstId": 110,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 109,
+              "SrcName": "_result",
+              "DstId": 110,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 490,
+              "SrcName": "_signal",
+              "DstId": 125,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 480,
+              "SrcName": "_result",
+              "DstId": 125,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 125,
+              "SrcName": "body",
+              "DstId": 130,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 1868,
+              "Value": 0.01,
+              "DstId": 130,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 130,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 135,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 1089,
+              "SrcName": "_result",
+              "DstId": 137,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 438,
+              "SrcName": "_result",
+              "DstId": 137,
+              "DstName": "frac"
+            },
+            {
+              "SrcId": 1780,
+              "SrcName": "_result",
+              "DstId": 137,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 1780,
+              "SrcName": "_signal",
+              "DstId": 138,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 135,
+              "SrcName": "_result",
+              "DstId": 138,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 137,
+              "SrcName": "_result",
+              "DstId": 138,
               "DstName": "_value"
             },
             {
-              "SrcId": 2,
+              "SrcId": 1754,
+              "SrcName": "_signal",
+              "DstId": 139,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 376,
               "SrcName": "_result",
-              "DstId": 5,
-              "DstName": "input"
+              "DstId": 139,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 139,
+              "SrcName": "body",
+              "DstId": 140,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 1869,
+              "Value": 0.01,
+              "DstId": 140,
+              "DstName": "seconds"
             },
             {
               "SrcId": 0,
               "SrcName": "_target",
-              "DstId": 6,
-              "DstName": "_this"
+              "DstId": 140,
+              "DstName": "target"
             },
             {
-              "SrcId": 6,
-              "SrcName": "_result",
-              "DstId": 7,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 4,
+              "SrcId": 138,
               "SrcName": "_signal",
-              "DstId": 8,
+              "DstId": 143,
               "DstName": "_signal"
             },
             {
-              "SrcId": 7,
+              "SrcId": 1772,
               "SrcName": "_result",
-              "DstId": 8,
-              "DstName": "format"
+              "DstId": 143,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 146,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 161,
+              "SrcName": "_signal",
+              "DstId": 147,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 146,
+              "SrcName": "_result",
+              "DstId": 147,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 148,
+              "SrcName": "_result",
+              "DstId": 147,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 1089,
+              "SrcName": "_result",
+              "DstId": 148,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 415,
+              "SrcName": "_result",
+              "DstId": 148,
+              "DstName": "frac"
+            },
+            {
+              "SrcId": 1103,
+              "SrcName": "_result",
+              "DstId": 148,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 154,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 155,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "i:1",
+              "DstId": 156,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 155,
+              "SrcName": "_result",
+              "DstId": 156,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 1920,
+              "SrcName": "_signal",
+              "DstId": 158,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 403,
+              "SrcName": "_result",
+              "DstId": 158,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 158,
+              "SrcName": "body",
+              "DstId": 161,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 1870,
+              "Value": 0.01,
+              "DstId": 161,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 161,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 382,
+              "SrcName": "_signal",
+              "DstId": 190,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 1871,
+              "Value": true,
+              "DstId": 190,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 201,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "true",
+              "DstId": 202,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 201,
+              "SrcName": "_result",
+              "DstId": 202,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1872,
+              "Value": false,
+              "DstId": 202,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "false",
+              "DstId": 204,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 208,
+              "SrcName": "_result",
+              "DstId": 204,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1873,
+              "Value": true,
+              "DstId": 204,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 208,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 211,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 110,
+              "SrcName": "true",
+              "DstId": 212,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 211,
+              "SrcName": "_result",
+              "DstId": 212,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1874,
+              "Value": false,
+              "DstId": 212,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 110,
+              "SrcName": "false",
+              "DstId": 213,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 214,
+              "SrcName": "_result",
+              "DstId": 213,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1875,
+              "Value": true,
+              "DstId": 213,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 214,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 377,
+              "SrcName": "_result",
+              "DstId": 376,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 377,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 459,
+              "SrcName": "_signal",
+              "DstId": 378,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 379,
+              "SrcName": "_result",
+              "DstId": 378,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1876,
+              "Value": false,
+              "DstId": 378,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 379,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 405,
+              "SrcName": "_signal",
+              "DstId": 382,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 383,
+              "SrcName": "_result",
+              "DstId": 382,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1877,
+              "Value": true,
+              "DstId": 382,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 383,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 143,
+              "SrcName": "true",
+              "DstId": 390,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 391,
+              "SrcName": "_result",
+              "DstId": 390,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1878,
+              "Value": false,
+              "DstId": 390,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 391,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 402,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 402,
+              "SrcName": "_result",
+              "DstId": 403,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 404,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 452,
+              "SrcName": "_signal",
+              "DstId": 405,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 404,
+              "SrcName": "_result",
+              "DstId": 405,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1879,
+              "Value": false,
+              "DstId": 405,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 408,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 378,
+              "SrcName": "_signal",
+              "DstId": 409,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 408,
+              "SrcName": "_result",
+              "DstId": 409,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1880,
+              "Value": true,
+              "DstId": 409,
+              "DstName": "_value"
+            },
+            {
+              "Id": 1881,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 2
+              },
+              "DstId": 415,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 414,
+              "SrcName": "_result",
+              "DstId": 415,
+              "DstName": "b"
+            },
+            {
+              "Id": 1882,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 2
+              },
+              "DstId": 438,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 437,
+              "SrcName": "_result",
+              "DstId": 438,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 447,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 204,
+              "SrcName": "_signal",
+              "DstId": 451,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 447,
+              "SrcName": "_result",
+              "DstId": 451,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1883,
+              "Value": false,
+              "DstId": 451,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 451,
+              "SrcName": "_signal",
+              "DstId": 452,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 447,
+              "SrcName": "_result",
+              "DstId": 452,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1884,
+              "Value": false,
+              "DstId": 452,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 457,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 202,
+              "SrcName": "_signal",
+              "DstId": 458,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 457,
+              "SrcName": "_result",
+              "DstId": 458,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1885,
+              "Value": false,
+              "DstId": 458,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 458,
+              "SrcName": "_signal",
+              "DstId": 459,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 457,
+              "SrcName": "_result",
+              "DstId": 459,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1886,
+              "Value": false,
+              "DstId": 459,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 469,
+              "SrcName": "_signal",
+              "DstId": 464,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 465,
+              "SrcName": "_result",
+              "DstId": 464,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1887,
+              "Value": false,
+              "DstId": 464,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 465,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 466,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 464,
+              "SrcName": "_signal",
+              "DstId": 467,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 466,
+              "SrcName": "_result",
+              "DstId": 467,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1888,
+              "Value": false,
+              "DstId": 467,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 468,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 213,
+              "SrcName": "_signal",
+              "DstId": 469,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 468,
+              "SrcName": "_result",
+              "DstId": 469,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1889,
+              "Value": false,
+              "DstId": 469,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 467,
+              "SrcName": "_signal",
+              "DstId": 470,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 468,
+              "SrcName": "_result",
+              "DstId": 470,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1890,
+              "Value": true,
+              "DstId": 470,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 479,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 482,
+              "SrcName": "_result",
+              "DstId": 480,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 479,
+              "SrcName": "_result",
+              "DstId": 481,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 482,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 212,
+              "SrcName": "_signal",
+              "DstId": 485,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 486,
+              "SrcName": "_result",
+              "DstId": 485,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1891,
+              "Value": false,
+              "DstId": 485,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 486,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 487,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 485,
+              "SrcName": "_signal",
+              "DstId": 488,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 487,
+              "SrcName": "_result",
+              "DstId": 488,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1892,
+              "Value": false,
+              "DstId": 488,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 489,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 491,
+              "SrcName": "_signal",
+              "DstId": 490,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 489,
+              "SrcName": "_result",
+              "DstId": 490,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1893,
+              "Value": true,
+              "DstId": 490,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 488,
+              "SrcName": "_signal",
+              "DstId": 491,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 489,
+              "SrcName": "_result",
+              "DstId": 491,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1894,
+              "Value": false,
+              "DstId": 491,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 525,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 1554,
+              "SrcName": "true",
+              "DstId": 526,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 525,
+              "SrcName": "_result",
+              "DstId": 526,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1895,
+              "Value": false,
+              "DstId": 526,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 530,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 47,
+              "SrcName": "true",
+              "DstId": 531,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 530,
+              "SrcName": "_result",
+              "DstId": 531,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1896,
+              "Value": false,
+              "DstId": 531,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 535,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 65,
+              "SrcName": "true",
+              "DstId": 536,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 535,
+              "SrcName": "_result",
+              "DstId": 536,
+              "DstName": "_target"
+            },
+            {
+              "Id": 1897,
+              "Value": false,
+              "DstId": 536,
+              "DstName": "_value"
+            },
+            {
+              "Id": 1898,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 2
+              },
+              "DstId": 543,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 542,
+              "SrcName": "_result",
+              "DstId": 543,
+              "DstName": "b"
+            },
+            {
+              "Id": 1899,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 2
+              },
+              "DstId": 547,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 546,
+              "SrcName": "_result",
+              "DstId": 547,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 146,
+              "SrcName": "_result",
+              "DstId": 1089,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 1090,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1261,
+              "SrcName": "_result",
+              "DstId": 1096,
+              "DstName": "a"
+            },
+            {
+              "Id": 1900,
+              "Value": {
+                "$type": "Simple",
+                "Type": "Rotation",
+                "Value": "0,0,0.7071068,0.7071068"
+              },
+              "DstId": 1096,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1260,
+              "SrcName": "_result",
+              "DstId": 1103,
+              "DstName": "a"
+            },
+            {
+              "Id": 1901,
+              "Value": {
+                "$type": "Simple",
+                "Type": "Rotation",
+                "Value": "0,0,0,1"
+              },
+              "DstId": 1103,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_result",
+              "DstId": 1111,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 1154,
+              "SrcName": "_result",
+              "DstId": 1111,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1262,
+              "SrcName": "_result",
+              "DstId": 1154,
+              "DstName": "a"
+            },
+            {
+              "Id": 1902,
+              "Value": {
+                "$type": "Simple",
+                "Type": "Rotation",
+                "Value": "0,-0,-0.7071068,0.7071068"
+              },
+              "DstId": 1154,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1263,
+              "SrcName": "_result",
+              "DstId": 1158,
+              "DstName": "a"
+            },
+            {
+              "Id": 1903,
+              "Value": {
+                "$type": "Simple",
+                "Type": "Rotation",
+                "Value": "0,0,0.7071068,0.7071068"
+              },
+              "DstId": 1158,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1158,
+              "SrcName": "_result",
+              "DstId": 1162,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 59,
+              "SrcName": "_result",
+              "DstId": 1162,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 146,
+              "SrcName": "_result",
+              "DstId": 1260,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 135,
+              "SrcName": "_result",
+              "DstId": 1261,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 1262,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 57,
+              "SrcName": "_result",
+              "DstId": 1263,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 130,
+              "SrcName": "_signal",
+              "DstId": 1264,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 57,
+              "SrcName": "_result",
+              "DstId": 1264,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 59,
+              "SrcName": "_result",
+              "DstId": 1264,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 32,
+              "SrcName": "_signal",
+              "DstId": 1265,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 1265,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_result",
+              "DstId": 1265,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 148,
+              "SrcName": "_result",
+              "DstId": 1542,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 147,
+              "SrcName": "_signal",
+              "DstId": 1554,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1676,
+              "SrcName": "_result",
+              "DstId": 1554,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 1716,
+              "SrcName": "_result",
+              "DstId": 1676,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 1734,
+              "SrcName": "_result",
+              "DstId": 1676,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1542,
+              "SrcName": "_result",
+              "DstId": 1716,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 1911,
+              "SrcName": "_result",
+              "DstId": 1716,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1542,
+              "SrcName": "_result",
+              "DstId": 1734,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 1911,
+              "SrcName": "_result",
+              "DstId": 1734,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1741,
+              "SrcName": "_result",
+              "DstId": 1740,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 1742,
+              "SrcName": "_result",
+              "DstId": 1740,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1759,
+              "SrcName": "_result",
+              "DstId": 1741,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 1747,
+              "SrcName": "_result",
+              "DstId": 1741,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1768,
+              "SrcName": "_result",
+              "DstId": 1742,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 1747,
+              "SrcName": "_result",
+              "DstId": 1742,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 137,
+              "SrcName": "_result",
+              "DstId": 1747,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 135,
+              "SrcName": "_result",
+              "DstId": 1748,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1261,
+              "SrcName": "_result",
+              "DstId": 1749,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1756,
+              "SrcName": "_result",
+              "DstId": 1750,
+              "DstName": "a"
+            },
+            {
+              "Id": 1906,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 90
+              },
+              "DstId": 1750,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 140,
+              "SrcName": "_signal",
+              "DstId": 1753,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1750,
+              "SrcName": "_result",
+              "DstId": 1753,
+              "DstName": "args",
+              "DstIndex": 0
+            },
+            {
+              "SrcId": 190,
+              "SrcName": "_signal",
+              "DstId": 1754,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1261,
+              "SrcName": "_result",
+              "DstId": 1754,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 1755,
+              "SrcName": "_result",
+              "DstId": 1756,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1757,
+              "SrcName": "_result",
+              "DstId": 1758,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1758,
+              "SrcName": "_result",
+              "DstId": 1759,
+              "DstName": "a"
+            },
+            {
+              "Id": 1907,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 90.001
+              },
+              "DstId": 1759,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1766,
+              "SrcName": "_result",
+              "DstId": 1767,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1767,
+              "SrcName": "_result",
+              "DstId": 1768,
+              "DstName": "a"
+            },
+            {
+              "Id": 1908,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 90.01
+              },
+              "DstId": 1768,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1747,
+              "SrcName": "_result",
+              "DstId": 1772,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 1759,
+              "SrcName": "_result",
+              "DstId": 1772,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1774,
+              "SrcName": "_result",
+              "DstId": 1775,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1775,
+              "SrcName": "_result",
+              "DstId": 1776,
+              "DstName": "a"
+            },
+            {
+              "Id": 1909,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 90.001
+              },
+              "DstId": 1776,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 1753,
+              "SrcName": "_signal",
+              "DstId": 1780,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1776,
+              "SrcName": "_result",
+              "DstId": 1780,
+              "DstName": "yaw"
+            },
+            {
+              "SrcId": 1910,
+              "SrcName": "_result",
+              "DstId": 1911,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1913,
+              "SrcName": "_result",
+              "DstId": 1914,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 409,
+              "SrcName": "_signal",
+              "DstId": 1920,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1922,
+              "SrcName": "_result",
+              "DstId": 1920,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 1921,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 1921,
+              "SrcName": "_result",
+              "DstId": 1922,
+              "DstName": "_target"
             }
           ]
         },
+        "IsDoorLocked": false,
         "IsDoorPurchasable": true,
         "IsInteractable": true,
         "OnComponentDestroy": null,
@@ -220,6 +2968,7 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
+        "PlayerDisplayName": null,
         "PlayerFriendsSteamIDWhoOwnsDoor": [],
         "PlayerSteamIDWhoOwnsDoor": null,
         "WhitelistedJobDoorGroups": []
@@ -244,6 +2993,320 @@
         "OnTriggerExit": null,
         "RollingResistance": null,
         "Scale": "3.4,48,108",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "b3548e4b-4396-4105-97bb-c82c8dff4ed5",
+        "__enabled": true,
+        "Center": "-31.00009,-22.60001,54.76994",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": {
+          "__version": 9,
+          "__guid": "bb27f7ad-251d-496a-b1a1-4b2b709ffafa",
+          "__changeId": 50,
+          "UserData": {
+            "Title": "On Object Enter Door Int 0",
+            "Description": "Sets the Player DoorInt Var when entered.",
+            "Category": "Door",
+            "Icon": "door_front",
+            "ReferencedComponentTypes": [
+              "DarkrpPlayerInfo"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 4,
+              "Type": "property",
+              "Properties": {
+                "_name": "Tags",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "48,96"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Has",
+                "_type": "Sandbox.GameTags"
+              },
+              "UserData": {
+                "Position": "360,72"
+              }
+            },
+            {
+              "Id": 12,
+              "Type": "if",
+              "UserData": {
+                "Position": "408,-0"
+              }
+            },
+            {
+              "Id": 15,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "696,144"
+              }
+            },
+            {
+              "Id": 16,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerDoorInt",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "720,24"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 4,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "_target"
+            },
+            {
+              "Id": 20,
+              "Value": true,
+              "DstId": 5,
+              "DstName": "includeAncestors"
+            },
+            {
+              "Id": 21,
+              "Value": "Player",
+              "DstId": 5,
+              "DstName": "tag"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 12,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_result",
+              "DstId": 12,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 15,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "true",
+              "DstId": 16,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "_result",
+              "DstId": 16,
+              "DstName": "_target"
+            },
+            {
+              "Id": 22,
+              "Value": 1,
+              "DstId": 16,
+              "DstName": "_value"
+            }
+          ]
+        },
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "60.8,50.70002,110",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "c2b0b66c-1bcc-425a-98a1-c7af2fb362e6",
+        "__enabled": true,
+        "Center": "32.69991,-22.60001,54.76994",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": {
+          "__version": 9,
+          "__guid": "5b8e47c3-035a-4912-88af-f64871088b56",
+          "__changeId": 17,
+          "UserData": {
+            "Title": "On Object Enter Door Int 1",
+            "Description": "Sets the Player DoorInt Var when entered.",
+            "Category": "Door",
+            "Icon": "door_back",
+            "ReferencedComponentTypes": [
+              "DarkrpPlayerInfo"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_name": "Tags",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-48,96"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Has",
+                "_type": "Sandbox.GameTags"
+              },
+              "UserData": {
+                "Position": "264,72"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "if",
+              "UserData": {
+                "Position": "312,0"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "600,144"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerDoorInt",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "624,24"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "Id": 9,
+              "Value": true,
+              "DstId": 2,
+              "DstName": "includeAncestors"
+            },
+            {
+              "Id": 10,
+              "Value": "Player",
+              "DstId": 2,
+              "DstName": "tag"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 4,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "true",
+              "DstId": 5,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "_target"
+            },
+            {
+              "Id": 11,
+              "Value": 0,
+              "DstId": 5,
+              "DstName": "_value"
+            }
+          ]
+        },
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "60.8,50.70002,110",
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"

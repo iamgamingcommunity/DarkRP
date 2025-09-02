@@ -7,7 +7,7 @@
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
-    "Tags": "",
+    "Tags": "player",
     "Enabled": true,
     "NetworkMode": 1,
     "NetworkInterpolation": true,
@@ -249,11 +249,25 @@
             "OnComponentFixedUpdate": null,
             "OnComponentStart": null,
             "OnComponentUpdate": null,
+            "PlayerDoorInt": 0,
+            "PlayerMoney": 2000,
             "SteamId": {
               "Value": 0,
               "ValueUnsigned": 0
             },
             "SteamName": null
+          },
+          {
+            "__type": "Sandbox.Playerhud",
+            "__guid": "1012aa14-14f5-42d2-ac74-4f8010302b75",
+            "__enabled": true,
+            "MyStringValue": "Hello World!",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
           }
         ],
         "Children": [
@@ -281,6 +295,7 @@
                 "BoneMergeTarget": null,
                 "CreateAttachments": false,
                 "CreateBoneObjects": false,
+                "LodOverride": null,
                 "MaterialGroup": null,
                 "MaterialOverride": null,
                 "Materials": null,
@@ -426,6 +441,58 @@
             "Viewport": "0,0,1,1",
             "ZFar": 10000,
             "ZNear": 10
+          }
+        ],
+        "Children": []
+      },
+      {
+        "__guid": "72bfdcb4-84ec-4d3a-a054-c9d42af9688a",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "Screen",
+        "Position": "144.1654,10.99823,-44.6123",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ScreenPanel",
+            "__guid": "0d233cdb-e451-4ae0-a6de-5e2ece24f1ce",
+            "__enabled": true,
+            "AutoScreenScale": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Opacity": 1,
+            "Scale": 1,
+            "ScaleStrategy": "ConsistentHeight",
+            "TargetCamera": {
+              "_type": "component",
+              "component_id": "88fb1040-948f-449f-ab2e-2febf858a7e1",
+              "go": "78530b97-775a-474d-8e34-045e6ab06bc9",
+              "component_type": "CameraComponent"
+            },
+            "ZIndex": 100
+          },
+          {
+            "__type": "Sandbox.Playerhud",
+            "__guid": "c4fa71dd-4150-4d90-b95c-2c6f60589f26",
+            "__enabled": false,
+            "MyStringValue": "Hello World!",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
           }
         ],
         "Children": []
