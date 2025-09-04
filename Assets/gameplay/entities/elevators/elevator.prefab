@@ -13,16 +13,752 @@
     "NetworkInterpolation": true,
     "NetworkOrphaned": 0,
     "OwnerTransfer": 1,
-    "Components": [],
+    "Components": [
+      {
+        "__type": "Elevator",
+        "__guid": "bff218da-3859-4e4f-853d-ad3e08a216ce",
+        "__enabled": true,
+        "ElevatorFloorData": [
+          {
+            "FloorName": "0",
+            "FloorPos": "-74.729,1551.925,29.559"
+          },
+          {
+            "FloorName": "1",
+            "FloorPos": "-74.729,1551.925,220.929"
+          },
+          {
+            "FloorName": "2",
+            "FloorPos": "-74.729,1551.925,364.78"
+          },
+          {
+            "FloorName": "3",
+            "FloorPos": "-74.729,1551.925,508.909"
+          },
+          {
+            "FloorName": "4",
+            "FloorPos": "-74.729,1551.925,668.286"
+          }
+        ],
+        "ElevatorFloorToGoTo": 0,
+        "ElevatorMoving": false,
+        "ElevatorStopMovement": false,
+        "Interacted": null,
+        "IsInteractable": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
+      },
+      {
+        "__type": "Sandbox.ActionGraphs.ActionsInvoker",
+        "__guid": "e86f612e-3e9a-412d-8400-aa168b33cbe0",
+        "__enabled": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnDestroyAction": null,
+        "OnDisabledAction": null,
+        "OnEnabledAction": {
+          "__version": 9,
+          "__guid": "dd9544af-d072-47fd-9c3a-394bafcb0d4f",
+          "__changeId": 38,
+          "UserData": {
+            "Title": "On Enabled Action Elevator Moving",
+            "ReferencedComponentTypes": [
+              "Elevator"
+            ],
+            "Description": "Elevator Moving Logic",
+            "Category": "Elevator",
+            "Icon": "elevator"
+          },
+          "Variables": [
+            {
+              "Name": "TempIsElevatorMoving",
+              "Type": "System.Boolean"
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "while",
+              "UserData": {
+                "Position": "1740,60"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "1992,84"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "if",
+              "UserData": {
+                "Position": "4872,168"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "4824,288"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "math.abs",
+              "UserData": {
+                "Position": "4932,300"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "op.lessthan",
+              "UserData": {
+                "Position": "5064,300"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "if",
+              "UserData": {
+                "Position": "2520,84"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "if",
+              "UserData": {
+                "Position": "780,12"
+              }
+            },
+            {
+              "Id": 9,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "3900,252"
+              }
+            },
+            {
+              "Id": 10,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "LerpTo",
+                "_type": "Vector3"
+              },
+              "UserData": {
+                "Position": "4188,228"
+              }
+            },
+            {
+              "Id": 11,
+              "Type": "property",
+              "Properties": {
+                "_name": "LocalPosition",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "4140,144"
+              }
+            },
+            {
+              "Id": 12,
+              "Type": "time.delta",
+              "UserData": {
+                "Position": "3864,420"
+              }
+            },
+            {
+              "Id": 13,
+              "Type": "op.multiply",
+              "UserData": {
+                "Position": "3996,396"
+              }
+            },
+            {
+              "Id": 14,
+              "Type": "property",
+              "Properties": {
+                "_name": "z",
+                "_type": "Vector3"
+              },
+              "UserData": {
+                "Position": "4572,276"
+              }
+            },
+            {
+              "Id": 15,
+              "Type": "property",
+              "Properties": {
+                "_name": "z",
+                "_type": "Vector3"
+              },
+              "UserData": {
+                "Position": "4584,372"
+              }
+            },
+            {
+              "Id": 16,
+              "Type": "property",
+              "Properties": {
+                "_name": "ElevatorMoving",
+                "_type": "Elevator"
+              },
+              "UserData": {
+                "Position": "984,60"
+              }
+            },
+            {
+              "Id": 17,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Elevator"
+              },
+              "UserData": {
+                "Position": "504,96"
+              }
+            },
+            {
+              "Id": 18,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Elevator"
+              },
+              "UserData": {
+                "Position": "984,144"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Elevator"
+              },
+              "UserData": {
+                "Position": "2340,216"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempIsElevatorMoving"
+              },
+              "UserData": {
+                "Position": "1704,108"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempIsElevatorMoving"
+              },
+              "UserData": {
+                "Position": "1308,60"
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempIsElevatorMoving"
+              },
+              "UserData": {
+                "Position": "3060,-264"
+              }
+            },
+            {
+              "Id": 23,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempIsElevatorMoving"
+              },
+              "UserData": {
+                "Position": "5496,192"
+              }
+            },
+            {
+              "Id": 24,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "3792,180"
+              }
+            },
+            {
+              "Id": 25,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Elevator"
+              },
+              "UserData": {
+                "Position": "3192,324"
+              }
+            },
+            {
+              "Id": 26,
+              "Type": "property",
+              "Properties": {
+                "_name": "ElevatorFloorData",
+                "_type": "Elevator"
+              },
+              "UserData": {
+                "Position": "3360,300"
+              }
+            },
+            {
+              "Id": 27,
+              "Type": "list.get",
+              "Properties": {
+                "T": {
+                  "$type": "Nested",
+                  "DeclaringType": "Elevator",
+                  "Name": "ElevatorData"
+                }
+              },
+              "UserData": {
+                "Position": "3624,276"
+              }
+            },
+            {
+              "Id": 28,
+              "Type": "property",
+              "Properties": {
+                "_name": "ElevatorFloorToGoTo",
+                "_type": "Elevator"
+              },
+              "UserData": {
+                "Position": "3348,336"
+              }
+            },
+            {
+              "Id": 29,
+              "Type": "property",
+              "Properties": {
+                "_name": "FloorPos",
+                "_type": {
+                  "$type": "Nested",
+                  "DeclaringType": "Elevator",
+                  "Name": "ElevatorData"
+                }
+              },
+              "UserData": {
+                "Position": "3828,504"
+              }
+            },
+            {
+              "Id": 31,
+              "Type": "log.info",
+              "UserData": {
+                "Position": "2352,84"
+              }
+            },
+            {
+              "Id": 35,
+              "Type": "property",
+              "Properties": {
+                "_name": "ElevatorMoving",
+                "_type": "Elevator"
+              },
+              "UserData": {
+                "Position": "696,96"
+              }
+            },
+            {
+              "Id": 36,
+              "Type": "property",
+              "Properties": {
+                "_name": "ElevatorStopMovement",
+                "_type": "Elevator"
+              },
+              "UserData": {
+                "Position": "2436,156"
+              }
+            },
+            {
+              "Id": 69,
+              "Type": "property",
+              "Properties": {
+                "_name": "ElevatorMoving",
+                "_type": "Elevator"
+              },
+              "UserData": {
+                "Position": "5220,192"
+              }
+            },
+            {
+              "Id": 70,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Elevator"
+              },
+              "UserData": {
+                "Position": "5220,276"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 21,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_result",
+              "DstId": 1,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "body",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 80,
+              "Value": 0.01,
+              "DstId": 2,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 2,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 11,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "x"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_result",
+              "DstId": 6,
+              "DstName": "a"
+            },
+            {
+              "Id": 81,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 0.1
+              },
+              "DstId": 6,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 31,
+              "SrcName": "_signal",
+              "DstId": 7,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 36,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 8,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 35,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 24,
+              "SrcName": "_result",
+              "DstId": 9,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 9,
+              "SrcName": "_result",
+              "DstId": 10,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 10,
+              "DstName": "frac"
+            },
+            {
+              "SrcId": 29,
+              "SrcName": "_result",
+              "DstId": 10,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "false",
+              "DstId": 11,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 24,
+              "SrcName": "_result",
+              "DstId": 11,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 10,
+              "SrcName": "_result",
+              "DstId": 11,
+              "DstName": "_value"
+            },
+            {
+              "Id": 82,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 0.5
+              },
+              "DstId": 13,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 13,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 10,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 29,
+              "SrcName": "_result",
+              "DstId": 15,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "false",
+              "DstId": 16,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 18,
+              "SrcName": "_result",
+              "DstId": 16,
+              "DstName": "_target"
+            },
+            {
+              "Id": 83,
+              "Value": true,
+              "DstId": 16,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 17,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 18,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 19,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 16,
+              "SrcName": "_signal",
+              "DstId": 21,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 84,
+              "Value": true,
+              "DstId": 21,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "true",
+              "DstId": 22,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 85,
+              "Value": false,
+              "DstId": 22,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 69,
+              "SrcName": "_signal",
+              "DstId": 23,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 86,
+              "Value": false,
+              "DstId": 23,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 25,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 25,
+              "SrcName": "_result",
+              "DstId": 26,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 28,
+              "SrcName": "_result",
+              "DstId": 27,
+              "DstName": "index"
+            },
+            {
+              "SrcId": 26,
+              "SrcName": "_result",
+              "DstId": 27,
+              "DstName": "list"
+            },
+            {
+              "SrcId": 25,
+              "SrcName": "_result",
+              "DstId": 28,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 27,
+              "SrcName": "_result",
+              "DstId": 29,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_signal",
+              "DstId": 31,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 87,
+              "Value": "0.01",
+              "DstId": 31,
+              "DstName": "format"
+            },
+            {
+              "SrcId": 17,
+              "SrcName": "_result",
+              "DstId": 35,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 36,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "true",
+              "DstId": 69,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 70,
+              "SrcName": "_result",
+              "DstId": 69,
+              "DstName": "_target"
+            },
+            {
+              "Id": 88,
+              "Value": false,
+              "DstId": 69,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 70,
+              "DstName": "_this"
+            }
+          ]
+        },
+        "OnFixedUpdateAction": null,
+        "OnUpdateAction": null
+      }
+    ],
     "Children": [
       {
-        "__guid": "2e9b915a-6fda-427a-9c5d-2d1559bbe465",
+        "__guid": "9c3d1033-9ff6-4e4c-a219-fd35f8bf92f1",
         "__version": 1,
         "Flags": 0,
-        "Name": "FloorButton0",
-        "Position": "2.191523,0,6.329873",
+        "Name": "ElevatorModel",
+        "Position": "0,0,0",
         "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
+        "Scale": "3,3,0.1",
         "Tags": "",
         "Enabled": true,
         "NetworkMode": 2,
@@ -31,8 +767,34 @@
         "OwnerTransfer": 1,
         "Components": [
           {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "2cd67c00-ce98-4304-94f0-79905982f748",
+            "__enabled": true,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": null,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
             "__type": "Sandbox.BoxCollider",
-            "__guid": "7bc9259b-790a-449e-9a48-03820722fe66",
+            "__guid": "2c81bc6a-c43e-44d5-aacf-dc36dd7a1597",
             "__enabled": true,
             "Center": "0,0,0",
             "Elasticity": null,
@@ -49,195 +811,57 @@
             "OnTriggerEnter": null,
             "OnTriggerExit": null,
             "RollingResistance": null,
-            "Scale": "1,1,1",
+            "Scale": "50,50,50",
             "Static": false,
             "Surface": null,
             "SurfaceVelocity": "0,0,0"
-          },
-          {
-            "__type": "ElevatorCallPanel",
-            "__guid": "7da25d32-b622-4876-ae55-3de071b49743",
-            "__enabled": true,
-            "FloorLevel": 0,
-            "Interacted": null,
-            "IsInteractable": true,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null
           }
         ],
         "Children": []
       },
       {
-        "__guid": "1c480898-9fa2-4deb-800d-8d739f3baa1a",
+        "__guid": "c7640289-ac73-4cff-a33e-ac8f9c7966e5",
         "__version": 1,
-        "Flags": 0,
-        "Name": "FloorButton1",
-        "Position": "0.3816051,0,6.329873",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
-        "NetworkOrphaned": 0,
-        "OwnerTransfer": 1,
-        "Components": [
-          {
-            "__type": "Sandbox.BoxCollider",
-            "__guid": "3885344b-d9dc-474b-b209-ec0b2c81c060",
-            "__enabled": true,
-            "Center": "0,0,0",
-            "Elasticity": null,
-            "Friction": null,
-            "IsTrigger": false,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OnObjectTriggerEnter": null,
-            "OnObjectTriggerExit": null,
-            "OnTriggerEnter": null,
-            "OnTriggerExit": null,
-            "RollingResistance": null,
-            "Scale": "1,1,1",
-            "Static": false,
-            "Surface": null,
-            "SurfaceVelocity": "0,0,0"
-          },
-          {
-            "__type": "ElevatorCallPanel",
-            "__guid": "0dcde410-7980-4d60-a040-edb1d4bbe13c",
-            "__enabled": true,
-            "FloorLevel": 0,
-            "Interacted": null,
-            "IsInteractable": true,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null
-          }
-        ],
-        "Children": []
-      },
-      {
-        "__guid": "2f967d2a-9889-40dc-bb97-a477f4544327",
-        "__version": 1,
-        "Flags": 0,
-        "Name": "FloorButton2",
-        "Position": "2.191523,0,8.174556",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
-        "NetworkOrphaned": 0,
-        "OwnerTransfer": 1,
-        "Components": [
-          {
-            "__type": "Sandbox.BoxCollider",
-            "__guid": "3ec61c5c-5992-4d96-a545-f5194a2be28c",
-            "__enabled": true,
-            "Center": "0,0,0",
-            "Elasticity": null,
-            "Friction": null,
-            "IsTrigger": false,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OnObjectTriggerEnter": null,
-            "OnObjectTriggerExit": null,
-            "OnTriggerEnter": null,
-            "OnTriggerExit": null,
-            "RollingResistance": null,
-            "Scale": "1,1,1",
-            "Static": false,
-            "Surface": null,
-            "SurfaceVelocity": "0,0,0"
-          },
-          {
-            "__type": "ElevatorCallPanel",
-            "__guid": "21bfb7f0-3e4c-428a-8772-b76f5d4bc432",
-            "__enabled": true,
-            "FloorLevel": 0,
-            "Interacted": null,
-            "IsInteractable": true,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null
-          }
-        ],
-        "Children": []
-      },
-      {
-        "__guid": "190d9cc9-24b0-4942-be1a-ce62bd36fbd9",
-        "__version": 1,
-        "Flags": 0,
-        "Name": "FloorButton3",
-        "Position": "-0.1557789,0,8.520382",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
-        "NetworkOrphaned": 0,
-        "OwnerTransfer": 1,
-        "Components": [
-          {
-            "__type": "Sandbox.BoxCollider",
-            "__guid": "e7754867-e53c-4b99-b83a-34c95929b72e",
-            "__enabled": true,
-            "Center": "0,0,0",
-            "Elasticity": null,
-            "Friction": null,
-            "IsTrigger": false,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "OnObjectTriggerEnter": null,
-            "OnObjectTriggerExit": null,
-            "OnTriggerEnter": null,
-            "OnTriggerExit": null,
-            "RollingResistance": null,
-            "Scale": "1,1,1",
-            "Static": false,
-            "Surface": null,
-            "SurfaceVelocity": "0,0,0"
-          },
-          {
-            "__type": "ElevatorCallPanel",
-            "__guid": "1190aeff-2106-4d51-b18f-f796b47a468b",
-            "__enabled": true,
-            "FloorLevel": 0,
-            "Interacted": null,
-            "IsInteractable": true,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null
-          }
-        ],
-        "Children": []
+        "__Prefab": "gameplay/entities/elevators/elevatorbuttonpanel.prefab",
+        "__PrefabInstancePatch": {
+          "AddedObjects": [],
+          "RemovedObjects": [],
+          "PropertyOverrides": [
+            {
+              "Target": {
+                "Type": "GameObject",
+                "IdValue": "eab15917-30e8-4347-b37a-63b15048faff"
+              },
+              "Property": "Position",
+              "Value": "0,0,19.54598"
+            }
+          ],
+          "MovedObjects": []
+        },
+        "__PrefabIdToInstanceId": {
+          "eab15917-30e8-4347-b37a-63b15048faff": "c7640289-ac73-4cff-a33e-ac8f9c7966e5",
+          "6831a891-e12d-419a-9364-1d1b2498655e": "336dea5d-2643-4859-a725-11ecc513941f",
+          "74099734-4c48-4930-91f1-6c990323b5e7": "dce4161a-a4e7-47d7-b9cd-3a0e70c587b0",
+          "d980624c-8202-4b48-ba73-fc54bc651177": "394772f2-952f-49ef-9405-1e200472c30e",
+          "e8dfa95b-8304-4836-b1f7-d9a8b238e57d": "0a327da6-7142-4222-a8a4-3595d12a9936",
+          "dd4222ee-1b0a-4cbe-b51a-5b0fdf3f230c": "03b5d28b-15e9-46e8-bbe5-0a72d5c1c902",
+          "ba3ea156-c115-4dfd-8008-6e20a1f10d6f": "c4b3583e-4a17-45c4-bf35-77efd63ade9a",
+          "1e5df860-fde8-4494-953b-e1971ce5d828": "a1de23d2-db26-4f68-8c57-9e83c98cbbd3",
+          "6ba580a1-e3a9-4dec-9df2-f8664b5f38ac": "39796737-6c49-4455-ae7e-995f60b70789",
+          "dd16aebe-f37f-4e43-a9f8-5fc9c8fc0592": "8aaa17db-5f9e-48bf-8c55-eac590e14cca",
+          "589b6f34-732a-4e85-a611-a7c643e476e4": "3ac0677e-0050-4445-865f-89d511c9b789",
+          "85c0b5b3-62fc-4fab-8c17-0584f79c710d": "326ba252-38d0-430d-8c64-26b4e675c29b",
+          "d7a8f164-cbeb-48cd-91e6-62720568cc66": "b5d4e408-1cd2-4e17-ab29-fe1a3bbd8ba8",
+          "d829ed7b-3abd-4056-bbd4-62c9041dec1c": "9083386c-9676-451b-8360-f20fb8ee1ed8",
+          "28b12a70-3949-4065-ac65-e980fe1c05fe": "184d0e3f-cc88-4c25-8eac-6489721a35b5",
+          "8d71a5dd-ce21-41c2-8c3e-eccdaaa6744d": "0d9cef95-0f45-4863-84c3-d163db26910f",
+          "9131ccfc-a815-4cca-abd1-cb0061a594ac": "c318e2b0-71f9-49e6-969d-2d3f367074a6",
+          "5340c1fb-4986-4925-b3df-3137e34e87c4": "c96a23cd-dc95-4d28-a675-0a78bb427d2e",
+          "7c22a514-5f0e-481c-84a4-c9f9daca347b": "18eb5cb0-363e-474b-b34d-e8e8c9cef05b",
+          "984a3057-50cb-4cdf-8425-c41e56f4eb45": "c8c4b0d3-ecb3-43ff-967b-fd4d6084a0d5",
+          "69d25ee0-6c9c-4978-ac7c-3b912bbd05a1": "bffd7f06-5876-4d81-822c-188fdb89972c",
+          "933b1bce-30a0-43c2-9cca-4f05a7bbd32a": "182def2d-a040-464e-a0f1-c4f1547eb579"
+        }
       }
     ],
     "__properties": {

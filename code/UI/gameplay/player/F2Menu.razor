@@ -1,0 +1,42 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root class="@(IsShowingF2Menu ? "" : "hide")">
+	<div class="options">
+		<div class="button">
+			Disallow Ownership
+		</div>
+		<div class="button">
+			Buy Door
+		</div>
+		<div class="button">
+			Edit Door Groups
+		</div>
+	</div>
+</root>
+
+@code
+{
+	public bool IsShowingF2Menu {get; set;}
+	public bool IsSuperAdmin {get; set;}
+
+	
+	<!-- protected override void OnUpdate()
+	{
+		base.OnUpdate();
+
+		if( !IsProxy && Input.Pressed( "Slot0" ) )
+		{
+			Log.Info( "Pressed 9!" );
+			IsShowingF2Menu = !IsShowingF2Menu;
+		}
+	} -->
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// 
+	///</summary>
+	protected override int BuildHash() => System.HashCode.Combine( IsShowingF2Menu );
+}

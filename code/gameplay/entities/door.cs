@@ -24,6 +24,8 @@ using System;
 
 		public bool DoorInt1ClosingBool { get; set; }
 
+		public Rotation DoorLocalRotation { get; set; }
+
 		[Property, Feature( "Door Info" ), ShowIf ( nameof( IsDoorPurchasable ), true)]
 		public int DoorBuyAmount { get; set; }
 

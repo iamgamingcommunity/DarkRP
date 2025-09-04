@@ -1,5 +1,382 @@
 {
-  "RootObject": null,
+  "RootObject": {
+    "__guid": "77bca3e0-9ead-4a47-afb0-420bf6acb7cc",
+    "__version": 1,
+    "Flags": 0,
+    "Name": "elevatorcallpanel",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
+    "Components": [],
+    "Children": [
+      {
+        "__guid": "5f531212-8324-4b3a-9b1f-86eec42eef07",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "CallPanel",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "0.1,0.2,0.4",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "4735727e-627f-46f6-9ed9-10cc93f34e6c",
+            "__enabled": true,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": null,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "840f3da4-1a52-4262-b197-5318160fa08e",
+            "__enabled": true,
+            "Center": "0,0,0",
+            "Elasticity": null,
+            "Friction": null,
+            "IsTrigger": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RollingResistance": null,
+            "Scale": "50,50,50",
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          },
+          {
+            "__type": "ElevatorCallPanel",
+            "__guid": "ce49499c-7810-4f40-a1ef-746d036f868c",
+            "__enabled": true,
+            "ElevatorObject": null,
+            "FloorLevel": 0,
+            "Interacted": {
+              "__version": 9,
+              "__guid": "7b313a4b-42a7-4ccf-addd-421f392857a0",
+              "__changeId": 5,
+              "UserData": {
+                "Title": "Interacted",
+                "ReferencedComponentTypes": [
+                  "Elevator",
+                  "Sandbox.ActionGraphs.ActionsInvoker",
+                  "ElevatorCallPanel"
+                ]
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ElevatorFloorToGoTo",
+                    "_type": "Elevator"
+                  },
+                  "UserData": {
+                    "Position": "576,132"
+                  }
+                },
+                {
+                  "Id": 2,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Elevator"
+                  },
+                  "UserData": {
+                    "Position": "336,156"
+                  }
+                },
+                {
+                  "Id": 3,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.ActionGraphs.ActionsInvoker"
+                  },
+                  "UserData": {
+                    "Position": "936,228"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Enabled",
+                    "_type": "Sandbox.Component"
+                  },
+                  "UserData": {
+                    "Position": "960,132"
+                  }
+                },
+                {
+                  "Id": 5,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Enabled",
+                    "_type": "Sandbox.Component"
+                  },
+                  "UserData": {
+                    "Position": "1308,132"
+                  }
+                },
+                {
+                  "Id": 6,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Elevator"
+                  },
+                  "UserData": {
+                    "Position": "144,96"
+                  }
+                },
+                {
+                  "Id": 7,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ElevatorMoving",
+                    "_type": "Elevator"
+                  },
+                  "UserData": {
+                    "Position": "156,72"
+                  }
+                },
+                {
+                  "Id": 8,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "252,0"
+                  }
+                },
+                {
+                  "Id": 9,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "ElevatorCallPanel"
+                  },
+                  "UserData": {
+                    "Position": "216,264"
+                  }
+                },
+                {
+                  "Id": 10,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "FloorLevel",
+                    "_type": "ElevatorCallPanel"
+                  },
+                  "UserData": {
+                    "Position": "468,276"
+                  }
+                },
+                {
+                  "Id": 11,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "ElevatorCallPanel"
+                  },
+                  "UserData": {
+                    "Position": "-216,204"
+                  }
+                },
+                {
+                  "Id": 12,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ElevatorObject",
+                    "_type": "ElevatorCallPanel"
+                  },
+                  "UserData": {
+                    "Position": "-36,156"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 8,
+                  "SrcName": "false",
+                  "DstId": 1,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 10,
+                  "SrcName": "_result",
+                  "DstId": 1,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_result",
+                  "DstId": 2,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_result",
+                  "DstId": 3,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_signal",
+                  "DstId": 4,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 4,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 15,
+                  "Value": true,
+                  "DstId": 4,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_signal",
+                  "DstId": 5,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 5,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 16,
+                  "Value": false,
+                  "DstId": 5,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_result",
+                  "DstId": 6,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "_result",
+                  "DstId": 7,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 8,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 7,
+                  "SrcName": "_result",
+                  "DstId": 8,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 9,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 9,
+                  "SrcName": "_result",
+                  "DstId": 10,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 11,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 11,
+                  "SrcName": "_result",
+                  "DstId": 12,
+                  "DstName": "_target"
+                }
+              ]
+            },
+            "IsInteractable": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
+  },
   "ResourceVersion": 2,
   "ShowInMenu": false,
   "MenuPath": null,

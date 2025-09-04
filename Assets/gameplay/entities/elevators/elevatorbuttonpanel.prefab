@@ -1,5 +1,1978 @@
 {
-  "RootObject": null,
+  "RootObject": {
+    "__guid": "eab15917-30e8-4347-b37a-63b15048faff",
+    "__version": 1,
+    "Flags": 0,
+    "Name": "elevatorbuttonpanel",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
+    "Components": [],
+    "Children": [
+      {
+        "__guid": "6831a891-e12d-419a-9364-1d1b2498655e",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "ElevatorPanel",
+        "Position": "-0.04806137,-61.14555,14.29422",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": [
+          {
+            "__guid": "74099734-4c48-4930-91f1-6c990323b5e7",
+            "__version": 1,
+            "Flags": 0,
+            "Name": "FloorButton0",
+            "Position": "2.239584,61.14555,-7.964347",
+            "Rotation": "0,0,0,1",
+            "Scale": "0.1,0.1,0.1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "NetworkOrphaned": 0,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.BoxCollider",
+                "__guid": "d980624c-8202-4b48-ba73-fc54bc651177",
+                "__enabled": true,
+                "Center": "0,0,0",
+                "Elasticity": null,
+                "Friction": null,
+                "IsTrigger": false,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "OnObjectTriggerEnter": null,
+                "OnObjectTriggerExit": null,
+                "OnTriggerEnter": null,
+                "OnTriggerExit": null,
+                "RollingResistance": null,
+                "Scale": "51.80005,50.00013,50.10005",
+                "Static": false,
+                "Surface": null,
+                "SurfaceVelocity": "0,0,0"
+              },
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "e8dfa95b-8304-4836-b1f7-d9a8b238e57d",
+                "__enabled": true,
+                "BodyGroups": 18446744073709551615,
+                "CreateAttachments": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": null,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ElevatorButtons",
+                "__guid": "dd4222ee-1b0a-4cbe-b51a-5b0fdf3f230c",
+                "__enabled": true,
+                "ElevatorFloorNumber": 0,
+                "Interacted": {
+                  "__version": 9,
+                  "__guid": "9a4dd029-ce3d-42ea-8a25-847ae50113b0",
+                  "__changeId": 155,
+                  "UserData": {
+                    "Title": "Interacted With Floor Button 0",
+                    "ReferencedComponentTypes": [
+                      "ElevatorButtons",
+                      "Sandbox.ActionGraphs.ActionsInvoker",
+                      "Elevator"
+                    ],
+                    "Description": "Interacted With Floor Button 0 Logic",
+                    "Category": "Elevator",
+                    "Icon": "elevator"
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input",
+                      "UserData": {
+                        "Position": "-1536,-168"
+                      }
+                    },
+                    {
+                      "Id": 126,
+                      "Type": "input.value",
+                      "Properties": {
+                        "_name": "_target"
+                      },
+                      "UserData": {
+                        "Position": "-1680,12"
+                      }
+                    },
+                    {
+                      "Id": 127,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-1596,12"
+                      }
+                    },
+                    {
+                      "Id": 128,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-1368,12"
+                      }
+                    },
+                    {
+                      "Id": 129,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-1152,12"
+                      }
+                    },
+                    {
+                      "Id": 130,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorFloorToGoTo",
+                        "_type": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "-708,-96"
+                      }
+                    },
+                    {
+                      "Id": 131,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "ElevatorButtons"
+                      },
+                      "UserData": {
+                        "Position": "-984,48"
+                      }
+                    },
+                    {
+                      "Id": 132,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorFloorNumber",
+                        "_type": "ElevatorButtons"
+                      },
+                      "UserData": {
+                        "Position": "-768,48"
+                      }
+                    },
+                    {
+                      "Id": 133,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "-948,-72"
+                      }
+                    },
+                    {
+                      "Id": 134,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.ActionGraphs.ActionsInvoker"
+                      },
+                      "UserData": {
+                        "Position": "-348,-0"
+                      }
+                    },
+                    {
+                      "Id": 135,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Enabled",
+                        "_type": "Sandbox.Component"
+                      },
+                      "UserData": {
+                        "Position": "-324,-96"
+                      }
+                    },
+                    {
+                      "Id": 136,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Enabled",
+                        "_type": "Sandbox.Component"
+                      },
+                      "UserData": {
+                        "Position": "24,-96"
+                      }
+                    },
+                    {
+                      "Id": 141,
+                      "Type": "input.value",
+                      "Properties": {
+                        "_name": "_target"
+                      },
+                      "UserData": {
+                        "Position": "-2040,-72"
+                      }
+                    },
+                    {
+                      "Id": 142,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-1956,-72"
+                      }
+                    },
+                    {
+                      "Id": 143,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-1728,-72"
+                      }
+                    },
+                    {
+                      "Id": 144,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-1512,-72"
+                      }
+                    },
+                    {
+                      "Id": 145,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "-1296,-72"
+                      }
+                    },
+                    {
+                      "Id": 146,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorMoving",
+                        "_type": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "-1284,-96"
+                      }
+                    },
+                    {
+                      "Id": 147,
+                      "Type": "if",
+                      "UserData": {
+                        "Position": "-1188,-168"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 126,
+                      "SrcName": "_result",
+                      "DstId": 127,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 127,
+                      "SrcName": "_result",
+                      "DstId": 128,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 128,
+                      "SrcName": "_result",
+                      "DstId": 129,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 147,
+                      "SrcName": "false",
+                      "DstId": 130,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 133,
+                      "SrcName": "_result",
+                      "DstId": 130,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 132,
+                      "SrcName": "_result",
+                      "DstId": 130,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 131,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 131,
+                      "SrcName": "_result",
+                      "DstId": 132,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 129,
+                      "SrcName": "_result",
+                      "DstId": 133,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 129,
+                      "SrcName": "_result",
+                      "DstId": 134,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 130,
+                      "SrcName": "_signal",
+                      "DstId": 135,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 134,
+                      "SrcName": "_result",
+                      "DstId": 135,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 150,
+                      "Value": true,
+                      "DstId": 135,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 135,
+                      "SrcName": "_signal",
+                      "DstId": 136,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 134,
+                      "SrcName": "_result",
+                      "DstId": 136,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 151,
+                      "Value": false,
+                      "DstId": 136,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 141,
+                      "SrcName": "_result",
+                      "DstId": 142,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 142,
+                      "SrcName": "_result",
+                      "DstId": 143,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 143,
+                      "SrcName": "_result",
+                      "DstId": 144,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 144,
+                      "SrcName": "_result",
+                      "DstId": 145,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 145,
+                      "SrcName": "_result",
+                      "DstId": 146,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 147,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 146,
+                      "SrcName": "_result",
+                      "DstId": 147,
+                      "DstName": "condition"
+                    }
+                  ]
+                },
+                "IsInteractable": true,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null
+              }
+            ],
+            "Children": []
+          },
+          {
+            "__guid": "ba3ea156-c115-4dfd-8008-6e20a1f10d6f",
+            "__version": 1,
+            "Flags": 0,
+            "Name": "FloorButton1",
+            "Position": "2.239584,61.14555,1.737801",
+            "Rotation": "0,0,0,1",
+            "Scale": "0.1,0.1,0.1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "NetworkOrphaned": 0,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.BoxCollider",
+                "__guid": "1e5df860-fde8-4494-953b-e1971ce5d828",
+                "__enabled": true,
+                "Center": "0,0,0",
+                "Elasticity": null,
+                "Friction": null,
+                "IsTrigger": false,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "OnObjectTriggerEnter": null,
+                "OnObjectTriggerExit": null,
+                "OnTriggerEnter": null,
+                "OnTriggerExit": null,
+                "RollingResistance": null,
+                "Scale": "51.80005,50.00013,50.10005",
+                "Static": false,
+                "Surface": null,
+                "SurfaceVelocity": "0,0,0"
+              },
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "6ba580a1-e3a9-4dec-9df2-f8664b5f38ac",
+                "__enabled": true,
+                "BodyGroups": 18446744073709551615,
+                "CreateAttachments": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": null,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ElevatorButtons",
+                "__guid": "dd16aebe-f37f-4e43-a9f8-5fc9c8fc0592",
+                "__enabled": true,
+                "ElevatorFloorNumber": 1,
+                "Interacted": {
+                  "__version": 9,
+                  "__guid": "22beadc0-fbc4-4416-bc27-b248fd6f7a88",
+                  "__changeId": 84,
+                  "UserData": {
+                    "Title": "Interacted",
+                    "ReferencedComponentTypes": [
+                      "Sandbox.ActionGraphs.ActionsInvoker",
+                      "Elevator",
+                      "ElevatorButtons"
+                    ]
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input",
+                      "UserData": {
+                        "Position": "-204,-48"
+                      }
+                    },
+                    {
+                      "Id": 101,
+                      "Type": "input.value",
+                      "Properties": {
+                        "_name": "_target"
+                      },
+                      "UserData": {
+                        "Position": "-408,108"
+                      }
+                    },
+                    {
+                      "Id": 102,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-324,108"
+                      }
+                    },
+                    {
+                      "Id": 103,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-96,108"
+                      }
+                    },
+                    {
+                      "Id": 104,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "120,108"
+                      }
+                    },
+                    {
+                      "Id": 105,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorFloorToGoTo",
+                        "_type": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "564,-0"
+                      }
+                    },
+                    {
+                      "Id": 106,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "ElevatorButtons"
+                      },
+                      "UserData": {
+                        "Position": "288,144"
+                      }
+                    },
+                    {
+                      "Id": 107,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorFloorNumber",
+                        "_type": "ElevatorButtons"
+                      },
+                      "UserData": {
+                        "Position": "504,144"
+                      }
+                    },
+                    {
+                      "Id": 108,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "324,24"
+                      }
+                    },
+                    {
+                      "Id": 109,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.ActionGraphs.ActionsInvoker"
+                      },
+                      "UserData": {
+                        "Position": "924,96"
+                      }
+                    },
+                    {
+                      "Id": 110,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Enabled",
+                        "_type": "Sandbox.Component"
+                      },
+                      "UserData": {
+                        "Position": "948,-0"
+                      }
+                    },
+                    {
+                      "Id": 111,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Enabled",
+                        "_type": "Sandbox.Component"
+                      },
+                      "UserData": {
+                        "Position": "1296,-0"
+                      }
+                    },
+                    {
+                      "Id": 116,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "-0,48"
+                      }
+                    },
+                    {
+                      "Id": 117,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorMoving",
+                        "_type": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "12,24"
+                      }
+                    },
+                    {
+                      "Id": 118,
+                      "Type": "if",
+                      "UserData": {
+                        "Position": "108,-48"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 101,
+                      "SrcName": "_result",
+                      "DstId": 102,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 102,
+                      "SrcName": "_result",
+                      "DstId": 103,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 103,
+                      "SrcName": "_result",
+                      "DstId": 104,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 118,
+                      "SrcName": "false",
+                      "DstId": 105,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 108,
+                      "SrcName": "_result",
+                      "DstId": 105,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 107,
+                      "SrcName": "_result",
+                      "DstId": 105,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 106,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 106,
+                      "SrcName": "_result",
+                      "DstId": 107,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 104,
+                      "SrcName": "_result",
+                      "DstId": 108,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 104,
+                      "SrcName": "_result",
+                      "DstId": 109,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 105,
+                      "SrcName": "_signal",
+                      "DstId": 110,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 109,
+                      "SrcName": "_result",
+                      "DstId": 110,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 121,
+                      "Value": true,
+                      "DstId": 110,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 110,
+                      "SrcName": "_signal",
+                      "DstId": 111,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 109,
+                      "SrcName": "_result",
+                      "DstId": 111,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 122,
+                      "Value": false,
+                      "DstId": 111,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 104,
+                      "SrcName": "_result",
+                      "DstId": 116,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 116,
+                      "SrcName": "_result",
+                      "DstId": 117,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 118,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 117,
+                      "SrcName": "_result",
+                      "DstId": 118,
+                      "DstName": "condition"
+                    }
+                  ]
+                },
+                "IsInteractable": true,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null
+              }
+            ],
+            "Children": []
+          },
+          {
+            "__guid": "589b6f34-732a-4e85-a611-a7c643e476e4",
+            "__version": 1,
+            "Flags": 0,
+            "Name": "FloorButton2",
+            "Position": "2.239584,61.14555,11.9664",
+            "Rotation": "0,0,0,1",
+            "Scale": "0.1,0.1,0.1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "NetworkOrphaned": 0,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.BoxCollider",
+                "__guid": "85c0b5b3-62fc-4fab-8c17-0584f79c710d",
+                "__enabled": true,
+                "Center": "0,0,0",
+                "Elasticity": null,
+                "Friction": null,
+                "IsTrigger": false,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "OnObjectTriggerEnter": null,
+                "OnObjectTriggerExit": null,
+                "OnTriggerEnter": null,
+                "OnTriggerExit": null,
+                "RollingResistance": null,
+                "Scale": "51.80005,50.00013,50.10005",
+                "Static": false,
+                "Surface": null,
+                "SurfaceVelocity": "0,0,0"
+              },
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "d7a8f164-cbeb-48cd-91e6-62720568cc66",
+                "__enabled": true,
+                "BodyGroups": 18446744073709551615,
+                "CreateAttachments": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": null,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ElevatorButtons",
+                "__guid": "d829ed7b-3abd-4056-bbd4-62c9041dec1c",
+                "__enabled": true,
+                "ElevatorFloorNumber": 2,
+                "Interacted": {
+                  "__version": 9,
+                  "__guid": "cdb5c5f1-6f09-4aa9-ad96-3d56a9570766",
+                  "__changeId": 26,
+                  "UserData": {
+                    "Title": "Interacted",
+                    "ReferencedComponentTypes": [
+                      "ElevatorButtons",
+                      "Elevator",
+                      "Sandbox.ActionGraphs.ActionsInvoker"
+                    ]
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input",
+                      "UserData": {
+                        "Position": "-84,-156"
+                      }
+                    },
+                    {
+                      "Id": 1,
+                      "Type": "input.value",
+                      "Properties": {
+                        "_name": "_target"
+                      },
+                      "UserData": {
+                        "Position": "-276,84"
+                      }
+                    },
+                    {
+                      "Id": 2,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-192,84"
+                      }
+                    },
+                    {
+                      "Id": 3,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "36,84"
+                      }
+                    },
+                    {
+                      "Id": 4,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "252,84"
+                      }
+                    },
+                    {
+                      "Id": 5,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorFloorToGoTo",
+                        "_type": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "696,-24"
+                      }
+                    },
+                    {
+                      "Id": 6,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "ElevatorButtons"
+                      },
+                      "UserData": {
+                        "Position": "420,120"
+                      }
+                    },
+                    {
+                      "Id": 7,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorFloorNumber",
+                        "_type": "ElevatorButtons"
+                      },
+                      "UserData": {
+                        "Position": "636,120"
+                      }
+                    },
+                    {
+                      "Id": 10,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "456,0"
+                      }
+                    },
+                    {
+                      "Id": 13,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.ActionGraphs.ActionsInvoker"
+                      },
+                      "UserData": {
+                        "Position": "1056,72"
+                      }
+                    },
+                    {
+                      "Id": 14,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Enabled",
+                        "_type": "Sandbox.Component"
+                      },
+                      "UserData": {
+                        "Position": "1080,-24"
+                      }
+                    },
+                    {
+                      "Id": 21,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Enabled",
+                        "_type": "Sandbox.Component"
+                      },
+                      "UserData": {
+                        "Position": "1428,-24"
+                      }
+                    },
+                    {
+                      "Id": 26,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "264,-60"
+                      }
+                    },
+                    {
+                      "Id": 27,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorMoving",
+                        "_type": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "276,-84"
+                      }
+                    },
+                    {
+                      "Id": 28,
+                      "Type": "if",
+                      "UserData": {
+                        "Position": "372,-156"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 1,
+                      "SrcName": "_result",
+                      "DstId": 2,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 2,
+                      "SrcName": "_result",
+                      "DstId": 3,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 3,
+                      "SrcName": "_result",
+                      "DstId": 4,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 28,
+                      "SrcName": "false",
+                      "DstId": 5,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 10,
+                      "SrcName": "_result",
+                      "DstId": 5,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 7,
+                      "SrcName": "_result",
+                      "DstId": 5,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 6,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 6,
+                      "SrcName": "_result",
+                      "DstId": 7,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 10,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 13,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 5,
+                      "SrcName": "_signal",
+                      "DstId": 14,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 13,
+                      "SrcName": "_result",
+                      "DstId": 14,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 31,
+                      "Value": true,
+                      "DstId": 14,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 14,
+                      "SrcName": "_signal",
+                      "DstId": 21,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 13,
+                      "SrcName": "_result",
+                      "DstId": 21,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 32,
+                      "Value": false,
+                      "DstId": 21,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 26,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 26,
+                      "SrcName": "_result",
+                      "DstId": 27,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 28,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 27,
+                      "SrcName": "_result",
+                      "DstId": 28,
+                      "DstName": "condition"
+                    }
+                  ]
+                },
+                "IsInteractable": true,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null
+              }
+            ],
+            "Children": []
+          },
+          {
+            "__guid": "28b12a70-3949-4065-ac65-e980fe1c05fe",
+            "__version": 1,
+            "Flags": 0,
+            "Name": "FloorButton3",
+            "Position": "2.239584,61.14555,20.36407",
+            "Rotation": "0,0,0,1",
+            "Scale": "0.1,0.1,0.1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "NetworkOrphaned": 0,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.BoxCollider",
+                "__guid": "8d71a5dd-ce21-41c2-8c3e-eccdaaa6744d",
+                "__enabled": true,
+                "Center": "0,0,0",
+                "Elasticity": null,
+                "Friction": null,
+                "IsTrigger": false,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "OnObjectTriggerEnter": null,
+                "OnObjectTriggerExit": null,
+                "OnTriggerEnter": null,
+                "OnTriggerExit": null,
+                "RollingResistance": null,
+                "Scale": "51.80005,50.00013,50.10005",
+                "Static": false,
+                "Surface": null,
+                "SurfaceVelocity": "0,0,0"
+              },
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "9131ccfc-a815-4cca-abd1-cb0061a594ac",
+                "__enabled": true,
+                "BodyGroups": 18446744073709551615,
+                "CreateAttachments": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": null,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ElevatorButtons",
+                "__guid": "5340c1fb-4986-4925-b3df-3137e34e87c4",
+                "__enabled": true,
+                "ElevatorFloorNumber": 3,
+                "Interacted": {
+                  "__version": 9,
+                  "__guid": "3d086e06-90ce-46ad-a2d1-1f998bd1cac2",
+                  "__changeId": 26,
+                  "UserData": {
+                    "Title": "Interacted",
+                    "ReferencedComponentTypes": [
+                      "ElevatorButtons",
+                      "Elevator",
+                      "Sandbox.ActionGraphs.ActionsInvoker"
+                    ]
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input",
+                      "UserData": {
+                        "Position": "-84,-156"
+                      }
+                    },
+                    {
+                      "Id": 1,
+                      "Type": "input.value",
+                      "Properties": {
+                        "_name": "_target"
+                      },
+                      "UserData": {
+                        "Position": "-276,84"
+                      }
+                    },
+                    {
+                      "Id": 2,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-192,84"
+                      }
+                    },
+                    {
+                      "Id": 3,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "36,84"
+                      }
+                    },
+                    {
+                      "Id": 4,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "252,84"
+                      }
+                    },
+                    {
+                      "Id": 5,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorFloorToGoTo",
+                        "_type": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "696,-24"
+                      }
+                    },
+                    {
+                      "Id": 6,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "ElevatorButtons"
+                      },
+                      "UserData": {
+                        "Position": "420,120"
+                      }
+                    },
+                    {
+                      "Id": 7,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorFloorNumber",
+                        "_type": "ElevatorButtons"
+                      },
+                      "UserData": {
+                        "Position": "636,120"
+                      }
+                    },
+                    {
+                      "Id": 10,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "456,0"
+                      }
+                    },
+                    {
+                      "Id": 13,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.ActionGraphs.ActionsInvoker"
+                      },
+                      "UserData": {
+                        "Position": "1056,72"
+                      }
+                    },
+                    {
+                      "Id": 14,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Enabled",
+                        "_type": "Sandbox.Component"
+                      },
+                      "UserData": {
+                        "Position": "1080,-24"
+                      }
+                    },
+                    {
+                      "Id": 21,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Enabled",
+                        "_type": "Sandbox.Component"
+                      },
+                      "UserData": {
+                        "Position": "1428,-24"
+                      }
+                    },
+                    {
+                      "Id": 26,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "264,-60"
+                      }
+                    },
+                    {
+                      "Id": 27,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorMoving",
+                        "_type": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "276,-84"
+                      }
+                    },
+                    {
+                      "Id": 28,
+                      "Type": "if",
+                      "UserData": {
+                        "Position": "372,-156"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 1,
+                      "SrcName": "_result",
+                      "DstId": 2,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 2,
+                      "SrcName": "_result",
+                      "DstId": 3,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 3,
+                      "SrcName": "_result",
+                      "DstId": 4,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 28,
+                      "SrcName": "false",
+                      "DstId": 5,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 10,
+                      "SrcName": "_result",
+                      "DstId": 5,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 7,
+                      "SrcName": "_result",
+                      "DstId": 5,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 6,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 6,
+                      "SrcName": "_result",
+                      "DstId": 7,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 10,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 13,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 5,
+                      "SrcName": "_signal",
+                      "DstId": 14,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 13,
+                      "SrcName": "_result",
+                      "DstId": 14,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 29,
+                      "Value": true,
+                      "DstId": 14,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 14,
+                      "SrcName": "_signal",
+                      "DstId": 21,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 13,
+                      "SrcName": "_result",
+                      "DstId": 21,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 30,
+                      "Value": false,
+                      "DstId": 21,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 26,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 26,
+                      "SrcName": "_result",
+                      "DstId": 27,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 28,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 27,
+                      "SrcName": "_result",
+                      "DstId": 28,
+                      "DstName": "condition"
+                    }
+                  ]
+                },
+                "IsInteractable": true,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null
+              }
+            ],
+            "Children": []
+          },
+          {
+            "__guid": "7c22a514-5f0e-481c-84a4-c9f9daca347b",
+            "__version": 1,
+            "Flags": 0,
+            "Name": "FloorButton4",
+            "Position": "2.239584,60.98949,30.66896",
+            "Rotation": "0,0,0,1",
+            "Scale": "0.1,0.1,0.1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "NetworkOrphaned": 0,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.BoxCollider",
+                "__guid": "984a3057-50cb-4cdf-8425-c41e56f4eb45",
+                "__enabled": true,
+                "Center": "0,0,0",
+                "Elasticity": null,
+                "Friction": null,
+                "IsTrigger": false,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "OnObjectTriggerEnter": null,
+                "OnObjectTriggerExit": null,
+                "OnTriggerEnter": null,
+                "OnTriggerExit": null,
+                "RollingResistance": null,
+                "Scale": "51.80005,50.00013,50.10005",
+                "Static": false,
+                "Surface": null,
+                "SurfaceVelocity": "0,0,0"
+              },
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "69d25ee0-6c9c-4978-ac7c-3b912bbd05a1",
+                "__enabled": true,
+                "BodyGroups": 18446744073709551615,
+                "CreateAttachments": false,
+                "LodOverride": null,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Materials": null,
+                "Model": null,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ElevatorButtons",
+                "__guid": "933b1bce-30a0-43c2-9cca-4f05a7bbd32a",
+                "__enabled": true,
+                "ElevatorFloorNumber": 4,
+                "Interacted": {
+                  "__version": 9,
+                  "__guid": "b634a610-345a-46e1-9b0b-11460c1f26bb",
+                  "__changeId": 26,
+                  "UserData": {
+                    "Title": "Interacted",
+                    "ReferencedComponentTypes": [
+                      "ElevatorButtons",
+                      "Elevator",
+                      "Sandbox.ActionGraphs.ActionsInvoker"
+                    ]
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input",
+                      "UserData": {
+                        "Position": "-84,-156"
+                      }
+                    },
+                    {
+                      "Id": 1,
+                      "Type": "input.value",
+                      "Properties": {
+                        "_name": "_target"
+                      },
+                      "UserData": {
+                        "Position": "-276,84"
+                      }
+                    },
+                    {
+                      "Id": 2,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "-192,84"
+                      }
+                    },
+                    {
+                      "Id": 3,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "36,84"
+                      }
+                    },
+                    {
+                      "Id": 4,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Parent",
+                        "_type": "Sandbox.GameObject"
+                      },
+                      "UserData": {
+                        "Position": "252,84"
+                      }
+                    },
+                    {
+                      "Id": 5,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorFloorToGoTo",
+                        "_type": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "696,-24"
+                      }
+                    },
+                    {
+                      "Id": 6,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "ElevatorButtons"
+                      },
+                      "UserData": {
+                        "Position": "420,120"
+                      }
+                    },
+                    {
+                      "Id": 7,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorFloorNumber",
+                        "_type": "ElevatorButtons"
+                      },
+                      "UserData": {
+                        "Position": "636,120"
+                      }
+                    },
+                    {
+                      "Id": 10,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "456,0"
+                      }
+                    },
+                    {
+                      "Id": 13,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.ActionGraphs.ActionsInvoker"
+                      },
+                      "UserData": {
+                        "Position": "1056,72"
+                      }
+                    },
+                    {
+                      "Id": 14,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Enabled",
+                        "_type": "Sandbox.Component"
+                      },
+                      "UserData": {
+                        "Position": "1080,-24"
+                      }
+                    },
+                    {
+                      "Id": 21,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "Enabled",
+                        "_type": "Sandbox.Component"
+                      },
+                      "UserData": {
+                        "Position": "1428,-24"
+                      }
+                    },
+                    {
+                      "Id": 26,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "264,-60"
+                      }
+                    },
+                    {
+                      "Id": 27,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "ElevatorMoving",
+                        "_type": "Elevator"
+                      },
+                      "UserData": {
+                        "Position": "276,-84"
+                      }
+                    },
+                    {
+                      "Id": 28,
+                      "Type": "if",
+                      "UserData": {
+                        "Position": "372,-156"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 1,
+                      "SrcName": "_result",
+                      "DstId": 2,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 2,
+                      "SrcName": "_result",
+                      "DstId": 3,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 3,
+                      "SrcName": "_result",
+                      "DstId": 4,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 28,
+                      "SrcName": "false",
+                      "DstId": 5,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 10,
+                      "SrcName": "_result",
+                      "DstId": 5,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 7,
+                      "SrcName": "_result",
+                      "DstId": 5,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 6,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 6,
+                      "SrcName": "_result",
+                      "DstId": 7,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 10,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 13,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 5,
+                      "SrcName": "_signal",
+                      "DstId": 14,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 13,
+                      "SrcName": "_result",
+                      "DstId": 14,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 29,
+                      "Value": true,
+                      "DstId": 14,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 14,
+                      "SrcName": "_signal",
+                      "DstId": 21,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 13,
+                      "SrcName": "_result",
+                      "DstId": 21,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 30,
+                      "Value": false,
+                      "DstId": 21,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 26,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 26,
+                      "SrcName": "_result",
+                      "DstId": 27,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 28,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 27,
+                      "SrcName": "_result",
+                      "DstId": 28,
+                      "DstName": "condition"
+                    }
+                  ]
+                },
+                "IsInteractable": true,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null
+              }
+            ],
+            "Children": []
+          }
+        ]
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
+  },
   "ResourceVersion": 2,
   "ShowInMenu": false,
   "MenuPath": null,
