@@ -37,6 +37,16 @@ public sealed class PlayerHud : Component
     {
 		 TabMenu?.Invoke();
     }
+	
+	// public void LineTraceCustom()
+    // {
+	// SceneTraceResult tr = Scene.Trace.Ray( startPos, endPos ).Run();
+
+	// if ( tr.Hit )
+	// {
+	// 	Log.Info( $"Hit: {tr.GameObject} at {tr.EndPosition}" );
+	// }
+	// }
 
 
 	protected override void OnUpdate()

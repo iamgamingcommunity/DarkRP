@@ -11,7 +11,7 @@ public sealed class DarkrpPlayerInfo : Component
 
 	[Property] public GameObject F2MenuUIPanel { get; set; }
 
-	[Property] public GameObject F2MenuSceneTraceHitVar { get; set; }
+	[Property] public GameObject SecondaryInteractionTraceHitVar { get; set; }
 
 	
 	[Property] public int PlayerMoney { get; set; }
