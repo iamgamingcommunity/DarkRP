@@ -1,14 +1,70 @@
 F2Menu
 {
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #444;
+	top: 345;
+	left: 952;
+	right: 952;
+	bottom: 345;
+	background-color: #1a1919;
+	font-family: Poppins;
+	font-size: 24px;
+	padding: 10px;
+	justify-content: center;
+	align-items: center;
+			pointer-events: all;
 
 	&.hide
 	{
 		opacity: 0;
+	}
+
+
+	
+
+	//  .buttonbackground
+	// {
+	// 	> .buttontext
+	// 	{	
+	// 		&.sfx
+	// 		{
+	// 		&:active
+	// 		{
+	// 			sound-in: ui.downvote;
+	// 		}
+	// 		}
+	// 	}
+	// }
+
+
+
+
+	.buttonbackground
+	{
+		justify-content: center;
+		background-color:rgb(117, 117, 117);
+		pointer-events: all;
+
+
+		&:active
+		{
+			sound-in: ui.downvote;
+		}
+
+	}
+
+
+
+	.buttontext
+	{
+		padding: 20px;
+		font-size: 40px;
+		
+
+	}
+
+	.buttonholder
+	{
+		gap: 15px;
+		flex-direction: column;
 	}
 }

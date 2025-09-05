@@ -254,7 +254,7 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "f3a07f66-dc23-4b68-a2ca-47b13abdf0e3",
-              "__changeId": 186,
+              "__changeId": 189,
               "UserData": {
                 "Title": "On Component Start",
                 "ReferencedComponentTypes": [
@@ -388,7 +388,7 @@
                     "T": "PlayerHud"
                   },
                   "UserData": {
-                    "Position": "816,180"
+                    "Position": "852,180"
                   }
                 }
               ],
@@ -622,14 +622,16 @@
             "F2Menu": {
               "__version": 9,
               "__guid": "aab9789c-4e25-47b2-b639-51fb0401d5df",
-              "__changeId": 453,
+              "__changeId": 574,
               "UserData": {
-                "Title": "F 2Menu",
-                "Description": "Fresh",
+                "Title": "F2Menu",
+                "Description": "F2Menu Open Logic",
                 "ReferencedComponentTypes": [
                   "Sandbox.F2Menu",
                   "DarkrpPlayerInfo"
-                ]
+                ],
+                "Category": "UI Logic",
+                "Icon": "menu_open"
               },
               "Variables": [],
               "Nodes": [
@@ -637,14 +639,14 @@
                   "Id": 0,
                   "Type": "input",
                   "UserData": {
-                    "Position": "120,-684"
+                    "Position": "192,-696"
                   }
                 },
                 {
                   "Id": 1,
                   "Type": "scene.trace",
                   "UserData": {
-                    "Position": "-108,156"
+                    "Position": "-48,144"
                   }
                 },
                 {
@@ -666,7 +668,7 @@
                     "_name": "_target"
                   },
                   "UserData": {
-                    "Position": "-948,-12"
+                    "Position": "-948,-60"
                   }
                 },
                 {
@@ -678,13 +680,6 @@
                   },
                   "UserData": {
                     "Position": "-780,-72"
-                  }
-                },
-                {
-                  "Id": 6,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "-1056,204"
                   }
                 },
                 {
@@ -713,7 +708,7 @@
                   "Id": 10,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "1248,216"
+                    "Position": "1188,216"
                   }
                 },
                 {
@@ -723,7 +718,7 @@
                     "T": "Vector3"
                   },
                   "UserData": {
-                    "Position": "1200,288"
+                    "Position": "1140,288"
                   }
                 },
                 {
@@ -761,7 +756,7 @@
                   "Id": 18,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "948,216"
+                    "Position": "888,216"
                   }
                 },
                 {
@@ -771,7 +766,7 @@
                     "T": "Vector3"
                   },
                   "UserData": {
-                    "Position": "792,384"
+                    "Position": "804,324"
                   }
                 },
                 {
@@ -781,7 +776,7 @@
                     "_name": "_target"
                   },
                   "UserData": {
-                    "Position": "132,288"
+                    "Position": "-24,48"
                   }
                 },
                 {
@@ -851,7 +846,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "1740,372"
+                    "Position": "2004,192"
                   }
                 },
                 {
@@ -891,7 +886,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "1260,444"
+                    "Position": "2292,156"
                   }
                 },
                 {
@@ -903,7 +898,7 @@
                     "_type": "Sandbox.GameTags"
                   },
                   "UserData": {
-                    "Position": "1524,444"
+                    "Position": "2556,156"
                   }
                 },
                 {
@@ -929,7 +924,7 @@
                     "_type": "Sandbox.SceneTrace"
                   },
                   "UserData": {
-                    "Position": "348,-708"
+                    "Position": "576,-996"
                   }
                 },
                 {
@@ -939,23 +934,14 @@
                     "T": "Sandbox.SceneTraceResult"
                   },
                   "UserData": {
-                    "Position": "564,-720"
-                  }
-                },
-                {
-                  "Id": 188,
-                  "Type": "property",
-                  "ParentId": 182,
-                  "Properties": {
-                    "_name": "GameObject",
-                    "_type": "Sandbox.SceneTraceResult"
+                    "Position": "804,-996"
                   }
                 },
                 {
                   "Id": 202,
                   "Type": "nop",
                   "UserData": {
-                    "Position": "900,168"
+                    "Position": "552,156"
                   }
                 },
                 {
@@ -967,14 +953,7 @@
                     "_type": "Sandbox.SceneTrace"
                   },
                   "UserData": {
-                    "Position": "324,-216"
-                  }
-                },
-                {
-                  "Id": 216,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "3444,192"
+                    "Position": "132,-228"
                   }
                 },
                 {
@@ -1018,6 +997,62 @@
                   "UserData": {
                     "Position": "3108,36"
                   }
+                },
+                {
+                  "Id": 244,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "-1068,180"
+                  }
+                },
+                {
+                  "Id": 280,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "420,-876"
+                  }
+                },
+                {
+                  "Id": 290,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Run",
+                    "_type": "Sandbox.SceneTrace"
+                  },
+                  "UserData": {
+                    "Position": "396,-672"
+                  }
+                },
+                {
+                  "Id": 316,
+                  "Type": "property",
+                  "ParentId": 290,
+                  "Properties": {
+                    "_name": "GameObject",
+                    "_type": "Sandbox.SceneTraceResult"
+                  }
+                },
+                {
+                  "Id": 318,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "F2MenuUIPanel",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3324,264"
+                  }
+                },
+                {
+                  "Id": 319,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3096,276"
+                  }
                 }
               ],
               "Links": [
@@ -1046,7 +1081,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 6,
+                  "SrcId": 244,
                   "SrcName": "_result",
                   "DstId": 7,
                   "DstName": "_target"
@@ -1112,8 +1147,8 @@
                   "DstName": "format"
                 },
                 {
-                  "SrcId": 182,
-                  "SrcName": "body",
+                  "SrcId": 290,
+                  "SrcName": "_signal",
                   "DstId": 18,
                   "DstName": "_signal"
                 },
@@ -1136,7 +1171,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 135,
+                  "Id": 328,
                   "Value": "door",
                   "DstId": 48,
                   "DstName": "tag"
@@ -1208,7 +1243,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 136,
+                  "Id": 329,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -1224,7 +1259,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 137,
+                  "Id": 330,
                   "Value": 200,
                   "DstId": 131,
                   "DstName": "maxLength"
@@ -1248,13 +1283,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 144,
+                  "Id": 331,
                   "Value": true,
                   "DstId": 139,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 143,
+                  "Id": 332,
                   "Value": "door",
                   "DstId": 139,
                   "DstName": "tag"
@@ -1278,16 +1313,10 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 161,
+                  "Id": 333,
                   "Value": "YES IT IS DOOR!",
                   "DstId": 146,
                   "DstName": "format"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 181,
-                  "DstName": "_signal"
                 },
                 {
                   "SrcId": 212,
@@ -1308,121 +1337,7 @@
                   "DstName": "enumerable"
                 },
                 {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 183,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 184,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 185,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 186,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 187,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 188,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 189,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 190,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 191,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 192,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 193,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 194,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 195,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 196,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 197,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 198,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 199,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 200,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 182,
-                  "SrcName": "body.value",
-                  "DstId": 201,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 188,
+                  "SrcId": 316,
                   "SrcName": "_result",
                   "DstId": 202,
                   "DstName": "in"
@@ -1434,7 +1349,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 216,
+                  "SrcId": 318,
                   "SrcName": "_result",
                   "DstId": 217,
                   "DstName": "_this"
@@ -1452,7 +1367,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 219,
+                  "Id": 334,
                   "Value": true,
                   "DstId": 218,
                   "DstName": "_value"
@@ -1480,16 +1395,48 @@
                   "SrcName": "out",
                   "DstId": 221,
                   "DstName": "_value"
+                },
+                {
+                  "Id": 335,
+                  "Value": "LOGPLEASE",
+                  "DstId": 280,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 290,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 212,
+                  "SrcName": "_result",
+                  "DstId": 290,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 290,
+                  "SrcName": "_result",
+                  "DstId": 316,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 319,
+                  "SrcName": "_result",
+                  "DstId": 318,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 319,
+                  "DstName": "_this"
                 }
               ],
               "Defaults": {
-                "$6.gameobject": {
+                "$244.gameobject": {
                   "_type": "gameobject",
                   "go": "78530b97-775a-474d-8e34-045e6ab06bc9"
-                },
-                "$216.gameobject": {
-                  "_type": "gameobject",
-                  "go": "c023033f-8f52-44f5-bf42-48c819645c27"
                 }
               }
             },
@@ -1776,6 +1723,891 @@
                 "__type": "Sandbox.F2Menu",
                 "__guid": "b7b6af76-f15c-456b-8c3f-58a26fefb49f",
                 "__enabled": true,
+                "GraphBuyDoor": {
+                  "__version": 9,
+                  "__guid": "61f67a2d-5a3c-45e9-a5a9-cd3c935a3990",
+                  "__changeId": 210,
+                  "UserData": {
+                    "Title": "Graph Buy Door",
+                    "ReferencedComponentTypes": [
+                      "DarkrpPlayerInfo",
+                      "door",
+                      "Sandbox.F2Menu",
+                      "Sandbox.Doorui"
+                    ],
+                    "Description": "Buying Door Logic",
+                    "Category": "Door",
+                    "Icon": "door_front"
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input",
+                      "UserData": {
+                        "Position": "-84,-96"
+                      }
+                    },
+                    {
+                      "Id": 27,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "360,156"
+                      }
+                    },
+                    {
+                      "Id": 30,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "PlayerMoney",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "600,132"
+                      }
+                    },
+                    {
+                      "Id": 31,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "SecondaryInteractionTraceHitVar",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "804,228"
+                      }
+                    },
+                    {
+                      "Id": 32,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "792,252"
+                      }
+                    },
+                    {
+                      "Id": 33,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "door"
+                      },
+                      "UserData": {
+                        "Position": "936,204"
+                      }
+                    },
+                    {
+                      "Id": 34,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "DoorBuyAmount",
+                        "_type": "door"
+                      },
+                      "UserData": {
+                        "Position": "936,168"
+                      }
+                    },
+                    {
+                      "Id": 35,
+                      "Type": "op.greaterthanorequal",
+                      "UserData": {
+                        "Position": "1260,60"
+                      }
+                    },
+                    {
+                      "Id": 36,
+                      "Type": "if",
+                      "UserData": {
+                        "Position": "1260,-24"
+                      }
+                    },
+                    {
+                      "Id": 37,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsDoorPurchasable",
+                        "_type": "door"
+                      },
+                      "UserData": {
+                        "Position": "384,-0"
+                      }
+                    },
+                    {
+                      "Id": 38,
+                      "Type": "if",
+                      "UserData": {
+                        "Position": "408,-72"
+                      }
+                    },
+                    {
+                      "Id": 40,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsDoorOwnable",
+                        "_type": "door"
+                      },
+                      "UserData": {
+                        "Position": "84,-24"
+                      }
+                    },
+                    {
+                      "Id": 41,
+                      "Type": "if",
+                      "UserData": {
+                        "Position": "84,-96"
+                      }
+                    },
+                    {
+                      "Id": 43,
+                      "Type": "comment",
+                      "UserData": {
+                        "Position": "684,-156",
+                        "Size": "456,180",
+                        "Title": "Add Another Check Here",
+                        "Layer": 1,
+                        "Description": "Add Check here to see if Player Jobs is == to the jobs listed on the doors"
+                      }
+                    },
+                    {
+                      "Id": 44,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsDoorPurchasable",
+                        "_type": "door"
+                      },
+                      "UserData": {
+                        "Position": "3504,0"
+                      }
+                    },
+                    {
+                      "Id": 46,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "3372,132"
+                      }
+                    },
+                    {
+                      "Id": 47,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "door"
+                      },
+                      "UserData": {
+                        "Position": "3516,84"
+                      }
+                    },
+                    {
+                      "Id": 50,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "SecondaryInteractionTraceHitVar",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "1560,180"
+                      }
+                    },
+                    {
+                      "Id": 51,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "1464,216"
+                      }
+                    },
+                    {
+                      "Id": 52,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "door"
+                      },
+                      "UserData": {
+                        "Position": "1692,156"
+                      }
+                    },
+                    {
+                      "Id": 53,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "DoorBuyAmount",
+                        "_type": "door"
+                      },
+                      "UserData": {
+                        "Position": "1716,120"
+                      }
+                    },
+                    {
+                      "Id": 54,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "PlayerMoney",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "1608,72"
+                      }
+                    },
+                    {
+                      "Id": 55,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "1464,120"
+                      }
+                    },
+                    {
+                      "Id": 56,
+                      "Type": "op.subtract",
+                      "UserData": {
+                        "Position": "1896,72"
+                      }
+                    },
+                    {
+                      "Id": 57,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "PlayerMoney",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "1908,-0"
+                      }
+                    },
+                    {
+                      "Id": 58,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "DisplayName",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "2076,108"
+                      }
+                    },
+                    {
+                      "Id": 59,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "SecondaryInteractionTraceHitVar",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "2160,336"
+                      }
+                    },
+                    {
+                      "Id": 60,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "2160,396"
+                      }
+                    },
+                    {
+                      "Id": 61,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "door"
+                      },
+                      "UserData": {
+                        "Position": "2292,312"
+                      }
+                    },
+                    {
+                      "Id": 62,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "PlayerDisplayName",
+                        "_type": "door"
+                      },
+                      "UserData": {
+                        "Position": "2256,-0"
+                      }
+                    },
+                    {
+                      "Id": 64,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "PlayerSteamIDWhoOwnsDoor",
+                        "_type": "door"
+                      },
+                      "UserData": {
+                        "Position": "2520,0"
+                      }
+                    },
+                    {
+                      "Id": 65,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "SteamId",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "1896,216"
+                      }
+                    },
+                    {
+                      "Id": 66,
+                      "Type": "sys.tostring",
+                      "Properties": {
+                        "T": "Sandbox.SteamId"
+                      },
+                      "UserData": {
+                        "Position": "2160,216"
+                      }
+                    },
+                    {
+                      "Id": 69,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "3048,240"
+                      }
+                    },
+                    {
+                      "Id": 72,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "3048,264"
+                      }
+                    },
+                    {
+                      "Id": 74,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.Doorui"
+                      },
+                      "UserData": {
+                        "Position": "2640,300"
+                      }
+                    },
+                    {
+                      "Id": 76,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "PlayerWhoOwnsDoorDisplayName",
+                        "_type": "Sandbox.Doorui"
+                      },
+                      "UserData": {
+                        "Position": "3012,96"
+                      }
+                    },
+                    {
+                      "Id": 78,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "156,156"
+                      }
+                    },
+                    {
+                      "Id": 79,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "360,204"
+                      }
+                    },
+                    {
+                      "Id": 80,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "612,240"
+                      }
+                    },
+                    {
+                      "Id": 81,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "864,324"
+                      }
+                    },
+                    {
+                      "Id": 82,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "1404,240"
+                      }
+                    },
+                    {
+                      "Id": 83,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "1608,288"
+                      }
+                    },
+                    {
+                      "Id": 84,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "2088,456"
+                      }
+                    },
+                    {
+                      "Id": 85,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "2292,504"
+                      }
+                    },
+                    {
+                      "Id": 86,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "3324,240"
+                      }
+                    },
+                    {
+                      "Id": 87,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "3456,228"
+                      }
+                    },
+                    {
+                      "Id": 88,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "SecondaryInteractionTraceHitVar",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "3744,132"
+                      }
+                    },
+                    {
+                      "Id": 90,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "72,288"
+                      }
+                    },
+                    {
+                      "Id": 91,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "1560,360"
+                      }
+                    },
+                    {
+                      "Id": 92,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "2040,576"
+                      }
+                    },
+                    {
+                      "Id": 93,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "3420,372"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 27,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 79,
+                      "SrcName": "_result",
+                      "DstId": 30,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 81,
+                      "SrcName": "_result",
+                      "DstId": 31,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 32,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 31,
+                      "SrcName": "_result",
+                      "DstId": 33,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 33,
+                      "SrcName": "_result",
+                      "DstId": 34,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 30,
+                      "SrcName": "_result",
+                      "DstId": 35,
+                      "DstName": "a"
+                    },
+                    {
+                      "SrcId": 34,
+                      "SrcName": "_result",
+                      "DstId": 35,
+                      "DstName": "b"
+                    },
+                    {
+                      "SrcId": 38,
+                      "SrcName": "false",
+                      "DstId": 36,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 35,
+                      "SrcName": "_result",
+                      "DstId": 36,
+                      "DstName": "condition"
+                    },
+                    {
+                      "SrcId": 33,
+                      "SrcName": "_result",
+                      "DstId": 37,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 41,
+                      "SrcName": "true",
+                      "DstId": 38,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 37,
+                      "SrcName": "_result",
+                      "DstId": 38,
+                      "DstName": "condition"
+                    },
+                    {
+                      "SrcId": 33,
+                      "SrcName": "_result",
+                      "DstId": 40,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 41,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 40,
+                      "SrcName": "_result",
+                      "DstId": 41,
+                      "DstName": "condition"
+                    },
+                    {
+                      "SrcId": 64,
+                      "SrcName": "_signal",
+                      "DstId": 44,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 47,
+                      "SrcName": "_result",
+                      "DstId": 44,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 63,
+                      "Value": false,
+                      "DstId": 44,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 46,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 88,
+                      "SrcName": "_result",
+                      "DstId": 47,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 83,
+                      "SrcName": "_result",
+                      "DstId": 50,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 51,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 50,
+                      "SrcName": "_result",
+                      "DstId": 52,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 52,
+                      "SrcName": "_result",
+                      "DstId": 53,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 83,
+                      "SrcName": "_result",
+                      "DstId": 54,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 55,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 54,
+                      "SrcName": "_result",
+                      "DstId": 56,
+                      "DstName": "a"
+                    },
+                    {
+                      "SrcId": 53,
+                      "SrcName": "_result",
+                      "DstId": 56,
+                      "DstName": "b"
+                    },
+                    {
+                      "SrcId": 36,
+                      "SrcName": "true",
+                      "DstId": 57,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 83,
+                      "SrcName": "_result",
+                      "DstId": 57,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 56,
+                      "SrcName": "_result",
+                      "DstId": 57,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 83,
+                      "SrcName": "_result",
+                      "DstId": 58,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 85,
+                      "SrcName": "_result",
+                      "DstId": 59,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 60,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 59,
+                      "SrcName": "_result",
+                      "DstId": 61,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 57,
+                      "SrcName": "_signal",
+                      "DstId": 62,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 61,
+                      "SrcName": "_result",
+                      "DstId": 62,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 58,
+                      "SrcName": "_result",
+                      "DstId": 62,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 62,
+                      "SrcName": "_signal",
+                      "DstId": 64,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 61,
+                      "SrcName": "_result",
+                      "DstId": 64,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 66,
+                      "SrcName": "_result",
+                      "DstId": 64,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 83,
+                      "SrcName": "_result",
+                      "DstId": 65,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 65,
+                      "SrcName": "_result",
+                      "DstId": 66,
+                      "DstName": "input"
+                    },
+                    {
+                      "SrcId": 72,
+                      "SrcName": "_result",
+                      "DstId": 69,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_target",
+                      "DstId": 72,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 59,
+                      "SrcName": "_result",
+                      "DstId": 74,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 74,
+                      "SrcName": "_result",
+                      "DstId": 76,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 66,
+                      "SrcName": "_result",
+                      "DstId": 76,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 90,
+                      "SrcName": "_result",
+                      "DstId": 79,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 90,
+                      "SrcName": "_result",
+                      "DstId": 81,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 91,
+                      "SrcName": "_result",
+                      "DstId": 83,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 92,
+                      "SrcName": "_result",
+                      "DstId": 85,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 93,
+                      "SrcName": "_result",
+                      "DstId": 87,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 87,
+                      "SrcName": "_result",
+                      "DstId": 88,
+                      "DstName": "_target"
+                    }
+                  ],
+                  "Defaults": {
+                    "$90.gameobject": {
+                      "_type": "gameobject",
+                      "prefab": "prefabs/player/player.prefab"
+                    },
+                    "$78.gameobject": {
+                      "_type": "gameobject",
+                      "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                    },
+                    "$80.gameobject": {
+                      "_type": "gameobject",
+                      "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                    },
+                    "$82.gameobject": {
+                      "_type": "gameobject",
+                      "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                    },
+                    "$84.gameobject": {
+                      "_type": "gameobject",
+                      "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                    },
+                    "$86.gameobject": {
+                      "_type": "gameobject",
+                      "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                    },
+                    "$91.gameobject": {
+                      "_type": "gameobject",
+                      "prefab": "prefabs/player/player.prefab"
+                    },
+                    "$92.gameobject": {
+                      "_type": "gameobject",
+                      "prefab": "prefabs/player/player.prefab"
+                    },
+                    "$93.gameobject": {
+                      "_type": "gameobject",
+                      "prefab": "prefabs/player/player.prefab"
+                    }
+                  }
+                },
+                "GraphDisallowOwnership": null,
+                "GraphEditDoorGroup": null,
                 "OnComponentDestroy": null,
                 "OnComponentDisabled": null,
                 "OnComponentEnabled": null,

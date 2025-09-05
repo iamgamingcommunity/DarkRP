@@ -5,24 +5,81 @@
 
 <root class="@(IsShowingF2Menu ? "" : "hide")">
 	<div class="options">
-		<div class="button">
-			Disallow Ownership
-		</div>
-		<div class="button">
-			Buy Door
-		</div>
-		<div class="button">
-			Edit Door Groups
+		<!-- <div class="buttonbackgroundbackplate"> -->
+				<!-- <div class="inner">
+					<div class="fill" style="width:">
+
+		</div>	
+				</div> -->
+			<div class="buttonholder">
+				<div class="buttonbackground"onclick=@DisallowOwnership>
+					<div class="buttontext">
+						Disallow Ownership
+					</div>
+				</div>
+
+				<div class="buttonbackground"onclick=@BuyDoor>
+					<div class="buttontext">
+						Buy Door
+					</div>
+				</div>
+				<div class="buttonbackground"onclick=@EditDoorGroup>
+					<div class="buttontext">
+						Edit Door Groups
+					</div>
+				</div>
+		<!-- </div> -->
 		</div>
 	</div>
 </root>
 
 @code
 {
+	public delegate void ActionGraphEditDoorGroup();
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphEditDoorGroup GraphEditDoorGroup { get; set; }
+
+	public delegate void ActionGraphBuyDoor();
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphBuyDoor GraphBuyDoor { get; set; }
+
+	public delegate void ActionGraphDisallowOwnership();
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphDisallowOwnership GraphDisallowOwnership { get; set; }
+
+	
 	public bool IsShowingF2Menu {get; set;}
 	public bool IsSuperAdmin {get; set;}
 
+
 	
+	void EditDoorGroup()
+	{
+	 	GraphEditDoorGroup?.Invoke();
+	}
+
+	void BuyDoor()
+	{
+		GraphBuyDoor?.Invoke();
+	}
+
+	void DisallowOwnership()
+	{
+		GraphDisallowOwnership?.Invoke();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<!-- protected override void OnUpdate()
 	{
 		base.OnUpdate();

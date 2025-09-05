@@ -4,28 +4,21 @@ using System;
 
 	public partial class door : BaseEntity
 	{
+		
+		//Door Base Related Vars
 		[Property, Feature("Door Info")]
 		public bool IsDoorPurchasable { get; set; }
+		
+		[Property, Feature("Door Info")]
+		public bool IsDoorOwnable { get; set; } = true;
 
-
-
-
-		//Door System Related Vars
 		[Property, Feature("Door Info")]
 		public bool IsDoorLocked { get; set; }
 		
-		public bool IsDoorOpen { get; set; }
-		//Needed Vars for having dooring open/close correctly
-		public bool DoorInt0OpeningBool { get; set; }
+	
 
-		public bool DoorInt0ClosingBool { get; set; }
 
-		public bool DoorInt1OpeningBool { get; set; }
-
-		public bool DoorInt1ClosingBool { get; set; }
-
-		public Rotation DoorLocalRotation { get; set; }
-
+		//Door Purchase Infomation Vars
 		[Property, Feature( "Door Info" ), ShowIf ( nameof( IsDoorPurchasable ), true)]
 		public int DoorBuyAmount { get; set; }
 
@@ -36,7 +29,6 @@ using System;
 		[Property, Feature( "Door Info" ), ShowIf ( nameof( IsDoorPurchasable ), true)]
 		public string PlayerSteamIDWhoOwnsDoor { get; set; }
 
-
 		[Property, Feature("Door Info"), ShowIf ( nameof( IsDoorPurchasable ), true)]
 		public string[] PlayerFriendsSteamIDWhoOwnsDoor { get; set; }
 		
@@ -45,6 +37,20 @@ using System;
 		
 		[Property, Feature("Door Info")]
 		public string[] BlacklistedJobDoorGroups { get; set; }
+
+
+		//Needed Vars for having dooring open/close correctly in the right directions
+		public bool DoorInt0OpeningBool { get; set; }
+
+		public bool DoorInt0ClosingBool { get; set; }
+
+		public bool DoorInt1OpeningBool { get; set; }
+
+		public bool DoorInt1ClosingBool { get; set; }
+
+		public Rotation DoorLocalRotation { get; set; }
+
+		public bool IsDoorOpen { get; set; }
 
 
 		// Called every frame while the player is looking at this object.
