@@ -1446,7 +1446,135 @@
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
             "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
+            "OnComponentStart": {
+              "__version": 9,
+              "__guid": "f6e0194b-5847-43bb-b57f-d8a761587eae",
+              "__changeId": 67,
+              "UserData": {
+                "Title": "On Component Start",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "-36,-24"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "876,-12"
+                  }
+                },
+                {
+                  "Id": 14,
+                  "Type": "Jobs/Get Job By Name",
+                  "UserData": {
+                    "Position": "312,0"
+                  }
+                },
+                {
+                  "Id": 21,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Title",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "420,156"
+                  }
+                },
+                {
+                  "Id": 22,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsValid",
+                    "_type": "Sandbox.GameResource"
+                  },
+                  "UserData": {
+                    "Position": "480,216"
+                  }
+                },
+                {
+                  "Id": 23,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "612,0"
+                  }
+                },
+                {
+                  "Id": 24,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Description",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "576,132"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 23,
+                  "SrcName": "true",
+                  "DstId": 4,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 24,
+                  "SrcName": "_result",
+                  "DstId": 4,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 14,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 20,
+                  "Value": "teaguy",
+                  "DstId": 14,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "_result",
+                  "DstId": 21,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "_result",
+                  "DstId": 22,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "_signal",
+                  "DstId": 23,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 22,
+                  "SrcName": "_result",
+                  "DstId": 23,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "_result",
+                  "DstId": 24,
+                  "DstName": "_target"
+                }
+              ]
+            },
             "OnComponentUpdate": null,
             "TabMenu": null
           }
@@ -2345,7 +2473,7 @@
                       "DstName": "_target"
                     },
                     {
-                      "Id": 63,
+                      "Id": 95,
                       "Value": false,
                       "DstId": 44,
                       "DstName": "_value"
@@ -2568,10 +2696,6 @@
                     }
                   ],
                   "Defaults": {
-                    "$90.gameobject": {
-                      "_type": "gameobject",
-                      "prefab": "prefabs/player/player.prefab"
-                    },
                     "$78.gameobject": {
                       "_type": "gameobject",
                       "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
@@ -2592,6 +2716,10 @@
                       "_type": "gameobject",
                       "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
                     },
+                    "$90.gameobject": {
+                      "_type": "gameobject",
+                      "prefab": "prefabs/player/player.prefab"
+                    },
                     "$91.gameobject": {
                       "_type": "gameobject",
                       "prefab": "prefabs/player/player.prefab"
@@ -2607,7 +2735,22 @@
                   }
                 },
                 "GraphDisallowOwnership": null,
-                "GraphEditDoorGroup": null,
+                "GraphEditDoorGroup": {
+                  "__version": 9,
+                  "__guid": "09aa44ae-ebf0-43e1-acca-847654ef85fd",
+                  "__changeId": 14,
+                  "UserData": {
+                    "Title": "Graph Edit Door Group"
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input"
+                    }
+                  ],
+                  "Links": []
+                },
                 "OnComponentDestroy": null,
                 "OnComponentDisabled": null,
                 "OnComponentEnabled": null,
