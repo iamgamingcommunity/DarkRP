@@ -23,10 +23,10 @@ using System;
 		public int DoorBuyAmount { get; set; }
 
 
-		[Property, Feature( "Door Info" ), ShowIf ( nameof( IsDoorPurchasable ), true)]
+		[Property, Feature( "Door Info" )]
 		public string PlayerDisplayName { get; set; }
 
-		[Property, Feature( "Door Info" ), ShowIf ( nameof( IsDoorPurchasable ), true)]
+		[Property, Feature( "Door Info" )]
 		public string PlayerSteamIDWhoOwnsDoor { get; set; }
 
 		[Property, Feature("Door Info"), ShowIf ( nameof( IsDoorPurchasable ), true)]

@@ -115,6 +115,2136 @@
             },
             "Property": "Position",
             "Value": "-518.4096,-51.43733,18.5"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "d215563e-393f-4c7b-9552-bf6f4d22570f"
+            },
+            "Property": "OnObjectTriggerEnter",
+            "Value": {
+              "__version": 9,
+              "__guid": "77ca89ab-2845-487a-b142-f049bfabc615",
+              "__changeId": 477,
+              "UserData": {
+                "Title": "On Object Enter Teacup",
+                "Description": "Detects/Trigger Logic depending on the Ingredients.",
+                "Category": "Microwave",
+                "Icon": "brightness_1",
+                "ReferencedComponentTypes": [
+                  "Food",
+                  "BaseEntity",
+                  "CookableItem"
+                ]
+              },
+              "Variables": [
+                {
+                  "Name": "ObjectEnterRef",
+                  "Type": "Sandbox.GameObject"
+                }
+              ],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "-720,84"
+                  }
+                },
+                {
+                  "Id": 13,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "552,72"
+                  }
+                },
+                {
+                  "Id": 26,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "1416,1152"
+                  }
+                },
+                {
+                  "Id": 28,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Tags",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "48,120"
+                  }
+                },
+                {
+                  "Id": 30,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Has",
+                    "_type": "Sandbox.GameTags"
+                  },
+                  "UserData": {
+                    "Position": "300,96"
+                  }
+                },
+                {
+                  "Id": 32,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-192,-48",
+                    "Size": "900,384",
+                    "Title": "Check If Water",
+                    "Layer": 1,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 33,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Tags",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1200,1260"
+                  }
+                },
+                {
+                  "Id": 34,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "1080,1272"
+                  }
+                },
+                {
+                  "Id": 35,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Has",
+                    "_type": "Sandbox.GameTags"
+                  },
+                  "UserData": {
+                    "Position": "1416,1236"
+                  }
+                },
+                {
+                  "Id": 38,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "480,1080",
+                    "Size": "1236,384",
+                    "Title": "Check If Tea Bag",
+                    "Layer": 1,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 40,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "ObjectEnterRef"
+                  },
+                  "UserData": {
+                    "Position": "-444,84"
+                  }
+                },
+                {
+                  "Id": 41,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "ObjectEnterRef"
+                  },
+                  "UserData": {
+                    "Position": "-120,120"
+                  }
+                },
+                {
+                  "Id": 42,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "ObjectEnterRef"
+                  },
+                  "UserData": {
+                    "Position": "912,1260"
+                  }
+                },
+                {
+                  "Id": 48,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "ObjectEnterRef"
+                  },
+                  "UserData": {
+                    "Position": "4212,228"
+                  }
+                },
+                {
+                  "Id": 52,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4416,228"
+                  }
+                },
+                {
+                  "Id": 54,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Thirst",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "5268,12"
+                  }
+                },
+                {
+                  "Id": 55,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Health",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4944,12"
+                  }
+                },
+                {
+                  "Id": 58,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Health",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4416,72"
+                  }
+                },
+                {
+                  "Id": 64,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Thirst",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "5064,96"
+                  }
+                },
+                {
+                  "Id": 82,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Ingredients",
+                    "_type": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "-12,264"
+                  }
+                },
+                {
+                  "Id": 83,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "264,240"
+                  }
+                },
+                {
+                  "Id": 107,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientName",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "408,264"
+                  }
+                },
+                {
+                  "Id": 110,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Ingredients",
+                    "_type": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "996,1380"
+                  }
+                },
+                {
+                  "Id": 111,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "1272,1356"
+                  }
+                },
+                {
+                  "Id": 112,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientName",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "1416,1380"
+                  }
+                },
+                {
+                  "Id": 118,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Ingredients",
+                    "_type": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "1404,-12"
+                  }
+                },
+                {
+                  "Id": 119,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "1680,-36"
+                  }
+                },
+                {
+                  "Id": 124,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientDone",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "1572,-60"
+                  }
+                },
+                {
+                  "Id": 125,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "1680,-132"
+                  }
+                },
+                {
+                  "Id": 126,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "BaseEntity"
+                  },
+                  "UserData": {
+                    "Position": "2724,-372"
+                  }
+                },
+                {
+                  "Id": 127,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsInteractable",
+                    "_type": "BaseEntity"
+                  },
+                  "UserData": {
+                    "Position": "2736,-456"
+                  }
+                },
+                {
+                  "Id": 130,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "ObjectEnterRef"
+                  },
+                  "UserData": {
+                    "Position": "2772,-348"
+                  }
+                },
+                {
+                  "Id": 133,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2736,-60"
+                  }
+                },
+                {
+                  "Id": 135,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Ingredients",
+                    "_type": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "2184,84"
+                  }
+                },
+                {
+                  "Id": 136,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "2460,60"
+                  }
+                },
+                {
+                  "Id": 138,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientAmount",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "2436,24"
+                  }
+                },
+                {
+                  "Id": 139,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "2784,24"
+                  }
+                },
+                {
+                  "Id": 146,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Ingredients",
+                    "_type": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "5376,180"
+                  }
+                },
+                {
+                  "Id": 147,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "5652,156"
+                  }
+                },
+                {
+                  "Id": 148,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientAmount",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "5820,216"
+                  }
+                },
+                {
+                  "Id": 151,
+                  "Type": "op.subtract",
+                  "UserData": {
+                    "Position": "6108,216"
+                  }
+                },
+                {
+                  "Id": 154,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientAmount",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "6096,132"
+                  }
+                },
+                {
+                  "Id": 157,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "6156,24"
+                  }
+                },
+                {
+                  "Id": 162,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4668,432"
+                  }
+                },
+                {
+                  "Id": 185,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "4452,432"
+                  }
+                },
+                {
+                  "Id": 186,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "-216,264"
+                  }
+                },
+                {
+                  "Id": 189,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Ingredients",
+                    "_type": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "2400,1284"
+                  }
+                },
+                {
+                  "Id": 190,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "2676,1260"
+                  }
+                },
+                {
+                  "Id": 191,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientDone",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "2568,1236"
+                  }
+                },
+                {
+                  "Id": 192,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2676,1164"
+                  }
+                },
+                {
+                  "Id": 193,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "BaseEntity"
+                  },
+                  "UserData": {
+                    "Position": "3720,924"
+                  }
+                },
+                {
+                  "Id": 194,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsInteractable",
+                    "_type": "BaseEntity"
+                  },
+                  "UserData": {
+                    "Position": "3732,840"
+                  }
+                },
+                {
+                  "Id": 195,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "ObjectEnterRef"
+                  },
+                  "UserData": {
+                    "Position": "3768,948"
+                  }
+                },
+                {
+                  "Id": 197,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "3732,1236"
+                  }
+                },
+                {
+                  "Id": 199,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Ingredients",
+                    "_type": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "3180,1380"
+                  }
+                },
+                {
+                  "Id": 200,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3456,1356"
+                  }
+                },
+                {
+                  "Id": 201,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientAmount",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3432,1320"
+                  }
+                },
+                {
+                  "Id": 202,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "3780,1320"
+                  }
+                },
+                {
+                  "Id": 213,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "ObjectEnterRef"
+                  },
+                  "UserData": {
+                    "Position": "3768,1632"
+                  }
+                },
+                {
+                  "Id": 214,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Food"
+                  },
+                  "UserData": {
+                    "Position": "3972,1632"
+                  }
+                },
+                {
+                  "Id": 215,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Thirst",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4776,1296"
+                  }
+                },
+                {
+                  "Id": 216,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Health",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4452,1296"
+                  }
+                },
+                {
+                  "Id": 221,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Ingredients",
+                    "_type": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "5748,1464"
+                  }
+                },
+                {
+                  "Id": 222,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "6024,1440"
+                  }
+                },
+                {
+                  "Id": 223,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientAmount",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "6192,1500"
+                  }
+                },
+                {
+                  "Id": 224,
+                  "Type": "op.subtract",
+                  "UserData": {
+                    "Position": "6480,1500"
+                  }
+                },
+                {
+                  "Id": 225,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientAmount",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "6468,1416"
+                  }
+                },
+                {
+                  "Id": 226,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CookableItem",
+                      "Name": "IngredientData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "6528,1308"
+                  }
+                },
+                {
+                  "Id": 227,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Food"
+                  },
+                  "UserData": {
+                    "Position": "3936,1416"
+                  }
+                },
+                {
+                  "Id": 228,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "3696,1416"
+                  }
+                },
+                {
+                  "Id": 265,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "1212,24"
+                  }
+                },
+                {
+                  "Id": 266,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "2196,180"
+                  }
+                },
+                {
+                  "Id": 267,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "5472,288"
+                  }
+                },
+                {
+                  "Id": 268,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "2088,1356"
+                  }
+                },
+                {
+                  "Id": 269,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "3180,1404"
+                  }
+                },
+                {
+                  "Id": 270,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "5748,1488"
+                  }
+                },
+                {
+                  "Id": 271,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "ObjectEnterRef"
+                  },
+                  "UserData": {
+                    "Position": "7704,84"
+                  }
+                },
+                {
+                  "Id": 272,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Destroy",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "7692,24"
+                  }
+                },
+                {
+                  "Id": 273,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "ObjectEnterRef"
+                  },
+                  "UserData": {
+                    "Position": "7152,1356"
+                  }
+                },
+                {
+                  "Id": 274,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Destroy",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "7164,1308"
+                  }
+                },
+                {
+                  "Id": 275,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "744,1380"
+                  }
+                },
+                {
+                  "Id": 277,
+                  "Type": "op.add",
+                  "UserData": {
+                    "Position": "4824,72"
+                  }
+                },
+                {
+                  "Id": 279,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Health",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4644,96"
+                  }
+                },
+                {
+                  "Id": 280,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Thirst",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "5076,132"
+                  }
+                },
+                {
+                  "Id": 281,
+                  "Type": "op.add",
+                  "UserData": {
+                    "Position": "5280,96"
+                  }
+                },
+                {
+                  "Id": 282,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Health",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4284,1368"
+                  }
+                },
+                {
+                  "Id": 283,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Thirst",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4656,1380"
+                  }
+                },
+                {
+                  "Id": 284,
+                  "Type": "op.add",
+                  "UserData": {
+                    "Position": "4464,1368"
+                  }
+                },
+                {
+                  "Id": 285,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Health",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4284,1392"
+                  }
+                },
+                {
+                  "Id": 286,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Thirst",
+                    "_type": "Food"
+                  },
+                  "UserData": {
+                    "Position": "4656,1404"
+                  }
+                },
+                {
+                  "Id": 287,
+                  "Type": "op.add",
+                  "UserData": {
+                    "Position": "4836,1380"
+                  }
+                },
+                {
+                  "Id": 324,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "6852,1392"
+                  }
+                },
+                {
+                  "Id": 325,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientMixingSound",
+                    "_type": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "6828,1368"
+                  }
+                },
+                {
+                  "Id": 326,
+                  "Type": "sound.play",
+                  "UserData": {
+                    "Position": "6852,1308"
+                  }
+                },
+                {
+                  "Id": 327,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "6408,108"
+                  }
+                },
+                {
+                  "Id": 328,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IngredientMixingSound",
+                    "_type": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "6396,84"
+                  }
+                },
+                {
+                  "Id": 329,
+                  "Type": "sound.play",
+                  "UserData": {
+                    "Position": "6420,24"
+                  }
+                },
+                {
+                  "Id": 332,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Add",
+                    "_type": "Sandbox.GameTags"
+                  },
+                  "UserData": {
+                    "Position": "7164,24"
+                  }
+                },
+                {
+                  "Id": 396,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Tags",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "6972,48"
+                  }
+                },
+                {
+                  "Id": 454,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "CookableItem"
+                  },
+                  "UserData": {
+                    "Position": "7404,108"
+                  }
+                },
+                {
+                  "Id": 455,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsInteractable",
+                    "_type": "BaseEntity"
+                  },
+                  "UserData": {
+                    "Position": "7416,24"
+                  }
+                },
+                {
+                  "Id": 504,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "6744,132"
+                  }
+                },
+                {
+                  "Id": 507,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "5580,1320"
+                  }
+                },
+                {
+                  "Id": 508,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Enabled",
+                    "_type": "Sandbox.Component"
+                  },
+                  "UserData": {
+                    "Position": "6756,24"
+                  }
+                },
+                {
+                  "Id": 510,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Enabled",
+                    "_type": "Sandbox.Component"
+                  },
+                  "UserData": {
+                    "Position": "5724,1296"
+                  }
+                },
+                {
+                  "Id": 513,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "5136,1404"
+                  }
+                },
+                {
+                  "Id": 514,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Enabled",
+                    "_type": "Sandbox.Component"
+                  },
+                  "UserData": {
+                    "Position": "5148,1296"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 40,
+                  "SrcName": "_signal",
+                  "DstId": 13,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 30,
+                  "SrcName": "_result",
+                  "DstId": 13,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 13,
+                  "SrcName": "false",
+                  "DstId": 26,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 35,
+                  "SrcName": "_result",
+                  "DstId": 26,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 41,
+                  "SrcName": "_result",
+                  "DstId": 28,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 28,
+                  "SrcName": "_result",
+                  "DstId": 30,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 515,
+                  "Value": true,
+                  "DstId": 30,
+                  "DstName": "includeAncestors"
+                },
+                {
+                  "SrcId": 107,
+                  "SrcName": "_result",
+                  "DstId": 30,
+                  "DstName": "tag"
+                },
+                {
+                  "SrcId": 34,
+                  "SrcName": "out",
+                  "DstId": 33,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "_result",
+                  "DstId": 34,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "_result",
+                  "DstId": 35,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 516,
+                  "Value": true,
+                  "DstId": 35,
+                  "DstName": "includeAncestors"
+                },
+                {
+                  "SrcId": 112,
+                  "SrcName": "_result",
+                  "DstId": 35,
+                  "DstName": "tag"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 40,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "obj",
+                  "DstId": 40,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 48,
+                  "SrcName": "_result",
+                  "DstId": 52,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 55,
+                  "SrcName": "_signal",
+                  "DstId": 54,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 162,
+                  "SrcName": "_result",
+                  "DstId": 54,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 281,
+                  "SrcName": "_result",
+                  "DstId": 54,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 133,
+                  "SrcName": "false",
+                  "DstId": 55,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 162,
+                  "SrcName": "_result",
+                  "DstId": 55,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 277,
+                  "SrcName": "_result",
+                  "DstId": 55,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 52,
+                  "SrcName": "_result",
+                  "DstId": 58,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 52,
+                  "SrcName": "_result",
+                  "DstId": 64,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 186,
+                  "SrcName": "_result",
+                  "DstId": 82,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 517,
+                  "Value": 0,
+                  "DstId": 83,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 82,
+                  "SrcName": "_result",
+                  "DstId": 83,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 83,
+                  "SrcName": "_result",
+                  "DstId": 107,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 275,
+                  "SrcName": "_result",
+                  "DstId": 110,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 518,
+                  "Value": 1,
+                  "DstId": 111,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 110,
+                  "SrcName": "_result",
+                  "DstId": 111,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 111,
+                  "SrcName": "_result",
+                  "DstId": 112,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 265,
+                  "SrcName": "_result",
+                  "DstId": 118,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 519,
+                  "Value": 0,
+                  "DstId": 119,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 118,
+                  "SrcName": "_result",
+                  "DstId": 119,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 119,
+                  "SrcName": "_result",
+                  "DstId": 124,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 13,
+                  "SrcName": "true",
+                  "DstId": 125,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 124,
+                  "SrcName": "_result",
+                  "DstId": 125,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 130,
+                  "SrcName": "_result",
+                  "DstId": 126,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 125,
+                  "SrcName": "true",
+                  "DstId": 127,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 126,
+                  "SrcName": "_result",
+                  "DstId": 127,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 520,
+                  "Value": true,
+                  "DstId": 127,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 125,
+                  "SrcName": "false",
+                  "DstId": 133,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 139,
+                  "SrcName": "_result",
+                  "DstId": 133,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 266,
+                  "SrcName": "_result",
+                  "DstId": 135,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 521,
+                  "Value": 0,
+                  "DstId": 136,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 135,
+                  "SrcName": "_result",
+                  "DstId": 136,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 136,
+                  "SrcName": "_result",
+                  "DstId": 138,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 138,
+                  "SrcName": "_result",
+                  "DstId": 139,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 522,
+                  "Value": 0,
+                  "DstId": 139,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 267,
+                  "SrcName": "_result",
+                  "DstId": 146,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 523,
+                  "Value": 0,
+                  "DstId": 147,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 146,
+                  "SrcName": "_result",
+                  "DstId": 147,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 147,
+                  "SrcName": "_result",
+                  "DstId": 148,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 148,
+                  "SrcName": "_result",
+                  "DstId": 151,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 524,
+                  "Value": 1,
+                  "DstId": 151,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 147,
+                  "SrcName": "_result",
+                  "DstId": 154,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 151,
+                  "SrcName": "_result",
+                  "DstId": 154,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 54,
+                  "SrcName": "_signal",
+                  "DstId": 157,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 525,
+                  "Value": 0,
+                  "DstId": 157,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 146,
+                  "SrcName": "_result",
+                  "DstId": 157,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 154,
+                  "SrcName": "_target",
+                  "DstId": 157,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 185,
+                  "SrcName": "_result",
+                  "DstId": 162,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 185,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 186,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 268,
+                  "SrcName": "_result",
+                  "DstId": 189,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 526,
+                  "Value": 1,
+                  "DstId": 190,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 189,
+                  "SrcName": "_result",
+                  "DstId": 190,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 190,
+                  "SrcName": "_result",
+                  "DstId": 191,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 26,
+                  "SrcName": "true",
+                  "DstId": 192,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 191,
+                  "SrcName": "_result",
+                  "DstId": 192,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 195,
+                  "SrcName": "_result",
+                  "DstId": 193,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 192,
+                  "SrcName": "true",
+                  "DstId": 194,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 193,
+                  "SrcName": "_result",
+                  "DstId": 194,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 527,
+                  "Value": true,
+                  "DstId": 194,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 192,
+                  "SrcName": "false",
+                  "DstId": 197,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 202,
+                  "SrcName": "_result",
+                  "DstId": 197,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 269,
+                  "SrcName": "_result",
+                  "DstId": 199,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 528,
+                  "Value": 1,
+                  "DstId": 200,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 199,
+                  "SrcName": "_result",
+                  "DstId": 200,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 200,
+                  "SrcName": "_result",
+                  "DstId": 201,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 201,
+                  "SrcName": "_result",
+                  "DstId": 202,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 529,
+                  "Value": 0,
+                  "DstId": 202,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 213,
+                  "SrcName": "_result",
+                  "DstId": 214,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 216,
+                  "SrcName": "_signal",
+                  "DstId": 215,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 227,
+                  "SrcName": "_result",
+                  "DstId": 215,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 287,
+                  "SrcName": "_result",
+                  "DstId": 215,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 197,
+                  "SrcName": "false",
+                  "DstId": 216,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 227,
+                  "SrcName": "_result",
+                  "DstId": 216,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 284,
+                  "SrcName": "_result",
+                  "DstId": 216,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 270,
+                  "SrcName": "_result",
+                  "DstId": 221,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 530,
+                  "Value": 0,
+                  "DstId": 222,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 221,
+                  "SrcName": "_result",
+                  "DstId": 222,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 222,
+                  "SrcName": "_result",
+                  "DstId": 223,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 223,
+                  "SrcName": "_result",
+                  "DstId": 224,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 531,
+                  "Value": 1,
+                  "DstId": 224,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 222,
+                  "SrcName": "_result",
+                  "DstId": 225,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 224,
+                  "SrcName": "_result",
+                  "DstId": 225,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 510,
+                  "SrcName": "_signal",
+                  "DstId": 226,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 532,
+                  "Value": 1,
+                  "DstId": 226,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 221,
+                  "SrcName": "_result",
+                  "DstId": 226,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 225,
+                  "SrcName": "_target",
+                  "DstId": 226,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 228,
+                  "SrcName": "_result",
+                  "DstId": 227,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 228,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 265,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 266,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 267,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 268,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 269,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 270,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 455,
+                  "SrcName": "_signal",
+                  "DstId": 272,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 271,
+                  "SrcName": "_result",
+                  "DstId": 272,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 326,
+                  "SrcName": "_signal",
+                  "DstId": 274,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 273,
+                  "SrcName": "_result",
+                  "DstId": 274,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 275,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 58,
+                  "SrcName": "_result",
+                  "DstId": 277,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 279,
+                  "SrcName": "_result",
+                  "DstId": 277,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 162,
+                  "SrcName": "_result",
+                  "DstId": 279,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 162,
+                  "SrcName": "_result",
+                  "DstId": 280,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_result",
+                  "DstId": 281,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 280,
+                  "SrcName": "_result",
+                  "DstId": 281,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 214,
+                  "SrcName": "_result",
+                  "DstId": 282,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 214,
+                  "SrcName": "_result",
+                  "DstId": 283,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 282,
+                  "SrcName": "_result",
+                  "DstId": 284,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 285,
+                  "SrcName": "_result",
+                  "DstId": 284,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 227,
+                  "SrcName": "_result",
+                  "DstId": 285,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 227,
+                  "SrcName": "_result",
+                  "DstId": 286,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 283,
+                  "SrcName": "_result",
+                  "DstId": 287,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 286,
+                  "SrcName": "_result",
+                  "DstId": 287,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 324,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 324,
+                  "SrcName": "_result",
+                  "DstId": 325,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 226,
+                  "SrcName": "_signal",
+                  "DstId": 326,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 326,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 325,
+                  "SrcName": "_result",
+                  "DstId": 326,
+                  "DstName": "soundEvent"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 327,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 327,
+                  "SrcName": "_result",
+                  "DstId": 328,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 157,
+                  "SrcName": "_signal",
+                  "DstId": 329,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 329,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 328,
+                  "SrcName": "_result",
+                  "DstId": 329,
+                  "DstName": "soundEvent"
+                },
+                {
+                  "SrcId": 508,
+                  "SrcName": "_signal",
+                  "DstId": 332,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 396,
+                  "SrcName": "_result",
+                  "DstId": 332,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 533,
+                  "Value": "filled",
+                  "DstId": 332,
+                  "DstName": "tags",
+                  "DstIndex": 0
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 396,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 454,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 332,
+                  "SrcName": "_signal",
+                  "DstId": 455,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 454,
+                  "SrcName": "_result",
+                  "DstId": 455,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 534,
+                  "Value": true,
+                  "DstId": 455,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 329,
+                  "SrcName": "_signal",
+                  "DstId": 508,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 504,
+                  "SrcName": "_result",
+                  "DstId": 508,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 535,
+                  "Value": true,
+                  "DstId": 508,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 514,
+                  "SrcName": "_signal",
+                  "DstId": 510,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 507,
+                  "SrcName": "_result",
+                  "DstId": 510,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 536,
+                  "Value": true,
+                  "DstId": 510,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 215,
+                  "SrcName": "_signal",
+                  "DstId": 514,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 513,
+                  "SrcName": "_result",
+                  "DstId": 514,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 537,
+                  "Value": false,
+                  "DstId": 514,
+                  "DstName": "_value"
+                }
+              ],
+              "Defaults": {
+                "$504.component": {
+                  "_type": "component",
+                  "component_id": "c35a6d86-315d-42cf-af70-a523eff00ef6",
+                  "go": "b1aab111-32b0-4e14-85b8-e77fa9b6755b",
+                  "component_type": "ModelRenderer"
+                },
+                "$507.component": {
+                  "_type": "component",
+                  "component_id": "2387479b-b7a5-4c81-901a-45b6f3531a02",
+                  "go": "b1aab111-32b0-4e14-85b8-e77fa9b6755b",
+                  "component_type": "ModelRenderer"
+                },
+                "$513.component": {
+                  "_type": "component",
+                  "component_id": "c35a6d86-315d-42cf-af70-a523eff00ef6",
+                  "go": "b1aab111-32b0-4e14-85b8-e77fa9b6755b",
+                  "component_type": "ModelRenderer"
+                }
+              }
+            }
           }
         ],
         "MovedObjects": []
@@ -778,39 +2908,23 @@
             },
             "Property": "Rotation",
             "Value": "0,0,-0.7071067,0.7071069"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "ae55ddd2-169e-43c2-a268-1135c7a8576d"
-            },
-            "Property": "IsDoorOwnable",
-            "Value": false
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "5cf8a0f1-ec7a-4374-ab0c-69168c7a96d8"
-            },
-            "Property": "Position",
-            "Value": "0,-22.31991,88.81746"
           }
         ],
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
         "79771431-1ea1-4fef-9e7b-9cec0f79dbde": "017c8164-49a6-48b9-999a-0881bbb9b019",
-        "b3548e4b-4396-4105-97bb-c82c8dff4ed5": "62301b58-78eb-4a7d-9d48-d3aafd630236",
-        "c2b0b66c-1bcc-425a-98a1-c7af2fb362e6": "287d4401-fd27-4d37-8c61-819a74522b95",
-        "9b6343b5-43f6-45b5-901b-9d633ac7ef70": "00130272-8b4f-4c8c-9eed-53211d17a7e7",
-        "3a45540a-3c8e-4512-aed1-1c482e34e162": "df2a1162-d119-4a2e-93cb-e17a3a53c618",
-        "28fd2c82-5a6e-445a-89ab-9eb201988a61": "7f18779a-5a8d-4c4e-9d2d-848f0edbe7bc",
-        "d86ac61a-b31b-400b-83f1-c03d7b3548be": "d53ab683-a6b6-4cc9-be56-58515849668b",
-        "d209ab5b-af4a-4d04-be32-2b71423fd605": "aefa1bf3-a6ce-4b8e-83d0-6fd413b27529",
-        "ae55ddd2-169e-43c2-a268-1135c7a8576d": "8d2676b7-0f19-4879-8538-1177128402fa",
-        "5cf8a0f1-ec7a-4374-ab0c-69168c7a96d8": "2f1c90f1-3a6a-49a2-8e58-d84df6c00089",
-        "28d92ba5-6da2-4ad2-b665-5b81b404848c": "86de2b3d-3da0-4a2c-9dc9-3239e6a9f4a7",
-        "27e3bf83-4d71-4b74-8222-e835822ec3e2": "044ea5ab-e361-42c5-9ad7-dee8849493f6"
+        "b3548e4b-4396-4105-97bb-c82c8dff4ed5": "54320fb1-f392-467e-805c-201d36aab04f",
+        "c2b0b66c-1bcc-425a-98a1-c7af2fb362e6": "7176950b-df0e-4f0d-a249-564ef89a58dd",
+        "9b6343b5-43f6-45b5-901b-9d633ac7ef70": "5269ef71-19c2-4050-8cc2-5dcd7ebcc7ab",
+        "3a45540a-3c8e-4512-aed1-1c482e34e162": "a861eb9d-20f6-4990-a604-e80af51390b0",
+        "28fd2c82-5a6e-445a-89ab-9eb201988a61": "e4a05fd1-6f32-4c6c-adc8-b335708cbc8e",
+        "d86ac61a-b31b-400b-83f1-c03d7b3548be": "05fecddb-7c6a-4ed2-bf26-d8e54656bc26",
+        "d209ab5b-af4a-4d04-be32-2b71423fd605": "c8bba302-a5e3-4970-8ad1-d02f1d256fdd",
+        "ae55ddd2-169e-43c2-a268-1135c7a8576d": "6eaf89c9-f96b-4dfb-a212-ab12037495f6",
+        "5cf8a0f1-ec7a-4374-ab0c-69168c7a96d8": "e598eb80-ca31-4ad7-8a97-0eea4509abe2",
+        "28d92ba5-6da2-4ad2-b665-5b81b404848c": "acda219c-046b-4b1f-b3f1-27adff86fcb0",
+        "27e3bf83-4d71-4b74-8222-e835822ec3e2": "f8b8848d-5a70-43e3-acfc-f6374f855033"
       }
     },
     {
@@ -1263,7 +3377,7 @@
       }
     },
     {
-      "__guid": "179ad696-ae87-48a8-87dc-4c24c2b9226b",
+      "__guid": "97200c13-72a3-4a02-adff-1994dc4902b0",
       "__version": 1,
       "__Prefab": "prefabs/player/player.prefab",
       "__PrefabInstancePatch": {
@@ -1276,36 +3390,1390 @@
               "IdValue": "03730975-e8b4-477e-aab2-96284e727c1c"
             },
             "Property": "Position",
-            "Value": "-616.3527,234.2161,3.753265"
+            "Value": "-574.2983,299.5728,3.753265"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "b7b6af76-f15c-456b-8c3f-58a26fefb49f"
+            },
+            "Property": "GraphBuyDoor",
+            "Value": {
+              "__version": 9,
+              "__guid": "61f67a2d-5a3c-45e9-a5a9-cd3c935a3990",
+              "__changeId": 472,
+              "UserData": {
+                "Title": "Graph Buy Door",
+                "ReferencedComponentTypes": [
+                  "DarkrpPlayerInfo",
+                  "door",
+                  "Sandbox.F2Menu",
+                  "Sandbox.PlayerController",
+                  "Sandbox.Doorui"
+                ],
+                "Description": "Buying Door Logic",
+                "Category": "Door",
+                "Icon": "door_front"
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "-1068,-96"
+                  }
+                },
+                {
+                  "Id": 27,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "360,156"
+                  }
+                },
+                {
+                  "Id": 30,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerMoney",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "600,132"
+                  }
+                },
+                {
+                  "Id": 31,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SecondaryInteractionTraceHitVar",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "324,300"
+                  }
+                },
+                {
+                  "Id": 32,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "840,528"
+                  }
+                },
+                {
+                  "Id": 33,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "door"
+                  },
+                  "UserData": {
+                    "Position": "792,300"
+                  }
+                },
+                {
+                  "Id": 34,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "DoorBuyAmount",
+                    "_type": "door"
+                  },
+                  "UserData": {
+                    "Position": "936,168"
+                  }
+                },
+                {
+                  "Id": 35,
+                  "Type": "op.greaterthanorequal",
+                  "UserData": {
+                    "Position": "1260,60"
+                  }
+                },
+                {
+                  "Id": 36,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "1260,-24"
+                  }
+                },
+                {
+                  "Id": 37,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsDoorPurchasable",
+                    "_type": "door"
+                  },
+                  "UserData": {
+                    "Position": "384,-0"
+                  }
+                },
+                {
+                  "Id": 38,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "408,-72"
+                  }
+                },
+                {
+                  "Id": 40,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsDoorOwnable",
+                    "_type": "door"
+                  },
+                  "UserData": {
+                    "Position": "84,-24"
+                  }
+                },
+                {
+                  "Id": 41,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "84,-96"
+                  }
+                },
+                {
+                  "Id": 43,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "684,-156",
+                    "Size": "456,180",
+                    "Title": "Add Another Check Here",
+                    "Layer": 1,
+                    "Description": "Add Check here to see if Player Jobs is == to the jobs listed on the doors"
+                  }
+                },
+                {
+                  "Id": 44,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsDoorPurchasable",
+                    "_type": "door"
+                  },
+                  "UserData": {
+                    "Position": "4248,-12"
+                  }
+                },
+                {
+                  "Id": 46,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "4116,120"
+                  }
+                },
+                {
+                  "Id": 47,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "door"
+                  },
+                  "UserData": {
+                    "Position": "4320,84"
+                  }
+                },
+                {
+                  "Id": 50,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SecondaryInteractionTraceHitVar",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1488,180"
+                  }
+                },
+                {
+                  "Id": 51,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1236,180"
+                  }
+                },
+                {
+                  "Id": 52,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "door"
+                  },
+                  "UserData": {
+                    "Position": "1620,156"
+                  }
+                },
+                {
+                  "Id": 53,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "DoorBuyAmount",
+                    "_type": "door"
+                  },
+                  "UserData": {
+                    "Position": "1716,120"
+                  }
+                },
+                {
+                  "Id": 54,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerMoney",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1608,72"
+                  }
+                },
+                {
+                  "Id": 55,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1308,120"
+                  }
+                },
+                {
+                  "Id": 56,
+                  "Type": "op.subtract",
+                  "UserData": {
+                    "Position": "1908,72"
+                  }
+                },
+                {
+                  "Id": 57,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerMoney",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1908,-0"
+                  }
+                },
+                {
+                  "Id": 58,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "DisplayName",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2076,108"
+                  }
+                },
+                {
+                  "Id": 59,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SecondaryInteractionTraceHitVar",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2484,420"
+                  }
+                },
+                {
+                  "Id": 60,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2160,396"
+                  }
+                },
+                {
+                  "Id": 61,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "door"
+                  },
+                  "UserData": {
+                    "Position": "2292,312"
+                  }
+                },
+                {
+                  "Id": 62,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerDisplayName",
+                    "_type": "door"
+                  },
+                  "UserData": {
+                    "Position": "2256,-0"
+                  }
+                },
+                {
+                  "Id": 64,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerSteamIDWhoOwnsDoor",
+                    "_type": "door"
+                  },
+                  "UserData": {
+                    "Position": "2520,0"
+                  }
+                },
+                {
+                  "Id": 65,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SteamId",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1896,216"
+                  }
+                },
+                {
+                  "Id": 66,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Sandbox.SteamId"
+                  },
+                  "UserData": {
+                    "Position": "2160,216"
+                  }
+                },
+                {
+                  "Id": 69,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.F2Menu"
+                  },
+                  "UserData": {
+                    "Position": "3792,228"
+                  }
+                },
+                {
+                  "Id": 72,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3792,252"
+                  }
+                },
+                {
+                  "Id": 79,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "360,204"
+                  }
+                },
+                {
+                  "Id": 81,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "384,396"
+                  }
+                },
+                {
+                  "Id": 83,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1248,324"
+                  }
+                },
+                {
+                  "Id": 85,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2292,504"
+                  }
+                },
+                {
+                  "Id": 87,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "4200,216"
+                  }
+                },
+                {
+                  "Id": 88,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SecondaryInteractionTraceHitVar",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "4248,156"
+                  }
+                },
+                {
+                  "Id": 90,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "-708,348"
+                  }
+                },
+                {
+                  "Id": 91,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "1560,360"
+                  }
+                },
+                {
+                  "Id": 92,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "2040,576"
+                  }
+                },
+                {
+                  "Id": 96,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1008,-24"
+                  }
+                },
+                {
+                  "Id": 97,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "744,-408"
+                  }
+                },
+                {
+                  "Id": 98,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1632,-60"
+                  }
+                },
+                {
+                  "Id": 99,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "2916,0"
+                  }
+                },
+                {
+                  "Id": 100,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "4596,-12"
+                  }
+                },
+                {
+                  "Id": 101,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "864,60"
+                  }
+                },
+                {
+                  "Id": 102,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "System.Int32"
+                  },
+                  "UserData": {
+                    "Position": "1596,36"
+                  }
+                },
+                {
+                  "Id": 103,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "2832,96"
+                  }
+                },
+                {
+                  "Id": 104,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "door"
+                  },
+                  "UserData": {
+                    "Position": "4608,84"
+                  }
+                },
+                {
+                  "Id": 115,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "-876,-96"
+                  }
+                },
+                {
+                  "Id": 116,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "-888,96"
+                  }
+                },
+                {
+                  "Id": 117,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "-300,-96"
+                  }
+                },
+                {
+                  "Id": 118,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "-204,60"
+                  }
+                },
+                {
+                  "Id": 119,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "-576,-96"
+                  }
+                },
+                {
+                  "Id": 120,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-660,-12"
+                  }
+                },
+                {
+                  "Id": 125,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.PlayerController"
+                  },
+                  "UserData": {
+                    "Position": "252,444"
+                  }
+                },
+                {
+                  "Id": 128,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "36,564"
+                  }
+                },
+                {
+                  "Id": 135,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "4044,456"
+                  }
+                },
+                {
+                  "Id": 145,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "GetAllObjects",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "3024,396"
+                  }
+                },
+                {
+                  "Id": 147,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "3360,-432"
+                  }
+                },
+                {
+                  "Id": 148,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "3720,-372"
+                  }
+                },
+                {
+                  "Id": 150,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "3864,-408"
+                  }
+                },
+                {
+                  "Id": 156,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "3684,-552"
+                  }
+                },
+                {
+                  "Id": 157,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "3576,-468"
+                  }
+                },
+                {
+                  "Id": 158,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Doorui"
+                  },
+                  "UserData": {
+                    "Position": "3492,-288"
+                  }
+                },
+                {
+                  "Id": 159,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Doorui"
+                  },
+                  "UserData": {
+                    "Position": "3144,216"
+                  }
+                },
+                {
+                  "Id": 164,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "TryGet",
+                    "_type": "Sandbox.IComponentLister",
+                    "T": "Sandbox.Doorui"
+                  },
+                  "UserData": {
+                    "Position": "3144,84"
+                  }
+                },
+                {
+                  "Id": 167,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerWhoOwnsDoorDisplayName",
+                    "_type": "Sandbox.Doorui"
+                  },
+                  "UserData": {
+                    "Position": "3408,-0"
+                  }
+                },
+                {
+                  "Id": 187,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsShowingF2Menu",
+                    "_type": "Sandbox.F2Menu"
+                  },
+                  "UserData": {
+                    "Position": "4932,-12"
+                  }
+                },
+                {
+                  "Id": 199,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "F2MenuUIPanel",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "4632,456"
+                  }
+                },
+                {
+                  "Id": 200,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "4260,480"
+                  }
+                },
+                {
+                  "Id": 201,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.F2Menu"
+                  },
+                  "UserData": {
+                    "Position": "4956,372"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 27,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 79,
+                  "SrcName": "_result",
+                  "DstId": 30,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 81,
+                  "SrcName": "_result",
+                  "DstId": 31,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 32,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 31,
+                  "SrcName": "_result",
+                  "DstId": 33,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "_result",
+                  "DstId": 34,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 30,
+                  "SrcName": "_result",
+                  "DstId": 35,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 34,
+                  "SrcName": "_result",
+                  "DstId": 35,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 96,
+                  "SrcName": "_signal",
+                  "DstId": 36,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 35,
+                  "SrcName": "_result",
+                  "DstId": 36,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "_result",
+                  "DstId": 37,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 41,
+                  "SrcName": "true",
+                  "DstId": 38,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 37,
+                  "SrcName": "_result",
+                  "DstId": 38,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "_result",
+                  "DstId": 40,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 117,
+                  "SrcName": "_signal",
+                  "DstId": 41,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 40,
+                  "SrcName": "_result",
+                  "DstId": 41,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 167,
+                  "SrcName": "_signal",
+                  "DstId": 44,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 47,
+                  "SrcName": "_result",
+                  "DstId": 44,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 190,
+                  "Value": false,
+                  "DstId": 44,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 46,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 88,
+                  "SrcName": "_result",
+                  "DstId": 47,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 83,
+                  "SrcName": "_result",
+                  "DstId": 50,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 51,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 50,
+                  "SrcName": "_result",
+                  "DstId": 52,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 52,
+                  "SrcName": "_result",
+                  "DstId": 53,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 83,
+                  "SrcName": "_result",
+                  "DstId": 54,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 55,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 54,
+                  "SrcName": "_result",
+                  "DstId": 56,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 53,
+                  "SrcName": "_result",
+                  "DstId": 56,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 98,
+                  "SrcName": "_signal",
+                  "DstId": 57,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 83,
+                  "SrcName": "_result",
+                  "DstId": 57,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 56,
+                  "SrcName": "_result",
+                  "DstId": 57,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 83,
+                  "SrcName": "_result",
+                  "DstId": 58,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 85,
+                  "SrcName": "_result",
+                  "DstId": 59,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 60,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "_result",
+                  "DstId": 61,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 57,
+                  "SrcName": "_signal",
+                  "DstId": 62,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 61,
+                  "SrcName": "_result",
+                  "DstId": 62,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 58,
+                  "SrcName": "_result",
+                  "DstId": 62,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 62,
+                  "SrcName": "_signal",
+                  "DstId": 64,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 61,
+                  "SrcName": "_result",
+                  "DstId": 64,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 66,
+                  "SrcName": "_result",
+                  "DstId": 64,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 83,
+                  "SrcName": "_result",
+                  "DstId": 65,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 65,
+                  "SrcName": "_result",
+                  "DstId": 66,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 72,
+                  "SrcName": "_result",
+                  "DstId": 69,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 72,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 128,
+                  "SrcName": "_result",
+                  "DstId": 79,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 128,
+                  "SrcName": "_result",
+                  "DstId": 81,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 128,
+                  "SrcName": "_result",
+                  "DstId": 83,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 128,
+                  "SrcName": "_result",
+                  "DstId": 85,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 135,
+                  "SrcName": "_result",
+                  "DstId": 87,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 87,
+                  "SrcName": "_result",
+                  "DstId": 88,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "true",
+                  "DstId": 96,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 101,
+                  "SrcName": "_result",
+                  "DstId": 96,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "true",
+                  "DstId": 98,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 102,
+                  "SrcName": "_result",
+                  "DstId": 98,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_signal",
+                  "DstId": 99,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 103,
+                  "SrcName": "_result",
+                  "DstId": 99,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 44,
+                  "SrcName": "_signal",
+                  "DstId": 100,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 104,
+                  "SrcName": "_result",
+                  "DstId": 100,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 79,
+                  "SrcName": "_result",
+                  "DstId": 101,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 56,
+                  "SrcName": "_result",
+                  "DstId": 102,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "_result",
+                  "DstId": 103,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 47,
+                  "SrcName": "_result",
+                  "DstId": 104,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 115,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 116,
+                  "SrcName": "_result",
+                  "DstId": 115,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 90,
+                  "SrcName": "_result",
+                  "DstId": 116,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 119,
+                  "SrcName": "_signal",
+                  "DstId": 117,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 118,
+                  "SrcName": "_result",
+                  "DstId": 117,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 31,
+                  "SrcName": "_result",
+                  "DstId": 118,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 115,
+                  "SrcName": "_signal",
+                  "DstId": 119,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 120,
+                  "SrcName": "_result",
+                  "DstId": 119,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 81,
+                  "SrcName": "_result",
+                  "DstId": 120,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 90,
+                  "SrcName": "_result",
+                  "DstId": 125,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "_result",
+                  "DstId": 145,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 191,
+                  "Value": true,
+                  "DstId": 145,
+                  "DstName": "enabled"
+                },
+                {
+                  "SrcId": 145,
+                  "SrcName": "_result",
+                  "DstId": 147,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 147,
+                  "SrcName": "body.value",
+                  "DstId": 148,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 192,
+                  "Value": null,
+                  "DstId": 148,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 156,
+                  "SrcName": "_signal",
+                  "DstId": 150,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 148,
+                  "SrcName": "_result",
+                  "DstId": 150,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 147,
+                  "SrcName": "body",
+                  "DstId": 156,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 157,
+                  "SrcName": "_result",
+                  "DstId": 156,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 147,
+                  "SrcName": "body.value",
+                  "DstId": 157,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 147,
+                  "SrcName": "body.value",
+                  "DstId": 158,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "_result",
+                  "DstId": 159,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "_result",
+                  "DstId": 164,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 193,
+                  "Value": "InChildren",
+                  "DstId": 164,
+                  "DstName": "search"
+                },
+                {
+                  "SrcId": 99,
+                  "SrcName": "_signal",
+                  "DstId": 167,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 164,
+                  "SrcName": "component",
+                  "DstId": 167,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 58,
+                  "SrcName": "_result",
+                  "DstId": 167,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 100,
+                  "SrcName": "_signal",
+                  "DstId": 187,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 201,
+                  "SrcName": "_result",
+                  "DstId": 187,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 195,
+                  "Value": false,
+                  "DstId": 187,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 200,
+                  "SrcName": "_result",
+                  "DstId": 199,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 135,
+                  "SrcName": "_result",
+                  "DstId": 200,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 199,
+                  "SrcName": "_result",
+                  "DstId": 201,
+                  "DstName": "_this"
+                }
+              ],
+              "Defaults": {
+                "$90.gameobject": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/player/player.prefab"
+                },
+                "$91.gameobject": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/player/player.prefab"
+                },
+                "$92.gameobject": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/player/player.prefab"
+                },
+                "$128.gameobject": {
+                  "_type": "gameobject",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                },
+                "$135.gameobject": {
+                  "_type": "gameobject",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                },
+                "$192._value": null
+              }
+            }
           }
         ],
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "03730975-e8b4-477e-aab2-96284e727c1c": "179ad696-ae87-48a8-87dc-4c24c2b9226b",
-        "ca937267-e3cd-4bf2-acb5-12d480d561de": "897d1535-3974-4488-886f-9267f6fed265",
-        "4152f0e6-c7b4-4a2a-a7be-b3e03027bead": "f5b6e89d-05c9-4cbf-bf91-196133c9a5b3",
-        "39d03ff5-8606-4ed0-b251-e2045d65b261": "a89a2abe-ac9c-4b47-9de2-2df21a4bc053",
-        "cbc09521-7e8e-4816-9f64-0498b596ffc7": "730bb36d-e0f9-4b49-9a3b-f756f732eb50",
-        "287747b2-5712-4d09-8361-635dd9323e60": "71dbb27d-af9b-4a35-8e39-7e60d2d21348",
-        "5711eda6-6281-4f9c-9af3-66a08fd0e24b": "3e42bd6c-50c3-4a02-bde8-6c174a7dfa78",
-        "3d2be183-0322-4b17-a55a-80e47f6961ae": "3cf67301-1951-4742-958d-9d518cbfa5e9",
-        "a7577b31-c75b-46e5-9eff-bc46235cfea2": "7172710d-2b1a-421e-9276-a72a833105c1",
-        "e76150e2-fac2-4851-8c5e-fea454bb06f6": "46bcf1c0-7eae-4259-9260-850fcddf3d13",
-        "811d3b78-9a89-4dcb-9274-90ba56ae9728": "b74b1d51-e699-4ce8-b49d-f3157d12677a",
-        "d48af905-f4b6-4ea7-99c2-d106ba88d63e": "433d9a27-09d0-45d2-a612-f64cd89d03bb",
-        "90426ea8-8d48-444c-be93-df9bfd73e994": "b831cbe7-c28c-4a31-9dbf-8de673f501b1",
-        "7b4f9ce6-203f-4f7d-b9f7-f30d8009cf4b": "21b10d58-d441-49fa-a9f6-8cc536fce291",
-        "176dbae2-36f2-435a-bcb8-025bb525f724": "e3bd350a-d9c9-4220-baa7-f5a8c99d6304",
-        "64029701-cb8b-4e78-9ab8-f29cb7e9cca0": "afe5b02a-4a8e-4966-b58a-4be49c9edc61",
-        "78530b97-775a-474d-8e34-045e6ab06bc9": "3455933f-bfec-484e-a3ac-997fb0a4c00a",
-        "88fb1040-948f-449f-ab2e-2febf858a7e1": "12156220-3538-4289-8bc4-65defe3761e1",
-        "29225860-5a3d-4207-a6ec-b14120b5d7c4": "df005ce6-d92e-4560-aa32-92aaaa5a4088",
-        "72bfdcb4-84ec-4d3a-a054-c9d42af9688a": "bc444aa3-7d13-430f-8db6-d6e52786ceb3",
-        "0d233cdb-e451-4ae0-a6de-5e2ece24f1ce": "fae317c5-6252-4907-bbd8-deb801ecc1d5",
-        "c023033f-8f52-44f5-bf42-48c819645c27": "519c0980-63d0-499b-8cb3-3af338b7ffe5",
-        "0c450611-8f87-4d32-a297-a9fb49dd984a": "f42a07c4-c7f0-4fb5-8a60-d731ad00cf46",
-        "b7b6af76-f15c-456b-8c3f-58a26fefb49f": "8ee53211-00c4-4e90-aabe-b3d5764c9774"
+        "03730975-e8b4-477e-aab2-96284e727c1c": "97200c13-72a3-4a02-adff-1994dc4902b0",
+        "ca937267-e3cd-4bf2-acb5-12d480d561de": "6c909857-d37f-4233-bc67-095c5f496c23",
+        "4152f0e6-c7b4-4a2a-a7be-b3e03027bead": "69087e39-037d-4da4-94e6-93b08617e76c",
+        "39d03ff5-8606-4ed0-b251-e2045d65b261": "60b26ad0-6493-4ba5-bb0c-d26a6a2c7ff6",
+        "cbc09521-7e8e-4816-9f64-0498b596ffc7": "20c81809-2b9b-4d3c-bf6f-26946bfadf47",
+        "287747b2-5712-4d09-8361-635dd9323e60": "69780c3f-d438-48b4-aca3-299105768617",
+        "5711eda6-6281-4f9c-9af3-66a08fd0e24b": "3d849542-5d5d-4c98-9cb6-98b1193c4494",
+        "3d2be183-0322-4b17-a55a-80e47f6961ae": "97fca70f-4375-4bf6-82b3-ee5c293cea25",
+        "a7577b31-c75b-46e5-9eff-bc46235cfea2": "0ce45abe-d2f9-4466-86de-e51f399a67fb",
+        "e76150e2-fac2-4851-8c5e-fea454bb06f6": "8d331fc1-ab6c-49a9-8ae7-8a00c570af54",
+        "811d3b78-9a89-4dcb-9274-90ba56ae9728": "51e6e9f3-6185-4705-97f6-5930a7f7ee1a",
+        "d48af905-f4b6-4ea7-99c2-d106ba88d63e": "5f49f879-0130-40bc-a7ed-40757dcc051c",
+        "90426ea8-8d48-444c-be93-df9bfd73e994": "4b3436a3-763f-46fc-8f92-b34ad7cdfa93",
+        "7b4f9ce6-203f-4f7d-b9f7-f30d8009cf4b": "8d2c1bbb-4f8f-4ee6-9535-4794ee4874ce",
+        "176dbae2-36f2-435a-bcb8-025bb525f724": "babf6a68-af65-4641-8961-18e9d2815ca6",
+        "64029701-cb8b-4e78-9ab8-f29cb7e9cca0": "ef29c981-a3d0-4dfc-87d5-9570f13890a3",
+        "78530b97-775a-474d-8e34-045e6ab06bc9": "d8eb15b9-7707-4463-a6a2-b05e6ca04715",
+        "88fb1040-948f-449f-ab2e-2febf858a7e1": "ee323de8-409d-4888-ac75-6d1c8d895356",
+        "29225860-5a3d-4207-a6ec-b14120b5d7c4": "04687b11-4eef-48cc-901b-10db302f3d81",
+        "72bfdcb4-84ec-4d3a-a054-c9d42af9688a": "babbd095-90d4-4ca5-be37-386face348d6",
+        "0d233cdb-e451-4ae0-a6de-5e2ece24f1ce": "fe0ed7bd-b700-4efc-8a0b-08e0c08ea3b6",
+        "c023033f-8f52-44f5-bf42-48c819645c27": "4840d242-82b8-42a0-9d64-2530b223946e",
+        "0c450611-8f87-4d32-a297-a9fb49dd984a": "f07120be-3177-4cce-be6f-3c1168d6a906",
+        "b7b6af76-f15c-456b-8c3f-58a26fefb49f": "376083e5-3810-499f-b600-91e6d7811ee3"
       }
     }
   ],

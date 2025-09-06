@@ -4,16 +4,24 @@
 @namespace Sandbox
 
 <root>
-	<div class="title">@PlayerWhoOwnsDoorDisplayName</div>
+	<div class="Doortitle @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned")">
+	@PlayerWhoOwnsDoorDisplayName
+	</div>
+	<div class="DoorBuyAmounttitle @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned")">
+	$@PlayerWhoOwnsDoorBuyAmount
+	</div>
 </root>
 
 @code
 {
 
-	public string PlayerWhoOwnsDoorDisplayName {get; set;}
+	public string PlayerWhoOwnsDoorDisplayName {get; set;} = "Unowned Door";
+	public float PlayerWhoOwnsDoorBuyAmount {get; set;}
+	public bool DoorIsBought {get; set;}
+	public bool IsDoorOwnable {get; set;}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( PlayerWhoOwnsDoorDisplayName );
+	protected override int BuildHash() => System.HashCode.Combine( PlayerWhoOwnsDoorDisplayName, PlayerWhoOwnsDoorBuyAmount );
 }

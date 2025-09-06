@@ -17,9 +17,8 @@
 						Disallow Ownership
 					</div>
 				</div>
-
-				<div class="buttonbackground"onclick=@BuyDoor>
-					<div class="buttontext">
+				<div class="buttonbackground" onclick=@BuyDoor class="@(IsShowingF2Menu ? "" : "hide")">
+					<div class="buttontext" class="@(IsShowingF2Menu ? "" : "hide")">
 						Buy Door
 					</div>
 				</div>
@@ -50,6 +49,7 @@
 	
 	public bool IsShowingF2Menu {get; set;}
 	public bool IsSuperAdmin {get; set;}
+	public bool IsDoorOwnable {get; set;}
 
 
 	
