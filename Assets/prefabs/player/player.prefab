@@ -247,6 +247,7 @@
               "_type": "gameobject",
               "go": "c023033f-8f52-44f5-bf42-48c819645c27"
             },
+            "IsInUIMenu": false,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -254,7 +255,7 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "f3a07f66-dc23-4b68-a2ca-47b13abdf0e3",
-              "__changeId": 189,
+              "__changeId": 191,
               "UserData": {
                 "Title": "On Component Start",
                 "ReferencedComponentTypes": [
@@ -310,16 +311,6 @@
                   }
                 },
                 {
-                  "Id": 51,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "PlayerHud"
-                  },
-                  "UserData": {
-                    "Position": "648,-12"
-                  }
-                },
-                {
                   "Id": 52,
                   "Type": "call",
                   "Properties": {
@@ -328,43 +319,7 @@
                     "_type": "PlayerHud"
                   },
                   "UserData": {
-                    "Position": "852,132"
-                  }
-                },
-                {
-                  "Id": 53,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "TriggerF3Menu",
-                    "_type": "PlayerHud"
-                  },
-                  "UserData": {
-                    "Position": "876,-96"
-                  }
-                },
-                {
-                  "Id": 54,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "TriggerF4Menu",
-                    "_type": "PlayerHud"
-                  },
-                  "UserData": {
-                    "Position": "1428,-192"
-                  }
-                },
-                {
-                  "Id": 55,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "TriggerTabMenu",
-                    "_type": "PlayerHud"
-                  },
-                  "UserData": {
-                    "Position": "1704,-24"
+                    "Position": "912,60"
                   }
                 },
                 {
@@ -388,7 +343,7 @@
                     "T": "PlayerHud"
                   },
                   "UserData": {
-                    "Position": "852,180"
+                    "Position": "912,108"
                   }
                 }
               ],
@@ -436,12 +391,6 @@
                   "DstName": "target"
                 },
                 {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 51,
-                  "DstName": "_this"
-                },
-                {
                   "SrcId": 63,
                   "SrcName": "true",
                   "DstId": 52,
@@ -451,24 +400,6 @@
                   "SrcId": 64,
                   "SrcName": "_result",
                   "DstId": 52,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 51,
-                  "SrcName": "_result",
-                  "DstId": 53,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 51,
-                  "SrcName": "_result",
-                  "DstId": 54,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 51,
-                  "SrcName": "_result",
-                  "DstId": 55,
                   "DstName": "_target"
                 },
                 {
@@ -622,7 +553,7 @@
             "F2Menu": {
               "__version": 9,
               "__guid": "aab9789c-4e25-47b2-b639-51fb0401d5df",
-              "__changeId": 575,
+              "__changeId": 607,
               "UserData": {
                 "Title": "F2Menu",
                 "Description": "F2Menu Open Logic",
@@ -963,7 +894,7 @@
                     "T": "Sandbox.F2Menu"
                   },
                   "UserData": {
-                    "Position": "3480,132"
+                    "Position": "3996,264"
                   }
                 },
                 {
@@ -974,7 +905,7 @@
                     "_type": "Sandbox.F2Menu"
                   },
                   "UserData": {
-                    "Position": "3504,36"
+                    "Position": "4020,168"
                   }
                 },
                 {
@@ -1041,7 +972,7 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "3324,264"
+                    "Position": "3984,312"
                   }
                 },
                 {
@@ -1051,7 +982,119 @@
                     "T": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "3096,276"
+                    "Position": "3996,348"
+                  }
+                },
+                {
+                  "Id": 336,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3468,132"
+                  }
+                },
+                {
+                  "Id": 337,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsInUIMenu",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3492,108"
+                  }
+                },
+                {
+                  "Id": 338,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "3588,36"
+                  }
+                },
+                {
+                  "Id": 339,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.F2Menu"
+                  },
+                  "UserData": {
+                    "Position": "4068,-60"
+                  }
+                },
+                {
+                  "Id": 340,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsShowingF2Menu",
+                    "_type": "Sandbox.F2Menu"
+                  },
+                  "UserData": {
+                    "Position": "4092,-156"
+                  }
+                },
+                {
+                  "Id": 341,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "F2MenuUIPanel",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "4056,-12"
+                  }
+                },
+                {
+                  "Id": 342,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "4068,24"
+                  }
+                },
+                {
+                  "Id": 361,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3588,252"
+                  }
+                },
+                {
+                  "Id": 362,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsInUIMenu",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3744,144"
+                  }
+                },
+                {
+                  "Id": 364,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsInUIMenu",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3756,-120"
+                  }
+                },
+                {
+                  "Id": 367,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3816,-36"
                   }
                 }
               ],
@@ -1171,7 +1214,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 328,
+                  "Id": 379,
                   "Value": "door",
                   "DstId": 48,
                   "DstName": "tag"
@@ -1243,7 +1286,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 329,
+                  "Id": 380,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -1259,7 +1302,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 330,
+                  "Id": 381,
                   "Value": 200,
                   "DstId": 131,
                   "DstName": "maxLength"
@@ -1283,13 +1326,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 331,
+                  "Id": 382,
                   "Value": true,
                   "DstId": 139,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 332,
+                  "Id": 383,
                   "Value": "door",
                   "DstId": 139,
                   "DstName": "tag"
@@ -1313,7 +1356,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 333,
+                  "Id": 384,
                   "Value": "YES IT IS DOOR!",
                   "DstId": 146,
                   "DstName": "format"
@@ -1355,7 +1398,7 @@
                   "DstName": "_this"
                 },
                 {
-                  "SrcId": 221,
+                  "SrcId": 362,
                   "SrcName": "_signal",
                   "DstId": 218,
                   "DstName": "_signal"
@@ -1367,7 +1410,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 334,
+                  "Id": 385,
                   "Value": true,
                   "DstId": 218,
                   "DstName": "_value"
@@ -1397,7 +1440,7 @@
                   "DstName": "_value"
                 },
                 {
-                  "Id": 335,
+                  "Id": 386,
                   "Value": "LOGPLEASE",
                   "DstId": 280,
                   "DstName": "format"
@@ -1431,6 +1474,114 @@
                   "SrcName": "_target",
                   "DstId": 319,
                   "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 336,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 336,
+                  "SrcName": "_result",
+                  "DstId": 337,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 221,
+                  "SrcName": "_signal",
+                  "DstId": 338,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 337,
+                  "SrcName": "_result",
+                  "DstId": 338,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 341,
+                  "SrcName": "_result",
+                  "DstId": 339,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 364,
+                  "SrcName": "_signal",
+                  "DstId": 340,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 339,
+                  "SrcName": "_result",
+                  "DstId": 340,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 387,
+                  "Value": false,
+                  "DstId": 340,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 342,
+                  "SrcName": "_result",
+                  "DstId": 341,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 342,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 361,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 338,
+                  "SrcName": "false",
+                  "DstId": 362,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 361,
+                  "SrcName": "_result",
+                  "DstId": 362,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 388,
+                  "Value": true,
+                  "DstId": 362,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 338,
+                  "SrcName": "true",
+                  "DstId": 364,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 367,
+                  "SrcName": "_result",
+                  "DstId": 364,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 389,
+                  "Value": false,
+                  "DstId": 364,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 367,
+                  "DstName": "_this"
                 }
               ],
               "Defaults": {
@@ -1449,7 +1600,7 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "f6e0194b-5847-43bb-b57f-d8a761587eae",
-              "__changeId": 67,
+              "__changeId": 68,
               "UserData": {
                 "Title": "On Component Start",
                 "ReferencedComponentTypes": []
@@ -1854,7 +2005,7 @@
                 "GraphBuyDoor": {
                   "__version": 9,
                   "__guid": "61f67a2d-5a3c-45e9-a5a9-cd3c935a3990",
-                  "__changeId": 468,
+                  "__changeId": 528,
                   "UserData": {
                     "Title": "Graph Buy Door",
                     "ReferencedComponentTypes": [
@@ -2700,7 +2851,7 @@
                       "DstName": "_target"
                     },
                     {
-                      "Id": 190,
+                      "Id": 207,
                       "Value": false,
                       "DstId": 44,
                       "DstName": "_value"
@@ -3042,7 +3193,7 @@
                       "DstName": "_target"
                     },
                     {
-                      "Id": 191,
+                      "Id": 208,
                       "Value": true,
                       "DstId": 145,
                       "DstName": "enabled"
@@ -3060,7 +3211,7 @@
                       "DstName": "a"
                     },
                     {
-                      "Id": 192,
+                      "Id": 209,
                       "Value": null,
                       "DstId": 148,
                       "DstName": "b"
@@ -3114,7 +3265,7 @@
                       "DstName": "_target"
                     },
                     {
-                      "Id": 193,
+                      "Id": 210,
                       "Value": "InChildren",
                       "DstId": 164,
                       "DstName": "search"
@@ -3150,7 +3301,7 @@
                       "DstName": "_target"
                     },
                     {
-                      "Id": 195,
+                      "Id": 211,
                       "Value": false,
                       "DstId": 187,
                       "DstName": "_value"
@@ -3194,27 +3345,599 @@
                     "$135.gameobject": {
                       "_type": "gameobject",
                       "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
-                    },
-                    "$192._value": null
+                    }
                   }
                 },
-                "GraphDisallowOwnership": null,
+                "GraphDisallowOwnership": {
+                  "__version": 9,
+                  "__guid": "0818d84b-04cb-4be2-9a0c-cf7a8c491333",
+                  "__changeId": 78,
+                  "UserData": {
+                    "Title": "Graph Disallow Ownership",
+                    "Description": "Graph Disallow Ownership Logic",
+                    "Category": "Door",
+                    "Icon": "door_front",
+                    "ReferencedComponentTypes": [
+                      "DarkrpPlayerInfo",
+                      "door",
+                      "Sandbox.F2Menu"
+                    ]
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input",
+                      "UserData": {
+                        "Position": "-36,-132"
+                      }
+                    },
+                    {
+                      "Id": 1,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "SecondaryInteractionTraceHitVar",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "120,-36"
+                      }
+                    },
+                    {
+                      "Id": 2,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "120,-12"
+                      }
+                    },
+                    {
+                      "Id": 7,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "door"
+                      },
+                      "UserData": {
+                        "Position": "204,-60"
+                      }
+                    },
+                    {
+                      "Id": 8,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsDoorOwnable",
+                        "_type": "door"
+                      },
+                      "UserData": {
+                        "Position": "216,-132"
+                      }
+                    },
+                    {
+                      "Id": 11,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "SecondaryInteractionTraceHitVar",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "672,72"
+                      }
+                    },
+                    {
+                      "Id": 12,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "708,144"
+                      }
+                    },
+                    {
+                      "Id": 19,
+                      "Type": "call",
+                      "Properties": {
+                        "_isStatic": false,
+                        "_name": "TryGet",
+                        "_type": "Sandbox.IComponentLister",
+                        "T": "Sandbox.Doorui"
+                      },
+                      "UserData": {
+                        "Position": "804,-24"
+                      }
+                    },
+                    {
+                      "Id": 22,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsDoorOwnable",
+                        "_type": "Sandbox.Doorui"
+                      },
+                      "UserData": {
+                        "Position": "816,-132"
+                      }
+                    },
+                    {
+                      "Id": 25,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "PlayerWhoOwnsDoorDisplayName",
+                        "_type": "Sandbox.Doorui"
+                      },
+                      "UserData": {
+                        "Position": "1368,-132"
+                      }
+                    },
+                    {
+                      "Id": 33,
+                      "Type": "log.info",
+                      "UserData": {
+                        "Position": "1152,-132"
+                      }
+                    },
+                    {
+                      "Id": 34,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsDoorOwnable",
+                        "_type": "Sandbox.Doorui"
+                      },
+                      "UserData": {
+                        "Position": "1128,36"
+                      }
+                    },
+                    {
+                      "Id": 35,
+                      "Type": "sys.tostring",
+                      "Properties": {
+                        "T": "System.Boolean"
+                      },
+                      "UserData": {
+                        "Position": "1200,-24"
+                      }
+                    },
+                    {
+                      "Id": 46,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "-108,12"
+                      }
+                    },
+                    {
+                      "Id": 47,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsShowingF2Menu",
+                        "_type": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "2016,-132"
+                      }
+                    },
+                    {
+                      "Id": 48,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "F2MenuUIPanel",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "2004,-24"
+                      }
+                    },
+                    {
+                      "Id": 49,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "1968,12"
+                      }
+                    },
+                    {
+                      "Id": 50,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "2016,-48"
+                      }
+                    },
+                    {
+                      "Id": 53,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "1836,72"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 2,
+                      "SrcName": "_result",
+                      "DstId": 1,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 46,
+                      "SrcName": "_result",
+                      "DstId": 2,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 1,
+                      "SrcName": "_result",
+                      "DstId": 7,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 8,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 7,
+                      "SrcName": "_result",
+                      "DstId": 8,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 59,
+                      "Value": false,
+                      "DstId": 8,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 12,
+                      "SrcName": "_result",
+                      "DstId": 11,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 46,
+                      "SrcName": "_result",
+                      "DstId": 12,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 11,
+                      "SrcName": "_result",
+                      "DstId": 19,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 60,
+                      "Value": "InChildren",
+                      "DstId": 19,
+                      "DstName": "search"
+                    },
+                    {
+                      "SrcId": 8,
+                      "SrcName": "_signal",
+                      "DstId": 22,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 19,
+                      "SrcName": "component",
+                      "DstId": 22,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 61,
+                      "Value": false,
+                      "DstId": 22,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 33,
+                      "SrcName": "_signal",
+                      "DstId": 25,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 19,
+                      "SrcName": "component",
+                      "DstId": 25,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 62,
+                      "Value": "Public",
+                      "DstId": 25,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 22,
+                      "SrcName": "_signal",
+                      "DstId": 33,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 35,
+                      "SrcName": "_result",
+                      "DstId": 33,
+                      "DstName": "format"
+                    },
+                    {
+                      "SrcId": 19,
+                      "SrcName": "component",
+                      "DstId": 34,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 34,
+                      "SrcName": "_result",
+                      "DstId": 35,
+                      "DstName": "input"
+                    },
+                    {
+                      "SrcId": 25,
+                      "SrcName": "_signal",
+                      "DstId": 47,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 50,
+                      "SrcName": "_result",
+                      "DstId": 47,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 63,
+                      "Value": false,
+                      "DstId": 47,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 49,
+                      "SrcName": "_result",
+                      "DstId": 48,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 53,
+                      "SrcName": "_result",
+                      "DstId": 49,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 48,
+                      "SrcName": "_result",
+                      "DstId": 50,
+                      "DstName": "_this"
+                    }
+                  ],
+                  "Defaults": {
+                    "$46.gameobject": {
+                      "_type": "gameobject",
+                      "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                    },
+                    "$53.gameobject": {
+                      "_type": "gameobject",
+                      "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                    }
+                  }
+                },
                 "GraphEditDoorGroup": {
                   "__version": 9,
                   "__guid": "09aa44ae-ebf0-43e1-acca-847654ef85fd",
-                  "__changeId": 23,
+                  "__changeId": 101,
                   "UserData": {
                     "Title": "Graph Edit Door Group",
-                    "ReferencedComponentTypes": []
+                    "ReferencedComponentTypes": [
+                      "Sandbox.F2Menu"
+                    ],
+                    "Description": "Graph Edit Door Group Logic",
+                    "Category": "Door",
+                    "Icon": "door_front"
                   },
                   "Variables": [],
                   "Nodes": [
                     {
                       "Id": 0,
                       "Type": "input"
+                    },
+                    {
+                      "Id": 13,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "276,60"
+                      }
+                    },
+                    {
+                      "Id": 14,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "396,96"
+                      }
+                    },
+                    {
+                      "Id": 17,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsInF2MenuEditDoorGroupsUI",
+                        "_type": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "456,0"
+                      }
                     }
                   ],
-                  "Links": []
+                  "Links": [
+                    {
+                      "SrcId": 13,
+                      "SrcName": "_result",
+                      "DstId": 14,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 17,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 14,
+                      "SrcName": "_result",
+                      "DstId": 17,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 18,
+                      "Value": true,
+                      "DstId": 17,
+                      "DstName": "_value"
+                    }
+                  ],
+                  "Defaults": {
+                    "$13.gameobject": {
+                      "_type": "gameobject",
+                      "go": "c023033f-8f52-44f5-bf42-48c819645c27"
+                    }
+                  }
+                },
+                "GraphJobDoorGroupButton": {
+                  "__version": 9,
+                  "__guid": "6e39fb72-a39f-4677-b64a-1d173c7c05f4",
+                  "__changeId": 59,
+                  "UserData": {
+                    "Title": "Graph Job Door Group Button",
+                    "ReferencedComponentTypes": [
+                      "DarkrpPlayerInfo",
+                      "Sandbox.Doorui"
+                    ]
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input",
+                      "UserData": {
+                        "Position": "60,-12"
+                      }
+                    },
+                    {
+                      "Id": 5,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "-48,144"
+                      }
+                    },
+                    {
+                      "Id": 6,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "60,180"
+                      }
+                    },
+                    {
+                      "Id": 7,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "SecondaryInteractionTraceHitVar",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "60,96"
+                      }
+                    },
+                    {
+                      "Id": 8,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.Doorui"
+                      },
+                      "UserData": {
+                        "Position": "228,60"
+                      }
+                    },
+                    {
+                      "Id": 9,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsDoorOwnable",
+                        "_type": "Sandbox.Doorui"
+                      },
+                      "UserData": {
+                        "Position": "504,-12"
+                      }
+                    },
+                    {
+                      "Id": 12,
+                      "Type": "log.info",
+                      "UserData": {
+                        "Position": "768,-12"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 5,
+                      "SrcName": "_result",
+                      "DstId": 6,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 6,
+                      "SrcName": "_result",
+                      "DstId": 7,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 7,
+                      "SrcName": "_result",
+                      "DstId": 8,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 9,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 8,
+                      "SrcName": "_result",
+                      "DstId": 9,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 11,
+                      "Value": false,
+                      "DstId": 9,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 9,
+                      "SrcName": "_signal",
+                      "DstId": 12,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "Id": 41,
+                      "Value": "Job Door Group Button Clicked",
+                      "DstId": 12,
+                      "DstName": "format"
+                    }
+                  ],
+                  "Defaults": {
+                    "$5.gameobject": {
+                      "_type": "gameobject",
+                      "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                    }
+                  }
                 },
                 "OnComponentDestroy": null,
                 "OnComponentDisabled": null,

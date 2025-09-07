@@ -3219,7 +3219,7 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "121ba157-5563-4f25-af68-5c9c3becdb35",
-              "__changeId": 59,
+              "__changeId": 77,
               "UserData": {
                 "Title": "On Component Start Door",
                 "Description": "Saves Start Local Rotation Data",
@@ -3315,7 +3315,7 @@
                     "T": "Sandbox.Doorui"
                   },
                   "UserData": {
-                    "Position": "1152,36"
+                    "Position": "1152,48"
                   }
                 },
                 {
@@ -3326,7 +3326,7 @@
                     "_type": "Sandbox.Doorui"
                   },
                   "UserData": {
-                    "Position": "1416,12"
+                    "Position": "1416,24"
                   }
                 },
                 {
@@ -3336,7 +3336,7 @@
                     "T": "door"
                   },
                   "UserData": {
-                    "Position": "1284,96"
+                    "Position": "1284,108"
                   }
                 },
                 {
@@ -3347,7 +3347,77 @@
                     "_type": "door"
                   },
                   "UserData": {
-                    "Position": "1452,96"
+                    "Position": "1452,108"
+                  }
+                },
+                {
+                  "Id": 15,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "door"
+                  },
+                  "UserData": {
+                    "Position": "1488,192"
+                  }
+                },
+                {
+                  "Id": 16,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsDoorOwnable",
+                    "_type": "door"
+                  },
+                  "UserData": {
+                    "Position": "1728,156"
+                  }
+                },
+                {
+                  "Id": 17,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Doorui"
+                  },
+                  "UserData": {
+                    "Position": "1668,120"
+                  }
+                },
+                {
+                  "Id": 18,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsDoorOwnable",
+                    "_type": "Sandbox.Doorui"
+                  },
+                  "UserData": {
+                    "Position": "1752,24"
+                  }
+                },
+                {
+                  "Id": 19,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "2088,24"
+                  }
+                },
+                {
+                  "Id": 20,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsDoorOwnable",
+                    "_type": "Sandbox.Doorui"
+                  },
+                  "UserData": {
+                    "Position": "1980,168"
+                  }
+                },
+                {
+                  "Id": 21,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "System.Boolean"
+                  },
+                  "UserData": {
+                    "Position": "2208,156"
                   }
                 }
               ],
@@ -3435,6 +3505,66 @@
                   "SrcName": "_result",
                   "DstId": 14,
                   "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 15,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 15,
+                  "SrcName": "_result",
+                  "DstId": 16,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 9,
+                  "SrcName": "action.obj",
+                  "DstId": 17,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_signal",
+                  "DstId": 18,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 17,
+                  "SrcName": "_result",
+                  "DstId": 18,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 16,
+                  "SrcName": "_result",
+                  "DstId": 18,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 18,
+                  "SrcName": "_signal",
+                  "DstId": 19,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "_result",
+                  "DstId": 19,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 17,
+                  "SrcName": "_result",
+                  "DstId": 20,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 20,
+                  "SrcName": "_result",
+                  "DstId": 21,
+                  "DstName": "input"
                 }
               ],
               "Defaults": {

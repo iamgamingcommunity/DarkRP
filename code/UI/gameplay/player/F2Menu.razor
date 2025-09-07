@@ -17,8 +17,8 @@
 						Disallow Ownership
 					</div>
 				</div>
-				<div class="buttonbackground" onclick=@BuyDoor class="@(IsShowingF2Menu ? "" : "hide")">
-					<div class="buttontext" class="@(IsShowingF2Menu ? "" : "hide")">
+				<div class="buttonbackground" onclick=@BuyDoor>
+					<div class="buttontext">
 						Buy Door
 					</div>
 				</div>
@@ -30,10 +30,49 @@
 		<!-- </div> -->
 		</div>
 	</div>
+
+
+    <!-- @foreach ( var job in Jobs )
+    {
+        <div class="job-card">
+            <div class="job-title">@job.Title</div>
+            <div class="job-salary">$@job.Salary</div>
+            <div class="job-description">@job.Description</div>
+        </div>
+    } -->
+
+
+<job-list>
+    <div class="job-cardholder @(IsInF2MenuEditDoorGroupsUI ? "" : "hide")">
+	@if (Jobs != null && Jobs.Count > 0)
+    {
+        @foreach ( var job in Jobs )
+        {
+		
+            <div class="job-card" onclick="@(() => { AddJobToAnotherList(job); GraphJobDoorGroupButton?.Invoke(); })">
+                <div class="job-title">@job.Title</div>
+                <!-- <div class="job-salary">$@job.Salary</div>
+                <div class="job-description">@job.Description</div>
+                <div class="job-category">Category: @job.Category</div> -->
+            </div>
+		
+        }
+    }
+    else
+    {
+        <div class="loading">Loading jobs...</div>
+    }
+	</div>
+</job-list>
+
+
 </root>
+
+
 
 @code
 {
+	//Main F2Menu Doors Buttons Action Graph Logic Var
 	public delegate void ActionGraphEditDoorGroup();
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphEditDoorGroup GraphEditDoorGroup { get; set; }
@@ -46,12 +85,34 @@
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphDisallowOwnership GraphDisallowOwnership { get; set; }
 
+	//Edit Door Group Job Name Buttons Action Graph Logic Var
+	public delegate void ActionGraphJobDoorGroupButton();
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphJobDoorGroupButton GraphJobDoorGroupButton  { get; set; }
+
 	
-	public bool IsShowingF2Menu {get; set;}
+	
 	public bool IsSuperAdmin {get; set;}
 	public bool IsDoorOwnable {get; set;}
 
+	//UI Visability Vars
+	public bool IsShowingF2Menu {get; set;}
+	public bool IsInF2MenuEditDoorGroupsUI {get; set;}
 
+    // You’ll populate this list from your .job resources
+    public List<JobResource> Jobs { get; set; } = new();
+
+	public List<JobResource> SelectedJobs { get; set; } = new();
+
+	private void AddJobToAnotherList(JobResource job)
+	{
+		if (!SelectedJobs.Contains(job))
+		{
+			SelectedJobs.Add(job);
+			Log.Info($"Added {job.Title} to SelectedJobs");
+			StateHasChanged(); // refresh UI if needed
+		}
+	}
 	
 	void EditDoorGroup()
 	{
@@ -68,10 +129,28 @@
 		GraphDisallowOwnership?.Invoke();
 	}
 
+	void JobDoorGroupButton(JobResource job)
+	{
+	 	GraphJobDoorGroupButton?.Invoke();
+	}
 
 
 
 
+  protected override void OnStart()
+    {
+        // Subscribe to the load event so we update when jobs finish loading
+        JobResource.OnJobsLoaded += RefreshJobs;
+
+        // In case jobs were already loaded
+        RefreshJobs();
+    }
+
+    private void RefreshJobs()
+    {
+        Jobs = JobResource.All.ToList();
+        StateHasChanged(); // Force rebuild
+    }
 
 
 
@@ -95,5 +174,5 @@
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// 
 	///</summary>
-	protected override int BuildHash() => System.HashCode.Combine( IsShowingF2Menu );
+	protected override int BuildHash() => System.HashCode.Combine( IsShowingF2Menu, Jobs?.Count ?? 0 );
 }

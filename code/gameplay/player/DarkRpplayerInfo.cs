@@ -5,6 +5,7 @@ public sealed class DarkrpPlayerInfo : Component
 {
 
 
+	//Steam Player Related Info
     [Property, ReadOnly] public SteamId SteamId { get; private set; }
 	[Property, ReadOnly] public string SteamName { get; private set; }
 	[Property, ReadOnly] public string DisplayName { get; private set; }
@@ -19,6 +20,7 @@ public sealed class DarkrpPlayerInfo : Component
 	public int PlayerDoorInt{ get; set; }
 	//[Property] public string PlayerMoney { get; private set; }
 
+	[Property] public bool IsInUIMenu { get; set; }
 
 
 
