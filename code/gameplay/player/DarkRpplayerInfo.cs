@@ -13,9 +13,15 @@ public sealed class DarkrpPlayerInfo : Component
 	[Property] public GameObject F2MenuUIPanel { get; set; }
 
 	[Property] public GameObject SecondaryInteractionTraceHitVar { get; set; }
-
+	
+	[Property]
+    public JobResource CurrentJob { get; set; }
 	
 	[Property] public int PlayerMoney { get; set; }
+	[Property] public bool DropPlayerMoneyOnDeath { get; set; }
+	[Property, ShowIf ( nameof( DropPlayerMoneyOnDeath ), true)] public bool PlayerDeathMoneyDropAll{ get; set; }
+	[Property, ShowIf ( nameof( DropPlayerMoneyOnDeath ), true)] public int PlayerDeathMoneyDropAmount{ get; set; }
+
 	[Property]
 	public int PlayerDoorInt{ get; set; }
 	//[Property] public string PlayerMoney { get; private set; }

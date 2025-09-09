@@ -4,15 +4,24 @@ Doorui
 		align-items: center;
 		justify-content: center;
 
-	// .Doortitle
+	// .DoorPlayerName 
 	// {
 	// 	font-size: 28px;
 	// 	font-family: Poppins;
 
 	// }
 
+	.DoorTitle
+	{
+		font-size: 28px;
+		font-family: Poppins;
+		color: #dddddd;
+	}
 
-	.Doortitle.unowned
+
+
+
+	.DoorPlayerName.unowned
 	{
 		font-size: 28px;
 		font-family: Poppins;
@@ -20,7 +29,7 @@ Doorui
 
 	}
 
-	.Doortitle.owned
+	.DoorPlayerName.owned
 	{
 		font-size: 28px;
 		font-family: Poppins;
@@ -42,14 +51,51 @@ Doorui
 		opacity: 0;
 	}
 
-	.Doortitle.ownable
+	.DoorPlayerName.ownable
 	{
 		color: #e2e2e2;
 	}
 
-	.Doortitle.notownable
+	.DoorPlayerName.notownable
 	{
 		color: #53e627;
 	}
+
+
+job-list {
+	    .job-card {
+        background: #3b3a3a;
+        padding: 8px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+			&:active
+			{
+				sound-in: ui.downvote;
+				
+			}
+		.job-title.notownable {
+            font-size: 20px;
+            font-weight: bold;
+           color: #ececec;
+        }
+		.job-title.ownable {
+			opacity: 0;
+        }
+	}
+
+		.loading.notownable {
+        color: #ffcc00;
+        font-size: 16px;
+        text-align: center;
+    	}
+		.loading.ownable {
+			opacity: 0;
+    	}
+}
+
 
 }

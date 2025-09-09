@@ -1,14 +1,16 @@
 ## Getting Involved
-To contribute to the project, please submit Pull Requests adhering to the following guidelines:
-- **Focused Changes:** Each Pull Request should address a single feature, modification, or bug fix.
-- **Clear Descriptions:** Provide a concise summary of the changes introduced in the Pull Request.
-- **Documentation for Core Features:** If your contribution is a fundamental component that other parts of the project will rely on, please include detailed documentation with usage examples.
-- **Code Reusability:** Strive to minimize code duplication by leveraging existing components and functions. Consider creating reusable modules or libraries for shared logic.
-- **Follow Code Guidelines:** Please follow our [Code Guidelines](#code-guidelines).
+You must have a basic understanding of S&Box & Game Development. You also must have the clear idea of what we're doing with this project. We're creating things in certain ways to ensure modularity. Below has infomation about what our 'Direction' is with this project.
+
+### What is Our 'Direction' with Recreating DarkRP in S&Box?...
+- The Main priority of this project is that it's compatible with actions graphs as much as possible.
+- Almost 1-1 Recreating DarkRP in S&Box with Smart Improvements(Meaning: We're not creating Wiremod, or Addon related stuff. Just the base with needed improvements from Garry's Mod.)
+- Aiming for the project to be as modularity as possible.
+- Using the Base Player Controller From Facepunch
+
 
 ### Effective Communication
 
-Open communication is essential for a successful project! We encourage you to join our [Discord server](https://discord.com/invite/yBDk9Xr6VB) before contributing. This is a great platform to:
+Open communication is essential for a successful project! We encourage you to join the Discord when it's posted here before contributing. This is a great platform to:
 
 - Discuss your ideas and plans with the development team.
 - Get feedback on potential contributions.

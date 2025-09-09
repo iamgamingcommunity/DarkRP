@@ -4,14 +4,14 @@
 @namespace Sandbox
 
 <root class="@(IsShowingF2Menu ? "" : "hide")">
+<div class="f2nonownermenu @(IsInDoorNonOwnerMenu ? "" : "hide")">
 	<div class="options">
-		<!-- <div class="buttonbackgroundbackplate"> -->
-				<!-- <div class="inner">
-					<div class="fill" style="width:">
-
-		</div>	
-				</div> -->
 			<div class="buttonholder">
+				<div class="buttonbackground"onclick=@GraphSetDoorTitleButton>
+					<div class="buttontext">
+						Set Door Title
+					</div>
+				</div>
 				<div class="buttonbackground"onclick=@DisallowOwnership>
 					<div class="buttontext">
 						Disallow Ownership
@@ -27,10 +27,25 @@
 						Edit Door Groups
 					</div>
 				</div>
-		<!-- </div> -->
 		</div>
 	</div>
 
+		<div class="buttontextdoor">
+			Door Options
+		</div>
+
+
+	<div class="door-title-input">
+		<input type="text" placeholder="Enter door title..."
+			@bind="DoorCustomTitle" />
+
+		<button @onclick="SaveDoorTitle">Set Title</button>
+	</div>
+
+<div class="CloseF2MenuButton @(IsInF2MenuEditDoorGroupsUI ? "" : "hide")" onclick="@(() => {GraphCloseF2MenuButton?.Invoke(); })">
+</div>
+
+</div>
 
     <!-- @foreach ( var job in Jobs )
     {
@@ -49,7 +64,7 @@
         @foreach ( var job in Jobs )
         {
 		
-            <div class="job-card" onclick="@(() => { AddJobToAnotherList(job); GraphJobDoorGroupButton?.Invoke(); })">
+            <div class="job-card" onclick="@(() => { AddJobToAnotherList(job); GraphJobDoorGroupButton?.Invoke(job); })">
                 <div class="job-title">@job.Title</div>
                 <!-- <div class="job-salary">$@job.Salary</div>
                 <div class="job-description">@job.Description</div>
@@ -66,38 +81,133 @@
 </job-list>
 
 
+
+
+
+
 </root>
+
+<f2menudoor-owner class="@(IsInDoorOwnerMenu ? "" : "hide")">
+	<div class="doorowneroptions">
+			<div class="buttonholderowner">
+				<div class="buttonbackground"onclick=@SellDoor>
+					<div class="buttontext">
+						Sell Door
+					</div>
+					</div>
+				<div class="buttonbackground"onclick=@AddOwner>
+					<div class="buttontext">
+						Add Owner
+					</div>
+					</div>
+				<div class="buttonbackground"onclick=@RemoveOwner>
+					<div class="buttontext">
+						Remove Owner
+					</div>
+					</div>
+				<div class="buttonbackground"onclick=@SetDoorTitle>
+					<div class="buttontext">
+						Set Door Title
+					</div>
+					</div>
+				<div class="buttonbackground"onclick=@DisallowOwnership>
+					<div class="buttontext">
+						Disallow Ownership
+					</div>
+				</div>
+				<div class="buttonbackground" onclick=@BuyDoor>
+					<div class="buttontext">
+						Buy Door
+					</div>
+				</div>
+				<div class="buttonbackground"onclick=@EditDoorGroup>
+					<div class="buttontext">
+						Edit Door Groups
+					</div>
+				</div>
+		</div>
+	</div>
+
+		<div class="buttontextdoor">
+			Door Options
+		</div>
+</f2menudoor-owner>
+
+
+
 
 
 
 @code
 {
-	//Main F2Menu Doors Buttons Action Graph Logic Var
+	//Main F2Menu Doors Buttons Action Graph Logic Vars
 	public delegate void ActionGraphEditDoorGroup();
-	[Property, Feature("Player Hud Info")]
+	[Property, Feature("Main F2Menu Action Graphs")]
 	public ActionGraphEditDoorGroup GraphEditDoorGroup { get; set; }
 
 	public delegate void ActionGraphBuyDoor();
-	[Property, Feature("Player Hud Info")]
+	[Property, Feature("Main F2Menu Action Graphs")]
 	public ActionGraphBuyDoor GraphBuyDoor { get; set; }
 
 	public delegate void ActionGraphDisallowOwnership();
-	[Property, Feature("Player Hud Info")]
+	[Property, Feature("Main F2Menu Action Graphs")]
 	public ActionGraphDisallowOwnership GraphDisallowOwnership { get; set; }
 
 	//Edit Door Group Job Name Buttons Action Graph Logic Var
-	public delegate void ActionGraphJobDoorGroupButton();
-	[Property, Feature("Player Hud Info")]
+	public delegate void ActionGraphJobDoorGroupButton(JobResource job);
+	[Property, Feature("Main F2Menu Action Graphs")]
 	public ActionGraphJobDoorGroupButton GraphJobDoorGroupButton  { get; set; }
 
+	public delegate void ActionGraphCloseF2MenuButton();
+	[Property, Feature("Main F2Menu Action Graphs")]
+	public ActionGraphCloseF2MenuButton GraphCloseF2MenuButton  { get; set; }
+
+	public delegate void ActionGraphSetDoorTitleButton();
+	[Property, Feature("Secondary F2Menu Action Graphs")]
+	public ActionGraphSetDoorTitleButton GraphSetDoorTitleButton  { get; set; }
+
+
+
+
+	//Secondary F2Menu Door Buttons Action Graph Logic Vars
+	public delegate void ActionGraphSellDoorButton();
+	[Property, Feature("Secondary F2Menu Action Graphs")]
+	public ActionGraphSellDoorButton GraphSellDoorButton  { get; set; }
+
+	public delegate void ActionGraphAddOwnerButton();
+	[Property, Feature("Secondary F2Menu Action Graphs")]
+	public ActionGraphAddOwnerButton GraphAddOwnerButton  { get; set; }
+
+	public delegate void ActionGraphOnlinePlayerButton();
+	[Property, Feature("Secondary F2Menu Action Graphs")]
+	public ActionGraphOnlinePlayerButton GraphOnlinePlayerButton  { get; set; }
+
+	public delegate void ActionGraphRemoveOwnerButton();
+	[Property, Feature("Secondary F2Menu Action Graphs")]
+	public ActionGraphRemoveOwnerButton GraphRemoveOwnerButton  { get; set; }
+
+
+
+
+
 	
+
+
 	
+	public string DoorCustomTitle {get; set;}
 	public bool IsSuperAdmin {get; set;}
 	public bool IsDoorOwnable {get; set;}
+	public bool IsInDoorOwnerMenu {get; set;}
+	public bool IsInDoorNonOwnerMenu {get; set;}
+
+	public GameObject[] AllPlayersInLobbyList {get; set;}
+	public GameObject[] DoorOwnerFriendsAddedList {get; set;}
 
 	//UI Visability Vars
 	public bool IsShowingF2Menu {get; set;}
 	public bool IsInF2MenuEditDoorGroupsUI {get; set;}
+	public bool IsInF2MenuAddFriendButton {get; set;}
+
 
     // You’ll populate this list from your .job resources
     public List<JobResource> Jobs { get; set; } = new();
@@ -129,10 +239,62 @@
 		GraphDisallowOwnership?.Invoke();
 	}
 
+
 	void JobDoorGroupButton(JobResource job)
 	{
-	 	GraphJobDoorGroupButton?.Invoke();
+	 	GraphJobDoorGroupButton?.Invoke(job);
 	}
+	void CloseF2MenuButton()
+	{
+		GraphCloseF2MenuButton?.Invoke();
+	}
+
+
+	void SellDoor()
+	{
+		GraphSellDoorButton?.Invoke();
+	}
+
+	void AddOwner()
+	{
+		GraphAddOwnerButton?.Invoke();
+	}
+
+	void OnlinePlayerButton()
+	{
+		GraphAddOwnerButton?.Invoke();
+	}
+
+
+	void RemoveOwner()
+	{
+		GraphRemoveOwnerButton?.Invoke();
+	}
+
+	void SetDoorTitle()
+	{
+		GraphSetDoorTitleButton?.Invoke();
+	}
+
+
+
+
+    void SaveDoorTitle()
+    {
+        Log.Info($"Player set door title: {DoorCustomTitle}");
+        // Here you’d call your door system to update the name
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -174,5 +336,5 @@
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// 
 	///</summary>
-	protected override int BuildHash() => System.HashCode.Combine( IsShowingF2Menu, Jobs?.Count ?? 0 );
+	protected override int BuildHash() => System.HashCode.Combine( IsShowingF2Menu, IsInDoorNonOwnerMenu, IsInDoorOwnerMenu, Jobs?.Count ?? 0 );
 }

@@ -4,18 +4,56 @@
 @namespace Sandbox
 
 <root>
-	<div class="Doortitle @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned") @(IsDoorOwnable ? "ownable" : "notownable")">
+	<div class="DoorTitle">
+	@DoorCustomTitle
+	</div>
+	
+	<div class="DoorPlayerName @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned") @(IsDoorOwnable ? "ownable" : "notownable")">
 	@PlayerWhoOwnsDoorDisplayName
 	</div>
+	
 	<div class="DoorBuyAmounttitle @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned")">
 	$@PlayerWhoOwnsDoorBuyAmount
 	</div>
+	
+
+
+
+
+
+
+
+
+<job-list>
+	@if (SelectedJobs != null && SelectedJobs.Count > 0)
+    {
+        @foreach ( var job in SelectedJobs )
+        {
+		
+            <div class="job-card">
+                <div class="job-title @(IsDoorOwnable ? "ownable" : "notownable")">@job.Title</div>
+                <!-- <div class="job-salary">$@job.Salary</div>
+                <div class="job-description">@job.Description</div>
+                <div class="job-category">Category: @job.Category</div> -->
+            </div>
+		
+        }
+    }
+    else
+    {
+        <div class="loading @(IsDoorOwnable ? "ownable" : "notownable")">Loading jobs...</div>
+    }
+</job-list>
 </root>
 
 @code
 {
+	//Edit Door Groups Selected Jobs List
+	public List<JobResource> SelectedJobs { get; set; } = new();
 
+	//Door Infomation Vars
 	public string PlayerWhoOwnsDoorDisplayName {get; set;} = "Unowned Door";
+	public string DoorCustomTitle {get; set;}
 	public float PlayerWhoOwnsDoorBuyAmount {get; set;}
 	public bool DoorIsBought {get; set;}
 	public bool IsDoorOwnable {get; set;}

@@ -1,0 +1,339 @@
+{
+  "RootObject": {
+    "__guid": "45edcf87-c588-400b-b35d-4d446d72fd6c",
+    "__version": 1,
+    "Flags": 0,
+    "Name": "defaultdarkrpspawnprotection",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "f6226203-3969-4d1e-94ca-0ad0f713443f",
+        "__enabled": true,
+        "Center": "0,0,0",
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": {
+          "__version": 9,
+          "__guid": "1bc70a55-1089-4499-9ee2-41167e836bda",
+          "__changeId": 24,
+          "UserData": {
+            "Title": "On Object Enter",
+            "Description": "On Object Enter Logic",
+            "Category": "SpawnProtection",
+            "Icon": "shield",
+            "ReferencedComponentTypes": [
+              "DarkrpPlayerInfo"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_name": "Tags",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "132,72"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Has",
+                "_type": "Sandbox.GameTags"
+              },
+              "UserData": {
+                "Position": "336,48"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "if",
+              "UserData": {
+                "Position": "540,-0"
+              }
+            },
+            {
+              "Id": 16,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "528,144"
+              }
+            },
+            {
+              "Id": 17,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsGodMode",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "840,24"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "Id": 13,
+              "Value": true,
+              "DstId": 2,
+              "DstName": "includeAncestors"
+            },
+            {
+              "Id": 14,
+              "Value": "player",
+              "DstId": 2,
+              "DstName": "tag"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 16,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "true",
+              "DstId": 17,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 16,
+              "SrcName": "_result",
+              "DstId": 17,
+              "DstName": "_target"
+            },
+            {
+              "Id": 18,
+              "Value": true,
+              "DstId": 17,
+              "DstName": "_value"
+            }
+          ]
+        },
+        "OnObjectTriggerExit": {
+          "__version": 9,
+          "__guid": "d6ce366e-76df-472a-a070-6a8d6582529a",
+          "__changeId": 27,
+          "UserData": {
+            "Title": "On Object Exit",
+            "Description": "On Object Exit Logic",
+            "Category": "SpawnProtection",
+            "Icon": "shield",
+            "ReferencedComponentTypes": [
+              "HealthComponent"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-12,24"
+              }
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_name": "Tags",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-36,96"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Has",
+                "_type": "Sandbox.GameTags"
+              },
+              "UserData": {
+                "Position": "168,72"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "if",
+              "UserData": {
+                "Position": "384,24"
+              }
+            },
+            {
+              "Id": 12,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsGodMode",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "696,60"
+              }
+            },
+            {
+              "Id": 16,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "456,180"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "Id": 9,
+              "Value": true,
+              "DstId": 2,
+              "DstName": "includeAncestors"
+            },
+            {
+              "Id": 10,
+              "Value": "player",
+              "DstId": 2,
+              "DstName": "tag"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "true",
+              "DstId": 12,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 16,
+              "SrcName": "_result",
+              "DstId": 12,
+              "DstName": "_target"
+            },
+            {
+              "Id": 15,
+              "Value": false,
+              "DstId": 12,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "obj",
+              "DstId": 16,
+              "DstName": "_this"
+            }
+          ]
+        },
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "50,50,50",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      }
+    ],
+    "Children": [],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}
