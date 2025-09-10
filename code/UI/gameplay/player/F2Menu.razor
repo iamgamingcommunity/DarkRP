@@ -2,6 +2,7 @@
 @using Sandbox.UI;
 @inherits PanelComponent
 @namespace Sandbox
+@using NetworkManager; 
 
 <root class="@(IsShowingF2Menu ? "" : "hide")">
 <div class="f2nonownermenu @(IsInDoorNonOwnerMenu ? "" : "hide")">
@@ -64,7 +65,7 @@
         @foreach ( var job in Jobs )
         {
 		
-            <div class="job-card" onclick="@(() => { AddJobToAnotherList(job); GraphJobDoorGroupButton?.Invoke(job); })">
+            <div class="job-card" onclick="@(() => { GraphAddOwnerButton?.Invoke(); })">
                 <div class="job-title">@job.Title</div>
                 <!-- <div class="job-salary">$@job.Salary</div>
                 <div class="job-description">@job.Description</div>
@@ -135,7 +136,27 @@
 
 
 
-
+<onlineaplayers-list>
+    <div class="job-cardholder @(IsInF2MenuAddFriendButton ? "" : "hide")">
+        @if (PlayerDataList != null && PlayerDataList.Count > 0)
+        {
+            @foreach (var player in PlayerDataList)
+            {
+                <div class="job-card" onclick="@(() => { GraphAddOwnerButton?.Invoke(); })">
+                    <div class="job-title">@player.PlayerID</div>
+                    <!--
+                        If you want more info from DarkRPPlayerInfo, you can do:
+                        <div class="job-description">@player.DarkRPPlayerInfo.SomeProperty</div>
+                    -->
+                </div>
+            }
+        }
+        else
+        {
+            <div class="loading">No players online...</div>
+        }
+    </div>
+</onlineaplayers-list>
 
 
 @code
@@ -190,7 +211,9 @@
 
 
 
-	
+	[Property] public NetworkManager NetworkManager { get; set; }
+
+    [Property] public List<NetworkManager.PlayerData> PlayerDataList { get; set; }
 
 
 	
@@ -207,6 +230,15 @@
 	public bool IsShowingF2Menu {get; set;}
 	public bool IsInF2MenuEditDoorGroupsUI {get; set;}
 	public bool IsInF2MenuAddFriendButton {get; set;}
+	<!-- public List<PlayerData> PlayerDataList { get; set; } = new(); -->
+		
+		
+		
+	public struct PlayerData
+	{
+	[KeyProperty] public string PlayerID { get; set; }
+	[KeyProperty] public Component DarkRPPlayerInfo { get; set; }
+	}
 
 
     // You’ll populate this list from your .job resources

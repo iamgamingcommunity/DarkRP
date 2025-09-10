@@ -1,0 +1,698 @@
+{
+  "RootObject": {
+    "__guid": "d985eb61-2d5f-4693-afdc-e75d2364cf02",
+    "__version": 1,
+    "Flags": 0,
+    "Name": "darkrpbot",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
+    "Components": [],
+    "Children": [
+      {
+        "__guid": "665258f5-b238-436f-9482-8817f10c4cab",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "BotBody",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 0,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "DarkRpbot",
+            "__guid": "874fb6e7-ff57-4309-af52-6c84ec14bc03",
+            "__enabled": true,
+            "BotName": "Bot00",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": {
+              "__version": 9,
+              "__guid": "73a50e8c-3aa4-49e4-82e3-f8dbc2f0ac97",
+              "__changeId": 32,
+              "UserData": {
+                "Title": "On Component Start Bot",
+                "ReferencedComponentTypes": [
+                  "DarkrpPlayerInfo",
+                  "DarkRpbot"
+                ],
+                "Description": "On Component Start Bot Logic",
+                "Category": "Bot",
+                "Icon": "person_outline"
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "12,-12"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "-12,156"
+                  }
+                },
+                {
+                  "Id": 5,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "96,192"
+                  }
+                },
+                {
+                  "Id": 9,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "DisplayName",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "468,-12"
+                  }
+                },
+                {
+                  "Id": 10,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkRpbot"
+                  },
+                  "UserData": {
+                    "Position": "-24,84"
+                  }
+                },
+                {
+                  "Id": 11,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "BotName",
+                    "_type": "DarkRpbot"
+                  },
+                  "UserData": {
+                    "Position": "216,36"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 5,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 9,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 9,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 11,
+                  "SrcName": "_result",
+                  "DstId": 9,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 10,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 10,
+                  "SrcName": "_result",
+                  "DstId": 11,
+                  "DstName": "_target"
+                }
+              ],
+              "Defaults": {
+                "$4.gameobject": {
+                  "_type": "gameobject",
+                  "go": "665258f5-b238-436f-9482-8817f10c4cab"
+                }
+              }
+            },
+            "OnComponentUpdate": null
+          },
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "dea64849-2be8-4b3f-8d9b-bfb51744dc9c",
+            "__enabled": true,
+            "AnimationGraph": null,
+            "BodyGroups": 341,
+            "BoneMergeTarget": null,
+            "CreateAttachments": false,
+            "CreateBoneObjects": false,
+            "LodOverride": null,
+            "MaterialGroup": "default",
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "models/citizen/citizen.vmdl",
+            "Morphs": {},
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Parameters": {
+              "bools": {},
+              "ints": {},
+              "floats": {},
+              "vectors": {},
+              "rotations": {}
+            },
+            "PlaybackRate": 1,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Sequence": {
+              "Name": null,
+              "Looping": true,
+              "Blending": false
+            },
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          },
+          {
+            "__type": "DarkrpPlayerInfo",
+            "__guid": "6e29f15c-f309-4fdf-aa25-c9c5453ee2e7",
+            "__enabled": true,
+            "CurrentJob": "gameplay/jobs/new.job",
+            "DisplayName": null,
+            "DropPlayerMoneyOnDeath": false,
+            "F2MenuUIPanel": null,
+            "IsBot": true,
+            "IsInUIMenu": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": {
+              "__version": 9,
+              "__guid": "66587ca0-bd6e-4a8f-9ae2-e59c3ca63309",
+              "__changeId": 214,
+              "UserData": {
+                "Title": "On Component Start",
+                "ReferencedComponentTypes": [
+                  "PlayerHud",
+                  "DarkrpPlayerInfo"
+                ]
+              },
+              "Variables": [
+                {
+                  "Name": "TempGamemodeObjectRef",
+                  "Type": "Sandbox.GameObject"
+                },
+                {
+                  "Name": "WhileTest",
+                  "Type": "System.Boolean"
+                }
+              ],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "-576,84"
+                  }
+                },
+                {
+                  "Id": 5,
+                  "Type": "while",
+                  "UserData": {
+                    "Position": "-72,-252"
+                  }
+                },
+                {
+                  "Id": 6,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "WhileTest"
+                  },
+                  "UserData": {
+                    "Position": "-84,-204"
+                  }
+                },
+                {
+                  "Id": 7,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "WhileTest"
+                  },
+                  "UserData": {
+                    "Position": "-324,-252"
+                  }
+                },
+                {
+                  "Id": 14,
+                  "Type": "time.delayobj",
+                  "UserData": {
+                    "Position": "204,-228"
+                  }
+                },
+                {
+                  "Id": 52,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "TriggerF2Menu",
+                    "_type": "PlayerHud"
+                  },
+                  "UserData": {
+                    "Position": "936,-276"
+                  }
+                },
+                {
+                  "Id": 61,
+                  "Type": "input.pressed",
+                  "UserData": {
+                    "Position": "528,-156"
+                  }
+                },
+                {
+                  "Id": 63,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "540,-228"
+                  }
+                },
+                {
+                  "Id": 64,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "PlayerHud"
+                  },
+                  "UserData": {
+                    "Position": "936,-228"
+                  }
+                },
+                {
+                  "Id": 72,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "1272,396"
+                  }
+                },
+                {
+                  "Id": 73,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempGamemodeObjectRef"
+                  },
+                  "UserData": {
+                    "Position": "1056,144"
+                  }
+                },
+                {
+                  "Id": 74,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempGamemodeObjectRef"
+                  },
+                  "UserData": {
+                    "Position": "708,312"
+                  }
+                },
+                {
+                  "Id": 75,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1428,408"
+                  }
+                },
+                {
+                  "Id": 76,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerListData",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1896,408"
+                  }
+                },
+                {
+                  "Id": 77,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "2640,144"
+                  }
+                },
+                {
+                  "Id": 78,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "NetworkManager.NetworkManager",
+                      "Name": "PlayerData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "2520,444"
+                  }
+                },
+                {
+                  "Id": 79,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "612,-24"
+                  }
+                },
+                {
+                  "Id": 80,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "-144,84"
+                  }
+                },
+                {
+                  "Id": 81,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "564,120"
+                  }
+                },
+                {
+                  "Id": 82,
+                  "Type": "scene.find",
+                  "UserData": {
+                    "Position": "12,252"
+                  }
+                },
+                {
+                  "Id": 83,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "TryGet",
+                    "_type": "Sandbox.IComponentLister",
+                    "T": "NetworkManager.NetworkManager"
+                  },
+                  "UserData": {
+                    "Position": "996,288"
+                  }
+                },
+                {
+                  "Id": 84,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerList",
+                    "_type": "NetworkManager.NetworkManager"
+                  },
+                  "UserData": {
+                    "Position": "1560,264"
+                  }
+                },
+                {
+                  "Id": 85,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Add",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "2280,144"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 7,
+                  "SrcName": "_signal",
+                  "DstId": 5,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "_result",
+                  "DstId": 5,
+                  "DstName": "condition"
+                },
+                {
+                  "Id": 68,
+                  "Value": true,
+                  "DstId": 7,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "body",
+                  "DstId": 14,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 69,
+                  "Value": 0.01,
+                  "DstId": 14,
+                  "DstName": "seconds"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 14,
+                  "DstName": "target"
+                },
+                {
+                  "SrcId": 63,
+                  "SrcName": "true",
+                  "DstId": 52,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_result",
+                  "DstId": 52,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 70,
+                  "Value": "F2Menu",
+                  "DstId": 61,
+                  "DstName": "action"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "_signal",
+                  "DstId": 63,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 61,
+                  "SrcName": "_result",
+                  "DstId": 63,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 64,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 79,
+                  "SrcName": "_signal",
+                  "DstId": 73,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 82,
+                  "SrcName": "_result",
+                  "DstId": 73,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 72,
+                  "SrcName": "_result",
+                  "DstId": 75,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 75,
+                  "SrcName": "_result",
+                  "DstId": 76,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 85,
+                  "SrcName": "_signal",
+                  "DstId": 77,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 78,
+                  "SrcName": "_result",
+                  "DstId": 77,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 76,
+                  "SrcName": "_result",
+                  "DstId": 78,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 80,
+                  "SrcName": "_signal",
+                  "DstId": 79,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 81,
+                  "SrcName": "_result",
+                  "DstId": 79,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 80,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 99,
+                  "Value": "FireBotStart?",
+                  "DstId": 80,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 82,
+                  "SrcName": "_result",
+                  "DstId": 81,
+                  "DstName": "input"
+                },
+                {
+                  "Id": 90,
+                  "Value": "darkrpgamemode",
+                  "DstId": 82,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 74,
+                  "SrcName": "_result",
+                  "DstId": 83,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 91,
+                  "Value": "InChildren",
+                  "DstId": 83,
+                  "DstName": "search"
+                },
+                {
+                  "SrcId": 83,
+                  "SrcName": "component",
+                  "DstId": 84,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 73,
+                  "SrcName": "_signal",
+                  "DstId": 85,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 84,
+                  "SrcName": "_result",
+                  "DstId": 85,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 76,
+                  "SrcName": "_result",
+                  "DstId": 85,
+                  "DstName": "item"
+                }
+              ],
+              "Defaults": {
+                "$72.gameobject": {
+                  "_type": "gameobject",
+                  "go": "665258f5-b238-436f-9482-8817f10c4cab"
+                }
+              }
+            },
+            "OnComponentUpdate": null,
+            "PlayerDeathMoneyDropAll": false,
+            "PlayerDeathMoneyDropAmount": 0,
+            "PlayerDoorInt": 0,
+            "PlayerListData": {
+              "PlayerID": null,
+              "DarkRPPlayerInfo": null
+            },
+            "PlayerMoney": 2000,
+            "SecondaryInteractionTraceHitVar": null,
+            "SteamId": {
+              "Value": 0,
+              "ValueUnsigned": 0
+            },
+            "SteamName": null
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

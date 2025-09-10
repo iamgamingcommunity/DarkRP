@@ -188,31 +188,28 @@
             "Speed": 1
           },
           {
-            "__type": "PropGrabber",
-            "__guid": "3d2be183-0322-4b17-a55a-80e47f6961ae",
+            "__type": "Sandbox.Dresser",
+            "__guid": "2d5aa72e-36a6-47e5-b270-15f095c442f5",
             "__enabled": true,
-            "CanThrow": true,
-            "DropFromAngle": true,
-            "DropFromVelocity": true,
-            "HoldDistance": 70,
-            "MaxFovAngle": 60,
-            "MaxHoldVelocity": 2000,
-            "MaxMoveSpeed": 500,
+            "ApplyHeightScale": true,
+            "BodyTarget": {
+              "_type": "component",
+              "component_id": "90426ea8-8d48-444c-be93-df9bfd73e994",
+              "go": "d48af905-f4b6-4ea7-99c2-d106ba88d63e",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "Clothing": [],
+            "ManualAge": 0,
+            "ManualHeight": 1,
+            "ManualTint": 0,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
             "OnComponentFixedUpdate": null,
             "OnComponentStart": null,
             "OnComponentUpdate": null,
-            "PickupRange": 200,
-            "PropUser": null,
-            "RaycastSource": {
-              "_type": "gameobject",
-              "go": "78530b97-775a-474d-8e34-045e6ab06bc9"
-            },
-            "RequirePropComponent": false,
-            "RequireTags": "grab",
-            "ThrowForce": 300
+            "Source": "LocalUser",
+            "WorkshopItems": []
           },
           {
             "__type": "RespawnSystem",
@@ -298,6 +295,7 @@
               "_type": "gameobject",
               "go": "c023033f-8f52-44f5-bf42-48c819645c27"
             },
+            "IsBot": false,
             "IsInUIMenu": false,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -306,14 +304,19 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "f3a07f66-dc23-4b68-a2ca-47b13abdf0e3",
-              "__changeId": 191,
+              "__changeId": 533,
               "UserData": {
                 "Title": "On Component Start",
                 "ReferencedComponentTypes": [
-                  "PlayerHud"
+                  "PlayerHud",
+                  "DarkrpPlayerInfo"
                 ]
               },
               "Variables": [
+                {
+                  "Name": "TempGamemodeObjectRef",
+                  "Type": "Sandbox.GameObject"
+                },
                 {
                   "Name": "WhileTest",
                   "Type": "System.Boolean"
@@ -324,14 +327,14 @@
                   "Id": 0,
                   "Type": "input",
                   "UserData": {
-                    "Position": "-576,84"
+                    "Position": "-2208,-0"
                   }
                 },
                 {
                   "Id": 5,
                   "Type": "while",
                   "UserData": {
-                    "Position": "-96,84"
+                    "Position": "1476,84"
                   }
                 },
                 {
@@ -341,7 +344,7 @@
                     "_var": "WhileTest"
                   },
                   "UserData": {
-                    "Position": "-108,132"
+                    "Position": "1464,132"
                   }
                 },
                 {
@@ -351,14 +354,14 @@
                     "_var": "WhileTest"
                   },
                   "UserData": {
-                    "Position": "-348,84"
+                    "Position": "1212,84"
                   }
                 },
                 {
                   "Id": 14,
                   "Type": "time.delayobj",
                   "UserData": {
-                    "Position": "180,108"
+                    "Position": "1752,108"
                   }
                 },
                 {
@@ -370,21 +373,21 @@
                     "_type": "PlayerHud"
                   },
                   "UserData": {
-                    "Position": "912,60"
+                    "Position": "2484,60"
                   }
                 },
                 {
                   "Id": 61,
                   "Type": "input.pressed",
                   "UserData": {
-                    "Position": "504,180"
+                    "Position": "2076,180"
                   }
                 },
                 {
                   "Id": 63,
                   "Type": "if",
                   "UserData": {
-                    "Position": "516,108"
+                    "Position": "2088,108"
                   }
                 },
                 {
@@ -394,7 +397,173 @@
                     "T": "PlayerHud"
                   },
                   "UserData": {
-                    "Position": "912,108"
+                    "Position": "2484,108"
+                  }
+                },
+                {
+                  "Id": 81,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Tags",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "-1272,156"
+                  }
+                },
+                {
+                  "Id": 82,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Has",
+                    "_type": "Sandbox.GameTags"
+                  },
+                  "UserData": {
+                    "Position": "-948,132"
+                  }
+                },
+                {
+                  "Id": 100,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "-732,0"
+                  }
+                },
+                {
+                  "Id": 115,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempGamemodeObjectRef"
+                  },
+                  "UserData": {
+                    "Position": "-600,96"
+                  }
+                },
+                {
+                  "Id": 116,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempGamemodeObjectRef"
+                  },
+                  "UserData": {
+                    "Position": "-864,348"
+                  }
+                },
+                {
+                  "Id": 128,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-228,360"
+                  }
+                },
+                {
+                  "Id": 158,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerListData",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "240,360"
+                  }
+                },
+                {
+                  "Id": 159,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "984,96"
+                  }
+                },
+                {
+                  "Id": 161,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "NetworkManager.NetworkManager",
+                      "Name": "PlayerData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "864,396"
+                  }
+                },
+                {
+                  "Id": 166,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "-360,324"
+                  }
+                },
+                {
+                  "Id": 183,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "-1044,-72"
+                  }
+                },
+                {
+                  "Id": 191,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "-1800,36"
+                  }
+                },
+                {
+                  "Id": 246,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "-1092,72"
+                  }
+                },
+                {
+                  "Id": 247,
+                  "Type": "scene.find",
+                  "UserData": {
+                    "Position": "-1644,204"
+                  }
+                },
+                {
+                  "Id": 249,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "TryGet",
+                    "_type": "Sandbox.IComponentLister",
+                    "T": "NetworkManager.NetworkManager"
+                  },
+                  "UserData": {
+                    "Position": "-660,240"
+                  }
+                },
+                {
+                  "Id": 252,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerList",
+                    "_type": "NetworkManager.NetworkManager"
+                  },
+                  "UserData": {
+                    "Position": "-96,216"
+                  }
+                },
+                {
+                  "Id": 253,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Add",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "624,96"
                   }
                 }
               ],
@@ -412,13 +581,13 @@
                   "DstName": "condition"
                 },
                 {
-                  "SrcId": 0,
+                  "SrcId": 159,
                   "SrcName": "_signal",
                   "DstId": 7,
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 68,
+                  "Id": 262,
                   "Value": true,
                   "DstId": 7,
                   "DstName": "_value"
@@ -430,7 +599,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 69,
+                  "Id": 263,
                   "Value": 0.01,
                   "DstId": 14,
                   "DstName": "seconds"
@@ -454,7 +623,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 70,
+                  "Id": 264,
                   "Value": "F2Menu",
                   "DstId": 61,
                   "DstName": "action"
@@ -476,8 +645,152 @@
                   "SrcName": "_target",
                   "DstId": 64,
                   "DstName": "_this"
+                },
+                {
+                  "SrcId": 81,
+                  "SrcName": "_result",
+                  "DstId": 82,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 265,
+                  "Value": false,
+                  "DstId": 82,
+                  "DstName": "includeAncestors"
+                },
+                {
+                  "Id": 266,
+                  "Value": "gamemode",
+                  "DstId": 82,
+                  "DstName": "tag"
+                },
+                {
+                  "SrcId": 82,
+                  "SrcName": "_result",
+                  "DstId": 100,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 183,
+                  "SrcName": "_signal",
+                  "DstId": 115,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 247,
+                  "SrcName": "_result",
+                  "DstId": 115,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 166,
+                  "SrcName": "_result",
+                  "DstId": 128,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 128,
+                  "SrcName": "_result",
+                  "DstId": 158,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 253,
+                  "SrcName": "_signal",
+                  "DstId": 159,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 161,
+                  "SrcName": "_result",
+                  "DstId": 159,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 158,
+                  "SrcName": "_result",
+                  "DstId": 161,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 191,
+                  "SrcName": "_signal",
+                  "DstId": 183,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 246,
+                  "SrcName": "_result",
+                  "DstId": 183,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 191,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 267,
+                  "Value": "Fire?",
+                  "DstId": 191,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 247,
+                  "SrcName": "_result",
+                  "DstId": 246,
+                  "DstName": "input"
+                },
+                {
+                  "Id": 268,
+                  "Value": "darkrpgamemode",
+                  "DstId": 247,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 116,
+                  "SrcName": "_result",
+                  "DstId": 249,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 269,
+                  "Value": "InChildren",
+                  "DstId": 249,
+                  "DstName": "search"
+                },
+                {
+                  "SrcId": 249,
+                  "SrcName": "component",
+                  "DstId": 252,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 115,
+                  "SrcName": "_signal",
+                  "DstId": 253,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 252,
+                  "SrcName": "_result",
+                  "DstId": 253,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 158,
+                  "SrcName": "_result",
+                  "DstId": 253,
+                  "DstName": "item"
                 }
-              ]
+              ],
+              "Defaults": {
+                "$166.gameobject": {
+                  "_type": "gameobject",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                }
+              }
             },
             "OnComponentUpdate": {
               "__version": 9,
@@ -591,6 +904,15 @@
             "PlayerDeathMoneyDropAll": false,
             "PlayerDeathMoneyDropAmount": 0,
             "PlayerDoorInt": 0,
+            "PlayerListData": {
+              "PlayerID": "Iamekaj",
+              "DarkRPPlayerInfo": {
+                "_type": "component",
+                "component_id": "4152f0e6-c7b4-4a2a-a7be-b3e03027bead",
+                "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
+                "component_type": "PlayerController"
+              }
+            },
             "PlayerMoney": 2000,
             "SecondaryInteractionTraceHitVar": null,
             "SteamId": {
@@ -606,14 +928,15 @@
             "F2Menu": {
               "__version": 9,
               "__guid": "aab9789c-4e25-47b2-b639-51fb0401d5df",
-              "__changeId": 829,
+              "__changeId": 851,
               "UserData": {
                 "Title": "F2Menu",
                 "Description": "F2Menu Open Logic",
                 "ReferencedComponentTypes": [
                   "DarkrpPlayerInfo",
                   "door",
-                  "Sandbox.F2Menu"
+                  "Sandbox.F2Menu",
+                  "Sandbox.PlayerController"
                 ],
                 "Category": "UI Logic",
                 "Icon": "menu_open"
@@ -926,13 +1249,6 @@
                   },
                   "UserData": {
                     "Position": "2880,24"
-                  }
-                },
-                {
-                  "Id": 244,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "-1068,180"
                   }
                 },
                 {
@@ -1689,6 +2005,45 @@
                   "UserData": {
                     "Position": "5568,-480"
                   }
+                },
+                {
+                  "Id": 798,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "-1344,96"
+                  }
+                },
+                {
+                  "Id": 799,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.PlayerController"
+                  },
+                  "UserData": {
+                    "Position": "-1224,132"
+                  }
+                },
+                {
+                  "Id": 800,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EyeAngles",
+                    "_type": "Sandbox.PlayerController"
+                  },
+                  "UserData": {
+                    "Position": "-936,84"
+                  }
+                },
+                {
+                  "Id": 824,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Forward",
+                    "_type": "Angles"
+                  },
+                  "UserData": {
+                    "Position": "-660,120"
+                  }
                 }
               ],
               "Links": [
@@ -1714,12 +2069,6 @@
                   "SrcId": 4,
                   "SrcName": "_result",
                   "DstId": 5,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 244,
-                  "SrcName": "_result",
-                  "DstId": 7,
                   "DstName": "_target"
                 },
                 {
@@ -1861,13 +2210,13 @@
                   "DstName": "input"
                 },
                 {
-                  "SrcId": 8,
+                  "SrcId": 824,
                   "SrcName": "_result",
                   "DstId": 106,
                   "DstName": "a"
                 },
                 {
-                  "Id": 726,
+                  "Id": 848,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -1883,7 +2232,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 727,
+                  "Id": 849,
                   "Value": 200,
                   "DstId": 131,
                   "DstName": "maxLength"
@@ -1907,13 +2256,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 728,
+                  "Id": 850,
                   "Value": true,
                   "DstId": 139,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 729,
+                  "Id": 851,
                   "Value": "door",
                   "DstId": 139,
                   "DstName": "tag"
@@ -1937,7 +2286,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 730,
+                  "Id": 852,
                   "Value": "YES IT IS DOOR!",
                   "DstId": 146,
                   "DstName": "format"
@@ -2051,7 +2400,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 731,
+                  "Id": 853,
                   "Value": true,
                   "DstId": 362,
                   "DstName": "_value"
@@ -2069,7 +2418,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 732,
+                  "Id": 854,
                   "Value": false,
                   "DstId": 364,
                   "DstName": "_value"
@@ -2207,7 +2556,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 733,
+                  "Id": 855,
                   "Value": false,
                   "DstId": 410,
                   "DstName": "_value"
@@ -2231,7 +2580,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 734,
+                  "Id": 856,
                   "Value": true,
                   "DstId": 422,
                   "DstName": "_value"
@@ -2249,7 +2598,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 735,
+                  "Id": 857,
                   "Value": "Not In UI",
                   "DstId": 467,
                   "DstName": "format"
@@ -2261,7 +2610,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 736,
+                  "Id": 858,
                   "Value": "Not Player Who Owns",
                   "DstId": 477,
                   "DstName": "format"
@@ -2273,7 +2622,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 737,
+                  "Id": 859,
                   "Value": "Player Who Owns",
                   "DstId": 499,
                   "DstName": "format"
@@ -2309,7 +2658,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 738,
+                  "Id": 860,
                   "Value": true,
                   "DstId": 637,
                   "DstName": "_value"
@@ -2333,7 +2682,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 739,
+                  "Id": 861,
                   "Value": true,
                   "DstId": 642,
                   "DstName": "_value"
@@ -2369,7 +2718,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 740,
+                  "Id": 862,
                   "Value": true,
                   "DstId": 649,
                   "DstName": "_value"
@@ -2405,7 +2754,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 741,
+                  "Id": 863,
                   "Value": false,
                   "DstId": 655,
                   "DstName": "_value"
@@ -2441,7 +2790,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 742,
+                  "Id": 864,
                   "Value": false,
                   "DstId": 661,
                   "DstName": "_value"
@@ -2477,7 +2826,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 743,
+                  "Id": 865,
                   "Value": false,
                   "DstId": 669,
                   "DstName": "_value"
@@ -2513,7 +2862,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 744,
+                  "Id": 866,
                   "Value": false,
                   "DstId": 676,
                   "DstName": "_value"
@@ -2549,7 +2898,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 745,
+                  "Id": 867,
                   "Value": false,
                   "DstId": 683,
                   "DstName": "_value"
@@ -2585,7 +2934,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 746,
+                  "Id": 868,
                   "Value": true,
                   "DstId": 689,
                   "DstName": "_value"
@@ -2621,7 +2970,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 747,
+                  "Id": 869,
                   "Value": false,
                   "DstId": 696,
                   "DstName": "_value"
@@ -2657,16 +3006,34 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 748,
+                  "Id": 870,
                   "Value": false,
                   "DstId": 702,
                   "DstName": "_value"
+                },
+                {
+                  "SrcId": 798,
+                  "SrcName": "_result",
+                  "DstId": 799,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 799,
+                  "SrcName": "_result",
+                  "DstId": 800,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 800,
+                  "SrcName": "_result",
+                  "DstId": 824,
+                  "DstName": "_target"
                 }
               ],
               "Defaults": {
-                "$244.gameobject": {
+                "$798.gameobject": {
                   "_type": "gameobject",
-                  "go": "78530b97-775a-474d-8e34-045e6ab06bc9"
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
                 }
               }
             },
@@ -2679,7 +3046,7 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "f6e0194b-5847-43bb-b57f-d8a761587eae",
-              "__changeId": 68,
+              "__changeId": 69,
               "UserData": {
                 "Title": "On Component Start",
                 "ReferencedComponentTypes": []
@@ -2865,12 +3232,12 @@
                 "__guid": "90426ea8-8d48-444c-be93-df9bfd73e994",
                 "__enabled": true,
                 "AnimationGraph": null,
-                "BodyGroups": 341,
+                "BodyGroups": 1,
                 "BoneMergeTarget": null,
                 "CreateAttachments": false,
                 "CreateBoneObjects": false,
                 "LodOverride": null,
-                "MaterialGroup": null,
+                "MaterialGroup": "default",
                 "MaterialOverride": null,
                 "Materials": null,
                 "Model": "models/citizen/citizen.vmdl",
@@ -2905,7 +3272,544 @@
                 "UseAnimGraph": true
               }
             ],
-            "Children": []
+            "Children": [
+              {
+                "__guid": "b588f3a1-262d-44c8-be7b-c69d4bba80d4",
+                "__version": 1,
+                "Flags": 0,
+                "Name": "Clothing - black_boots",
+                "Position": "0,0,0",
+                "Rotation": "0,0,0,1",
+                "Scale": "1,1,1",
+                "Tags": "clothing",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "NetworkOrphaned": 0,
+                "OwnerTransfer": 1,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "6de2c254-2859-4c20-be6e-76a1463e459a",
+                    "__enabled": true,
+                    "AnimationGraph": null,
+                    "BodyGroups": 18446744073709551615,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "90426ea8-8d48-444c-be93-df9bfd73e994",
+                      "go": "d48af905-f4b6-4ea7-99c2-d106ba88d63e",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateAttachments": false,
+                    "CreateBoneObjects": false,
+                    "LodOverride": null,
+                    "MaterialGroup": null,
+                    "MaterialOverride": null,
+                    "Materials": null,
+                    "Model": "models/citizen_clothes/shoes/boots/models/black_boots.vmdl",
+                    "Morphs": {},
+                    "OnComponentDestroy": null,
+                    "OnComponentDisabled": null,
+                    "OnComponentEnabled": null,
+                    "OnComponentFixedUpdate": null,
+                    "OnComponentStart": null,
+                    "OnComponentUpdate": null,
+                    "Parameters": {
+                      "bools": {},
+                      "ints": {},
+                      "floats": {},
+                      "vectors": {},
+                      "rotations": {}
+                    },
+                    "PlaybackRate": 1,
+                    "RenderOptions": {
+                      "GameLayer": true,
+                      "OverlayLayer": false,
+                      "BloomLayer": false,
+                      "AfterUILayer": false
+                    },
+                    "RenderType": "On",
+                    "Sequence": {
+                      "Name": null,
+                      "Looping": true,
+                      "Blending": false
+                    },
+                    "Tint": "1,1,1,1",
+                    "UseAnimGraph": true
+                  }
+                ],
+                "Children": []
+              },
+              {
+                "__guid": "6940e347-8d69-497a-95ad-bbae3d2324a3",
+                "__version": 1,
+                "Flags": 0,
+                "Name": "Clothing - rubber_gloves",
+                "Position": "0,0,0",
+                "Rotation": "0,0,0,1",
+                "Scale": "1,1,1",
+                "Tags": "clothing",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "NetworkOrphaned": 0,
+                "OwnerTransfer": 1,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "539a78ce-8bb1-4e9b-956c-8eb50a23548e",
+                    "__enabled": true,
+                    "AnimationGraph": null,
+                    "BodyGroups": 18446744073709551615,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "90426ea8-8d48-444c-be93-df9bfd73e994",
+                      "go": "d48af905-f4b6-4ea7-99c2-d106ba88d63e",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateAttachments": false,
+                    "CreateBoneObjects": false,
+                    "LodOverride": null,
+                    "MaterialGroup": null,
+                    "MaterialOverride": null,
+                    "Materials": null,
+                    "Model": "models/citizen_clothes/gloves/rubber_gloves/models/rubber_gloves.vmdl",
+                    "Morphs": {},
+                    "OnComponentDestroy": null,
+                    "OnComponentDisabled": null,
+                    "OnComponentEnabled": null,
+                    "OnComponentFixedUpdate": null,
+                    "OnComponentStart": null,
+                    "OnComponentUpdate": null,
+                    "Parameters": {
+                      "bools": {},
+                      "ints": {},
+                      "floats": {},
+                      "vectors": {},
+                      "rotations": {}
+                    },
+                    "PlaybackRate": 1,
+                    "RenderOptions": {
+                      "GameLayer": true,
+                      "OverlayLayer": false,
+                      "BloomLayer": false,
+                      "AfterUILayer": false
+                    },
+                    "RenderType": "On",
+                    "Sequence": {
+                      "Name": null,
+                      "Looping": true,
+                      "Blending": false
+                    },
+                    "Tint": "1,1,1,1",
+                    "UseAnimGraph": true
+                  }
+                ],
+                "Children": []
+              },
+              {
+                "__guid": "c5b13a49-ada8-4676-8a76-4ba872836df8",
+                "__version": 1,
+                "Flags": 0,
+                "Name": "Clothing - hair_shortscruffy_brown",
+                "Position": "0,0,0",
+                "Rotation": "0,0,0,1",
+                "Scale": "1,1,1",
+                "Tags": "clothing",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "NetworkOrphaned": 0,
+                "OwnerTransfer": 1,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "44b87445-58f2-4f93-8229-cf6e79551f52",
+                    "__enabled": true,
+                    "AnimationGraph": null,
+                    "BodyGroups": 18446744073709551615,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "90426ea8-8d48-444c-be93-df9bfd73e994",
+                      "go": "d48af905-f4b6-4ea7-99c2-d106ba88d63e",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateAttachments": false,
+                    "CreateBoneObjects": false,
+                    "LodOverride": null,
+                    "MaterialGroup": null,
+                    "MaterialOverride": null,
+                    "Materials": null,
+                    "Model": "models/citizen_clothes/hair/hair_shortscruffy/models/hair_shortscruffy.vmdl",
+                    "Morphs": {},
+                    "OnComponentDestroy": null,
+                    "OnComponentDisabled": null,
+                    "OnComponentEnabled": null,
+                    "OnComponentFixedUpdate": null,
+                    "OnComponentStart": null,
+                    "OnComponentUpdate": null,
+                    "Parameters": {
+                      "bools": {},
+                      "ints": {},
+                      "floats": {},
+                      "vectors": {},
+                      "rotations": {}
+                    },
+                    "PlaybackRate": 1,
+                    "RenderOptions": {
+                      "GameLayer": true,
+                      "OverlayLayer": false,
+                      "BloomLayer": false,
+                      "AfterUILayer": false
+                    },
+                    "RenderType": "On",
+                    "Sequence": {
+                      "Name": null,
+                      "Looping": true,
+                      "Blending": false
+                    },
+                    "Tint": "0,0,0,1",
+                    "UseAnimGraph": true
+                  }
+                ],
+                "Children": []
+              },
+              {
+                "__guid": "3b3c978c-530a-4413-8e6b-7a16f23ceacc",
+                "__version": 1,
+                "Flags": 0,
+                "Name": "Clothing - medium_beard",
+                "Position": "0,0,0",
+                "Rotation": "0,0,0,1",
+                "Scale": "1,1,1",
+                "Tags": "clothing",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "NetworkOrphaned": 0,
+                "OwnerTransfer": 1,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "9f441185-82c0-4d72-aba0-d66718c8de7e",
+                    "__enabled": true,
+                    "AnimationGraph": null,
+                    "BodyGroups": 18446744073709551615,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "90426ea8-8d48-444c-be93-df9bfd73e994",
+                      "go": "d48af905-f4b6-4ea7-99c2-d106ba88d63e",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateAttachments": false,
+                    "CreateBoneObjects": false,
+                    "LodOverride": null,
+                    "MaterialGroup": null,
+                    "MaterialOverride": null,
+                    "Materials": null,
+                    "Model": "models/citizen_clothes/hair/medium_beard/models/medium_beard.vmdl",
+                    "Morphs": {},
+                    "OnComponentDestroy": null,
+                    "OnComponentDisabled": null,
+                    "OnComponentEnabled": null,
+                    "OnComponentFixedUpdate": null,
+                    "OnComponentStart": null,
+                    "OnComponentUpdate": null,
+                    "Parameters": {
+                      "bools": {},
+                      "ints": {},
+                      "floats": {},
+                      "vectors": {},
+                      "rotations": {}
+                    },
+                    "PlaybackRate": 1,
+                    "RenderOptions": {
+                      "GameLayer": true,
+                      "OverlayLayer": false,
+                      "BloomLayer": false,
+                      "AfterUILayer": false
+                    },
+                    "RenderType": "On",
+                    "Sequence": {
+                      "Name": null,
+                      "Looping": true,
+                      "Blending": false
+                    },
+                    "Tint": "0.03167,0.02137,0.01583,1",
+                    "UseAnimGraph": true
+                  }
+                ],
+                "Children": []
+              },
+              {
+                "__guid": "b7defd88-5063-4194-95e4-7b5ebeb70fd9",
+                "__version": 1,
+                "Flags": 0,
+                "Name": "Clothing - trousers.smart",
+                "Position": "0,0,0",
+                "Rotation": "0,0,0,1",
+                "Scale": "1,1,1",
+                "Tags": "clothing",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "NetworkOrphaned": 0,
+                "OwnerTransfer": 1,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "485e6dc5-b0ff-4ad3-b5f4-6bc1464198f7",
+                    "__enabled": true,
+                    "AnimationGraph": null,
+                    "BodyGroups": 18446744073709551615,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "90426ea8-8d48-444c-be93-df9bfd73e994",
+                      "go": "d48af905-f4b6-4ea7-99c2-d106ba88d63e",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateAttachments": false,
+                    "CreateBoneObjects": false,
+                    "LodOverride": null,
+                    "MaterialGroup": null,
+                    "MaterialOverride": null,
+                    "Materials": null,
+                    "Model": "models/citizen_clothes/trousers/smarttrousers/smarttrousers.vmdl",
+                    "Morphs": {},
+                    "OnComponentDestroy": null,
+                    "OnComponentDisabled": null,
+                    "OnComponentEnabled": null,
+                    "OnComponentFixedUpdate": null,
+                    "OnComponentStart": null,
+                    "OnComponentUpdate": null,
+                    "Parameters": {
+                      "bools": {},
+                      "ints": {},
+                      "floats": {},
+                      "vectors": {},
+                      "rotations": {}
+                    },
+                    "PlaybackRate": 1,
+                    "RenderOptions": {
+                      "GameLayer": true,
+                      "OverlayLayer": false,
+                      "BloomLayer": false,
+                      "AfterUILayer": false
+                    },
+                    "RenderType": "On",
+                    "Sequence": {
+                      "Name": null,
+                      "Looping": true,
+                      "Blending": false
+                    },
+                    "Tint": "1,1,1,1",
+                    "UseAnimGraph": true
+                  }
+                ],
+                "Children": []
+              },
+              {
+                "__guid": "b63e4c7d-2d77-4268-aa60-ac8ea96a1455",
+                "__version": 1,
+                "Flags": 0,
+                "Name": "Clothing - hoodie_black",
+                "Position": "0,0,0",
+                "Rotation": "0,0,0,1",
+                "Scale": "1,1,1",
+                "Tags": "clothing",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "NetworkOrphaned": 0,
+                "OwnerTransfer": 1,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "fc6c93a9-0419-4ffb-a202-2d35055bdca5",
+                    "__enabled": true,
+                    "AnimationGraph": null,
+                    "BodyGroups": 18446744073709551615,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "90426ea8-8d48-444c-be93-df9bfd73e994",
+                      "go": "d48af905-f4b6-4ea7-99c2-d106ba88d63e",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateAttachments": false,
+                    "CreateBoneObjects": false,
+                    "LodOverride": null,
+                    "MaterialGroup": null,
+                    "MaterialOverride": null,
+                    "Materials": null,
+                    "Model": "models/citizen_clothes/jacket/hoodie/models/hoodie_black.vmdl",
+                    "Morphs": {},
+                    "OnComponentDestroy": null,
+                    "OnComponentDisabled": null,
+                    "OnComponentEnabled": null,
+                    "OnComponentFixedUpdate": null,
+                    "OnComponentStart": null,
+                    "OnComponentUpdate": null,
+                    "Parameters": {
+                      "bools": {},
+                      "ints": {},
+                      "floats": {},
+                      "vectors": {},
+                      "rotations": {}
+                    },
+                    "PlaybackRate": 1,
+                    "RenderOptions": {
+                      "GameLayer": true,
+                      "OverlayLayer": false,
+                      "BloomLayer": false,
+                      "AfterUILayer": false
+                    },
+                    "RenderType": "On",
+                    "Sequence": {
+                      "Name": null,
+                      "Looping": true,
+                      "Blending": false
+                    },
+                    "Tint": "1,1,1,1",
+                    "UseAnimGraph": true
+                  }
+                ],
+                "Children": []
+              },
+              {
+                "__guid": "82815ec8-97d6-4f4a-b26f-a6a340200ff5",
+                "__version": 1,
+                "Flags": 0,
+                "Name": "Clothing - eyelashes",
+                "Position": "0,0,0",
+                "Rotation": "0,0,0,1",
+                "Scale": "1,1,1",
+                "Tags": "clothing",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "NetworkOrphaned": 0,
+                "OwnerTransfer": 1,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "07d8223b-a499-47c1-b61d-f32fa706426e",
+                    "__enabled": true,
+                    "AnimationGraph": null,
+                    "BodyGroups": 18446744073709551615,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "90426ea8-8d48-444c-be93-df9bfd73e994",
+                      "go": "d48af905-f4b6-4ea7-99c2-d106ba88d63e",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateAttachments": false,
+                    "CreateBoneObjects": false,
+                    "LodOverride": null,
+                    "MaterialGroup": null,
+                    "MaterialOverride": null,
+                    "Materials": null,
+                    "Model": "models/citizen_clothes/hair/eyelashes/models/eyelashes.vmdl",
+                    "Morphs": {},
+                    "OnComponentDestroy": null,
+                    "OnComponentDisabled": null,
+                    "OnComponentEnabled": null,
+                    "OnComponentFixedUpdate": null,
+                    "OnComponentStart": null,
+                    "OnComponentUpdate": null,
+                    "Parameters": {
+                      "bools": {},
+                      "ints": {},
+                      "floats": {},
+                      "vectors": {},
+                      "rotations": {}
+                    },
+                    "PlaybackRate": 1,
+                    "RenderOptions": {
+                      "GameLayer": true,
+                      "OverlayLayer": false,
+                      "BloomLayer": false,
+                      "AfterUILayer": false
+                    },
+                    "RenderType": "On",
+                    "Sequence": {
+                      "Name": null,
+                      "Looping": true,
+                      "Blending": false
+                    },
+                    "Tint": "1,1,1,1",
+                    "UseAnimGraph": true
+                  }
+                ],
+                "Children": []
+              },
+              {
+                "__guid": "fc23a137-b174-4f8d-99e7-1b518037175c",
+                "__version": 1,
+                "Flags": 0,
+                "Name": "Clothing - eyebrows_styled",
+                "Position": "0,0,0",
+                "Rotation": "0,0,0,1",
+                "Scale": "1,1,1",
+                "Tags": "clothing",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "NetworkOrphaned": 0,
+                "OwnerTransfer": 1,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "edc06910-3741-49d8-b191-69fa5db6338d",
+                    "__enabled": true,
+                    "AnimationGraph": null,
+                    "BodyGroups": 18446744073709551615,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "90426ea8-8d48-444c-be93-df9bfd73e994",
+                      "go": "d48af905-f4b6-4ea7-99c2-d106ba88d63e",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateAttachments": false,
+                    "CreateBoneObjects": false,
+                    "LodOverride": null,
+                    "MaterialGroup": null,
+                    "MaterialOverride": null,
+                    "Materials": null,
+                    "Model": "models/citizen_clothes/hair/eyebrows_styled/models/eyebrows_styled.vmdl",
+                    "Morphs": {},
+                    "OnComponentDestroy": null,
+                    "OnComponentDisabled": null,
+                    "OnComponentEnabled": null,
+                    "OnComponentFixedUpdate": null,
+                    "OnComponentStart": null,
+                    "OnComponentUpdate": null,
+                    "Parameters": {
+                      "bools": {},
+                      "ints": {},
+                      "floats": {},
+                      "vectors": {},
+                      "rotations": {}
+                    },
+                    "PlaybackRate": 1,
+                    "RenderOptions": {
+                      "GameLayer": true,
+                      "OverlayLayer": false,
+                      "BloomLayer": false,
+                      "AfterUILayer": false
+                    },
+                    "RenderType": "On",
+                    "Sequence": {
+                      "Name": null,
+                      "Looping": true,
+                      "Blending": false
+                    },
+                    "Tint": "0.02506,0.01685,0.01253,1",
+                    "UseAnimGraph": true
+                  }
+                ],
+                "Children": []
+              }
+            ]
           },
           {
             "__guid": "7b4f9ce6-203f-4f7d-b9f7-f30d8009cf4b",
@@ -2977,49 +3881,6 @@
         ]
       },
       {
-        "__guid": "78530b97-775a-474d-8e34-045e6ab06bc9",
-        "__version": 1,
-        "Flags": 0,
-        "Name": "Camera",
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "maincamera",
-        "Enabled": true,
-        "NetworkMode": 1,
-        "NetworkInterpolation": true,
-        "NetworkOrphaned": 0,
-        "OwnerTransfer": 1,
-        "Components": [
-          {
-            "__type": "Sandbox.CameraComponent",
-            "__guid": "88fb1040-948f-449f-ab2e-2febf858a7e1",
-            "__enabled": true,
-            "BackgroundColor": "0.33333,0.46275,0.52157,1",
-            "ClearFlags": "All",
-            "FieldOfView": 60,
-            "FovAxis": "Horizontal",
-            "IsMainCamera": true,
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "Orthographic": false,
-            "OrthographicHeight": 1204,
-            "Priority": 1,
-            "RenderExcludeTags": "",
-            "RenderTags": "",
-            "TargetEye": "None",
-            "Viewport": "0,0,1,1",
-            "ZFar": 10000,
-            "ZNear": 10
-          }
-        ],
-        "Children": []
-      },
-      {
         "__guid": "29225860-5a3d-4207-a6ec-b14120b5d7c4",
         "__version": 1,
         "Flags": 0,
@@ -3064,12 +3925,7 @@
                 "Opacity": 1,
                 "Scale": 1,
                 "ScaleStrategy": "ConsistentHeight",
-                "TargetCamera": {
-                  "_type": "component",
-                  "component_id": "88fb1040-948f-449f-ab2e-2febf858a7e1",
-                  "go": "78530b97-775a-474d-8e34-045e6ab06bc9",
-                  "component_type": "CameraComponent"
-                },
+                "TargetCamera": null,
                 "ZIndex": 100
               }
             ],
@@ -3104,23 +3960,281 @@
                 "Opacity": 1,
                 "Scale": 1,
                 "ScaleStrategy": "ConsistentHeight",
-                "TargetCamera": {
-                  "_type": "component",
-                  "component_id": "88fb1040-948f-449f-ab2e-2febf858a7e1",
-                  "go": "78530b97-775a-474d-8e34-045e6ab06bc9",
-                  "component_type": "CameraComponent"
-                },
+                "TargetCamera": null,
                 "ZIndex": 50
               },
               {
                 "__type": "Sandbox.F2Menu",
                 "__guid": "204719a3-994b-43be-ae94-da0d9203b536",
                 "__enabled": true,
-                "GraphAddOwnerButton": null,
+                "GraphAddOwnerButton": {
+                  "__version": 9,
+                  "__guid": "38a95424-e4fc-43fb-b8d6-dde86d4a6d0b",
+                  "__changeId": 51,
+                  "UserData": {
+                    "Title": "Graph Add Owner Button",
+                    "ReferencedComponentTypes": [
+                      "DarkrpPlayerInfo",
+                      "Sandbox.F2Menu"
+                    ]
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input",
+                      "UserData": {
+                        "Position": "-492,0"
+                      }
+                    },
+                    {
+                      "Id": 1,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "-156,240"
+                      }
+                    },
+                    {
+                      "Id": 2,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "F2MenuUIPanel",
+                        "_type": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "300,276"
+                      }
+                    },
+                    {
+                      "Id": 3,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkrpPlayerInfo"
+                      },
+                      "UserData": {
+                        "Position": "12,276"
+                      }
+                    },
+                    {
+                      "Id": 4,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "324,204"
+                      }
+                    },
+                    {
+                      "Id": 5,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsInF2MenuAddFriendButton",
+                        "_type": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "708,120"
+                      }
+                    },
+                    {
+                      "Id": 7,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsInF2MenuAddFriendButton",
+                        "_type": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "-372,120"
+                      }
+                    },
+                    {
+                      "Id": 8,
+                      "Type": "if",
+                      "UserData": {
+                        "Position": "-192,0"
+                      }
+                    },
+                    {
+                      "Id": 9,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsInF2MenuAddFriendButton",
+                        "_type": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "744,-60"
+                      }
+                    },
+                    {
+                      "Id": 12,
+                      "Type": "scene.find",
+                      "UserData": {
+                        "Position": "-72,456"
+                      }
+                    },
+                    {
+                      "Id": 16,
+                      "Type": "call",
+                      "Properties": {
+                        "_isStatic": false,
+                        "_name": "TryGet",
+                        "_type": "Sandbox.IComponentLister",
+                        "T": "NetworkManager.NetworkManager"
+                      },
+                      "UserData": {
+                        "Position": "180,456"
+                      }
+                    },
+                    {
+                      "Id": 20,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "PlayerList",
+                        "_type": "NetworkManager.NetworkManager"
+                      },
+                      "UserData": {
+                        "Position": "564,504"
+                      }
+                    },
+                    {
+                      "Id": 22,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "PlayerDataList",
+                        "_type": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "396,108"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 3,
+                      "SrcName": "_result",
+                      "DstId": 2,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 1,
+                      "SrcName": "_result",
+                      "DstId": 3,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 2,
+                      "SrcName": "_result",
+                      "DstId": 4,
+                      "DstName": "_this"
+                    },
+                    {
+                      "SrcId": 22,
+                      "SrcName": "_signal",
+                      "DstId": 5,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 5,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 6,
+                      "Value": true,
+                      "DstId": 5,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 7,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 8,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 7,
+                      "SrcName": "_result",
+                      "DstId": 8,
+                      "DstName": "condition"
+                    },
+                    {
+                      "SrcId": 8,
+                      "SrcName": "true",
+                      "DstId": 9,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 9,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 24,
+                      "Value": false,
+                      "DstId": 9,
+                      "DstName": "_value"
+                    },
+                    {
+                      "Id": 14,
+                      "Value": "darkrpgamemode",
+                      "DstId": 12,
+                      "DstName": "name"
+                    },
+                    {
+                      "SrcId": 12,
+                      "SrcName": "_result",
+                      "DstId": 16,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 18,
+                      "Value": "InChildren",
+                      "DstId": 16,
+                      "DstName": "search"
+                    },
+                    {
+                      "SrcId": 16,
+                      "SrcName": "component",
+                      "DstId": 20,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 8,
+                      "SrcName": "false",
+                      "DstId": 22,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 22,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 20,
+                      "SrcName": "_result",
+                      "DstId": 22,
+                      "DstName": "_value"
+                    }
+                  ],
+                  "Defaults": {
+                    "$1.gameobject": {
+                      "_type": "gameobject",
+                      "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                    }
+                  }
+                },
                 "GraphBuyDoor": {
                   "__version": 9,
                   "__guid": "670213ac-ec44-47d5-b4ef-7342cd8f2762",
-                  "__changeId": 13,
+                  "__changeId": 20,
                   "UserData": {
                     "Title": "Graph Buy Door",
                     "ReferencedComponentTypes": [
@@ -4457,164 +5571,145 @@
                     }
                   }
                 },
-                "GraphCloseF2MenuButton": [
-                  {
-                    "__version": 9,
-                    "__guid": "30585317-735e-4ad4-a55e-b59ad69a1d5c",
-                    "__changeId": 44,
-                    "UserData": {
-                      "Title": "Graph Close F 2Menu Button",
-                      "Description": "Graph Close F 2Menu Button Logic",
-                      "Category": "Door",
-                      "Icon": "door_front",
-                      "ReferencedComponentTypes": [
-                        "Sandbox.F2Menu"
-                      ]
+                "GraphCloseF2MenuButton": {
+                  "__version": 9,
+                  "__guid": "30585317-735e-4ad4-a55e-b59ad69a1d5c",
+                  "__changeId": 44,
+                  "UserData": {
+                    "Title": "Graph Close F 2Menu Button",
+                    "Description": "Graph Close F 2Menu Button Logic",
+                    "Category": "Door",
+                    "Icon": "door_front",
+                    "ReferencedComponentTypes": [
+                      "Sandbox.F2Menu"
+                    ]
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input"
                     },
-                    "Variables": [],
-                    "Nodes": [
-                      {
-                        "Id": 0,
-                        "Type": "input"
-                      },
-                      {
-                        "Id": 10,
-                        "Type": "scene.ref",
-                        "UserData": {
-                          "Position": "-60,144"
-                        }
-                      },
-                      {
-                        "Id": 11,
-                        "Type": "scene.get",
-                        "Properties": {
-                          "T": "Sandbox.F2Menu"
-                        },
-                        "UserData": {
-                          "Position": "84,180"
-                        }
-                      },
-                      {
-                        "Id": 12,
-                        "Type": "property",
-                        "Properties": {
-                          "_name": "IsShowingF2Menu",
-                          "_type": "Sandbox.F2Menu"
-                        },
-                        "UserData": {
-                          "Position": "972,0"
-                        }
-                      },
-                      {
-                        "Id": 15,
-                        "Type": "property",
-                        "Properties": {
-                          "_name": "IsInDoorOwnerMenu",
-                          "_type": "Sandbox.F2Menu"
-                        },
-                        "UserData": {
-                          "Position": "348,0"
-                        }
-                      },
-                      {
-                        "Id": 16,
-                        "Type": "property",
-                        "Properties": {
-                          "_name": "IsInDoorNonOwnerMenu",
-                          "_type": "Sandbox.F2Menu"
-                        },
-                        "UserData": {
-                          "Position": "624,0"
-                        }
+                    {
+                      "Id": 10,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "-60,144"
                       }
-                    ],
-                    "Links": [
-                      {
-                        "SrcId": 10,
-                        "SrcName": "_result",
-                        "DstId": 11,
-                        "DstName": "_this"
+                    },
+                    {
+                      "Id": 11,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "Sandbox.F2Menu"
                       },
-                      {
-                        "SrcId": 16,
-                        "SrcName": "_signal",
-                        "DstId": 12,
-                        "DstName": "_signal"
-                      },
-                      {
-                        "SrcId": 11,
-                        "SrcName": "_result",
-                        "DstId": 12,
-                        "DstName": "_target"
-                      },
-                      {
-                        "Id": 20,
-                        "Value": false,
-                        "DstId": 12,
-                        "DstName": "_value"
-                      },
-                      {
-                        "SrcId": 0,
-                        "SrcName": "_signal",
-                        "DstId": 15,
-                        "DstName": "_signal"
-                      },
-                      {
-                        "SrcId": 11,
-                        "SrcName": "_result",
-                        "DstId": 15,
-                        "DstName": "_target"
-                      },
-                      {
-                        "Id": 21,
-                        "Value": false,
-                        "DstId": 15,
-                        "DstName": "_value"
-                      },
-                      {
-                        "SrcId": 15,
-                        "SrcName": "_signal",
-                        "DstId": 16,
-                        "DstName": "_signal"
-                      },
-                      {
-                        "SrcId": 11,
-                        "SrcName": "_result",
-                        "DstId": 16,
-                        "DstName": "_target"
-                      },
-                      {
-                        "Id": 22,
-                        "Value": false,
-                        "DstId": 16,
-                        "DstName": "_value"
+                      "UserData": {
+                        "Position": "84,180"
                       }
-                    ],
-                    "Defaults": {
-                      "$10.gameobject": {
-                        "_type": "gameobject",
-                        "go": "c023033f-8f52-44f5-bf42-48c819645c27"
+                    },
+                    {
+                      "Id": 12,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsShowingF2Menu",
+                        "_type": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "972,0"
+                      }
+                    },
+                    {
+                      "Id": 15,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsInDoorOwnerMenu",
+                        "_type": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "348,0"
+                      }
+                    },
+                    {
+                      "Id": 16,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "IsInDoorNonOwnerMenu",
+                        "_type": "Sandbox.F2Menu"
+                      },
+                      "UserData": {
+                        "Position": "624,0"
                       }
                     }
-                  },
-                  {
-                    "__version": 9,
-                    "__guid": "048d955c-bc9a-401e-bcc1-dc9ee662856a",
-                    "__changeId": 7,
-                    "UserData": {
-                      "Title": "Graph Close F 2Menu Button",
-                      "ReferencedComponentTypes": []
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 10,
+                      "SrcName": "_result",
+                      "DstId": 11,
+                      "DstName": "_this"
                     },
-                    "Variables": [],
-                    "Nodes": [
-                      {
-                        "Id": 0,
-                        "Type": "input"
-                      }
-                    ],
-                    "Links": []
+                    {
+                      "SrcId": 16,
+                      "SrcName": "_signal",
+                      "DstId": 12,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 11,
+                      "SrcName": "_result",
+                      "DstId": 12,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 20,
+                      "Value": false,
+                      "DstId": 12,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 15,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 11,
+                      "SrcName": "_result",
+                      "DstId": 15,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 21,
+                      "Value": false,
+                      "DstId": 15,
+                      "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 15,
+                      "SrcName": "_signal",
+                      "DstId": 16,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 11,
+                      "SrcName": "_result",
+                      "DstId": 16,
+                      "DstName": "_target"
+                    },
+                    {
+                      "Id": 22,
+                      "Value": false,
+                      "DstId": 16,
+                      "DstName": "_value"
+                    }
+                  ],
+                  "Defaults": {
+                    "$10.gameobject": {
+                      "_type": "gameobject",
+                      "go": "c023033f-8f52-44f5-bf42-48c819645c27"
+                    }
                   }
-                ],
+                },
                 "GraphDisallowOwnership": {
                   "__version": 9,
                   "__guid": "000f84e3-105a-43e4-a361-0f1b39ac4168",
@@ -5419,7 +6514,7 @@
                       "DstName": "_target"
                     },
                     {
-                      "Id": 67,
+                      "Id": 64,
                       "Value": true,
                       "DstId": 57,
                       "DstName": "_value"
@@ -5437,7 +6532,7 @@
                       "DstName": "_target"
                     },
                     {
-                      "Id": 68,
+                      "Id": 65,
                       "Value": "",
                       "DstId": 58,
                       "DstName": "_value"
@@ -5449,7 +6544,7 @@
                       "DstName": "_target"
                     },
                     {
-                      "Id": 69,
+                      "Id": 66,
                       "Value": "InChildren",
                       "DstId": 59,
                       "DstName": "search"
@@ -5473,7 +6568,7 @@
                 "GraphSellDoorButton": {
                   "__version": 9,
                   "__guid": "798a85c1-d2f3-42a8-a017-9a6442075d7c",
-                  "__changeId": 147,
+                  "__changeId": 148,
                   "UserData": {
                     "Title": "Graph Sell Door Button",
                     "ReferencedComponentTypes": [
@@ -5994,17 +7089,62 @@
                   }
                 },
                 "GraphSetDoorTitleButton": null,
+                "NetworkManager": null,
                 "OnComponentDestroy": null,
                 "OnComponentDisabled": null,
                 "OnComponentEnabled": null,
                 "OnComponentFixedUpdate": null,
                 "OnComponentStart": null,
-                "OnComponentUpdate": null
+                "OnComponentUpdate": null,
+                "PlayerDataList": []
               }
             ],
             "Children": []
           }
         ]
+      },
+      {
+        "__guid": "be340e0a-b1b3-4db0-a3d1-016ffca38f09",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "Camera",
+        "Position": "-447.2036,391.1811,-24.22731",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": false,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "2661d1d9-e393-4fb4-b64e-585c89c0a3c9",
+            "__enabled": true,
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 60,
+            "FovAxis": "Horizontal",
+            "IsMainCamera": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 10
+          }
+        ],
+        "Children": []
       }
     ],
     "__properties": {

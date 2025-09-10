@@ -14,6 +14,8 @@ public class JobResource : GameResource
     [Property] public float JobHealthMax { get; set; }
     [Property] public float JobArmor { get; set; }
     [Property] public float JobArmorMax { get; set; }
+    [Property] public bool IsPD { get; set; }
+    [Property] public bool IsMayor { get; set; }
 
 
 
