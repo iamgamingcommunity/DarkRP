@@ -58,18 +58,15 @@
     } -->
 
 
-<job-list>
-    <div class="job-cardholder @(IsInF2MenuEditDoorGroupsUI ? "" : "hide")">
+<job-list class="@(IsInJobsAddUIButton ? "" : "hide")">
+    <div class="job-cardholder">
 	@if (Jobs != null && Jobs.Count > 0)
     {
         @foreach ( var job in Jobs )
         {
 		
-            <div class="job-card" onclick="@(() => { GraphAddOwnerButton?.Invoke(); })">
+            <div class="job-card" onclick="@(() => { GraphAddSelectedJobFromDoorButton?.Invoke(); })">
                 <div class="job-title">@job.Title</div>
-                <!-- <div class="job-salary">$@job.Salary</div>
-                <div class="job-description">@job.Description</div>
-                <div class="job-category">Category: @job.Category</div> -->
             </div>
 		
         }
@@ -82,6 +79,25 @@
 </job-list>
 
 
+<jobremove-list class="@(IsInJobsRemoveUIButton ? "" : "hide")">
+    <div class="job-cardholder">
+	@if (SelectedDoorJobs  != null && SelectedDoorJobs .Count > 0)
+    {
+        @foreach ( var job in SelectedDoorJobs )
+        {
+		
+            <div class="job-card" onclick="@(() => { GraphRemoveSelectedJobFromDoorButton?.Invoke(); })">
+                <div class="job-title">@job.Title</div>
+            </div>
+		
+        }
+    }
+    else
+    {
+        <div class="loading">Loading jobs...</div>
+    }
+	</div>
+</jobremove-list>
 
 
 
@@ -134,10 +150,57 @@
 		</div>
 </f2menudoor-owner>
 
+<editdoorgroupbuttons-menu class="@(IsInF2MenuEditDoorGroupsUI  ? "" : "hide")">
+<div class="doorowneroptions">
+			<div class="buttonholderowner">
+				<div class="buttonbackground"onclick=@SellDoor>
+					<div class="buttontext">
+						Door Groups
+					</div>
+					</div>
+				<div class="buttonbackground"onclick=@AddOwner>
+					<div class="buttontext">
+						Jobs
+					</div>
+					</div>
+</div>
+</editdoorgroupbuttons-menu>
+
+<editdoorgroupbuttons-doorgroupsmenu class="@(IsInDoorGroupUIButton  ? "" : "hide")">
+<div class="doorowneroptions">
+			<div class="buttonholderowner">
+				<div class="buttonbackground"onclick=@SellDoor>
+					<div class="buttontext">
+						Add
+					</div>
+					</div>
+				<div class="buttonbackground"onclick=@AddOwner>
+					<div class="buttontext">
+						Remove
+					</div>
+					</div>
+</div>
+</editdoorgroupbuttons-doorgroupsmenu>
+
+<editdoorgroupbuttons-jobsmenu class="@(IsInJobsUIButton  ? "" : "hide")">
+<div class="doorowneroptions">
+			<div class="buttonholderowner">
+				<div class="buttonbackground"onclick=@SellDoor>
+					<div class="buttontext">
+						Add
+					</div>
+					</div>
+				<div class="buttonbackground"onclick=@AddOwner>
+					<div class="buttontext">
+						Remove
+					</div>
+					</div>
+</div>
+</editdoorgroupbuttons-jobsmenu>
 
 
-<onlineaplayers-list>
-    <div class="job-cardholder @(IsInF2MenuAddFriendButton ? "" : "hide")">
+<onlineaplayers-list class="@(IsInF2MenuAddFriendButton  ? "" : "hide")">
+    <div class="job-cardholder">
         @if (PlayerDataList != null && PlayerDataList.Count > 0)
         {
             @foreach (var player in PlayerDataList)
@@ -158,8 +221,8 @@
     </div>
 </onlineaplayers-list>
 
-<playerfriendsaddedtodoor-list>
-    <div class="job-cardholder @(IsInRemoveOwnerButtonUI  ? "" : "hide")">
+<playerfriendsaddedtodoor-list class="@(IsInOwnerFriendButtonUI  ? "" : "hide")">
+    <div class="job-cardholder">
         @if (PlayerFriendsAddedToDoorList != null && PlayerFriendsAddedToDoorList.Count > 0)
         {
             @foreach (var player in PlayerFriendsAddedToDoorList)
@@ -197,10 +260,64 @@
 	[Property, Feature("Main F2Menu Action Graphs")]
 	public ActionGraphDisallowOwnership GraphDisallowOwnership { get; set; }
 
-	//Edit Door Group Job Name Buttons Action Graph Logic Var
-	public delegate void ActionGraphJobDoorGroupButton(JobResource job);
-	[Property, Feature("Main F2Menu Action Graphs")]
-	public ActionGraphJobDoorGroupButton GraphJobDoorGroupButton  { get; set; }
+	
+
+	// Edit Door Group Action Graphs
+	public delegate void ActionGraphShowDoorGroupsAddRemoveButton();
+	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Groups")]
+	public ActionGraphShowDoorGroupsAddRemoveButton GraphShowDoorGroupsAddRemoveButton  { get; set; }
+		
+	public delegate void ActionGraphShowDoorGroupsAddButton();
+	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Groups")]
+	public ActionGraphShowDoorGroupsAddButton GraphShowDoorGroupsAddButton  { get; set; }
+
+	public delegate void ActionGraphShowDoorGroupsRemoveButton();
+	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Groups")]
+	public ActionGraphShowDoorGroupsRemoveButton GraphShowDoorGroupsRemoveButton  { get; set; }
+
+			//This one is the Add Door Group To Door button
+	public delegate void ActionGraphAddSelectedDoorGroup(JobResource job);
+	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Groups")]
+	public ActionGraphAddSelectedDoorGroup GraphAddSelectedDoorGroup  { get; set; }
+
+			//This one is the Remove Door Group To Door button
+	public delegate void ActionGraphRemoveSelectedDoorGroup(JobResource job);
+	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Groups")]
+	public ActionGraphRemoveSelectedDoorGroup GraphRemoveSelectedDoorGroup  { get; set; }
+
+
+
+
+	// Edit Door Jobs Action Graphs
+	public delegate void ActionGraphShowJobsAddRemoveButton();
+	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Jobs")]
+	public ActionGraphShowJobsAddRemoveButton GraphShowJobsAddRemoveButton  { get; set; }
+
+	public delegate void ActionGraphShowJobsAddButton();
+	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Jobs")]
+	public ActionGraphShowJobsAddButton GraphShowJobsAddButton  { get; set; } 
+
+	public delegate void ActionGraphShowJobsRemoveButton();
+	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Jobs")]
+	public ActionGraphShowJobsRemoveButton GraphShowJobsRemoveButton  { get; set; } 
+
+		//This one is the Add Job To Door button
+	public delegate void ActionGraphAddSelectedJobFromDoorButton();
+	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Jobs")]
+	public ActionGraphAddSelectedJobFromDoorButton GraphAddSelectedJobFromDoorButton  { get; set; }
+
+		//This one is the Remove Job Group To Door button
+	public delegate void ActionGraphRemoveSelectedJobFromDoorButton();
+	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Jobs")]
+	public ActionGraphRemoveSelectedJobFromDoorButton GraphRemoveSelectedJobFromDoorButton  { get; set; }
+
+
+
+
+
+
+
+
 
 	public delegate void ActionGraphCloseF2MenuButton();
 	[Property, Feature("Main F2Menu Action Graphs")]
@@ -222,6 +339,9 @@
 	[Property, Feature("Secondary F2Menu Action Graphs")]
 	public ActionGraphAddOwnerButton GraphAddOwnerButton  { get; set; }
 
+
+
+		//This Adds Player To Door Player Friends List
 	public delegate void ActionGraphOnlinePlayerButton( NetworkManager.PlayerData player);
 	[Property, Feature("Secondary F2Menu Action Graphs")]
 	public ActionGraphOnlinePlayerButton GraphOnlinePlayerButton  { get; set; }
@@ -229,7 +349,7 @@
 	public delegate void ActionGraphRemoveOwnerButton();
 	[Property, Feature("Secondary F2Menu Action Graphs")]
 	public ActionGraphRemoveOwnerButton GraphRemoveOwnerButton  { get; set; }
-
+		//This Removes Player To Door Player Friends List
 	public delegate void ActionGraphRemoveFriendFromDoor( NetworkManager.PlayerData player);
 	[Property, Feature("Secondary F2Menu Action Graphs")]
 	public ActionGraphRemoveFriendFromDoor GraphRemoveFriendFromDoor { get; set; }
@@ -242,8 +362,11 @@
 
 	public List<NetworkManager.PlayerData> PlayerFriendsAddedToDoorList {get; set;} = new();
 
+
 	// You’ll populate this list from your .job resources
     public List<JobResource> Jobs { get; set; } = new();
+    public List<JobResource> SelectedDoorJobs { get; set; } = new();
+
 	public List<JobResource> SelectedJobs { get; set; } = new();
 
 
@@ -256,11 +379,23 @@
 
 	//UI Visability Vars
 	public bool IsShowingF2Menu {get; set;}
-	public bool IsInF2MenuEditDoorGroupsUI {get; set;}
-	public bool IsInF2MenuAddFriendButton {get; set;}
 	public bool IsInDoorOwnerMenu {get; set;}
 	public bool IsInDoorNonOwnerMenu {get; set;}
-	public bool IsInRemoveOwnerButtonUI {get; set;}
+
+	public bool IsInF2MenuEditDoorGroupsUI {get; set;}
+	public bool IsInF2MenuAddFriendButton {get; set;}
+
+	public bool IsInDoorGroupUIButton {get; set;}
+	public bool IsInDoorGroupAddUIButton {get; set;}
+	public bool IsInDoorGroupRemoveUIButton {get; set;}
+
+	public bool IsInJobsUIButton {get; set;}
+	public bool IsInJobsAddUIButton {get; set;}
+	public bool IsInJobsRemoveUIButton {get; set;}
+
+
+
+	public bool IsInOwnerFriendButtonUI {get; set;}
 	<!-- public List<PlayerData> PlayerDataList { get; set; } = new(); -->
 		
 		
@@ -302,7 +437,7 @@
 
 	void JobDoorGroupButton(JobResource job)
 	{
-	 	GraphJobDoorGroupButton?.Invoke(job);
+	 	GraphAddSelectedDoorGroup?.Invoke(job);
 	}
 	void CloseF2MenuButton()
 	{

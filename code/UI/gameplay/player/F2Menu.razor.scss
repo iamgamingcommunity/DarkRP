@@ -181,6 +181,11 @@ job-list {
 
     border-radius: 12px;
 
+			&.hide
+		{
+			opacity: 0;
+			pointer-events: none;
+		}
 
 	.job-cardholder
 	{
@@ -189,6 +194,7 @@ job-list {
 		&.hide
 		{
 			opacity: 0;
+			pointer-events: none;
 		}
 	}
     .loading {
@@ -217,10 +223,68 @@ job-list {
             font-weight: bold;
             color: #ececec;
         }
+
     }
 }
 
+jobremove-list {
+    position: absolute; 
+	display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    width: 300px;
+	margin-top: auto;
+	// bottom: -150px;  
+	left: 500px;
 
+    border-radius: 12px;
+
+			&.hide
+		{
+			opacity: 0;
+			pointer-events: none;
+		}
+
+	.job-cardholder
+	{
+	background: #000000b4;
+	flex-direction: column;
+		&.hide
+		{
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+    .loading {
+        color: #ffcc00;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .job-card {
+        background: #3b3a3a;
+        padding: 8px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+			&:active
+			{
+				sound-in: ui.downvote;
+				
+			}
+
+        .job-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ececec;
+        }
+
+    }
+}
 
 
 }
@@ -248,6 +312,7 @@ f2menudoor-owner {
 			&.hide
 			{
 				opacity: 0;
+				pointer-events: none;
 			}
 
 	.doorowneroptions
@@ -256,6 +321,7 @@ f2menudoor-owner {
 		&.hide
 			{
 				opacity: 0;
+				pointer-events: none;
 			}
 		}
 
@@ -269,11 +335,149 @@ f2menudoor-owner {
 }
 
 
+editdoorgroupbuttons-menu {
+	
+	position: absolute;
+	top: 300;
+	left: 235;
+	right: 0;
+	width: 300px;
+	font-family: Poppins;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	pointer-events: all;
 
+			&.hide
+			{
+				opacity: 0;
+				pointer-events: none;
+			}
+
+	.doorowneroptions
+	{
+		&.hide
+			{
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+
+	.buttonholderowner
+	{
+		gap: 8px;
+		flex-direction: column;
+	}
+		
+	.buttontext
+	{
+		font-size: 20px;
+	}
+
+	.buttonbackground
+	{
+		width: 180px;
+	}
+
+}
+
+editdoorgroupbuttons-doorgroupsmenu {
+	
+	
+	position: absolute;
+	top: 300;
+	left: 405;
+	right: 0;
+	width: 300px;
+	font-family: Poppins;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	pointer-events: all;
+
+			&.hide
+			{
+				opacity: 0;
+				pointer-events: none;
+			}
+
+	.doorowneroptions
+	{
+		&.hide
+			{
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+
+	.buttonholderowner
+	{
+		gap: 8px;
+		flex-direction: column;
+	}
+		
+	.buttontext
+	{
+		font-size: 20px;
+	}
+
+	.buttonbackground
+	{
+		width: 140px;
+	}
+
+}
+
+editdoorgroupbuttons-jobsmenu {
+	
+	
+	position: absolute;
+	top: 300;
+	left: 405;
+	right: 0;
+	width: 300px;
+	font-family: Poppins;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	pointer-events: all;
+
+			&.hide
+			{
+				opacity: 0;
+				pointer-events: none;
+			}
+
+	.doorowneroptions
+	{
+		&.hide
+			{
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+
+	.buttonholderowner
+	{
+		gap: 8px;
+		flex-direction: column;
+	}
+		
+	.buttontext
+	{
+		font-size: 20px;
+	}
+
+	.buttonbackground
+	{
+		width: 140px;
+	}
+
+}
 
 onlineaplayers-list {
 
-	    position: absolute; 
+	position: absolute; 
 	display: flex;
     flex-direction: column;
     gap: 12px;
@@ -284,6 +488,11 @@ onlineaplayers-list {
 	left: 500px;
 
     border-radius: 12px;
+			&.hide
+		{
+			opacity: 0;
+			pointer-events: none;
+		}
 
 
 	.job-cardholder
@@ -293,6 +502,7 @@ onlineaplayers-list {
 		&.hide
 		{
 			opacity: 0;
+			pointer-events: none;
 		}
 	}
     .loading {
@@ -338,7 +548,11 @@ playerfriendsaddedtodoor-list {
 	left: 500px;
 
     border-radius: 12px;
-
+		&.hide
+		{
+			opacity: 0;
+			pointer-events: none;
+		}
 
 	.job-cardholder
 	{
@@ -347,6 +561,7 @@ playerfriendsaddedtodoor-list {
 		&.hide
 		{
 			opacity: 0;
+			pointer-events: none;
 		}
 	}
     .loading {
