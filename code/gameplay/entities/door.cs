@@ -30,7 +30,7 @@ using System;
 		public string PlayerSteamIDWhoOwnsDoor { get; set; }
 
 		[Property, Feature("Door Info"), ShowIf ( nameof( IsDoorPurchasable ), true)]
-		public string[] PlayerFriendsSteamIDWhoOwnsDoor { get; set; }
+		public List<string> PlayerFriendsSteamIDWhoOwnsDoor { get; set; }
 		
 		[Property, Feature( "Door Info" )]
 		public string[] WhitelistedJobDoorGroups { get; set; }

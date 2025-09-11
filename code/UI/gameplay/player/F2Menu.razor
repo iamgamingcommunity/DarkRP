@@ -142,7 +142,7 @@
         {
             @foreach (var player in PlayerDataList)
             {
-                <div class="job-card" onclick="@(() => { GraphRemoveOwnerButton?.Invoke(player); })">
+                <div class="job-card" onclick="@(() => { GraphOnlinePlayerButton?.Invoke(player); })">
                     <div class="job-title">@player.PlayerID</div>
                     <!--
                         If you want more info from DarkRPPlayerInfo, you can do:
@@ -226,7 +226,7 @@
 	[Property, Feature("Secondary F2Menu Action Graphs")]
 	public ActionGraphOnlinePlayerButton GraphOnlinePlayerButton  { get; set; }
 
-	public delegate void ActionGraphRemoveOwnerButton( NetworkManager.PlayerData player);
+	public delegate void ActionGraphRemoveOwnerButton();
 	[Property, Feature("Secondary F2Menu Action Graphs")]
 	public ActionGraphRemoveOwnerButton GraphRemoveOwnerButton  { get; set; }
 
@@ -326,9 +326,9 @@
 	}
 
 
-	void RemoveOwner(NetworkManager.PlayerData player)
+	void RemoveOwner()
 	{
-		GraphRemoveOwnerButton?.Invoke(player);
+		GraphRemoveOwnerButton?.Invoke();
 	}
 
 	void RemoveFriendFromDoor(NetworkManager.PlayerData player)

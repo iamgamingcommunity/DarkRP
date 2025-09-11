@@ -2,6 +2,7 @@
 @using Sandbox.UI;
 @inherits PanelComponent
 @namespace Sandbox
+@using NetworkManager;
 
 <root>
 	<div class="DoorTitle">
@@ -14,6 +15,10 @@
 	
 	<div class="DoorBuyAmounttitle @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned")">
 	$@PlayerWhoOwnsDoorBuyAmount
+	</div>
+
+	<div class="PlayersFriendsAddedToDoorNames @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned") @(IsDoorOwnable ? "ownable" : "notownable")">
+	@PlayerFriendsWhoOwnDoor
 	</div>
 	
 
@@ -44,22 +49,87 @@
         <div class="loading @(IsDoorOwnable ? "ownable" : "notownable")">Loading jobs...</div>
     }
 </job-list>
+
+
+<job-list>
+	@if (SelectedJobs != null && SelectedJobs.Count > 0)
+    {
+        @foreach ( var job in SelectedJobs )
+        {
+		
+            <div class="job-card">
+                <div class="job-title @(IsDoorOwnable ? "ownable" : "notownable")">@job.Title</div>
+                <!-- <div class="job-salary">$@job.Salary</div>
+                <div class="job-description">@job.Description</div>
+                <div class="job-category">Category: @job.Category</div> -->
+            </div>
+		
+        }
+    }
+    else
+    {
+        <div class="loading @(IsDoorOwnable ? "ownable" : "notownable")">Loading jobs...</div>
+    }
+</job-list>
+
+<playerfriendsaddedtodoor-list>
+        @if (PlayerFriendsAddedToDoorList != null && PlayerFriendsAddedToDoorList.Count > 0)
+        {
+            @foreach (var player in PlayerFriendsAddedToDoorList)
+            {
+				var currentPlayer = player; <!-- capture here -->
+                <div class="job-card">
+                    <div class="job-title">@currentPlayer.PlayerID</div>
+                    <!--
+                        If you want more info from DarkRPPlayerInfo, you can do:
+                        <div class="job-description">@player.DarkRPPlayerInfo.SomeProperty</div>
+                    -->
+                </div>
+            }
+        }
+        else
+        {
+            <div class="loading">No players Friends</div>
+        }
+</playerfriendsaddedtodoor-list>
+
+
+
+
+
 </root>
 
 @code
 {
 	//Edit Door Groups Selected Jobs List
+	
+	[Property]
+	public bool HudDebugInfoOn {get; set;}
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
 	public List<JobResource> SelectedJobs { get; set; } = new();
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
+	public NetworkManager NetworkManager { get; set; }
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
+    public List<NetworkManager.PlayerData> PlayerDataList { get; set; } 
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
+	public List<NetworkManager.PlayerData> PlayerFriendsAddedToDoorList {get; set;} = new();
 
 	//Door Infomation Vars
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
 	public string PlayerWhoOwnsDoorDisplayName {get; set;} = "Unowned Door";
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
+	public string PlayerFriendsWhoOwnDoor {get; set;}
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
 	public string DoorCustomTitle {get; set;}
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
 	public float PlayerWhoOwnsDoorBuyAmount {get; set;}
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
 	public bool DoorIsBought {get; set;}
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
 	public bool IsDoorOwnable {get; set;}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( PlayerWhoOwnsDoorDisplayName, PlayerWhoOwnsDoorBuyAmount, IsDoorOwnable );
+	protected override int BuildHash() => System.HashCode.Combine( PlayerFriendsWhoOwnDoor, PlayerFriendsAddedToDoorList, PlayerWhoOwnsDoorDisplayName, PlayerWhoOwnsDoorBuyAmount, IsDoorOwnable );
 }
