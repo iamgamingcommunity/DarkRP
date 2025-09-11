@@ -142,7 +142,7 @@
         {
             @foreach (var player in PlayerDataList)
             {
-                <div class="job-card" onclick="@(() => { GraphAddOwnerButton?.Invoke(); })">
+                <div class="job-card" onclick="@(() => { GraphRemoveOwnerButton?.Invoke(player); })">
                     <div class="job-title">@player.PlayerID</div>
                     <!--
                         If you want more info from DarkRPPlayerInfo, you can do:
@@ -157,6 +157,29 @@
         }
     </div>
 </onlineaplayers-list>
+
+<playerfriendsaddedtodoor-list>
+    <div class="job-cardholder @(IsInRemoveOwnerButtonUI  ? "" : "hide")">
+        @if (PlayerFriendsAddedToDoorList != null && PlayerFriendsAddedToDoorList.Count > 0)
+        {
+            @foreach (var player in PlayerFriendsAddedToDoorList)
+            {
+				var currentPlayer = player; <!-- capture here -->
+                <div class="job-card" onclick="@(() => { GraphRemoveFriendFromDoor?.Invoke(currentPlayer); })">
+                    <div class="job-title">@currentPlayer.PlayerID</div>
+                    <!--
+                        If you want more info from DarkRPPlayerInfo, you can do:
+                        <div class="job-description">@player.DarkRPPlayerInfo.SomeProperty</div>
+                    -->
+                </div>
+            }
+        }
+        else
+        {
+            <div class="loading">No players online...</div>
+        }
+    </div>
+</playerfriendsaddedtodoor-list>
 
 
 @code
@@ -199,37 +222,45 @@
 	[Property, Feature("Secondary F2Menu Action Graphs")]
 	public ActionGraphAddOwnerButton GraphAddOwnerButton  { get; set; }
 
-	public delegate void ActionGraphOnlinePlayerButton();
+	public delegate void ActionGraphOnlinePlayerButton( NetworkManager.PlayerData player);
 	[Property, Feature("Secondary F2Menu Action Graphs")]
 	public ActionGraphOnlinePlayerButton GraphOnlinePlayerButton  { get; set; }
 
-	public delegate void ActionGraphRemoveOwnerButton();
+	public delegate void ActionGraphRemoveOwnerButton( NetworkManager.PlayerData player);
 	[Property, Feature("Secondary F2Menu Action Graphs")]
 	public ActionGraphRemoveOwnerButton GraphRemoveOwnerButton  { get; set; }
 
+	public delegate void ActionGraphRemoveFriendFromDoor( NetworkManager.PlayerData player);
+	[Property, Feature("Secondary F2Menu Action Graphs")]
+	public ActionGraphRemoveFriendFromDoor GraphRemoveFriendFromDoor { get; set; }
 
 
+	//List Vars For Populating F2Menu UI Button Lists
+	public NetworkManager NetworkManager { get; set; }
+
+    public List<NetworkManager.PlayerData> PlayerDataList { get; set; } 
+
+	public List<NetworkManager.PlayerData> PlayerFriendsAddedToDoorList {get; set;} = new();
+
+	// You’ll populate this list from your .job resources
+    public List<JobResource> Jobs { get; set; } = new();
+	public List<JobResource> SelectedJobs { get; set; } = new();
 
 
-	[Property] public NetworkManager NetworkManager { get; set; }
-
-    [Property] public List<NetworkManager.PlayerData> PlayerDataList { get; set; }
-
-
-	
+	//Other Vars For Door Logic
 	public string DoorCustomTitle {get; set;}
 	public bool IsSuperAdmin {get; set;}
 	public bool IsDoorOwnable {get; set;}
-	public bool IsInDoorOwnerMenu {get; set;}
-	public bool IsInDoorNonOwnerMenu {get; set;}
-
 	public GameObject[] AllPlayersInLobbyList {get; set;}
-	public GameObject[] DoorOwnerFriendsAddedList {get; set;}
+
 
 	//UI Visability Vars
 	public bool IsShowingF2Menu {get; set;}
 	public bool IsInF2MenuEditDoorGroupsUI {get; set;}
 	public bool IsInF2MenuAddFriendButton {get; set;}
+	public bool IsInDoorOwnerMenu {get; set;}
+	public bool IsInDoorNonOwnerMenu {get; set;}
+	public bool IsInRemoveOwnerButtonUI {get; set;}
 	<!-- public List<PlayerData> PlayerDataList { get; set; } = new(); -->
 		
 		
@@ -241,10 +272,7 @@
 	}
 
 
-    // You’ll populate this list from your .job resources
-    public List<JobResource> Jobs { get; set; } = new();
 
-	public List<JobResource> SelectedJobs { get; set; } = new();
 
 	private void AddJobToAnotherList(JobResource job)
 	{
@@ -298,10 +326,16 @@
 	}
 
 
-	void RemoveOwner()
+	void RemoveOwner(NetworkManager.PlayerData player)
 	{
-		GraphRemoveOwnerButton?.Invoke();
+		GraphRemoveOwnerButton?.Invoke(player);
 	}
+
+	void RemoveFriendFromDoor(NetworkManager.PlayerData player)
+	{
+		GraphRemoveFriendFromDoor?.Invoke(player);
+	}
+
 
 	void SetDoorTitle()
 	{

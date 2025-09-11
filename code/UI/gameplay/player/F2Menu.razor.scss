@@ -324,3 +324,57 @@ onlineaplayers-list {
     }
 
 }
+
+playerfriendsaddedtodoor-list {
+
+	    position: absolute; 
+	display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    width: 300px;
+	margin-top: auto;
+	// bottom: -150px;  
+	left: 500px;
+
+    border-radius: 12px;
+
+
+	.job-cardholder
+	{
+	background: #000000b4;
+	flex-direction: column;
+		&.hide
+		{
+			opacity: 0;
+		}
+	}
+    .loading {
+        color: #ffcc00;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .job-card {
+        background: #3b3a3a;
+        padding: 8px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+			&:active
+			{
+				sound-in: ui.downvote;
+				
+			}
+
+        .job-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ececec;
+        }
+    }
+
+}
