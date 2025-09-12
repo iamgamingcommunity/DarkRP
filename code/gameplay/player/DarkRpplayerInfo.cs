@@ -22,6 +22,7 @@ public sealed class DarkrpPlayerInfo : Component
     public JobResource CurrentJob { get; set; }
 	
 	[Property] public int PlayerMoney { get; set; }
+	[Property] public int PlayerCurrentJobTempTime { get; set; }
 	[Property] public bool DropPlayerMoneyOnDeath { get; set; }
 	[Property, ShowIf ( nameof( DropPlayerMoneyOnDeath ), true)] public bool PlayerDeathMoneyDropAll{ get; set; }
 	[Property, ShowIf ( nameof( DropPlayerMoneyOnDeath ), true)] public int PlayerDeathMoneyDropAmount{ get; set; }

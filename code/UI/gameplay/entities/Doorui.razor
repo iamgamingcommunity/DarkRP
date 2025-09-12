@@ -37,21 +37,14 @@
 		
             <div class="job-card">
                 <div class="job-title @(IsDoorOwnable ? "ownable" : "notownable")">@job.Title</div>
-                <!-- <div class="job-salary">$@job.Salary</div>
-                <div class="job-description">@job.Description</div>
-                <div class="job-category">Category: @job.Category</div> -->
             </div>
 		
         }
     }
-    else
-    {
-        <div class="loading @(IsDoorOwnable ? "ownable" : "notownable")">Loading jobs...</div>
-    }
 </job-list>
 
 
-<job-list>
+<doorgroups-list>
 	@if (SelectedJobs != null && SelectedJobs.Count > 0)
     {
         @foreach ( var job in SelectedJobs )
@@ -59,18 +52,15 @@
 		
             <div class="job-card">
                 <div class="job-title @(IsDoorOwnable ? "ownable" : "notownable")">@job.Title</div>
-                <!-- <div class="job-salary">$@job.Salary</div>
-                <div class="job-description">@job.Description</div>
-                <div class="job-category">Category: @job.Category</div> -->
             </div>
 		
         }
     }
     else
     {
-        <div class="loading @(IsDoorOwnable ? "ownable" : "notownable")">Loading jobs...</div>
+        <div class="loading @(IsDoorOwnable ? "ownable" : "notownable")">Loading doorgroups...</div>
     }
-</job-list>
+</doorgroups-list>
 
 <playerfriendsaddedtodoor-list>
         @if (PlayerFriendsAddedToDoorList != null && PlayerFriendsAddedToDoorList.Count > 0)
@@ -80,10 +70,6 @@
 				var currentPlayer = player; <!-- capture here -->
                 <div class="job-card">
                     <div class="job-title">@currentPlayer.PlayerID</div>
-                    <!--
-                        If you want more info from DarkRPPlayerInfo, you can do:
-                        <div class="job-description">@player.DarkRPPlayerInfo.SomeProperty</div>
-                    -->
                 </div>
             }
         }

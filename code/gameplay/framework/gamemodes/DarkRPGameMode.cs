@@ -17,6 +17,7 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Basic Info")] public PickupableEntityBase[] StartingEquipment { get; set; }
 	[Property, Feature("Basic Info")] public PrefabFile MoneyEntity { get; set; }
 	[Property, Feature("Basic Info")] public int MaxPropSpawnedAmount { get; set; }
+	[Property, Feature("Basic Info"), Description("If True a Job has ")] public int TempPlayTimeTotalCycleAmount { get; set; }
 
 	//DarkRP Law System Info
 	[Property, Feature("Law Info")] public Vector3[] JailPos { get; set; }

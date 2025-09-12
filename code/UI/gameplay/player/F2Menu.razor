@@ -65,7 +65,7 @@
         @foreach ( var job in Jobs )
         {
 		
-            <div class="job-card" onclick="@(() => { GraphAddSelectedJobFromDoorButton?.Invoke(); })">
+            <div class="job-card" onclick="@(() => { GraphAddSelectedJobFromDoorButton?.Invoke(job); })">
                 <div class="job-title">@job.Title</div>
             </div>
 		
@@ -73,7 +73,7 @@
     }
     else
     {
-        <div class="loading">Loading jobs...</div>
+        <div class="loading">No Jobs Selected...</div>
     }
 	</div>
 </job-list>
@@ -86,7 +86,7 @@
         @foreach ( var job in SelectedDoorJobs )
         {
 		
-            <div class="job-card" onclick="@(() => { GraphRemoveSelectedJobFromDoorButton?.Invoke(); })">
+            <div class="job-card" onclick="@(() => { GraphRemoveSelectedJobFromDoorButton?.Invoke(job); })">
                 <div class="job-title">@job.Title</div>
             </div>
 		
@@ -94,7 +94,7 @@
     }
     else
     {
-        <div class="loading">Loading jobs...</div>
+        <div class="loading">No Jobs Added...</div>
     }
 	</div>
 </jobremove-list>
@@ -153,12 +153,12 @@
 <editdoorgroupbuttons-menu class="@(IsInF2MenuEditDoorGroupsUI  ? "" : "hide")">
 <div class="doorowneroptions">
 			<div class="buttonholderowner">
-				<div class="buttonbackground"onclick=@SellDoor>
+				<div class="buttonbackground"onclick=@ShowDoorGroupsAddRemoveButton>
 					<div class="buttontext">
 						Door Groups
 					</div>
 					</div>
-				<div class="buttonbackground"onclick=@AddOwner>
+				<div class="buttonbackground"onclick=@ShowJobsAddRemoveButton>
 					<div class="buttontext">
 						Jobs
 					</div>
@@ -185,12 +185,12 @@
 <editdoorgroupbuttons-jobsmenu class="@(IsInJobsUIButton  ? "" : "hide")">
 <div class="doorowneroptions">
 			<div class="buttonholderowner">
-				<div class="buttonbackground"onclick=@SellDoor>
+				<div class="buttonbackground"onclick=@ShowJobsAddButton>
 					<div class="buttontext">
 						Add
 					</div>
 					</div>
-				<div class="buttonbackground"onclick=@AddOwner>
+				<div class="buttonbackground"onclick=@ShowJobsRemoveButton>
 					<div class="buttontext">
 						Remove
 					</div>
@@ -302,12 +302,12 @@
 	public ActionGraphShowJobsRemoveButton GraphShowJobsRemoveButton  { get; set; } 
 
 		//This one is the Add Job To Door button
-	public delegate void ActionGraphAddSelectedJobFromDoorButton();
+	public delegate void ActionGraphAddSelectedJobFromDoorButton(JobResource job);
 	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Jobs")]
 	public ActionGraphAddSelectedJobFromDoorButton GraphAddSelectedJobFromDoorButton  { get; set; }
 
 		//This one is the Remove Job Group To Door button
-	public delegate void ActionGraphRemoveSelectedJobFromDoorButton();
+	public delegate void ActionGraphRemoveSelectedJobFromDoorButton(JobResource job);
 	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Jobs")]
 	public ActionGraphRemoveSelectedJobFromDoorButton GraphRemoveSelectedJobFromDoorButton  { get; set; }
 
@@ -478,6 +478,27 @@
 	}
 
 
+	void ShowJobsAddRemoveButton()
+	{
+		GraphShowJobsAddRemoveButton?.Invoke();
+	}
+
+	void ShowJobsAddButton()
+	{
+		GraphShowJobsAddButton?.Invoke();
+	}
+
+	void ShowJobsRemoveButton()
+	{
+		GraphShowJobsRemoveButton?.Invoke();
+	}
+
+
+
+	void ShowDoorGroupsAddRemoveButton()
+	{
+		GraphShowDoorGroupsAddRemoveButton?.Invoke();
+	}
 
 
     void SaveDoorTitle()
@@ -485,7 +506,6 @@
         Log.Info($"Player set door title: {DoorCustomTitle}");
         // Here you’d call your door system to update the name
     }
-
 
 
 
