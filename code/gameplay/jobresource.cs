@@ -11,7 +11,7 @@ public class JobResource : GameResource
     [Property, Group("Basic Job Info")] public int Salary { get; set; }
     [Property, Group("Basic Job Info")] public Color Color { get; set; }
     [Property, Group("Basic Job Info")] public List<Clothing> JobClothes { get; set; }
-    [Property, Group("Basic Job Info")] public JobCategoryResource JobCategory { get; set; }
+    [Property, Group("Basic Job Info")] public CategoryResource JobCategory { get; set; }
     [Property, Group("Basic Job Info")] public int MaxPlayersAllowedOnJob { get; set; }
     [Property, Group("Basic Job Info")] public int SortingLevel { get; set; }
     [Property, Group("Job Health Info")] public float JobHealth { get; set; }

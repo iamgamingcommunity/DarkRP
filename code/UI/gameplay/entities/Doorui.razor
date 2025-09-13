@@ -45,13 +45,13 @@
 
 
 <doorgroups-list>
-	@if (SelectedJobs != null && SelectedJobs.Count > 0)
+	@if (SelectedDoorGroups != null && SelectedDoorGroups.Count > 0)
     {
-        @foreach ( var job in SelectedJobs )
+        @foreach ( var doorgc in SelectedDoorGroups )
         {
 		
             <div class="job-card">
-                <div class="job-title @(IsDoorOwnable ? "ownable" : "notownable")">@job.Title</div>
+                <div class="job-title @(IsDoorOwnable ? "ownable" : "notownable")">@doorgc.Title</div>
             </div>
 		
         }
@@ -61,6 +61,7 @@
         <div class="loading @(IsDoorOwnable ? "ownable" : "notownable")">Loading doorgroups...</div>
     }
 </doorgroups-list>
+
 
 <playerfriendsaddedtodoor-list>
         @if (PlayerFriendsAddedToDoorList != null && PlayerFriendsAddedToDoorList.Count > 0)
@@ -93,6 +94,8 @@
 	public bool HudDebugInfoOn {get; set;}
 	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
 	public List<JobResource> SelectedJobs { get; set; } = new();
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
+	public List<DoorGroupCategoryResource> SelectedDoorGroups { get; set; } = new();
 	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
 	public NetworkManager NetworkManager { get; set; }
 	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]

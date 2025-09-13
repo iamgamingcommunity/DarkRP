@@ -169,12 +169,12 @@
 <editdoorgroupbuttons-doorgroupsmenu class="@(IsInDoorGroupUIButton  ? "" : "hide")">
 <div class="doorowneroptions">
 			<div class="buttonholderowner">
-				<div class="buttonbackground"onclick=@SellDoor>
+				<div class="buttonbackground"onclick=@ShowDoorGroupsAddButton>
 					<div class="buttontext">
 						Add
 					</div>
 					</div>
-				<div class="buttonbackground"onclick=@AddOwner>
+				<div class="buttonbackground"onclick=@ShowDoorGroupsRemoveButton>
 					<div class="buttontext">
 						Remove
 					</div>
@@ -221,7 +221,7 @@
     </div>
 </onlineaplayers-list>
 
-<playerfriendsaddedtodoor-list class="@(IsInOwnerFriendButtonUI  ? "" : "hide")">
+<playerfriendsaddedtodoor-list class="@(IsInF2MenuRemoveFriendButton  ? "" : "hide")">
     <div class="job-cardholder">
         @if (PlayerFriendsAddedToDoorList != null && PlayerFriendsAddedToDoorList.Count > 0)
         {
@@ -243,6 +243,46 @@
         }
     </div>
 </playerfriendsaddedtodoor-list>
+
+<doorgroup-list class="@(IsInDoorGroupAddUIButton ? "" : "hide")">
+    <div class="job-cardholder">
+	@if (AllNonSelectedDoorGroupCategory != null && AllNonSelectedDoorGroupCategory.Count > 0)
+    {
+        @foreach ( var doorgc in AllNonSelectedDoorGroupCategory )
+        {
+		
+            <div class="job-card" onclick="@(() => { GraphAddSelectedDoorGroup?.Invoke(doorgc); })">
+                <div class="job-title">@doorgc.Title</div>
+            </div>
+		
+        }
+    }
+    else
+    {
+        <div class="loading">No Door Groups Selected...</div>
+    }
+	</div>
+</doorgroup-list>
+
+<doorremovegroup-list class="@(IsInDoorGroupRemoveUIButton ? "" : "hide")">
+    <div class="job-cardholder">
+	@if (AllSelectedDoorGroupCategory != null && AllSelectedDoorGroupCategory.Count > 0)
+    {
+        @foreach ( var doorgc in AllSelectedDoorGroupCategory )
+        {
+		
+            <div class="job-card" onclick="@(() => { GraphRemoveSelectedDoorGroup?.Invoke(doorgc); })">
+                <div class="job-title">@doorgc.Title</div>
+            </div>
+		
+        }
+    }
+    else
+    {
+        <div class="loading">No Door Groups Selected...</div>
+    }
+	</div>
+</doorremovegroup-list>
 
 
 @code
@@ -276,12 +316,12 @@
 	public ActionGraphShowDoorGroupsRemoveButton GraphShowDoorGroupsRemoveButton  { get; set; }
 
 			//This one is the Add Door Group To Door button
-	public delegate void ActionGraphAddSelectedDoorGroup(JobResource job);
+	public delegate void ActionGraphAddSelectedDoorGroup(DoorGroupCategoryResource doorgc);
 	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Groups")]
 	public ActionGraphAddSelectedDoorGroup GraphAddSelectedDoorGroup  { get; set; }
 
 			//This one is the Remove Door Group To Door button
-	public delegate void ActionGraphRemoveSelectedDoorGroup(JobResource job);
+	public delegate void ActionGraphRemoveSelectedDoorGroup(DoorGroupCategoryResource doorgc);
 	[Property, Feature("Main F2Menu Action Graphs"), Group("Edit Door Groups")]
 	public ActionGraphRemoveSelectedDoorGroup GraphRemoveSelectedDoorGroup  { get; set; }
 
@@ -369,6 +409,10 @@
 
 	public List<JobResource> SelectedJobs { get; set; } = new();
 
+	// You’ll populate this list from your .doorgc resources
+	public List<DoorGroupCategoryResource> AllNonSelectedDoorGroupCategory { get; set; } = new();
+	public List<DoorGroupCategoryResource> AllSelectedDoorGroupCategory { get; set; } = new();
+
 
 	//Other Vars For Door Logic
 	public string DoorCustomTitle {get; set;}
@@ -384,6 +428,8 @@
 
 	public bool IsInF2MenuEditDoorGroupsUI {get; set;}
 	public bool IsInF2MenuAddFriendButton {get; set;}
+	public bool IsInF2MenuRemoveFriendButton {get; set;}
+	
 
 	public bool IsInDoorGroupUIButton {get; set;}
 	public bool IsInDoorGroupAddUIButton {get; set;}
@@ -395,7 +441,7 @@
 
 
 
-	public bool IsInOwnerFriendButtonUI {get; set;}
+
 	<!-- public List<PlayerData> PlayerDataList { get; set; } = new(); -->
 		
 		
@@ -434,11 +480,6 @@
 		GraphDisallowOwnership?.Invoke();
 	}
 
-
-	void JobDoorGroupButton(JobResource job)
-	{
-	 	GraphAddSelectedDoorGroup?.Invoke(job);
-	}
 	void CloseF2MenuButton()
 	{
 		GraphCloseF2MenuButton?.Invoke();
@@ -501,6 +542,33 @@
 	}
 
 
+
+	void ShowDoorGroupsAddButton()
+	{
+		GraphShowDoorGroupsAddButton?.Invoke();
+	}
+
+	void ShowDoorGroupsRemoveButton()
+	{
+		GraphShowDoorGroupsRemoveButton?.Invoke();
+	}
+
+
+
+
+
+	void AddSelectedDoorGroup(DoorGroupCategoryResource doorgc)
+	{
+		GraphAddSelectedDoorGroup?.Invoke(doorgc);
+	}
+
+	void RemoveSelectedDoorGroup(DoorGroupCategoryResource doorgc)
+	{
+		GraphRemoveSelectedDoorGroup?.Invoke(doorgc);
+	}
+
+
+
     void SaveDoorTitle()
     {
         Log.Info($"Player set door title: {DoorCustomTitle}");
@@ -515,7 +583,12 @@
 
 
 
-
+private void RefreshDoorGroups()
+{
+    AllNonSelectedDoorGroupCategory = DoorGroupCategoryResource.All.ToList();
+    Log.Info($"[F2Menu] Loaded {AllNonSelectedDoorGroupCategory.Count} Door Groups");
+    StateHasChanged(); // rebuild UI
+}
 
 
 
@@ -527,6 +600,10 @@
 
         // In case jobs were already loaded
         RefreshJobs();
+
+		// Door Groups
+    	DoorGroupCategoryResource.OnDoorGroupCategoryResourceLoaded += RefreshDoorGroups;
+    	RefreshDoorGroups(); // in case they are already loaded
     }
 
     private void RefreshJobs()

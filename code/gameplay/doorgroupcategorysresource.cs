@@ -9,10 +9,7 @@ public class DoorGroupCategoryResource : GameResource
     [Property, TextArea] public string Description { get; set; }
     [Property] public Color Color { get; set; }
 
-    public List<JobResource> DoorGroupJobs { get; set; }
-
-
-
+    public List<JobResource> DoorGroupJobs { get; set; } = new();
 
 
 

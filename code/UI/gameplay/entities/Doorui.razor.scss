@@ -97,6 +97,40 @@ job-list {
     	}
 }
 
+doorgroups-list {
+	    .job-card {
+        background: #3b3a3a;
+        padding: 6px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+			&:active
+			{
+				sound-in: ui.downvote;
+				
+			}
+		.job-title.notownable {
+            font-size: 10px;
+            font-weight: bold;
+           color: #ececec;
+        }
+		.job-title.ownable {
+			// Not Needed?? opacity: 0;
+        }
+	}
+
+		.loading.notownable {
+        color: #ffcc00;
+        font-size: 16px;
+        text-align: center;
+    	}
+		.loading.ownable {
+			opacity: 0;
+    	}
+}
 
 
 }

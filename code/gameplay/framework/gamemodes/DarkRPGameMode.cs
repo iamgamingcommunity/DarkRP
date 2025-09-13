@@ -47,6 +47,18 @@ public partial class DarkRPGamemode : GameModeBase
 
 
 
-}
 
+
+
+}
+ public enum TypeOfCategorys
+ {
+	Jobs,
+	Entities,
+	Weapons,
+	Shipments,
+	Ammo,
+	Vehicles,
+
+ }
 }
