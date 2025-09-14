@@ -46,6 +46,7 @@ F2Menu
 	}
 
 
+
 	.buttonbackground
 	{
 		border: 2px solid #000000;
@@ -117,45 +118,6 @@ F2Menu
 		text-shadow: 2px 5px 4px rgb(0, 0, 0);
 	}
 
-
-
-
-.door-title-input {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-
-    input {
-        width: 200px;
-        padding: 8px;
-        border: 2px solid #555;
-        border-radius: 6px;
-        background-color: #222;
-        color: white;
-        font-size: 14px;
-
-        &:focus {
-            outline: none;
-            border-color: #00bfff; // highlight border when typing
-            box-shadow: 0 0 6px #00bfff;
-        }
-    }
-
-    button {
-        background-color: #00bfff;
-        color: white;
-        border: none;
-        padding: 6px 12px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bold;
-
-        &:hover {
-            background-color: #008ccc;
-        }
-    }
-}
 
 
 
@@ -711,4 +673,58 @@ doorremovegroup-list {
         }
 
     }
+}
+
+setcustomtitle-menu {
+	position: absolute; 
+	left: 350px;
+
+	&.hide
+	{
+		opacity: 0;
+		pointer-events: none;
+	}
+	
+	.door-title-input {
+    flex-direction: column;
+    gap: 8px;
+	padding: 8px;
+	width: 360px;
+	border: 2px solid #020202;
+	border-radius: 6px;
+	background-color: rgb(32, 32, 32);
+	color: white;
+	font-size: 17px;
+
+	TextEntry
+	{
+		
+	}
+
+
+
+    input {
+        &:focus {
+            outline: none;
+            border-color: #0af; // highlight when focused
+            background-color: #111;
+        }
+    }
+
+    button {
+        background-color: #00bfff;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+            background-color: #008ccc;
+        }
+		
+    }
+	
+}
 }
