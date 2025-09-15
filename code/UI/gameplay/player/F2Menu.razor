@@ -43,6 +43,8 @@
 </div>
 
 
+<div class="CloseF2MenuButton @(IsInDoorOwnerMenu ? "" : "hide")" onclick="@(() => {GraphCloseF2MenuButton?.Invoke(); })">
+</div>
 
 <setcustomtitle-menu class="door-title-holder @(IsInDoorCustomTitleMenu ? "" : "hide")">
  	<div class="door-title-input">
@@ -115,7 +117,7 @@
 						Sell Door
 					</div>
 					</div>
-				<div class="buttonbackground"onclick=@AddOwner>
+				<div class="buttonbackground"onclick=@OnlinePlayerButton>
 					<div class="buttontext">
 						Add Owner
 					</div>
@@ -125,7 +127,7 @@
 						Remove Owner
 					</div>
 					</div>
-				<div class="buttonbackground"onclick=@IsInDoorCustomTitleMenu>
+				<div class="buttonbackground"onclick=@OpenSetDoorTitleMenu>
 					<div class="buttontext">
 						Set Door Title
 					</div>
@@ -133,11 +135,6 @@
 				<div class="buttonbackground"onclick=@DisallowOwnership>
 					<div class="buttontext">
 						@DisallowOwnershipTitle
-					</div>
-				</div>
-				<div class="buttonbackground" onclick=@BuyDoor>
-					<div class="buttontext">
-						Buy Door
 					</div>
 				</div>
 				<div class="buttonbackground"onclick=@EditDoorGroup>
@@ -509,10 +506,10 @@
 		GraphSellDoorButton?.Invoke();
 	}
 
-	void AddOwner()
+	@* void AddOwner()
 	{
 		GraphAddOwnerButton?.Invoke();
-	}
+	} *@
 
 	void OnlinePlayerButton()
 	{

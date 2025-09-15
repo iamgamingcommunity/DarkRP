@@ -14,7 +14,6 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment Base Info")] public float EquipmentReloadSpeed { get; set; }
 
 
-
 	//PickupableEntity Damage Info
 	[Property, Feature("Equipment Damage Info")] public int EquipmentCurrentAmmo { get; set; }
 	[Property, Feature("Equipment Damage Info")] public int EquipmentMaxAmmo { get; set; }
@@ -30,6 +29,20 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment SFX Info")] public SoundEvent AimEquipmentSFX { get; set; }
 	[Property, Feature("Equipment SFX Info")] public SoundEvent ReloadEquipmentSFX { get; set; }
     [Property, Feature("Equipment SFX Info")] public SoundEvent[] ExtraSFX { get; set; }
+
+		//Action Graphs
+	public delegate void ActionGraphFireEquipment();
+	[Property, Feature("Action Graphs")]
+	public ActionGraphFireEquipment GraphFireEquipment { get; set; }
+
+	public delegate void ActionGraphAimEquipment();
+	[Property, Feature("Action Graphs")]
+	public ActionGraphAimEquipment GraphAimEquipment { get; set; }
+	
+	public delegate void ActionGraphReloadEquipment();
+	[Property, Feature("Action Graphs")]
+	public ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
+
 
 	
 

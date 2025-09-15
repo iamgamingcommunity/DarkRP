@@ -46,6 +46,16 @@ public sealed class PickupableEntityBase : Component
 	public ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
 
 
+public struct PlayerKeyAction
+{
+    [Property] public string ActionName { get; set; } // e.g. "jump", "attack1", "use"
+    public delegate void ActionGraphOtherKeybinds();
+	[Property, Feature("Action Graphs")]
+	public ActionGraphOtherKeybinds GraphOtherKeybinds { get; set; }
+}
+
+
+
 	// void FireEquipment ()
 	// {
 	// 	GraphFireEquipment?.Invoke();
@@ -77,8 +87,18 @@ public sealed class PickupableEntityBase : Component
 
 
 
-	protected override void OnUpdate()
-	{
+    [Property] public List<PlayerKeyAction> Bindings { get; set; } = new();
 
-	}
+    protected override void OnUpdate()
+    {
+        foreach (var binding in Bindings)
+        {
+            if (Input.Pressed(binding.ActionName)) // check the bind name
+            {
+                Log.Info($"Triggered action: {binding.ActionName}");
+
+                binding.GraphOtherKeybinds?.Invoke(); // execute the Action Graph
+            }
+        }
+    }
 }

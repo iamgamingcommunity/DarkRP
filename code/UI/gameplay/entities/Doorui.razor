@@ -9,11 +9,11 @@
 	@DoorCustomTitle
 	</div>
 	
-	<div class="DoorPlayerName @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned") @(IsDoorOwnable ? "ownable" : "notownable")">
+	<div class="DoorPlayerName @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned") @(IsDoorOwnable ? "ownable" : "notownable") @(IsDoorPurchasable ? "notpurchasable" : "purchasable")">
 	@PlayerWhoOwnsDoorDisplayName
 	</div>
 	
-	<div class="DoorBuyAmounttitle @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned")">
+	<div class="DoorBuyAmounttitle @(PlayerWhoOwnsDoorDisplayName == "Unowned Door" ? "unowned" : "owned") @(IsDoorOwnable ? "ownable" : "notownable")">
 	$@PlayerWhoOwnsDoorBuyAmount
 	</div>
 
@@ -41,6 +41,7 @@
 		
         }
     }
+else
 </job-list>
 
 
@@ -57,9 +58,6 @@
         }
     }
     else
-    {
-        <div class="loading @(IsDoorOwnable ? "ownable" : "notownable")">Loading doorgroups...</div>
-    }
 </doorgroups-list>
 
 
@@ -68,16 +66,13 @@
         {
             @foreach (var player in PlayerFriendsAddedToDoorList)
             {
-				var currentPlayer = player; <!-- capture here -->
+				var currentPlayer = player;
                 <div class="job-card">
                     <div class="job-title">@currentPlayer.PlayerID</div>
                 </div>
             }
         }
-        else
-        {
-            <div class="loading">No players Friends</div>
-        }
+		else
 </playerfriendsaddedtodoor-list>
 
 
@@ -116,9 +111,11 @@
 	public bool DoorIsBought {get; set;}
 	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
 	public bool IsDoorOwnable {get; set;}
+	[Property, ShowIf ( nameof( HudDebugInfoOn ), true)]
+	public bool IsDoorPurchasable {get; set;}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( PlayerFriendsWhoOwnDoor, PlayerFriendsAddedToDoorList, PlayerWhoOwnsDoorDisplayName, PlayerWhoOwnsDoorBuyAmount, IsDoorOwnable );
+	protected override int BuildHash() => System.HashCode.Combine( IsDoorPurchasable, PlayerFriendsWhoOwnDoor, PlayerFriendsAddedToDoorList, PlayerWhoOwnsDoorDisplayName, PlayerWhoOwnsDoorBuyAmount, IsDoorOwnable );
 }

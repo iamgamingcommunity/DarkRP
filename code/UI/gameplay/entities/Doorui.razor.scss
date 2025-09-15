@@ -31,12 +31,13 @@ Doorui
 
 	.DoorPlayerName.owned
 	{
+		position: relative;
 		font-size: 28px;
 		font-family: Poppins;
 		color: #e2e2e2;
+		left: 64px;
 
 	}
-
 
 	.DoorBuyAmounttitle.unowned
 	{
@@ -46,32 +47,61 @@ Doorui
 		
 	}
 
+	.DoorBuyAmounttitle.notownable
+	{
+		opacity: 0;
+	}
+
+
 	.DoorBuyAmounttitle.owned
 	{
 		opacity: 0;
 	}
 
-	.DoorPlayerName.ownable
+	.DoorBuyAmounttitle.ownable
+	{
+		position: relative;
+		left: 16px;
+	}
+
+	.DoorPlayerName.purchasable
 	{
 		color: #e2e2e2;
+		position: relative;
+		text-align: center;
+		left: 63px;
 	}
+
+	.DoorPlayerName.notpurchasable
+	{
+		color: #e2e2e2;
+		position: relative;
+		text-align: center;
+		left: 24px;
+	}
+
 
 	.DoorPlayerName.notownable
 	{
+		position: relative;
 		color: #53e627;
+		left: 85px;
 	}
 
 
 job-list {
 	    .job-card {
-        background: #3b3a3a;
+		position: relative;
+        background: #307885;
+		box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.568);
         padding: 6px;
         border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-	
+		top: -40px;
+		left: 70px;
         display: flex;
         flex-direction: column;
         gap: 2px;
+		
 			&:active
 			{
 				sound-in: ui.downvote;
@@ -99,10 +129,15 @@ job-list {
 
 doorgroups-list {
 	    .job-card {
-        background: #3b3a3a;
+        background: #307885;
+		box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.568);
         padding: 6px;
+
         border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.568);
+		left: 85px;
+		position: relative;
+		top: -40px;
 	
         display: flex;
         flex-direction: column;
@@ -137,11 +172,14 @@ doorgroups-list {
 
 playerfriendsaddedtodoor-list {
 	    .job-card {
-        background: #3b3a3a;
+		
+		position: absolute;
+        background: #307885;
+		box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.568);
         padding: 8px;
         border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-	
+		top: -40px;
+		left: 40px;
         display: flex;
         flex-direction: column;
         gap: 2px;
@@ -150,7 +188,14 @@ playerfriendsaddedtodoor-list {
 				sound-in: ui.downvote;
 				
 			}
+			.job-title {
+            font-size: 10px;
+            font-weight: bold;
+           color: #ececec;
+        }
+			
 	}
+	
 
 		.loading.notownable {
         color: #ffcc00;
