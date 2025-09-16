@@ -44,6 +44,17 @@ public class PickupableEntity : GameResource
 	public ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
 
 
+
+	public struct SwepExtraActionGraphs
+	{
+		[Property] public string ActionName { get; set; } // e.g. "jump", "attack1", "use"
+		[Property]
+		public PickupableEntity.ActionGraphFireEquipment GraphOtherKeybinds { get; set; }
+	}
+
+ 	[Property, Feature("Action Graphs")] public List<SwepExtraActionGraphs> ExtraKeyBindings { get; set; } = new();
+
+
 	
 
     public static IReadOnlyList<PickupableEntity> All => _all;

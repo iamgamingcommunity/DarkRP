@@ -1,6 +1,8 @@
 using Sandbox;
 
-public sealed class PickupableEntityBase : Component
+
+
+public class PickupableEntityBase : Component
 {
 
 	//PickupableEntity Info
@@ -28,30 +30,34 @@ public sealed class PickupableEntityBase : Component
 	[Property, Feature("Equipment SFX Info")] public SoundEvent AimEquipmentSFX { get; set; }
 	[Property, Feature("Equipment SFX Info")] public SoundEvent ReloadEquipmentSFX { get; set; }
 	[Property, Feature("Equipment SFX Info")] public SoundEvent[] ExtraSFX { get; set; }
+	
+	
+	[Property, Feature("Action Graphs")] public PickupableEntity.ActionGraphFireEquipment GraphFireEquipment { get; set; }
+	[Property, Feature("Action Graphs")] public PickupableEntity.ActionGraphFireEquipment GraphAimEquipment { get; set; }
+	[Property, Feature("Action Graphs")] public PickupableEntity.ActionGraphFireEquipment GraphReloadEquipment { get; set; }
+	
+	
+	[Property, Feature("Action Graphs")] public PickupableEntity SwepDataFile { get; set; }
 
-	
-	
-	
-	//Action Graphs
-	public delegate void ActionGraphFireEquipment();
-	[Property, Feature("Action Graphs")]
-	public ActionGraphFireEquipment GraphFireEquipment { get; set; }
+	// //Action Graphs
+	// public delegate void ActionGraphFireEquipment();
+	// [Property, Feature("Action Graphs")]
+	// public ActionGraphFireEquipment GraphFireEquipment { get; set; }
 
-	public delegate void ActionGraphAimEquipment();
-	[Property, Feature("Action Graphs")]
-	public ActionGraphAimEquipment GraphAimEquipment { get; set; }
+	// public delegate void ActionGraphAimEquipment();
+	// [Property, Feature("Action Graphs")]
+	// public ActionGraphAimEquipment GraphAimEquipment { get; set; }
 	
-	public delegate void ActionGraphReloadEquipment();
-	[Property, Feature("Action Graphs")]
-	public ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
+	// public delegate void ActionGraphReloadEquipment();
+	// [Property, Feature("Action Graphs")]
+	// public ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
 
 
 public struct PlayerKeyAction
 {
     [Property] public string ActionName { get; set; } // e.g. "jump", "attack1", "use"
-    public delegate void ActionGraphOtherKeybinds();
 	[Property, Feature("Action Graphs")]
-	public ActionGraphOtherKeybinds GraphOtherKeybinds { get; set; }
+	public PickupableEntity.ActionGraphFireEquipment GraphOtherKeybinds { get; set; }
 }
 
 
@@ -76,11 +82,61 @@ public struct PlayerKeyAction
 
 
 
+	//DarkRP Player Hotbar Action Graph Trigger Functions
+	// public void TriggerSlot0()
+    // {
+	// 	 F2Menu?.Invoke();
+    // }
+
+	// public void TriggerSlot1()
+    // {
+	// 	 F2Menu?.Invoke();
+    // }
+
+	// public void TriggerSlot2()
+    // {
+	// 	 F2Menu?.Invoke();
+    // }
+
+	// public void TriggerSlot3()
+    // {
+	// 	 TabMenu?.Invoke();
+    // }
+
+	// public void TriggerSlot4()
+    // {
+	// 	 F2Menu?.Invoke();
+    // }
+
+	// public void TriggerSlot5()
+    // {
+	// 	 F2Menu?.Invoke();
+    // }
+
+	// public void TriggerSlot6()
+    // {
+	// 	 F2Menu?.Invoke();
+    // }
+
+	// public void TriggerSlot7()
+    // {
+	// 	 TabMenu?.Invoke();
+    // }
+
+
+	// public void TriggerSlot8()
+    // {
+	// 	 F2Menu?.Invoke();
+    // }
+
+	// public void TriggerSlot9()
+    // {
+	// 	 TabMenu?.Invoke();
+    // }
 
 
 
-
-
+  [Property] public List<PickupableEntity.SwepExtraActionGraphs> SwepExtraActionGraphs { get; set; } = new();
 
 
 

@@ -17,45 +17,91 @@
   "AimEquipmentSFX": null,
   "ReloadEquipmentSFX": null,
   "ExtraSFX": [],
-  "GraphFireEquipment": {
-    "__version": 9,
-    "__guid": "669af312-0511-403e-8dcf-55f0d5baf8ce",
-    "__changeId": 9,
-    "UserData": {
-      "Title": "Graph Fire Equipment",
-      "ReferencedComponentTypes": []
-    },
-    "Variables": [],
-    "Nodes": [
-      {
-        "Id": 0,
-        "Type": "input"
-      },
-      {
-        "Id": 1,
-        "Type": "log.info",
-        "UserData": {
-          "Position": "288,84"
-        }
-      }
-    ],
-    "Links": [
-      {
-        "SrcId": 0,
-        "SrcName": "_signal",
-        "DstId": 1,
-        "DstName": "_signal"
-      },
-      {
-        "Id": 7,
-        "Value": "Keys",
-        "DstId": 1,
-        "DstName": "format"
-      }
-    ]
-  },
+  "GraphFireEquipment": null,
   "GraphAimEquipment": null,
   "GraphReloadEquipment": null,
+  "ExtraKeyBindings": [
+    {
+      "ActionName": "attack1",
+      "GraphOtherKeybinds": {
+        "__version": 9,
+        "__guid": "26406e55-57b5-4a4e-8434-0c6cb05689b6",
+        "__changeId": 35,
+        "UserData": {
+          "Title": "Graph Other Keybinds",
+          "ReferencedComponentTypes": []
+        },
+        "Variables": [],
+        "Nodes": [
+          {
+            "Id": 0,
+            "Type": "input"
+          },
+          {
+            "Id": 1,
+            "Type": "log.info",
+            "UserData": {
+              "Position": "264,12"
+            }
+          }
+        ],
+        "Links": [
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 1,
+            "DstName": "_signal"
+          },
+          {
+            "Id": 26,
+            "Value": "Fired Attack1",
+            "DstId": 1,
+            "DstName": "format"
+          }
+        ]
+      }
+    },
+    {
+      "ActionName": "attack2",
+      "GraphOtherKeybinds": {
+        "__version": 9,
+        "__guid": "c5679fee-d66b-4701-b228-ae24d2ab4e10",
+        "__changeId": 12,
+        "UserData": {
+          "Title": "Graph Other Keybinds",
+          "ReferencedComponentTypes": []
+        },
+        "Variables": [],
+        "Nodes": [
+          {
+            "Id": 0,
+            "Type": "input"
+          },
+          {
+            "Id": 1,
+            "Type": "log.info",
+            "UserData": {
+              "Position": "276,48"
+            }
+          }
+        ],
+        "Links": [
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 1,
+            "DstName": "_signal"
+          },
+          {
+            "Id": 5,
+            "Value": "Fired Attack2",
+            "DstId": 1,
+            "DstName": "format"
+          }
+        ]
+      }
+    }
+  ],
   "__references": [],
   "__version": 0
 }
