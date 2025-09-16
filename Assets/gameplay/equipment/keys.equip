@@ -1,107 +1,98 @@
 {
-  "EquipmentName": null,
+  "EquipmentName": "Keys",
+  "EquipmentDescription": "This is your keys used to Knock on Unowned Doors, and Lock/Unlock your owned Doors.",
   "viewmodel": null,
   "worldmodel": null,
-  "EquipmentFireSpeed": 0,
-  "EquipmentAimSpeed": 0,
-  "EquipmentReloadSpeed": 0,
+  "EquipmentFireSpeed": 1,
+  "EquipmentAimSpeed": 1,
+  "EquipmentReloadSpeed": 1,
   "EquipmentCurrentAmmo": 0,
   "EquipmentMaxAmmo": 0,
-  "EquipmentUnlimitedAmmo": false,
-  "EquipmentAmountOfRoundsFired": 0,
+  "EquipmentUnlimitedAmmo": true,
+  "EquipmentAmountOfRoundsFired": 1,
   "IsEnableMinMaxDamage": false,
   "EquipmentBaseDamage": 0,
   "EquipmentDamageMin": 0,
   "EquipmentDamageMax": 0,
-  "FireEquipmentSFX": null,
-  "AimEquipmentSFX": null,
-  "ReloadEquipmentSFX": null,
+  "FireEquipmentSFX": "sounds/impacts/bullets/impact-bullet-cloth.sound",
+  "AimEquipmentSFX": "sounds/impacts/bullets/impact-bullet-cloth.sound",
+  "ReloadEquipmentSFX": "sounds/impacts/melee/impact-melee-concrete.sound",
   "ExtraSFX": [],
-  "GraphFireEquipment": null,
-  "GraphAimEquipment": null,
-  "GraphReloadEquipment": null,
-  "ExtraKeyBindings": [
-    {
-      "ActionName": "attack1",
-      "GraphOtherKeybinds": {
-        "__version": 9,
-        "__guid": "26406e55-57b5-4a4e-8434-0c6cb05689b6",
-        "__changeId": 35,
-        "UserData": {
-          "Title": "Graph Other Keybinds",
-          "ReferencedComponentTypes": []
-        },
-        "Variables": [],
-        "Nodes": [
-          {
-            "Id": 0,
-            "Type": "input"
-          },
-          {
-            "Id": 1,
-            "Type": "log.info",
-            "UserData": {
-              "Position": "264,12"
-            }
-          }
-        ],
-        "Links": [
-          {
-            "SrcId": 0,
-            "SrcName": "_signal",
-            "DstId": 1,
-            "DstName": "_signal"
-          },
-          {
-            "Id": 26,
-            "Value": "Fired Attack1",
-            "DstId": 1,
-            "DstName": "format"
-          }
-        ]
-      }
+  "GraphFireEquipment": {
+    "__version": 9,
+    "__guid": "846200f8-4fc5-4663-bf71-cf9d84ecbfe3",
+    "__changeId": 11,
+    "UserData": {
+      "Title": "Graph Fire Equipment"
     },
-    {
-      "ActionName": "attack2",
-      "GraphOtherKeybinds": {
-        "__version": 9,
-        "__guid": "c5679fee-d66b-4701-b228-ae24d2ab4e10",
-        "__changeId": 12,
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input"
+      },
+      {
+        "Id": 1,
+        "Type": "log.error",
         "UserData": {
-          "Title": "Graph Other Keybinds",
-          "ReferencedComponentTypes": []
-        },
-        "Variables": [],
-        "Nodes": [
-          {
-            "Id": 0,
-            "Type": "input"
-          },
-          {
-            "Id": 1,
-            "Type": "log.info",
-            "UserData": {
-              "Position": "276,48"
-            }
-          }
-        ],
-        "Links": [
-          {
-            "SrcId": 0,
-            "SrcName": "_signal",
-            "DstId": 1,
-            "DstName": "_signal"
-          },
-          {
-            "Id": 5,
-            "Value": "Fired Attack2",
-            "DstId": 1,
-            "DstName": "format"
-          }
-        ]
+          "Position": "216,36"
+        }
       }
-    }
-  ],
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 1,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 8,
+        "Value": "Locked!",
+        "DstId": 1,
+        "DstName": "format"
+      }
+    ]
+  },
+  "GraphAimEquipment": {
+    "__version": 9,
+    "__guid": "cb5ec55b-3feb-4ed2-922c-839c51b52082",
+    "__changeId": 7,
+    "UserData": {
+      "Title": "Graph Aim Equipment",
+      "ReferencedComponentTypes": []
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input"
+      },
+      {
+        "Id": 1,
+        "Type": "log.error",
+        "UserData": {
+          "Position": "252,72"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 1,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 5,
+        "Value": "UnLocked!",
+        "DstId": 1,
+        "DstName": "format"
+      }
+    ]
+  },
+  "GraphReloadEquipment": null,
+  "ExtraKeyBindings": [],
   "__references": [],
   "__version": 0
 }
