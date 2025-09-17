@@ -38,7 +38,7 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Action Graphs"), Group("Action Graphs")] public PickupableEntity.ActionGraphAimEquipment GraphAimEquipment { get; set; }
 	[Property, Feature("Action Graphs"), Group("Action Graphs")] public PickupableEntity.ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
 	
-	
+	[Property, Feature("Extra"), Group("Extra")] public GameObject PlayerControllerRef { get; set; }
 
 	// //Action Graphs
 	public delegate void ActionGraphSetHotBarSwepInfo(PickupableEntity CurrentHotBarSwep);

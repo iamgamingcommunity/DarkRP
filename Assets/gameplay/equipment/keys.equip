@@ -18,49 +18,646 @@
   "AimEquipmentSFX": "sounds/impacts/bullets/impact-bullet-cloth.sound",
   "ReloadEquipmentSFX": "sounds/impacts/melee/impact-melee-concrete.sound",
   "ExtraSFX": [],
+  "PlayerControllerRef": null,
   "GraphFireEquipment": {
     "__version": 9,
-    "__guid": "846200f8-4fc5-4663-bf71-cf9d84ecbfe3",
-    "__changeId": 11,
+    "__guid": "e86b5f17-0f8e-4c30-b8a6-c35aeb5b6ade",
+    "__changeId": 267,
     "UserData": {
-      "Title": "Graph Fire Equipment"
+      "Title": "Graph Fire Equipment",
+      "ReferencedComponentTypes": [
+        "door",
+        "Sandbox.PlayerController"
+      ]
     },
     "Variables": [],
     "Nodes": [
       {
         "Id": 0,
-        "Type": "input"
+        "Type": "input",
+        "UserData": {
+          "Position": "-1212,48"
+        }
       },
       {
         "Id": 1,
-        "Type": "log.error",
+        "Type": "scene.trace",
+        "UserData": {
+          "Position": "-240,828"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "FromTo",
+          "_type": "Sandbox.SceneTrace"
+        },
+        "UserData": {
+          "Position": "0,804"
+        }
+      },
+      {
+        "Id": 3,
+        "Type": "property",
+        "Properties": {
+          "_name": "WorldPosition",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "-876,600"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "840,864"
+        }
+      },
+      {
+        "Id": 5,
+        "Type": "sys.tostring",
+        "Properties": {
+          "T": "Vector3"
+        },
+        "UserData": {
+          "Position": "792,936"
+        }
+      },
+      {
+        "Id": 6,
+        "Type": "sys.isvalid",
+        "UserData": {
+          "Position": "1152,924"
+        }
+      },
+      {
+        "Id": 7,
+        "Type": "if",
+        "UserData": {
+          "Position": "1176,840"
+        }
+      },
+      {
+        "Id": 8,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "540,864"
+        }
+      },
+      {
+        "Id": 9,
+        "Type": "sys.tostring",
+        "Properties": {
+          "T": "Vector3"
+        },
+        "UserData": {
+          "Position": "456,972"
+        }
+      },
+      {
+        "Id": 10,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "IgnoreGameObject",
+          "_type": "Sandbox.SceneTrace"
+        },
+        "UserData": {
+          "Position": "36,660"
+        }
+      },
+      {
+        "Id": 11,
+        "Type": "op.multiply",
+        "UserData": {
+          "Position": "-360,960"
+        }
+      },
+      {
+        "Id": 12,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "AddClamped",
+          "_type": "Vector3"
+        },
+        "UserData": {
+          "Position": "-204,912"
+        }
+      },
+      {
+        "Id": 13,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "IgnoreStatic",
+          "_type": "Sandbox.SceneTrace"
+        },
+        "UserData": {
+          "Position": "12,432"
+        }
+      },
+      {
+        "Id": 14,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Run",
+          "_type": "Sandbox.SceneTrace"
+        },
+        "UserData": {
+          "Position": "408,-12"
+        }
+      },
+      {
+        "Id": 16,
+        "Type": "property",
+        "Properties": {
+          "_name": "EyeAngles",
+          "_type": "Sandbox.PlayerController"
+        },
+        "UserData": {
+          "Position": "-1056,732"
+        }
+      },
+      {
+        "Id": 17,
+        "Type": "property",
+        "Properties": {
+          "_name": "Forward",
+          "_type": "Angles"
+        },
+        "UserData": {
+          "Position": "-780,780"
+        }
+      },
+      {
+        "Id": 20,
+        "Type": "property",
+        "ParentId": 14,
+        "Properties": {
+          "_name": "GameObject",
+          "_type": "Sandbox.SceneTraceResult"
+        }
+      },
+      {
+        "Id": 21,
+        "Type": "nop",
+        "UserData": {
+          "Position": "792,1092"
+        }
+      },
+      {
+        "Id": 22,
+        "Type": "property",
+        "Properties": {
+          "_name": "Tags",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "1416,972"
+        }
+      },
+      {
+        "Id": 23,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Has",
+          "_type": "Sandbox.GameTags"
+        },
+        "UserData": {
+          "Position": "1680,972"
+        }
+      },
+      {
+        "Id": 24,
+        "Type": "if",
+        "UserData": {
+          "Position": "1716,888"
+        }
+      },
+      {
+        "Id": 25,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "2040,912"
+        }
+      },
+      {
+        "Id": 26,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "door"
+        },
+        "UserData": {
+          "Position": "2280,1104"
+        }
+      },
+      {
+        "Id": 27,
+        "Type": "property",
+        "Properties": {
+          "_name": "IsDoorLocked",
+          "_type": "door"
+        },
+        "UserData": {
+          "Position": "2280,912"
+        }
+      },
+      {
+        "Id": 46,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "-60,72"
+        }
+      },
+      {
+        "Id": 74,
+        "Type": "sys.tostring",
+        "Properties": {
+          "T": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "48,204"
+        }
+      },
+      {
+        "Id": 75,
+        "Type": "log.info",
         "UserData": {
           "Position": "216,36"
+        }
+      },
+      {
+        "Id": 311,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "Sandbox.PlayerController"
+        },
+        "UserData": {
+          "Position": "-1404,720"
+        }
+      },
+      {
+        "Id": 332,
+        "Type": "property",
+        "Properties": {
+          "_name": "WorldPosition",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "-468,492"
+        }
+      },
+      {
+        "Id": 343,
+        "Type": "property",
+        "Properties": {
+          "_name": "PlayerControllerRef",
+          "_type": "PickupableEntity"
+        },
+        "UserData": {
+          "Position": "-228,204"
+        }
+      },
+      {
+        "Id": 344,
+        "Type": "property",
+        "Properties": {
+          "_name": "PlayerControllerRef",
+          "_type": "PickupableEntity"
+        },
+        "UserData": {
+          "Position": "-852,480"
+        }
+      },
+      {
+        "Id": 345,
+        "Type": "property",
+        "Properties": {
+          "_name": "PlayerControllerRef",
+          "_type": "PickupableEntity"
+        },
+        "UserData": {
+          "Position": "-1560,636"
         }
       }
     ],
     "Links": [
       {
-        "SrcId": 0,
+        "SrcId": 1,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 3,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "from"
+      },
+      {
+        "SrcId": 12,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "to"
+      },
+      {
+        "SrcId": 344,
+        "SrcName": "_result",
+        "DstId": 3,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 8,
         "SrcName": "_signal",
-        "DstId": 1,
+        "DstId": 4,
         "DstName": "_signal"
       },
       {
-        "Id": 8,
-        "Value": "Locked!",
-        "DstId": 1,
+        "SrcId": 5,
+        "SrcName": "_result",
+        "DstId": 4,
         "DstName": "format"
+      },
+      {
+        "SrcId": 12,
+        "SrcName": "_result",
+        "DstId": 5,
+        "DstName": "input"
+      },
+      {
+        "SrcId": 21,
+        "SrcName": "out",
+        "DstId": 6,
+        "DstName": "obj"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_signal",
+        "DstId": 7,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 6,
+        "SrcName": "_result",
+        "DstId": 7,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 14,
+        "SrcName": "_signal",
+        "DstId": 8,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 9,
+        "SrcName": "_result",
+        "DstId": 8,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 332,
+        "SrcName": "_result",
+        "DstId": 9,
+        "DstName": "input"
+      },
+      {
+        "SrcId": 2,
+        "SrcName": "_result",
+        "DstId": 10,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 344,
+        "SrcName": "_result",
+        "DstId": 10,
+        "DstName": "obj"
+      },
+      {
+        "SrcId": 17,
+        "SrcName": "_result",
+        "DstId": 11,
+        "DstName": "a"
+      },
+      {
+        "Id": 366,
+        "Value": {
+          "$type": "Simple",
+          "Type": "System.Single",
+          "Value": 200
+        },
+        "DstId": 11,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 3,
+        "SrcName": "_result",
+        "DstId": 12,
+        "DstName": "_target"
+      },
+      {
+        "Id": 367,
+        "Value": 200,
+        "DstId": 12,
+        "DstName": "maxLength"
+      },
+      {
+        "SrcId": 11,
+        "SrcName": "_result",
+        "DstId": 12,
+        "DstName": "toAdd"
+      },
+      {
+        "SrcId": 10,
+        "SrcName": "_result",
+        "DstId": 13,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 75,
+        "SrcName": "_signal",
+        "DstId": 14,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 13,
+        "SrcName": "_result",
+        "DstId": 14,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 311,
+        "SrcName": "_result",
+        "DstId": 16,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 16,
+        "SrcName": "_result",
+        "DstId": 17,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 14,
+        "SrcName": "_result",
+        "DstId": 20,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 20,
+        "SrcName": "_result",
+        "DstId": 21,
+        "DstName": "in"
+      },
+      {
+        "SrcId": 21,
+        "SrcName": "out",
+        "DstId": 22,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 22,
+        "SrcName": "_result",
+        "DstId": 23,
+        "DstName": "_target"
+      },
+      {
+        "Id": 368,
+        "Value": true,
+        "DstId": 23,
+        "DstName": "includeAncestors"
+      },
+      {
+        "Id": 369,
+        "Value": "door",
+        "DstId": 23,
+        "DstName": "tag"
+      },
+      {
+        "SrcId": 7,
+        "SrcName": "true",
+        "DstId": 24,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 23,
+        "SrcName": "_result",
+        "DstId": 24,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 24,
+        "SrcName": "true",
+        "DstId": 25,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 370,
+        "Value": "YES IT IS DOOR!",
+        "DstId": 25,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 21,
+        "SrcName": "out",
+        "DstId": 26,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 25,
+        "SrcName": "_signal",
+        "DstId": 27,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 26,
+        "SrcName": "_result",
+        "DstId": 27,
+        "DstName": "_target"
+      },
+      {
+        "Id": 371,
+        "Value": true,
+        "DstId": 27,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 46,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 372,
+        "Value": "Fired key Lock?",
+        "DstId": 46,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 343,
+        "SrcName": "_result",
+        "DstId": 74,
+        "DstName": "input"
+      },
+      {
+        "SrcId": 46,
+        "SrcName": "_signal",
+        "DstId": 75,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 74,
+        "SrcName": "_result",
+        "DstId": 75,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 345,
+        "SrcName": "_result",
+        "DstId": 311,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 344,
+        "SrcName": "_result",
+        "DstId": 332,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 343,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 344,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 345,
+        "DstName": "_target"
       }
     ]
   },
   "GraphAimEquipment": {
     "__version": 9,
     "__guid": "cb5ec55b-3feb-4ed2-922c-839c51b52082",
-    "__changeId": 7,
+    "__changeId": 22,
     "UserData": {
       "Title": "Graph Aim Equipment",
-      "ReferencedComponentTypes": []
+      "ReferencedComponentTypes": [
+        "door",
+        "Sandbox.PlayerController"
+      ]
     },
     "Variables": [],
     "Nodes": [
@@ -69,25 +666,611 @@
         "Type": "input"
       },
       {
-        "Id": 1,
-        "Type": "log.error",
+        "Id": 18,
+        "Type": "scene.trace",
         "UserData": {
-          "Position": "252,72"
+          "Position": "384,780"
+        }
+      },
+      {
+        "Id": 19,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "FromTo",
+          "_type": "Sandbox.SceneTrace"
+        },
+        "UserData": {
+          "Position": "624,756"
+        }
+      },
+      {
+        "Id": 20,
+        "Type": "property",
+        "Properties": {
+          "_name": "WorldPosition",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "-252,552"
+        }
+      },
+      {
+        "Id": 21,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "1464,816"
+        }
+      },
+      {
+        "Id": 22,
+        "Type": "sys.tostring",
+        "Properties": {
+          "T": "Vector3"
+        },
+        "UserData": {
+          "Position": "1416,888"
+        }
+      },
+      {
+        "Id": 23,
+        "Type": "sys.isvalid",
+        "UserData": {
+          "Position": "1776,876"
+        }
+      },
+      {
+        "Id": 24,
+        "Type": "if",
+        "UserData": {
+          "Position": "1800,792"
+        }
+      },
+      {
+        "Id": 25,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "1164,816"
+        }
+      },
+      {
+        "Id": 26,
+        "Type": "sys.tostring",
+        "Properties": {
+          "T": "Vector3"
+        },
+        "UserData": {
+          "Position": "1080,924"
+        }
+      },
+      {
+        "Id": 27,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "IgnoreGameObject",
+          "_type": "Sandbox.SceneTrace"
+        },
+        "UserData": {
+          "Position": "660,612"
+        }
+      },
+      {
+        "Id": 28,
+        "Type": "op.multiply",
+        "UserData": {
+          "Position": "264,912"
+        }
+      },
+      {
+        "Id": 29,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "AddClamped",
+          "_type": "Vector3"
+        },
+        "UserData": {
+          "Position": "420,864"
+        }
+      },
+      {
+        "Id": 30,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "IgnoreStatic",
+          "_type": "Sandbox.SceneTrace"
+        },
+        "UserData": {
+          "Position": "636,384"
+        }
+      },
+      {
+        "Id": 31,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Run",
+          "_type": "Sandbox.SceneTrace"
+        },
+        "UserData": {
+          "Position": "1032,-60"
+        }
+      },
+      {
+        "Id": 32,
+        "Type": "property",
+        "Properties": {
+          "_name": "EyeAngles",
+          "_type": "Sandbox.PlayerController"
+        },
+        "UserData": {
+          "Position": "-432,684"
+        }
+      },
+      {
+        "Id": 33,
+        "Type": "property",
+        "Properties": {
+          "_name": "Forward",
+          "_type": "Angles"
+        },
+        "UserData": {
+          "Position": "-156,732"
+        }
+      },
+      {
+        "Id": 34,
+        "Type": "property",
+        "ParentId": 31,
+        "Properties": {
+          "_name": "GameObject",
+          "_type": "Sandbox.SceneTraceResult"
+        }
+      },
+      {
+        "Id": 35,
+        "Type": "nop",
+        "UserData": {
+          "Position": "1416,1044"
+        }
+      },
+      {
+        "Id": 36,
+        "Type": "property",
+        "Properties": {
+          "_name": "Tags",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "2040,924"
+        }
+      },
+      {
+        "Id": 37,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Has",
+          "_type": "Sandbox.GameTags"
+        },
+        "UserData": {
+          "Position": "2304,924"
+        }
+      },
+      {
+        "Id": 38,
+        "Type": "if",
+        "UserData": {
+          "Position": "2340,840"
+        }
+      },
+      {
+        "Id": 39,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "2664,864"
+        }
+      },
+      {
+        "Id": 40,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "door"
+        },
+        "UserData": {
+          "Position": "2904,1056"
+        }
+      },
+      {
+        "Id": 41,
+        "Type": "property",
+        "Properties": {
+          "_name": "IsDoorLocked",
+          "_type": "door"
+        },
+        "UserData": {
+          "Position": "2904,876"
+        }
+      },
+      {
+        "Id": 42,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "564,24"
+        }
+      },
+      {
+        "Id": 43,
+        "Type": "sys.tostring",
+        "Properties": {
+          "T": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "672,156"
+        }
+      },
+      {
+        "Id": 44,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "840,-12"
+        }
+      },
+      {
+        "Id": 45,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "Sandbox.PlayerController"
+        },
+        "UserData": {
+          "Position": "-780,672"
+        }
+      },
+      {
+        "Id": 46,
+        "Type": "property",
+        "Properties": {
+          "_name": "WorldPosition",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "156,444"
+        }
+      },
+      {
+        "Id": 47,
+        "Type": "property",
+        "Properties": {
+          "_name": "PlayerControllerRef",
+          "_type": "PickupableEntity"
+        },
+        "UserData": {
+          "Position": "396,156"
+        }
+      },
+      {
+        "Id": 48,
+        "Type": "property",
+        "Properties": {
+          "_name": "PlayerControllerRef",
+          "_type": "PickupableEntity"
+        },
+        "UserData": {
+          "Position": "-228,432"
+        }
+      },
+      {
+        "Id": 49,
+        "Type": "property",
+        "Properties": {
+          "_name": "PlayerControllerRef",
+          "_type": "PickupableEntity"
+        },
+        "UserData": {
+          "Position": "-936,588"
         }
       }
     ],
     "Links": [
       {
-        "SrcId": 0,
+        "SrcId": 18,
+        "SrcName": "_result",
+        "DstId": 19,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 20,
+        "SrcName": "_result",
+        "DstId": 19,
+        "DstName": "from"
+      },
+      {
+        "SrcId": 29,
+        "SrcName": "_result",
+        "DstId": 19,
+        "DstName": "to"
+      },
+      {
+        "SrcId": 48,
+        "SrcName": "_result",
+        "DstId": 20,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 25,
         "SrcName": "_signal",
-        "DstId": 1,
+        "DstId": 21,
         "DstName": "_signal"
       },
       {
-        "Id": 5,
-        "Value": "UnLocked!",
-        "DstId": 1,
+        "SrcId": 22,
+        "SrcName": "_result",
+        "DstId": 21,
         "DstName": "format"
+      },
+      {
+        "SrcId": 29,
+        "SrcName": "_result",
+        "DstId": 22,
+        "DstName": "input"
+      },
+      {
+        "SrcId": 35,
+        "SrcName": "out",
+        "DstId": 23,
+        "DstName": "obj"
+      },
+      {
+        "SrcId": 21,
+        "SrcName": "_signal",
+        "DstId": 24,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 23,
+        "SrcName": "_result",
+        "DstId": 24,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 31,
+        "SrcName": "_signal",
+        "DstId": 25,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 26,
+        "SrcName": "_result",
+        "DstId": 25,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 46,
+        "SrcName": "_result",
+        "DstId": 26,
+        "DstName": "input"
+      },
+      {
+        "SrcId": 19,
+        "SrcName": "_result",
+        "DstId": 27,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 48,
+        "SrcName": "_result",
+        "DstId": 27,
+        "DstName": "obj"
+      },
+      {
+        "SrcId": 33,
+        "SrcName": "_result",
+        "DstId": 28,
+        "DstName": "a"
+      },
+      {
+        "Id": 57,
+        "Value": {
+          "$type": "Simple",
+          "Type": "System.Single",
+          "Value": 200
+        },
+        "DstId": 28,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 20,
+        "SrcName": "_result",
+        "DstId": 29,
+        "DstName": "_target"
+      },
+      {
+        "Id": 58,
+        "Value": 200,
+        "DstId": 29,
+        "DstName": "maxLength"
+      },
+      {
+        "SrcId": 28,
+        "SrcName": "_result",
+        "DstId": 29,
+        "DstName": "toAdd"
+      },
+      {
+        "SrcId": 27,
+        "SrcName": "_result",
+        "DstId": 30,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 44,
+        "SrcName": "_signal",
+        "DstId": 31,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 30,
+        "SrcName": "_result",
+        "DstId": 31,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 45,
+        "SrcName": "_result",
+        "DstId": 32,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 32,
+        "SrcName": "_result",
+        "DstId": 33,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 31,
+        "SrcName": "_result",
+        "DstId": 34,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 34,
+        "SrcName": "_result",
+        "DstId": 35,
+        "DstName": "in"
+      },
+      {
+        "SrcId": 35,
+        "SrcName": "out",
+        "DstId": 36,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 36,
+        "SrcName": "_result",
+        "DstId": 37,
+        "DstName": "_target"
+      },
+      {
+        "Id": 59,
+        "Value": true,
+        "DstId": 37,
+        "DstName": "includeAncestors"
+      },
+      {
+        "Id": 60,
+        "Value": "door",
+        "DstId": 37,
+        "DstName": "tag"
+      },
+      {
+        "SrcId": 24,
+        "SrcName": "true",
+        "DstId": 38,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 37,
+        "SrcName": "_result",
+        "DstId": 38,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 38,
+        "SrcName": "true",
+        "DstId": 39,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 61,
+        "Value": "YES IT IS DOOR!",
+        "DstId": 39,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 35,
+        "SrcName": "out",
+        "DstId": 40,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 39,
+        "SrcName": "_signal",
+        "DstId": 41,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 40,
+        "SrcName": "_result",
+        "DstId": 41,
+        "DstName": "_target"
+      },
+      {
+        "Id": 72,
+        "Value": false,
+        "DstId": 41,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 42,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 71,
+        "Value": "Fired key Unlocked?",
+        "DstId": 42,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 47,
+        "SrcName": "_result",
+        "DstId": 43,
+        "DstName": "input"
+      },
+      {
+        "SrcId": 42,
+        "SrcName": "_signal",
+        "DstId": 44,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 43,
+        "SrcName": "_result",
+        "DstId": 44,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 49,
+        "SrcName": "_result",
+        "DstId": 45,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 48,
+        "SrcName": "_result",
+        "DstId": 46,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 47,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 48,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 49,
+        "DstName": "_target"
       }
     ]
   },

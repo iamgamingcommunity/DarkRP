@@ -31,6 +31,8 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent ReloadEquipmentSFX { get; set; }
     [Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent[] ExtraSFX { get; set; }
 
+	[Property, Feature("Extra"), Group("Extra")] public GameObject PlayerControllerRef { get; set; }
+
 		//Action Graphs
 	public delegate void ActionGraphFireEquipment();
 	[Property, Feature("Action Graphs"), Group("Action Graphs")]
