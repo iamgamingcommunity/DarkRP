@@ -33,12 +33,20 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent ReloadEquipmentSFX { get; set; }
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent[] ExtraSFX { get; set; }
 	
-	
+	//Actions Graphs
 	[Property, Feature("Action Graphs"), Group("Action Graphs")] public PickupableEntity.ActionGraphFireEquipment GraphFireEquipment { get; set; }
 	[Property, Feature("Action Graphs"), Group("Action Graphs")] public PickupableEntity.ActionGraphAimEquipment GraphAimEquipment { get; set; }
 	[Property, Feature("Action Graphs"), Group("Action Graphs")] public PickupableEntity.ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
 	
+	//Extra Swep Vars
 	[Property, Feature("Extra"), Group("Extra")] public GameObject PlayerControllerRef { get; set; }
+	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraBools> ExtraBools { get; set; }
+	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraInt> ExtraInt { get; set; }
+	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraFloat> ExtraFloat { get; set; }
+	[Property, Feature("Extra"), Group("Extra")] public List<string> ExtraStrings{ get; set; }
+
+
+
 
 	// //Action Graphs
 	public delegate void ActionGraphSetHotBarSwepInfo(PickupableEntity CurrentHotBarSwep);

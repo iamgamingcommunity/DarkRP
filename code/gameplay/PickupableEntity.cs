@@ -47,7 +47,6 @@ public class PickupableEntity : GameResource
 	public ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
 
 
-
 	public struct SwepExtraActionGraphs
 	{
 		[Property] public string ActionName { get; set; } // e.g. "jump", "attack1", "use"
@@ -57,8 +56,32 @@ public class PickupableEntity : GameResource
 
  	[Property, Feature("Action Graphs"), Group("Action Graphs")] public List<SwepExtraActionGraphs> ExtraKeyBindings { get; set; } = new();
 
+	//Extra Variables for using in Actions graphs
+	[Property, Feature("Extra"), Group("Extra")] public List<SwepExtraBools> ExtraBools { get; set; }
+	[Property, Feature("Extra"), Group("Extra")] public List<SwepExtraInt> ExtraInts { get; set; }
+	[Property, Feature("Extra"), Group("Extra")] public List<SwepExtraFloat> ExtraFloats { get; set; }
+	[Property, Feature("Extra"), Group("Extra")] public List<string> ExtraStrings { get; set; }
 
-	
+	public struct SwepExtraBools
+	{
+		[Property, Feature("Extra"), Group("Extra")] public string BoolName { get; set; }
+		[Property, Feature("Extra"), Group("Extra")] public bool ExtraBools { get; set; }
+	}
+
+	public struct SwepExtraInt
+	{
+		[Property, Feature("Extra"), Group("Extra")] public string BoolName { get; set; }
+		[Property, Feature("Extra"), Group("Extra")] public int ExtraInt { get; set; }
+	}
+
+		public struct SwepExtraFloat
+	{
+		[Property, Feature("Extra"), Group("Extra")] public string BoolName { get; set; } 
+		[Property, Feature("Extra"), Group("Extra")] public float ExtraFloat { get; set; }
+	}
+
+
+
 
     public static IReadOnlyList<PickupableEntity> All => _all;
     internal static List<PickupableEntity> _all = new();
