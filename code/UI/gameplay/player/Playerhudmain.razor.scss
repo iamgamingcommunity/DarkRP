@@ -17,4 +17,54 @@ Playerhud
 		font-family: Poppins;
 		color: #fff;
 	}
+
+
+
+}
+
+	.hotbar {
+    position: absolute;
+	top: 30px;
+    bottom: 32px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    .slot {
+        position: relative;
+        width: 132px;
+        height: 132px;
+        background-color: rgb(29,28,28);
+        border-radius: 16px;
+        text-align: center;
+
+        &.active {
+            background-color: rgb(59,57,57);
+        }
+
+        .slot-list {
+            position: absolute;
+            top: 100%; // stack below slot
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 6px;
+
+            .slot-item {
+                width: 100%;
+                height: 64px;
+                background-color: rgba(40,40,40,0.9);
+                border-radius: 8px;
+                line-height: 64px;
+                color: white;
+
+                &.selected {
+                    background-color: rgba(80,80,80,1);
+                }
+            }
+        }
+    }
 }

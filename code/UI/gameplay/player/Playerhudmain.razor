@@ -5,15 +5,60 @@
 
 <root>
 	<div class="title">@MyStringValue</div>
+
+
+ 
+
 </root>
 
+<div class="hotbar">
+    @for ( int i = 0; i < Player.HotBarSlots.Count; i++ )
+    {
+        var slot = Player.HotBarSlots[i];
+        <div class="slot @(IsActiveSlot(i) ? "active" : "")">
+            <span>@(i + 1)</span>
+            
+            @if ( IsActiveSlot(i) ) 
+            {
+                <div class="slot-list">
+                    @for (int j = 0; j < slot.HotBarSlotInfo.HotBarSlotHolder.Count; j++)
+                    {
+                        var item = slot.HotBarSlotInfo.HotBarSlotHolder[j];
+                        <div class="slot-item @(slot.HotBarSlotCurrent == j ? "selected" : "")">
+                            @item.ToString()  @* Replace with icon *@
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>
 @code
 {
+
+
+	[Property] public DarkrpPlayerInfo Player { get; set; }
+
+    private bool IsActiveSlot(int index)
+    {
+        return Player.ActiveSlot == index;
+    }
 
 	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+	protected override int BuildHash()
+{
+    int hash = System.HashCode.Combine(MyStringValue, Player.ActiveSlot, Player.HotBarSlots.Count);
+
+    foreach (var slot in Player.HotBarSlots)
+    {
+        hash = System.HashCode.Combine(hash, slot.HotBarSlotCurrent, slot.HotBarSlotInfo.HotBarSlotHolder.Count);
+    }
+
+    return hash;
+}
+	
 }

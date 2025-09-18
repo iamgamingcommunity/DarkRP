@@ -18,23 +18,31 @@ public sealed class DarkrpPlayerInfo : Component
 
 
 
-	//Player HotBars Vars
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot0 { get; set; }
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot1 { get; set; }
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot2 { get; set; }
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot3 { get; set; }	
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot4 { get; set; }
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot5 { get; set; }
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot6 { get; set; }
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot7 { get; set; }		
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot8 { get; set; }
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot9 { get; set; }	
-
+	// //Player HotBars Vars Old
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot0 { get; set; }
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot1 { get; set; }
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot2 { get; set; }
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot3 { get; set; }	
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot4 { get; set; }
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot5 { get; set; }
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot6 { get; set; }
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot7 { get; set; }		
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot8 { get; set; }
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot9 { get; set; }	
+	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public int MaxSlots { get; set; } = 9;
+	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public List<HotbarSlot> HotBarSlots { get; set; }
+	// Keep track of the currently active slot index
+    public int ActiveSlot { get; set; } = 0;
 
 	public struct HotbarSlot
 	{
+	[KeyProperty, Group("Player Hotbar Info")] public HotbarSlotInfo HotBarSlotInfo { get; set; }
+		[Property] public int HotBarSlotCurrent { get; set; }
+	}
+
+	public struct HotbarSlotInfo
+	{
 	[KeyProperty] public List<PickupableEntity> HotBarSlotHolder { get; set; }
-	[KeyProperty] public int HotBarSlotCurrent { get; set; }
 	}
 
 
