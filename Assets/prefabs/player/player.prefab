@@ -306,7 +306,9 @@
               },
               {
                 "HotBarSlotInfo": {
-                  "HotBarSlotHolder": []
+                  "HotBarSlotHolder": [
+                    "gameplay/equipment/physgun.equip"
+                  ]
                 },
                 "HotBarSlotCurrent": 0
               },
@@ -372,7 +374,7 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "f3a07f66-dc23-4b68-a2ca-47b13abdf0e3",
-              "__changeId": 1927,
+              "__changeId": 2017,
               "UserData": {
                 "Title": "On Component Start",
                 "ReferencedComponentTypes": [
@@ -4588,7 +4590,7 @@
                   "Id": 2857,
                   "Type": "while",
                   "UserData": {
-                    "Position": "744,696"
+                    "Position": "-684,1332"
                   }
                 },
                 {
@@ -4598,14 +4600,14 @@
                     "_var": "SetMouseWheelBool"
                   },
                   "UserData": {
-                    "Position": "720,756"
+                    "Position": "-708,1392"
                   }
                 },
                 {
                   "Id": 2860,
                   "Type": "time.delayobj",
                   "UserData": {
-                    "Position": "1008,720"
+                    "Position": "-420,1356"
                   }
                 },
                 {
@@ -4615,56 +4617,56 @@
                     "_var": "SetMouseWheelBool"
                   },
                   "UserData": {
-                    "Position": "456,696"
+                    "Position": "-972,1332"
                   }
                 },
                 {
                   "Id": 2865,
                   "Type": "input.pressed",
                   "UserData": {
-                    "Position": "1260,792"
+                    "Position": "-168,1428"
                   }
                 },
                 {
                   "Id": 2866,
                   "Type": "if",
                   "UserData": {
-                    "Position": "1260,720"
+                    "Position": "-168,1356"
                   }
                 },
                 {
                   "Id": 2870,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "1668,744"
+                    "Position": "240,1380"
                   }
                 },
                 {
                   "Id": 2877,
                   "Type": "input.pressed",
                   "UserData": {
-                    "Position": "1308,972"
+                    "Position": "-108,2268"
                   }
                 },
                 {
                   "Id": 2878,
                   "Type": "if",
                   "UserData": {
-                    "Position": "1308,900"
+                    "Position": "-108,2196"
                   }
                 },
                 {
                   "Id": 2891,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "1656,924"
+                    "Position": "240,2220"
                   }
                 },
                 {
                   "Id": 2899,
                   "Type": "scene.ref",
                   "UserData": {
-                    "Position": "1476,1080"
+                    "Position": "576,1716"
                   }
                 },
                 {
@@ -4675,7 +4677,7 @@
                     "_type": "PickupableEntityBase"
                   },
                   "UserData": {
-                    "Position": "1728,1128"
+                    "Position": "756,1620"
                   }
                 },
                 {
@@ -4689,7 +4691,7 @@
                     }
                   },
                   "UserData": {
-                    "Position": "1800,1056"
+                    "Position": "936,1548"
                   }
                 },
                 {
@@ -4704,14 +4706,14 @@
                     }
                   },
                   "UserData": {
-                    "Position": "1992,1008"
+                    "Position": "1080,1632"
                   }
                 },
                 {
                   "Id": 2905,
                   "Type": "op.add",
                   "UserData": {
-                    "Position": "2256,1032"
+                    "Position": "1344,1620"
                   }
                 },
                 {
@@ -4725,7 +4727,7 @@
                     }
                   },
                   "UserData": {
-                    "Position": "2172,828"
+                    "Position": "1368,1404"
                   }
                 },
                 {
@@ -4740,7 +4742,208 @@
                     }
                   },
                   "UserData": {
-                    "Position": "2172,924"
+                    "Position": "1356,1536"
+                  }
+                },
+                {
+                  "Id": 3344,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "756,2496"
+                  }
+                },
+                {
+                  "Id": 3345,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraFloat",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "660,2448"
+                  }
+                },
+                {
+                  "Id": 3346,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraFloat"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "840,2376"
+                  }
+                },
+                {
+                  "Id": 3347,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraFloat",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraFloat"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "1008,2448"
+                  }
+                },
+                {
+                  "Id": 3348,
+                  "Type": "op.add",
+                  "UserData": {
+                    "Position": "1272,2436"
+                  }
+                },
+                {
+                  "Id": 3349,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraFloat"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "1284,2232"
+                  }
+                },
+                {
+                  "Id": 3350,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraFloat",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraFloat"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "1284,2352"
+                  }
+                },
+                {
+                  "Id": 3358,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraBools",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "384,1488"
+                  }
+                },
+                {
+                  "Id": 3525,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraBools"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "672,1464"
+                  }
+                },
+                {
+                  "Id": 3528,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraBools",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraBools"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "804,1428"
+                  }
+                },
+                {
+                  "Id": 3529,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "1056,1380"
+                  }
+                },
+                {
+                  "Id": 3530,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraBools",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "324,2316"
+                  }
+                },
+                {
+                  "Id": 3531,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraBools"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "612,2292"
+                  }
+                },
+                {
+                  "Id": 3532,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraBools",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraBools"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "744,2256"
+                  }
+                },
+                {
+                  "Id": 3533,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "996,2208"
+                  }
+                },
+                {
+                  "Id": 3536,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": true,
+                    "_name": "Clamp",
+                    "_type": "System.Single"
+                  },
+                  "UserData": {
+                    "Position": "1464,1632"
+                  }
+                },
+                {
+                  "Id": 3556,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": true,
+                    "_name": "Clamp",
+                    "_type": "System.Single"
+                  },
+                  "UserData": {
+                    "Position": "1332,2472"
                   }
                 }
               ],
@@ -4764,7 +4967,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 2911,
+                  "Id": 3710,
                   "Value": true,
                   "DstId": 7,
                   "DstName": "_value"
@@ -4776,7 +4979,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 2912,
+                  "Id": 3711,
                   "Value": 0.01,
                   "DstId": 14,
                   "DstName": "seconds"
@@ -4800,7 +5003,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2913,
+                  "Id": 3712,
                   "Value": "F2Menu",
                   "DstId": 61,
                   "DstName": "action"
@@ -4830,13 +5033,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2914,
+                  "Id": 3713,
                   "Value": false,
                   "DstId": 82,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 2915,
+                  "Id": 3714,
                   "Value": "gamemode",
                   "DstId": 82,
                   "DstName": "tag"
@@ -4908,7 +5111,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 2916,
+                  "Id": 3715,
                   "Value": "Fire?",
                   "DstId": 191,
                   "DstName": "format"
@@ -4920,7 +5123,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 2917,
+                  "Id": 3716,
                   "Value": "darkrpgamemode",
                   "DstId": 247,
                   "DstName": "name"
@@ -4932,7 +5135,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2918,
+                  "Id": 3717,
                   "Value": "InChildren",
                   "DstId": 249,
                   "DstName": "search"
@@ -4980,7 +5183,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 2919,
+                  "Id": 3718,
                   "Value": true,
                   "DstId": 274,
                   "DstName": "_value"
@@ -4992,7 +5195,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 2920,
+                  "Id": 3719,
                   "Value": 0.01,
                   "DstId": 283,
                   "DstName": "seconds"
@@ -5004,7 +5207,7 @@
                   "DstName": "target"
                 },
                 {
-                  "Id": 2921,
+                  "Id": 3720,
                   "Value": "Slot0",
                   "DstId": 306,
                   "DstName": "action"
@@ -5022,7 +5225,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2922,
+                  "Id": 3721,
                   "Value": "Slot1",
                   "DstId": 310,
                   "DstName": "action"
@@ -5040,7 +5243,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2923,
+                  "Id": 3722,
                   "Value": "Slot2",
                   "DstId": 314,
                   "DstName": "action"
@@ -5058,7 +5261,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2924,
+                  "Id": 3723,
                   "Value": "Slot3",
                   "DstId": 318,
                   "DstName": "action"
@@ -5076,7 +5279,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2925,
+                  "Id": 3724,
                   "Value": "F2Menu",
                   "DstId": 322,
                   "DstName": "action"
@@ -5094,7 +5297,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2926,
+                  "Id": 3725,
                   "Value": "Slot4",
                   "DstId": 357,
                   "DstName": "action"
@@ -5112,7 +5315,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2927,
+                  "Id": 3726,
                   "Value": "Slot5",
                   "DstId": 359,
                   "DstName": "action"
@@ -5130,7 +5333,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2928,
+                  "Id": 3727,
                   "Value": "Slot6",
                   "DstId": 361,
                   "DstName": "action"
@@ -5148,7 +5351,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2929,
+                  "Id": 3728,
                   "Value": "Slot7",
                   "DstId": 363,
                   "DstName": "action"
@@ -5166,7 +5369,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2930,
+                  "Id": 3729,
                   "Value": "Slot8",
                   "DstId": 373,
                   "DstName": "action"
@@ -5184,7 +5387,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2931,
+                  "Id": 3730,
                   "Value": "Slot9",
                   "DstId": 375,
                   "DstName": "action"
@@ -5226,7 +5429,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2932,
+                  "Id": 3731,
                   "Value": 1,
                   "DstId": 451,
                   "DstName": "b"
@@ -5250,7 +5453,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2933,
+                  "Id": 3732,
                   "Value": 0,
                   "DstId": 459,
                   "DstName": "b"
@@ -5286,7 +5489,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2934,
+                  "Id": 3733,
                   "Value": 0,
                   "DstId": 552,
                   "DstName": "index"
@@ -5316,7 +5519,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2935,
+                  "Id": 3734,
                   "Value": "Attack1",
                   "DstId": 597,
                   "DstName": "action"
@@ -5334,7 +5537,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 2936,
+                  "Id": 3735,
                   "Value": "Attack2",
                   "DstId": 601,
                   "DstName": "action"
@@ -5376,7 +5579,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2937,
+                  "Id": 3736,
                   "Value": "Reload",
                   "DstId": 613,
                   "DstName": "action"
@@ -5412,7 +5615,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2938,
+                  "Id": 3737,
                   "Value": 0,
                   "DstId": 621,
                   "DstName": "b"
@@ -5460,13 +5663,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2939,
+                  "Id": 3738,
                   "Value": 1,
                   "DstId": 646,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 2940,
+                  "Id": 3739,
                   "Value": 0,
                   "DstId": 814,
                   "DstName": "index"
@@ -5502,7 +5705,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2941,
+                  "Id": 3740,
                   "Value": 1,
                   "DstId": 823,
                   "DstName": "b"
@@ -5544,7 +5747,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2942,
+                  "Id": 3741,
                   "Value": 1,
                   "DstId": 906,
                   "DstName": "b"
@@ -5568,7 +5771,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2943,
+                  "Id": 3742,
                   "Value": 0,
                   "DstId": 909,
                   "DstName": "b"
@@ -5604,7 +5807,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2944,
+                  "Id": 3743,
                   "Value": 0,
                   "DstId": 913,
                   "DstName": "index"
@@ -5640,7 +5843,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2945,
+                  "Id": 3744,
                   "Value": 0,
                   "DstId": 918,
                   "DstName": "b"
@@ -5688,13 +5891,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2946,
+                  "Id": 3745,
                   "Value": 1,
                   "DstId": 926,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 2947,
+                  "Id": 3746,
                   "Value": 0,
                   "DstId": 927,
                   "DstName": "index"
@@ -5730,7 +5933,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2948,
+                  "Id": 3747,
                   "Value": 1,
                   "DstId": 931,
                   "DstName": "b"
@@ -5760,7 +5963,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2949,
+                  "Id": 3748,
                   "Value": 1,
                   "DstId": 958,
                   "DstName": "b"
@@ -5784,7 +5987,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2950,
+                  "Id": 3749,
                   "Value": 0,
                   "DstId": 961,
                   "DstName": "b"
@@ -5844,7 +6047,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2951,
+                  "Id": 3750,
                   "Value": 0,
                   "DstId": 970,
                   "DstName": "b"
@@ -5892,7 +6095,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2952,
+                  "Id": 3751,
                   "Value": 1,
                   "DstId": 976,
                   "DstName": "_value"
@@ -5922,7 +6125,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2953,
+                  "Id": 3752,
                   "Value": 1,
                   "DstId": 981,
                   "DstName": "b"
@@ -5964,7 +6167,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2954,
+                  "Id": 3753,
                   "Value": 1,
                   "DstId": 1071,
                   "DstName": "b"
@@ -5988,7 +6191,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2955,
+                  "Id": 3754,
                   "Value": 0,
                   "DstId": 1074,
                   "DstName": "b"
@@ -6024,7 +6227,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2956,
+                  "Id": 3755,
                   "Value": 0,
                   "DstId": 1078,
                   "DstName": "index"
@@ -6060,7 +6263,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2957,
+                  "Id": 3756,
                   "Value": 0,
                   "DstId": 1083,
                   "DstName": "b"
@@ -6108,13 +6311,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2958,
+                  "Id": 3757,
                   "Value": 1,
                   "DstId": 1089,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 2959,
+                  "Id": 3758,
                   "Value": 0,
                   "DstId": 1090,
                   "DstName": "index"
@@ -6150,7 +6353,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2960,
+                  "Id": 3759,
                   "Value": 1,
                   "DstId": 1094,
                   "DstName": "b"
@@ -6192,7 +6395,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2961,
+                  "Id": 3760,
                   "Value": 1,
                   "DstId": 1123,
                   "DstName": "b"
@@ -6216,7 +6419,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2962,
+                  "Id": 3761,
                   "Value": 0,
                   "DstId": 1126,
                   "DstName": "b"
@@ -6252,7 +6455,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2963,
+                  "Id": 3762,
                   "Value": 0,
                   "DstId": 1130,
                   "DstName": "index"
@@ -6288,7 +6491,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2964,
+                  "Id": 3763,
                   "Value": 0,
                   "DstId": 1135,
                   "DstName": "b"
@@ -6336,13 +6539,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2965,
+                  "Id": 3764,
                   "Value": 1,
                   "DstId": 1143,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 2966,
+                  "Id": 3765,
                   "Value": 0,
                   "DstId": 1144,
                   "DstName": "index"
@@ -6378,7 +6581,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2967,
+                  "Id": 3766,
                   "Value": 1,
                   "DstId": 1148,
                   "DstName": "b"
@@ -6420,7 +6623,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2968,
+                  "Id": 3767,
                   "Value": 1,
                   "DstId": 1237,
                   "DstName": "b"
@@ -6444,7 +6647,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2969,
+                  "Id": 3768,
                   "Value": 0,
                   "DstId": 1240,
                   "DstName": "b"
@@ -6480,7 +6683,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2970,
+                  "Id": 3769,
                   "Value": 0,
                   "DstId": 1244,
                   "DstName": "index"
@@ -6516,7 +6719,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2971,
+                  "Id": 3770,
                   "Value": 0,
                   "DstId": 1249,
                   "DstName": "b"
@@ -6564,13 +6767,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2972,
+                  "Id": 3771,
                   "Value": 1,
                   "DstId": 1257,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 2973,
+                  "Id": 3772,
                   "Value": 0,
                   "DstId": 1258,
                   "DstName": "index"
@@ -6606,7 +6809,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2974,
+                  "Id": 3773,
                   "Value": 1,
                   "DstId": 1262,
                   "DstName": "b"
@@ -6648,7 +6851,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2975,
+                  "Id": 3774,
                   "Value": 1,
                   "DstId": 1290,
                   "DstName": "b"
@@ -6672,7 +6875,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2976,
+                  "Id": 3775,
                   "Value": 0,
                   "DstId": 1293,
                   "DstName": "b"
@@ -6708,7 +6911,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2977,
+                  "Id": 3776,
                   "Value": 0,
                   "DstId": 1297,
                   "DstName": "index"
@@ -6744,7 +6947,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2978,
+                  "Id": 3777,
                   "Value": 0,
                   "DstId": 1302,
                   "DstName": "b"
@@ -6792,13 +6995,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2979,
+                  "Id": 3778,
                   "Value": 1,
                   "DstId": 1310,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 2980,
+                  "Id": 3779,
                   "Value": 0,
                   "DstId": 1311,
                   "DstName": "index"
@@ -6834,7 +7037,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2981,
+                  "Id": 3780,
                   "Value": 1,
                   "DstId": 1315,
                   "DstName": "b"
@@ -6876,7 +7079,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2982,
+                  "Id": 3781,
                   "Value": 1,
                   "DstId": 1346,
                   "DstName": "b"
@@ -6900,7 +7103,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2983,
+                  "Id": 3782,
                   "Value": 0,
                   "DstId": 1349,
                   "DstName": "b"
@@ -6936,7 +7139,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2984,
+                  "Id": 3783,
                   "Value": 0,
                   "DstId": 1353,
                   "DstName": "index"
@@ -6972,7 +7175,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2985,
+                  "Id": 3784,
                   "Value": 0,
                   "DstId": 1358,
                   "DstName": "b"
@@ -7020,13 +7223,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2986,
+                  "Id": 3785,
                   "Value": 1,
                   "DstId": 1366,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 2987,
+                  "Id": 3786,
                   "Value": 0,
                   "DstId": 1367,
                   "DstName": "index"
@@ -7062,7 +7265,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2988,
+                  "Id": 3787,
                   "Value": 1,
                   "DstId": 1371,
                   "DstName": "b"
@@ -7104,7 +7307,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2989,
+                  "Id": 3788,
                   "Value": 1,
                   "DstId": 1402,
                   "DstName": "b"
@@ -7128,7 +7331,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2990,
+                  "Id": 3789,
                   "Value": 0,
                   "DstId": 1405,
                   "DstName": "b"
@@ -7164,7 +7367,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2991,
+                  "Id": 3790,
                   "Value": 0,
                   "DstId": 1409,
                   "DstName": "index"
@@ -7200,7 +7403,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2992,
+                  "Id": 3791,
                   "Value": 0,
                   "DstId": 1414,
                   "DstName": "b"
@@ -7248,13 +7451,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2993,
+                  "Id": 3792,
                   "Value": 1,
                   "DstId": 1422,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 2994,
+                  "Id": 3793,
                   "Value": 0,
                   "DstId": 1423,
                   "DstName": "index"
@@ -7290,7 +7493,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2995,
+                  "Id": 3794,
                   "Value": 1,
                   "DstId": 1427,
                   "DstName": "b"
@@ -7332,7 +7535,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2996,
+                  "Id": 3795,
                   "Value": 1,
                   "DstId": 1641,
                   "DstName": "b"
@@ -7356,7 +7559,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2997,
+                  "Id": 3796,
                   "Value": 0,
                   "DstId": 1644,
                   "DstName": "b"
@@ -7392,7 +7595,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 2998,
+                  "Id": 3797,
                   "Value": 0,
                   "DstId": 1648,
                   "DstName": "index"
@@ -7428,7 +7631,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 2999,
+                  "Id": 3798,
                   "Value": 0,
                   "DstId": 1653,
                   "DstName": "b"
@@ -7476,13 +7679,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3000,
+                  "Id": 3799,
                   "Value": 1,
                   "DstId": 1661,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 3001,
+                  "Id": 3800,
                   "Value": 0,
                   "DstId": 1662,
                   "DstName": "index"
@@ -7518,7 +7721,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 3002,
+                  "Id": 3801,
                   "Value": 1,
                   "DstId": 1666,
                   "DstName": "b"
@@ -7542,7 +7745,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3003,
+                  "Id": 3802,
                   "Value": 1,
                   "DstId": 1892,
                   "DstName": "index"
@@ -7560,7 +7763,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3004,
+                  "Id": 3803,
                   "Value": 1,
                   "DstId": 1894,
                   "DstName": "index"
@@ -7584,7 +7787,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3005,
+                  "Id": 3804,
                   "Value": 1,
                   "DstId": 1902,
                   "DstName": "index"
@@ -7608,7 +7811,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3006,
+                  "Id": 3805,
                   "Value": 1,
                   "DstId": 1906,
                   "DstName": "index"
@@ -7632,7 +7835,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3007,
+                  "Id": 3806,
                   "Value": 2,
                   "DstId": 1912,
                   "DstName": "index"
@@ -7650,7 +7853,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3008,
+                  "Id": 3807,
                   "Value": 2,
                   "DstId": 1919,
                   "DstName": "index"
@@ -7674,7 +7877,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3009,
+                  "Id": 3808,
                   "Value": 2,
                   "DstId": 1923,
                   "DstName": "index"
@@ -7698,7 +7901,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3010,
+                  "Id": 3809,
                   "Value": 2,
                   "DstId": 1927,
                   "DstName": "index"
@@ -7722,7 +7925,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3011,
+                  "Id": 3810,
                   "Value": 3,
                   "DstId": 1937,
                   "DstName": "index"
@@ -7740,7 +7943,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3012,
+                  "Id": 3811,
                   "Value": 3,
                   "DstId": 2050,
                   "DstName": "index"
@@ -7764,7 +7967,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3013,
+                  "Id": 3812,
                   "Value": 3,
                   "DstId": 2053,
                   "DstName": "index"
@@ -7788,7 +7991,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3014,
+                  "Id": 3813,
                   "Value": 3,
                   "DstId": 2057,
                   "DstName": "index"
@@ -7812,7 +8015,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3015,
+                  "Id": 3814,
                   "Value": 4,
                   "DstId": 2067,
                   "DstName": "index"
@@ -7830,7 +8033,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3016,
+                  "Id": 3815,
                   "Value": 4,
                   "DstId": 2070,
                   "DstName": "index"
@@ -7854,7 +8057,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3017,
+                  "Id": 3816,
                   "Value": 4,
                   "DstId": 2076,
                   "DstName": "index"
@@ -7878,7 +8081,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3018,
+                  "Id": 3817,
                   "Value": 4,
                   "DstId": 2081,
                   "DstName": "index"
@@ -7902,7 +8105,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3019,
+                  "Id": 3818,
                   "Value": 5,
                   "DstId": 2092,
                   "DstName": "index"
@@ -7920,7 +8123,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3020,
+                  "Id": 3819,
                   "Value": 5,
                   "DstId": 2096,
                   "DstName": "index"
@@ -7944,7 +8147,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3021,
+                  "Id": 3820,
                   "Value": 5,
                   "DstId": 2100,
                   "DstName": "index"
@@ -7968,7 +8171,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3022,
+                  "Id": 3821,
                   "Value": 5,
                   "DstId": 2104,
                   "DstName": "index"
@@ -7992,7 +8195,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3023,
+                  "Id": 3822,
                   "Value": 6,
                   "DstId": 2113,
                   "DstName": "index"
@@ -8010,7 +8213,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3024,
+                  "Id": 3823,
                   "Value": 6,
                   "DstId": 2116,
                   "DstName": "index"
@@ -8034,7 +8237,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3025,
+                  "Id": 3824,
                   "Value": 6,
                   "DstId": 2121,
                   "DstName": "index"
@@ -8058,7 +8261,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3026,
+                  "Id": 3825,
                   "Value": 6,
                   "DstId": 2126,
                   "DstName": "index"
@@ -8082,7 +8285,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3027,
+                  "Id": 3826,
                   "Value": 7,
                   "DstId": 2133,
                   "DstName": "index"
@@ -8100,7 +8303,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3028,
+                  "Id": 3827,
                   "Value": 7,
                   "DstId": 2263,
                   "DstName": "index"
@@ -8124,7 +8327,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3029,
+                  "Id": 3828,
                   "Value": 7,
                   "DstId": 2268,
                   "DstName": "index"
@@ -8148,7 +8351,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3030,
+                  "Id": 3829,
                   "Value": 7,
                   "DstId": 2273,
                   "DstName": "index"
@@ -8172,7 +8375,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3031,
+                  "Id": 3830,
                   "Value": 8,
                   "DstId": 2279,
                   "DstName": "index"
@@ -8190,7 +8393,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3032,
+                  "Id": 3831,
                   "Value": 8,
                   "DstId": 2283,
                   "DstName": "index"
@@ -8214,7 +8417,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3033,
+                  "Id": 3832,
                   "Value": 8,
                   "DstId": 2288,
                   "DstName": "index"
@@ -8238,7 +8441,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3034,
+                  "Id": 3833,
                   "Value": 8,
                   "DstId": 2293,
                   "DstName": "index"
@@ -8262,7 +8465,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3035,
+                  "Id": 3834,
                   "Value": 9,
                   "DstId": 2299,
                   "DstName": "index"
@@ -8280,7 +8483,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3036,
+                  "Id": 3835,
                   "Value": 9,
                   "DstId": 2303,
                   "DstName": "index"
@@ -8304,7 +8507,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3037,
+                  "Id": 3836,
                   "Value": 9,
                   "DstId": 2307,
                   "DstName": "index"
@@ -8328,7 +8531,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3038,
+                  "Id": 3837,
                   "Value": 9,
                   "DstId": 2311,
                   "DstName": "index"
@@ -8352,7 +8555,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3039,
+                  "Id": 3838,
                   "Value": 0,
                   "DstId": 2320,
                   "DstName": "index"
@@ -8370,7 +8573,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3040,
+                  "Id": 3839,
                   "Value": 0,
                   "DstId": 2324,
                   "DstName": "index"
@@ -8394,7 +8597,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3041,
+                  "Id": 3840,
                   "Value": 0,
                   "DstId": 2329,
                   "DstName": "index"
@@ -8418,7 +8621,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3042,
+                  "Id": 3841,
                   "Value": 0,
                   "DstId": 2333,
                   "DstName": "index"
@@ -8472,7 +8675,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3043,
+                  "Id": 3842,
                   "Value": 0,
                   "DstId": 2362,
                   "DstName": "index"
@@ -8496,7 +8699,7 @@
                   "DstName": "list"
                 },
                 {
-                  "Id": 3044,
+                  "Id": 3843,
                   "Value": 0,
                   "DstId": 2367,
                   "DstName": "index"
@@ -8886,7 +9089,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3045,
+                  "Id": 3844,
                   "Value": 1,
                   "DstId": 2585,
                   "DstName": "_value"
@@ -8910,7 +9113,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3046,
+                  "Id": 3845,
                   "Value": 0.01,
                   "DstId": 2860,
                   "DstName": "seconds"
@@ -8928,13 +9131,13 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3047,
+                  "Id": 3846,
                   "Value": true,
                   "DstId": 2863,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 3048,
+                  "Id": 3847,
                   "Value": "MouseWheelUp",
                   "DstId": 2865,
                   "DstName": "action"
@@ -8958,13 +9161,13 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3049,
+                  "Id": 3848,
                   "Value": "Mouse WHeel Up",
                   "DstId": 2870,
                   "DstName": "format"
                 },
                 {
-                  "Id": 3050,
+                  "Id": 3849,
                   "Value": "MouseWheelDown",
                   "DstId": 2877,
                   "DstName": "action"
@@ -8988,7 +9191,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3051,
+                  "Id": 3850,
                   "Value": "Mouse WHeel Down",
                   "DstId": 2891,
                   "DstName": "format"
@@ -9000,7 +9203,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 3052,
+                  "Id": 3851,
                   "Value": 0,
                   "DstId": 2901,
                   "DstName": "index"
@@ -9024,7 +9227,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 3053,
+                  "Id": 3852,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -9034,13 +9237,13 @@
                   "DstName": "b"
                 },
                 {
-                  "SrcId": 2870,
-                  "SrcName": "_signal",
+                  "SrcId": 3529,
+                  "SrcName": "true",
                   "DstId": 2909,
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 3054,
+                  "Id": 3853,
                   "Value": 0,
                   "DstId": 2909,
                   "DstName": "index"
@@ -9064,10 +9267,194 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 2905,
+                  "SrcId": 3536,
                   "SrcName": "_result",
                   "DstId": 3055,
                   "DstName": "_value"
+                },
+                {
+                  "SrcId": 3344,
+                  "SrcName": "_result",
+                  "DstId": 3345,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 3854,
+                  "Value": 0,
+                  "DstId": 3346,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 3345,
+                  "SrcName": "_result",
+                  "DstId": 3346,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 3346,
+                  "SrcName": "_result",
+                  "DstId": 3347,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 3347,
+                  "SrcName": "_result",
+                  "DstId": 3348,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 3855,
+                  "Value": {
+                    "$type": "Simple",
+                    "Type": "System.Single",
+                    "Value": -50
+                  },
+                  "DstId": 3348,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 3533,
+                  "SrcName": "true",
+                  "DstId": 3349,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 3856,
+                  "Value": 0,
+                  "DstId": 3349,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 3345,
+                  "SrcName": "_result",
+                  "DstId": 3349,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 3350,
+                  "SrcName": "_target",
+                  "DstId": 3349,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 3346,
+                  "SrcName": "_result",
+                  "DstId": 3350,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 3556,
+                  "SrcName": "_result",
+                  "DstId": 3350,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 2899,
+                  "SrcName": "_result",
+                  "DstId": 3358,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 3857,
+                  "Value": 0,
+                  "DstId": 3525,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 3358,
+                  "SrcName": "_result",
+                  "DstId": 3525,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 3525,
+                  "SrcName": "_result",
+                  "DstId": 3528,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 2870,
+                  "SrcName": "_signal",
+                  "DstId": 3529,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 3528,
+                  "SrcName": "_result",
+                  "DstId": 3529,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 3344,
+                  "SrcName": "_result",
+                  "DstId": 3530,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 3858,
+                  "Value": 0,
+                  "DstId": 3531,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 3530,
+                  "SrcName": "_result",
+                  "DstId": 3531,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 3531,
+                  "SrcName": "_result",
+                  "DstId": 3532,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 2891,
+                  "SrcName": "_signal",
+                  "DstId": 3533,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 3532,
+                  "SrcName": "_result",
+                  "DstId": 3533,
+                  "DstName": "condition"
+                },
+                {
+                  "Id": 3859,
+                  "Value": 1E+18,
+                  "DstId": 3536,
+                  "DstName": "max"
+                },
+                {
+                  "Id": 3860,
+                  "Value": 0,
+                  "DstId": 3536,
+                  "DstName": "min"
+                },
+                {
+                  "SrcId": 2905,
+                  "SrcName": "_result",
+                  "DstId": 3536,
+                  "DstName": "value"
+                },
+                {
+                  "Id": 3861,
+                  "Value": 1E+18,
+                  "DstId": 3556,
+                  "DstName": "max"
+                },
+                {
+                  "Id": 3862,
+                  "Value": -1E+18,
+                  "DstId": 3556,
+                  "DstName": "min"
+                },
+                {
+                  "SrcId": 3348,
+                  "SrcName": "_result",
+                  "DstId": 3556,
+                  "DstName": "value"
                 }
               ],
               "Defaults": {
@@ -9334,6 +9721,12 @@
                   "component_type": "Playerhudmain"
                 },
                 "$2899.component": {
+                  "_type": "component",
+                  "component_id": "6abeddab-1711-4ef5-acb9-85f08a513570",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
+                  "component_type": "PickupableEntityBase"
+                },
+                "$3344.component": {
                   "_type": "component",
                   "component_id": "6abeddab-1711-4ef5-acb9-85f08a513570",
                   "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
@@ -12556,7 +12949,7 @@
             "GraphSetHotBarSwepInfo": {
               "__version": 9,
               "__guid": "f9744809-3738-4f92-8fc7-324776074519",
-              "__changeId": 59,
+              "__changeId": 87,
               "UserData": {
                 "Title": "Graph Set Hot Bar Swep Info",
                 "ReferencedComponentTypes": []
@@ -13174,6 +13567,108 @@
                   "UserData": {
                     "Position": "1668,1008"
                   }
+                },
+                {
+                  "Id": 64,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "1500,1164"
+                  }
+                },
+                {
+                  "Id": 65,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraBools",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2304,816"
+                  }
+                },
+                {
+                  "Id": 66,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraFloat",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2604,816"
+                  }
+                },
+                {
+                  "Id": 67,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraInt",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2892,816"
+                  }
+                },
+                {
+                  "Id": 68,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraStrings",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3216,816"
+                  }
+                },
+                {
+                  "Id": 69,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "1200,1152"
+                  }
+                },
+                {
+                  "Id": 70,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraBools",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "1248,1104"
+                  }
+                },
+                {
+                  "Id": 71,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraFloats",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "1344,1272"
+                  }
+                },
+                {
+                  "Id": 72,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraInts",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "1320,1368"
+                  }
+                },
+                {
+                  "Id": 73,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraStrings",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "1308,1464"
+                  }
                 }
               ],
               "Links": [
@@ -13772,7 +14267,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 63,
+                  "Id": 75,
                   "Value": "Fired Set Hot Bar Swep Info",
                   "DstId": 57,
                   "DstName": "format"
@@ -13800,6 +14295,108 @@
                   "SrcName": "_result",
                   "DstId": 61,
                   "DstName": "_target"
+                },
+                {
+                  "SrcId": 60,
+                  "SrcName": "_signal",
+                  "DstId": 65,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_result",
+                  "DstId": 65,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 70,
+                  "SrcName": "_result",
+                  "DstId": 65,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 65,
+                  "SrcName": "_signal",
+                  "DstId": 66,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_result",
+                  "DstId": 66,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 71,
+                  "SrcName": "_result",
+                  "DstId": 66,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 66,
+                  "SrcName": "_signal",
+                  "DstId": 67,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_result",
+                  "DstId": 67,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 72,
+                  "SrcName": "_result",
+                  "DstId": 67,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 67,
+                  "SrcName": "_signal",
+                  "DstId": 68,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_result",
+                  "DstId": 68,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 73,
+                  "SrcName": "_result",
+                  "DstId": 68,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "out",
+                  "DstId": 69,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 69,
+                  "SrcName": "out",
+                  "DstId": 70,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 69,
+                  "SrcName": "out",
+                  "DstId": 71,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 69,
+                  "SrcName": "out",
+                  "DstId": 72,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 69,
+                  "SrcName": "out",
+                  "DstId": 73,
+                  "DstName": "_target"
                 }
               ],
               "Defaults": {
@@ -13822,6 +14419,12 @@
                   "component_type": "PickupableEntityBase"
                 },
                 "$29.component": {
+                  "_type": "component",
+                  "component_id": "6abeddab-1711-4ef5-acb9-85f08a513570",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
+                  "component_type": "PickupableEntityBase"
+                },
+                "$64.component": {
                   "_type": "component",
                   "component_id": "6abeddab-1711-4ef5-acb9-85f08a513570",
                   "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
@@ -13979,7 +14582,7 @@
             ],
             "Children": [
               {
-                "__guid": "1ccaf740-1e50-4023-a3c3-094f06804eca",
+                "__guid": "acf8e66d-679f-44a8-bbdd-542cdcd7112a",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - black_boots",
@@ -13995,7 +14598,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "cb4f4291-5331-4cc1-8aeb-5dbf9abb56ad",
+                    "__guid": "6c19a311-8fb0-4006-97b6-f75310e77427",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -14046,7 +14649,7 @@
                 "Children": []
               },
               {
-                "__guid": "e89739ef-3864-4547-8f08-6361856ee361",
+                "__guid": "2d494d46-6e80-4a1b-9a07-86bf9966bd54",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - rubber_gloves",
@@ -14062,7 +14665,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "1cd85628-be7d-4834-817d-e52e5b78aa1f",
+                    "__guid": "3d4ae878-2fe8-45c6-aa94-c7f0cf1166f3",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -14113,7 +14716,7 @@
                 "Children": []
               },
               {
-                "__guid": "bf301a46-909d-4868-a909-d59fc31c2705",
+                "__guid": "6c144c36-d375-45b8-98dc-f8a394f0febb",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - hair_shortscruffy_brown",
@@ -14129,7 +14732,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "afa8e229-f49a-4949-8129-4a1028c0d582",
+                    "__guid": "9ec48e08-5a17-4076-8ac6-931e45ca5b15",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -14180,7 +14783,7 @@
                 "Children": []
               },
               {
-                "__guid": "20d420e4-5717-4226-b26d-5d2ee2b229d5",
+                "__guid": "242137bc-050d-4252-9e7b-d53be0232c6d",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - medium_beard",
@@ -14196,7 +14799,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "69401d75-7e45-456d-b323-7788eb3c543a",
+                    "__guid": "a1922848-0ac2-4908-b534-61daba4e09c8",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -14247,7 +14850,7 @@
                 "Children": []
               },
               {
-                "__guid": "4f35d302-82b9-4019-9557-33c1da3d1773",
+                "__guid": "e9df8375-81b7-4364-8b3b-c5d2ca302bfc",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - trousers.smart",
@@ -14263,7 +14866,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "0f569ded-8497-49ba-bbdc-865ff216df93",
+                    "__guid": "eacf86b6-ba17-4cf7-aa04-d555f4207a1a",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -14314,7 +14917,7 @@
                 "Children": []
               },
               {
-                "__guid": "d9d1f7c5-4963-4e6a-a06c-789aad3dd0cc",
+                "__guid": "c4c91b87-6847-4660-a44f-60ea222ec065",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - hoodie_black",
@@ -14330,7 +14933,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "f8772aad-0c46-4310-80dc-b676038ebf00",
+                    "__guid": "c9ca2b9d-a66e-4e64-9f38-96b2aabb57a6",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
