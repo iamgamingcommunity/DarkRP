@@ -1,7 +1,7 @@
 using Sandbox;
 
 
-
+[Library("swep", Title = "Swep", Description = "Swep(A.K.A Special Weapon) is a Classic DarkRP Term For Weapons that have special features. In this case, we use this for ANYTHING that can be held by the DarkRP Player.")]
 public class PickupableEntityBase : Component
 {
 
@@ -39,12 +39,15 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Action Graphs"), Group("Action Graphs")] public PickupableEntity.ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
 	
 	//Extra Swep Vars
-	[Property, Feature("Extra"), Group("Extra")] public GameObject PlayerControllerRef { get; set; }
-	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraBools> ExtraBools { get; set; }
-	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraInt> ExtraInt { get; set; }
-	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraFloat> ExtraFloat { get; set; }
+	[Property, Feature("Extra"), Group("Extra")] public GameObject PlayerControllerRef { get; set; } = new();
+	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraBools> ExtraBools { get; set; } = new();
+	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraBools> RunTimeExtraBools { get; set; } = new();
+	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraInt> ExtraInt { get; set; } = new();
+	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraInt> RunTimeExtraInt { get; set; } = new();
+	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraFloat> ExtraFloat { get; set; } = new();
 	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraFloat> RunTimeExtraFloat { get; set; } = new();
-	[Property, Feature("Extra"), Group("Extra")] public List<string> ExtraStrings{ get; set; }
+	[Property, Feature("Extra"), Group("Extra")] public List<string> ExtraStrings{ get; set; } = new();
+	[Property, Feature("Extra"), Group("Extra")] public List<string> RunTimeExtraStrings{ get; set; } = new();
 
 
 

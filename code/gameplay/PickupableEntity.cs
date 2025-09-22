@@ -2,7 +2,7 @@ using Sandbox;
 using System;
 using System.Collections.Generic;
 
-[GameResource("Equipment", "equip", "Defines a PickupableEntity")]
+[GameResource("Swep", "swep", "Swep(A.K.A Special Weapon) Defines anything that is a PickupableEntity that can be held in the DarkRP Player Hands.")]
 public class PickupableEntity : GameResource
 {
 	//PickupableEntity Info
