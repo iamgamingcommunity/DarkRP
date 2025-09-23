@@ -75,9 +75,9 @@ public struct PlayerKeyAction
 
 
 
-	public void FireEquipment ()
+	public void FireEquipment (GameObject PlayerControllerRef)
 	{
-		GraphFireEquipment?.Invoke();
+		GraphFireEquipment?.Invoke(PlayerControllerRef);
 	}
 
 
@@ -170,7 +170,7 @@ public struct PlayerKeyAction
             {
                 Log.Info($"Triggered action: {binding.ActionName}");
 
-                binding.GraphOtherKeybinds?.Invoke(); // execute the Action Graph
+                binding.GraphOtherKeybinds?.Invoke(PlayerControllerRef); // execute the Action Graph
             }
         }
     }

@@ -34,7 +34,7 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Extra"), Group("Extra")] public GameObject PlayerControllerRef { get; set; }
 
 		//Action Graphs
-	public delegate void ActionGraphFireEquipment();
+	public delegate void ActionGraphFireEquipment(GameObject PlayerControllerRef);
 	[Property, Feature("Action Graphs"), Group("Action Graphs")]
 	public ActionGraphFireEquipment GraphFireEquipment { get; set; }
 
