@@ -366,7 +366,7 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "f3a07f66-dc23-4b68-a2ca-47b13abdf0e3",
-              "__changeId": 2246,
+              "__changeId": 2267,
               "UserData": {
                 "Title": "Start DarkRP Player",
                 "ReferencedComponentTypes": [
@@ -4640,21 +4640,21 @@
                   "Id": 2877,
                   "Type": "input.pressed",
                   "UserData": {
-                    "Position": "-108,2268"
+                    "Position": "-420,2280"
                   }
                 },
                 {
                   "Id": 2878,
                   "Type": "if",
                   "UserData": {
-                    "Position": "-108,2196"
+                    "Position": "-420,2208"
                   }
                 },
                 {
                   "Id": 2891,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "240,2220"
+                    "Position": "-72,2232"
                   }
                 },
                 {
@@ -4733,7 +4733,7 @@
                   "Id": 3344,
                   "Type": "scene.ref",
                   "UserData": {
-                    "Position": "1368,2640"
+                    "Position": "972,2580"
                   }
                 },
                 {
@@ -4812,7 +4812,7 @@
                     }
                   },
                   "UserData": {
-                    "Position": "804,1548"
+                    "Position": "876,1608"
                   }
                 },
                 {
@@ -4835,17 +4835,6 @@
                   "Type": "if",
                   "UserData": {
                     "Position": "1452,1404"
-                  }
-                },
-                {
-                  "Id": 3530,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "ExtraBools",
-                    "_type": "PickupableEntityBase"
-                  },
-                  "UserData": {
-                    "Position": "936,2460"
                   }
                 },
                 {
@@ -4920,7 +4909,7 @@
                     }
                   },
                   "UserData": {
-                    "Position": "756,1500"
+                    "Position": "756,1488"
                   }
                 },
                 {
@@ -5054,7 +5043,7 @@
                     "_type": "PickupableEntityBase"
                   },
                   "UserData": {
-                    "Position": "492,1548"
+                    "Position": "528,1632"
                   }
                 },
                 {
@@ -5233,7 +5222,7 @@
                     "_type": "PickupableEntityBase"
                   },
                   "UserData": {
-                    "Position": "216,2484"
+                    "Position": "168,2484"
                   }
                 },
                 {
@@ -5277,6 +5266,85 @@
                   "UserData": {
                     "Position": "2844,396"
                   }
+                },
+                {
+                  "Id": 6116,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "456,1488"
+                  }
+                },
+                {
+                  "Id": 6117,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "480,1428"
+                  }
+                },
+                {
+                  "Id": 6119,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "432,1344"
+                  }
+                },
+                {
+                  "Id": 6120,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "-216,2364"
+                  }
+                },
+                {
+                  "Id": 6121,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RunTimeExtraBools",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "-72,2400"
+                  }
+                },
+                {
+                  "Id": 6122,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "60,2376"
+                  }
+                },
+                {
+                  "Id": 6123,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "84,2316"
+                  }
+                },
+                {
+                  "Id": 6124,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "168,2256"
+                  }
+                },
+                {
+                  "Id": 6127,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RunTimeExtraBools",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "984,2520"
+                  }
                 }
               ],
               "Links": [
@@ -5299,7 +5367,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5602,
+                  "Id": 6299,
                   "Value": true,
                   "DstId": 7,
                   "DstName": "_value"
@@ -5311,7 +5379,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5603,
+                  "Id": 6300,
                   "Value": 0.01,
                   "DstId": 14,
                   "DstName": "seconds"
@@ -5335,7 +5403,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5604,
+                  "Id": 6301,
                   "Value": "F2Menu",
                   "DstId": 61,
                   "DstName": "action"
@@ -5365,13 +5433,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5605,
+                  "Id": 6302,
                   "Value": false,
                   "DstId": 82,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 5606,
+                  "Id": 6303,
                   "Value": "gamemode",
                   "DstId": 82,
                   "DstName": "tag"
@@ -5443,7 +5511,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5607,
+                  "Id": 6304,
                   "Value": "Fire?",
                   "DstId": 191,
                   "DstName": "format"
@@ -5455,7 +5523,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 5608,
+                  "Id": 6305,
                   "Value": "darkrpgamemode",
                   "DstId": 247,
                   "DstName": "name"
@@ -5467,7 +5535,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5609,
+                  "Id": 6306,
                   "Value": "InChildren",
                   "DstId": 249,
                   "DstName": "search"
@@ -5515,7 +5583,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5610,
+                  "Id": 6307,
                   "Value": true,
                   "DstId": 274,
                   "DstName": "_value"
@@ -5527,7 +5595,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5611,
+                  "Id": 6308,
                   "Value": 0.01,
                   "DstId": 283,
                   "DstName": "seconds"
@@ -5539,7 +5607,7 @@
                   "DstName": "target"
                 },
                 {
-                  "Id": 5612,
+                  "Id": 6309,
                   "Value": "Slot0",
                   "DstId": 306,
                   "DstName": "action"
@@ -5557,7 +5625,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5613,
+                  "Id": 6310,
                   "Value": "Slot1",
                   "DstId": 310,
                   "DstName": "action"
@@ -5575,7 +5643,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5614,
+                  "Id": 6311,
                   "Value": "Slot2",
                   "DstId": 314,
                   "DstName": "action"
@@ -5593,7 +5661,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5615,
+                  "Id": 6312,
                   "Value": "Slot3",
                   "DstId": 318,
                   "DstName": "action"
@@ -5611,7 +5679,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5616,
+                  "Id": 6313,
                   "Value": "F2Menu",
                   "DstId": 322,
                   "DstName": "action"
@@ -5629,7 +5697,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5617,
+                  "Id": 6314,
                   "Value": "Slot4",
                   "DstId": 357,
                   "DstName": "action"
@@ -5647,7 +5715,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5618,
+                  "Id": 6315,
                   "Value": "Slot5",
                   "DstId": 359,
                   "DstName": "action"
@@ -5665,7 +5733,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5619,
+                  "Id": 6316,
                   "Value": "Slot6",
                   "DstId": 361,
                   "DstName": "action"
@@ -5683,7 +5751,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5620,
+                  "Id": 6317,
                   "Value": "Slot7",
                   "DstId": 363,
                   "DstName": "action"
@@ -5701,7 +5769,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5621,
+                  "Id": 6318,
                   "Value": "Slot8",
                   "DstId": 373,
                   "DstName": "action"
@@ -5719,7 +5787,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5622,
+                  "Id": 6319,
                   "Value": "Slot9",
                   "DstId": 375,
                   "DstName": "action"
@@ -5761,7 +5829,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5623,
+                  "Id": 6320,
                   "Value": 1,
                   "DstId": 451,
                   "DstName": "b"
@@ -5785,7 +5853,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5624,
+                  "Id": 6321,
                   "Value": 0,
                   "DstId": 459,
                   "DstName": "b"
@@ -5821,7 +5889,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5625,
+                  "Id": 6322,
                   "Value": 0,
                   "DstId": 552,
                   "DstName": "index"
@@ -5851,7 +5919,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5626,
+                  "Id": 6323,
                   "Value": "Attack1",
                   "DstId": 597,
                   "DstName": "action"
@@ -5869,7 +5937,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5627,
+                  "Id": 6324,
                   "Value": "Attack2",
                   "DstId": 601,
                   "DstName": "action"
@@ -5917,7 +5985,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5628,
+                  "Id": 6325,
                   "Value": "Reload",
                   "DstId": 613,
                   "DstName": "action"
@@ -5953,7 +6021,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5629,
+                  "Id": 6326,
                   "Value": 0,
                   "DstId": 621,
                   "DstName": "b"
@@ -6001,13 +6069,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5630,
+                  "Id": 6327,
                   "Value": 1,
                   "DstId": 646,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5631,
+                  "Id": 6328,
                   "Value": 0,
                   "DstId": 814,
                   "DstName": "index"
@@ -6043,7 +6111,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5632,
+                  "Id": 6329,
                   "Value": 1,
                   "DstId": 823,
                   "DstName": "b"
@@ -6085,7 +6153,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5633,
+                  "Id": 6330,
                   "Value": 1,
                   "DstId": 906,
                   "DstName": "b"
@@ -6109,7 +6177,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5634,
+                  "Id": 6331,
                   "Value": 0,
                   "DstId": 909,
                   "DstName": "b"
@@ -6145,7 +6213,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5635,
+                  "Id": 6332,
                   "Value": 0,
                   "DstId": 913,
                   "DstName": "index"
@@ -6181,7 +6249,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5636,
+                  "Id": 6333,
                   "Value": 0,
                   "DstId": 918,
                   "DstName": "b"
@@ -6229,13 +6297,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5637,
+                  "Id": 6334,
                   "Value": 1,
                   "DstId": 926,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5638,
+                  "Id": 6335,
                   "Value": 0,
                   "DstId": 927,
                   "DstName": "index"
@@ -6271,7 +6339,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5639,
+                  "Id": 6336,
                   "Value": 1,
                   "DstId": 931,
                   "DstName": "b"
@@ -6301,7 +6369,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5640,
+                  "Id": 6337,
                   "Value": 1,
                   "DstId": 958,
                   "DstName": "b"
@@ -6325,7 +6393,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5641,
+                  "Id": 6338,
                   "Value": 0,
                   "DstId": 961,
                   "DstName": "b"
@@ -6385,7 +6453,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5642,
+                  "Id": 6339,
                   "Value": 0,
                   "DstId": 970,
                   "DstName": "b"
@@ -6433,7 +6501,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5643,
+                  "Id": 6340,
                   "Value": 1,
                   "DstId": 976,
                   "DstName": "_value"
@@ -6463,7 +6531,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5644,
+                  "Id": 6341,
                   "Value": 1,
                   "DstId": 981,
                   "DstName": "b"
@@ -6505,7 +6573,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5645,
+                  "Id": 6342,
                   "Value": 1,
                   "DstId": 1071,
                   "DstName": "b"
@@ -6529,7 +6597,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5646,
+                  "Id": 6343,
                   "Value": 0,
                   "DstId": 1074,
                   "DstName": "b"
@@ -6565,7 +6633,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5647,
+                  "Id": 6344,
                   "Value": 0,
                   "DstId": 1078,
                   "DstName": "index"
@@ -6601,7 +6669,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5648,
+                  "Id": 6345,
                   "Value": 0,
                   "DstId": 1083,
                   "DstName": "b"
@@ -6649,13 +6717,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5649,
+                  "Id": 6346,
                   "Value": 1,
                   "DstId": 1089,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5650,
+                  "Id": 6347,
                   "Value": 0,
                   "DstId": 1090,
                   "DstName": "index"
@@ -6691,7 +6759,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5651,
+                  "Id": 6348,
                   "Value": 1,
                   "DstId": 1094,
                   "DstName": "b"
@@ -6733,7 +6801,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5652,
+                  "Id": 6349,
                   "Value": 1,
                   "DstId": 1123,
                   "DstName": "b"
@@ -6757,7 +6825,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5653,
+                  "Id": 6350,
                   "Value": 0,
                   "DstId": 1126,
                   "DstName": "b"
@@ -6793,7 +6861,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5654,
+                  "Id": 6351,
                   "Value": 0,
                   "DstId": 1130,
                   "DstName": "index"
@@ -6829,7 +6897,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5655,
+                  "Id": 6352,
                   "Value": 0,
                   "DstId": 1135,
                   "DstName": "b"
@@ -6877,13 +6945,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5656,
+                  "Id": 6353,
                   "Value": 1,
                   "DstId": 1143,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5657,
+                  "Id": 6354,
                   "Value": 0,
                   "DstId": 1144,
                   "DstName": "index"
@@ -6919,7 +6987,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5658,
+                  "Id": 6355,
                   "Value": 1,
                   "DstId": 1148,
                   "DstName": "b"
@@ -6961,7 +7029,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5659,
+                  "Id": 6356,
                   "Value": 1,
                   "DstId": 1237,
                   "DstName": "b"
@@ -6985,7 +7053,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5660,
+                  "Id": 6357,
                   "Value": 0,
                   "DstId": 1240,
                   "DstName": "b"
@@ -7021,7 +7089,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5661,
+                  "Id": 6358,
                   "Value": 0,
                   "DstId": 1244,
                   "DstName": "index"
@@ -7057,7 +7125,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5662,
+                  "Id": 6359,
                   "Value": 0,
                   "DstId": 1249,
                   "DstName": "b"
@@ -7105,13 +7173,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5663,
+                  "Id": 6360,
                   "Value": 1,
                   "DstId": 1257,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5664,
+                  "Id": 6361,
                   "Value": 0,
                   "DstId": 1258,
                   "DstName": "index"
@@ -7147,7 +7215,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5665,
+                  "Id": 6362,
                   "Value": 1,
                   "DstId": 1262,
                   "DstName": "b"
@@ -7189,7 +7257,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5666,
+                  "Id": 6363,
                   "Value": 1,
                   "DstId": 1290,
                   "DstName": "b"
@@ -7213,7 +7281,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5667,
+                  "Id": 6364,
                   "Value": 0,
                   "DstId": 1293,
                   "DstName": "b"
@@ -7249,7 +7317,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5668,
+                  "Id": 6365,
                   "Value": 0,
                   "DstId": 1297,
                   "DstName": "index"
@@ -7285,7 +7353,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5669,
+                  "Id": 6366,
                   "Value": 0,
                   "DstId": 1302,
                   "DstName": "b"
@@ -7333,13 +7401,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5670,
+                  "Id": 6367,
                   "Value": 1,
                   "DstId": 1310,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5671,
+                  "Id": 6368,
                   "Value": 0,
                   "DstId": 1311,
                   "DstName": "index"
@@ -7375,7 +7443,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5672,
+                  "Id": 6369,
                   "Value": 1,
                   "DstId": 1315,
                   "DstName": "b"
@@ -7417,7 +7485,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5673,
+                  "Id": 6370,
                   "Value": 1,
                   "DstId": 1346,
                   "DstName": "b"
@@ -7441,7 +7509,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5674,
+                  "Id": 6371,
                   "Value": 0,
                   "DstId": 1349,
                   "DstName": "b"
@@ -7477,7 +7545,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5675,
+                  "Id": 6372,
                   "Value": 0,
                   "DstId": 1353,
                   "DstName": "index"
@@ -7513,7 +7581,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5676,
+                  "Id": 6373,
                   "Value": 0,
                   "DstId": 1358,
                   "DstName": "b"
@@ -7561,13 +7629,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5677,
+                  "Id": 6374,
                   "Value": 1,
                   "DstId": 1366,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5678,
+                  "Id": 6375,
                   "Value": 0,
                   "DstId": 1367,
                   "DstName": "index"
@@ -7603,7 +7671,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5679,
+                  "Id": 6376,
                   "Value": 1,
                   "DstId": 1371,
                   "DstName": "b"
@@ -7645,7 +7713,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5680,
+                  "Id": 6377,
                   "Value": 1,
                   "DstId": 1402,
                   "DstName": "b"
@@ -7669,7 +7737,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5681,
+                  "Id": 6378,
                   "Value": 0,
                   "DstId": 1405,
                   "DstName": "b"
@@ -7705,7 +7773,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5682,
+                  "Id": 6379,
                   "Value": 0,
                   "DstId": 1409,
                   "DstName": "index"
@@ -7741,7 +7809,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5683,
+                  "Id": 6380,
                   "Value": 0,
                   "DstId": 1414,
                   "DstName": "b"
@@ -7789,13 +7857,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5684,
+                  "Id": 6381,
                   "Value": 1,
                   "DstId": 1422,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5685,
+                  "Id": 6382,
                   "Value": 0,
                   "DstId": 1423,
                   "DstName": "index"
@@ -7831,7 +7899,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5686,
+                  "Id": 6383,
                   "Value": 1,
                   "DstId": 1427,
                   "DstName": "b"
@@ -7873,7 +7941,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5687,
+                  "Id": 6384,
                   "Value": 1,
                   "DstId": 1641,
                   "DstName": "b"
@@ -7897,7 +7965,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5688,
+                  "Id": 6385,
                   "Value": 0,
                   "DstId": 1644,
                   "DstName": "b"
@@ -7933,7 +8001,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5689,
+                  "Id": 6386,
                   "Value": 0,
                   "DstId": 1648,
                   "DstName": "index"
@@ -7969,7 +8037,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5690,
+                  "Id": 6387,
                   "Value": 0,
                   "DstId": 1653,
                   "DstName": "b"
@@ -8017,13 +8085,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5691,
+                  "Id": 6388,
                   "Value": 1,
                   "DstId": 1661,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5692,
+                  "Id": 6389,
                   "Value": 0,
                   "DstId": 1662,
                   "DstName": "index"
@@ -8059,7 +8127,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5693,
+                  "Id": 6390,
                   "Value": 1,
                   "DstId": 1666,
                   "DstName": "b"
@@ -8083,7 +8151,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5694,
+                  "Id": 6391,
                   "Value": 1,
                   "DstId": 1892,
                   "DstName": "index"
@@ -8101,7 +8169,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5695,
+                  "Id": 6392,
                   "Value": 1,
                   "DstId": 1894,
                   "DstName": "index"
@@ -8125,7 +8193,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5696,
+                  "Id": 6393,
                   "Value": 1,
                   "DstId": 1902,
                   "DstName": "index"
@@ -8149,7 +8217,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5697,
+                  "Id": 6394,
                   "Value": 1,
                   "DstId": 1906,
                   "DstName": "index"
@@ -8173,7 +8241,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5698,
+                  "Id": 6395,
                   "Value": 2,
                   "DstId": 1912,
                   "DstName": "index"
@@ -8191,7 +8259,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5699,
+                  "Id": 6396,
                   "Value": 2,
                   "DstId": 1919,
                   "DstName": "index"
@@ -8215,7 +8283,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5700,
+                  "Id": 6397,
                   "Value": 2,
                   "DstId": 1923,
                   "DstName": "index"
@@ -8239,7 +8307,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5701,
+                  "Id": 6398,
                   "Value": 2,
                   "DstId": 1927,
                   "DstName": "index"
@@ -8263,7 +8331,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5702,
+                  "Id": 6399,
                   "Value": 3,
                   "DstId": 1937,
                   "DstName": "index"
@@ -8281,7 +8349,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5703,
+                  "Id": 6400,
                   "Value": 3,
                   "DstId": 2050,
                   "DstName": "index"
@@ -8305,7 +8373,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5704,
+                  "Id": 6401,
                   "Value": 3,
                   "DstId": 2053,
                   "DstName": "index"
@@ -8329,7 +8397,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5705,
+                  "Id": 6402,
                   "Value": 3,
                   "DstId": 2057,
                   "DstName": "index"
@@ -8353,7 +8421,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5706,
+                  "Id": 6403,
                   "Value": 4,
                   "DstId": 2067,
                   "DstName": "index"
@@ -8371,7 +8439,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5707,
+                  "Id": 6404,
                   "Value": 4,
                   "DstId": 2070,
                   "DstName": "index"
@@ -8395,7 +8463,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5708,
+                  "Id": 6405,
                   "Value": 4,
                   "DstId": 2076,
                   "DstName": "index"
@@ -8419,7 +8487,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5709,
+                  "Id": 6406,
                   "Value": 4,
                   "DstId": 2081,
                   "DstName": "index"
@@ -8443,7 +8511,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5710,
+                  "Id": 6407,
                   "Value": 5,
                   "DstId": 2092,
                   "DstName": "index"
@@ -8461,7 +8529,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5711,
+                  "Id": 6408,
                   "Value": 5,
                   "DstId": 2096,
                   "DstName": "index"
@@ -8485,7 +8553,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5712,
+                  "Id": 6409,
                   "Value": 5,
                   "DstId": 2100,
                   "DstName": "index"
@@ -8509,7 +8577,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5713,
+                  "Id": 6410,
                   "Value": 5,
                   "DstId": 2104,
                   "DstName": "index"
@@ -8533,7 +8601,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5714,
+                  "Id": 6411,
                   "Value": 6,
                   "DstId": 2113,
                   "DstName": "index"
@@ -8551,7 +8619,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5715,
+                  "Id": 6412,
                   "Value": 6,
                   "DstId": 2116,
                   "DstName": "index"
@@ -8575,7 +8643,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5716,
+                  "Id": 6413,
                   "Value": 6,
                   "DstId": 2121,
                   "DstName": "index"
@@ -8599,7 +8667,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5717,
+                  "Id": 6414,
                   "Value": 6,
                   "DstId": 2126,
                   "DstName": "index"
@@ -8623,7 +8691,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5718,
+                  "Id": 6415,
                   "Value": 7,
                   "DstId": 2133,
                   "DstName": "index"
@@ -8641,7 +8709,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5719,
+                  "Id": 6416,
                   "Value": 7,
                   "DstId": 2263,
                   "DstName": "index"
@@ -8665,7 +8733,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5720,
+                  "Id": 6417,
                   "Value": 7,
                   "DstId": 2268,
                   "DstName": "index"
@@ -8689,7 +8757,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5721,
+                  "Id": 6418,
                   "Value": 7,
                   "DstId": 2273,
                   "DstName": "index"
@@ -8713,7 +8781,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5722,
+                  "Id": 6419,
                   "Value": 8,
                   "DstId": 2279,
                   "DstName": "index"
@@ -8731,7 +8799,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5723,
+                  "Id": 6420,
                   "Value": 8,
                   "DstId": 2283,
                   "DstName": "index"
@@ -8755,7 +8823,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5724,
+                  "Id": 6421,
                   "Value": 8,
                   "DstId": 2288,
                   "DstName": "index"
@@ -8779,7 +8847,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5725,
+                  "Id": 6422,
                   "Value": 8,
                   "DstId": 2293,
                   "DstName": "index"
@@ -8803,7 +8871,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5726,
+                  "Id": 6423,
                   "Value": 9,
                   "DstId": 2299,
                   "DstName": "index"
@@ -8821,7 +8889,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5727,
+                  "Id": 6424,
                   "Value": 9,
                   "DstId": 2303,
                   "DstName": "index"
@@ -8845,7 +8913,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5728,
+                  "Id": 6425,
                   "Value": 9,
                   "DstId": 2307,
                   "DstName": "index"
@@ -8869,7 +8937,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5729,
+                  "Id": 6426,
                   "Value": 9,
                   "DstId": 2311,
                   "DstName": "index"
@@ -8893,7 +8961,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5730,
+                  "Id": 6427,
                   "Value": 0,
                   "DstId": 2320,
                   "DstName": "index"
@@ -8911,7 +8979,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5731,
+                  "Id": 6428,
                   "Value": 0,
                   "DstId": 2324,
                   "DstName": "index"
@@ -8935,7 +9003,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5732,
+                  "Id": 6429,
                   "Value": 0,
                   "DstId": 2329,
                   "DstName": "index"
@@ -8959,7 +9027,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5733,
+                  "Id": 6430,
                   "Value": 0,
                   "DstId": 2333,
                   "DstName": "index"
@@ -9013,7 +9081,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5734,
+                  "Id": 6431,
                   "Value": 0,
                   "DstId": 2362,
                   "DstName": "index"
@@ -9037,7 +9105,7 @@
                   "DstName": "list"
                 },
                 {
-                  "Id": 5735,
+                  "Id": 6432,
                   "Value": 0,
                   "DstId": 2367,
                   "DstName": "index"
@@ -9427,7 +9495,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5736,
+                  "Id": 6433,
                   "Value": 1,
                   "DstId": 2585,
                   "DstName": "_value"
@@ -9451,7 +9519,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5737,
+                  "Id": 6434,
                   "Value": 0.01,
                   "DstId": 2860,
                   "DstName": "seconds"
@@ -9469,13 +9537,13 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5738,
+                  "Id": 6435,
                   "Value": true,
                   "DstId": 2863,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5739,
+                  "Id": 6436,
                   "Value": "MouseWheelUp",
                   "DstId": 2865,
                   "DstName": "action"
@@ -9499,13 +9567,13 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5740,
+                  "Id": 6437,
                   "Value": "Mouse WHeel Up",
                   "DstId": 2870,
                   "DstName": "format"
                 },
                 {
-                  "Id": 5741,
+                  "Id": 6438,
                   "Value": "MouseWheelDown",
                   "DstId": 2877,
                   "DstName": "action"
@@ -9529,13 +9597,13 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5742,
+                  "Id": 6439,
                   "Value": "Mouse WHeel Down",
                   "DstId": 2891,
                   "DstName": "format"
                 },
                 {
-                  "Id": 5743,
+                  "Id": 6440,
                   "Value": 0,
                   "DstId": 2901,
                   "DstName": "index"
@@ -9559,7 +9627,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5744,
+                  "Id": 6441,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -9575,7 +9643,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5745,
+                  "Id": 6442,
                   "Value": 0,
                   "DstId": 2909,
                   "DstName": "index"
@@ -9605,7 +9673,7 @@
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5746,
+                  "Id": 6443,
                   "Value": 0,
                   "DstId": 3346,
                   "DstName": "index"
@@ -9629,7 +9697,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5747,
+                  "Id": 6444,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -9645,7 +9713,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5748,
+                  "Id": 6445,
                   "Value": 0,
                   "DstId": 3349,
                   "DstName": "index"
@@ -9675,7 +9743,7 @@
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5749,
+                  "Id": 6446,
                   "Value": 0,
                   "DstId": 3525,
                   "DstName": "index"
@@ -9705,19 +9773,13 @@
                   "DstName": "condition"
                 },
                 {
-                  "SrcId": 3344,
-                  "SrcName": "_result",
-                  "DstId": 3530,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 5750,
+                  "Id": 6447,
                   "Value": 0,
                   "DstId": 3531,
                   "DstName": "index"
                 },
                 {
-                  "SrcId": 3530,
+                  "SrcId": 6127,
                   "SrcName": "_result",
                   "DstId": 3531,
                   "DstName": "list"
@@ -9741,13 +9803,13 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 5751,
+                  "Id": 6448,
                   "Value": 1E+18,
                   "DstId": 3536,
                   "DstName": "max"
                 },
                 {
-                  "Id": 5752,
+                  "Id": 6449,
                   "Value": 0,
                   "DstId": 3536,
                   "DstName": "min"
@@ -9759,13 +9821,13 @@
                   "DstName": "value"
                 },
                 {
-                  "Id": 5753,
+                  "Id": 6450,
                   "Value": 1E+18,
                   "DstId": 3556,
                   "DstName": "max"
                 },
                 {
-                  "Id": 5754,
+                  "Id": 6451,
                   "Value": -1E+18,
                   "DstId": 3556,
                   "DstName": "min"
@@ -9789,7 +9851,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5755,
+                  "Id": 6452,
                   "Value": "IsUsingPhysgun?",
                   "DstId": 4018,
                   "DstName": "b"
@@ -9825,13 +9887,13 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5756,
+                  "Id": 6453,
                   "Value": "IsGrabbing?",
                   "DstId": 4023,
                   "DstName": "b"
                 },
                 {
-                  "Id": 5757,
+                  "Id": 6454,
                   "Value": 0,
                   "DstId": 4028,
                   "DstName": "index"
@@ -9855,7 +9917,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5758,
+                  "Id": 6455,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -9871,7 +9933,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5759,
+                  "Id": 6456,
                   "Value": 0,
                   "DstId": 4031,
                   "DstName": "index"
@@ -9901,13 +9963,13 @@
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5760,
+                  "Id": 6457,
                   "Value": 70,
                   "DstId": 4035,
                   "DstName": "max"
                 },
                 {
-                  "Id": 5761,
+                  "Id": 6458,
                   "Value": 0,
                   "DstId": 4035,
                   "DstName": "min"
@@ -9925,8 +9987,8 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 2870,
-                  "SrcName": "_signal",
+                  "SrcId": 6119,
+                  "SrcName": "false",
                   "DstId": 4689,
                   "DstName": "_signal"
                 },
@@ -9955,7 +10017,7 @@
                   "DstName": "format"
                 },
                 {
-                  "Id": 5762,
+                  "Id": 6459,
                   "Value": "SweatyDebugInfo:",
                   "DstId": 5018,
                   "DstName": "format"
@@ -9973,7 +10035,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 5763,
+                  "Id": 6460,
                   "Value": 0,
                   "DstId": 5399,
                   "DstName": "index"
@@ -9997,7 +10059,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5764,
+                  "Id": 6461,
                   "Value": "IsUsingPhysgun?",
                   "DstId": 5401,
                   "DstName": "b"
@@ -10033,13 +10095,13 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5765,
+                  "Id": 6462,
                   "Value": "IsGrabbing?",
                   "DstId": 5404,
                   "DstName": "b"
                 },
                 {
-                  "Id": 5766,
+                  "Id": 6463,
                   "Value": 0,
                   "DstId": 5405,
                   "DstName": "index"
@@ -10063,7 +10125,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5767,
+                  "Id": 6464,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -10079,7 +10141,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5768,
+                  "Id": 6465,
                   "Value": 0,
                   "DstId": 5408,
                   "DstName": "index"
@@ -10109,13 +10171,13 @@
                   "DstName": "_value"
                 },
                 {
-                  "Id": 5769,
+                  "Id": 6466,
                   "Value": 70,
                   "DstId": 5410,
                   "DstName": "max"
                 },
                 {
-                  "Id": 5770,
+                  "Id": 6467,
                   "Value": 25,
                   "DstId": 5410,
                   "DstName": "min"
@@ -10127,8 +10189,8 @@
                   "DstName": "value"
                 },
                 {
-                  "SrcId": 2891,
-                  "SrcName": "_signal",
+                  "SrcId": 6124,
+                  "SrcName": "false",
                   "DstId": 5411,
                   "DstName": "_signal"
                 },
@@ -10166,6 +10228,78 @@
                   "SrcId": 5431,
                   "SrcName": "_result",
                   "DstId": 5432,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 4696,
+                  "SrcName": "_result",
+                  "DstId": 6116,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 6116,
+                  "SrcName": "_result",
+                  "DstId": 6117,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 6468,
+                  "Value": 0,
+                  "DstId": 6117,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 2870,
+                  "SrcName": "_signal",
+                  "DstId": 6119,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 6117,
+                  "SrcName": "_result",
+                  "DstId": 6119,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 6120,
+                  "SrcName": "_result",
+                  "DstId": 6121,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 6121,
+                  "SrcName": "_result",
+                  "DstId": 6122,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 6122,
+                  "SrcName": "_result",
+                  "DstId": 6123,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 6469,
+                  "Value": 0,
+                  "DstId": 6123,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 2891,
+                  "SrcName": "_signal",
+                  "DstId": 6124,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 6123,
+                  "SrcName": "_result",
+                  "DstId": 6124,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 3344,
+                  "SrcName": "_result",
+                  "DstId": 6127,
                   "DstName": "_target"
                 }
               ],
@@ -10453,6 +10587,12 @@
                 "$5777.gameobject": {
                   "_type": "gameobject",
                   "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                },
+                "$6120.component": {
+                  "_type": "component",
+                  "component_id": "6abeddab-1711-4ef5-acb9-85f08a513570",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
+                  "component_type": "PickupableEntityBase"
                 }
               }
             },
@@ -13460,7 +13600,22 @@
                 }
               }
             },
-            "F3Menu": null,
+            "F3Menu": {
+              "__version": 9,
+              "__guid": "b988a390-bcaf-4be1-947e-e97e5cc5b166",
+              "__changeId": 9,
+              "UserData": {
+                "Title": "F 3Menu"
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                }
+              ],
+              "Links": []
+            },
             "F4Menu": null,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -13671,7 +13826,7 @@
             "GraphSetHotBarSwepInfo": {
               "__version": 9,
               "__guid": "f9744809-3738-4f92-8fc7-324776074519",
-              "__changeId": 407,
+              "__changeId": 439,
               "UserData": {
                 "Title": "Graph Set Hot Bar Swep Info",
                 "ReferencedComponentTypes": []
@@ -14418,7 +14573,7 @@
                     "_type": "PickupableEntity"
                   },
                   "UserData": {
-                    "Position": "2592,1368"
+                    "Position": "2400,1236"
                   }
                 },
                 {
@@ -14440,7 +14595,7 @@
                     "_type": "PickupableEntity"
                   },
                   "UserData": {
-                    "Position": "2568,1608"
+                    "Position": "2436,1560"
                   }
                 },
                 {
@@ -14454,7 +14609,7 @@
                     }
                   },
                   "UserData": {
-                    "Position": "2688,1272"
+                    "Position": "2724,1212"
                   }
                 },
                 {
@@ -14490,6 +14645,106 @@
                   },
                   "UserData": {
                     "Position": "1944,876"
+                  }
+                },
+                {
+                  "Id": 150,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "2580,972"
+                  }
+                },
+                {
+                  "Id": 151,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "2412,1164"
+                  }
+                },
+                {
+                  "Id": 152,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "2712,1644"
+                  }
+                },
+                {
+                  "Id": 153,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "2640,1920"
+                  }
+                },
+                {
+                  "Id": 154,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "2556,876"
+                  }
+                },
+                {
+                  "Id": 156,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2508,792"
+                  }
+                },
+                {
+                  "Id": 157,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "2592,1188"
+                  }
+                },
+                {
+                  "Id": 158,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2544,1104"
+                  }
+                },
+                {
+                  "Id": 161,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "2556,1500"
+                  }
+                },
+                {
+                  "Id": 162,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2508,1416"
+                  }
+                },
+                {
+                  "Id": 165,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "2496,1788"
+                  }
+                },
+                {
+                  "Id": 166,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2448,1704"
                   }
                 }
               ],
@@ -15089,7 +15344,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 149,
+                  "Id": 172,
                   "Value": "Fired Set Hot Bar Swep Info",
                   "DstId": 57,
                   "DstName": "format"
@@ -15125,8 +15380,8 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 61,
-                  "SrcName": "_signal",
+                  "SrcId": 156,
+                  "SrcName": "false",
                   "DstId": 99,
                   "DstName": "_signal"
                 },
@@ -15251,8 +15506,8 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 61,
-                  "SrcName": "_signal",
+                  "SrcId": 158,
+                  "SrcName": "false",
                   "DstId": 143,
                   "DstName": "_signal"
                 },
@@ -15263,8 +15518,8 @@
                   "DstName": "enumerable"
                 },
                 {
-                  "SrcId": 61,
-                  "SrcName": "_signal",
+                  "SrcId": 162,
+                  "SrcName": "false",
                   "DstId": 144,
                   "DstName": "_signal"
                 },
@@ -15275,8 +15530,8 @@
                   "DstName": "enumerable"
                 },
                 {
-                  "SrcId": 61,
-                  "SrcName": "_signal",
+                  "SrcId": 166,
+                  "SrcName": "false",
                   "DstId": 145,
                   "DstName": "_signal"
                 },
@@ -15291,6 +15546,126 @@
                   "SrcName": "CurrentHotBarSwep",
                   "DstId": 147,
                   "DstName": "_target"
+                },
+                {
+                  "SrcId": 71,
+                  "SrcName": "_result",
+                  "DstId": 150,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 139,
+                  "SrcName": "_result",
+                  "DstId": 151,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 141,
+                  "SrcName": "_result",
+                  "DstId": 152,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 140,
+                  "SrcName": "_result",
+                  "DstId": 153,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 150,
+                  "SrcName": "_result",
+                  "DstId": 154,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 173,
+                  "Value": 0,
+                  "DstId": 154,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 61,
+                  "SrcName": "_signal",
+                  "DstId": 156,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 154,
+                  "SrcName": "_result",
+                  "DstId": 156,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 151,
+                  "SrcName": "_result",
+                  "DstId": 157,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 174,
+                  "Value": 0,
+                  "DstId": 157,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 61,
+                  "SrcName": "_signal",
+                  "DstId": 158,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 157,
+                  "SrcName": "_result",
+                  "DstId": 158,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 152,
+                  "SrcName": "_result",
+                  "DstId": 161,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 175,
+                  "Value": 0,
+                  "DstId": 161,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 61,
+                  "SrcName": "_signal",
+                  "DstId": 162,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 161,
+                  "SrcName": "_result",
+                  "DstId": 162,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 153,
+                  "SrcName": "_result",
+                  "DstId": 165,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 176,
+                  "Value": 0,
+                  "DstId": 165,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 61,
+                  "SrcName": "_signal",
+                  "DstId": 166,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 165,
+                  "SrcName": "_result",
+                  "DstId": 166,
+                  "DstName": "condition"
                 }
               ],
               "Defaults": {
@@ -15671,7 +16046,7 @@
             ],
             "Children": [
               {
-                "__guid": "d894b7ed-1497-402a-8e8b-4aab9e83d4a8",
+                "__guid": "02e8d5ec-8c56-45b3-abd0-091d2936cd59",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - black_boots",
@@ -15687,7 +16062,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "8e38e082-7f52-4603-be90-893d6e162983",
+                    "__guid": "ad500567-19de-4e55-afa9-3977be794746",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -15738,7 +16113,7 @@
                 "Children": []
               },
               {
-                "__guid": "e3fed450-8d8e-4ac1-af87-6cab98c63a21",
+                "__guid": "c4f785c2-65c9-4202-8178-fff28a898045",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - rubber_gloves",
@@ -15754,7 +16129,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "7dac0863-00e5-4929-a83f-57c32d882fb4",
+                    "__guid": "1f11636c-11b1-44ac-acfa-1c20bbdf3355",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -15805,7 +16180,7 @@
                 "Children": []
               },
               {
-                "__guid": "9905f66b-0f26-44d1-bce9-9bfc667d1e4a",
+                "__guid": "c993a378-2fde-4d5b-9d90-1c80847892f4",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - hair_shortscruffy_brown",
@@ -15821,7 +16196,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "3d27902d-f3e3-4d7d-8c33-d747d4daed4e",
+                    "__guid": "4ba1b230-834f-4914-99de-4768d7452197",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -15872,7 +16247,7 @@
                 "Children": []
               },
               {
-                "__guid": "9948c8c7-8458-4ac7-8946-2413481dc83f",
+                "__guid": "40fdfa0b-9e49-48b8-8dc3-5dd9b19f9a86",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - medium_beard",
@@ -15888,7 +16263,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "5a84b5f3-2e6a-46d3-b862-e0f982ba67e2",
+                    "__guid": "77f69fce-f78a-42ad-97ef-bc4a3b171935",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -15939,7 +16314,7 @@
                 "Children": []
               },
               {
-                "__guid": "1c47181e-64b5-4927-b391-5de13ec22cbc",
+                "__guid": "54b82ff9-f770-416b-8ce3-4a9642aaa930",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - trousers.smart",
@@ -15955,7 +16330,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "74c672fb-c802-4e7f-b45d-9caa195a8e8c",
+                    "__guid": "718a544f-1b22-4f3e-bed5-568eb1254d3e",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -16006,7 +16381,7 @@
                 "Children": []
               },
               {
-                "__guid": "923f1638-d86d-4537-85a0-a56a5f5e8c2f",
+                "__guid": "46e19865-3091-4e4f-a50e-7a4d9c1903eb",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - hoodie_black",
@@ -16022,7 +16397,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "4f7e05ce-304a-41c8-8c5f-ba4d1a661417",
+                    "__guid": "9db4ddfd-1cc6-4ae6-90b8-b0dde107e909",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -16144,7 +16519,7 @@
         ]
       },
       {
-        "__guid": "db777ccf-ecc9-434c-a097-ab3eb6ab67e8",
+        "__guid": "e328ae3e-472b-4d82-8472-3a26830724b8",
         "__version": 1,
         "Flags": 0,
         "Name": "GameObject",
@@ -16158,6 +16533,38 @@
         "NetworkOrphaned": 0,
         "OwnerTransfer": 1,
         "Components": [],
+        "Children": []
+      },
+      {
+        "__guid": "fd242e49-b403-4bb1-97c3-41401fadc28f",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "GameObject",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Money",
+            "__guid": "6ac86105-f0de-40a2-81d1-44b940c448a4",
+            "__enabled": true,
+            "Interacted": null,
+            "IsInteractable": true,
+            "MoneyStackAmount": 0,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ],
         "Children": []
       },
       {

@@ -22,14 +22,17 @@
   "GraphFireEquipment": {
     "__version": 9,
     "__guid": "7c25afc1-5b7e-4995-970f-114ec13b939b",
-    "__changeId": 62,
+    "__changeId": 306,
     "UserData": {
-      "Title": "Graph Fire Equipment",
+      "Title": "Graph Fire Equipment Physgun",
       "ReferencedComponentTypes": [
-        "Sandbox.PlayerController",
+        "PickupableEntityBase",
         "Sandbox.Rigidbody",
-        "PickupableEntityBase"
-      ]
+        "Sandbox.PlayerController"
+      ],
+      "Description": "Fire Logic for Physgun",
+      "Category": "Player",
+      "Icon": "toc"
     },
     "Variables": [
       {
@@ -39,12 +42,19 @@
       {
         "Name": "TempGameObject",
         "Type": "Sandbox.GameObject"
+      },
+      {
+        "Name": "TempPlayerControllerRef",
+        "Type": "Sandbox.GameObject"
       }
     ],
     "Nodes": [
       {
         "Id": 0,
-        "Type": "input"
+        "Type": "input",
+        "UserData": {
+          "Position": "-204,-36"
+        }
       },
       {
         "Id": 1,
@@ -63,17 +73,6 @@
         },
         "UserData": {
           "Position": "348,732"
-        }
-      },
-      {
-        "Id": 3,
-        "Type": "property",
-        "Properties": {
-          "_name": "WorldPosition",
-          "_type": "Sandbox.GameObject"
-        },
-        "UserData": {
-          "Position": "-528,528"
         }
       },
       {
@@ -180,28 +179,6 @@
         }
       },
       {
-        "Id": 15,
-        "Type": "property",
-        "Properties": {
-          "_name": "EyeAngles",
-          "_type": "Sandbox.PlayerController"
-        },
-        "UserData": {
-          "Position": "-708,660"
-        }
-      },
-      {
-        "Id": 16,
-        "Type": "property",
-        "Properties": {
-          "_name": "Forward",
-          "_type": "Angles"
-        },
-        "UserData": {
-          "Position": "-432,708"
-        }
-      },
-      {
         "Id": 17,
         "Type": "property",
         "ParentId": 14,
@@ -225,7 +202,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "1764,900"
+          "Position": "1476,900"
         }
       },
       {
@@ -237,21 +214,21 @@
           "_type": "Sandbox.GameTags"
         },
         "UserData": {
-          "Position": "2028,900"
+          "Position": "1740,900"
         }
       },
       {
         "Id": 21,
         "Type": "if",
         "UserData": {
-          "Position": "2064,816"
+          "Position": "1776,816"
         }
       },
       {
         "Id": 22,
         "Type": "log.info",
         "UserData": {
-          "Position": "288,0"
+          "Position": "348,-36"
         }
       },
       {
@@ -269,16 +246,6 @@
         "Type": "log.info",
         "UserData": {
           "Position": "564,-36"
-        }
-      },
-      {
-        "Id": 25,
-        "Type": "scene.get",
-        "Properties": {
-          "T": "Sandbox.PlayerController"
-        },
-        "UserData": {
-          "Position": "-1056,648"
         }
       },
       {
@@ -304,28 +271,6 @@
         }
       },
       {
-        "Id": 28,
-        "Type": "property",
-        "Properties": {
-          "_name": "PlayerControllerRef",
-          "_type": "PickupableEntity"
-        },
-        "UserData": {
-          "Position": "-504,408"
-        }
-      },
-      {
-        "Id": 29,
-        "Type": "property",
-        "Properties": {
-          "_name": "PlayerControllerRef",
-          "_type": "PickupableEntity"
-        },
-        "UserData": {
-          "Position": "-1212,564"
-        }
-      },
-      {
         "Id": 30,
         "Type": "property",
         "ParentId": 14,
@@ -348,7 +293,7 @@
           "T": "Sandbox.Rigidbody"
         },
         "UserData": {
-          "Position": "3876,1212"
+          "Position": "5388,1200"
         }
       },
       {
@@ -377,14 +322,14 @@
           "_type": "Sandbox.Rigidbody"
         },
         "UserData": {
-          "Position": "4752,888"
+          "Position": "6264,876"
         }
       },
       {
         "Id": 36,
         "Type": "time.delta",
         "UserData": {
-          "Position": "4632,984"
+          "Position": "6144,972"
         }
       },
       {
@@ -401,7 +346,7 @@
         "Id": 38,
         "Type": "while",
         "UserData": {
-          "Position": "3024,852"
+          "Position": "4668,840"
         }
       },
       {
@@ -411,7 +356,7 @@
           "_var": "IsPhysgunMoving"
         },
         "UserData": {
-          "Position": "2904,912"
+          "Position": "4548,900"
         }
       },
       {
@@ -428,7 +373,7 @@
         "Id": 41,
         "Type": "time.delayobj",
         "UserData": {
-          "Position": "3240,864"
+          "Position": "5136,852"
         }
       },
       {
@@ -438,7 +383,7 @@
           "_var": "TempGameObject"
         },
         "UserData": {
-          "Position": "3204,984"
+          "Position": "5100,972"
         }
       },
       {
@@ -517,21 +462,21 @@
           "_type": "Sandbox.Rigidbody"
         },
         "UserData": {
-          "Position": "5112,888"
+          "Position": "6624,876"
         }
       },
       {
         "Id": 51,
         "Type": "input.released",
         "UserData": {
-          "Position": "3852,960"
+          "Position": "5364,948"
         }
       },
       {
         "Id": 52,
         "Type": "if",
         "UserData": {
-          "Position": "3864,876"
+          "Position": "5376,864"
         }
       },
       {
@@ -541,18 +486,7 @@
           "_var": "IsPhysgunMoving"
         },
         "UserData": {
-          "Position": "4092,816"
-        }
-      },
-      {
-        "Id": 54,
-        "Type": "property",
-        "Properties": {
-          "_name": "ExtraFloats",
-          "_type": "PickupableEntity"
-        },
-        "UserData": {
-          "Position": "-588,1056"
+          "Position": "5604,804"
         }
       },
       {
@@ -588,7 +522,7 @@
         "Id": 61,
         "Type": "input.mouse.delta",
         "UserData": {
-          "Position": "9672,1464"
+          "Position": "10476,1512"
         }
       },
       {
@@ -606,7 +540,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "10044,1236"
+          "Position": "10848,1284"
         }
       },
       {
@@ -617,7 +551,7 @@
           "_type": "Vector2"
         },
         "UserData": {
-          "Position": "9864,1416"
+          "Position": "10668,1464"
         }
       },
       {
@@ -628,35 +562,35 @@
           "_type": "Vector2"
         },
         "UserData": {
-          "Position": "9864,1500"
+          "Position": "10668,1548"
         }
       },
       {
         "Id": 66,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "10152,1416"
+          "Position": "10956,1464"
         }
       },
       {
         "Id": 67,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "10152,1500"
+          "Position": "10956,1548"
         }
       },
       {
         "Id": 68,
         "Type": "angles.new",
         "UserData": {
-          "Position": "10332,1404"
+          "Position": "11136,1452"
         }
       },
       {
         "Id": 69,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "10488,1296"
+          "Position": "11292,1344"
         }
       },
       {
@@ -668,7 +602,7 @@
           "_type": "Angles"
         },
         "UserData": {
-          "Position": "10524,1416"
+          "Position": "11328,1464"
         }
       },
       {
@@ -679,18 +613,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "10236,1044"
-        }
-      },
-      {
-        "Id": 72,
-        "Type": "property",
-        "Properties": {
-          "_name": "PlayerControllerRef",
-          "_type": "PickupableEntity"
-        },
-        "UserData": {
-          "Position": "8988,828"
+          "Position": "11040,1092"
         }
       },
       {
@@ -700,7 +623,7 @@
           "T": "Sandbox.PlayerController"
         },
         "UserData": {
-          "Position": "9204,828"
+          "Position": "10008,876"
         }
       },
       {
@@ -711,46 +634,35 @@
           "_type": "Sandbox.PlayerController"
         },
         "UserData": {
-          "Position": "9216,720"
+          "Position": "10020,768"
         }
       },
       {
         "Id": 75,
         "Type": "input.down",
         "UserData": {
-          "Position": "9792,1104"
+          "Position": "10596,1152"
         }
       },
       {
         "Id": 76,
         "Type": "if",
         "UserData": {
-          "Position": "9888,1020"
+          "Position": "10692,1068"
         }
       },
       {
         "Id": 77,
         "Type": "input.released",
         "UserData": {
-          "Position": "8976,1008"
+          "Position": "9780,1056"
         }
       },
       {
         "Id": 78,
         "Type": "if",
         "UserData": {
-          "Position": "8988,936"
-        }
-      },
-      {
-        "Id": 79,
-        "Type": "property",
-        "Properties": {
-          "_name": "PlayerControllerRef",
-          "_type": "PickupableEntity"
-        },
-        "UserData": {
-          "Position": "10632,1152"
+          "Position": "9792,984"
         }
       },
       {
@@ -760,7 +672,7 @@
           "T": "Sandbox.PlayerController"
         },
         "UserData": {
-          "Position": "10848,1152"
+          "Position": "11652,1200"
         }
       },
       {
@@ -771,18 +683,7 @@
           "_type": "Sandbox.PlayerController"
         },
         "UserData": {
-          "Position": "10860,1044"
-        }
-      },
-      {
-        "Id": 82,
-        "Type": "property",
-        "Properties": {
-          "_name": "PlayerControllerRef",
-          "_type": "PickupableEntity"
-        },
-        "UserData": {
-          "Position": "4704,624"
+          "Position": "11664,1092"
         }
       },
       {
@@ -792,7 +693,7 @@
           "T": "Sandbox.PlayerController"
         },
         "UserData": {
-          "Position": "4920,624"
+          "Position": "7056,324"
         }
       },
       {
@@ -803,14 +704,14 @@
           "_type": "Sandbox.PlayerController"
         },
         "UserData": {
-          "Position": "4932,516"
+          "Position": "7068,216"
         }
       },
       {
         "Id": 85,
         "Type": "if",
         "UserData": {
-          "Position": "5532,888"
+          "Position": "7044,876"
         }
       },
       {
@@ -820,7 +721,7 @@
           "T": "Sandbox.Rigidbody"
         },
         "UserData": {
-          "Position": "5568,648"
+          "Position": "7440,540"
         }
       },
       {
@@ -831,7 +732,7 @@
           "_type": "Sandbox.Rigidbody"
         },
         "UserData": {
-          "Position": "5964,612"
+          "Position": "7692,408"
         }
       },
       {
@@ -859,21 +760,21 @@
         "Id": 90,
         "Type": "input.pressed",
         "UserData": {
-          "Position": "5532,984"
+          "Position": "7044,972"
         }
       },
       {
         "Id": 91,
         "Type": "op.andalso",
         "UserData": {
-          "Position": "6300,1020"
+          "Position": "9192,1044"
         }
       },
       {
         "Id": 92,
         "Type": "if",
         "UserData": {
-          "Position": "6288,936"
+          "Position": "9180,960"
         }
       },
       {
@@ -884,14 +785,14 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "7872,-108"
+          "Position": "9876,-744"
         }
       },
       {
         "Id": 94,
         "Type": "input.mouse.delta",
         "UserData": {
-          "Position": "6540,396"
+          "Position": "8544,-240"
         }
       },
       {
@@ -902,7 +803,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "6132,-12"
+          "Position": "8136,-648"
         }
       },
       {
@@ -913,7 +814,7 @@
           "_type": "Vector2"
         },
         "UserData": {
-          "Position": "6720,360"
+          "Position": "8724,-276"
         }
       },
       {
@@ -924,35 +825,35 @@
           "_type": "Vector2"
         },
         "UserData": {
-          "Position": "6720,444"
+          "Position": "8724,-192"
         }
       },
       {
         "Id": 98,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "7008,360"
+          "Position": "9012,-276"
         }
       },
       {
         "Id": 99,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "7008,444"
+          "Position": "9012,-192"
         }
       },
       {
         "Id": 100,
         "Type": "angles.new",
         "UserData": {
-          "Position": "7140,360"
+          "Position": "9144,-276"
         }
       },
       {
         "Id": 101,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "6432,-24"
+          "Position": "8436,-660"
         }
       },
       {
@@ -964,21 +865,21 @@
           "_type": "Angles"
         },
         "UserData": {
-          "Position": "6360,132"
+          "Position": "8364,-504"
         }
       },
       {
         "Id": 103,
         "Type": "input.down",
         "UserData": {
-          "Position": "6036,996"
+          "Position": "8928,1020"
         }
       },
       {
         "Id": 104,
         "Type": "input.down",
         "UserData": {
-          "Position": "6036,1056"
+          "Position": "8928,1080"
         }
       },
       {
@@ -990,7 +891,7 @@
           "_type": "Rotation"
         },
         "UserData": {
-          "Position": "6504,-12"
+          "Position": "8508,-648"
         }
       },
       {
@@ -1001,7 +902,7 @@
           "_type": "Angles"
         },
         "UserData": {
-          "Position": "6756,-12"
+          "Position": "8760,-648"
         }
       },
       {
@@ -1012,14 +913,14 @@
           "_type": "Angles"
         },
         "UserData": {
-          "Position": "6768,96"
+          "Position": "8772,-540"
         }
       },
       {
         "Id": 108,
         "Type": "op.divide",
         "UserData": {
-          "Position": "7116,-12"
+          "Position": "9120,-648"
         }
       },
       {
@@ -1031,14 +932,14 @@
           "_type": "System.Single"
         },
         "UserData": {
-          "Position": "7188,0"
+          "Position": "9192,-636"
         }
       },
       {
         "Id": 110,
         "Type": "op.divide",
         "UserData": {
-          "Position": "7044,120"
+          "Position": "9048,-516"
         }
       },
       {
@@ -1050,14 +951,14 @@
           "_type": "System.Single"
         },
         "UserData": {
-          "Position": "7164,120"
+          "Position": "9168,-516"
         }
       },
       {
         "Id": 112,
         "Type": "angles.new",
         "UserData": {
-          "Position": "7560,-36"
+          "Position": "9564,-672"
         }
       },
       {
@@ -1069,32 +970,21 @@
           "_type": "Angles"
         },
         "UserData": {
-          "Position": "7896,-12"
+          "Position": "9900,-648"
         }
       },
       {
         "Id": 114,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "7392,-24"
+          "Position": "9396,-660"
         }
       },
       {
         "Id": 115,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "7368,108"
-        }
-      },
-      {
-        "Id": 116,
-        "Type": "property",
-        "Properties": {
-          "_name": "PlayerControllerRef",
-          "_type": "PickupableEntity"
-        },
-        "UserData": {
-          "Position": "8244,0"
+          "Position": "9372,-528"
         }
       },
       {
@@ -1104,7 +994,7 @@
           "T": "Sandbox.PlayerController"
         },
         "UserData": {
-          "Position": "8460,0"
+          "Position": "10464,-636"
         }
       },
       {
@@ -1115,18 +1005,7 @@
           "_type": "Sandbox.PlayerController"
         },
         "UserData": {
-          "Position": "8472,-108"
-        }
-      },
-      {
-        "Id": 119,
-        "Type": "property",
-        "Properties": {
-          "_name": "PlayerControllerRef",
-          "_type": "PickupableEntity"
-        },
-        "UserData": {
-          "Position": "3588,516"
+          "Position": "10476,-744"
         }
       },
       {
@@ -1136,18 +1015,7 @@
           "T": "PickupableEntityBase"
         },
         "UserData": {
-          "Position": "3696,444"
-        }
-      },
-      {
-        "Id": 121,
-        "Type": "property",
-        "Properties": {
-          "_name": "ExtraFloat",
-          "_type": "PickupableEntityBase"
-        },
-        "UserData": {
-          "Position": "3828,552"
+          "Position": "5160,216"
         }
       },
       {
@@ -1161,7 +1029,7 @@
           }
         },
         "UserData": {
-          "Position": "4452,384"
+          "Position": "5964,372"
         }
       },
       {
@@ -1175,7 +1043,7 @@
           }
         },
         "UserData": {
-          "Position": "4344,216"
+          "Position": "6144,204"
         }
       },
       {
@@ -1190,7 +1058,7 @@
           }
         },
         "UserData": {
-          "Position": "4632,384"
+          "Position": "6144,372"
         }
       },
       {
@@ -1201,7 +1069,481 @@
           "_type": "PickupableEntityBase"
         },
         "UserData": {
-          "Position": "3960,228"
+          "Position": "5472,216"
+        }
+      },
+      {
+        "Id": 639,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "4896,216"
+        }
+      },
+      {
+        "Id": 640,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "24,-36"
+        }
+      },
+      {
+        "Id": 641,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "-480,324"
+        }
+      },
+      {
+        "Id": 680,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "7008,372"
+        }
+      },
+      {
+        "Id": 681,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "10284,-564"
+        }
+      },
+      {
+        "Id": 682,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "9852,924"
+        }
+      },
+      {
+        "Id": 683,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "11508,1236"
+        }
+      },
+      {
+        "Id": 722,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "3756,1092"
+        }
+      },
+      {
+        "Id": 723,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "3528,1092"
+        }
+      },
+      {
+        "Id": 724,
+        "Type": "property",
+        "Properties": {
+          "_name": "RunTimeExtraBools",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "3768,1056"
+        }
+      },
+      {
+        "Id": 763,
+        "Type": "list.get",
+        "Properties": {
+          "T": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraBools"
+          }
+        },
+        "UserData": {
+          "Position": "3708,948"
+        }
+      },
+      {
+        "Id": 765,
+        "Type": "property",
+        "Properties": {
+          "_name": "ExtraBools",
+          "_type": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraBools"
+          }
+        },
+        "UserData": {
+          "Position": "3876,936"
+        }
+      },
+      {
+        "Id": 767,
+        "Type": "list.set",
+        "Properties": {
+          "T": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraBools"
+          }
+        },
+        "UserData": {
+          "Position": "3960,840"
+        }
+      },
+      {
+        "Id": 811,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "6564,408"
+        }
+      },
+      {
+        "Id": 812,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "6336,408"
+        }
+      },
+      {
+        "Id": 813,
+        "Type": "property",
+        "Properties": {
+          "_name": "RunTimeExtraBools",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "6576,372"
+        }
+      },
+      {
+        "Id": 814,
+        "Type": "list.get",
+        "Properties": {
+          "T": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraBools"
+          }
+        },
+        "UserData": {
+          "Position": "6576,288"
+        }
+      },
+      {
+        "Id": 815,
+        "Type": "property",
+        "Properties": {
+          "_name": "ExtraBools",
+          "_type": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraBools"
+          }
+        },
+        "UserData": {
+          "Position": "6744,276"
+        }
+      },
+      {
+        "Id": 816,
+        "Type": "list.set",
+        "Properties": {
+          "T": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraBools"
+          }
+        },
+        "UserData": {
+          "Position": "6828,180"
+        }
+      },
+      {
+        "Id": 868,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "-792,1236"
+        }
+      },
+      {
+        "Id": 869,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "-576,1236"
+        }
+      },
+      {
+        "Id": 870,
+        "Type": "property",
+        "Properties": {
+          "_name": "RunTimeExtraFloat",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "-240,1236"
+        }
+      },
+      {
+        "Id": 976,
+        "Type": "property",
+        "ParentId": 14,
+        "Properties": {
+          "_name": "Distance",
+          "_type": "Sandbox.SceneTraceResult"
+        }
+      },
+      {
+        "Id": 1914,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "3132,1140"
+        }
+      },
+      {
+        "Id": 1915,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "2904,1140"
+        }
+      },
+      {
+        "Id": 1923,
+        "Type": "property",
+        "Properties": {
+          "_name": "RunTimeExtraFloat",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "3120,1104"
+        }
+      },
+      {
+        "Id": 1924,
+        "Type": "list.get",
+        "Properties": {
+          "T": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraFloat"
+          }
+        },
+        "UserData": {
+          "Position": "3300,1008"
+        }
+      },
+      {
+        "Id": 1926,
+        "Type": "property",
+        "Properties": {
+          "_name": "ExtraFloat",
+          "_type": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraFloat"
+          }
+        },
+        "UserData": {
+          "Position": "3300,912"
+        }
+      },
+      {
+        "Id": 1927,
+        "Type": "list.set",
+        "Properties": {
+          "T": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraFloat"
+          }
+        },
+        "UserData": {
+          "Position": "3588,840"
+        }
+      },
+      {
+        "Id": 2170,
+        "Type": "property",
+        "Properties": {
+          "_name": "Enabled",
+          "_type": "Sandbox.Component"
+        },
+        "UserData": {
+          "Position": "7740,516"
+        }
+      },
+      {
+        "Id": 2221,
+        "Type": "var",
+        "Properties": {
+          "_var": "IsPhysgunMoving"
+        },
+        "UserData": {
+          "Position": "8016,516"
+        }
+      },
+      {
+        "Id": 2224,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "8220,732"
+        }
+      },
+      {
+        "Id": 2225,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "7992,732"
+        }
+      },
+      {
+        "Id": 2226,
+        "Type": "property",
+        "Properties": {
+          "_name": "RunTimeExtraBools",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "8232,696"
+        }
+      },
+      {
+        "Id": 2227,
+        "Type": "list.get",
+        "Properties": {
+          "T": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraBools"
+          }
+        },
+        "UserData": {
+          "Position": "8232,612"
+        }
+      },
+      {
+        "Id": 2228,
+        "Type": "property",
+        "Properties": {
+          "_name": "ExtraBools",
+          "_type": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraBools"
+          }
+        },
+        "UserData": {
+          "Position": "8400,600"
+        }
+      },
+      {
+        "Id": 2229,
+        "Type": "list.set",
+        "Properties": {
+          "T": {
+            "$type": "Nested",
+            "DeclaringType": "PickupableEntity",
+            "Name": "SwepExtraBools"
+          }
+        },
+        "UserData": {
+          "Position": "8484,504"
+        }
+      },
+      {
+        "Id": 2340,
+        "Type": "nop",
+        "UserData": {
+          "Position": "7608,732"
+        }
+      },
+      {
+        "Id": 2341,
+        "Type": "property",
+        "Properties": {
+          "_name": "Tags",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "8604,828"
+        }
+      },
+      {
+        "Id": 2343,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Add",
+          "_type": "Sandbox.GameTags"
+        },
+        "UserData": {
+          "Position": "8676,504"
+        }
+      },
+      {
+        "Id": 2461,
+        "Type": "var",
+        "Properties": {
+          "_var": "IsPhysgunMoving"
+        },
+        "UserData": {
+          "Position": "5808,948"
+        }
+      },
+      {
+        "Id": 2462,
+        "Type": "if",
+        "UserData": {
+          "Position": "6012,852"
         }
       }
     ],
@@ -1223,12 +1565,6 @@
         "SrcName": "_result",
         "DstId": 2,
         "DstName": "to"
-      },
-      {
-        "SrcId": 28,
-        "SrcName": "_result",
-        "DstId": 3,
-        "DstName": "_target"
       },
       {
         "SrcId": 8,
@@ -1291,7 +1627,7 @@
         "DstName": "_target"
       },
       {
-        "SrcId": 28,
+        "SrcId": 641,
         "SrcName": "_result",
         "DstId": 10,
         "DstName": "obj"
@@ -1315,7 +1651,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 562,
+        "Id": 2409,
         "Value": 1E+15,
         "DstId": 12,
         "DstName": "maxLength"
@@ -1345,18 +1681,6 @@
         "DstName": "_target"
       },
       {
-        "SrcId": 25,
-        "SrcName": "_result",
-        "DstId": 15,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 15,
-        "SrcName": "_result",
-        "DstId": 16,
-        "DstName": "_target"
-      },
-      {
         "SrcId": 14,
         "SrcName": "_result",
         "DstId": 17,
@@ -1381,13 +1705,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 563,
+        "Id": 2410,
         "Value": true,
         "DstId": 20,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 564,
+        "Id": 2411,
         "Value": "physgun",
         "DstId": 20,
         "DstName": "tag"
@@ -1405,13 +1729,13 @@
         "DstName": "condition"
       },
       {
-        "SrcId": 0,
+        "SrcId": 640,
         "SrcName": "_signal",
         "DstId": 22,
         "DstName": "_signal"
       },
       {
-        "Id": 565,
+        "Id": 2412,
         "Value": "Fired key physgun?",
         "DstId": 22,
         "DstName": "format"
@@ -1435,13 +1759,7 @@
         "DstName": "format"
       },
       {
-        "SrcId": 29,
-        "SrcName": "_result",
-        "DstId": 25,
-        "DstName": "_this"
-      },
-      {
-        "SrcId": 28,
+        "SrcId": 641,
         "SrcName": "_result",
         "DstId": 26,
         "DstName": "_target"
@@ -1450,18 +1768,6 @@
         "SrcId": 0,
         "SrcName": "_target",
         "DstId": 27,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 0,
-        "SrcName": "_target",
-        "DstId": 28,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 0,
-        "SrcName": "_target",
-        "DstId": 29,
         "DstName": "_target"
       },
       {
@@ -1501,8 +1807,8 @@
         "DstName": "input"
       },
       {
-        "SrcId": 52,
-        "SrcName": "false",
+        "SrcId": 2462,
+        "SrcName": "true",
         "DstId": 35,
         "DstName": "_signal"
       },
@@ -1525,7 +1831,7 @@
         "DstName": "timeDelta"
       },
       {
-        "Id": 566,
+        "Id": 2413,
         "Value": 0.5,
         "DstId": 35,
         "DstName": "timeToArrive"
@@ -1543,7 +1849,7 @@
         "DstName": "_value"
       },
       {
-        "SrcId": 40,
+        "SrcId": 767,
         "SrcName": "_signal",
         "DstId": 38,
         "DstName": "_signal"
@@ -1561,7 +1867,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 567,
+        "Id": 2414,
         "Value": true,
         "DstId": 40,
         "DstName": "_value"
@@ -1573,7 +1879,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 568,
+        "Id": 2415,
         "Value": 0.01,
         "DstId": 41,
         "DstName": "seconds"
@@ -1591,7 +1897,7 @@
         "DstName": "in"
       },
       {
-        "Id": 569,
+        "Id": 2416,
         "Value": "darkrpgamemode",
         "DstId": 44,
         "DstName": "name"
@@ -1603,7 +1909,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 570,
+        "Id": 2417,
         "Value": 1,
         "DstId": 46,
         "DstName": "index"
@@ -1645,13 +1951,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 571,
+        "Id": 2418,
         "Value": "0,0,0",
         "DstId": 50,
         "DstName": "_value"
       },
       {
-        "Id": 572,
+        "Id": 2419,
         "Value": "Attack1",
         "DstId": 51,
         "DstName": "action"
@@ -1675,25 +1981,19 @@
         "DstName": "_signal"
       },
       {
-        "Id": 573,
+        "Id": 2420,
         "Value": false,
         "DstId": 53,
         "DstName": "_value"
       },
       {
-        "SrcId": 0,
-        "SrcName": "_target",
-        "DstId": 54,
-        "DstName": "_target"
-      },
-      {
-        "Id": 574,
+        "Id": 2421,
         "Value": 0,
         "DstId": 55,
         "DstName": "index"
       },
       {
-        "SrcId": 54,
+        "SrcId": 870,
         "SrcName": "_result",
         "DstId": 55,
         "DstName": "list"
@@ -1735,7 +2035,7 @@
         "DstName": "a"
       },
       {
-        "Id": 575,
+        "Id": 2422,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -1751,7 +2051,7 @@
         "DstName": "a"
       },
       {
-        "Id": 576,
+        "Id": 2423,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -1767,7 +2067,7 @@
         "DstName": "pitch"
       },
       {
-        "Id": 577,
+        "Id": 2424,
         "Value": 0,
         "DstId": 68,
         "DstName": "roll"
@@ -1815,13 +2115,7 @@
         "DstName": "_value"
       },
       {
-        "SrcId": 0,
-        "SrcName": "_target",
-        "DstId": 72,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 72,
+        "SrcId": 682,
         "SrcName": "_result",
         "DstId": 73,
         "DstName": "_this"
@@ -1839,13 +2133,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 578,
+        "Id": 2425,
         "Value": true,
         "DstId": 74,
         "DstName": "_value"
       },
       {
-        "Id": 579,
+        "Id": 2426,
         "Value": "Use",
         "DstId": 75,
         "DstName": "action"
@@ -1863,7 +2157,7 @@
         "DstName": "condition"
       },
       {
-        "Id": 580,
+        "Id": 2427,
         "Value": "Use",
         "DstId": 77,
         "DstName": "action"
@@ -1881,13 +2175,7 @@
         "DstName": "condition"
       },
       {
-        "SrcId": 0,
-        "SrcName": "_target",
-        "DstId": 79,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 79,
+        "SrcId": 683,
         "SrcName": "_result",
         "DstId": 80,
         "DstName": "_this"
@@ -1905,25 +2193,19 @@
         "DstName": "_target"
       },
       {
-        "Id": 581,
+        "Id": 2428,
         "Value": false,
         "DstId": 81,
         "DstName": "_value"
       },
       {
-        "SrcId": 0,
-        "SrcName": "_target",
-        "DstId": 82,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 82,
+        "SrcId": 680,
         "SrcName": "_result",
         "DstId": 83,
         "DstName": "_this"
       },
       {
-        "SrcId": 359,
+        "SrcId": 816,
         "SrcName": "_signal",
         "DstId": 84,
         "DstName": "_signal"
@@ -1935,7 +2217,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 582,
+        "Id": 2429,
         "Value": true,
         "DstId": 84,
         "DstName": "_value"
@@ -1953,16 +2235,10 @@
         "DstName": "condition"
       },
       {
-        "SrcId": 62,
+        "SrcId": 2340,
         "SrcName": "out",
         "DstId": 86,
         "DstName": "_this"
-      },
-      {
-        "SrcId": 85,
-        "SrcName": "true",
-        "DstId": 87,
-        "DstName": "_signal"
       },
       {
         "SrcId": 86,
@@ -1971,7 +2247,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 583,
+        "Id": 2430,
         "Value": false,
         "DstId": 87,
         "DstName": "_value"
@@ -1995,13 +2271,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 584,
+        "Id": 2431,
         "Value": true,
         "DstId": 89,
         "DstName": "_value"
       },
       {
-        "Id": 585,
+        "Id": 2432,
         "Value": "Attack2",
         "DstId": 90,
         "DstName": "action"
@@ -2073,7 +2349,7 @@
         "DstName": "a"
       },
       {
-        "Id": 586,
+        "Id": 2433,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2089,7 +2365,7 @@
         "DstName": "a"
       },
       {
-        "Id": 587,
+        "Id": 2434,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2105,7 +2381,7 @@
         "DstName": "pitch"
       },
       {
-        "Id": 588,
+        "Id": 2435,
         "Value": 0,
         "DstId": 100,
         "DstName": "roll"
@@ -2135,13 +2411,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 589,
+        "Id": 2436,
         "Value": "Run",
         "DstId": 103,
         "DstName": "action"
       },
       {
-        "Id": 590,
+        "Id": 2437,
         "Value": "Use",
         "DstId": 104,
         "DstName": "action"
@@ -2171,7 +2447,7 @@
         "DstName": "a"
       },
       {
-        "Id": 591,
+        "Id": 2438,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2193,7 +2469,7 @@
         "DstName": "a"
       },
       {
-        "Id": 592,
+        "Id": 2439,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2215,7 +2491,7 @@
         "DstName": "pitch"
       },
       {
-        "Id": 593,
+        "Id": 2440,
         "Value": 0,
         "DstId": 112,
         "DstName": "roll"
@@ -2239,7 +2515,7 @@
         "DstName": "a"
       },
       {
-        "Id": 594,
+        "Id": 2441,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2255,7 +2531,7 @@
         "DstName": "a"
       },
       {
-        "Id": 595,
+        "Id": 2442,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2265,13 +2541,7 @@
         "DstName": "b"
       },
       {
-        "SrcId": 0,
-        "SrcName": "_target",
-        "DstId": 116,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 116,
+        "SrcId": 681,
         "SrcName": "_result",
         "DstId": 117,
         "DstName": "_this"
@@ -2289,31 +2559,19 @@
         "DstName": "_target"
       },
       {
-        "Id": 596,
+        "Id": 2443,
         "Value": false,
         "DstId": 118,
         "DstName": "_value"
       },
       {
-        "SrcId": 0,
-        "SrcName": "_target",
-        "DstId": 119,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 119,
+        "SrcId": 639,
         "SrcName": "_result",
         "DstId": 120,
         "DstName": "_this"
       },
       {
-        "SrcId": 120,
-        "SrcName": "_result",
-        "DstId": 121,
-        "DstName": "_target"
-      },
-      {
-        "Id": 597,
+        "Id": 2444,
         "Value": 0,
         "DstId": 357,
         "DstName": "index"
@@ -2331,7 +2589,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 598,
+        "Id": 2445,
         "Value": 0,
         "DstId": 359,
         "DstName": "index"
@@ -2355,7 +2613,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 599,
+        "Id": 2446,
         "Value": 2000,
         "DstId": 361,
         "DstName": "_value"
@@ -2365,6 +2623,349 @@
         "SrcName": "_result",
         "DstId": 600,
         "DstName": "_target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 640,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "PlayerControllerRef",
+        "DstId": 640,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 723,
+        "SrcName": "_result",
+        "DstId": 722,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 722,
+        "SrcName": "_result",
+        "DstId": 724,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2447,
+        "Value": 0,
+        "DstId": 763,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 724,
+        "SrcName": "_result",
+        "DstId": 763,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 763,
+        "SrcName": "_result",
+        "DstId": 765,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2448,
+        "Value": true,
+        "DstId": 765,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 1927,
+        "SrcName": "_signal",
+        "DstId": 767,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2449,
+        "Value": 0,
+        "DstId": 767,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 724,
+        "SrcName": "_result",
+        "DstId": 767,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 765,
+        "SrcName": "_target",
+        "DstId": 767,
+        "DstName": "value"
+      },
+      {
+        "SrcId": 812,
+        "SrcName": "_result",
+        "DstId": 811,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 811,
+        "SrcName": "_result",
+        "DstId": 813,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2450,
+        "Value": 0,
+        "DstId": 814,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 813,
+        "SrcName": "_result",
+        "DstId": 814,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 814,
+        "SrcName": "_result",
+        "DstId": 815,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2451,
+        "Value": false,
+        "DstId": 815,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 359,
+        "SrcName": "_signal",
+        "DstId": 816,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2452,
+        "Value": 0,
+        "DstId": 816,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 813,
+        "SrcName": "_result",
+        "DstId": 816,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 815,
+        "SrcName": "_target",
+        "DstId": 816,
+        "DstName": "value"
+      },
+      {
+        "SrcId": 868,
+        "SrcName": "_result",
+        "DstId": 869,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 869,
+        "SrcName": "_result",
+        "DstId": 870,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 14,
+        "SrcName": "_result",
+        "DstId": 976,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 1915,
+        "SrcName": "_result",
+        "DstId": 1914,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 1914,
+        "SrcName": "_result",
+        "DstId": 1923,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2453,
+        "Value": 0,
+        "DstId": 1924,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 1923,
+        "SrcName": "_result",
+        "DstId": 1924,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 1924,
+        "SrcName": "_result",
+        "DstId": 1926,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 976,
+        "SrcName": "_result",
+        "DstId": 1926,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 40,
+        "SrcName": "_signal",
+        "DstId": 1927,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2454,
+        "Value": 0,
+        "DstId": 1927,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 1923,
+        "SrcName": "_result",
+        "DstId": 1927,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 1926,
+        "SrcName": "_target",
+        "DstId": 1927,
+        "DstName": "value"
+      },
+      {
+        "SrcId": 85,
+        "SrcName": "true",
+        "DstId": 2170,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 86,
+        "SrcName": "_result",
+        "DstId": 2170,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2455,
+        "Value": false,
+        "DstId": 2170,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2170,
+        "SrcName": "_signal",
+        "DstId": 2221,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2456,
+        "Value": false,
+        "DstId": 2221,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2225,
+        "SrcName": "_result",
+        "DstId": 2224,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2224,
+        "SrcName": "_result",
+        "DstId": 2226,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2457,
+        "Value": 0,
+        "DstId": 2227,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 2226,
+        "SrcName": "_result",
+        "DstId": 2227,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 2227,
+        "SrcName": "_result",
+        "DstId": 2228,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2458,
+        "Value": false,
+        "DstId": 2228,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2221,
+        "SrcName": "_signal",
+        "DstId": 2229,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2459,
+        "Value": 0,
+        "DstId": 2229,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 2226,
+        "SrcName": "_result",
+        "DstId": 2229,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 2228,
+        "SrcName": "_target",
+        "DstId": 2229,
+        "DstName": "value"
+      },
+      {
+        "SrcId": 62,
+        "SrcName": "out",
+        "DstId": 2340,
+        "DstName": "in"
+      },
+      {
+        "SrcId": 2340,
+        "SrcName": "out",
+        "DstId": 2341,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2229,
+        "SrcName": "_signal",
+        "DstId": 2343,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2341,
+        "SrcName": "_result",
+        "DstId": 2343,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2460,
+        "Value": "Frozen",
+        "DstId": 2343,
+        "DstName": "tags",
+        "DstIndex": 0
+      },
+      {
+        "SrcId": 52,
+        "SrcName": "false",
+        "DstId": 2462,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2461,
+        "SrcName": "_result",
+        "DstId": 2462,
+        "DstName": "condition"
       }
     ]
   },
@@ -2443,7 +3044,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 20,
+        "Id": 30,
         "Value": "TEST",
         "DstId": 9,
         "DstName": "_value"

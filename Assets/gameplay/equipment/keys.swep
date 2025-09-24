@@ -22,7 +22,7 @@
   "GraphFireEquipment": {
     "__version": 9,
     "__guid": "04d4204c-be58-4e43-b9a5-793d302ec9f7",
-    "__changeId": 6,
+    "__changeId": 20,
     "UserData": {
       "Title": "Graph Fire Equipment",
       "ReferencedComponentTypes": [
@@ -30,11 +30,19 @@
         "Sandbox.PlayerController"
       ]
     },
-    "Variables": [],
+    "Variables": [
+      {
+        "Name": "TempPlayerControllerRef",
+        "Type": "Sandbox.GameObject"
+      }
+    ],
     "Nodes": [
       {
         "Id": 0,
-        "Type": "input"
+        "Type": "input",
+        "UserData": {
+          "Position": "-324,0"
+        }
       },
       {
         "Id": 1,
@@ -342,6 +350,36 @@
         "UserData": {
           "Position": "-1284,564"
         }
+      },
+      {
+        "Id": 40,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "-132,0"
+        }
+      },
+      {
+        "Id": 41,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "-12,204"
+        }
+      },
+      {
+        "Id": 49,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "-480,348"
+        }
       }
     ],
     "Links": [
@@ -364,7 +402,7 @@
         "DstName": "to"
       },
       {
-        "SrcId": 31,
+        "SrcId": 49,
         "SrcName": "_result",
         "DstId": 3,
         "DstName": "_target"
@@ -430,7 +468,7 @@
         "DstName": "_target"
       },
       {
-        "SrcId": 31,
+        "SrcId": 49,
         "SrcName": "_result",
         "DstId": 10,
         "DstName": "obj"
@@ -442,7 +480,7 @@
         "DstName": "a"
       },
       {
-        "Id": 54,
+        "Id": 57,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -458,7 +496,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 55,
+        "Id": 58,
         "Value": 200,
         "DstId": 12,
         "DstName": "maxLength"
@@ -524,13 +562,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 56,
+        "Id": 59,
         "Value": true,
         "DstId": 20,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 57,
+        "Id": 60,
         "Value": "door",
         "DstId": 20,
         "DstName": "tag"
@@ -554,7 +592,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 58,
+        "Id": 61,
         "Value": "YES IT IS DOOR!",
         "DstId": 22,
         "DstName": "format"
@@ -578,25 +616,25 @@
         "DstName": "_target"
       },
       {
-        "Id": 59,
+        "Id": 62,
         "Value": true,
         "DstId": 24,
         "DstName": "_value"
       },
       {
-        "SrcId": 0,
+        "SrcId": 40,
         "SrcName": "_signal",
         "DstId": 25,
         "DstName": "_signal"
       },
       {
-        "Id": 60,
+        "Id": 63,
         "Value": "Fired key Lock?",
         "DstId": 25,
         "DstName": "format"
       },
       {
-        "SrcId": 30,
+        "SrcId": 41,
         "SrcName": "_result",
         "DstId": 26,
         "DstName": "input"
@@ -620,7 +658,7 @@
         "DstName": "_this"
       },
       {
-        "SrcId": 31,
+        "SrcId": 49,
         "SrcName": "_result",
         "DstId": 29,
         "DstName": "_target"
@@ -642,13 +680,25 @@
         "SrcName": "_target",
         "DstId": 32,
         "DstName": "_target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 40,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "PlayerControllerRef",
+        "DstId": 40,
+        "DstName": "_value"
       }
     ]
   },
   "GraphAimEquipment": {
     "__version": 9,
     "__guid": "7121d5a0-7bf6-4bf6-8132-afc45451b9ab",
-    "__changeId": 4,
+    "__changeId": 9,
     "UserData": {
       "Title": "Graph Aim Equipment",
       "ReferencedComponentTypes": [
@@ -660,7 +710,10 @@
     "Nodes": [
       {
         "Id": 0,
-        "Type": "input"
+        "Type": "input",
+        "UserData": {
+          "Position": "-108,0"
+        }
       },
       {
         "Id": 1,
@@ -944,7 +997,7 @@
           "_type": "PickupableEntity"
         },
         "UserData": {
-          "Position": "24,132"
+          "Position": "-180,156"
         }
       },
       {
@@ -1068,7 +1121,7 @@
         "DstName": "a"
       },
       {
-        "Id": 47,
+        "Id": 69,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -1084,7 +1137,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 48,
+        "Id": 70,
         "Value": 200,
         "DstId": 12,
         "DstName": "maxLength"
@@ -1150,13 +1203,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 49,
+        "Id": 71,
         "Value": true,
         "DstId": 20,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 50,
+        "Id": 72,
         "Value": "door",
         "DstId": 20,
         "DstName": "tag"
@@ -1180,7 +1233,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 51,
+        "Id": 73,
         "Value": "YES IT IS DOOR!",
         "DstId": 22,
         "DstName": "format"
@@ -1204,7 +1257,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 52,
+        "Id": 74,
         "Value": false,
         "DstId": 24,
         "DstName": "_value"
@@ -1216,7 +1269,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 53,
+        "Id": 75,
         "Value": "Fired key Unlocked?",
         "DstId": 25,
         "DstName": "format"
