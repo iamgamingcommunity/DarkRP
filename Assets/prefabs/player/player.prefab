@@ -366,7 +366,7 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "f3a07f66-dc23-4b68-a2ca-47b13abdf0e3",
-              "__changeId": 2267,
+              "__changeId": 2279,
               "UserData": {
                 "Title": "Start DarkRP Player",
                 "ReferencedComponentTypes": [
@@ -5345,6 +5345,62 @@
                   "UserData": {
                     "Position": "984,2520"
                   }
+                },
+                {
+                  "Id": 6470,
+                  "Type": "scene.find",
+                  "UserData": {
+                    "Position": "-2952,408"
+                  }
+                },
+                {
+                  "Id": 6471,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Children",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "-2772,432"
+                  }
+                },
+                {
+                  "Id": 6472,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "-2508,408"
+                  }
+                },
+                {
+                  "Id": 6477,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-2760,312"
+                  }
+                },
+                {
+                  "Id": 6478,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "-2892,276"
+                  }
+                },
+                {
+                  "Id": 6479,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerCameraRef",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-2364,108"
+                  }
                 }
               ],
               "Links": [
@@ -5493,7 +5549,7 @@
                   "DstName": "input"
                 },
                 {
-                  "SrcId": 191,
+                  "SrcId": 6479,
                   "SrcName": "_signal",
                   "DstId": 183,
                   "DstName": "_signal"
@@ -10301,6 +10357,54 @@
                   "SrcName": "_result",
                   "DstId": 6127,
                   "DstName": "_target"
+                },
+                {
+                  "Id": 6475,
+                  "Value": "darkrpgamemode",
+                  "DstId": 6470,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 6470,
+                  "SrcName": "_result",
+                  "DstId": 6471,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 6476,
+                  "Value": 1,
+                  "DstId": 6472,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 6471,
+                  "SrcName": "_result",
+                  "DstId": 6472,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 6478,
+                  "SrcName": "_result",
+                  "DstId": 6477,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 191,
+                  "SrcName": "_signal",
+                  "DstId": 6479,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 6477,
+                  "SrcName": "_result",
+                  "DstId": 6479,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 6472,
+                  "SrcName": "_result",
+                  "DstId": 6479,
+                  "DstName": "_value"
                 }
               ],
               "Defaults": {
@@ -10593,6 +10697,10 @@
                   "component_id": "6abeddab-1711-4ef5-acb9-85f08a513570",
                   "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
                   "component_type": "PickupableEntityBase"
+                },
+                "$6478.gameobject": {
+                  "_type": "gameobject",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
                 }
               }
             },
@@ -10705,6 +10813,7 @@
                 }
               ]
             },
+            "PlayerCameraRef": null,
             "PlayerCurrentJobTempTime": 0,
             "PlayerDeathMoneyDropAll": false,
             "PlayerDeathMoneyDropAmount": 0,
@@ -13624,7 +13733,7 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "f6e0194b-5847-43bb-b57f-d8a761587eae",
-              "__changeId": 89,
+              "__changeId": 90,
               "UserData": {
                 "Title": "On Component Start",
                 "ReferencedComponentTypes": [
@@ -15344,7 +15453,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 177,
+                  "Id": 172,
                   "Value": "Fired Set Hot Bar Swep Info",
                   "DstId": 57,
                   "DstName": "format"
@@ -15578,7 +15687,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 178,
+                  "Id": 173,
                   "Value": 0,
                   "DstId": 154,
                   "DstName": "b"
@@ -15602,7 +15711,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 179,
+                  "Id": 174,
                   "Value": 0,
                   "DstId": 157,
                   "DstName": "b"
@@ -15626,7 +15735,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 180,
+                  "Id": 175,
                   "Value": 0,
                   "DstId": 161,
                   "DstName": "b"
@@ -15650,7 +15759,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 181,
+                  "Id": 176,
                   "Value": 0,
                   "DstId": 165,
                   "DstName": "b"
@@ -16046,7 +16155,7 @@
             ],
             "Children": [
               {
-                "__guid": "9b12ea7e-d770-4133-b8df-08617dfe6ce3",
+                "__guid": "807fc7b0-189f-4ab9-9878-4dc89918248d",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - black_boots",
@@ -16062,7 +16171,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "c3869068-e1f6-4546-8146-0e917828df87",
+                    "__guid": "054d46fe-bc32-441f-a0b2-a0d969f5eaa5",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -16113,7 +16222,7 @@
                 "Children": []
               },
               {
-                "__guid": "4cce38a6-a702-4c53-aa86-755d11f78a6f",
+                "__guid": "ef879691-28e5-4995-b530-5c061c71cc76",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - rubber_gloves",
@@ -16129,7 +16238,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "7fa28df9-5201-4926-995c-b9ec708aba80",
+                    "__guid": "28ad8a9e-65d0-4b02-b37c-3a15f27122dd",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -16180,7 +16289,7 @@
                 "Children": []
               },
               {
-                "__guid": "913540bd-23bd-4097-ba30-fcd730acc016",
+                "__guid": "a1c6ad2a-509d-414a-aba4-591c06db2d8f",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - hair_shortscruffy_brown",
@@ -16196,7 +16305,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "dc802631-b638-4916-8f50-9acccbb62c21",
+                    "__guid": "3a9cd45e-75b8-41a9-a2a1-89b6926cf580",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -16247,7 +16356,7 @@
                 "Children": []
               },
               {
-                "__guid": "95dd104e-7b64-461f-ade1-f3012c35277b",
+                "__guid": "9399d0e0-198f-40b5-b3c4-7261f579e96c",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - medium_beard",
@@ -16263,7 +16372,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "c1de87de-51d7-4d2b-964f-d996ec25375f",
+                    "__guid": "0eecf699-42fe-4d17-93ac-1d77373f8dc1",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -16314,7 +16423,7 @@
                 "Children": []
               },
               {
-                "__guid": "9168ec78-5cc0-48a1-b41d-7b23614b2969",
+                "__guid": "14b20f46-7055-4c2f-be65-c5764fe5da39",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - trousers.smart",
@@ -16330,7 +16439,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "168b4742-3050-4913-b8c5-01df0a527413",
+                    "__guid": "8fca0c43-ae29-44eb-858f-21da16cded0d",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -16381,7 +16490,7 @@
                 "Children": []
               },
               {
-                "__guid": "75cb53db-aff4-47d6-b7a5-8d1870e24979",
+                "__guid": "85224676-705f-4fa4-9cd2-75898623fd15",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - hoodie_black",
@@ -16397,7 +16506,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "24df3c7a-b3eb-4787-99a4-3c4233e222ae",
+                    "__guid": "7902c0cb-8815-4bdc-b4a8-d015b7c0e4cf",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -16517,6 +16626,23 @@
             "Children": []
           }
         ]
+      },
+      {
+        "__guid": "0f844576-c701-4c14-8cce-9e6aa64c4f2c",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "GameObject",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
       },
       {
         "__guid": "29225860-5a3d-4207-a6ec-b14120b5d7c4",

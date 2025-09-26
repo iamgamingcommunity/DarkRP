@@ -57,7 +57,7 @@ public sealed class DarkrpPlayerInfo : Component
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public bool DropPlayerMoneyOnDeath { get; set; }
 	[Property, ShowIf ( nameof( DropPlayerMoneyOnDeath ), true), Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public bool PlayerDeathMoneyDropAll{ get; set; }
 	[Property, ShowIf ( nameof( DropPlayerMoneyOnDeath ), true), Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public int PlayerDeathMoneyDropAmount{ get; set; }
-
+	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public GameObject PlayerCameraRef { get; set; }
 
 
 

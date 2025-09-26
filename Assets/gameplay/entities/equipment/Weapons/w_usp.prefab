@@ -81,11 +81,12 @@
             "Interacted": {
               "__version": 9,
               "__guid": "bd473717-319e-4014-a5bf-7a0a4f1c1b26",
-              "__changeId": 46,
+              "__changeId": 125,
               "UserData": {
                 "Title": "Interacted",
                 "ReferencedComponentTypes": [
-                  "PickupableEntityBase"
+                  "PickupableEntityBase",
+                  "DarkrpPlayerInfo"
                 ]
               },
               "Variables": [],
@@ -94,7 +95,7 @@
                   "Id": 0,
                   "Type": "input",
                   "UserData": {
-                    "Position": "-72,-144"
+                    "Position": "-540,-144"
                   }
                 },
                 {
@@ -105,7 +106,7 @@
                     "_type": "Sandbox.Component"
                   },
                   "UserData": {
-                    "Position": "312,108"
+                    "Position": "-540,108"
                   }
                 },
                 {
@@ -115,14 +116,14 @@
                     "T": "PickupableEntityBase"
                   },
                   "UserData": {
-                    "Position": "588,108"
+                    "Position": "-264,108"
                   }
                 },
                 {
                   "Id": 4,
                   "Type": "scene.ref",
                   "UserData": {
-                    "Position": "396,276"
+                    "Position": "156,408"
                   }
                 },
                 {
@@ -133,7 +134,7 @@
                     "_type": "SwepDroppedEntity"
                   },
                   "UserData": {
-                    "Position": "564,288"
+                    "Position": "300,444"
                   }
                 },
                 {
@@ -144,7 +145,7 @@
                     "_type": "PickupableEntityBase"
                   },
                   "UserData": {
-                    "Position": "468,-300"
+                    "Position": "0,-300"
                   }
                 },
                 {
@@ -1032,6 +1033,74 @@
                   "UserData": {
                     "Position": "2244,588"
                   }
+                },
+                {
+                  "Id": 131,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-768,204"
+                  }
+                },
+                {
+                  "Id": 132,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerCameraRef",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-492,180"
+                  }
+                },
+                {
+                  "Id": 134,
+                  "Type": "scene.instantiate",
+                  "UserData": {
+                    "Position": "360,-144"
+                  }
+                },
+                {
+                  "Id": 140,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "viewmodel",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "-192,-120"
+                  }
+                },
+                {
+                  "Id": 143,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldRotation",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "-252,240"
+                  }
+                },
+                {
+                  "Id": 144,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Forward",
+                    "_type": "Rotation"
+                  },
+                  "UserData": {
+                    "Position": "-48,240"
+                  }
+                },
+                {
+                  "Id": 146,
+                  "Type": "op.multiply",
+                  "UserData": {
+                    "Position": "192,240"
+                  }
                 }
               ],
               "Links": [
@@ -1648,13 +1717,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 0,
+                  "SrcId": 134,
                   "SrcName": "_signal",
                   "DstId": 63,
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 108,
+                  "Id": 158,
                   "Value": "Fired Set Hot Bar Swep Info",
                   "DstId": 63,
                   "DstName": "format"
@@ -1888,7 +1957,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 109,
+                  "Id": 159,
                   "Value": 0,
                   "DstId": 88,
                   "DstName": "b"
@@ -1912,7 +1981,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 110,
+                  "Id": 160,
                   "Value": 0,
                   "DstId": 90,
                   "DstName": "b"
@@ -1936,7 +2005,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 111,
+                  "Id": 161,
                   "Value": 0,
                   "DstId": 92,
                   "DstName": "b"
@@ -1960,7 +2029,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 112,
+                  "Id": 162,
                   "Value": 0,
                   "DstId": 94,
                   "DstName": "b"
@@ -1982,6 +2051,76 @@
                   "SrcName": "_result",
                   "DstId": 113,
                   "DstName": "in"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 131,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 131,
+                  "SrcName": "_result",
+                  "DstId": 132,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 134,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 132,
+                  "SrcName": "_result",
+                  "DstId": 134,
+                  "DstName": "parent"
+                },
+                {
+                  "SrcId": 146,
+                  "SrcName": "_result",
+                  "DstId": 134,
+                  "DstName": "position"
+                },
+                {
+                  "SrcId": 140,
+                  "SrcName": "_result",
+                  "DstId": 134,
+                  "DstName": "prefab"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 140,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 132,
+                  "SrcName": "_result",
+                  "DstId": 143,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 143,
+                  "SrcName": "_result",
+                  "DstId": 144,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 144,
+                  "SrcName": "_result",
+                  "DstId": 146,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 163,
+                  "Value": {
+                    "$type": "Simple",
+                    "Type": "Vector3",
+                    "Value": "10,0,0"
+                  },
+                  "DstId": 146,
+                  "DstName": "b"
                 }
               ],
               "Defaults": {
