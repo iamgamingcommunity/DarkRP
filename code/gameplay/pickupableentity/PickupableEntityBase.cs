@@ -81,15 +81,15 @@ public struct PlayerKeyAction
 	}
 
 
-	public void AimEquipment ()
+	public void AimEquipment (GameObject PlayerControllerRef)
 	{
-		GraphAimEquipment?.Invoke();
+		GraphAimEquipment?.Invoke(PlayerControllerRef);
 	}
 
 
-	public void ReloadEquipment ()
+	public void ReloadEquipment (GameObject PlayerControllerRef)
 	{
-		GraphReloadEquipment?.Invoke();
+		GraphReloadEquipment?.Invoke(PlayerControllerRef);
 	}
 
 

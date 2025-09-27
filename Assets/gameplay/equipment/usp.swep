@@ -17,12 +17,12 @@
   "FireEquipmentSFX": null,
   "AimEquipmentSFX": null,
   "ReloadEquipmentSFX": null,
-  "ExtraSFX": null,
+  "ExtraSFX": [],
   "PlayerControllerRef": null,
   "GraphFireEquipment": {
     "__version": 9,
     "__guid": "93fb62a0-7230-443b-a782-d001e232a6f2",
-    "__changeId": 68,
+    "__changeId": 72,
     "UserData": {
       "Title": "Graph Fire Equipment",
       "ReferencedComponentTypes": [
@@ -162,7 +162,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 49,
+        "Id": 53,
         "Value": 0,
         "DstId": 6,
         "DstName": "index"
@@ -192,13 +192,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 50,
+        "Id": 54,
         "Value": "b_attack",
         "DstId": 10,
         "DstName": "v"
       },
       {
-        "Id": 51,
+        "Id": 55,
         "Value": true,
         "DstId": 10,
         "DstName": "value"
@@ -222,7 +222,7 @@
         "DstName": "input"
       },
       {
-        "Id": 52,
+        "Id": 56,
         "Value": 0,
         "DstId": 34,
         "DstName": "index"
@@ -244,27 +244,616 @@
   "GraphAimEquipment": {
     "__version": 9,
     "__guid": "44a88ad7-2a4e-4e64-ba14-5290ade4c3a9",
-    "__changeId": 7,
+    "__changeId": 68,
     "UserData": {
       "Title": "Graph Aim Equipment",
-      "ReferencedComponentTypes": []
+      "ReferencedComponentTypes": [
+        "DarkrpPlayerInfo",
+        "Sandbox.SkinnedModelRenderer"
+      ]
+    },
+    "Variables": [
+      {
+        "Name": "IsAimingSwep",
+        "Type": "System.Boolean"
+      }
+    ],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input",
+        "UserData": {
+          "Position": "-564,-0"
+        }
+      },
+      {
+        "Id": 1,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "DarkrpPlayerInfo"
+        },
+        "UserData": {
+          "Position": "-480,348"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "property",
+        "Properties": {
+          "_name": "PlayerCameraRef",
+          "_type": "DarkrpPlayerInfo"
+        },
+        "UserData": {
+          "Position": "-204,348"
+        }
+      },
+      {
+        "Id": 3,
+        "Type": "property",
+        "Properties": {
+          "_name": "Children",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "96,348"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "list.get",
+        "Properties": {
+          "T": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "396,204"
+        }
+      },
+      {
+        "Id": 5,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "Sandbox.SkinnedModelRenderer"
+        },
+        "UserData": {
+          "Position": "408,144"
+        }
+      },
+      {
+        "Id": 7,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "480,-0"
+        }
+      },
+      {
+        "Id": 8,
+        "Type": "sys.tostring",
+        "Properties": {
+          "T": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "420,108"
+        }
+      },
+      {
+        "Id": 9,
+        "Type": "list.get",
+        "Properties": {
+          "T": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "324,324"
+        }
+      },
+      {
+        "Id": 10,
+        "Type": "property",
+        "Properties": {
+          "_name": "Children",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "468,348"
+        }
+      },
+      {
+        "Id": 19,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Set",
+          "_type": "Sandbox.SkinnedModelRenderer"
+        },
+        "UserData": {
+          "Position": "816,-0"
+        }
+      },
+      {
+        "Id": 42,
+        "Type": "while",
+        "UserData": {
+          "Position": "1512,0"
+        }
+      },
+      {
+        "Id": 43,
+        "Type": "var",
+        "Properties": {
+          "_var": "IsAimingSwep"
+        },
+        "UserData": {
+          "Position": "1344,24"
+        }
+      },
+      {
+        "Id": 44,
+        "Type": "var",
+        "Properties": {
+          "_var": "IsAimingSwep"
+        },
+        "UserData": {
+          "Position": "1092,0"
+        }
+      },
+      {
+        "Id": 46,
+        "Type": "if",
+        "UserData": {
+          "Position": "2160,24"
+        }
+      },
+      {
+        "Id": 52,
+        "Type": "input.released",
+        "UserData": {
+          "Position": "2160,108"
+        }
+      },
+      {
+        "Id": 54,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Set",
+          "_type": "Sandbox.SkinnedModelRenderer"
+        },
+        "UserData": {
+          "Position": "2520,-36"
+        }
+      },
+      {
+        "Id": 63,
+        "Type": "time.delayobj",
+        "UserData": {
+          "Position": "1848,24"
+        }
+      },
+      {
+        "Id": 76,
+        "Type": "var",
+        "Properties": {
+          "_var": "IsAimingSwep"
+        },
+        "UserData": {
+          "Position": "2820,-36"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "PlayerControllerRef",
+        "DstId": 1,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 1,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2,
+        "SrcName": "_result",
+        "DstId": 3,
+        "DstName": "_target"
+      },
+      {
+        "Id": 99,
+        "Value": 0,
+        "DstId": 4,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 10,
+        "SrcName": "_result",
+        "DstId": 4,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 5,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 7,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 8,
+        "SrcName": "_result",
+        "DstId": 7,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 8,
+        "DstName": "input"
+      },
+      {
+        "Id": 100,
+        "Value": 0,
+        "DstId": 9,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 3,
+        "SrcName": "_result",
+        "DstId": 9,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 9,
+        "SrcName": "_result",
+        "DstId": 10,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 7,
+        "SrcName": "_signal",
+        "DstId": 19,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 5,
+        "SrcName": "_result",
+        "DstId": 19,
+        "DstName": "_target"
+      },
+      {
+        "Id": 101,
+        "Value": "ironsights",
+        "DstId": 19,
+        "DstName": "v"
+      },
+      {
+        "Id": 102,
+        "Value": 1,
+        "DstId": 19,
+        "DstName": "value"
+      },
+      {
+        "SrcId": 44,
+        "SrcName": "_signal",
+        "DstId": 42,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 43,
+        "SrcName": "_result",
+        "DstId": 42,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 19,
+        "SrcName": "_signal",
+        "DstId": 44,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 103,
+        "Value": true,
+        "DstId": 44,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 63,
+        "SrcName": "_signal",
+        "DstId": 46,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 52,
+        "SrcName": "_result",
+        "DstId": 46,
+        "DstName": "condition"
+      },
+      {
+        "Id": 104,
+        "Value": "Attack2",
+        "DstId": 52,
+        "DstName": "action"
+      },
+      {
+        "SrcId": 46,
+        "SrcName": "true",
+        "DstId": 54,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 5,
+        "SrcName": "_result",
+        "DstId": 54,
+        "DstName": "_target"
+      },
+      {
+        "Id": 105,
+        "Value": "ironsights",
+        "DstId": 54,
+        "DstName": "v"
+      },
+      {
+        "Id": 106,
+        "Value": 0,
+        "DstId": 54,
+        "DstName": "value"
+      },
+      {
+        "SrcId": 42,
+        "SrcName": "body",
+        "DstId": 63,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 107,
+        "Value": 0.01,
+        "DstId": 63,
+        "DstName": "seconds"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 63,
+        "DstName": "target"
+      },
+      {
+        "SrcId": 54,
+        "SrcName": "_signal",
+        "DstId": 76,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 108,
+        "Value": false,
+        "DstId": 76,
+        "DstName": "_value"
+      }
+    ]
+  },
+  "GraphReloadEquipment": {
+    "__version": 9,
+    "__guid": "a08eb37f-870c-4257-bab8-4ba4e342221a",
+    "__changeId": 23,
+    "UserData": {
+      "Title": "Graph Reload Equipment",
+      "ReferencedComponentTypes": [
+        "DarkrpPlayerInfo",
+        "Sandbox.SkinnedModelRenderer"
+      ]
     },
     "Variables": [],
     "Nodes": [
       {
         "Id": 0,
         "Type": "input"
+      },
+      {
+        "Id": 1,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "DarkrpPlayerInfo"
+        },
+        "UserData": {
+          "Position": "-480,348"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "property",
+        "Properties": {
+          "_name": "PlayerCameraRef",
+          "_type": "DarkrpPlayerInfo"
+        },
+        "UserData": {
+          "Position": "-204,348"
+        }
+      },
+      {
+        "Id": 3,
+        "Type": "property",
+        "Properties": {
+          "_name": "Children",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "96,348"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "list.get",
+        "Properties": {
+          "T": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "396,204"
+        }
+      },
+      {
+        "Id": 5,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "Sandbox.SkinnedModelRenderer"
+        },
+        "UserData": {
+          "Position": "408,144"
+        }
+      },
+      {
+        "Id": 6,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "480,0"
+        }
+      },
+      {
+        "Id": 7,
+        "Type": "sys.tostring",
+        "Properties": {
+          "T": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "420,108"
+        }
+      },
+      {
+        "Id": 8,
+        "Type": "list.get",
+        "Properties": {
+          "T": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "324,324"
+        }
+      },
+      {
+        "Id": 9,
+        "Type": "property",
+        "Properties": {
+          "_name": "Children",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "468,348"
+        }
+      },
+      {
+        "Id": 19,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Set",
+          "_type": "Sandbox.SkinnedModelRenderer"
+        },
+        "UserData": {
+          "Position": "840,-0"
+        }
       }
     ],
-    "Links": []
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "PlayerControllerRef",
+        "DstId": 1,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 1,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2,
+        "SrcName": "_result",
+        "DstId": 3,
+        "DstName": "_target"
+      },
+      {
+        "Id": 15,
+        "Value": 0,
+        "DstId": 4,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 9,
+        "SrcName": "_result",
+        "DstId": 4,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 5,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 6,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 7,
+        "SrcName": "_result",
+        "DstId": 6,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 7,
+        "DstName": "input"
+      },
+      {
+        "Id": 16,
+        "Value": 0,
+        "DstId": 8,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 3,
+        "SrcName": "_result",
+        "DstId": 8,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 8,
+        "SrcName": "_result",
+        "DstId": 9,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 6,
+        "SrcName": "_signal",
+        "DstId": 19,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 5,
+        "SrcName": "_result",
+        "DstId": 19,
+        "DstName": "_target"
+      },
+      {
+        "Id": 33,
+        "Value": "b_reload",
+        "DstId": 19,
+        "DstName": "v"
+      },
+      {
+        "Id": 21,
+        "Value": true,
+        "DstId": 19,
+        "DstName": "value"
+      }
+    ]
   },
-  "GraphReloadEquipment": null,
-  "ExtraKeyBindings": [
-    {
-      "ActionName": null,
-      "GraphOtherKeybinds": null
-    }
-  ],
+  "ExtraKeyBindings": [],
   "ExtraBools": [],
   "ExtraInts": [],
   "ExtraFloats": [],

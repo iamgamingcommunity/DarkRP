@@ -38,11 +38,11 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Action Graphs"), Group("Action Graphs")]
 	public ActionGraphFireEquipment GraphFireEquipment { get; set; }
 
-	public delegate void ActionGraphAimEquipment();
+	public delegate void ActionGraphAimEquipment(GameObject PlayerControllerRef);
 	[Property, Feature("Action Graphs"), Group("Action Graphs")]
 	public ActionGraphAimEquipment GraphAimEquipment { get; set; }
 	
-	public delegate void ActionGraphReloadEquipment();
+	public delegate void ActionGraphReloadEquipment(GameObject PlayerControllerRef);
 	[Property, Feature("Action Graphs"), Group("Action Graphs")]
 	public ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
 

@@ -1,0 +1,2284 @@
+{
+  "RootObject": {
+    "__guid": "5517b093-4bca-49b0-9977-371e9b95b28a",
+    "__version": 1,
+    "Flags": 0,
+    "Name": "w_mp5",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
+    "Components": [],
+    "Children": [
+      {
+        "__guid": "5a29ddb8-5dd6-40dd-99f9-a384d46b51b4",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "model",
+        "Position": "0,0,0.5314431",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "ff774916-a268-44e3-8529-a924a1a02602",
+            "__enabled": true,
+            "AnimationGraph": null,
+            "BodyGroups": 147,
+            "BoneMergeTarget": null,
+            "CreateAttachments": false,
+            "CreateBoneObjects": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+            "Morphs": {},
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Parameters": {
+              "bools": {},
+              "ints": {},
+              "floats": {},
+              "vectors": {},
+              "rotations": {}
+            },
+            "PlaybackRate": 1,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Sequence": {
+              "Name": null,
+              "Looping": true,
+              "Blending": false
+            },
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          },
+          {
+            "__type": "SwepDroppedEntity",
+            "__guid": "65fcc4f3-6f9e-49c8-a06b-5b6197ce4ee6",
+            "__enabled": true,
+            "Interacted": {
+              "__version": 9,
+              "__guid": "09398676-0daa-466a-9744-375ed18b93b2",
+              "__changeId": 146,
+              "UserData": {
+                "Title": "Interacted",
+                "ReferencedComponentTypes": [
+                  "PickupableEntityBase",
+                  "DarkrpPlayerInfo"
+                ]
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "-540,-144"
+                  }
+                },
+                {
+                  "Id": 1,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GameObject",
+                    "_type": "Sandbox.Component"
+                  },
+                  "UserData": {
+                    "Position": "-540,108"
+                  }
+                },
+                {
+                  "Id": 2,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "-264,108"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "156,408"
+                  }
+                },
+                {
+                  "Id": 5,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepDataFile",
+                    "_type": "SwepDroppedEntity"
+                  },
+                  "UserData": {
+                    "Position": "300,444"
+                  }
+                },
+                {
+                  "Id": 6,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GraphAimEquipment",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "0,-300"
+                  }
+                },
+                {
+                  "Id": 8,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentAimSpeed",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "1824,60"
+                  }
+                },
+                {
+                  "Id": 9,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentFireSpeed",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2172,60"
+                  }
+                },
+                {
+                  "Id": 10,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "viewmodel",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2520,60"
+                  }
+                },
+                {
+                  "Id": 11,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "worldmodel",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2844,48"
+                  }
+                },
+                {
+                  "Id": 12,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentReloadSpeed",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3552,48"
+                  }
+                },
+                {
+                  "Id": 13,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentAmountOfRoundsFired",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2316,252"
+                  }
+                },
+                {
+                  "Id": 14,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentBaseDamage",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2724,252"
+                  }
+                },
+                {
+                  "Id": 15,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentCurrentAmmo",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3084,252"
+                  }
+                },
+                {
+                  "Id": 16,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentDamageMax",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3432,252"
+                  }
+                },
+                {
+                  "Id": 17,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentDamageMin",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3792,252"
+                  }
+                },
+                {
+                  "Id": 18,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentMaxAmmo",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "4116,252"
+                  }
+                },
+                {
+                  "Id": 19,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentUnlimitedAmmo",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "4452,252"
+                  }
+                },
+                {
+                  "Id": 20,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsEnableMinMaxDamage",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "4872,252"
+                  }
+                },
+                {
+                  "Id": 21,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "AimEquipmentSFX",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2436,504"
+                  }
+                },
+                {
+                  "Id": 22,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraSFX",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2772,504"
+                  }
+                },
+                {
+                  "Id": 23,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "FireEquipmentSFX",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3132,504"
+                  }
+                },
+                {
+                  "Id": 24,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ReloadEquipmentSFX",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3516,504"
+                  }
+                },
+                {
+                  "Id": 25,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GraphAimEquipment",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "1248,-24"
+                  }
+                },
+                {
+                  "Id": 26,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GraphAimEquipment",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "1260,-96"
+                  }
+                },
+                {
+                  "Id": 27,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GraphFireEquipment",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "1656,-96"
+                  }
+                },
+                {
+                  "Id": 28,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GraphReloadEquipment",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2052,-96"
+                  }
+                },
+                {
+                  "Id": 29,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GraphFireEquipment",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "1668,-24"
+                  }
+                },
+                {
+                  "Id": 30,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GraphReloadEquipment",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2052,-24"
+                  }
+                },
+                {
+                  "Id": 33,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "2100,312"
+                  }
+                },
+                {
+                  "Id": 34,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "1548,60"
+                  }
+                },
+                {
+                  "Id": 36,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "2388,408"
+                  }
+                },
+                {
+                  "Id": 37,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "1620,252"
+                  }
+                },
+                {
+                  "Id": 38,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "1692,444"
+                  }
+                },
+                {
+                  "Id": 39,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "1788,672"
+                  }
+                },
+                {
+                  "Id": 40,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentAimSpeed",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "1836,144"
+                  }
+                },
+                {
+                  "Id": 41,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentFireSpeed",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2148,144"
+                  }
+                },
+                {
+                  "Id": 42,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3132,144"
+                  }
+                },
+                {
+                  "Id": 43,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentReloadSpeed",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3564,132"
+                  }
+                },
+                {
+                  "Id": 44,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "viewmodel",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2484,144"
+                  }
+                },
+                {
+                  "Id": 45,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "worldmodel",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2820,132"
+                  }
+                },
+                {
+                  "Id": 46,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3144,48"
+                  }
+                },
+                {
+                  "Id": 47,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentAmountOfRoundsFired",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2304,324"
+                  }
+                },
+                {
+                  "Id": 48,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentBaseDamage",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2712,336"
+                  }
+                },
+                {
+                  "Id": 49,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentCurrentAmmo",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3072,324"
+                  }
+                },
+                {
+                  "Id": 50,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentDamageMax",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3360,324"
+                  }
+                },
+                {
+                  "Id": 51,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentDamageMin",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3732,360"
+                  }
+                },
+                {
+                  "Id": 52,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentMaxAmmo",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "4092,348"
+                  }
+                },
+                {
+                  "Id": 53,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentUnlimitedAmmo",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "4416,336"
+                  }
+                },
+                {
+                  "Id": 54,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsEnableMinMaxDamage",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "4884,336"
+                  }
+                },
+                {
+                  "Id": 55,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "AimEquipmentSFX",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2412,576"
+                  }
+                },
+                {
+                  "Id": 56,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraSFX",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2748,588"
+                  }
+                },
+                {
+                  "Id": 57,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "FireEquipmentSFX",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3120,588"
+                  }
+                },
+                {
+                  "Id": 58,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ReloadEquipmentSFX",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3492,612"
+                  }
+                },
+                {
+                  "Id": 59,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraKeyBindings",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2484,816"
+                  }
+                },
+                {
+                  "Id": 60,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepExtraActionGraphs",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2484,720"
+                  }
+                },
+                {
+                  "Id": 61,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentDescription",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3936,48"
+                  }
+                },
+                {
+                  "Id": 62,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentDescription",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3960,132"
+                  }
+                },
+                {
+                  "Id": 63,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1044,-156"
+                  }
+                },
+                {
+                  "Id": 64,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerControllerRef",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2856,720"
+                  }
+                },
+                {
+                  "Id": 65,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "3720,948"
+                  }
+                },
+                {
+                  "Id": 66,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "2256,1164"
+                  }
+                },
+                {
+                  "Id": 67,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraFloats",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3576,840"
+                  }
+                },
+                {
+                  "Id": 68,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraFloat"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3636,720"
+                  }
+                },
+                {
+                  "Id": 69,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RunTimeExtraFloat",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3912,828"
+                  }
+                },
+                {
+                  "Id": 70,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Add",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "3960,744"
+                  }
+                },
+                {
+                  "Id": 71,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RunTimeExtraBools",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "4152,1284"
+                  }
+                },
+                {
+                  "Id": 72,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RunTimeExtraInt",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "4020,1752"
+                  }
+                },
+                {
+                  "Id": 73,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RunTimeExtraStrings",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "4044,1536"
+                  }
+                },
+                {
+                  "Id": 74,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Add",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "4236,1452"
+                  }
+                },
+                {
+                  "Id": 75,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Add",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "4140,1668"
+                  }
+                },
+                {
+                  "Id": 76,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Add",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "4296,1200"
+                  }
+                },
+                {
+                  "Id": 77,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraBools",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3324,1152"
+                  }
+                },
+                {
+                  "Id": 78,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraInts",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3540,1728"
+                  }
+                },
+                {
+                  "Id": 79,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ExtraStrings",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "3360,1476"
+                  }
+                },
+                {
+                  "Id": 80,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraBools"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3648,1128"
+                  }
+                },
+                {
+                  "Id": 81,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "System.String"
+                  },
+                  "UserData": {
+                    "Position": "3576,1428"
+                  }
+                },
+                {
+                  "Id": 82,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "PickupableEntity",
+                      "Name": "SwepExtraInt"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3600,1632"
+                  }
+                },
+                {
+                  "Id": 83,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerControllerRef",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2868,816"
+                  }
+                },
+                {
+                  "Id": 84,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "3504,888"
+                  }
+                },
+                {
+                  "Id": 85,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "3336,1080"
+                  }
+                },
+                {
+                  "Id": 86,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "3636,1560"
+                  }
+                },
+                {
+                  "Id": 87,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "3564,1836"
+                  }
+                },
+                {
+                  "Id": 88,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "3480,792"
+                  }
+                },
+                {
+                  "Id": 89,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "3432,708"
+                  }
+                },
+                {
+                  "Id": 90,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "3516,1104"
+                  }
+                },
+                {
+                  "Id": 91,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "3468,1020"
+                  }
+                },
+                {
+                  "Id": 92,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "3480,1416"
+                  }
+                },
+                {
+                  "Id": 93,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "3432,1332"
+                  }
+                },
+                {
+                  "Id": 94,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "3420,1704"
+                  }
+                },
+                {
+                  "Id": 95,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "3372,1620"
+                  }
+                },
+                {
+                  "Id": 113,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "2244,588"
+                  }
+                },
+                {
+                  "Id": 131,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-768,204"
+                  }
+                },
+                {
+                  "Id": 132,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerCameraRef",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-492,180"
+                  }
+                },
+                {
+                  "Id": 134,
+                  "Type": "scene.instantiate",
+                  "UserData": {
+                    "Position": "360,-144"
+                  }
+                },
+                {
+                  "Id": 140,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "viewmodel",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "-192,-120"
+                  }
+                },
+                {
+                  "Id": 143,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldRotation",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "-252,240"
+                  }
+                },
+                {
+                  "Id": 144,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Forward",
+                    "_type": "Rotation"
+                  },
+                  "UserData": {
+                    "Position": "-48,240"
+                  }
+                },
+                {
+                  "Id": 146,
+                  "Type": "op.multiply",
+                  "UserData": {
+                    "Position": "192,240"
+                  }
+                },
+                {
+                  "Id": 159,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Destroy",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "3384,1932"
+                  }
+                },
+                {
+                  "Id": 160,
+                  "Type": "time.delayobj",
+                  "UserData": {
+                    "Position": "3204,1932"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "LastInteractingPlayer",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 2,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 5,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 6,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 28,
+                  "SrcName": "_signal",
+                  "DstId": 8,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "out",
+                  "DstId": 8,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 40,
+                  "SrcName": "_result",
+                  "DstId": 8,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 8,
+                  "SrcName": "_signal",
+                  "DstId": 9,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "out",
+                  "DstId": 9,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 41,
+                  "SrcName": "_result",
+                  "DstId": 9,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 9,
+                  "SrcName": "_signal",
+                  "DstId": 10,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "out",
+                  "DstId": 10,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 44,
+                  "SrcName": "_result",
+                  "DstId": 10,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 10,
+                  "SrcName": "_signal",
+                  "DstId": 11,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "out",
+                  "DstId": 11,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 45,
+                  "SrcName": "_result",
+                  "DstId": 11,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 46,
+                  "SrcName": "_signal",
+                  "DstId": 12,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "out",
+                  "DstId": 12,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 43,
+                  "SrcName": "_result",
+                  "DstId": 12,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 61,
+                  "SrcName": "_signal",
+                  "DstId": 13,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "out",
+                  "DstId": 13,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 47,
+                  "SrcName": "_result",
+                  "DstId": 13,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 13,
+                  "SrcName": "_signal",
+                  "DstId": 14,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "out",
+                  "DstId": 14,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 48,
+                  "SrcName": "_result",
+                  "DstId": 14,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "_signal",
+                  "DstId": 15,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "out",
+                  "DstId": 15,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 49,
+                  "SrcName": "_result",
+                  "DstId": 15,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 15,
+                  "SrcName": "_signal",
+                  "DstId": 16,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "out",
+                  "DstId": 16,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 50,
+                  "SrcName": "_result",
+                  "DstId": 16,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 16,
+                  "SrcName": "_signal",
+                  "DstId": 17,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "out",
+                  "DstId": 17,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 51,
+                  "SrcName": "_result",
+                  "DstId": 17,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 17,
+                  "SrcName": "_signal",
+                  "DstId": 18,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "out",
+                  "DstId": 18,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 52,
+                  "SrcName": "_result",
+                  "DstId": 18,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 18,
+                  "SrcName": "_signal",
+                  "DstId": 19,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "out",
+                  "DstId": 19,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 53,
+                  "SrcName": "_result",
+                  "DstId": 19,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 19,
+                  "SrcName": "_signal",
+                  "DstId": 20,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "out",
+                  "DstId": 20,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 54,
+                  "SrcName": "_result",
+                  "DstId": 20,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 20,
+                  "SrcName": "_signal",
+                  "DstId": 21,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 113,
+                  "SrcName": "out",
+                  "DstId": 21,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 55,
+                  "SrcName": "_result",
+                  "DstId": 21,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "_signal",
+                  "DstId": 22,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 113,
+                  "SrcName": "out",
+                  "DstId": 22,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 56,
+                  "SrcName": "_result",
+                  "DstId": 22,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 22,
+                  "SrcName": "_signal",
+                  "DstId": 23,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 113,
+                  "SrcName": "out",
+                  "DstId": 23,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 57,
+                  "SrcName": "_result",
+                  "DstId": 23,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_signal",
+                  "DstId": 24,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 113,
+                  "SrcName": "out",
+                  "DstId": 24,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 58,
+                  "SrcName": "_result",
+                  "DstId": 24,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 25,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 63,
+                  "SrcName": "_signal",
+                  "DstId": 26,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 34,
+                  "SrcName": "out",
+                  "DstId": 26,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 25,
+                  "SrcName": "_result",
+                  "DstId": 26,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 26,
+                  "SrcName": "_signal",
+                  "DstId": 27,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 34,
+                  "SrcName": "out",
+                  "DstId": 27,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 29,
+                  "SrcName": "_result",
+                  "DstId": 27,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 27,
+                  "SrcName": "_signal",
+                  "DstId": 28,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 34,
+                  "SrcName": "out",
+                  "DstId": 28,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 30,
+                  "SrcName": "_result",
+                  "DstId": 28,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 29,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 30,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 33,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 34,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 36,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 37,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 38,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 39,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 37,
+                  "SrcName": "out",
+                  "DstId": 40,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 37,
+                  "SrcName": "out",
+                  "DstId": 41,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 37,
+                  "SrcName": "out",
+                  "DstId": 42,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 37,
+                  "SrcName": "out",
+                  "DstId": 43,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 37,
+                  "SrcName": "out",
+                  "DstId": 44,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 37,
+                  "SrcName": "out",
+                  "DstId": 45,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 11,
+                  "SrcName": "_signal",
+                  "DstId": 46,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "out",
+                  "DstId": 46,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "_result",
+                  "DstId": 46,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "out",
+                  "DstId": 47,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "out",
+                  "DstId": 48,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "out",
+                  "DstId": 49,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "out",
+                  "DstId": 50,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "out",
+                  "DstId": 51,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "out",
+                  "DstId": 52,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "out",
+                  "DstId": 53,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "out",
+                  "DstId": 54,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 39,
+                  "SrcName": "out",
+                  "DstId": 55,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 39,
+                  "SrcName": "out",
+                  "DstId": 56,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 39,
+                  "SrcName": "out",
+                  "DstId": 57,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 39,
+                  "SrcName": "out",
+                  "DstId": 58,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 39,
+                  "SrcName": "out",
+                  "DstId": 59,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 24,
+                  "SrcName": "_signal",
+                  "DstId": 60,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 113,
+                  "SrcName": "out",
+                  "DstId": 60,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "_result",
+                  "DstId": 60,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_signal",
+                  "DstId": 61,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "out",
+                  "DstId": 61,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 62,
+                  "SrcName": "_result",
+                  "DstId": 61,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 37,
+                  "SrcName": "out",
+                  "DstId": 62,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 134,
+                  "SrcName": "_signal",
+                  "DstId": 63,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 161,
+                  "Value": "Fired Set Hot Bar Swep Info",
+                  "DstId": 63,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 60,
+                  "SrcName": "_signal",
+                  "DstId": 64,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 113,
+                  "SrcName": "out",
+                  "DstId": 64,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 83,
+                  "SrcName": "_result",
+                  "DstId": 64,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 39,
+                  "SrcName": "out",
+                  "DstId": 66,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 66,
+                  "SrcName": "out",
+                  "DstId": 67,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 89,
+                  "SrcName": "false",
+                  "DstId": 68,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 67,
+                  "SrcName": "_result",
+                  "DstId": 68,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 65,
+                  "SrcName": "_result",
+                  "DstId": 69,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 68,
+                  "SrcName": "body",
+                  "DstId": 70,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 69,
+                  "SrcName": "_result",
+                  "DstId": 70,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 68,
+                  "SrcName": "body.value",
+                  "DstId": 70,
+                  "DstName": "item"
+                },
+                {
+                  "SrcId": 65,
+                  "SrcName": "_result",
+                  "DstId": 71,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 65,
+                  "SrcName": "_result",
+                  "DstId": 72,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 65,
+                  "SrcName": "_result",
+                  "DstId": 73,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 81,
+                  "SrcName": "body",
+                  "DstId": 74,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 73,
+                  "SrcName": "_result",
+                  "DstId": 74,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 81,
+                  "SrcName": "body.value",
+                  "DstId": 74,
+                  "DstName": "item"
+                },
+                {
+                  "SrcId": 82,
+                  "SrcName": "body",
+                  "DstId": 75,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 72,
+                  "SrcName": "_result",
+                  "DstId": 75,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 82,
+                  "SrcName": "body.value",
+                  "DstId": 75,
+                  "DstName": "item"
+                },
+                {
+                  "SrcId": 80,
+                  "SrcName": "body",
+                  "DstId": 76,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 71,
+                  "SrcName": "_result",
+                  "DstId": 76,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 80,
+                  "SrcName": "body.value",
+                  "DstId": 76,
+                  "DstName": "item"
+                },
+                {
+                  "SrcId": 66,
+                  "SrcName": "out",
+                  "DstId": 77,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 66,
+                  "SrcName": "out",
+                  "DstId": 78,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 66,
+                  "SrcName": "out",
+                  "DstId": 79,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 91,
+                  "SrcName": "false",
+                  "DstId": 80,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 77,
+                  "SrcName": "_result",
+                  "DstId": 80,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 93,
+                  "SrcName": "false",
+                  "DstId": 81,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 79,
+                  "SrcName": "_result",
+                  "DstId": 81,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 95,
+                  "SrcName": "false",
+                  "DstId": 82,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 78,
+                  "SrcName": "_result",
+                  "DstId": 82,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 39,
+                  "SrcName": "out",
+                  "DstId": 83,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 67,
+                  "SrcName": "_result",
+                  "DstId": 84,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 77,
+                  "SrcName": "_result",
+                  "DstId": 85,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 79,
+                  "SrcName": "_result",
+                  "DstId": 86,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 78,
+                  "SrcName": "_result",
+                  "DstId": 87,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 84,
+                  "SrcName": "_result",
+                  "DstId": 88,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 162,
+                  "Value": 0,
+                  "DstId": 88,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_signal",
+                  "DstId": 89,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 88,
+                  "SrcName": "_result",
+                  "DstId": 89,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 85,
+                  "SrcName": "_result",
+                  "DstId": 90,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 163,
+                  "Value": 0,
+                  "DstId": 90,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_signal",
+                  "DstId": 91,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 90,
+                  "SrcName": "_result",
+                  "DstId": 91,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 86,
+                  "SrcName": "_result",
+                  "DstId": 92,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 164,
+                  "Value": 0,
+                  "DstId": 92,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_signal",
+                  "DstId": 93,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 92,
+                  "SrcName": "_result",
+                  "DstId": 93,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 87,
+                  "SrcName": "_result",
+                  "DstId": 94,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 165,
+                  "Value": 0,
+                  "DstId": 94,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_signal",
+                  "DstId": 95,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 94,
+                  "SrcName": "_result",
+                  "DstId": 95,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 113,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 131,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 131,
+                  "SrcName": "_result",
+                  "DstId": 132,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 134,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 132,
+                  "SrcName": "_result",
+                  "DstId": 134,
+                  "DstName": "parent"
+                },
+                {
+                  "SrcId": 146,
+                  "SrcName": "_result",
+                  "DstId": 134,
+                  "DstName": "position"
+                },
+                {
+                  "SrcId": 140,
+                  "SrcName": "_result",
+                  "DstId": 134,
+                  "DstName": "prefab"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 140,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 132,
+                  "SrcName": "_result",
+                  "DstId": 143,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 143,
+                  "SrcName": "_result",
+                  "DstId": 144,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 144,
+                  "SrcName": "_result",
+                  "DstId": 146,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 166,
+                  "Value": {
+                    "$type": "Simple",
+                    "Type": "Vector3",
+                    "Value": "10,0,0"
+                  },
+                  "DstId": 146,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 160,
+                  "SrcName": "_signal",
+                  "DstId": 159,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 159,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_signal",
+                  "DstId": 160,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 167,
+                  "Value": 0.01,
+                  "DstId": 160,
+                  "DstName": "seconds"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 160,
+                  "DstName": "target"
+                }
+              ],
+              "Defaults": {
+                "$4.component": {
+                  "_type": "component",
+                  "component_id": "65fcc4f3-6f9e-49c8-a06b-5b6197ce4ee6",
+                  "go": "5a29ddb8-5dd6-40dd-99f9-a384d46b51b4",
+                  "component_type": "swepdroppedentity"
+                },
+                "$65.component": {
+                  "_type": "component",
+                  "component_id": "6abeddab-1711-4ef5-acb9-85f08a513570",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
+                  "component_type": "PickupableEntityBase"
+                }
+              }
+            },
+            "IsInteractable": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "SwepDataFile": "gameplay/equipment/usp.swep"
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "8896cef4-c74e-46e4-8554-fb4a8c25851c",
+            "__enabled": true,
+            "Center": "1.900004,0,6.599993",
+            "Elasticity": null,
+            "Friction": null,
+            "IsTrigger": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RollingResistance": null,
+            "Scale": "22.80001,2.400003,11.6",
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "6317112c-f7b5-4d24-9fc9-ef2dfd427f5b",
+            "__enabled": true,
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {
+              "X": false,
+              "Y": false,
+              "Z": false,
+              "Pitch": false,
+              "Yaw": false,
+              "Roll": false
+            },
+            "MassCenterOverride": "0,0,0",
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OverrideMassCenter": false,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [
+    "facepunch.v_mp5#116233"
+  ],
+  "__version": 2
+}
