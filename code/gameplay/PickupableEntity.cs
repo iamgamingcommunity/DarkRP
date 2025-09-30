@@ -13,6 +13,7 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentFireSpeed { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentAimSpeed { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentReloadSpeed { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentBulletSpeed { get; set; }
 
 
 	//PickupableEntity Damage Info
