@@ -12,7 +12,7 @@
   "EquipmentUnlimitedAmmo": false,
   "EquipmentAmountOfRoundsFired": 0,
   "IsEnableMinMaxDamage": false,
-  "EquipmentBaseDamage": 0,
+  "EquipmentBaseDamage": 20,
   "EquipmentDamageMin": 0,
   "EquipmentDamageMax": 0,
   "FireEquipmentSFX": null,
@@ -23,16 +23,22 @@
   "GraphFireEquipment": {
     "__version": 9,
     "__guid": "93fb62a0-7230-443b-a782-d001e232a6f2",
-    "__changeId": 846,
+    "__changeId": 1272,
     "UserData": {
       "Title": "Graph Fire Equipment",
       "ReferencedComponentTypes": [
         "DarkrpPlayerInfo",
         "Sandbox.SkinnedModelRenderer",
-        "SwepDroppedEntity"
+        "PickupableEntityBase",
+        "SwepDroppedEntity",
+        "HealthComponent"
       ]
     },
     "Variables": [
+      {
+        "Name": "TempArmorValue",
+        "Type": "System.Single"
+      },
       {
         "Name": "TempBulletStartPos",
         "Type": "Vector3"
@@ -42,7 +48,7 @@
         "Type": "Vector3"
       },
       {
-        "Name": "TempGameObject",
+        "Name": "TempHitGameObject",
         "Type": "Sandbox.GameObject"
       },
       {
@@ -59,7 +65,7 @@
         "Id": 0,
         "Type": "input",
         "UserData": {
-          "Position": "-84,-48"
+          "Position": "-708,-48"
         }
       },
       {
@@ -69,7 +75,7 @@
           "T": "DarkrpPlayerInfo"
         },
         "UserData": {
-          "Position": "-300,300"
+          "Position": "-924,300"
         }
       },
       {
@@ -80,7 +86,7 @@
           "_type": "DarkrpPlayerInfo"
         },
         "UserData": {
-          "Position": "-24,300"
+          "Position": "-648,300"
         }
       },
       {
@@ -91,7 +97,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "276,300"
+          "Position": "-348,300"
         }
       },
       {
@@ -101,7 +107,7 @@
           "T": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "576,156"
+          "Position": "-48,156"
         }
       },
       {
@@ -111,7 +117,7 @@
           "T": "Sandbox.SkinnedModelRenderer"
         },
         "UserData": {
-          "Position": "588,96"
+          "Position": "-36,96"
         }
       },
       {
@@ -123,14 +129,14 @@
           "_type": "Sandbox.SkinnedModelRenderer"
         },
         "UserData": {
-          "Position": "1164,-48"
+          "Position": "540,-48"
         }
       },
       {
         "Id": 29,
         "Type": "log.info",
         "UserData": {
-          "Position": "696,-48"
+          "Position": "72,-48"
         }
       },
       {
@@ -140,7 +146,7 @@
           "T": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "600,60"
+          "Position": "-24,60"
         }
       },
       {
@@ -150,7 +156,7 @@
           "T": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "504,276"
+          "Position": "-120,276"
         }
       },
       {
@@ -161,14 +167,14 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "648,300"
+          "Position": "24,300"
         }
       },
       {
         "Id": 41,
         "Type": "scene.trace",
         "UserData": {
-          "Position": "3276,1020"
+          "Position": "3576,708"
         }
       },
       {
@@ -180,14 +186,14 @@
           "_type": "Sandbox.SceneTrace"
         },
         "UserData": {
-          "Position": "3516,996"
+          "Position": "3816,684"
         }
       },
       {
         "Id": 43,
         "Type": "log.info",
         "UserData": {
-          "Position": "5100,1176"
+          "Position": "6564,276"
         }
       },
       {
@@ -197,21 +203,21 @@
           "T": "Vector3"
         },
         "UserData": {
-          "Position": "5052,1248"
+          "Position": "6516,348"
         }
       },
       {
         "Id": 45,
         "Type": "sys.isvalid",
         "UserData": {
-          "Position": "5412,1236"
+          "Position": "6852,360"
         }
       },
       {
         "Id": 46,
         "Type": "if",
         "UserData": {
-          "Position": "5436,1152"
+          "Position": "6876,276"
         }
       },
       {
@@ -223,7 +229,7 @@
           "_type": "Sandbox.SceneTrace"
         },
         "UserData": {
-          "Position": "3552,852"
+          "Position": "3852,540"
         }
       },
       {
@@ -235,19 +241,7 @@
           "_type": "Vector3"
         },
         "UserData": {
-          "Position": "3288,1128"
-        }
-      },
-      {
-        "Id": 52,
-        "Type": "call",
-        "Properties": {
-          "_isStatic": false,
-          "_name": "IgnoreStatic",
-          "_type": "Sandbox.SceneTrace"
-        },
-        "UserData": {
-          "Position": "4188,252"
+          "Position": "3588,816"
         }
       },
       {
@@ -259,7 +253,7 @@
           "_type": "Sandbox.SceneTrace"
         },
         "UserData": {
-          "Position": "4500,204"
+          "Position": "4800,-108"
         }
       },
       {
@@ -275,7 +269,7 @@
         "Id": 55,
         "Type": "nop",
         "UserData": {
-          "Position": "5112,1452"
+          "Position": "6108,636"
         }
       },
       {
@@ -286,7 +280,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "5388,1284"
+          "Position": "7452,792"
         }
       },
       {
@@ -298,21 +292,21 @@
           "_type": "Sandbox.GameTags"
         },
         "UserData": {
-          "Position": "5664,1380"
+          "Position": "7500,540"
         }
       },
       {
         "Id": 58,
         "Type": "if",
         "UserData": {
-          "Position": "5700,1296"
+          "Position": "7536,456"
         }
       },
       {
         "Id": 59,
         "Type": "log.info",
         "UserData": {
-          "Position": "2424,-48"
+          "Position": "1296,-48"
         }
       },
       {
@@ -322,14 +316,14 @@
           "T": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "2472,120"
+          "Position": "1344,120"
         }
       },
       {
         "Id": 61,
         "Type": "log.info",
         "UserData": {
-          "Position": "2640,-48"
+          "Position": "1512,-48"
         }
       },
       {
@@ -340,30 +334,14 @@
           "_type": "PickupableEntity"
         },
         "UserData": {
-          "Position": "2196,120"
-        }
-      },
-      {
-        "Id": 64,
-        "Type": "property",
-        "ParentId": 53,
-        "Properties": {
-          "_name": "EndPosition",
-          "_type": "Sandbox.SceneTraceResult"
-        }
-      },
-      {
-        "Id": 65,
-        "Type": "nop",
-        "UserData": {
-          "Position": "5328,1440"
+          "Position": "1068,120"
         }
       },
       {
         "Id": 66,
         "Type": "log.info",
         "UserData": {
-          "Position": "4956,972"
+          "Position": "6204,276"
         }
       },
       {
@@ -373,24 +351,14 @@
           "T": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "5004,1128"
-        }
-      },
-      {
-        "Id": 68,
-        "Type": "var",
-        "Properties": {
-          "_var": "TempGameObject"
-        },
-        "UserData": {
-          "Position": "5844,1128"
+          "Position": "6156,372"
         }
       },
       {
         "Id": 69,
         "Type": "scene.find",
         "UserData": {
-          "Position": "1836,-876"
+          "Position": "1068,-720"
         }
       },
       {
@@ -401,7 +369,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "2016,-852"
+          "Position": "1248,-696"
         }
       },
       {
@@ -411,7 +379,7 @@
           "T": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "2280,-876"
+          "Position": "1512,-720"
         }
       },
       {
@@ -421,7 +389,7 @@
           "_var": "TempPlayerControllerRef"
         },
         "UserData": {
-          "Position": "1968,-48"
+          "Position": "840,-48"
         }
       },
       {
@@ -431,18 +399,7 @@
           "_var": "TempPlayerControllerRef"
         },
         "UserData": {
-          "Position": "3312,900"
-        }
-      },
-      {
-        "Id": 121,
-        "Type": "property",
-        "Properties": {
-          "_name": "worldmodel",
-          "_type": "PickupableEntity"
-        },
-        "UserData": {
-          "Position": "2640,-564"
+          "Position": "3612,588"
         }
       },
       {
@@ -453,19 +410,7 @@
           "_type": "SwepDroppedEntity"
         },
         "UserData": {
-          "Position": "3132,-540"
-        }
-      },
-      {
-        "Id": 126,
-        "Type": "call",
-        "Properties": {
-          "_isStatic": false,
-          "_name": "GetScene",
-          "_type": "Sandbox.PrefabFile"
-        },
-        "UserData": {
-          "Position": "2640,-612"
+          "Position": "2364,-384"
         }
       },
       {
@@ -475,7 +420,7 @@
           "T": "SwepDroppedEntity"
         },
         "UserData": {
-          "Position": "2784,-492"
+          "Position": "2124,-360"
         }
       },
       {
@@ -486,7 +431,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "3420,-564"
+          "Position": "2652,-408"
         }
       },
       {
@@ -497,7 +442,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "3216,-396"
+          "Position": "2448,-240"
         }
       },
       {
@@ -508,14 +453,14 @@
           "_type": "Rotation"
         },
         "UserData": {
-          "Position": "3468,-396"
+          "Position": "2700,-240"
         }
       },
       {
         "Id": 343,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "3792,-396"
+          "Position": "3024,-240"
         }
       },
       {
@@ -526,7 +471,7 @@
           "_type": "PickupableEntity"
         },
         "UserData": {
-          "Position": "3564,-360"
+          "Position": "2796,-204"
         }
       },
       {
@@ -536,7 +481,7 @@
           "_var": "TempBulletVelocity"
         },
         "UserData": {
-          "Position": "3924,-624"
+          "Position": "3156,-468"
         }
       },
       {
@@ -546,21 +491,21 @@
           "_var": "TempBulletStartPos"
         },
         "UserData": {
-          "Position": "3672,-624"
+          "Position": "2904,-468"
         }
       },
       {
         "Id": 349,
         "Type": "while",
         "UserData": {
-          "Position": "4620,-624"
+          "Position": "3852,-468"
         }
       },
       {
         "Id": 350,
         "Type": "time.delayobj",
         "UserData": {
-          "Position": "4836,-600"
+          "Position": "4068,-444"
         }
       },
       {
@@ -570,7 +515,7 @@
           "_var": "UpdateBulletsPos"
         },
         "UserData": {
-          "Position": "4608,-576"
+          "Position": "3840,-420"
         }
       },
       {
@@ -580,7 +525,7 @@
           "_var": "UpdateBulletsPos"
         },
         "UserData": {
-          "Position": "4200,-624"
+          "Position": "3432,-468"
         }
       },
       {
@@ -591,7 +536,7 @@
           "_type": "SwepDroppedEntity"
         },
         "UserData": {
-          "Position": "4116,660"
+          "Position": "5364,-36"
         }
       },
       {
@@ -602,18 +547,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "4440,636"
-        }
-      },
-      {
-        "Id": 747,
-        "Type": "property",
-        "Properties": {
-          "_name": "DebugBullet",
-          "_type": "SwepDroppedEntity"
-        },
-        "UserData": {
-          "Position": "3036,-636"
+          "Position": "5688,-108"
         }
       },
       {
@@ -623,14 +557,14 @@
           "T": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "3360,-672"
+          "Position": "2268,-444"
         }
       },
       {
         "Id": 749,
         "Type": "log.info",
         "UserData": {
-          "Position": "3552,-744"
+          "Position": "2484,-468"
         }
       },
       {
@@ -641,7 +575,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "2436,-852"
+          "Position": "1668,-696"
         }
       },
       {
@@ -651,7 +585,7 @@
           "T": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "2772,-864"
+          "Position": "2004,-708"
         }
       },
       {
@@ -661,7 +595,7 @@
           "_var": "TempBulletStartPos"
         },
         "UserData": {
-          "Position": "2940,1044"
+          "Position": "3240,732"
         }
       },
       {
@@ -671,7 +605,7 @@
           "_var": "TempBulletStartPos"
         },
         "UserData": {
-          "Position": "4500,420"
+          "Position": "5100,-108"
         }
       },
       {
@@ -681,21 +615,21 @@
           "_var": "TempBulletVelocity"
         },
         "UserData": {
-          "Position": "4164,816"
+          "Position": "5412,120"
         }
       },
       {
         "Id": 1092,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "4368,816"
+          "Position": "5616,120"
         }
       },
       {
         "Id": 1093,
         "Type": "time.delta",
         "UserData": {
-          "Position": "4212,840"
+          "Position": "5460,144"
         }
       },
       {
@@ -705,14 +639,14 @@
           "_var": "TempBulletStartPos"
         },
         "UserData": {
-          "Position": "4188,720"
+          "Position": "5436,24"
         }
       },
       {
         "Id": 1095,
         "Type": "op.add",
         "UserData": {
-          "Position": "4512,720"
+          "Position": "5760,24"
         }
       },
       {
@@ -722,7 +656,7 @@
           "_var": "TempBulletVelocity"
         },
         "UserData": {
-          "Position": "2964,1176"
+          "Position": "3264,864"
         }
       },
       {
@@ -732,7 +666,7 @@
           "_var": "TempBulletVelocity"
         },
         "UserData": {
-          "Position": "4644,840"
+          "Position": "6012,-108"
         }
       },
       {
@@ -742,35 +676,35 @@
           "_var": "TempBulletVelocity"
         },
         "UserData": {
-          "Position": "4164,924"
+          "Position": "5412,228"
         }
       },
       {
         "Id": 1576,
         "Type": "op.subtract",
         "UserData": {
-          "Position": "4452,948"
+          "Position": "5700,252"
         }
       },
       {
         "Id": 1577,
         "Type": "time.delta",
         "UserData": {
-          "Position": "4164,1056"
+          "Position": "5412,360"
         }
       },
       {
         "Id": 1578,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "4296,1032"
+          "Position": "5544,336"
         }
       },
       {
         "Id": 1580,
         "Type": "op.multiply",
         "UserData": {
-          "Position": "3840,1008"
+          "Position": "5220,336"
         }
       },
       {
@@ -781,14 +715,14 @@
           "_type": "Vector3"
         },
         "UserData": {
-          "Position": "3960,948"
+          "Position": "5304,336"
         }
       },
       {
         "Id": 1638,
         "Type": "log.info",
         "UserData": {
-          "Position": "4740,960"
+          "Position": "5988,264"
         }
       },
       {
@@ -798,14 +732,858 @@
           "T": "Vector3"
         },
         "UserData": {
-          "Position": "4596,1032"
+          "Position": "5844,336"
         }
       },
       {
         "Id": 1800,
         "Type": "log.info",
         "UserData": {
-          "Position": "5988,1248"
+          "Position": "13308,2052"
+        }
+      },
+      {
+        "Id": 1818,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "UseHitboxes",
+          "_type": "Sandbox.SceneTrace"
+        },
+        "UserData": {
+          "Position": "4020,396"
+        }
+      },
+      {
+        "Id": 1893,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Has",
+          "_type": "Sandbox.GameTags"
+        },
+        "UserData": {
+          "Position": "10896,4464"
+        }
+      },
+      {
+        "Id": 1894,
+        "Type": "if",
+        "UserData": {
+          "Position": "10932,4380"
+        }
+      },
+      {
+        "Id": 1910,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Has",
+          "_type": "Sandbox.GameTags"
+        },
+        "UserData": {
+          "Position": "9528,3384"
+        }
+      },
+      {
+        "Id": 1911,
+        "Type": "if",
+        "UserData": {
+          "Position": "9564,3300"
+        }
+      },
+      {
+        "Id": 1943,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "11424,4392"
+        }
+      },
+      {
+        "Id": 1952,
+        "Type": "var",
+        "Properties": {
+          "_var": "UpdateBulletsPos"
+        },
+        "UserData": {
+          "Position": "11604,4392"
+        }
+      },
+      {
+        "Id": 1981,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "UseRenderMeshes",
+          "_type": "Sandbox.SceneTrace"
+        },
+        "UserData": {
+          "Position": "3972,276"
+        }
+      },
+      {
+        "Id": 2003,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "9936,3204"
+        }
+      },
+      {
+        "Id": 2013,
+        "Type": "var",
+        "Properties": {
+          "_var": "UpdateBulletsPos"
+        },
+        "UserData": {
+          "Position": "10224,3192"
+        }
+      },
+      {
+        "Id": 2016,
+        "Type": "var",
+        "Properties": {
+          "_var": "UpdateBulletsPos"
+        },
+        "UserData": {
+          "Position": "13596,2052"
+        }
+      },
+      {
+        "Id": 2045,
+        "Type": "comment",
+        "UserData": {
+          "Position": "3912,168",
+          "Size": "372,324",
+          "Title": "Needed??",
+          "Description": "Should we use Render Meshes or Hitboxes?",
+          "Color": 1,
+          "Layer": 1
+        }
+      },
+      {
+        "Id": 2099,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempHitGameObject"
+        },
+        "UserData": {
+          "Position": "7092,300"
+        }
+      },
+      {
+        "Id": 2100,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempHitGameObject"
+        },
+        "UserData": {
+          "Position": "9600,2028"
+        }
+      },
+      {
+        "Id": 2102,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "9792,2028"
+        }
+      },
+      {
+        "Id": 2103,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "11976,2472"
+        }
+      },
+      {
+        "Id": 2104,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "12192,2472"
+        }
+      },
+      {
+        "Id": 2105,
+        "Type": "property",
+        "Properties": {
+          "_name": "EquipmentBaseDamage",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "11988,2304"
+        }
+      },
+      {
+        "Id": 2106,
+        "Type": "property",
+        "Properties": {
+          "_name": "Health",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "12312,2220"
+        }
+      },
+      {
+        "Id": 2107,
+        "Type": "property",
+        "Properties": {
+          "_name": "Health",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "12276,1956"
+        }
+      },
+      {
+        "Id": 2108,
+        "Type": "op.subtract",
+        "UserData": {
+          "Position": "12576,2220"
+        }
+      },
+      {
+        "Id": 2110,
+        "Type": "op.lessthanorequal",
+        "UserData": {
+          "Position": "12768,2028"
+        }
+      },
+      {
+        "Id": 2112,
+        "Type": "if",
+        "UserData": {
+          "Position": "12756,1956"
+        }
+      },
+      {
+        "Id": 2167,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "13332,1884"
+        }
+      },
+      {
+        "Id": 2168,
+        "Type": "var",
+        "Properties": {
+          "_var": "UpdateBulletsPos"
+        },
+        "UserData": {
+          "Position": "13620,1884"
+        }
+      },
+      {
+        "Id": 2202,
+        "Type": "property",
+        "Properties": {
+          "_name": "IsGodMode",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "8052,120"
+        }
+      },
+      {
+        "Id": 2203,
+        "Type": "if",
+        "UserData": {
+          "Position": "8136,36"
+        }
+      },
+      {
+        "Id": 2205,
+        "Type": "op.greaterthanorequal",
+        "UserData": {
+          "Position": "8784,180"
+        }
+      },
+      {
+        "Id": 2208,
+        "Type": "if",
+        "UserData": {
+          "Position": "8772,84"
+        }
+      },
+      {
+        "Id": 2210,
+        "Type": "property",
+        "Properties": {
+          "_name": "Armor",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "10368,-864"
+        }
+      },
+      {
+        "Id": 2214,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "12120,-1164"
+        }
+      },
+      {
+        "Id": 2215,
+        "Type": "var",
+        "Properties": {
+          "_var": "UpdateBulletsPos"
+        },
+        "UserData": {
+          "Position": "12408,-1164"
+        }
+      },
+      {
+        "Id": 2216,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempHitGameObject"
+        },
+        "UserData": {
+          "Position": "10404,-1164"
+        }
+      },
+      {
+        "Id": 2217,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "10596,-1164"
+        }
+      },
+      {
+        "Id": 2221,
+        "Type": "property",
+        "Properties": {
+          "_name": "Health",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "10884,-1164"
+        }
+      },
+      {
+        "Id": 2222,
+        "Type": "property",
+        "Properties": {
+          "_name": "Health",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "10980,-1260"
+        }
+      },
+      {
+        "Id": 2223,
+        "Type": "op.subtract",
+        "UserData": {
+          "Position": "11172,-1164"
+        }
+      },
+      {
+        "Id": 2224,
+        "Type": "op.lessthanorequal",
+        "UserData": {
+          "Position": "11580,-1188"
+        }
+      },
+      {
+        "Id": 2225,
+        "Type": "if",
+        "UserData": {
+          "Position": "11568,-1260"
+        }
+      },
+      {
+        "Id": 2226,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "12144,-1332"
+        }
+      },
+      {
+        "Id": 2227,
+        "Type": "var",
+        "Properties": {
+          "_var": "UpdateBulletsPos"
+        },
+        "UserData": {
+          "Position": "12432,-1332"
+        }
+      },
+      {
+        "Id": 2238,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": true,
+          "_name": "Clamp",
+          "_type": "System.Single"
+        },
+        "UserData": {
+          "Position": "10356,-792"
+        }
+      },
+      {
+        "Id": 2265,
+        "Type": "property",
+        "Properties": {
+          "_name": "MaxArmor",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "10056,-708"
+        }
+      },
+      {
+        "Id": 2315,
+        "Type": "property",
+        "Properties": {
+          "_name": "Armor",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "8460,180"
+        }
+      },
+      {
+        "Id": 2405,
+        "Type": "op.multiply",
+        "UserData": {
+          "Position": "10776,-1056"
+        }
+      },
+      {
+        "Id": 2413,
+        "Type": "property",
+        "Properties": {
+          "_name": "Armor",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "9048,24"
+        }
+      },
+      {
+        "Id": 2414,
+        "Type": "op.lessthanorequal",
+        "UserData": {
+          "Position": "9300,24"
+        }
+      },
+      {
+        "Id": 2417,
+        "Type": "if",
+        "UserData": {
+          "Position": "9264,-72"
+        }
+      },
+      {
+        "Id": 2420,
+        "Type": "property",
+        "Properties": {
+          "_name": "Armor",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "10224,-648"
+        }
+      },
+      {
+        "Id": 2421,
+        "Type": "op.subtract",
+        "UserData": {
+          "Position": "10500,-648"
+        }
+      },
+      {
+        "Id": 2453,
+        "Type": "property",
+        "Properties": {
+          "_name": "Armor",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "9480,-516"
+        }
+      },
+      {
+        "Id": 2454,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempArmorValue"
+        },
+        "UserData": {
+          "Position": "9540,-588"
+        }
+      },
+      {
+        "Id": 2455,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempArmorValue"
+        },
+        "UserData": {
+          "Position": "10524,-1056"
+        }
+      },
+      {
+        "Id": 2459,
+        "Type": "op.divide",
+        "UserData": {
+          "Position": "11076,-1068"
+        }
+      },
+      {
+        "Id": 2500,
+        "Type": "op.add",
+        "UserData": {
+          "Position": "10932,-1044"
+        }
+      },
+      {
+        "Id": 2502,
+        "Type": "property",
+        "Properties": {
+          "_name": "Armor",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "10584,96"
+        }
+      },
+      {
+        "Id": 2503,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "12744,228"
+        }
+      },
+      {
+        "Id": 2504,
+        "Type": "var",
+        "Properties": {
+          "_var": "UpdateBulletsPos"
+        },
+        "UserData": {
+          "Position": "13032,228"
+        }
+      },
+      {
+        "Id": 2505,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempHitGameObject"
+        },
+        "UserData": {
+          "Position": "11028,228"
+        }
+      },
+      {
+        "Id": 2506,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "11220,228"
+        }
+      },
+      {
+        "Id": 2507,
+        "Type": "property",
+        "Properties": {
+          "_name": "Health",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "11508,228"
+        }
+      },
+      {
+        "Id": 2508,
+        "Type": "property",
+        "Properties": {
+          "_name": "Health",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "11604,132"
+        }
+      },
+      {
+        "Id": 2509,
+        "Type": "op.subtract",
+        "UserData": {
+          "Position": "11796,228"
+        }
+      },
+      {
+        "Id": 2510,
+        "Type": "op.lessthanorequal",
+        "UserData": {
+          "Position": "12204,204"
+        }
+      },
+      {
+        "Id": 2511,
+        "Type": "if",
+        "UserData": {
+          "Position": "12192,132"
+        }
+      },
+      {
+        "Id": 2512,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "12768,60"
+        }
+      },
+      {
+        "Id": 2513,
+        "Type": "var",
+        "Properties": {
+          "_var": "UpdateBulletsPos"
+        },
+        "UserData": {
+          "Position": "13056,60"
+        }
+      },
+      {
+        "Id": 2514,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": true,
+          "_name": "Clamp",
+          "_type": "System.Single"
+        },
+        "UserData": {
+          "Position": "10572,168"
+        }
+      },
+      {
+        "Id": 2515,
+        "Type": "property",
+        "Properties": {
+          "_name": "MaxArmor",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "10272,252"
+        }
+      },
+      {
+        "Id": 2516,
+        "Type": "op.multiply",
+        "UserData": {
+          "Position": "11580,336"
+        }
+      },
+      {
+        "Id": 2520,
+        "Type": "property",
+        "Properties": {
+          "_name": "Armor",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "10440,312"
+        }
+      },
+      {
+        "Id": 2521,
+        "Type": "op.subtract",
+        "UserData": {
+          "Position": "10716,312"
+        }
+      },
+      {
+        "Id": 2522,
+        "Type": "property",
+        "Properties": {
+          "_name": "Armor",
+          "_type": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "9588,120"
+        }
+      },
+      {
+        "Id": 2523,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempArmorValue"
+        },
+        "UserData": {
+          "Position": "9648,48"
+        }
+      },
+      {
+        "Id": 2524,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempArmorValue"
+        },
+        "UserData": {
+          "Position": "11328,336"
+        }
+      },
+      {
+        "Id": 2525,
+        "Type": "op.divide",
+        "UserData": {
+          "Position": "11700,324"
+        }
+      },
+      {
+        "Id": 2547,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempHitGameObject"
+        },
+        "UserData": {
+          "Position": "9120,168"
+        }
+      },
+      {
+        "Id": 2548,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "9312,168"
+        }
+      },
+      {
+        "Id": 2549,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempHitGameObject"
+        },
+        "UserData": {
+          "Position": "9924,300"
+        }
+      },
+      {
+        "Id": 2550,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "10116,300"
+        }
+      },
+      {
+        "Id": 2599,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "10320,588"
+        }
+      },
+      {
+        "Id": 2600,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "10536,588"
+        }
+      },
+      {
+        "Id": 2601,
+        "Type": "property",
+        "Properties": {
+          "_name": "EquipmentBaseDamage",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "10332,420"
+        }
+      },
+      {
+        "Id": 2650,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempHitGameObject"
+        },
+        "UserData": {
+          "Position": "9792,-408"
+        }
+      },
+      {
+        "Id": 2651,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "9984,-408"
+        }
+      },
+      {
+        "Id": 2652,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempHitGameObject"
+        },
+        "UserData": {
+          "Position": "8604,-432"
+        }
+      },
+      {
+        "Id": 2653,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "HealthComponent"
+        },
+        "UserData": {
+          "Position": "8796,-432"
+        }
+      },
+      {
+        "Id": 2654,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "10368,-528"
+        }
+      },
+      {
+        "Id": 2655,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "10584,-528"
+        }
+      },
+      {
+        "Id": 2656,
+        "Type": "property",
+        "Properties": {
+          "_name": "EquipmentBaseDamage",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "10452,-564"
         }
       }
     ],
@@ -829,7 +1607,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1806,
+        "Id": 2657,
         "Value": 0,
         "DstId": 6,
         "DstName": "index"
@@ -859,13 +1637,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 1807,
+        "Id": 2658,
         "Value": "b_attack",
         "DstId": 10,
         "DstName": "v"
       },
       {
-        "Id": 1808,
+        "Id": 2659,
         "Value": true,
         "DstId": 10,
         "DstName": "value"
@@ -889,7 +1667,7 @@
         "DstName": "input"
       },
       {
-        "Id": 1809,
+        "Id": 2660,
         "Value": 0,
         "DstId": 34,
         "DstName": "index"
@@ -979,7 +1757,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1810,
+        "Id": 2661,
         "Value": 1E+15,
         "DstId": 51,
         "DstName": "maxLength"
@@ -991,19 +1769,13 @@
         "DstName": "toAdd"
       },
       {
-        "SrcId": 42,
-        "SrcName": "_result",
-        "DstId": 52,
-        "DstName": "_target"
-      },
-      {
         "SrcId": 350,
         "SrcName": "_signal",
         "DstId": 53,
         "DstName": "_signal"
       },
       {
-        "SrcId": 52,
+        "SrcId": 1818,
         "SrcName": "_result",
         "DstId": 53,
         "DstName": "_target"
@@ -1033,20 +1805,20 @@
         "DstName": "_target"
       },
       {
-        "Id": 1811,
+        "Id": 2662,
         "Value": true,
         "DstId": 57,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 1812,
+        "Id": 2663,
         "Value": "player",
         "DstId": 57,
         "DstName": "tag"
       },
       {
-        "SrcId": 46,
-        "SrcName": "true",
+        "SrcId": 2099,
+        "SrcName": "_signal",
         "DstId": 58,
         "DstName": "_signal"
       },
@@ -1063,7 +1835,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 1813,
+        "Id": 2664,
         "Value": "Fired key usp?",
         "DstId": 59,
         "DstName": "format"
@@ -1093,18 +1865,6 @@
         "DstName": "_target"
       },
       {
-        "SrcId": 53,
-        "SrcName": "_result",
-        "DstId": 64,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 64,
-        "SrcName": "_result",
-        "DstId": 65,
-        "DstName": "in"
-      },
-      {
         "SrcId": 1638,
         "SrcName": "_signal",
         "DstId": 66,
@@ -1123,13 +1883,7 @@
         "DstName": "input"
       },
       {
-        "SrcId": 54,
-        "SrcName": "_result",
-        "DstId": 68,
-        "DstName": "_value"
-      },
-      {
-        "Id": 1814,
+        "Id": 2665,
         "Value": "darkrpgamemode",
         "DstId": 69,
         "DstName": "name"
@@ -1141,7 +1895,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1815,
+        "Id": 2666,
         "Value": 1,
         "DstId": 71,
         "DstName": "index"
@@ -1165,21 +1919,9 @@
         "DstName": "_value"
       },
       {
-        "SrcId": 0,
-        "SrcName": "_target",
-        "DstId": 121,
-        "DstName": "_target"
-      },
-      {
         "SrcId": 128,
         "SrcName": "_result",
         "DstId": 123,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 121,
-        "SrcName": "_result",
-        "DstId": 126,
         "DstName": "_target"
       },
       {
@@ -1267,8 +2009,8 @@
         "DstName": "_signal"
       },
       {
-        "Id": 1816,
-        "Value": 0.1,
+        "Id": 2667,
+        "Value": 0.01,
         "DstId": 350,
         "DstName": "seconds"
       },
@@ -1285,7 +2027,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 1817,
+        "Id": 2668,
         "Value": true,
         "DstId": 359,
         "DstName": "_value"
@@ -1315,12 +2057,6 @@
         "DstName": "_value"
       },
       {
-        "SrcId": 128,
-        "SrcName": "_result",
-        "DstId": 747,
-        "DstName": "_target"
-      },
-      {
         "SrcId": 816,
         "SrcName": "_result",
         "DstId": 748,
@@ -1345,7 +2081,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1818,
+        "Id": 2669,
         "Value": 0,
         "DstId": 816,
         "DstName": "index"
@@ -1429,7 +2165,7 @@
         "DstName": "b"
       },
       {
-        "Id": 1819,
+        "Id": 2670,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -1439,7 +2175,7 @@
         "DstName": "a"
       },
       {
-        "Id": 1820,
+        "Id": 2671,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -1449,7 +2185,7 @@
         "DstName": "b"
       },
       {
-        "Id": 1821,
+        "Id": 2672,
         "Value": "0,0,0",
         "DstId": 1590,
         "DstName": "_target"
@@ -1479,16 +2215,864 @@
         "DstName": "input"
       },
       {
-        "SrcId": 58,
-        "SrcName": "true",
+        "SrcId": 2112,
+        "SrcName": "false",
         "DstId": 1800,
         "DstName": "_signal"
       },
       {
-        "Id": 1822,
-        "Value": "HIT!!",
+        "Id": 2673,
+        "Value": "HIT Player!!",
         "DstId": 1800,
         "DstName": "format"
+      },
+      {
+        "SrcId": 42,
+        "SrcName": "_result",
+        "DstId": 1818,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 56,
+        "SrcName": "_result",
+        "DstId": 1893,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2674,
+        "Value": true,
+        "DstId": 1893,
+        "DstName": "includeAncestors"
+      },
+      {
+        "Id": 2675,
+        "Value": "world",
+        "DstId": 1893,
+        "DstName": "tag"
+      },
+      {
+        "SrcId": 1911,
+        "SrcName": "false",
+        "DstId": 1894,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 1893,
+        "SrcName": "_result",
+        "DstId": 1894,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 56,
+        "SrcName": "_result",
+        "DstId": 1910,
+        "DstName": "_target"
+      },
+      {
+        "Id": 2676,
+        "Value": true,
+        "DstId": 1910,
+        "DstName": "includeAncestors"
+      },
+      {
+        "Id": 2677,
+        "Value": "entity",
+        "DstId": 1910,
+        "DstName": "tag"
+      },
+      {
+        "SrcId": 58,
+        "SrcName": "false",
+        "DstId": 1911,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 1910,
+        "SrcName": "_result",
+        "DstId": 1911,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 1894,
+        "SrcName": "true",
+        "DstId": 1943,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2678,
+        "Value": "HIT World!!",
+        "DstId": 1943,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 1943,
+        "SrcName": "_signal",
+        "DstId": 1952,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2679,
+        "Value": false,
+        "DstId": 1952,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 42,
+        "SrcName": "_result",
+        "DstId": 1981,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 1911,
+        "SrcName": "true",
+        "DstId": 2003,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2680,
+        "Value": "HIT Entity!!",
+        "DstId": 2003,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 2003,
+        "SrcName": "_signal",
+        "DstId": 2013,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2681,
+        "Value": false,
+        "DstId": 2013,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 1800,
+        "SrcName": "_signal",
+        "DstId": 2016,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2682,
+        "Value": false,
+        "DstId": 2016,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 46,
+        "SrcName": "true",
+        "DstId": 2099,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 55,
+        "SrcName": "out",
+        "DstId": 2099,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2100,
+        "SrcName": "_result",
+        "DstId": 2102,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2103,
+        "SrcName": "_result",
+        "DstId": 2104,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2104,
+        "SrcName": "_result",
+        "DstId": 2105,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2102,
+        "SrcName": "_result",
+        "DstId": 2106,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2208,
+        "SrcName": "false",
+        "DstId": 2107,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2102,
+        "SrcName": "_result",
+        "DstId": 2107,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2108,
+        "SrcName": "_result",
+        "DstId": 2107,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2106,
+        "SrcName": "_result",
+        "DstId": 2108,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 2105,
+        "SrcName": "_result",
+        "DstId": 2108,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2108,
+        "SrcName": "_result",
+        "DstId": 2110,
+        "DstName": "a"
+      },
+      {
+        "Id": 2683,
+        "Value": {
+          "$type": "Simple",
+          "Type": "System.Single",
+          "Value": 0
+        },
+        "DstId": 2110,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2107,
+        "SrcName": "_signal",
+        "DstId": 2112,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2110,
+        "SrcName": "_result",
+        "DstId": 2112,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 2112,
+        "SrcName": "true",
+        "DstId": 2167,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2684,
+        "Value": "HIT Player!!",
+        "DstId": 2167,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 2167,
+        "SrcName": "_signal",
+        "DstId": 2168,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2685,
+        "Value": false,
+        "DstId": 2168,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2102,
+        "SrcName": "_result",
+        "DstId": 2202,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 58,
+        "SrcName": "true",
+        "DstId": 2203,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2202,
+        "SrcName": "_result",
+        "DstId": 2203,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 2315,
+        "SrcName": "_result",
+        "DstId": 2205,
+        "DstName": "a"
+      },
+      {
+        "Id": 2686,
+        "Value": {
+          "$type": "Simple",
+          "Type": "System.Single",
+          "Value": 0
+        },
+        "DstId": 2205,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2203,
+        "SrcName": "false",
+        "DstId": 2208,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2205,
+        "SrcName": "_result",
+        "DstId": 2208,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 2454,
+        "SrcName": "_signal",
+        "DstId": 2210,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2651,
+        "SrcName": "_result",
+        "DstId": 2210,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2238,
+        "SrcName": "_result",
+        "DstId": 2210,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2225,
+        "SrcName": "false",
+        "DstId": 2214,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2687,
+        "Value": "HIT Player!!",
+        "DstId": 2214,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 2214,
+        "SrcName": "_signal",
+        "DstId": 2215,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2688,
+        "Value": false,
+        "DstId": 2215,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2216,
+        "SrcName": "_result",
+        "DstId": 2217,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2217,
+        "SrcName": "_result",
+        "DstId": 2221,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2210,
+        "SrcName": "_signal",
+        "DstId": 2222,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2217,
+        "SrcName": "_result",
+        "DstId": 2222,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2223,
+        "SrcName": "_result",
+        "DstId": 2222,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2221,
+        "SrcName": "_result",
+        "DstId": 2223,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 2459,
+        "SrcName": "_result",
+        "DstId": 2223,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2223,
+        "SrcName": "_result",
+        "DstId": 2224,
+        "DstName": "a"
+      },
+      {
+        "Id": 2689,
+        "Value": {
+          "$type": "Simple",
+          "Type": "System.Single",
+          "Value": 0
+        },
+        "DstId": 2224,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2222,
+        "SrcName": "_signal",
+        "DstId": 2225,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2224,
+        "SrcName": "_result",
+        "DstId": 2225,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 2225,
+        "SrcName": "true",
+        "DstId": 2226,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2690,
+        "Value": "HIT Player Dead!!",
+        "DstId": 2226,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 2226,
+        "SrcName": "_signal",
+        "DstId": 2227,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2691,
+        "Value": false,
+        "DstId": 2227,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2265,
+        "SrcName": "_result",
+        "DstId": 2238,
+        "DstName": "max"
+      },
+      {
+        "Id": 2692,
+        "Value": 0,
+        "DstId": 2238,
+        "DstName": "min"
+      },
+      {
+        "SrcId": 2421,
+        "SrcName": "_result",
+        "DstId": 2238,
+        "DstName": "value"
+      },
+      {
+        "SrcId": 2651,
+        "SrcName": "_result",
+        "DstId": 2265,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2102,
+        "SrcName": "_result",
+        "DstId": 2315,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2455,
+        "SrcName": "_result",
+        "DstId": 2405,
+        "DstName": "a"
+      },
+      {
+        "Id": 2693,
+        "Value": {
+          "$type": "Simple",
+          "Type": "System.Single",
+          "Value": 0.25
+        },
+        "DstId": 2405,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2653,
+        "SrcName": "_result",
+        "DstId": 2413,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2413,
+        "SrcName": "_result",
+        "DstId": 2414,
+        "DstName": "a"
+      },
+      {
+        "Id": 2694,
+        "Value": {
+          "$type": "Simple",
+          "Type": "System.Single",
+          "Value": 3
+        },
+        "DstId": 2414,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2208,
+        "SrcName": "true",
+        "DstId": 2417,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2414,
+        "SrcName": "_result",
+        "DstId": 2417,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 2651,
+        "SrcName": "_result",
+        "DstId": 2420,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2420,
+        "SrcName": "_result",
+        "DstId": 2421,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 2656,
+        "SrcName": "_result",
+        "DstId": 2421,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2653,
+        "SrcName": "_result",
+        "DstId": 2453,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2417,
+        "SrcName": "true",
+        "DstId": 2454,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2453,
+        "SrcName": "_result",
+        "DstId": 2454,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2656,
+        "SrcName": "_result",
+        "DstId": 2459,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 2500,
+        "SrcName": "_result",
+        "DstId": 2459,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2405,
+        "SrcName": "_result",
+        "DstId": 2500,
+        "DstName": "a"
+      },
+      {
+        "Id": 2695,
+        "Value": {
+          "$type": "Simple",
+          "Type": "System.Single",
+          "Value": 1
+        },
+        "DstId": 2500,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2523,
+        "SrcName": "_signal",
+        "DstId": 2502,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2550,
+        "SrcName": "_result",
+        "DstId": 2502,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2514,
+        "SrcName": "_result",
+        "DstId": 2502,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2511,
+        "SrcName": "false",
+        "DstId": 2503,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2696,
+        "Value": "HIT Player!!",
+        "DstId": 2503,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 2503,
+        "SrcName": "_signal",
+        "DstId": 2504,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2697,
+        "Value": false,
+        "DstId": 2504,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2505,
+        "SrcName": "_result",
+        "DstId": 2506,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2506,
+        "SrcName": "_result",
+        "DstId": 2507,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2502,
+        "SrcName": "_signal",
+        "DstId": 2508,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2506,
+        "SrcName": "_result",
+        "DstId": 2508,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2509,
+        "SrcName": "_result",
+        "DstId": 2508,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2507,
+        "SrcName": "_result",
+        "DstId": 2509,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 2525,
+        "SrcName": "_result",
+        "DstId": 2509,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2509,
+        "SrcName": "_result",
+        "DstId": 2510,
+        "DstName": "a"
+      },
+      {
+        "Id": 2698,
+        "Value": {
+          "$type": "Simple",
+          "Type": "System.Single",
+          "Value": 0
+        },
+        "DstId": 2510,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2508,
+        "SrcName": "_signal",
+        "DstId": 2511,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2510,
+        "SrcName": "_result",
+        "DstId": 2511,
+        "DstName": "condition"
+      },
+      {
+        "SrcId": 2511,
+        "SrcName": "true",
+        "DstId": 2512,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2699,
+        "Value": "HIT Player Dead!!",
+        "DstId": 2512,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 2512,
+        "SrcName": "_signal",
+        "DstId": 2513,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 2700,
+        "Value": false,
+        "DstId": 2513,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2515,
+        "SrcName": "_result",
+        "DstId": 2514,
+        "DstName": "max"
+      },
+      {
+        "Id": 2701,
+        "Value": 0,
+        "DstId": 2514,
+        "DstName": "min"
+      },
+      {
+        "SrcId": 2521,
+        "SrcName": "_result",
+        "DstId": 2514,
+        "DstName": "value"
+      },
+      {
+        "SrcId": 2550,
+        "SrcName": "_result",
+        "DstId": 2515,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2524,
+        "SrcName": "_result",
+        "DstId": 2516,
+        "DstName": "a"
+      },
+      {
+        "Id": 2702,
+        "Value": {
+          "$type": "Simple",
+          "Type": "System.Single",
+          "Value": 0.25
+        },
+        "DstId": 2516,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2550,
+        "SrcName": "_result",
+        "DstId": 2520,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2520,
+        "SrcName": "_result",
+        "DstId": 2521,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 2601,
+        "SrcName": "_result",
+        "DstId": 2521,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2548,
+        "SrcName": "_result",
+        "DstId": 2522,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2417,
+        "SrcName": "false",
+        "DstId": 2523,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2522,
+        "SrcName": "_result",
+        "DstId": 2523,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2601,
+        "SrcName": "_result",
+        "DstId": 2525,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 2516,
+        "SrcName": "_result",
+        "DstId": 2525,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 2547,
+        "SrcName": "_result",
+        "DstId": 2548,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2549,
+        "SrcName": "_result",
+        "DstId": 2550,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2599,
+        "SrcName": "_result",
+        "DstId": 2600,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2600,
+        "SrcName": "_result",
+        "DstId": 2601,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2650,
+        "SrcName": "_result",
+        "DstId": 2651,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2652,
+        "SrcName": "_result",
+        "DstId": 2653,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2654,
+        "SrcName": "_result",
+        "DstId": 2655,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2655,
+        "SrcName": "_result",
+        "DstId": 2656,
+        "DstName": "_target"
       }
     ]
   },
@@ -1710,7 +3294,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 397,
+        "Id": 177,
         "Value": 0,
         "DstId": 4,
         "DstName": "index"
@@ -1746,7 +3330,7 @@
         "DstName": "input"
       },
       {
-        "Id": 398,
+        "Id": 178,
         "Value": 0,
         "DstId": 9,
         "DstName": "index"
@@ -1776,13 +3360,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 399,
+        "Id": 179,
         "Value": "ironsights",
         "DstId": 19,
         "DstName": "v"
       },
       {
-        "Id": 400,
+        "Id": 180,
         "Value": 1,
         "DstId": 19,
         "DstName": "value"
@@ -1806,7 +3390,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 401,
+        "Id": 181,
         "Value": true,
         "DstId": 44,
         "DstName": "_value"
@@ -1824,7 +3408,7 @@
         "DstName": "condition"
       },
       {
-        "Id": 402,
+        "Id": 182,
         "Value": "Attack2",
         "DstId": 52,
         "DstName": "action"
@@ -1842,13 +3426,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 403,
+        "Id": 183,
         "Value": "ironsights",
         "DstId": 54,
         "DstName": "v"
       },
       {
-        "Id": 404,
+        "Id": 184,
         "Value": 0,
         "DstId": 54,
         "DstName": "value"
@@ -1860,7 +3444,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 405,
+        "Id": 185,
         "Value": 0.01,
         "DstId": 63,
         "DstName": "seconds"
@@ -1878,7 +3462,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 406,
+        "Id": 186,
         "Value": false,
         "DstId": 76,
         "DstName": "_value"
@@ -2025,7 +3609,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 148,
+        "Id": 60,
         "Value": 0,
         "DstId": 4,
         "DstName": "index"
@@ -2061,7 +3645,7 @@
         "DstName": "input"
       },
       {
-        "Id": 149,
+        "Id": 61,
         "Value": 0,
         "DstId": 8,
         "DstName": "index"
@@ -2091,13 +3675,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 150,
+        "Id": 62,
         "Value": "b_reload",
         "DstId": 19,
         "DstName": "v"
       },
       {
-        "Id": 151,
+        "Id": 63,
         "Value": true,
         "DstId": 19,
         "DstName": "value"

@@ -211,6 +211,7 @@
             "DisplayName": null,
             "DropPlayerMoneyOnDeath": false,
             "F2MenuUIPanel": null,
+            "HotBarSlots": null,
             "IsBot": true,
             "IsInUIMenu": false,
             "OnComponentDestroy": null,
@@ -467,7 +468,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 68,
+                  "Id": 92,
                   "Value": true,
                   "DstId": 7,
                   "DstName": "_value"
@@ -479,7 +480,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 69,
+                  "Id": 93,
                   "Value": 0.01,
                   "DstId": 14,
                   "DstName": "seconds"
@@ -503,7 +504,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 70,
+                  "Id": 94,
                   "Value": "F2Menu",
                   "DstId": 61,
                   "DstName": "action"
@@ -587,7 +588,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 99,
+                  "Id": 95,
                   "Value": "FireBotStart?",
                   "DstId": 80,
                   "DstName": "format"
@@ -599,7 +600,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 90,
+                  "Id": 96,
                   "Value": "darkrpgamemode",
                   "DstId": 82,
                   "DstName": "name"
@@ -611,7 +612,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 91,
+                  "Id": 97,
                   "Value": "InChildren",
                   "DstId": 83,
                   "DstName": "search"
@@ -649,6 +650,8 @@
               }
             },
             "OnComponentUpdate": null,
+            "PlayerCameraRef": null,
+            "PlayerCurrentJobTempTime": 0,
             "PlayerDeathMoneyDropAll": false,
             "PlayerDeathMoneyDropAmount": 0,
             "PlayerDoorInt": 0,
@@ -663,6 +666,51 @@
               "ValueUnsigned": 0
             },
             "SteamName": null
+          },
+          {
+            "__type": "Sandbox.ModelHitboxes",
+            "__guid": "5aad2dff-3383-43da-8a03-aad25a95d23b",
+            "__enabled": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Renderer": {
+              "_type": "component",
+              "component_id": "dea64849-2be8-4b3f-8d9b-bfb51744dc9c",
+              "go": "665258f5-b238-436f-9482-8817f10c4cab",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "Target": {
+              "_type": "gameobject",
+              "go": "665258f5-b238-436f-9482-8817f10c4cab"
+            }
+          },
+          {
+            "__type": "HealthComponent",
+            "__guid": "08b963cf-e64c-47c1-9092-d74e193670d9",
+            "__enabled": true,
+            "Armor": 0,
+            "ArmorInfo": false,
+            "Health": 100,
+            "HungerSystem": false,
+            "IsGodMode": false,
+            "IsHungerEnabled": false,
+            "IsThirstEnabled": false,
+            "MaxArmor": 0,
+            "MaxHealth": 0,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "PlayerHunger": 80,
+            "PlayerHungerMax": 100,
+            "PlayerThirst": 80,
+            "PlayerThirstMax": 100
           }
         ],
         "Children": []
