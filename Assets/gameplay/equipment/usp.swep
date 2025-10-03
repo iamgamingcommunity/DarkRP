@@ -3,10 +3,17 @@
   "EquipmentDescription": null,
   "viewmodel": "gameplay/entities/equipment/weapons/vm_usp.prefab",
   "worldmodel": "gameplay/entities/equipment/weapons/w_usp.prefab",
+  "EquipmentFireMode": [
+    0,
+    3,
+    5
+  ],
   "EquipmentFireSpeed": 0,
   "EquipmentAimSpeed": 0,
   "EquipmentReloadSpeed": 0,
   "EquipmentBulletSpeed": 30,
+  "EquipmentBulletDecal": "textures/decals/bulletimpact.prefab",
+  "EquipmentUsePresetWeaponSystem": true,
   "EquipmentCurrentAmmo": 0,
   "EquipmentMaxAmmo": 0,
   "EquipmentUnlimitedAmmo": false,
@@ -15,23 +22,25 @@
   "EquipmentBaseDamage": 20,
   "EquipmentDamageMin": 0,
   "EquipmentDamageMax": 0,
-  "FireEquipmentSFX": null,
+  "FireEquipmentSFX": "sounds/kenney/ui/ui.popup.message.open.sound",
   "AimEquipmentSFX": null,
   "ReloadEquipmentSFX": null,
+  "BulletDecalSFX": "sounds/impacts/bullets/impact-bullet-metal.sound",
   "ExtraSFX": [],
   "PlayerControllerRef": null,
   "GraphFireEquipment": {
     "__version": 9,
     "__guid": "93fb62a0-7230-443b-a782-d001e232a6f2",
-    "__changeId": 1272,
+    "__changeId": 1450,
     "UserData": {
       "Title": "Graph Fire Equipment",
       "ReferencedComponentTypes": [
         "DarkrpPlayerInfo",
         "Sandbox.SkinnedModelRenderer",
-        "PickupableEntityBase",
         "SwepDroppedEntity",
-        "HealthComponent"
+        "HealthComponent",
+        "PickupableEntityBase",
+        "Sandbox.ModelRenderer"
       ]
     },
     "Variables": [
@@ -48,8 +57,16 @@
         "Type": "Vector3"
       },
       {
+        "Name": "TempEndPos",
+        "Type": "Vector3"
+      },
+      {
         "Name": "TempHitGameObject",
         "Type": "Sandbox.GameObject"
+      },
+      {
+        "Name": "TempNormal",
+        "Type": "Vector3"
       },
       {
         "Name": "TempPlayerControllerRef",
@@ -65,7 +82,7 @@
         "Id": 0,
         "Type": "input",
         "UserData": {
-          "Position": "-708,-48"
+          "Position": "-708,-72"
         }
       },
       {
@@ -547,7 +564,7 @@
           "_type": "Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "5688,-108"
+          "Position": "5772,-108"
         }
       },
       {
@@ -666,7 +683,7 @@
           "_var": "TempBulletVelocity"
         },
         "UserData": {
-          "Position": "6012,-108"
+          "Position": "6096,-108"
         }
       },
       {
@@ -796,7 +813,7 @@
         "Id": 1943,
         "Type": "log.info",
         "UserData": {
-          "Position": "11424,4392"
+          "Position": "12876,4404"
         }
       },
       {
@@ -806,7 +823,7 @@
           "_var": "UpdateBulletsPos"
         },
         "UserData": {
-          "Position": "11604,4392"
+          "Position": "13068,4404"
         }
       },
       {
@@ -1585,6 +1602,266 @@
         "UserData": {
           "Position": "10452,-564"
         }
+      },
+      {
+        "Id": 2715,
+        "Type": "property",
+        "ParentId": 53,
+        "Properties": {
+          "_name": "Normal",
+          "_type": "Sandbox.SceneTraceResult"
+        }
+      },
+      {
+        "Id": 2717,
+        "Type": "property",
+        "ParentId": 53,
+        "Properties": {
+          "_name": "EndPosition",
+          "_type": "Sandbox.SceneTraceResult"
+        }
+      },
+      {
+        "Id": 2722,
+        "Type": "scene.instantiate",
+        "UserData": {
+          "Position": "12288,4404"
+        }
+      },
+      {
+        "Id": 2729,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempEndPos"
+        },
+        "UserData": {
+          "Position": "5340,-108"
+        }
+      },
+      {
+        "Id": 2730,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempNormal"
+        },
+        "UserData": {
+          "Position": "5532,-108"
+        }
+      },
+      {
+        "Id": 2733,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempEndPos"
+        },
+        "UserData": {
+          "Position": "11808,4452"
+        }
+      },
+      {
+        "Id": 2734,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempNormal"
+        },
+        "UserData": {
+          "Position": "11808,4476"
+        }
+      },
+      {
+        "Id": 2735,
+        "Type": "property",
+        "Properties": {
+          "_name": "EulerAngles",
+          "_type": "Vector3"
+        },
+        "UserData": {
+          "Position": "11952,4512"
+        }
+      },
+      {
+        "Id": 2737,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "ToRotation",
+          "_type": "Angles"
+        },
+        "UserData": {
+          "Position": "12072,4476"
+        }
+      },
+      {
+        "Id": 2738,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "11304,4440"
+        }
+      },
+      {
+        "Id": 2739,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "11616,4428"
+        }
+      },
+      {
+        "Id": 2741,
+        "Type": "property",
+        "Properties": {
+          "_name": "EquipmentBulletDecal",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "11928,4428"
+        }
+      },
+      {
+        "Id": 2880,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempPlayerControllerRef"
+        },
+        "UserData": {
+          "Position": "696,264"
+        }
+      },
+      {
+        "Id": 2881,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "1344,168"
+        }
+      },
+      {
+        "Id": 2882,
+        "Type": "property",
+        "Properties": {
+          "_name": "FireEquipmentSFX",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "1692,144"
+        }
+      },
+      {
+        "Id": 2883,
+        "Type": "sound.playat",
+        "UserData": {
+          "Position": "2064,-48"
+        }
+      },
+      {
+        "Id": 2884,
+        "Type": "property",
+        "Properties": {
+          "_name": "Children",
+          "_type": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "1008,396"
+        }
+      },
+      {
+        "Id": 2885,
+        "Type": "list.get",
+        "Properties": {
+          "T": "Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "1380,384"
+        }
+      },
+      {
+        "Id": 2888,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "Sandbox.ModelRenderer"
+        },
+        "UserData": {
+          "Position": "1584,396"
+        }
+      },
+      {
+        "Id": 2890,
+        "Type": "property",
+        "Properties": {
+          "_name": "Model",
+          "_type": "Sandbox.ModelRenderer"
+        },
+        "UserData": {
+          "Position": "1716,48"
+        }
+      },
+      {
+        "Id": 2892,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "GetBoneTransform",
+          "_type": "Sandbox.Model"
+        },
+        "UserData": {
+          "Position": "1764,-48"
+        }
+      },
+      {
+        "Id": 2898,
+        "Type": "property",
+        "Properties": {
+          "_name": "Position",
+          "_type": "Transform"
+        },
+        "UserData": {
+          "Position": "2064,48"
+        }
+      },
+      {
+        "Id": 2995,
+        "Type": "scene.get",
+        "Properties": {
+          "T": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "11928,4716"
+        }
+      },
+      {
+        "Id": 2997,
+        "Type": "sound.playat",
+        "UserData": {
+          "Position": "12588,4404"
+        }
+      },
+      {
+        "Id": 2998,
+        "Type": "var",
+        "Properties": {
+          "_var": "TempEndPos"
+        },
+        "UserData": {
+          "Position": "12576,4476"
+        }
+      },
+      {
+        "Id": 2999,
+        "Type": "property",
+        "Properties": {
+          "_name": "BulletDecalSFX",
+          "_type": "PickupableEntityBase"
+        },
+        "UserData": {
+          "Position": "12408,4656"
+        }
       }
     ],
     "Links": [
@@ -1607,7 +1884,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 2657,
+        "Id": 3144,
         "Value": 0,
         "DstId": 6,
         "DstName": "index"
@@ -1637,13 +1914,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 2658,
+        "Id": 3145,
         "Value": "b_attack",
         "DstId": 10,
         "DstName": "v"
       },
       {
-        "Id": 2659,
+        "Id": 3146,
         "Value": true,
         "DstId": 10,
         "DstName": "value"
@@ -1667,7 +1944,7 @@
         "DstName": "input"
       },
       {
-        "Id": 2660,
+        "Id": 3147,
         "Value": 0,
         "DstId": 34,
         "DstName": "index"
@@ -1757,7 +2034,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 2661,
+        "Id": 3148,
         "Value": 1E+15,
         "DstId": 51,
         "DstName": "maxLength"
@@ -1805,13 +2082,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 2662,
+        "Id": 3149,
         "Value": true,
         "DstId": 57,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 2663,
+        "Id": 3150,
         "Value": "player",
         "DstId": 57,
         "DstName": "tag"
@@ -1835,7 +2112,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2664,
+        "Id": 3151,
         "Value": "Fired key usp?",
         "DstId": 59,
         "DstName": "format"
@@ -1883,7 +2160,7 @@
         "DstName": "input"
       },
       {
-        "Id": 2665,
+        "Id": 3152,
         "Value": "darkrpgamemode",
         "DstId": 69,
         "DstName": "name"
@@ -1895,7 +2172,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 2666,
+        "Id": 3153,
         "Value": 1,
         "DstId": 71,
         "DstName": "index"
@@ -2009,7 +2286,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2667,
+        "Id": 3154,
         "Value": 0.01,
         "DstId": 350,
         "DstName": "seconds"
@@ -2027,7 +2304,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2668,
+        "Id": 3155,
         "Value": true,
         "DstId": 359,
         "DstName": "_value"
@@ -2039,7 +2316,7 @@
         "DstName": "_target"
       },
       {
-        "SrcId": 864,
+        "SrcId": 2730,
         "SrcName": "_signal",
         "DstId": 679,
         "DstName": "_signal"
@@ -2063,7 +2340,7 @@
         "DstName": "input"
       },
       {
-        "SrcId": 61,
+        "SrcId": 2883,
         "SrcName": "_signal",
         "DstId": 749,
         "DstName": "_signal"
@@ -2081,7 +2358,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 2669,
+        "Id": 3156,
         "Value": 0,
         "DstId": 816,
         "DstName": "index"
@@ -2165,7 +2442,7 @@
         "DstName": "b"
       },
       {
-        "Id": 2670,
+        "Id": 3157,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2175,7 +2452,7 @@
         "DstName": "a"
       },
       {
-        "Id": 2671,
+        "Id": 3158,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2185,7 +2462,7 @@
         "DstName": "b"
       },
       {
-        "Id": 2672,
+        "Id": 3159,
         "Value": "0,0,0",
         "DstId": 1590,
         "DstName": "_target"
@@ -2221,7 +2498,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2673,
+        "Id": 3160,
         "Value": "HIT Player!!",
         "DstId": 1800,
         "DstName": "format"
@@ -2239,13 +2516,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 2674,
+        "Id": 3161,
         "Value": true,
         "DstId": 1893,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 2675,
+        "Id": 3162,
         "Value": "world",
         "DstId": 1893,
         "DstName": "tag"
@@ -2269,13 +2546,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 2676,
+        "Id": 3163,
         "Value": true,
         "DstId": 1910,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 2677,
+        "Id": 3164,
         "Value": "entity",
         "DstId": 1910,
         "DstName": "tag"
@@ -2293,13 +2570,13 @@
         "DstName": "condition"
       },
       {
-        "SrcId": 1894,
-        "SrcName": "true",
+        "SrcId": 2997,
+        "SrcName": "_signal",
         "DstId": 1943,
         "DstName": "_signal"
       },
       {
-        "Id": 2678,
+        "Id": 3165,
         "Value": "HIT World!!",
         "DstId": 1943,
         "DstName": "format"
@@ -2311,7 +2588,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2679,
+        "Id": 3166,
         "Value": false,
         "DstId": 1952,
         "DstName": "_value"
@@ -2329,7 +2606,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2680,
+        "Id": 3167,
         "Value": "HIT Entity!!",
         "DstId": 2003,
         "DstName": "format"
@@ -2341,7 +2618,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2681,
+        "Id": 3168,
         "Value": false,
         "DstId": 2013,
         "DstName": "_value"
@@ -2353,7 +2630,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2682,
+        "Id": 3169,
         "Value": false,
         "DstId": 2016,
         "DstName": "_value"
@@ -2431,7 +2708,7 @@
         "DstName": "a"
       },
       {
-        "Id": 2683,
+        "Id": 3170,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2459,7 +2736,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2684,
+        "Id": 3171,
         "Value": "HIT Player!!",
         "DstId": 2167,
         "DstName": "format"
@@ -2471,7 +2748,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2685,
+        "Id": 3172,
         "Value": false,
         "DstId": 2168,
         "DstName": "_value"
@@ -2501,7 +2778,7 @@
         "DstName": "a"
       },
       {
-        "Id": 2686,
+        "Id": 3173,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2547,7 +2824,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2687,
+        "Id": 3174,
         "Value": "HIT Player!!",
         "DstId": 2214,
         "DstName": "format"
@@ -2559,7 +2836,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2688,
+        "Id": 3175,
         "Value": false,
         "DstId": 2215,
         "DstName": "_value"
@@ -2613,7 +2890,7 @@
         "DstName": "a"
       },
       {
-        "Id": 2689,
+        "Id": 3176,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2641,7 +2918,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2690,
+        "Id": 3177,
         "Value": "HIT Player Dead!!",
         "DstId": 2226,
         "DstName": "format"
@@ -2653,7 +2930,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2691,
+        "Id": 3178,
         "Value": false,
         "DstId": 2227,
         "DstName": "_value"
@@ -2665,7 +2942,7 @@
         "DstName": "max"
       },
       {
-        "Id": 2692,
+        "Id": 3179,
         "Value": 0,
         "DstId": 2238,
         "DstName": "min"
@@ -2695,7 +2972,7 @@
         "DstName": "a"
       },
       {
-        "Id": 2693,
+        "Id": 3180,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2717,7 +2994,7 @@
         "DstName": "a"
       },
       {
-        "Id": 2694,
+        "Id": 3181,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2793,7 +3070,7 @@
         "DstName": "a"
       },
       {
-        "Id": 2695,
+        "Id": 3182,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2827,7 +3104,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2696,
+        "Id": 3183,
         "Value": "HIT Player!!",
         "DstId": 2503,
         "DstName": "format"
@@ -2839,7 +3116,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2697,
+        "Id": 3184,
         "Value": false,
         "DstId": 2504,
         "DstName": "_value"
@@ -2893,7 +3170,7 @@
         "DstName": "a"
       },
       {
-        "Id": 2698,
+        "Id": 3185,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2921,7 +3198,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2699,
+        "Id": 3186,
         "Value": "HIT Player Dead!!",
         "DstId": 2512,
         "DstName": "format"
@@ -2933,7 +3210,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 2700,
+        "Id": 3187,
         "Value": false,
         "DstId": 2513,
         "DstName": "_value"
@@ -2945,7 +3222,7 @@
         "DstName": "max"
       },
       {
-        "Id": 2701,
+        "Id": 3188,
         "Value": 0,
         "DstId": 2514,
         "DstName": "min"
@@ -2969,7 +3246,7 @@
         "DstName": "a"
       },
       {
-        "Id": 2702,
+        "Id": 3189,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -3073,13 +3350,211 @@
         "SrcName": "_result",
         "DstId": 2656,
         "DstName": "_target"
+      },
+      {
+        "SrcId": 53,
+        "SrcName": "_result",
+        "DstId": 2715,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 53,
+        "SrcName": "_result",
+        "DstId": 2717,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 1894,
+        "SrcName": "true",
+        "DstId": 2722,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2733,
+        "SrcName": "_result",
+        "DstId": 2722,
+        "DstName": "position"
+      },
+      {
+        "SrcId": 2741,
+        "SrcName": "_result",
+        "DstId": 2722,
+        "DstName": "prefab"
+      },
+      {
+        "SrcId": 2737,
+        "SrcName": "_result",
+        "DstId": 2722,
+        "DstName": "rotation"
+      },
+      {
+        "SrcId": 864,
+        "SrcName": "_signal",
+        "DstId": 2729,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2717,
+        "SrcName": "_result",
+        "DstId": 2729,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2729,
+        "SrcName": "_signal",
+        "DstId": 2730,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2715,
+        "SrcName": "_result",
+        "DstId": 2730,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 2734,
+        "SrcName": "_result",
+        "DstId": 2735,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2735,
+        "SrcName": "_result",
+        "DstId": 2737,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2738,
+        "SrcName": "_result",
+        "DstId": 2739,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2739,
+        "SrcName": "_result",
+        "DstId": 2741,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2880,
+        "SrcName": "_result",
+        "DstId": 2881,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2881,
+        "SrcName": "_result",
+        "DstId": 2882,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2892,
+        "SrcName": "_signal",
+        "DstId": 2883,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2898,
+        "SrcName": "_result",
+        "DstId": 2883,
+        "DstName": "position"
+      },
+      {
+        "SrcId": 2882,
+        "SrcName": "_result",
+        "DstId": 2883,
+        "DstName": "soundEvent"
+      },
+      {
+        "SrcId": 2880,
+        "SrcName": "_result",
+        "DstId": 2884,
+        "DstName": "_target"
+      },
+      {
+        "Id": 3190,
+        "Value": 0,
+        "DstId": 2885,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 2884,
+        "SrcName": "_result",
+        "DstId": 2885,
+        "DstName": "list"
+      },
+      {
+        "SrcId": 2885,
+        "SrcName": "_result",
+        "DstId": 2888,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2888,
+        "SrcName": "_result",
+        "DstId": 2890,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 61,
+        "SrcName": "_signal",
+        "DstId": 2892,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2890,
+        "SrcName": "_result",
+        "DstId": 2892,
+        "DstName": "_target"
+      },
+      {
+        "Id": 3191,
+        "Value": "hands",
+        "DstId": 2892,
+        "DstName": "bone"
+      },
+      {
+        "SrcId": 2892,
+        "SrcName": "_result",
+        "DstId": 2898,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2738,
+        "SrcName": "_result",
+        "DstId": 2995,
+        "DstName": "_this"
+      },
+      {
+        "SrcId": 2722,
+        "SrcName": "_signal",
+        "DstId": 2997,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2998,
+        "SrcName": "_result",
+        "DstId": 2997,
+        "DstName": "position"
+      },
+      {
+        "SrcId": 2999,
+        "SrcName": "_result",
+        "DstId": 2997,
+        "DstName": "soundEvent"
+      },
+      {
+        "SrcId": 2995,
+        "SrcName": "_result",
+        "DstId": 2999,
+        "DstName": "_target"
       }
     ]
   },
   "GraphAimEquipment": {
     "__version": 9,
     "__guid": "44a88ad7-2a4e-4e64-ba14-5290ade4c3a9",
-    "__changeId": 68,
+    "__changeId": 91,
     "UserData": {
       "Title": "Graph Aim Equipment",
       "ReferencedComponentTypes": [
@@ -3294,7 +3769,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 177,
+        "Id": 107,
         "Value": 0,
         "DstId": 4,
         "DstName": "index"
@@ -3330,7 +3805,7 @@
         "DstName": "input"
       },
       {
-        "Id": 178,
+        "Id": 108,
         "Value": 0,
         "DstId": 9,
         "DstName": "index"
@@ -3360,13 +3835,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 179,
+        "Id": 109,
         "Value": "ironsights",
         "DstId": 19,
         "DstName": "v"
       },
       {
-        "Id": 180,
+        "Id": 110,
         "Value": 1,
         "DstId": 19,
         "DstName": "value"
@@ -3390,7 +3865,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 181,
+        "Id": 111,
         "Value": true,
         "DstId": 44,
         "DstName": "_value"
@@ -3408,7 +3883,7 @@
         "DstName": "condition"
       },
       {
-        "Id": 182,
+        "Id": 112,
         "Value": "Attack2",
         "DstId": 52,
         "DstName": "action"
@@ -3426,13 +3901,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 183,
+        "Id": 113,
         "Value": "ironsights",
         "DstId": 54,
         "DstName": "v"
       },
       {
-        "Id": 184,
+        "Id": 114,
         "Value": 0,
         "DstId": 54,
         "DstName": "value"
@@ -3444,7 +3919,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 185,
+        "Id": 115,
         "Value": 0.01,
         "DstId": 63,
         "DstName": "seconds"
@@ -3462,7 +3937,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 186,
+        "Id": 116,
         "Value": false,
         "DstId": 76,
         "DstName": "_value"
@@ -3472,7 +3947,7 @@
   "GraphReloadEquipment": {
     "__version": 9,
     "__guid": "a08eb37f-870c-4257-bab8-4ba4e342221a",
-    "__changeId": 23,
+    "__changeId": 28,
     "UserData": {
       "Title": "Graph Reload Equipment",
       "ReferencedComponentTypes": [
@@ -3609,7 +4084,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 60,
+        "Id": 32,
         "Value": 0,
         "DstId": 4,
         "DstName": "index"
@@ -3645,7 +4120,7 @@
         "DstName": "input"
       },
       {
-        "Id": 61,
+        "Id": 33,
         "Value": 0,
         "DstId": 8,
         "DstName": "index"
@@ -3675,19 +4150,20 @@
         "DstName": "_target"
       },
       {
-        "Id": 62,
+        "Id": 34,
         "Value": "b_reload",
         "DstId": 19,
         "DstName": "v"
       },
       {
-        "Id": 63,
+        "Id": 35,
         "Value": true,
         "DstId": 19,
         "DstName": "value"
       }
     ]
   },
+  "GraphFireModeEquipment": null,
   "ExtraKeyBindings": [],
   "ExtraBools": [],
   "ExtraInts": [],

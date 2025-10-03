@@ -10,11 +10,16 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), TextArea] public string EquipmentDescription { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile viewmodel { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile worldmodel { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public int EquipmentCurrentFireMode { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public int EquipmentFireModeTempLoopVar { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public List<int> EquipmentFireMode { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentFireSpeed { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentAimSpeed { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentReloadSpeed { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentBulletSpeed { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile EquipmentBulletDecal { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PickupableEntity SwepDataFile { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool EquipmentUsingDefaultWeaponSystem { get; set; }
 
 
 
@@ -32,13 +37,19 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent FireEquipmentSFX { get; set; }
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent AimEquipmentSFX { get; set; }
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent ReloadEquipmentSFX { get; set; }
+	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent BulletDecalSFX { get; set; }
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent[] ExtraSFX { get; set; }
 	
 	//Actions Graphs
-	[Property, Feature("Action Graphs"), Group("Action Graphs")] public PickupableEntity.ActionGraphFireEquipment GraphFireEquipment { get; set; }
-	[Property, Feature("Action Graphs"), Group("Action Graphs")] public PickupableEntity.ActionGraphAimEquipment GraphAimEquipment { get; set; }
-	[Property, Feature("Action Graphs"), Group("Action Graphs")] public PickupableEntity.ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
-	
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom Fire Swep")] public PickupableEntity.ActionGraphFireEquipment CustomGraphFireEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom Aim Swep")] public PickupableEntity.ActionGraphAimEquipment CustomGraphAimEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom Reload Swep")] public PickupableEntity.ActionGraphReloadEquipment CustomGraphReloadEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom FireMode Swep")] public PickupableEntity.ActionGraphFireModeEquipment CustomGraphFireModeEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Fire Swep")] public PickupableEntity.ActionGraphFireEquipment GraphFireEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Aim Swep")] public PickupableEntity.ActionGraphAimEquipment GraphAimEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Reload Swep")] public PickupableEntity.ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default FireMode Swep")] public PickupableEntity.ActionGraphFireModeEquipment GraphFireModeEquipment { get; set; }
+
 	//Extra Swep Vars
 	[Property, Feature("Extra"), Group("Extra")] public GameObject PlayerControllerRef { get; set; } = new();
 	[Property, Feature("Extra"), Group("Extra")] public List<PickupableEntity.SwepExtraBools> ExtraBools { get; set; } = new();
@@ -92,6 +103,43 @@ public struct PlayerKeyAction
 	{
 		GraphReloadEquipment?.Invoke(PlayerControllerRef);
 	}
+
+	public void FireModeEquipment (GameObject PlayerControllerRef)
+	{
+		GraphFireModeEquipment?.Invoke(PlayerControllerRef);
+	}
+
+
+
+
+
+
+
+	public void CustomFireEquipment (GameObject PlayerControllerRef)
+	{
+		CustomGraphFireEquipment?.Invoke(PlayerControllerRef);
+	}
+
+
+	public void CustomAimEquipment (GameObject PlayerControllerRef)
+	{
+		CustomGraphAimEquipment?.Invoke(PlayerControllerRef);
+	}
+
+
+	public void CustomReloadEquipment (GameObject PlayerControllerRef)
+	{
+		CustomGraphReloadEquipment?.Invoke(PlayerControllerRef);
+	}
+
+
+
+	public void CustomFireModeEquipment (GameObject PlayerControllerRef)
+	{
+		CustomGraphFireModeEquipment?.Invoke(PlayerControllerRef);
+	}
+
+
 
 
 	public void SetHotBarSwepInfo(PickupableEntity CurrentHotBarSwep)

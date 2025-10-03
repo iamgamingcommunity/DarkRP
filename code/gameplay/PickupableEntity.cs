@@ -10,10 +10,13 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), TextArea] public string EquipmentDescription { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile viewmodel { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile worldmodel { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public List<int> EquipmentFireMode { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentFireSpeed { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentAimSpeed { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentReloadSpeed { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentBulletSpeed { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile EquipmentBulletDecal { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool EquipmentUsePresetWeaponSystem { get; set; }
 
 
 	//PickupableEntity Damage Info
@@ -30,22 +33,27 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent FireEquipmentSFX { get; set; }
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent AimEquipmentSFX { get; set; }
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent ReloadEquipmentSFX { get; set; }
+	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent BulletDecalSFX { get; set; }
     [Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent[] ExtraSFX { get; set; }
 
 	[Property, Feature("Extra"), Group("Extra")] public GameObject PlayerControllerRef { get; set; }
 
 		//Action Graphs
 	public delegate void ActionGraphFireEquipment(GameObject PlayerControllerRef);
-	[Property, Feature("Action Graphs"), Group("Action Graphs")]
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Custom Fire Swep")]
 	public ActionGraphFireEquipment GraphFireEquipment { get; set; }
 
 	public delegate void ActionGraphAimEquipment(GameObject PlayerControllerRef);
-	[Property, Feature("Action Graphs"), Group("Action Graphs")]
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Custom Aim Swep")]
 	public ActionGraphAimEquipment GraphAimEquipment { get; set; }
 	
 	public delegate void ActionGraphReloadEquipment(GameObject PlayerControllerRef);
-	[Property, Feature("Action Graphs"), Group("Action Graphs")]
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Custom Reload Swep")]
 	public ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
+
+	public delegate void ActionGraphFireModeEquipment(GameObject PlayerControllerRef);
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Custom FireMode Swep")]
+	public ActionGraphFireModeEquipment GraphFireModeEquipment { get; set; }
 
 
 	public struct SwepExtraActionGraphs
@@ -62,6 +70,20 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Extra"), Group("Extra")] public List<SwepExtraInt> ExtraInts { get; set; }
 	[Property, Feature("Extra"), Group("Extra")] public List<SwepExtraFloat> ExtraFloats { get; set; }
 	[Property, Feature("Extra"), Group("Extra")] public List<string> ExtraStrings { get; set; }
+
+	// Not Needed??
+	// public enum EquipmentFireModesList
+	// {
+	// 	Safe,
+	// 	Manual,
+	// 	SingleBolt,
+	// 	Semi,
+	// 	Burst,
+	// 	Auto,
+	// 	Shotgun,
+	// 	Gatling
+	// }
+
 
 	public struct SwepExtraBools
 	{

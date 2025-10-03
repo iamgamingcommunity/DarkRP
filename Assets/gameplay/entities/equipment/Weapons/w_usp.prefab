@@ -25,7 +25,7 @@
         "Interacted": {
           "__version": 9,
           "__guid": "dbf77aa7-e440-46da-aafd-eca93d8cd618",
-          "__changeId": 9,
+          "__changeId": 19,
           "UserData": {
             "Title": "Interacted",
             "ReferencedComponentTypes": [
@@ -1052,14 +1052,28 @@
                 "_type": "Sandbox.GameObject"
               },
               "UserData": {
-                "Position": "3864,2088"
+                "Position": "3984,2400"
               }
             },
             {
               "Id": 100,
               "Type": "time.delayobj",
               "UserData": {
-                "Position": "3684,2088"
+                "Position": "3804,2400"
+              }
+            },
+            {
+              "Id": 115,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "3876,2184"
+              }
+            },
+            {
+              "Id": 116,
+              "Type": "if",
+              "UserData": {
+                "Position": "3828,2100"
               }
             }
           ],
@@ -1683,7 +1697,7 @@
               "DstName": "_signal"
             },
             {
-              "Id": 108,
+              "Id": 125,
               "Value": "Fired Set Hot Bar Swep Info",
               "DstId": 58,
               "DstName": "format"
@@ -1917,7 +1931,7 @@
               "DstName": "a"
             },
             {
-              "Id": 109,
+              "Id": 126,
               "Value": 0,
               "DstId": 83,
               "DstName": "b"
@@ -1941,7 +1955,7 @@
               "DstName": "a"
             },
             {
-              "Id": 110,
+              "Id": 127,
               "Value": 0,
               "DstId": 85,
               "DstName": "b"
@@ -1965,7 +1979,7 @@
               "DstName": "a"
             },
             {
-              "Id": 111,
+              "Id": 128,
               "Value": 0,
               "DstId": 87,
               "DstName": "b"
@@ -1989,7 +2003,7 @@
               "DstName": "a"
             },
             {
-              "Id": 112,
+              "Id": 129,
               "Value": 0,
               "DstId": 89,
               "DstName": "b"
@@ -2073,7 +2087,7 @@
               "DstName": "a"
             },
             {
-              "Id": 113,
+              "Id": 130,
               "Value": {
                 "$type": "Simple",
                 "Type": "Vector3",
@@ -2101,7 +2115,7 @@
               "DstName": "_signal"
             },
             {
-              "Id": 114,
+              "Id": 131,
               "Value": 0.01,
               "DstId": 100,
               "DstName": "seconds"
@@ -2111,6 +2125,18 @@
               "SrcName": "_target",
               "DstId": 100,
               "DstName": "target"
+            },
+            {
+              "Id": 132,
+              "Value": 0,
+              "DstId": 115,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 115,
+              "SrcName": "_result",
+              "DstId": 116,
+              "DstName": "condition"
             }
           ],
           "Defaults": {
@@ -2222,7 +2248,7 @@
             "Interacted": {
               "__version": 9,
               "__guid": "c44fa4a7-5755-4f20-ad2e-b8abc1df159d",
-              "__changeId": 16,
+              "__changeId": 95,
               "UserData": {
                 "Title": "Interacted",
                 "ReferencedComponentTypes": [
@@ -2474,40 +2500,7 @@
                     "_type": "PickupableEntity"
                   },
                   "UserData": {
-                    "Position": "1728,132"
-                  }
-                },
-                {
-                  "Id": 24,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GraphAimEquipment",
-                    "_type": "PickupableEntityBase"
-                  },
-                  "UserData": {
-                    "Position": "1740,60"
-                  }
-                },
-                {
-                  "Id": 25,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GraphFireEquipment",
-                    "_type": "PickupableEntityBase"
-                  },
-                  "UserData": {
-                    "Position": "2136,60"
-                  }
-                },
-                {
-                  "Id": 26,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GraphReloadEquipment",
-                    "_type": "PickupableEntityBase"
-                  },
-                  "UserData": {
-                    "Position": "2532,60"
+                    "Position": "1644,120"
                   }
                 },
                 {
@@ -2518,7 +2511,7 @@
                     "_type": "PickupableEntity"
                   },
                   "UserData": {
-                    "Position": "2148,132"
+                    "Position": "2016,120"
                   }
                 },
                 {
@@ -2536,14 +2529,14 @@
                   "Id": 29,
                   "Type": "nop",
                   "UserData": {
-                    "Position": "2580,468"
+                    "Position": "2400,432"
                   }
                 },
                 {
                   "Id": 30,
                   "Type": "nop",
                   "UserData": {
-                    "Position": "2028,216"
+                    "Position": "1788,252"
                   }
                 },
                 {
@@ -3258,6 +3251,149 @@
                   "UserData": {
                     "Position": "612,576"
                   }
+                },
+                {
+                  "Id": 124,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentBulletDecal",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "4800,288"
+                  }
+                },
+                {
+                  "Id": 125,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentBulletDecal",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "4776,204"
+                  }
+                },
+                {
+                  "Id": 126,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "BulletDecalSFX",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "4344,744"
+                  }
+                },
+                {
+                  "Id": 127,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "BulletDecalSFX",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "4332,660"
+                  }
+                },
+                {
+                  "Id": 143,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "CustomGraphFireEquipment",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2016,-0"
+                  }
+                },
+                {
+                  "Id": 144,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "CustomGraphAimEquipment",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "1656,-0"
+                  }
+                },
+                {
+                  "Id": 152,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "CustomGraphReloadEquipment",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2496,0"
+                  }
+                },
+                {
+                  "Id": 167,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentUsePresetWeaponSystem",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "5220,276"
+                  }
+                },
+                {
+                  "Id": 168,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentUsingDefaultWeaponSystem",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "5208,204"
+                  }
+                },
+                {
+                  "Id": 169,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GraphFireModeEquipment",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "2928,108"
+                  }
+                },
+                {
+                  "Id": 170,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "CustomGraphFireModeEquipment",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2904,-0"
+                  }
+                },
+                {
+                  "Id": 171,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentFireMode",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "5760,288"
+                  }
+                },
+                {
+                  "Id": 172,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentFireMode",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "5784,204"
+                  }
                 }
               ],
               "Links": [
@@ -3286,7 +3422,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 26,
+                  "SrcId": 170,
                   "SrcName": "_signal",
                   "DstId": 6,
                   "DstName": "_signal"
@@ -3376,7 +3512,7 @@
                   "DstName": "_value"
                 },
                 {
-                  "SrcId": 56,
+                  "SrcId": 172,
                   "SrcName": "_signal",
                   "DstId": 11,
                   "DstName": "_signal"
@@ -3598,60 +3734,6 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 58,
-                  "SrcName": "_signal",
-                  "DstId": 24,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 30,
-                  "SrcName": "out",
-                  "DstId": 24,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 23,
-                  "SrcName": "_result",
-                  "DstId": 24,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 24,
-                  "SrcName": "_signal",
-                  "DstId": 25,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 30,
-                  "SrcName": "out",
-                  "DstId": 25,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 27,
-                  "SrcName": "_result",
-                  "DstId": 25,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 25,
-                  "SrcName": "_signal",
-                  "DstId": 26,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 30,
-                  "SrcName": "out",
-                  "DstId": 26,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 28,
-                  "SrcName": "_result",
-                  "DstId": 26,
-                  "DstName": "_value"
-                },
-                {
                   "SrcId": 4,
                   "SrcName": "_result",
                   "DstId": 27,
@@ -3832,7 +3914,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 22,
+                  "SrcId": 127,
                   "SrcName": "_signal",
                   "DstId": 55,
                   "DstName": "_signal"
@@ -3880,7 +3962,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 117,
+                  "Id": 160,
                   "Value": "Fired Set Hot Bar Swep Info",
                   "DstId": 58,
                   "DstName": "format"
@@ -4114,7 +4196,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 118,
+                  "Id": 161,
                   "Value": 0,
                   "DstId": 83,
                   "DstName": "b"
@@ -4138,7 +4220,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 119,
+                  "Id": 162,
                   "Value": 0,
                   "DstId": 85,
                   "DstName": "b"
@@ -4162,7 +4244,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 120,
+                  "Id": 163,
                   "Value": 0,
                   "DstId": 87,
                   "DstName": "b"
@@ -4186,7 +4268,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 121,
+                  "Id": 164,
                   "Value": 0,
                   "DstId": 89,
                   "DstName": "b"
@@ -4270,7 +4352,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 122,
+                  "Id": 165,
                   "Value": {
                     "$type": "Simple",
                     "Type": "Vector3",
@@ -4298,7 +4380,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 123,
+                  "Id": 166,
                   "Value": 0.01,
                   "DstId": 100,
                   "DstName": "seconds"
@@ -4308,6 +4390,180 @@
                   "SrcName": "_target",
                   "DstId": 100,
                   "DstName": "target"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 124,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 56,
+                  "SrcName": "_signal",
+                  "DstId": 125,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 29,
+                  "SrcName": "out",
+                  "DstId": 125,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 124,
+                  "SrcName": "_result",
+                  "DstId": 125,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 126,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 22,
+                  "SrcName": "_signal",
+                  "DstId": 127,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 91,
+                  "SrcName": "out",
+                  "DstId": 127,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 126,
+                  "SrcName": "_result",
+                  "DstId": 127,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 144,
+                  "SrcName": "_signal",
+                  "DstId": 143,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 30,
+                  "SrcName": "out",
+                  "DstId": 143,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 27,
+                  "SrcName": "_result",
+                  "DstId": 143,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 58,
+                  "SrcName": "_signal",
+                  "DstId": 144,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 30,
+                  "SrcName": "out",
+                  "DstId": 144,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_result",
+                  "DstId": 144,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 143,
+                  "SrcName": "_signal",
+                  "DstId": 152,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 30,
+                  "SrcName": "out",
+                  "DstId": 152,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 28,
+                  "SrcName": "_result",
+                  "DstId": 152,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 167,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 125,
+                  "SrcName": "_signal",
+                  "DstId": 168,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 29,
+                  "SrcName": "out",
+                  "DstId": 168,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 167,
+                  "SrcName": "_result",
+                  "DstId": 168,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 169,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 152,
+                  "SrcName": "_signal",
+                  "DstId": 170,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 30,
+                  "SrcName": "out",
+                  "DstId": 170,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 169,
+                  "SrcName": "_result",
+                  "DstId": 170,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 32,
+                  "SrcName": "out",
+                  "DstId": 171,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 168,
+                  "SrcName": "_signal",
+                  "DstId": 172,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 29,
+                  "SrcName": "out",
+                  "DstId": 172,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 171,
+                  "SrcName": "_result",
+                  "DstId": 172,
+                  "DstName": "_value"
                 }
               ],
               "Defaults": {
