@@ -14,17 +14,20 @@
   "EquipmentBulletSpeed": 30,
   "EquipmentBulletDecal": "textures/decals/bulletimpact.prefab",
   "EquipmentUsePresetWeaponSystem": true,
-  "EquipmentCurrentAmmo": 0,
-  "EquipmentMaxAmmo": 0,
+  "EquipmentCurrentAmmo": 8,
+  "EquipmentMaxAmmo": 18,
+  "EquipmentAmountOfRoundsToReload": 8,
+  "EquipmentReloadTimeDelay": 4,
   "EquipmentUnlimitedAmmo": false,
-  "EquipmentAmountOfRoundsFired": 0,
+  "EquipmentAmountOfRoundsFired": 1,
   "IsEnableMinMaxDamage": false,
   "EquipmentBaseDamage": 20,
   "EquipmentDamageMin": 0,
   "EquipmentDamageMax": 0,
   "FireEquipmentSFX": "sounds/kenney/ui/ui.popup.message.open.sound",
+  "DryFireEquipmentSFX": "sounds/error.sound",
   "AimEquipmentSFX": null,
-  "ReloadEquipmentSFX": null,
+  "ReloadEquipmentSFX": "sounds/impacts/bullets/impact-bullet-water.sound",
   "BulletDecalSFX": "sounds/impacts/bullets/impact-bullet-metal.sound",
   "ExtraSFX": [],
   "PlayerControllerRef": null,
@@ -1884,7 +1887,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 3144,
+        "Id": 3384,
         "Value": 0,
         "DstId": 6,
         "DstName": "index"
@@ -1914,13 +1917,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 3145,
+        "Id": 3385,
         "Value": "b_attack",
         "DstId": 10,
         "DstName": "v"
       },
       {
-        "Id": 3146,
+        "Id": 3386,
         "Value": true,
         "DstId": 10,
         "DstName": "value"
@@ -1944,7 +1947,7 @@
         "DstName": "input"
       },
       {
-        "Id": 3147,
+        "Id": 3387,
         "Value": 0,
         "DstId": 34,
         "DstName": "index"
@@ -2034,7 +2037,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 3148,
+        "Id": 3388,
         "Value": 1E+15,
         "DstId": 51,
         "DstName": "maxLength"
@@ -2082,13 +2085,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 3149,
+        "Id": 3389,
         "Value": true,
         "DstId": 57,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 3150,
+        "Id": 3390,
         "Value": "player",
         "DstId": 57,
         "DstName": "tag"
@@ -2112,7 +2115,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3151,
+        "Id": 3391,
         "Value": "Fired key usp?",
         "DstId": 59,
         "DstName": "format"
@@ -2160,7 +2163,7 @@
         "DstName": "input"
       },
       {
-        "Id": 3152,
+        "Id": 3392,
         "Value": "darkrpgamemode",
         "DstId": 69,
         "DstName": "name"
@@ -2172,7 +2175,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 3153,
+        "Id": 3393,
         "Value": 1,
         "DstId": 71,
         "DstName": "index"
@@ -2286,7 +2289,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3154,
+        "Id": 3394,
         "Value": 0.01,
         "DstId": 350,
         "DstName": "seconds"
@@ -2304,7 +2307,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3155,
+        "Id": 3395,
         "Value": true,
         "DstId": 359,
         "DstName": "_value"
@@ -2358,7 +2361,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 3156,
+        "Id": 3396,
         "Value": 0,
         "DstId": 816,
         "DstName": "index"
@@ -2442,7 +2445,7 @@
         "DstName": "b"
       },
       {
-        "Id": 3157,
+        "Id": 3397,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2452,7 +2455,7 @@
         "DstName": "a"
       },
       {
-        "Id": 3158,
+        "Id": 3398,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2462,7 +2465,7 @@
         "DstName": "b"
       },
       {
-        "Id": 3159,
+        "Id": 3399,
         "Value": "0,0,0",
         "DstId": 1590,
         "DstName": "_target"
@@ -2498,7 +2501,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3160,
+        "Id": 3400,
         "Value": "HIT Player!!",
         "DstId": 1800,
         "DstName": "format"
@@ -2516,13 +2519,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 3161,
+        "Id": 3401,
         "Value": true,
         "DstId": 1893,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 3162,
+        "Id": 3402,
         "Value": "world",
         "DstId": 1893,
         "DstName": "tag"
@@ -2546,13 +2549,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 3163,
+        "Id": 3403,
         "Value": true,
         "DstId": 1910,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 3164,
+        "Id": 3404,
         "Value": "entity",
         "DstId": 1910,
         "DstName": "tag"
@@ -2576,7 +2579,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3165,
+        "Id": 3405,
         "Value": "HIT World!!",
         "DstId": 1943,
         "DstName": "format"
@@ -2588,7 +2591,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3166,
+        "Id": 3406,
         "Value": false,
         "DstId": 1952,
         "DstName": "_value"
@@ -2606,7 +2609,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3167,
+        "Id": 3407,
         "Value": "HIT Entity!!",
         "DstId": 2003,
         "DstName": "format"
@@ -2618,7 +2621,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3168,
+        "Id": 3408,
         "Value": false,
         "DstId": 2013,
         "DstName": "_value"
@@ -2630,7 +2633,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3169,
+        "Id": 3409,
         "Value": false,
         "DstId": 2016,
         "DstName": "_value"
@@ -2708,7 +2711,7 @@
         "DstName": "a"
       },
       {
-        "Id": 3170,
+        "Id": 3410,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2736,7 +2739,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3171,
+        "Id": 3411,
         "Value": "HIT Player!!",
         "DstId": 2167,
         "DstName": "format"
@@ -2748,7 +2751,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3172,
+        "Id": 3412,
         "Value": false,
         "DstId": 2168,
         "DstName": "_value"
@@ -2778,7 +2781,7 @@
         "DstName": "a"
       },
       {
-        "Id": 3173,
+        "Id": 3413,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2824,7 +2827,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3174,
+        "Id": 3414,
         "Value": "HIT Player!!",
         "DstId": 2214,
         "DstName": "format"
@@ -2836,7 +2839,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3175,
+        "Id": 3415,
         "Value": false,
         "DstId": 2215,
         "DstName": "_value"
@@ -2890,7 +2893,7 @@
         "DstName": "a"
       },
       {
-        "Id": 3176,
+        "Id": 3416,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2918,7 +2921,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3177,
+        "Id": 3417,
         "Value": "HIT Player Dead!!",
         "DstId": 2226,
         "DstName": "format"
@@ -2930,7 +2933,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3178,
+        "Id": 3418,
         "Value": false,
         "DstId": 2227,
         "DstName": "_value"
@@ -2942,7 +2945,7 @@
         "DstName": "max"
       },
       {
-        "Id": 3179,
+        "Id": 3419,
         "Value": 0,
         "DstId": 2238,
         "DstName": "min"
@@ -2972,7 +2975,7 @@
         "DstName": "a"
       },
       {
-        "Id": 3180,
+        "Id": 3420,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2994,7 +2997,7 @@
         "DstName": "a"
       },
       {
-        "Id": 3181,
+        "Id": 3421,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -3070,7 +3073,7 @@
         "DstName": "a"
       },
       {
-        "Id": 3182,
+        "Id": 3422,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -3104,7 +3107,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3183,
+        "Id": 3423,
         "Value": "HIT Player!!",
         "DstId": 2503,
         "DstName": "format"
@@ -3116,7 +3119,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3184,
+        "Id": 3424,
         "Value": false,
         "DstId": 2504,
         "DstName": "_value"
@@ -3170,7 +3173,7 @@
         "DstName": "a"
       },
       {
-        "Id": 3185,
+        "Id": 3425,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -3198,7 +3201,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3186,
+        "Id": 3426,
         "Value": "HIT Player Dead!!",
         "DstId": 2512,
         "DstName": "format"
@@ -3210,7 +3213,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 3187,
+        "Id": 3427,
         "Value": false,
         "DstId": 2513,
         "DstName": "_value"
@@ -3222,7 +3225,7 @@
         "DstName": "max"
       },
       {
-        "Id": 3188,
+        "Id": 3428,
         "Value": 0,
         "DstId": 2514,
         "DstName": "min"
@@ -3246,7 +3249,7 @@
         "DstName": "a"
       },
       {
-        "Id": 3189,
+        "Id": 3429,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -3472,7 +3475,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 3190,
+        "Id": 3430,
         "Value": 0,
         "DstId": 2885,
         "DstName": "index"
@@ -3508,7 +3511,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 3191,
+        "Id": 3431,
         "Value": "hands",
         "DstId": 2892,
         "DstName": "bone"
@@ -3769,7 +3772,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 107,
+        "Id": 157,
         "Value": 0,
         "DstId": 4,
         "DstName": "index"
@@ -3805,7 +3808,7 @@
         "DstName": "input"
       },
       {
-        "Id": 108,
+        "Id": 158,
         "Value": 0,
         "DstId": 9,
         "DstName": "index"
@@ -3835,13 +3838,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 109,
+        "Id": 159,
         "Value": "ironsights",
         "DstId": 19,
         "DstName": "v"
       },
       {
-        "Id": 110,
+        "Id": 160,
         "Value": 1,
         "DstId": 19,
         "DstName": "value"
@@ -3865,7 +3868,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 111,
+        "Id": 161,
         "Value": true,
         "DstId": 44,
         "DstName": "_value"
@@ -3883,7 +3886,7 @@
         "DstName": "condition"
       },
       {
-        "Id": 112,
+        "Id": 162,
         "Value": "Attack2",
         "DstId": 52,
         "DstName": "action"
@@ -3901,13 +3904,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 113,
+        "Id": 163,
         "Value": "ironsights",
         "DstId": 54,
         "DstName": "v"
       },
       {
-        "Id": 114,
+        "Id": 164,
         "Value": 0,
         "DstId": 54,
         "DstName": "value"
@@ -3919,7 +3922,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 115,
+        "Id": 165,
         "Value": 0.01,
         "DstId": 63,
         "DstName": "seconds"
@@ -3937,7 +3940,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 116,
+        "Id": 166,
         "Value": false,
         "DstId": 76,
         "DstName": "_value"
@@ -4084,7 +4087,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 32,
+        "Id": 52,
         "Value": 0,
         "DstId": 4,
         "DstName": "index"
@@ -4120,7 +4123,7 @@
         "DstName": "input"
       },
       {
-        "Id": 33,
+        "Id": 53,
         "Value": 0,
         "DstId": 8,
         "DstName": "index"
@@ -4150,13 +4153,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 34,
+        "Id": 54,
         "Value": "b_reload",
         "DstId": 19,
         "DstName": "v"
       },
       {
-        "Id": 35,
+        "Id": 55,
         "Value": true,
         "DstId": 19,
         "DstName": "value"

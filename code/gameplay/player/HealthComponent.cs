@@ -23,6 +23,9 @@ public sealed class HealthComponent : Component
 	[Property, Feature("Armor Info")]
 	public float MaxArmor { get; set; }
 
+	[Property, Feature("Armor Info")]
+	public bool IsStaticArmor { get; set; }
+
 	//Hunger System Feature Tab
 	[Property, FeatureEnabled("Hunger System")]
 	public bool HungerSystem { get; set; } = false;
