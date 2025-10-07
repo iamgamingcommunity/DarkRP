@@ -26,12 +26,13 @@ public class PickupableEntityBase : Component
 
 	//PickupableEntity Damage Info
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentCurrentAmmo { get; set; }
-	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentMaxAmmo { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info"), Title("Swep Stored Ammo")] public int EquipmentMaxAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentAmountOfRoundsToReload { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentReloadTimeDelay { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public bool EquipmentUnlimitedAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public int EquipmentAmountOfRoundsFired { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public bool IsEnableMinMaxDamage { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public Curve DamageOverDistanceCurve { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( IsEnableMinMaxDamage ), false), Group("Equipment Damage/Ammo Info")] public float EquipmentBaseDamage { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( IsEnableMinMaxDamage ), true), Group("Equipment Damage/Ammo Info")] public float EquipmentDamageMin { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( IsEnableMinMaxDamage ), true), Group("Equipment Damage/Ammo Info")] public float EquipmentDamageMax { get; set; }
@@ -72,6 +73,11 @@ public class PickupableEntityBase : Component
 	public delegate void ActionGraphSetHotBarSwepInfo(PickupableEntity CurrentHotBarSwep);
 	[Property, Feature("Action Graphs")]
 	public ActionGraphSetHotBarSwepInfo GraphSetHotBarSwepInfo { get; set; }
+
+
+	public delegate void ActionGraphSwepDefaultDRPDamageSystem(GameObject PlayerControllerRef, GameObject HitGameObjectRef, Vector3 TempNormal, Vector3 TempEndPos, float TempDistance);
+	[Property, Feature("Action Graphs")]
+	public ActionGraphSwepDefaultDRPDamageSystem GraphSwepDefaultDRPDamageSystem { get; set; }
 
 	// public delegate void ActionGraphAimEquipment();
 	// [Property, Feature("Action Graphs")]
@@ -114,6 +120,11 @@ public struct PlayerKeyAction
 	}
 
 
+
+	public void SwepDefaultDRPDamageSystem (GameObject PlayerControllerRef, GameObject HitGameObjectRef, Vector3 TempNormal, Vector3 TempEndPos, float TempDistance)
+	{
+		GraphSwepDefaultDRPDamageSystem?.Invoke(PlayerControllerRef, HitGameObjectRef, TempNormal, TempEndPos, TempDistance);
+	}
 
 
 

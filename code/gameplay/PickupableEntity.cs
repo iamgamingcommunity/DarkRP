@@ -21,9 +21,10 @@ public class PickupableEntity : GameResource
 
 	//PickupableEntity Damage Info
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentCurrentAmmo { get; set; }
-	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentMaxAmmo { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info"), Title("Swep Stored Ammo")] public int EquipmentMaxAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentAmountOfRoundsToReload { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentReloadTimeDelay { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public Curve DamageOverDistanceCurve { get; set; }
     [Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public bool EquipmentUnlimitedAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public int EquipmentAmountOfRoundsFired { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public bool IsEnableMinMaxDamage { get; set; }

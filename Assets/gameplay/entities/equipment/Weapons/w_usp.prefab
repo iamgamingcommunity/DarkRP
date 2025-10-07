@@ -117,7 +117,7 @@
             "Interacted": {
               "__version": 9,
               "__guid": "c44fa4a7-5755-4f20-ad2e-b8abc1df159d",
-              "__changeId": 398,
+              "__changeId": 416,
               "UserData": {
                 "Title": "Interacted",
                 "ReferencedComponentTypes": [
@@ -1690,6 +1690,50 @@
                   "UserData": {
                     "Position": "4452,1224"
                   }
+                },
+                {
+                  "Id": 430,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentBulletSpeed",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "5844,900"
+                  }
+                },
+                {
+                  "Id": 431,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "DamageOverDistanceCurve",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "6204,912"
+                  }
+                },
+                {
+                  "Id": 432,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "DamageOverDistanceCurve",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "6204,804"
+                  }
+                },
+                {
+                  "Id": 433,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentBulletSpeed",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "5796,792"
+                  }
                 }
               ],
               "Links": [
@@ -1952,7 +1996,7 @@
                   "DstName": "_value"
                 },
                 {
-                  "SrcId": 384,
+                  "SrcId": 432,
                   "SrcName": "_signal",
                   "DstId": 19,
                   "DstName": "_signal"
@@ -3291,6 +3335,54 @@
                   "SrcId": 399,
                   "SrcName": "_result",
                   "DstId": 400,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 34,
+                  "SrcName": "out",
+                  "DstId": 430,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 34,
+                  "SrcName": "out",
+                  "DstId": 431,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 433,
+                  "SrcName": "_signal",
+                  "DstId": 432,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 31,
+                  "SrcName": "out",
+                  "DstId": 432,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 431,
+                  "SrcName": "_result",
+                  "DstId": 432,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 384,
+                  "SrcName": "_signal",
+                  "DstId": 433,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 31,
+                  "SrcName": "out",
+                  "DstId": 433,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 430,
+                  "SrcName": "_result",
+                  "DstId": 433,
                   "DstName": "_value"
                 }
               ],
