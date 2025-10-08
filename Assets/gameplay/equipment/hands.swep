@@ -3,20 +3,37 @@
   "EquipmentDescription": "The Hands",
   "viewmodel": null,
   "worldmodel": null,
+  "EquipmentFireMode": [],
   "EquipmentFireSpeed": 0,
   "EquipmentAimSpeed": 0,
   "EquipmentReloadSpeed": 0,
+  "EquipmentBulletSpeed": 0,
+  "EquipmentBulletDecal": null,
+  "EquipmentUsePresetWeaponSystem": false,
   "EquipmentCurrentAmmo": 0,
   "EquipmentMaxAmmo": 0,
+  "EquipmentAmountOfRoundsToReload": 0,
+  "EquipmentReloadTimeDelay": 0,
+  "DamageOverDistanceCurve": [
+    {
+      "x": 0.5,
+      "y": 0.5,
+      "in": 0,
+      "out": 0,
+      "mode": "Mirrored"
+    }
+  ],
   "EquipmentUnlimitedAmmo": false,
   "EquipmentAmountOfRoundsFired": 0,
   "IsEnableMinMaxDamage": false,
   "EquipmentBaseDamage": 0,
-  "EquipmentDamageMin": 0,
-  "EquipmentDamageMax": 0,
+  "EquipmentDamageMin": 1,
+  "EquipmentDamageMax": 1,
   "FireEquipmentSFX": null,
+  "DryFireEquipmentSFX": null,
   "AimEquipmentSFX": null,
   "ReloadEquipmentSFX": null,
+  "BulletDecalSFX": null,
   "ExtraSFX": [],
   "PlayerControllerRef": null,
   "GraphFireEquipment": {
@@ -1515,7 +1532,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1829,
+        "Id": 1872,
         "Value": 1E+15,
         "DstId": 12,
         "DstName": "maxLength"
@@ -1581,13 +1598,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 1830,
+        "Id": 1873,
         "Value": true,
         "DstId": 20,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 1831,
+        "Id": 1874,
         "Value": "grab",
         "DstId": 20,
         "DstName": "tag"
@@ -1611,7 +1628,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 1832,
+        "Id": 1875,
         "Value": "Fired Hands?",
         "DstId": 22,
         "DstName": "format"
@@ -1707,7 +1724,7 @@
         "DstName": "timeDelta"
       },
       {
-        "Id": 1833,
+        "Id": 1876,
         "Value": 0.5,
         "DstId": 35,
         "DstName": "timeToArrive"
@@ -1743,7 +1760,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 1834,
+        "Id": 1877,
         "Value": true,
         "DstId": 40,
         "DstName": "_value"
@@ -1755,7 +1772,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 1835,
+        "Id": 1878,
         "Value": 0.01,
         "DstId": 41,
         "DstName": "seconds"
@@ -1773,7 +1790,7 @@
         "DstName": "in"
       },
       {
-        "Id": 1836,
+        "Id": 1879,
         "Value": "darkrpgamemode",
         "DstId": 44,
         "DstName": "name"
@@ -1785,7 +1802,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1837,
+        "Id": 1880,
         "Value": 1,
         "DstId": 46,
         "DstName": "index"
@@ -1827,13 +1844,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 1838,
+        "Id": 1881,
         "Value": "0,0,0",
         "DstId": 50,
         "DstName": "_value"
       },
       {
-        "Id": 1839,
+        "Id": 1882,
         "Value": "Attack1",
         "DstId": 51,
         "DstName": "action"
@@ -1857,13 +1874,13 @@
         "DstName": "_signal"
       },
       {
-        "Id": 1840,
+        "Id": 1883,
         "Value": false,
         "DstId": 53,
         "DstName": "_value"
       },
       {
-        "Id": 1841,
+        "Id": 1884,
         "Value": 0,
         "DstId": 54,
         "DstName": "index"
@@ -1911,7 +1928,7 @@
         "DstName": "a"
       },
       {
-        "Id": 1842,
+        "Id": 1885,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -1927,7 +1944,7 @@
         "DstName": "a"
       },
       {
-        "Id": 1843,
+        "Id": 1886,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -1943,7 +1960,7 @@
         "DstName": "pitch"
       },
       {
-        "Id": 1844,
+        "Id": 1887,
         "Value": 0,
         "DstId": 63,
         "DstName": "roll"
@@ -2015,13 +2032,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 1845,
+        "Id": 1888,
         "Value": true,
         "DstId": 69,
         "DstName": "_value"
       },
       {
-        "Id": 1846,
+        "Id": 1889,
         "Value": "Use",
         "DstId": 70,
         "DstName": "action"
@@ -2039,7 +2056,7 @@
         "DstName": "condition"
       },
       {
-        "Id": 1847,
+        "Id": 1890,
         "Value": "Use",
         "DstId": 72,
         "DstName": "action"
@@ -2081,7 +2098,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1848,
+        "Id": 1891,
         "Value": false,
         "DstId": 76,
         "DstName": "_value"
@@ -2111,7 +2128,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1849,
+        "Id": 1892,
         "Value": true,
         "DstId": 79,
         "DstName": "_value"
@@ -2135,7 +2152,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1850,
+        "Id": 1893,
         "Value": true,
         "DstId": 81,
         "DstName": "_value"
@@ -2207,7 +2224,7 @@
         "DstName": "a"
       },
       {
-        "Id": 1851,
+        "Id": 1894,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2223,7 +2240,7 @@
         "DstName": "a"
       },
       {
-        "Id": 1852,
+        "Id": 1895,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2239,7 +2256,7 @@
         "DstName": "pitch"
       },
       {
-        "Id": 1853,
+        "Id": 1896,
         "Value": 0,
         "DstId": 91,
         "DstName": "roll"
@@ -2269,13 +2286,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 1854,
+        "Id": 1897,
         "Value": "Run",
         "DstId": 94,
         "DstName": "action"
       },
       {
-        "Id": 1855,
+        "Id": 1898,
         "Value": "Use",
         "DstId": 95,
         "DstName": "action"
@@ -2305,7 +2322,7 @@
         "DstName": "a"
       },
       {
-        "Id": 1856,
+        "Id": 1899,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2327,7 +2344,7 @@
         "DstName": "a"
       },
       {
-        "Id": 1857,
+        "Id": 1900,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2349,7 +2366,7 @@
         "DstName": "pitch"
       },
       {
-        "Id": 1858,
+        "Id": 1901,
         "Value": 0,
         "DstId": 103,
         "DstName": "roll"
@@ -2373,7 +2390,7 @@
         "DstName": "a"
       },
       {
-        "Id": 1859,
+        "Id": 1902,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2389,7 +2406,7 @@
         "DstName": "a"
       },
       {
-        "Id": 1860,
+        "Id": 1903,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -2423,7 +2440,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1861,
+        "Id": 1904,
         "Value": false,
         "DstId": 109,
         "DstName": "_value"
@@ -2441,13 +2458,13 @@
         "DstName": "_this"
       },
       {
-        "Id": 1862,
+        "Id": 1905,
         "Value": 200,
         "DstId": 112,
         "DstName": "max"
       },
       {
-        "Id": 1863,
+        "Id": 1906,
         "Value": 0,
         "DstId": 112,
         "DstName": "min"
@@ -2471,7 +2488,7 @@
         "DstName": "_this"
       },
       {
-        "Id": 1864,
+        "Id": 1907,
         "Value": 0,
         "DstId": 115,
         "DstName": "index"
@@ -2489,7 +2506,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1865,
+        "Id": 1908,
         "Value": true,
         "DstId": 116,
         "DstName": "_value"
@@ -2501,7 +2518,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 1866,
+        "Id": 1909,
         "Value": 0,
         "DstId": 117,
         "DstName": "index"
@@ -2531,7 +2548,7 @@
         "DstName": "_this"
       },
       {
-        "Id": 1867,
+        "Id": 1910,
         "Value": 0,
         "DstId": 120,
         "DstName": "index"
@@ -2549,7 +2566,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1868,
+        "Id": 1911,
         "Value": false,
         "DstId": 121,
         "DstName": "_value"
@@ -2561,7 +2578,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 1869,
+        "Id": 1912,
         "Value": 0,
         "DstId": 122,
         "DstName": "index"
@@ -2597,7 +2614,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 1870,
+        "Id": 1913,
         "Value": 0,
         "DstId": 126,
         "DstName": "index"
@@ -2621,7 +2638,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 1871,
+        "Id": 1914,
         "Value": 0,
         "DstId": 128,
         "DstName": "index"
@@ -2690,6 +2707,7 @@
   },
   "GraphAimEquipment": null,
   "GraphReloadEquipment": null,
+  "GraphFireModeEquipment": null,
   "ExtraKeyBindings": [],
   "ExtraBools": [
     {

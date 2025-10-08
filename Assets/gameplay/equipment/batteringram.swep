@@ -3,21 +3,38 @@
   "EquipmentDescription": null,
   "viewmodel": null,
   "worldmodel": null,
+  "EquipmentFireMode": [],
   "EquipmentFireSpeed": 0,
   "EquipmentAimSpeed": 0,
   "EquipmentReloadSpeed": 0,
+  "EquipmentBulletSpeed": 0,
+  "EquipmentBulletDecal": null,
+  "EquipmentUsePresetWeaponSystem": false,
+  "EquipmentUnlimitedAmmo": false,
   "EquipmentCurrentAmmo": 0,
   "EquipmentMaxAmmo": 0,
-  "EquipmentUnlimitedAmmo": false,
+  "EquipmentAmountOfRoundsToReload": 0,
+  "EquipmentReloadTimeDelay": 0,
   "EquipmentAmountOfRoundsFired": 0,
-  "IsEnableMinMaxDamage": false,
   "EquipmentBaseDamage": 0,
-  "EquipmentDamageMin": 0,
-  "EquipmentDamageMax": 0,
+  "EquipmentDamageMin": 1,
+  "EquipmentDamageMax": 1,
+  "EquipmentHeadshotDamageMultiplier": 1,
+  "DamageOverDistanceCurve": [
+    {
+      "x": 0.5,
+      "y": 0.5,
+      "in": 0,
+      "out": 0,
+      "mode": "Mirrored"
+    }
+  ],
   "FireEquipmentSFX": null,
+  "DryFireEquipmentSFX": null,
   "AimEquipmentSFX": null,
   "ReloadEquipmentSFX": null,
-  "ExtraSFX": null,
+  "BulletDecalSFX": null,
+  "ExtraSFX": [],
   "PlayerControllerRef": null,
   "GraphFireEquipment": {
     "__version": 9,
@@ -616,7 +633,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 152,
+        "Id": 183,
         "Value": 1E+15,
         "DstId": 52,
         "DstName": "maxLength"
@@ -670,13 +687,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 153,
+        "Id": 184,
         "Value": true,
         "DstId": 58,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 154,
+        "Id": 185,
         "Value": "Frozen",
         "DstId": 58,
         "DstName": "tag"
@@ -700,7 +717,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 155,
+        "Id": 186,
         "Value": "Fired Battering Ram?",
         "DstId": 60,
         "DstName": "format"
@@ -766,7 +783,7 @@
         "DstName": "_value"
       },
       {
-        "Id": 156,
+        "Id": 187,
         "Value": "darkrpgamemode",
         "DstId": 69,
         "DstName": "name"
@@ -778,7 +795,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 157,
+        "Id": 188,
         "Value": 1,
         "DstId": 71,
         "DstName": "index"
@@ -808,7 +825,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 158,
+        "Id": 189,
         "Value": 0,
         "DstId": 75,
         "DstName": "index"
@@ -856,13 +873,13 @@
         "DstName": "_target"
       },
       {
-        "Id": 159,
+        "Id": 190,
         "Value": true,
         "DstId": 130,
         "DstName": "includeAncestors"
       },
       {
-        "Id": 160,
+        "Id": 191,
         "Value": "door",
         "DstId": 130,
         "DstName": "tag"
@@ -916,7 +933,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 165,
+        "Id": 192,
         "Value": true,
         "DstId": 162,
         "DstName": "_value"
@@ -925,6 +942,7 @@
   },
   "GraphAimEquipment": null,
   "GraphReloadEquipment": null,
+  "GraphFireModeEquipment": null,
   "ExtraKeyBindings": [],
   "ExtraBools": [],
   "ExtraInts": [],

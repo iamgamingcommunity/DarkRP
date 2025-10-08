@@ -31,11 +31,11 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentReloadTimeDelay { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public bool EquipmentUnlimitedAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public int EquipmentAmountOfRoundsFired { get; set; }
-	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public bool IsEnableMinMaxDamage { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public Curve DamageOverDistanceCurve { get; set; }
-	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( IsEnableMinMaxDamage ), false), Group("Equipment Damage/Ammo Info")] public float EquipmentBaseDamage { get; set; }
-	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( IsEnableMinMaxDamage ), true), Group("Equipment Damage/Ammo Info")] public float EquipmentDamageMin { get; set; }
-	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( IsEnableMinMaxDamage ), true), Group("Equipment Damage/Ammo Info")] public float EquipmentDamageMax { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public float EquipmentBaseDamage { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public float EquipmentDamageMin { get; set; } = 1f;
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public float EquipmentDamageMax { get; set; } = 1f;
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Damage"), Title("Headshot Damage Multiplier")] public float EquipmentHeadshotDamageMultiplier { get; set; } = 1f;
 	
 	//PickupableEntity SFX Info
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent FireEquipmentSFX { get; set; }
@@ -46,14 +46,23 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public List<SoundEvent> ExtraSFX { get; set; }
 	
 	//Actions Graphs
-	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom Fire Swep")] public PickupableEntity.ActionGraphFireEquipment CustomGraphFireEquipment { get; set; }
-	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom Aim Swep")] public PickupableEntity.ActionGraphAimEquipment CustomGraphAimEquipment { get; set; }
-	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom Reload Swep")] public PickupableEntity.ActionGraphReloadEquipment CustomGraphReloadEquipment { get; set; }
-	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom FireMode Swep")] public PickupableEntity.ActionGraphFireModeEquipment CustomGraphFireModeEquipment { get; set; }
-	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Fire Swep")] public PickupableEntity.ActionGraphFireEquipment GraphFireEquipment { get; set; }
-	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Aim Swep")] public PickupableEntity.ActionGraphAimEquipment GraphAimEquipment { get; set; }
-	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Reload Swep")] public PickupableEntity.ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
-	[Property, Feature("Action Graphs"), Group("Action Graphs"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default FireMode Swep")] public PickupableEntity.ActionGraphFireModeEquipment GraphFireModeEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Custom Swep System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom Fire Swep")] public PickupableEntity.ActionGraphFireEquipment CustomGraphFireEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Custom Swep System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom Aim Swep")] public PickupableEntity.ActionGraphAimEquipment CustomGraphAimEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Custom Swep System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom Reload Swep")] public PickupableEntity.ActionGraphReloadEquipment CustomGraphReloadEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Custom Swep System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), false), Title("Custom FireMode Swep")] public PickupableEntity.ActionGraphFireModeEquipment CustomGraphFireModeEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Fire Swep")] public PickupableEntity.ActionGraphFireEquipment GraphFireEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Aim Swep")] public PickupableEntity.ActionGraphAimEquipment GraphAimEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Reload Swep")] public PickupableEntity.ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
+	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default FireMode Swep")] public PickupableEntity.ActionGraphFireModeEquipment GraphFireModeEquipment { get; set; }
+	
+	public delegate void ActionGraphSwepDefaultDRPDamageSystem(GameObject PlayerControllerRef, GameObject HitGameObjectRef, Vector3 TempNormal, Vector3 TempEndPos, float TempDistance);
+	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Swep Damage System")] public ActionGraphSwepDefaultDRPDamageSystem GraphSwepDefaultDRPDamageSystem { get; set; }
+
+	public delegate void ActionGraphSetHotBarSwepInfo(PickupableEntity CurrentHotBarSwep);
+	[Property, Feature("Action Graphs"), Group("Default DarkRP HotBar System"), Title("Set Hotbar Swep")] public ActionGraphSetHotBarSwepInfo GraphSetHotBarSwepInfo { get; set; }
+
+	[Property, Feature("Action Graphs"), Group("Extra Action Graphs")] public List<PickupableEntity.SwepExtraActionGraphs> SwepExtraActionGraphs { get; set; } = new();
+
 
 	//Extra Swep Vars
 	[Property, Feature("Extra"), Group("Extra")] public GameObject PlayerControllerRef { get; set; } = new();
@@ -69,16 +78,9 @@ public class PickupableEntityBase : Component
 
 
 
-	// //Action Graphs
-	public delegate void ActionGraphSetHotBarSwepInfo(PickupableEntity CurrentHotBarSwep);
-	[Property, Feature("Action Graphs")]
-	public ActionGraphSetHotBarSwepInfo GraphSetHotBarSwepInfo { get; set; }
 
 
-	public delegate void ActionGraphSwepDefaultDRPDamageSystem(GameObject PlayerControllerRef, GameObject HitGameObjectRef, Vector3 TempNormal, Vector3 TempEndPos, float TempDistance);
-	[Property, Feature("Action Graphs")]
-	public ActionGraphSwepDefaultDRPDamageSystem GraphSwepDefaultDRPDamageSystem { get; set; }
-
+	// Not Needed???
 	// public delegate void ActionGraphAimEquipment();
 	// [Property, Feature("Action Graphs")]
 	// public ActionGraphAimEquipment GraphAimEquipment { get; set; }
@@ -97,6 +99,13 @@ public struct PlayerKeyAction
 
 
 
+
+
+
+	//Action Graphs Fire Logic Functions
+
+
+	//Default DarkRP Ballistic System
 	public void FireEquipment (GameObject PlayerControllerRef)
 	{
 		GraphFireEquipment?.Invoke(PlayerControllerRef);
@@ -127,9 +136,14 @@ public struct PlayerKeyAction
 	}
 
 
+	public void SetHotBarSwepInfo(PickupableEntity CurrentHotBarSwep)
+    {
+		Log.Info("Worked");
+		GraphSetHotBarSwepInfo?.Invoke(CurrentHotBarSwep);
+    }
 
 
-
+	//Custom Swep DarkRP Fire Action Graphs
 	public void CustomFireEquipment (GameObject PlayerControllerRef)
 	{
 		CustomGraphFireEquipment?.Invoke(PlayerControllerRef);
@@ -148,7 +162,6 @@ public struct PlayerKeyAction
 	}
 
 
-
 	public void CustomFireModeEquipment (GameObject PlayerControllerRef)
 	{
 		CustomGraphFireModeEquipment?.Invoke(PlayerControllerRef);
@@ -157,12 +170,8 @@ public struct PlayerKeyAction
 
 
 
-	public void SetHotBarSwepInfo(PickupableEntity CurrentHotBarSwep)
-    {
-		Log.Info("Worked");
-		GraphSetHotBarSwepInfo?.Invoke(CurrentHotBarSwep);
-    }
 
+	//Not needed???
 	//DarkRP Player Hotbar Action Graph Trigger Functions
 	// public void TriggerSlot0()
     // {
@@ -217,7 +226,7 @@ public struct PlayerKeyAction
 
 
 
-  [Property, Feature("Action Graphs"), Group("Extra Action Graphs")] public List<PickupableEntity.SwepExtraActionGraphs> SwepExtraActionGraphs { get; set; } = new();
+ 
 
 
 
