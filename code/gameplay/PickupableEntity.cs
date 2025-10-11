@@ -10,7 +10,17 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), TextArea] public string EquipmentDescription { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile viewmodel { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile worldmodel { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public Texture SpawnMenuIcon { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("Default DarkRP Ballistic System Firemodes Index Goes as Listed: 0=Safety, 1=Manual Single Bolt, 2=Single bolt, 3=Semi, 4=Burst, 5=Auto, 6=Shotgun, 7=Gatling.")] public List<int> EquipmentFireMode { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("This places the weapon the in the catagory you set in the spawn menus.")] public string SpawnMenuCatagory{ get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool NeedWeaponLicense { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool NoStripSwep { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool DisallowDrop { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("If the weapon can be spawned.")] public bool Spawnable { get; set; } = true;
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("If the weapon can be ONLY spawned via admin rank.")] public bool AdminSpawnable { get; set; } = true;
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("Which hotbar you want the swep to be added to.")] public int HotbarSlot { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentRecoil { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentCone { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentFireSpeed { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentAimSpeed { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentReloadSpeed { get; set; }
@@ -20,12 +30,15 @@ public class PickupableEntity : GameResource
 
 
 	//PickupableEntity Damage Info
+
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Unlimited Ammo")] public bool EquipmentUnlimitedAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Current Ammo")] public int EquipmentCurrentAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Stored Ammo")] public int EquipmentMaxAmmo { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Max Stored Ammo")] public int EquipmentMaxStoredAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Mag Size")] public int EquipmentAmountOfRoundsToReload { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Reload Time")] public int EquipmentReloadTimeDelay { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Amount Of Rounds Fired")] public int EquipmentAmountOfRoundsFired { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Swep Ammo Type")] public List<AmmoResource> EquipmentAmmoType { get; set; }
 
 
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Damage"), Title("Base Damage")] public float EquipmentBaseDamage { get; set; }

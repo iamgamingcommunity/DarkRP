@@ -1,0 +1,791 @@
+{
+  "RootObject": {
+    "__guid": "fb8cb4a0-84ed-414f-946a-c206549d95ed",
+    "__version": 1,
+    "Flags": 0,
+    "Name": "9mmammo",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
+    "Components": [],
+    "Children": [
+      {
+        "__guid": "cec60b06-663d-49fc-ac8f-cba6c094b7df",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "model",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "70452356-8300-4637-9fbc-8259586fc548",
+            "__enabled": true,
+            "AnimationGraph": null,
+            "BodyGroups": 1,
+            "BoneMergeTarget": null,
+            "CreateAttachments": false,
+            "CreateBoneObjects": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "models/weapons/sbox_ammo/9mm_ammobox/ammobox_9mm.vmdl",
+            "Morphs": {},
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Parameters": {
+              "bools": {},
+              "ints": {},
+              "floats": {},
+              "vectors": {},
+              "rotations": {}
+            },
+            "PlaybackRate": 1,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Sequence": {
+              "Name": null,
+              "Looping": true,
+              "Blending": false
+            },
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "ee2a9bb0-f684-4355-af23-06e304b12882",
+            "__enabled": true,
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {
+              "X": false,
+              "Y": false,
+              "Z": false,
+              "Pitch": false,
+              "Yaw": false,
+              "Roll": false
+            },
+            "MassCenterOverride": "0,0,0",
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OverrideMassCenter": false,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "1a08c2c7-bd95-4df8-834e-d6cba79f8ef0",
+            "__enabled": true,
+            "Center": "0,0,0.7399998",
+            "Elasticity": null,
+            "Friction": null,
+            "IsTrigger": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RollingResistance": null,
+            "Scale": "7.4,2.75,1.55",
+            "Static": false,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          },
+          {
+            "__type": "Ammo",
+            "__guid": "ecf3b413-aca1-48a9-bbce-7a70dca53307",
+            "__enabled": true,
+            "AmmoResourceFile": "gameplay/ammo/9mm.ammo",
+            "Interacted": {
+              "__version": 9,
+              "__guid": "86fe0810-b2f2-41d5-8b22-7857a9634925",
+              "__changeId": 110,
+              "UserData": {
+                "Title": "Interacted",
+                "ReferencedComponentTypes": [
+                  "PickupableEntityBase"
+                ]
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "-96,-60"
+                  }
+                },
+                {
+                  "Id": 1,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GameObject",
+                    "_type": "Sandbox.Component"
+                  },
+                  "UserData": {
+                    "Position": "36,132"
+                  }
+                },
+                {
+                  "Id": 3,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "288,132"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepDataFile",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "600,180"
+                  }
+                },
+                {
+                  "Id": 5,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentAmmoType",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "912,108"
+                  }
+                },
+                {
+                  "Id": 6,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "AmmoResource"
+                  },
+                  "UserData": {
+                    "Position": "1296,-12"
+                  }
+                },
+                {
+                  "Id": 8,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "1500,-0"
+                  }
+                },
+                {
+                  "Id": 9,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "AmmoResourceFile",
+                    "_type": "Ammo"
+                  },
+                  "UserData": {
+                    "Position": "1620,36"
+                  }
+                },
+                {
+                  "Id": 10,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "1872,36"
+                  }
+                },
+                {
+                  "Id": 11,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Capacity",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "828,12"
+                  }
+                },
+                {
+                  "Id": 12,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "1032,12"
+                  }
+                },
+                {
+                  "Id": 14,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "1032,-60"
+                  }
+                },
+                {
+                  "Id": 15,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "1944,12"
+                  }
+                },
+                {
+                  "Id": 16,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "2436,276"
+                  }
+                },
+                {
+                  "Id": 17,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "AmmoResourceFile",
+                    "_type": "Ammo"
+                  },
+                  "UserData": {
+                    "Position": "2616,312"
+                  }
+                },
+                {
+                  "Id": 18,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "AmmoAmountGiven",
+                    "_type": "AmmoResource"
+                  },
+                  "UserData": {
+                    "Position": "2616,240"
+                  }
+                },
+                {
+                  "Id": 19,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentMaxAmmo",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2616,216"
+                  }
+                },
+                {
+                  "Id": 20,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentMaxAmmo",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2616,36"
+                  }
+                },
+                {
+                  "Id": 21,
+                  "Type": "nop",
+                  "UserData": {
+                    "Position": "2100,132"
+                  }
+                },
+                {
+                  "Id": 22,
+                  "Type": "op.add",
+                  "UserData": {
+                    "Position": "2952,216"
+                  }
+                },
+                {
+                  "Id": 24,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Destroy",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "3948,36"
+                  }
+                },
+                {
+                  "Id": 26,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": true,
+                    "_name": "Clamp",
+                    "_type": "System.Int32"
+                  },
+                  "UserData": {
+                    "Position": "2700,108"
+                  }
+                },
+                {
+                  "Id": 28,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "EquipmentMaxStoredAmmo",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2340,204"
+                  }
+                },
+                {
+                  "Id": 29,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "624,-60"
+                  }
+                },
+                {
+                  "Id": 30,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "576,12"
+                  }
+                },
+                {
+                  "Id": 31,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "2976,36"
+                  }
+                },
+                {
+                  "Id": 32,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "3144,36"
+                  }
+                },
+                {
+                  "Id": 33,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "3324,36"
+                  }
+                },
+                {
+                  "Id": 34,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "System.Int32"
+                  },
+                  "UserData": {
+                    "Position": "3276,216"
+                  }
+                },
+                {
+                  "Id": 37,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "System.Int32"
+                  },
+                  "UserData": {
+                    "Position": "2976,132"
+                  }
+                },
+                {
+                  "Id": 38,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "System.Int32"
+                  },
+                  "UserData": {
+                    "Position": "3204,144"
+                  }
+                },
+                {
+                  "Id": 43,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "InteractionSFX",
+                    "_type": "BaseEntity"
+                  },
+                  "UserData": {
+                    "Position": "3264,360"
+                  }
+                },
+                {
+                  "Id": 44,
+                  "Type": "sound.play",
+                  "UserData": {
+                    "Position": "3624,36"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "LastInteractingPlayer",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 3,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 4,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 5,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "false",
+                  "DstId": 6,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 6,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 8,
+                  "SrcName": "_result",
+                  "DstId": 9,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 9,
+                  "SrcName": "_result",
+                  "DstId": 10,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "body.value",
+                  "DstId": 10,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 11,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 11,
+                  "SrcName": "_result",
+                  "DstId": 12,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 41,
+                  "Value": 0,
+                  "DstId": 12,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 29,
+                  "SrcName": "_signal",
+                  "DstId": 14,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_result",
+                  "DstId": 14,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "body",
+                  "DstId": 15,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 10,
+                  "SrcName": "_result",
+                  "DstId": 15,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 16,
+                  "SrcName": "_result",
+                  "DstId": 17,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 17,
+                  "SrcName": "_result",
+                  "DstId": 18,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "out",
+                  "DstId": 19,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 15,
+                  "SrcName": "true",
+                  "DstId": 20,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "out",
+                  "DstId": 20,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 26,
+                  "SrcName": "_result",
+                  "DstId": 20,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 21,
+                  "DstName": "in"
+                },
+                {
+                  "SrcId": 19,
+                  "SrcName": "_result",
+                  "DstId": 22,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 18,
+                  "SrcName": "_result",
+                  "DstId": 22,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 44,
+                  "SrcName": "_signal",
+                  "DstId": 24,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 24,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 28,
+                  "SrcName": "_result",
+                  "DstId": 26,
+                  "DstName": "max"
+                },
+                {
+                  "Id": 42,
+                  "Value": 0,
+                  "DstId": 26,
+                  "DstName": "min"
+                },
+                {
+                  "SrcId": 22,
+                  "SrcName": "_result",
+                  "DstId": 26,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "out",
+                  "DstId": 28,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 29,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 30,
+                  "SrcName": "_result",
+                  "DstId": 29,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 30,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 20,
+                  "SrcName": "_signal",
+                  "DstId": 31,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 37,
+                  "SrcName": "_result",
+                  "DstId": 31,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 31,
+                  "SrcName": "_signal",
+                  "DstId": 32,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "_result",
+                  "DstId": 32,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 32,
+                  "SrcName": "_signal",
+                  "DstId": 33,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 34,
+                  "SrcName": "_result",
+                  "DstId": 33,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 26,
+                  "SrcName": "_result",
+                  "DstId": 34,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 19,
+                  "SrcName": "_result",
+                  "DstId": 37,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 18,
+                  "SrcName": "_result",
+                  "DstId": 38,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 16,
+                  "SrcName": "_result",
+                  "DstId": 43,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "_signal",
+                  "DstId": 44,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 44,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 43,
+                  "SrcName": "_result",
+                  "DstId": 44,
+                  "DstName": "soundEvent"
+                }
+              ],
+              "Defaults": {
+                "$8.component": {
+                  "_type": "component",
+                  "component_id": "ecf3b413-aca1-48a9-bbce-7a70dca53307",
+                  "go": "cec60b06-663d-49fc-ac8f-cba6c094b7df",
+                  "component_type": "ammo"
+                },
+                "$16.component": {
+                  "_type": "component",
+                  "component_id": "ecf3b413-aca1-48a9-bbce-7a70dca53307",
+                  "go": "cec60b06-663d-49fc-ac8f-cba6c094b7df",
+                  "component_type": "ammo"
+                }
+              }
+            },
+            "InteractionSFX": "sounds/kenney/ui/ui.button.press.sound",
+            "IsInteractable": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [
+    "facepunch.ammobox9mm#95475"
+  ],
+  "__version": 2
+}

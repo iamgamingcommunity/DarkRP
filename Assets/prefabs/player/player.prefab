@@ -14476,6 +14476,7 @@
             "__type": "PickupableEntityBase",
             "__guid": "6abeddab-1711-4ef5-acb9-85f08a513570",
             "__enabled": true,
+            "AdminSpawnable": true,
             "AimEquipmentSFX": null,
             "BulletDecalSFX": null,
             "CustomGraphAimEquipment": null,
@@ -14502,13 +14503,16 @@
                 }
               ]
             },
+            "DisallowDrop": false,
             "DryFireEquipmentSFX": null,
             "EquipmentAimSpeed": 0,
+            "EquipmentAmmoType": null,
             "EquipmentAmountOfRoundsFired": 0,
             "EquipmentAmountOfRoundsToReload": 0,
             "EquipmentBaseDamage": 0,
             "EquipmentBulletDecal": null,
             "EquipmentBulletSpeed": 0,
+            "EquipmentCone": 0,
             "EquipmentCurrentAmmo": 0,
             "EquipmentCurrentFireMode": 0,
             "EquipmentDamageMax": 0,
@@ -14519,7 +14523,9 @@
             "EquipmentFireSpeed": 0,
             "EquipmentHeadshotDamageMultiplier": 1,
             "EquipmentMaxAmmo": 0,
+            "EquipmentMaxStoredAmmo": 0,
             "EquipmentName": null,
+            "EquipmentRecoil": 0,
             "EquipmentReloadSpeed": 0,
             "EquipmentReloadTimeDelay": 0,
             "EquipmentUnlimitedAmmo": false,
@@ -14926,7 +14932,7 @@
             "GraphFireEquipment": {
               "__version": 9,
               "__guid": "59fcf557-ac08-4abe-bef2-5b0d42058d49",
-              "__changeId": 2295,
+              "__changeId": 2311,
               "UserData": {
                 "Title": "Graph Fire Default DarkRP Swep",
                 "ReferencedComponentTypes": [
@@ -19445,6 +19451,121 @@
                   "UserData": {
                     "Position": "9876,-1620"
                   }
+                },
+                {
+                  "Id": 7013,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "UpdateBulletsPos"
+                  },
+                  "UserData": {
+                    "Position": "12624,1020"
+                  }
+                },
+                {
+                  "Id": 7016,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "11472,1008"
+                  }
+                },
+                {
+                  "Id": 7017,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "System.Single"
+                  },
+                  "UserData": {
+                    "Position": "11400,1092"
+                  }
+                },
+                {
+                  "Id": 7018,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "11988,1008"
+                  }
+                },
+                {
+                  "Id": 7019,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempEndPos"
+                  },
+                  "UserData": {
+                    "Position": "11904,1140"
+                  }
+                },
+                {
+                  "Id": 7020,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Vector3"
+                  },
+                  "UserData": {
+                    "Position": "12060,1140"
+                  }
+                },
+                {
+                  "Id": 7021,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "11784,1008"
+                  }
+                },
+                {
+                  "Id": 7022,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempBulletStartPos"
+                  },
+                  "UserData": {
+                    "Position": "11640,1104"
+                  }
+                },
+                {
+                  "Id": 7023,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Vector3"
+                  },
+                  "UserData": {
+                    "Position": "11892,1080"
+                  }
+                },
+                {
+                  "Id": 7024,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "12384,1008"
+                  }
+                },
+                {
+                  "Id": 7025,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Vector3"
+                  },
+                  "UserData": {
+                    "Position": "12432,1176"
+                  }
+                },
+                {
+                  "Id": 7026,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "11244,1008"
+                  }
+                },
+                {
+                  "Id": 7027,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "System.Int32"
+                  },
+                  "UserData": {
+                    "Position": "11040,1032"
+                  }
                 }
               ],
               "Links": [
@@ -19467,7 +19588,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6672,
+                  "Id": 6906,
                   "Value": 0,
                   "DstId": 6,
                   "DstName": "index"
@@ -19497,13 +19618,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6673,
+                  "Id": 6907,
                   "Value": "b_attack",
                   "DstId": 10,
                   "DstName": "v"
                 },
                 {
-                  "Id": 6674,
+                  "Id": 6908,
                   "Value": true,
                   "DstId": 10,
                   "DstName": "value"
@@ -19527,7 +19648,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 6675,
+                  "Id": 6909,
                   "Value": 0,
                   "DstId": 34,
                   "DstName": "index"
@@ -19617,7 +19738,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6676,
+                  "Id": 6910,
                   "Value": 1E+15,
                   "DstId": 51,
                   "DstName": "maxLength"
@@ -19665,13 +19786,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6677,
+                  "Id": 6911,
                   "Value": true,
                   "DstId": 57,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 6678,
+                  "Id": 6912,
                   "Value": "player",
                   "DstId": 57,
                   "DstName": "tag"
@@ -19689,7 +19810,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6679,
+                  "Id": 6913,
                   "Value": "Fired key usp?",
                   "DstId": 59,
                   "DstName": "format"
@@ -19731,7 +19852,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 6680,
+                  "Id": 6914,
                   "Value": "darkrpgamemode",
                   "DstId": 69,
                   "DstName": "name"
@@ -19743,7 +19864,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6681,
+                  "Id": 6915,
                   "Value": 1,
                   "DstId": 71,
                   "DstName": "index"
@@ -19851,7 +19972,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6682,
+                  "Id": 6916,
                   "Value": 0.01,
                   "DstId": 350,
                   "DstName": "seconds"
@@ -19869,7 +19990,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6683,
+                  "Id": 6917,
                   "Value": true,
                   "DstId": 359,
                   "DstName": "_value"
@@ -19923,7 +20044,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6684,
+                  "Id": 6918,
                   "Value": 0,
                   "DstId": 816,
                   "DstName": "index"
@@ -20007,7 +20128,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 6685,
+                  "Id": 6919,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -20017,7 +20138,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6686,
+                  "Id": 6920,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -20027,7 +20148,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 6687,
+                  "Id": 6921,
                   "Value": "0,0,0",
                   "DstId": 1590,
                   "DstName": "_target"
@@ -20063,7 +20184,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6688,
+                  "Id": 6922,
                   "Value": "HIT Player!!",
                   "DstId": 1800,
                   "DstName": "format"
@@ -20081,13 +20202,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6689,
+                  "Id": 6923,
                   "Value": true,
                   "DstId": 1893,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 6690,
+                  "Id": 6924,
                   "Value": "world",
                   "DstId": 1893,
                   "DstName": "tag"
@@ -20111,13 +20232,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6691,
+                  "Id": 6925,
                   "Value": true,
                   "DstId": 1910,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 6692,
+                  "Id": 6926,
                   "Value": "entity",
                   "DstId": 1910,
                   "DstName": "tag"
@@ -20141,7 +20262,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6693,
+                  "Id": 6927,
                   "Value": "HIT World!!",
                   "DstId": 1943,
                   "DstName": "format"
@@ -20153,7 +20274,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6694,
+                  "Id": 6928,
                   "Value": false,
                   "DstId": 1952,
                   "DstName": "_value"
@@ -20171,7 +20292,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6695,
+                  "Id": 6929,
                   "Value": false,
                   "DstId": 2016,
                   "DstName": "_value"
@@ -20249,7 +20370,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6696,
+                  "Id": 6930,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -20277,7 +20398,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6697,
+                  "Id": 6931,
                   "Value": "HIT Player!!",
                   "DstId": 2167,
                   "DstName": "format"
@@ -20289,7 +20410,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6698,
+                  "Id": 6932,
                   "Value": false,
                   "DstId": 2168,
                   "DstName": "_value"
@@ -20319,7 +20440,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6699,
+                  "Id": 6933,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -20365,7 +20486,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6700,
+                  "Id": 6934,
                   "Value": "HIT Player!!",
                   "DstId": 2214,
                   "DstName": "format"
@@ -20377,7 +20498,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6701,
+                  "Id": 6935,
                   "Value": false,
                   "DstId": 2215,
                   "DstName": "_value"
@@ -20431,7 +20552,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6702,
+                  "Id": 6936,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -20459,7 +20580,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6703,
+                  "Id": 6937,
                   "Value": "HIT Player Dead!!",
                   "DstId": 2226,
                   "DstName": "format"
@@ -20471,7 +20592,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6704,
+                  "Id": 6938,
                   "Value": false,
                   "DstId": 2227,
                   "DstName": "_value"
@@ -20483,7 +20604,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 6705,
+                  "Id": 6939,
                   "Value": 0,
                   "DstId": 2238,
                   "DstName": "min"
@@ -20513,7 +20634,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6706,
+                  "Id": 6940,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -20535,7 +20656,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6707,
+                  "Id": 6941,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -20611,7 +20732,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6708,
+                  "Id": 6942,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -20645,7 +20766,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6709,
+                  "Id": 6943,
                   "Value": "HIT Player!!",
                   "DstId": 2503,
                   "DstName": "format"
@@ -20657,7 +20778,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6710,
+                  "Id": 6944,
                   "Value": false,
                   "DstId": 2504,
                   "DstName": "_value"
@@ -20711,7 +20832,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6711,
+                  "Id": 6945,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -20739,7 +20860,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6712,
+                  "Id": 6946,
                   "Value": "HIT Player Dead!!",
                   "DstId": 2512,
                   "DstName": "format"
@@ -20751,7 +20872,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6713,
+                  "Id": 6947,
                   "Value": false,
                   "DstId": 2513,
                   "DstName": "_value"
@@ -20763,7 +20884,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 6714,
+                  "Id": 6948,
                   "Value": 0,
                   "DstId": 2514,
                   "DstName": "min"
@@ -20787,7 +20908,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6715,
+                  "Id": 6949,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -21013,7 +21134,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6716,
+                  "Id": 6950,
                   "Value": 0,
                   "DstId": 2885,
                   "DstName": "index"
@@ -21049,7 +21170,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6717,
+                  "Id": 6951,
                   "Value": "hands",
                   "DstId": 2892,
                   "DstName": "bone"
@@ -21103,7 +21224,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6718,
+                  "Id": 6952,
                   "Value": "FIRED Default Weapon System!!",
                   "DstId": 3055,
                   "DstName": "format"
@@ -21115,7 +21236,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6719,
+                  "Id": 6953,
                   "Value": 0,
                   "DstId": 3109,
                   "DstName": "b"
@@ -21151,7 +21272,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6720,
+                  "Id": 6954,
                   "Value": 3,
                   "DstId": 3115,
                   "DstName": "b"
@@ -21181,7 +21302,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6721,
+                  "Id": 6955,
                   "Value": 1,
                   "DstId": 3222,
                   "DstName": "b"
@@ -21211,7 +21332,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6722,
+                  "Id": 6956,
                   "Value": 2,
                   "DstId": 3229,
                   "DstName": "b"
@@ -21241,7 +21362,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6723,
+                  "Id": 6957,
                   "Value": 6,
                   "DstId": 3236,
                   "DstName": "b"
@@ -21271,7 +21392,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6724,
+                  "Id": 6958,
                   "Value": 4,
                   "DstId": 3240,
                   "DstName": "b"
@@ -21301,7 +21422,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6725,
+                  "Id": 6959,
                   "Value": 5,
                   "DstId": 3244,
                   "DstName": "b"
@@ -21331,7 +21452,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6726,
+                  "Id": 6960,
                   "Value": 7,
                   "DstId": 3257,
                   "DstName": "b"
@@ -21379,7 +21500,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6727,
+                  "Id": 6961,
                   "Value": "HIT Player!!",
                   "DstId": 3439,
                   "DstName": "format"
@@ -21391,7 +21512,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6728,
+                  "Id": 6962,
                   "Value": false,
                   "DstId": 3440,
                   "DstName": "_value"
@@ -21445,7 +21566,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6729,
+                  "Id": 6963,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -21473,7 +21594,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6730,
+                  "Id": 6964,
                   "Value": "HIT Player Dead!!",
                   "DstId": 3448,
                   "DstName": "format"
@@ -21485,7 +21606,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6731,
+                  "Id": 6965,
                   "Value": false,
                   "DstId": 3449,
                   "DstName": "_value"
@@ -21497,7 +21618,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6732,
+                  "Id": 6966,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -21561,7 +21682,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6733,
+                  "Id": 6967,
                   "Value": "HIT Entity!!",
                   "DstId": 3784,
                   "DstName": "format"
@@ -21573,7 +21694,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6734,
+                  "Id": 6968,
                   "Value": false,
                   "DstId": 3785,
                   "DstName": "_value"
@@ -21639,7 +21760,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6735,
+                  "Id": 6969,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -21667,7 +21788,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6736,
+                  "Id": 6970,
                   "Value": "HIT Entity Dead!!",
                   "DstId": 3796,
                   "DstName": "format"
@@ -21679,7 +21800,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6737,
+                  "Id": 6971,
                   "Value": false,
                   "DstId": 3797,
                   "DstName": "_value"
@@ -21709,7 +21830,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6738,
+                  "Id": 6972,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -21755,7 +21876,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6739,
+                  "Id": 6973,
                   "Value": "HIT Entity!!",
                   "DstId": 3803,
                   "DstName": "format"
@@ -21767,7 +21888,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6740,
+                  "Id": 6974,
                   "Value": false,
                   "DstId": 3804,
                   "DstName": "_value"
@@ -21821,7 +21942,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6741,
+                  "Id": 6975,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -21849,7 +21970,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6742,
+                  "Id": 6976,
                   "Value": "HIT Entity Dead!!",
                   "DstId": 3812,
                   "DstName": "format"
@@ -21861,7 +21982,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6743,
+                  "Id": 6977,
                   "Value": false,
                   "DstId": 3813,
                   "DstName": "_value"
@@ -21873,7 +21994,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 6744,
+                  "Id": 6978,
                   "Value": 0,
                   "DstId": 3814,
                   "DstName": "min"
@@ -21903,7 +22024,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6745,
+                  "Id": 6979,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -21925,7 +22046,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6746,
+                  "Id": 6980,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -22001,7 +22122,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6747,
+                  "Id": 6981,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -22035,7 +22156,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6748,
+                  "Id": 6982,
                   "Value": "HIT Entity!!",
                   "DstId": 3829,
                   "DstName": "format"
@@ -22047,7 +22168,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6749,
+                  "Id": 6983,
                   "Value": false,
                   "DstId": 3830,
                   "DstName": "_value"
@@ -22101,7 +22222,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6750,
+                  "Id": 6984,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -22129,7 +22250,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6751,
+                  "Id": 6985,
                   "Value": "HIT Entity Dead!!",
                   "DstId": 3838,
                   "DstName": "format"
@@ -22141,7 +22262,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6752,
+                  "Id": 6986,
                   "Value": false,
                   "DstId": 3839,
                   "DstName": "_value"
@@ -22153,7 +22274,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 6753,
+                  "Id": 6987,
                   "Value": 0,
                   "DstId": 3840,
                   "DstName": "min"
@@ -22177,7 +22298,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6754,
+                  "Id": 6988,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -22313,7 +22434,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6755,
+                  "Id": 6989,
                   "Value": "HIT Entity!!",
                   "DstId": 3866,
                   "DstName": "format"
@@ -22325,7 +22446,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6756,
+                  "Id": 6990,
                   "Value": false,
                   "DstId": 3867,
                   "DstName": "_value"
@@ -22379,7 +22500,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6757,
+                  "Id": 6991,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -22407,7 +22528,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6758,
+                  "Id": 6992,
                   "Value": "HIT Entity Dead!!",
                   "DstId": 3875,
                   "DstName": "format"
@@ -22419,7 +22540,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6759,
+                  "Id": 6993,
                   "Value": false,
                   "DstId": 3876,
                   "DstName": "_value"
@@ -22431,7 +22552,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6760,
+                  "Id": 6994,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -22543,7 +22664,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6761,
+                  "Id": 6995,
                   "Value": 1,
                   "DstId": 4242,
                   "DstName": "b"
@@ -22567,7 +22688,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6762,
+                  "Id": 6996,
                   "Value": 0,
                   "DstId": 4337,
                   "DstName": "b"
@@ -22609,7 +22730,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6763,
+                  "Id": 6997,
                   "Value": 0,
                   "DstId": 4345,
                   "DstName": "index"
@@ -22645,7 +22766,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6764,
+                  "Id": 6998,
                   "Value": "hands",
                   "DstId": 4348,
                   "DstName": "bone"
@@ -22681,13 +22802,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6765,
+                  "Id": 6999,
                   "Value": "b_attack_dry",
                   "DstId": 4358,
                   "DstName": "v"
                 },
                 {
-                  "Id": 6766,
+                  "Id": 7000,
                   "Value": true,
                   "DstId": 4358,
                   "DstName": "value"
@@ -22699,7 +22820,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6767,
+                  "Id": 7001,
                   "Value": false,
                   "DstId": 4757,
                   "DstName": "_value"
@@ -22843,7 +22964,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6768,
+                  "Id": 7002,
                   "Value": 1E+15,
                   "DstId": 5446,
                   "DstName": "maxLength"
@@ -22897,7 +23018,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6769,
+                  "Id": 7003,
                   "Value": 0.01,
                   "DstId": 5453,
                   "DstName": "seconds"
@@ -22999,7 +23120,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 6770,
+                  "Id": 7004,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -23009,7 +23130,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6771,
+                  "Id": 7005,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -23019,7 +23140,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 6772,
+                  "Id": 7006,
                   "Value": "0,0,0",
                   "DstId": 5471,
                   "DstName": "_target"
@@ -23109,7 +23230,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 6773,
+                  "Id": 7007,
                   "Value": false,
                   "DstId": 5487,
                   "DstName": "_value"
@@ -23319,7 +23440,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 6774,
+                  "Id": 7008,
                   "Value": "darkrpgamemode",
                   "DstId": 6100,
                   "DstName": "name"
@@ -23331,7 +23452,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6775,
+                  "Id": 7009,
                   "Value": 1,
                   "DstId": 6102,
                   "DstName": "index"
@@ -23367,7 +23488,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 6776,
+                  "Id": 7010,
                   "Value": 0,
                   "DstId": 6108,
                   "DstName": "index"
@@ -23421,7 +23542,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6777,
+                  "Id": 7011,
                   "Value": 5,
                   "DstId": 6554,
                   "DstName": "b"
@@ -23445,7 +23566,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 6778,
+                  "Id": 7012,
                   "Value": 13,
                   "DstId": 6557,
                   "DstName": "b"
@@ -23471,115 +23592,7 @@
                 {
                   "SrcId": 5447,
                   "SrcName": "_result",
-                  "DstId": 6779,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6780,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6781,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6782,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6783,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
                   "DstId": 6784,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6785,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6786,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6787,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6788,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6789,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6790,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6791,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6792,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6793,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6794,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6795,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6796,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5447,
-                  "SrcName": "_result",
-                  "DstId": 6797,
                   "DstName": "_target"
                 },
                 {
@@ -23587,6 +23600,108 @@
                   "SrcName": "_result",
                   "DstId": 6798,
                   "DstName": "in"
+                },
+                {
+                  "SrcId": 7024,
+                  "SrcName": "_signal",
+                  "DstId": 7013,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 7015,
+                  "Value": false,
+                  "DstId": 7013,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 7026,
+                  "SrcName": "_signal",
+                  "DstId": 7016,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 7017,
+                  "SrcName": "_result",
+                  "DstId": 7016,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 6092,
+                  "SrcName": "_result",
+                  "DstId": 7017,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 7021,
+                  "SrcName": "_signal",
+                  "DstId": 7018,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 7020,
+                  "SrcName": "_result",
+                  "DstId": 7018,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 7019,
+                  "SrcName": "_result",
+                  "DstId": 7020,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 7016,
+                  "SrcName": "_signal",
+                  "DstId": 7021,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 7023,
+                  "SrcName": "_result",
+                  "DstId": 7021,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 7022,
+                  "SrcName": "_result",
+                  "DstId": 7023,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 7018,
+                  "SrcName": "_signal",
+                  "DstId": 7024,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 7025,
+                  "SrcName": "_result",
+                  "DstId": 7024,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 6105,
+                  "SrcName": "_result",
+                  "DstId": 7025,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 6563,
+                  "SrcName": "false",
+                  "DstId": 7026,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 7027,
+                  "SrcName": "_result",
+                  "DstId": 7026,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 6560,
+                  "SrcName": "out",
+                  "DstId": 7027,
+                  "DstName": "input"
                 }
               ],
               "Defaults": {
@@ -27610,7 +27725,7 @@
             "GraphSwepDefaultDRPDamageSystem": {
               "__version": 9,
               "__guid": "96f6b8fc-bcf7-4776-be54-1d942a718441",
-              "__changeId": 379,
+              "__changeId": 381,
               "UserData": {
                 "Title": "Graph Swep Default DRP Damage System",
                 "ReferencedComponentTypes": [
@@ -32482,13 +32597,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 1420,
+                  "Id": 1487,
                   "Value": true,
                   "DstId": 2,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 1421,
+                  "Id": 1488,
                   "Value": "player",
                   "DstId": 2,
                   "DstName": "tag"
@@ -32512,7 +32627,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1422,
+                  "Id": 1489,
                   "Value": "HIT Player!!",
                   "DstId": 4,
                   "DstName": "format"
@@ -32524,13 +32639,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 1423,
+                  "Id": 1490,
                   "Value": true,
                   "DstId": 5,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 1424,
+                  "Id": 1491,
                   "Value": "world",
                   "DstId": 5,
                   "DstName": "tag"
@@ -32554,13 +32669,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 1425,
+                  "Id": 1492,
                   "Value": true,
                   "DstId": 7,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 1426,
+                  "Id": 1493,
                   "Value": "entity",
                   "DstId": 7,
                   "DstName": "tag"
@@ -32584,7 +32699,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1427,
+                  "Id": 1494,
                   "Value": "HIT World!!",
                   "DstId": 9,
                   "DstName": "format"
@@ -32596,7 +32711,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1428,
+                  "Id": 1495,
                   "Value": false,
                   "DstId": 11,
                   "DstName": "_value"
@@ -32662,7 +32777,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1429,
+                  "Id": 1496,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -32690,7 +32805,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1430,
+                  "Id": 1497,
                   "Value": "HIT Player!!",
                   "DstId": 22,
                   "DstName": "format"
@@ -32702,7 +32817,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1431,
+                  "Id": 1498,
                   "Value": false,
                   "DstId": 23,
                   "DstName": "_value"
@@ -32732,7 +32847,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1432,
+                  "Id": 1499,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -32778,7 +32893,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1433,
+                  "Id": 1500,
                   "Value": "HIT Player!!",
                   "DstId": 29,
                   "DstName": "format"
@@ -32832,7 +32947,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1434,
+                  "Id": 1501,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -32860,7 +32975,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1435,
+                  "Id": 1502,
                   "Value": "HIT Player Dead!!",
                   "DstId": 38,
                   "DstName": "format"
@@ -32872,7 +32987,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 1436,
+                  "Id": 1503,
                   "Value": 0,
                   "DstId": 40,
                   "DstName": "min"
@@ -32902,7 +33017,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1437,
+                  "Id": 1504,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -32924,7 +33039,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1438,
+                  "Id": 1505,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33000,7 +33115,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1439,
+                  "Id": 1506,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33034,7 +33149,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1440,
+                  "Id": 1507,
                   "Value": "HIT Player!!",
                   "DstId": 55,
                   "DstName": "format"
@@ -33088,7 +33203,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1441,
+                  "Id": 1508,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33116,7 +33231,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1442,
+                  "Id": 1509,
                   "Value": "HIT Player Dead!!",
                   "DstId": 64,
                   "DstName": "format"
@@ -33128,7 +33243,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 1443,
+                  "Id": 1510,
                   "Value": 0,
                   "DstId": 66,
                   "DstName": "min"
@@ -33152,7 +33267,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1444,
+                  "Id": 1511,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33366,7 +33481,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1445,
+                  "Id": 1512,
                   "Value": "HIT Player!!",
                   "DstId": 105,
                   "DstName": "format"
@@ -33420,7 +33535,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1446,
+                  "Id": 1513,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33448,7 +33563,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1447,
+                  "Id": 1514,
                   "Value": "HIT Player Dead!!",
                   "DstId": 114,
                   "DstName": "format"
@@ -33460,7 +33575,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1448,
+                  "Id": 1515,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33524,7 +33639,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1449,
+                  "Id": 1516,
                   "Value": "HIT Entity!!",
                   "DstId": 126,
                   "DstName": "format"
@@ -33590,7 +33705,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1450,
+                  "Id": 1517,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33618,7 +33733,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1451,
+                  "Id": 1518,
                   "Value": "HIT Entity Dead!!",
                   "DstId": 138,
                   "DstName": "format"
@@ -33648,7 +33763,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1452,
+                  "Id": 1519,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33694,7 +33809,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1453,
+                  "Id": 1520,
                   "Value": "HIT Entity!!",
                   "DstId": 145,
                   "DstName": "format"
@@ -33748,7 +33863,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1454,
+                  "Id": 1521,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33776,7 +33891,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1455,
+                  "Id": 1522,
                   "Value": "HIT Entity Dead!!",
                   "DstId": 154,
                   "DstName": "format"
@@ -33788,7 +33903,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 1456,
+                  "Id": 1523,
                   "Value": 0,
                   "DstId": 156,
                   "DstName": "min"
@@ -33818,7 +33933,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1457,
+                  "Id": 1524,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33840,7 +33955,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1458,
+                  "Id": 1525,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33916,7 +34031,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1459,
+                  "Id": 1526,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -33950,7 +34065,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1460,
+                  "Id": 1527,
                   "Value": "HIT Entity!!",
                   "DstId": 171,
                   "DstName": "format"
@@ -34004,7 +34119,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1461,
+                  "Id": 1528,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -34032,7 +34147,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1462,
+                  "Id": 1529,
                   "Value": "HIT Entity Dead!!",
                   "DstId": 180,
                   "DstName": "format"
@@ -34044,7 +34159,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 1463,
+                  "Id": 1530,
                   "Value": 0,
                   "DstId": 182,
                   "DstName": "min"
@@ -34068,7 +34183,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1464,
+                  "Id": 1531,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -34204,7 +34319,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1465,
+                  "Id": 1532,
                   "Value": "HIT Entity!!",
                   "DstId": 208,
                   "DstName": "format"
@@ -34258,7 +34373,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1466,
+                  "Id": 1533,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -34286,7 +34401,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1467,
+                  "Id": 1534,
                   "Value": "HIT Entity Dead!!",
                   "DstId": 217,
                   "DstName": "format"
@@ -34298,7 +34413,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1468,
+                  "Id": 1535,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -35352,7 +35467,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1469,
+                  "Id": 1536,
                   "Value": 5,
                   "DstId": 1120,
                   "DstName": "b"
@@ -35376,7 +35491,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1470,
+                  "Id": 1537,
                   "Value": 13,
                   "DstId": 1122,
                   "DstName": "b"
@@ -35418,7 +35533,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1471,
+                  "Id": 1538,
                   "Value": "HIT Player!!",
                   "DstId": 1132,
                   "DstName": "format"
@@ -35472,7 +35587,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1472,
+                  "Id": 1539,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -35500,7 +35615,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1473,
+                  "Id": 1540,
                   "Value": "HIT Player Dead!!",
                   "DstId": 1140,
                   "DstName": "format"
@@ -35512,7 +35627,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1474,
+                  "Id": 1541,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -35642,7 +35757,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1475,
+                  "Id": 1542,
                   "Value": 5,
                   "DstId": 1167,
                   "DstName": "b"
@@ -35666,7 +35781,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1476,
+                  "Id": 1543,
                   "Value": 13,
                   "DstId": 1169,
                   "DstName": "b"
@@ -35708,7 +35823,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1477,
+                  "Id": 1544,
                   "Value": "HIT Player!!",
                   "DstId": 1177,
                   "DstName": "format"
@@ -35762,7 +35877,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1478,
+                  "Id": 1545,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -35790,7 +35905,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1479,
+                  "Id": 1546,
                   "Value": "HIT Player Dead!!",
                   "DstId": 1185,
                   "DstName": "format"
@@ -35802,7 +35917,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 1480,
+                  "Id": 1547,
                   "Value": 0,
                   "DstId": 1186,
                   "DstName": "min"
@@ -35826,7 +35941,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1481,
+                  "Id": 1548,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -35872,7 +35987,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1482,
+                  "Id": 1549,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -36098,7 +36213,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1483,
+                  "Id": 1550,
                   "Value": 5,
                   "DstId": 1237,
                   "DstName": "b"
@@ -36122,7 +36237,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1484,
+                  "Id": 1551,
                   "Value": 13,
                   "DstId": 1239,
                   "DstName": "b"
@@ -36164,7 +36279,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1485,
+                  "Id": 1552,
                   "Value": "HIT Player!!",
                   "DstId": 1247,
                   "DstName": "format"
@@ -36218,7 +36333,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1486,
+                  "Id": 1553,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -36246,7 +36361,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1487,
+                  "Id": 1554,
                   "Value": "HIT Player Dead!!",
                   "DstId": 1255,
                   "DstName": "format"
@@ -36258,7 +36373,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 1488,
+                  "Id": 1555,
                   "Value": 0,
                   "DstId": 1256,
                   "DstName": "min"
@@ -36282,7 +36397,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1489,
+                  "Id": 1556,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -36538,7 +36653,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1490,
+                  "Id": 1557,
                   "Value": 5,
                   "DstId": 1377,
                   "DstName": "b"
@@ -36562,7 +36677,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1491,
+                  "Id": 1558,
                   "Value": 13,
                   "DstId": 1379,
                   "DstName": "b"
@@ -36586,7 +36701,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1492,
+                  "Id": 1559,
                   "Value": "HIT Player!!",
                   "DstId": 1386,
                   "DstName": "format"
@@ -36598,7 +36713,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1493,
+                  "Id": 1560,
                   "Value": false,
                   "DstId": 1387,
                   "DstName": "_value"
@@ -36658,7 +36773,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1494,
+                  "Id": 1561,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -36686,7 +36801,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1495,
+                  "Id": 1562,
                   "Value": "HIT Player!!",
                   "DstId": 1396,
                   "DstName": "format"
@@ -36698,7 +36813,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 1496,
+                  "Id": 1563,
                   "Value": false,
                   "DstId": 1397,
                   "DstName": "_value"
@@ -36795,7 +36910,10 @@
                 }
               ]
             },
+            "HotbarSlot": 0,
             "IsReloading": false,
+            "NeedWeaponLicense": false,
+            "NoStripSwep": false,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -37071,6 +37189,9 @@
             "RunTimeExtraFloat": [],
             "RunTimeExtraInt": [],
             "RunTimeExtraStrings": [],
+            "Spawnable": true,
+            "SpawnMenuCatagory": null,
+            "SpawnMenuIcon": null,
             "SwepDataFile": null,
             "SwepExtraActionGraphs": [],
             "viewmodel": null,
@@ -37101,7 +37222,7 @@
                 "BodyGroups": 641,
                 "BoneMergeTarget": null,
                 "CreateAttachments": false,
-                "CreateBoneObjects": false,
+                "CreateBoneObjects": true,
                 "LodOverride": null,
                 "MaterialGroup": "default",
                 "MaterialOverride": null,
@@ -37140,7 +37261,7 @@
             ],
             "Children": [
               {
-                "__guid": "db2ac4ea-09a5-45aa-a233-e53d4daca111",
+                "__guid": "da406a24-4079-4437-ae2c-42f4e303ce1a",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - chef_shirt",
@@ -37156,7 +37277,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "dcef881b-5145-4b43-9637-d51fee7254c2",
+                    "__guid": "bf31a3ec-945b-4cbb-b2a8-ef127e9e42af",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -37207,7 +37328,7 @@
                 "Children": []
               },
               {
-                "__guid": "e9b30d1c-b765-483a-9b06-44a52eae6885",
+                "__guid": "c380b9ac-3e7b-4791-9ddc-bfb202b12ecb",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - brown_cargo_pants",
@@ -37223,7 +37344,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "9a0e748c-67de-439d-a16d-5c7466dab125",
+                    "__guid": "e6dbb310-d653-4dcd-9578-9d2a6008159f",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -37272,6 +37393,1690 @@
                   }
                 ],
                 "Children": []
+              },
+              {
+                "__guid": "01578c68-b70e-4987-9b5b-12330a35b981",
+                "__version": 1,
+                "Flags": 4,
+                "Name": "root_IK",
+                "Position": "0,0,0",
+                "Rotation": "0,0,0,1",
+                "Scale": "1,1,1",
+                "Tags": "",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "NetworkOrphaned": 0,
+                "OwnerTransfer": 1,
+                "Components": [],
+                "Children": [
+                  {
+                    "__guid": "93fcc9d4-f541-4d18-9af9-3d4f46970ea5",
+                    "__version": 1,
+                    "Flags": 4,
+                    "Name": "aim_matrix_01",
+                    "Position": "0,0,0",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Tags": "",
+                    "Enabled": true,
+                    "NetworkMode": 2,
+                    "NetworkInterpolation": true,
+                    "NetworkOrphaned": 0,
+                    "OwnerTransfer": 1,
+                    "Components": [],
+                    "Children": []
+                  },
+                  {
+                    "__guid": "8437fa67-2f82-439d-8336-0432cbd4e527",
+                    "__version": 1,
+                    "Flags": 4,
+                    "Name": "aim_matrix_02a",
+                    "Position": "0,0,0",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Tags": "",
+                    "Enabled": true,
+                    "NetworkMode": 2,
+                    "NetworkInterpolation": true,
+                    "NetworkOrphaned": 0,
+                    "OwnerTransfer": 1,
+                    "Components": [],
+                    "Children": [
+                      {
+                        "__guid": "0802d87b-3bb2-488c-ab56-4bf7d2b6936b",
+                        "__version": 1,
+                        "Flags": 4,
+                        "Name": "aim_matrix_02b",
+                        "Position": "0,0,0",
+                        "Rotation": "0,0,0,1",
+                        "Scale": "1,1,1",
+                        "Tags": "",
+                        "Enabled": true,
+                        "NetworkMode": 2,
+                        "NetworkInterpolation": true,
+                        "NetworkOrphaned": 0,
+                        "OwnerTransfer": 1,
+                        "Components": [],
+                        "Children": []
+                      }
+                    ]
+                  },
+                  {
+                    "__guid": "4fb7b343-deef-40b5-afad-c93d1ce852c4",
+                    "__version": 1,
+                    "Flags": 4,
+                    "Name": "hand_R_IK_attach",
+                    "Position": "0,0,0",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Tags": "",
+                    "Enabled": true,
+                    "NetworkMode": 2,
+                    "NetworkInterpolation": true,
+                    "NetworkOrphaned": 0,
+                    "OwnerTransfer": 1,
+                    "Components": [],
+                    "Children": [
+                      {
+                        "__guid": "102def8a-06d6-40d1-802a-78e06d816b4b",
+                        "__version": 1,
+                        "Flags": 4,
+                        "Name": "hand_R_IK_target",
+                        "Position": "0,0,0",
+                        "Rotation": "0,0,0,1",
+                        "Scale": "1,1,1",
+                        "Tags": "",
+                        "Enabled": true,
+                        "NetworkMode": 2,
+                        "NetworkInterpolation": true,
+                        "NetworkOrphaned": 0,
+                        "OwnerTransfer": 1,
+                        "Components": [],
+                        "Children": []
+                      }
+                    ]
+                  },
+                  {
+                    "__guid": "b7ef0e9e-c9cb-4739-9dc4-eb29cd00e7e1",
+                    "__version": 1,
+                    "Flags": 4,
+                    "Name": "hand_L_IK_attach",
+                    "Position": "0,0,0",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Tags": "",
+                    "Enabled": true,
+                    "NetworkMode": 2,
+                    "NetworkInterpolation": true,
+                    "NetworkOrphaned": 0,
+                    "OwnerTransfer": 1,
+                    "Components": [],
+                    "Children": [
+                      {
+                        "__guid": "6cd93734-7644-4177-959e-acee0ae272ee",
+                        "__version": 1,
+                        "Flags": 4,
+                        "Name": "hand_L_IK_target",
+                        "Position": "0,0,0",
+                        "Rotation": "0,0,0,1",
+                        "Scale": "1,1,1",
+                        "Tags": "",
+                        "Enabled": true,
+                        "NetworkMode": 2,
+                        "NetworkInterpolation": true,
+                        "NetworkOrphaned": 0,
+                        "OwnerTransfer": 1,
+                        "Components": [],
+                        "Children": []
+                      }
+                    ]
+                  },
+                  {
+                    "__guid": "17baf136-182c-4992-ac33-076b0061a719",
+                    "__version": 1,
+                    "Flags": 4,
+                    "Name": "foot_R_IK_target",
+                    "Position": "0,0,0",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Tags": "",
+                    "Enabled": true,
+                    "NetworkMode": 2,
+                    "NetworkInterpolation": true,
+                    "NetworkOrphaned": 0,
+                    "OwnerTransfer": 1,
+                    "Components": [],
+                    "Children": []
+                  },
+                  {
+                    "__guid": "38b1bad4-2467-4771-8cdc-f1fd500d077b",
+                    "__version": 1,
+                    "Flags": 4,
+                    "Name": "foot_L_IK_target",
+                    "Position": "0,0,0",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Tags": "",
+                    "Enabled": true,
+                    "NetworkMode": 2,
+                    "NetworkInterpolation": true,
+                    "NetworkOrphaned": 0,
+                    "OwnerTransfer": 1,
+                    "Components": [],
+                    "Children": []
+                  }
+                ]
+              },
+              {
+                "__guid": "4123a3b7-5522-4b96-aa26-645523159bb8",
+                "__version": 1,
+                "Flags": 4,
+                "Name": "pelvis",
+                "Position": "0,0,0",
+                "Rotation": "0,0,0,1",
+                "Scale": "1,1,1",
+                "Tags": "",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "NetworkOrphaned": 0,
+                "OwnerTransfer": 1,
+                "Components": [],
+                "Children": [
+                  {
+                    "__guid": "fe45a013-0955-4713-b859-b64b90e0660c",
+                    "__version": 1,
+                    "Flags": 4,
+                    "Name": "spine_0",
+                    "Position": "0,0,0",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Tags": "",
+                    "Enabled": true,
+                    "NetworkMode": 2,
+                    "NetworkInterpolation": true,
+                    "NetworkOrphaned": 0,
+                    "OwnerTransfer": 1,
+                    "Components": [],
+                    "Children": [
+                      {
+                        "__guid": "f14d4c46-2073-4f12-992f-bf7d32ef49e8",
+                        "__version": 1,
+                        "Flags": 4,
+                        "Name": "spine_1",
+                        "Position": "0,0,0",
+                        "Rotation": "0,0,0,1",
+                        "Scale": "1,1,1",
+                        "Tags": "",
+                        "Enabled": true,
+                        "NetworkMode": 2,
+                        "NetworkInterpolation": true,
+                        "NetworkOrphaned": 0,
+                        "OwnerTransfer": 1,
+                        "Components": [],
+                        "Children": [
+                          {
+                            "__guid": "9fdd9f57-dc81-47b4-b0a7-b1b2b128f981",
+                            "__version": 1,
+                            "Flags": 4,
+                            "Name": "spine_2",
+                            "Position": "0,0,0",
+                            "Rotation": "0,0,0,1",
+                            "Scale": "1,1,1",
+                            "Tags": "",
+                            "Enabled": true,
+                            "NetworkMode": 2,
+                            "NetworkInterpolation": true,
+                            "NetworkOrphaned": 0,
+                            "OwnerTransfer": 1,
+                            "Components": [],
+                            "Children": [
+                              {
+                                "__guid": "1a3b2031-9d08-47c3-829c-a807aa72fcb8",
+                                "__version": 1,
+                                "Flags": 4,
+                                "Name": "neck_0",
+                                "Position": "0,0,0",
+                                "Rotation": "0,0,0,1",
+                                "Scale": "1,1,1",
+                                "Tags": "",
+                                "Enabled": true,
+                                "NetworkMode": 2,
+                                "NetworkInterpolation": true,
+                                "NetworkOrphaned": 0,
+                                "OwnerTransfer": 1,
+                                "Components": [],
+                                "Children": [
+                                  {
+                                    "__guid": "3262710b-079e-4c71-b741-b157b6342581",
+                                    "__version": 1,
+                                    "Flags": 4,
+                                    "Name": "head",
+                                    "Position": "0,0,0",
+                                    "Rotation": "0,0,0,1",
+                                    "Scale": "1,1,1",
+                                    "Tags": "",
+                                    "Enabled": true,
+                                    "NetworkMode": 2,
+                                    "NetworkInterpolation": true,
+                                    "NetworkOrphaned": 0,
+                                    "OwnerTransfer": 1,
+                                    "Components": [],
+                                    "Children": [
+                                      {
+                                        "__guid": "9d8a1cb8-c0bc-486c-a976-6063e3c5c9eb",
+                                        "__version": 1,
+                                        "Flags": 4,
+                                        "Name": "eye_L",
+                                        "Position": "0,0,0",
+                                        "Rotation": "0,0,0,1",
+                                        "Scale": "1,1,1",
+                                        "Tags": "",
+                                        "Enabled": true,
+                                        "NetworkMode": 2,
+                                        "NetworkInterpolation": true,
+                                        "NetworkOrphaned": 0,
+                                        "OwnerTransfer": 1,
+                                        "Components": [],
+                                        "Children": []
+                                      },
+                                      {
+                                        "__guid": "01eac0ee-9762-4df9-9776-2b0a0587d50d",
+                                        "__version": 1,
+                                        "Flags": 4,
+                                        "Name": "eye_R",
+                                        "Position": "0,0,0",
+                                        "Rotation": "0,0,0,1",
+                                        "Scale": "1,1,1",
+                                        "Tags": "",
+                                        "Enabled": true,
+                                        "NetworkMode": 2,
+                                        "NetworkInterpolation": true,
+                                        "NetworkOrphaned": 0,
+                                        "OwnerTransfer": 1,
+                                        "Components": [],
+                                        "Children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "__guid": "1f212782-6ed1-4f3c-a5e7-0eb5d81b79a9",
+                                "__version": 1,
+                                "Flags": 4,
+                                "Name": "clavicle_L",
+                                "Position": "0,0,0",
+                                "Rotation": "0,0,0,1",
+                                "Scale": "1,1,1",
+                                "Tags": "",
+                                "Enabled": true,
+                                "NetworkMode": 2,
+                                "NetworkInterpolation": true,
+                                "NetworkOrphaned": 0,
+                                "OwnerTransfer": 1,
+                                "Components": [],
+                                "Children": [
+                                  {
+                                    "__guid": "e5ade114-0e81-478f-aca1-3fa23b686547",
+                                    "__version": 1,
+                                    "Flags": 4,
+                                    "Name": "arm_upper_L",
+                                    "Position": "0,0,0",
+                                    "Rotation": "0,0,0,1",
+                                    "Scale": "1,1,1",
+                                    "Tags": "",
+                                    "Enabled": true,
+                                    "NetworkMode": 2,
+                                    "NetworkInterpolation": true,
+                                    "NetworkOrphaned": 0,
+                                    "OwnerTransfer": 1,
+                                    "Components": [],
+                                    "Children": [
+                                      {
+                                        "__guid": "c276ef92-aabc-4866-8137-ba49152f6ce9",
+                                        "__version": 1,
+                                        "Flags": 4,
+                                        "Name": "arm_upper_L_twist1",
+                                        "Position": "0,0,0",
+                                        "Rotation": "0,0,0,1",
+                                        "Scale": "1,1,1",
+                                        "Tags": "",
+                                        "Enabled": true,
+                                        "NetworkMode": 2,
+                                        "NetworkInterpolation": true,
+                                        "NetworkOrphaned": 0,
+                                        "OwnerTransfer": 1,
+                                        "Components": [],
+                                        "Children": []
+                                      },
+                                      {
+                                        "__guid": "c59c91fe-2dd3-4128-b52d-934f1df85673",
+                                        "__version": 1,
+                                        "Flags": 4,
+                                        "Name": "arm_lower_L",
+                                        "Position": "0,0,0",
+                                        "Rotation": "0,0,0,1",
+                                        "Scale": "1,1,1",
+                                        "Tags": "",
+                                        "Enabled": true,
+                                        "NetworkMode": 2,
+                                        "NetworkInterpolation": true,
+                                        "NetworkOrphaned": 0,
+                                        "OwnerTransfer": 1,
+                                        "Components": [],
+                                        "Children": [
+                                          {
+                                            "__guid": "a054be73-f99f-4415-9f5e-a0921f2da715",
+                                            "__version": 1,
+                                            "Flags": 4,
+                                            "Name": "arm_lower_L_twist0",
+                                            "Position": "0,0,0",
+                                            "Rotation": "0,0,0,1",
+                                            "Scale": "1,1,1",
+                                            "Tags": "",
+                                            "Enabled": true,
+                                            "NetworkMode": 2,
+                                            "NetworkInterpolation": true,
+                                            "NetworkOrphaned": 0,
+                                            "OwnerTransfer": 1,
+                                            "Components": [],
+                                            "Children": []
+                                          },
+                                          {
+                                            "__guid": "62949f2c-6177-4b15-ad0d-07a068745078",
+                                            "__version": 1,
+                                            "Flags": 4,
+                                            "Name": "hand_L",
+                                            "Position": "0,0,0",
+                                            "Rotation": "0,0,0,1",
+                                            "Scale": "1,1,1",
+                                            "Tags": "",
+                                            "Enabled": true,
+                                            "NetworkMode": 2,
+                                            "NetworkInterpolation": true,
+                                            "NetworkOrphaned": 0,
+                                            "OwnerTransfer": 1,
+                                            "Components": [],
+                                            "Children": [
+                                              {
+                                                "__guid": "ee93ba33-ee4d-49f4-9590-cefb7969c62d",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "hold_L",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": []
+                                              },
+                                              {
+                                                "__guid": "822f4712-843b-4196-8c70-d6b80904d0ca",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "finger_thumb_0_L",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": [
+                                                  {
+                                                    "__guid": "4e64cfe9-0335-4962-84e0-51271853fd6a",
+                                                    "__version": 1,
+                                                    "Flags": 4,
+                                                    "Name": "finger_thumb_1_L",
+                                                    "Position": "0,0,0",
+                                                    "Rotation": "0,0,0,1",
+                                                    "Scale": "1,1,1",
+                                                    "Tags": "",
+                                                    "Enabled": true,
+                                                    "NetworkMode": 2,
+                                                    "NetworkInterpolation": true,
+                                                    "NetworkOrphaned": 0,
+                                                    "OwnerTransfer": 1,
+                                                    "Components": [],
+                                                    "Children": [
+                                                      {
+                                                        "__guid": "35d69248-ed8d-4b83-ba1a-14aaa2d23814",
+                                                        "__version": 1,
+                                                        "Flags": 4,
+                                                        "Name": "finger_thumb_2_L",
+                                                        "Position": "0,0,0",
+                                                        "Rotation": "0,0,0,1",
+                                                        "Scale": "1,1,1",
+                                                        "Tags": "",
+                                                        "Enabled": true,
+                                                        "NetworkMode": 2,
+                                                        "NetworkInterpolation": true,
+                                                        "NetworkOrphaned": 0,
+                                                        "OwnerTransfer": 1,
+                                                        "Components": [],
+                                                        "Children": []
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "__guid": "ce53b459-40a4-4342-9120-30cfad051d72",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "finger_index_meta_L",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": [
+                                                  {
+                                                    "__guid": "985dbe43-2d05-4377-b7e9-60fe41efa89e",
+                                                    "__version": 1,
+                                                    "Flags": 4,
+                                                    "Name": "finger_index_0_L",
+                                                    "Position": "0,0,0",
+                                                    "Rotation": "0,0,0,1",
+                                                    "Scale": "1,1,1",
+                                                    "Tags": "",
+                                                    "Enabled": true,
+                                                    "NetworkMode": 2,
+                                                    "NetworkInterpolation": true,
+                                                    "NetworkOrphaned": 0,
+                                                    "OwnerTransfer": 1,
+                                                    "Components": [],
+                                                    "Children": [
+                                                      {
+                                                        "__guid": "564d2528-c2e2-4e95-8b8c-052a6ecd46ab",
+                                                        "__version": 1,
+                                                        "Flags": 4,
+                                                        "Name": "finger_index_1_L",
+                                                        "Position": "0,0,0",
+                                                        "Rotation": "0,0,0,1",
+                                                        "Scale": "1,1,1",
+                                                        "Tags": "",
+                                                        "Enabled": true,
+                                                        "NetworkMode": 2,
+                                                        "NetworkInterpolation": true,
+                                                        "NetworkOrphaned": 0,
+                                                        "OwnerTransfer": 1,
+                                                        "Components": [],
+                                                        "Children": [
+                                                          {
+                                                            "__guid": "74726bf1-2e16-4b2a-9852-3fec6f7e49ac",
+                                                            "__version": 1,
+                                                            "Flags": 4,
+                                                            "Name": "finger_index_2_L",
+                                                            "Position": "0,0,0",
+                                                            "Rotation": "0,0,0,1",
+                                                            "Scale": "1,1,1",
+                                                            "Tags": "",
+                                                            "Enabled": true,
+                                                            "NetworkMode": 2,
+                                                            "NetworkInterpolation": true,
+                                                            "NetworkOrphaned": 0,
+                                                            "OwnerTransfer": 1,
+                                                            "Components": [],
+                                                            "Children": []
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "__guid": "eecf8282-b153-449f-936d-412442f5f2e0",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "finger_middle_meta_L",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": [
+                                                  {
+                                                    "__guid": "604ecac2-2cc1-4008-999b-f591cbfedfb6",
+                                                    "__version": 1,
+                                                    "Flags": 4,
+                                                    "Name": "finger_middle_0_L",
+                                                    "Position": "0,0,0",
+                                                    "Rotation": "0,0,0,1",
+                                                    "Scale": "1,1,1",
+                                                    "Tags": "",
+                                                    "Enabled": true,
+                                                    "NetworkMode": 2,
+                                                    "NetworkInterpolation": true,
+                                                    "NetworkOrphaned": 0,
+                                                    "OwnerTransfer": 1,
+                                                    "Components": [],
+                                                    "Children": [
+                                                      {
+                                                        "__guid": "a5931e53-8f81-4b7b-9297-6e919a641461",
+                                                        "__version": 1,
+                                                        "Flags": 4,
+                                                        "Name": "finger_middle_1_L",
+                                                        "Position": "0,0,0",
+                                                        "Rotation": "0,0,0,1",
+                                                        "Scale": "1,1,1",
+                                                        "Tags": "",
+                                                        "Enabled": true,
+                                                        "NetworkMode": 2,
+                                                        "NetworkInterpolation": true,
+                                                        "NetworkOrphaned": 0,
+                                                        "OwnerTransfer": 1,
+                                                        "Components": [],
+                                                        "Children": [
+                                                          {
+                                                            "__guid": "f9f278fa-d1f1-4eae-beae-f0c723f94874",
+                                                            "__version": 1,
+                                                            "Flags": 4,
+                                                            "Name": "finger_middle_2_L",
+                                                            "Position": "0,0,0",
+                                                            "Rotation": "0,0,0,1",
+                                                            "Scale": "1,1,1",
+                                                            "Tags": "",
+                                                            "Enabled": true,
+                                                            "NetworkMode": 2,
+                                                            "NetworkInterpolation": true,
+                                                            "NetworkOrphaned": 0,
+                                                            "OwnerTransfer": 1,
+                                                            "Components": [],
+                                                            "Children": []
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "__guid": "2466812a-4f7e-4050-963e-8096f5114102",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "finger_ring_meta_L",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": [
+                                                  {
+                                                    "__guid": "30276782-92ad-4096-8737-24621d99492e",
+                                                    "__version": 1,
+                                                    "Flags": 4,
+                                                    "Name": "finger_ring_0_L",
+                                                    "Position": "0,0,0",
+                                                    "Rotation": "0,0,0,1",
+                                                    "Scale": "1,1,1",
+                                                    "Tags": "",
+                                                    "Enabled": true,
+                                                    "NetworkMode": 2,
+                                                    "NetworkInterpolation": true,
+                                                    "NetworkOrphaned": 0,
+                                                    "OwnerTransfer": 1,
+                                                    "Components": [],
+                                                    "Children": [
+                                                      {
+                                                        "__guid": "6e6b4ffe-0e62-4ad0-b80e-bb3ed3480bd4",
+                                                        "__version": 1,
+                                                        "Flags": 4,
+                                                        "Name": "finger_ring_1_L",
+                                                        "Position": "0,0,0",
+                                                        "Rotation": "0,0,0,1",
+                                                        "Scale": "1,1,1",
+                                                        "Tags": "",
+                                                        "Enabled": true,
+                                                        "NetworkMode": 2,
+                                                        "NetworkInterpolation": true,
+                                                        "NetworkOrphaned": 0,
+                                                        "OwnerTransfer": 1,
+                                                        "Components": [],
+                                                        "Children": [
+                                                          {
+                                                            "__guid": "6c9fbb15-a8dc-4bb3-9dfe-1440206ee874",
+                                                            "__version": 1,
+                                                            "Flags": 4,
+                                                            "Name": "finger_ring_2_L",
+                                                            "Position": "0,0,0",
+                                                            "Rotation": "0,0,0,1",
+                                                            "Scale": "1,1,1",
+                                                            "Tags": "",
+                                                            "Enabled": true,
+                                                            "NetworkMode": 2,
+                                                            "NetworkInterpolation": true,
+                                                            "NetworkOrphaned": 0,
+                                                            "OwnerTransfer": 1,
+                                                            "Components": [],
+                                                            "Children": []
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "__guid": "3afbc7b5-6d43-44a6-91df-a2ea05e3c5bc",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "finger_pinky_meta_L",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": [
+                                                  {
+                                                    "__guid": "43d2fc03-8554-48b6-887d-d74e15bdc3a9",
+                                                    "__version": 1,
+                                                    "Flags": 4,
+                                                    "Name": "finger_pinky_0_L",
+                                                    "Position": "0,0,0",
+                                                    "Rotation": "0,0,0,1",
+                                                    "Scale": "1,1,1",
+                                                    "Tags": "",
+                                                    "Enabled": true,
+                                                    "NetworkMode": 2,
+                                                    "NetworkInterpolation": true,
+                                                    "NetworkOrphaned": 0,
+                                                    "OwnerTransfer": 1,
+                                                    "Components": [],
+                                                    "Children": [
+                                                      {
+                                                        "__guid": "91cc365e-5123-402b-b540-d241cc55e1d1",
+                                                        "__version": 1,
+                                                        "Flags": 4,
+                                                        "Name": "finger_pinky_1_L",
+                                                        "Position": "0,0,0",
+                                                        "Rotation": "0,0,0,1",
+                                                        "Scale": "1,1,1",
+                                                        "Tags": "",
+                                                        "Enabled": true,
+                                                        "NetworkMode": 2,
+                                                        "NetworkInterpolation": true,
+                                                        "NetworkOrphaned": 0,
+                                                        "OwnerTransfer": 1,
+                                                        "Components": [],
+                                                        "Children": [
+                                                          {
+                                                            "__guid": "468b5f37-b778-4f50-a3f2-04fe524d8aa9",
+                                                            "__version": 1,
+                                                            "Flags": 4,
+                                                            "Name": "finger_pinky_2_L",
+                                                            "Position": "0,0,0",
+                                                            "Rotation": "0,0,0,1",
+                                                            "Scale": "1,1,1",
+                                                            "Tags": "",
+                                                            "Enabled": true,
+                                                            "NetworkMode": 2,
+                                                            "NetworkInterpolation": true,
+                                                            "NetworkOrphaned": 0,
+                                                            "OwnerTransfer": 1,
+                                                            "Components": [],
+                                                            "Children": []
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "__guid": "c971f4a2-1fd0-48d5-96df-800284d607f3",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "hand_R_to_L_ikrule",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "__guid": "9197fe2c-4c6d-45d7-800c-ad2259b674fc",
+                                            "__version": 1,
+                                            "Flags": 4,
+                                            "Name": "arm_lower_L_twist1",
+                                            "Position": "0,0,0",
+                                            "Rotation": "0,0,0,1",
+                                            "Scale": "1,1,1",
+                                            "Tags": "",
+                                            "Enabled": true,
+                                            "NetworkMode": 2,
+                                            "NetworkInterpolation": true,
+                                            "NetworkOrphaned": 0,
+                                            "OwnerTransfer": 1,
+                                            "Components": [],
+                                            "Children": []
+                                          },
+                                          {
+                                            "__guid": "397fcd06-dc2a-4909-a5a8-ac6e0072107e",
+                                            "__version": 1,
+                                            "Flags": 4,
+                                            "Name": "arm_elbow_helper_L",
+                                            "Position": "0,0,0",
+                                            "Rotation": "0,0,0,1",
+                                            "Scale": "1,1,1",
+                                            "Tags": "",
+                                            "Enabled": true,
+                                            "NetworkMode": 2,
+                                            "NetworkInterpolation": true,
+                                            "NetworkOrphaned": 0,
+                                            "OwnerTransfer": 1,
+                                            "Components": [],
+                                            "Children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "__guid": "6457a203-f29c-4472-b6dd-e47d22b03afc",
+                                        "__version": 1,
+                                        "Flags": 4,
+                                        "Name": "arm_upper_L_twist0",
+                                        "Position": "0,0,0",
+                                        "Rotation": "0,0,0,1",
+                                        "Scale": "1,1,1",
+                                        "Tags": "",
+                                        "Enabled": true,
+                                        "NetworkMode": 2,
+                                        "NetworkInterpolation": true,
+                                        "NetworkOrphaned": 0,
+                                        "OwnerTransfer": 1,
+                                        "Components": [],
+                                        "Children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "__guid": "caaff4c1-8c8f-4391-b01e-6a7080736d44",
+                                "__version": 1,
+                                "Flags": 4,
+                                "Name": "clavicle_R",
+                                "Position": "0,0,0",
+                                "Rotation": "0,0,0,1",
+                                "Scale": "1,1,1",
+                                "Tags": "",
+                                "Enabled": true,
+                                "NetworkMode": 2,
+                                "NetworkInterpolation": true,
+                                "NetworkOrphaned": 0,
+                                "OwnerTransfer": 1,
+                                "Components": [],
+                                "Children": [
+                                  {
+                                    "__guid": "fc97215e-a3ff-44fd-bec1-ce9096b7b222",
+                                    "__version": 1,
+                                    "Flags": 4,
+                                    "Name": "arm_upper_R",
+                                    "Position": "0,0,0",
+                                    "Rotation": "0,0,0,1",
+                                    "Scale": "1,1,1",
+                                    "Tags": "",
+                                    "Enabled": true,
+                                    "NetworkMode": 2,
+                                    "NetworkInterpolation": true,
+                                    "NetworkOrphaned": 0,
+                                    "OwnerTransfer": 1,
+                                    "Components": [],
+                                    "Children": [
+                                      {
+                                        "__guid": "4b90108b-d8f8-49b7-ac6b-1b04c36a9b3a",
+                                        "__version": 1,
+                                        "Flags": 4,
+                                        "Name": "arm_upper_R_twist1",
+                                        "Position": "0,0,0",
+                                        "Rotation": "0,0,0,1",
+                                        "Scale": "1,1,1",
+                                        "Tags": "",
+                                        "Enabled": true,
+                                        "NetworkMode": 2,
+                                        "NetworkInterpolation": true,
+                                        "NetworkOrphaned": 0,
+                                        "OwnerTransfer": 1,
+                                        "Components": [],
+                                        "Children": []
+                                      },
+                                      {
+                                        "__guid": "2e9774b0-408a-468e-9bae-a4e1448c7b81",
+                                        "__version": 1,
+                                        "Flags": 4,
+                                        "Name": "arm_lower_R",
+                                        "Position": "0,0,0",
+                                        "Rotation": "0,0,0,1",
+                                        "Scale": "1,1,1",
+                                        "Tags": "",
+                                        "Enabled": true,
+                                        "NetworkMode": 2,
+                                        "NetworkInterpolation": true,
+                                        "NetworkOrphaned": 0,
+                                        "OwnerTransfer": 1,
+                                        "Components": [],
+                                        "Children": [
+                                          {
+                                            "__guid": "7d7c841c-cee2-4cf5-a5b0-3b76713e3ebe",
+                                            "__version": 1,
+                                            "Flags": 4,
+                                            "Name": "arm_lower_R_twist0",
+                                            "Position": "0,0,0",
+                                            "Rotation": "0,0,0,1",
+                                            "Scale": "1,1,1",
+                                            "Tags": "",
+                                            "Enabled": true,
+                                            "NetworkMode": 2,
+                                            "NetworkInterpolation": true,
+                                            "NetworkOrphaned": 0,
+                                            "OwnerTransfer": 1,
+                                            "Components": [],
+                                            "Children": []
+                                          },
+                                          {
+                                            "__guid": "c2b1d086-8615-42ec-a6b0-d52ad5610747",
+                                            "__version": 1,
+                                            "Flags": 4,
+                                            "Name": "hand_R",
+                                            "Position": "0,0,0",
+                                            "Rotation": "0,0,0,1",
+                                            "Scale": "1,1,1",
+                                            "Tags": "",
+                                            "Enabled": true,
+                                            "NetworkMode": 2,
+                                            "NetworkInterpolation": true,
+                                            "NetworkOrphaned": 0,
+                                            "OwnerTransfer": 1,
+                                            "Components": [],
+                                            "Children": [
+                                              {
+                                                "__guid": "f640f7ed-a7f0-43b9-b164-035fbb7d46c0",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "hold_R",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": []
+                                              },
+                                              {
+                                                "__guid": "3bd1f5db-4cf3-40a5-960a-ef6935594767",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "finger_thumb_0_R",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": [
+                                                  {
+                                                    "__guid": "12634be1-57f2-498d-a63b-9280483f6f99",
+                                                    "__version": 1,
+                                                    "Flags": 4,
+                                                    "Name": "finger_thumb_1_R",
+                                                    "Position": "0,0,0",
+                                                    "Rotation": "0,0,0,1",
+                                                    "Scale": "1,1,1",
+                                                    "Tags": "",
+                                                    "Enabled": true,
+                                                    "NetworkMode": 2,
+                                                    "NetworkInterpolation": true,
+                                                    "NetworkOrphaned": 0,
+                                                    "OwnerTransfer": 1,
+                                                    "Components": [],
+                                                    "Children": [
+                                                      {
+                                                        "__guid": "303c620a-6ae0-49a8-87b2-da99e1d5e1aa",
+                                                        "__version": 1,
+                                                        "Flags": 4,
+                                                        "Name": "finger_thumb_2_R",
+                                                        "Position": "0,0,0",
+                                                        "Rotation": "0,0,0,1",
+                                                        "Scale": "1,1,1",
+                                                        "Tags": "",
+                                                        "Enabled": true,
+                                                        "NetworkMode": 2,
+                                                        "NetworkInterpolation": true,
+                                                        "NetworkOrphaned": 0,
+                                                        "OwnerTransfer": 1,
+                                                        "Components": [],
+                                                        "Children": []
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "__guid": "fbbc183d-7d17-48dc-830e-afd406a59408",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "finger_index_meta_R",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": [
+                                                  {
+                                                    "__guid": "572e5da9-2984-4ed7-a41a-de46cc542338",
+                                                    "__version": 1,
+                                                    "Flags": 4,
+                                                    "Name": "finger_index_0_R",
+                                                    "Position": "0,0,0",
+                                                    "Rotation": "0,0,0,1",
+                                                    "Scale": "1,1,1",
+                                                    "Tags": "",
+                                                    "Enabled": true,
+                                                    "NetworkMode": 2,
+                                                    "NetworkInterpolation": true,
+                                                    "NetworkOrphaned": 0,
+                                                    "OwnerTransfer": 1,
+                                                    "Components": [],
+                                                    "Children": [
+                                                      {
+                                                        "__guid": "c8bd44a4-6c57-4e89-881d-bb5fc9623d61",
+                                                        "__version": 1,
+                                                        "Flags": 4,
+                                                        "Name": "finger_index_1_R",
+                                                        "Position": "0,0,0",
+                                                        "Rotation": "0,0,0,1",
+                                                        "Scale": "1,1,1",
+                                                        "Tags": "",
+                                                        "Enabled": true,
+                                                        "NetworkMode": 2,
+                                                        "NetworkInterpolation": true,
+                                                        "NetworkOrphaned": 0,
+                                                        "OwnerTransfer": 1,
+                                                        "Components": [],
+                                                        "Children": [
+                                                          {
+                                                            "__guid": "4b3c3cb5-25e4-4aff-9c59-a0daf30d69e2",
+                                                            "__version": 1,
+                                                            "Flags": 4,
+                                                            "Name": "finger_index_2_R",
+                                                            "Position": "0,0,0",
+                                                            "Rotation": "0,0,0,1",
+                                                            "Scale": "1,1,1",
+                                                            "Tags": "",
+                                                            "Enabled": true,
+                                                            "NetworkMode": 2,
+                                                            "NetworkInterpolation": true,
+                                                            "NetworkOrphaned": 0,
+                                                            "OwnerTransfer": 1,
+                                                            "Components": [],
+                                                            "Children": []
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "__guid": "112edd6c-1a27-4998-a1af-df49906ad2bd",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "finger_middle_meta_R",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": [
+                                                  {
+                                                    "__guid": "557bb46e-01a3-4c15-93d9-7c6837c518b6",
+                                                    "__version": 1,
+                                                    "Flags": 4,
+                                                    "Name": "finger_middle_0_R",
+                                                    "Position": "0,0,0",
+                                                    "Rotation": "0,0,0,1",
+                                                    "Scale": "1,1,1",
+                                                    "Tags": "",
+                                                    "Enabled": true,
+                                                    "NetworkMode": 2,
+                                                    "NetworkInterpolation": true,
+                                                    "NetworkOrphaned": 0,
+                                                    "OwnerTransfer": 1,
+                                                    "Components": [],
+                                                    "Children": [
+                                                      {
+                                                        "__guid": "224c2eda-a4b0-4b1b-8442-8d7b89e67b0e",
+                                                        "__version": 1,
+                                                        "Flags": 4,
+                                                        "Name": "finger_middle_1_R",
+                                                        "Position": "0,0,0",
+                                                        "Rotation": "0,0,0,1",
+                                                        "Scale": "1,1,1",
+                                                        "Tags": "",
+                                                        "Enabled": true,
+                                                        "NetworkMode": 2,
+                                                        "NetworkInterpolation": true,
+                                                        "NetworkOrphaned": 0,
+                                                        "OwnerTransfer": 1,
+                                                        "Components": [],
+                                                        "Children": [
+                                                          {
+                                                            "__guid": "a4f9fe5f-76bd-40e4-abb0-9566da7ed744",
+                                                            "__version": 1,
+                                                            "Flags": 4,
+                                                            "Name": "finger_middle_2_R",
+                                                            "Position": "0,0,0",
+                                                            "Rotation": "0,0,0,1",
+                                                            "Scale": "1,1,1",
+                                                            "Tags": "",
+                                                            "Enabled": true,
+                                                            "NetworkMode": 2,
+                                                            "NetworkInterpolation": true,
+                                                            "NetworkOrphaned": 0,
+                                                            "OwnerTransfer": 1,
+                                                            "Components": [],
+                                                            "Children": []
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "__guid": "7ae815e0-0f63-4db3-9ab8-685ba3a918f4",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "finger_ring_meta_R",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": [
+                                                  {
+                                                    "__guid": "b2d8974c-41d7-41cb-88c5-932a3daf3258",
+                                                    "__version": 1,
+                                                    "Flags": 4,
+                                                    "Name": "finger_ring_0_R",
+                                                    "Position": "0,0,0",
+                                                    "Rotation": "0,0,0,1",
+                                                    "Scale": "1,1,1",
+                                                    "Tags": "",
+                                                    "Enabled": true,
+                                                    "NetworkMode": 2,
+                                                    "NetworkInterpolation": true,
+                                                    "NetworkOrphaned": 0,
+                                                    "OwnerTransfer": 1,
+                                                    "Components": [],
+                                                    "Children": [
+                                                      {
+                                                        "__guid": "b0bbd99c-e108-4874-83f4-b9a638006fc7",
+                                                        "__version": 1,
+                                                        "Flags": 4,
+                                                        "Name": "finger_ring_1_R",
+                                                        "Position": "0,0,0",
+                                                        "Rotation": "0,0,0,1",
+                                                        "Scale": "1,1,1",
+                                                        "Tags": "",
+                                                        "Enabled": true,
+                                                        "NetworkMode": 2,
+                                                        "NetworkInterpolation": true,
+                                                        "NetworkOrphaned": 0,
+                                                        "OwnerTransfer": 1,
+                                                        "Components": [],
+                                                        "Children": [
+                                                          {
+                                                            "__guid": "a35e6ded-c5ca-40c4-b3cd-0fa84892001a",
+                                                            "__version": 1,
+                                                            "Flags": 4,
+                                                            "Name": "finger_ring_2_R",
+                                                            "Position": "0,0,0",
+                                                            "Rotation": "0,0,0,1",
+                                                            "Scale": "1,1,1",
+                                                            "Tags": "",
+                                                            "Enabled": true,
+                                                            "NetworkMode": 2,
+                                                            "NetworkInterpolation": true,
+                                                            "NetworkOrphaned": 0,
+                                                            "OwnerTransfer": 1,
+                                                            "Components": [],
+                                                            "Children": []
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "__guid": "4d13c0c6-f8dd-4998-86fd-78d2ac0c60de",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "finger_pinky_meta_R",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": [
+                                                  {
+                                                    "__guid": "a77c7614-605b-4097-8af2-8ba955535578",
+                                                    "__version": 1,
+                                                    "Flags": 4,
+                                                    "Name": "finger_pinky_0_R",
+                                                    "Position": "0,0,0",
+                                                    "Rotation": "0,0,0,1",
+                                                    "Scale": "1,1,1",
+                                                    "Tags": "",
+                                                    "Enabled": true,
+                                                    "NetworkMode": 2,
+                                                    "NetworkInterpolation": true,
+                                                    "NetworkOrphaned": 0,
+                                                    "OwnerTransfer": 1,
+                                                    "Components": [],
+                                                    "Children": [
+                                                      {
+                                                        "__guid": "b0a8fb68-0394-47ed-92e5-9578f8b2beb6",
+                                                        "__version": 1,
+                                                        "Flags": 4,
+                                                        "Name": "finger_pinky_1_R",
+                                                        "Position": "0,0,0",
+                                                        "Rotation": "0,0,0,1",
+                                                        "Scale": "1,1,1",
+                                                        "Tags": "",
+                                                        "Enabled": true,
+                                                        "NetworkMode": 2,
+                                                        "NetworkInterpolation": true,
+                                                        "NetworkOrphaned": 0,
+                                                        "OwnerTransfer": 1,
+                                                        "Components": [],
+                                                        "Children": [
+                                                          {
+                                                            "__guid": "59cd6c31-cf0a-4bef-a5f3-22701e38ffb9",
+                                                            "__version": 1,
+                                                            "Flags": 4,
+                                                            "Name": "finger_pinky_2_R",
+                                                            "Position": "0,0,0",
+                                                            "Rotation": "0,0,0,1",
+                                                            "Scale": "1,1,1",
+                                                            "Tags": "",
+                                                            "Enabled": true,
+                                                            "NetworkMode": 2,
+                                                            "NetworkInterpolation": true,
+                                                            "NetworkOrphaned": 0,
+                                                            "OwnerTransfer": 1,
+                                                            "Components": [],
+                                                            "Children": []
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "__guid": "82ba0a57-aaeb-4cd9-b1e2-6168dae2e6ca",
+                                                "__version": 1,
+                                                "Flags": 4,
+                                                "Name": "hand_L_to_R_ikrule",
+                                                "Position": "0,0,0",
+                                                "Rotation": "0,0,0,1",
+                                                "Scale": "1,1,1",
+                                                "Tags": "",
+                                                "Enabled": true,
+                                                "NetworkMode": 2,
+                                                "NetworkInterpolation": true,
+                                                "NetworkOrphaned": 0,
+                                                "OwnerTransfer": 1,
+                                                "Components": [],
+                                                "Children": []
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "__guid": "ceff0cf2-02e6-4b81-9ec8-02fa389db602",
+                                            "__version": 1,
+                                            "Flags": 4,
+                                            "Name": "arm_lower_R_twist1",
+                                            "Position": "0,0,0",
+                                            "Rotation": "0,0,0,1",
+                                            "Scale": "1,1,1",
+                                            "Tags": "",
+                                            "Enabled": true,
+                                            "NetworkMode": 2,
+                                            "NetworkInterpolation": true,
+                                            "NetworkOrphaned": 0,
+                                            "OwnerTransfer": 1,
+                                            "Components": [],
+                                            "Children": []
+                                          },
+                                          {
+                                            "__guid": "6416a8db-1583-4f98-a91d-f563f5501221",
+                                            "__version": 1,
+                                            "Flags": 4,
+                                            "Name": "arm_elbow_helper_R",
+                                            "Position": "0,0,0",
+                                            "Rotation": "0,0,0,1",
+                                            "Scale": "1,1,1",
+                                            "Tags": "",
+                                            "Enabled": true,
+                                            "NetworkMode": 2,
+                                            "NetworkInterpolation": true,
+                                            "NetworkOrphaned": 0,
+                                            "OwnerTransfer": 1,
+                                            "Components": [],
+                                            "Children": []
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "__guid": "a2a56f96-9b46-48d1-be24-74e5d07c4c53",
+                                        "__version": 1,
+                                        "Flags": 4,
+                                        "Name": "arm_upper_R_twist0",
+                                        "Position": "0,0,0",
+                                        "Rotation": "0,0,0,1",
+                                        "Scale": "1,1,1",
+                                        "Tags": "",
+                                        "Enabled": true,
+                                        "NetworkMode": 2,
+                                        "NetworkInterpolation": true,
+                                        "NetworkOrphaned": 0,
+                                        "OwnerTransfer": 1,
+                                        "Components": [],
+                                        "Children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "__guid": "b4128fb7-acf4-4180-a8e2-cbc287834e1b",
+                    "__version": 1,
+                    "Flags": 4,
+                    "Name": "leg_upper_R",
+                    "Position": "0,0,0",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Tags": "",
+                    "Enabled": true,
+                    "NetworkMode": 2,
+                    "NetworkInterpolation": true,
+                    "NetworkOrphaned": 0,
+                    "OwnerTransfer": 1,
+                    "Components": [],
+                    "Children": [
+                      {
+                        "__guid": "c02b44f4-7c59-4341-b4ca-87e246f20567",
+                        "__version": 1,
+                        "Flags": 4,
+                        "Name": "leg_upper_R_twist1",
+                        "Position": "0,0,0",
+                        "Rotation": "0,0,0,1",
+                        "Scale": "1,1,1",
+                        "Tags": "",
+                        "Enabled": true,
+                        "NetworkMode": 2,
+                        "NetworkInterpolation": true,
+                        "NetworkOrphaned": 0,
+                        "OwnerTransfer": 1,
+                        "Components": [],
+                        "Children": []
+                      },
+                      {
+                        "__guid": "133786f2-7f15-4af2-871e-3b409b3b7cb2",
+                        "__version": 1,
+                        "Flags": 4,
+                        "Name": "leg_lower_R",
+                        "Position": "0,0,0",
+                        "Rotation": "0,0,0,1",
+                        "Scale": "1,1,1",
+                        "Tags": "",
+                        "Enabled": true,
+                        "NetworkMode": 2,
+                        "NetworkInterpolation": true,
+                        "NetworkOrphaned": 0,
+                        "OwnerTransfer": 1,
+                        "Components": [],
+                        "Children": [
+                          {
+                            "__guid": "a1b902e6-76e2-456a-b9db-ee493a4a4590",
+                            "__version": 1,
+                            "Flags": 4,
+                            "Name": "leg_lower_R_twist0",
+                            "Position": "0,0,0",
+                            "Rotation": "0,0,0,1",
+                            "Scale": "1,1,1",
+                            "Tags": "",
+                            "Enabled": true,
+                            "NetworkMode": 2,
+                            "NetworkInterpolation": true,
+                            "NetworkOrphaned": 0,
+                            "OwnerTransfer": 1,
+                            "Components": [],
+                            "Children": []
+                          },
+                          {
+                            "__guid": "af3255ad-f7ca-4e6b-b304-3f44c6a47f31",
+                            "__version": 1,
+                            "Flags": 4,
+                            "Name": "ankle_R",
+                            "Position": "0,0,0",
+                            "Rotation": "0,0,0,1",
+                            "Scale": "1,1,1",
+                            "Tags": "",
+                            "Enabled": true,
+                            "NetworkMode": 2,
+                            "NetworkInterpolation": true,
+                            "NetworkOrphaned": 0,
+                            "OwnerTransfer": 1,
+                            "Components": [],
+                            "Children": [
+                              {
+                                "__guid": "bf2abc72-8c73-45a4-a22e-24f780f8d64d",
+                                "__version": 1,
+                                "Flags": 4,
+                                "Name": "ball_R",
+                                "Position": "0,0,0",
+                                "Rotation": "0,0,0,1",
+                                "Scale": "1,1,1",
+                                "Tags": "",
+                                "Enabled": true,
+                                "NetworkMode": 2,
+                                "NetworkInterpolation": true,
+                                "NetworkOrphaned": 0,
+                                "OwnerTransfer": 1,
+                                "Components": [],
+                                "Children": []
+                              }
+                            ]
+                          },
+                          {
+                            "__guid": "5158c2cd-7e2e-4df7-a7ec-620928c4da36",
+                            "__version": 1,
+                            "Flags": 4,
+                            "Name": "leg_lower_R_twist1",
+                            "Position": "0,0,0",
+                            "Rotation": "0,0,0,1",
+                            "Scale": "1,1,1",
+                            "Tags": "",
+                            "Enabled": true,
+                            "NetworkMode": 2,
+                            "NetworkInterpolation": true,
+                            "NetworkOrphaned": 0,
+                            "OwnerTransfer": 1,
+                            "Components": [],
+                            "Children": []
+                          },
+                          {
+                            "__guid": "43458d06-9f3b-4c5d-a314-854509291635",
+                            "__version": 1,
+                            "Flags": 4,
+                            "Name": "leg_knee_helper_R",
+                            "Position": "0,0,0",
+                            "Rotation": "0,0,0,1",
+                            "Scale": "1,1,1",
+                            "Tags": "",
+                            "Enabled": true,
+                            "NetworkMode": 2,
+                            "NetworkInterpolation": true,
+                            "NetworkOrphaned": 0,
+                            "OwnerTransfer": 1,
+                            "Components": [],
+                            "Children": []
+                          }
+                        ]
+                      },
+                      {
+                        "__guid": "68fe33b6-bbf5-40fb-ac5d-b0dce70bf09a",
+                        "__version": 1,
+                        "Flags": 4,
+                        "Name": "leg_upper_R_twist0",
+                        "Position": "0,0,0",
+                        "Rotation": "0,0,0,1",
+                        "Scale": "1,1,1",
+                        "Tags": "",
+                        "Enabled": true,
+                        "NetworkMode": 2,
+                        "NetworkInterpolation": true,
+                        "NetworkOrphaned": 0,
+                        "OwnerTransfer": 1,
+                        "Components": [],
+                        "Children": []
+                      }
+                    ]
+                  },
+                  {
+                    "__guid": "0c795340-e8d9-413d-a111-fa4446f444a8",
+                    "__version": 1,
+                    "Flags": 4,
+                    "Name": "leg_upper_L",
+                    "Position": "0,0,0",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Tags": "",
+                    "Enabled": true,
+                    "NetworkMode": 2,
+                    "NetworkInterpolation": true,
+                    "NetworkOrphaned": 0,
+                    "OwnerTransfer": 1,
+                    "Components": [],
+                    "Children": [
+                      {
+                        "__guid": "06628009-93ba-425e-9280-303c41fa0f74",
+                        "__version": 1,
+                        "Flags": 4,
+                        "Name": "leg_upper_L_twist1",
+                        "Position": "0,0,0",
+                        "Rotation": "0,0,0,1",
+                        "Scale": "1,1,1",
+                        "Tags": "",
+                        "Enabled": true,
+                        "NetworkMode": 2,
+                        "NetworkInterpolation": true,
+                        "NetworkOrphaned": 0,
+                        "OwnerTransfer": 1,
+                        "Components": [],
+                        "Children": []
+                      },
+                      {
+                        "__guid": "6f29cb90-97a5-4b6a-8311-25ce30e7a46f",
+                        "__version": 1,
+                        "Flags": 4,
+                        "Name": "leg_lower_L",
+                        "Position": "0,0,0",
+                        "Rotation": "0,0,0,1",
+                        "Scale": "1,1,1",
+                        "Tags": "",
+                        "Enabled": true,
+                        "NetworkMode": 2,
+                        "NetworkInterpolation": true,
+                        "NetworkOrphaned": 0,
+                        "OwnerTransfer": 1,
+                        "Components": [],
+                        "Children": [
+                          {
+                            "__guid": "2390cad7-59a2-4646-93cf-797be4b543c2",
+                            "__version": 1,
+                            "Flags": 4,
+                            "Name": "leg_lower_L_twist0",
+                            "Position": "0,0,0",
+                            "Rotation": "0,0,0,1",
+                            "Scale": "1,1,1",
+                            "Tags": "",
+                            "Enabled": true,
+                            "NetworkMode": 2,
+                            "NetworkInterpolation": true,
+                            "NetworkOrphaned": 0,
+                            "OwnerTransfer": 1,
+                            "Components": [],
+                            "Children": []
+                          },
+                          {
+                            "__guid": "ae96fe5b-e4fb-4568-b0d5-665cf866c6a5",
+                            "__version": 1,
+                            "Flags": 4,
+                            "Name": "ankle_L",
+                            "Position": "0,0,0",
+                            "Rotation": "0,0,0,1",
+                            "Scale": "1,1,1",
+                            "Tags": "",
+                            "Enabled": true,
+                            "NetworkMode": 2,
+                            "NetworkInterpolation": true,
+                            "NetworkOrphaned": 0,
+                            "OwnerTransfer": 1,
+                            "Components": [],
+                            "Children": [
+                              {
+                                "__guid": "02a6bb40-5796-42d9-80f9-596463d33550",
+                                "__version": 1,
+                                "Flags": 4,
+                                "Name": "ball_L",
+                                "Position": "0,0,0",
+                                "Rotation": "0,0,0,1",
+                                "Scale": "1,1,1",
+                                "Tags": "",
+                                "Enabled": true,
+                                "NetworkMode": 2,
+                                "NetworkInterpolation": true,
+                                "NetworkOrphaned": 0,
+                                "OwnerTransfer": 1,
+                                "Components": [],
+                                "Children": []
+                              }
+                            ]
+                          },
+                          {
+                            "__guid": "43517519-f6cb-437e-bd29-60a979d78ae3",
+                            "__version": 1,
+                            "Flags": 4,
+                            "Name": "leg_lower_L_twist1",
+                            "Position": "0,0,0",
+                            "Rotation": "0,0,0,1",
+                            "Scale": "1,1,1",
+                            "Tags": "",
+                            "Enabled": true,
+                            "NetworkMode": 2,
+                            "NetworkInterpolation": true,
+                            "NetworkOrphaned": 0,
+                            "OwnerTransfer": 1,
+                            "Components": [],
+                            "Children": []
+                          },
+                          {
+                            "__guid": "645789c6-4782-487e-9189-d247e42238dd",
+                            "__version": 1,
+                            "Flags": 4,
+                            "Name": "leg_knee_helper_L",
+                            "Position": "0,0,0",
+                            "Rotation": "0,0,0,1",
+                            "Scale": "1,1,1",
+                            "Tags": "",
+                            "Enabled": true,
+                            "NetworkMode": 2,
+                            "NetworkInterpolation": true,
+                            "NetworkOrphaned": 0,
+                            "OwnerTransfer": 1,
+                            "Components": [],
+                            "Children": []
+                          }
+                        ]
+                      },
+                      {
+                        "__guid": "8353a812-9ff8-49ba-b52a-ad354c17ced4",
+                        "__version": 1,
+                        "Flags": 4,
+                        "Name": "leg_upper_L_twist0",
+                        "Position": "0,0,0",
+                        "Rotation": "0,0,0,1",
+                        "Scale": "1,1,1",
+                        "Tags": "",
+                        "Enabled": true,
+                        "NetworkMode": 2,
+                        "NetworkInterpolation": true,
+                        "NetworkOrphaned": 0,
+                        "OwnerTransfer": 1,
+                        "Components": [],
+                        "Children": []
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -37343,6 +39148,23 @@
             "Children": []
           }
         ]
+      },
+      {
+        "__guid": "d22cd7f9-a913-476b-9742-9dee66d7fcc2",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "GameObject",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
       },
       {
         "__guid": "70599f44-7abb-4948-a9fc-ed3d6a8321b3",

@@ -5,14 +5,17 @@ using System;
 	public partial class BaseEntity : Component, Component.IPressable
 	{
 	
-		[Property, Feature("Entity Info")]
+		[Property, Feature("Entity Info"), Group("Entity Info")]
 		public bool IsInteractable { get; set; } = true;
+
+		[Property, Feature("Entity Info"), Group("Entity Info")]
+		public SoundEvent InteractionSFX { get; set; }
 		
 		public delegate void PressedActionDelegate( PlayerController LastInteractingPlayer );
 		[Property]
 		public PressedActionDelegate Interacted { get; set; }
 
-		public PlayerController LastInteractingPlayer { get; set; }
+		public PlayerController LastInteractingPlayer { get; set; } 
 		
 
 		// Called every frame while the player is looking at this object.
