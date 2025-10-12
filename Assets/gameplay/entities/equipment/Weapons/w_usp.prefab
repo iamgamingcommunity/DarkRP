@@ -18,10 +18,7 @@
         "__type": "SwepDroppedEntity",
         "__guid": "1d50b554-7f10-422a-8b6e-c6835717ba53",
         "__enabled": false,
-        "DebugBullet": {
-          "_type": "gameobject",
-          "go": "2abb96e2-782b-4f38-b3e0-3507b5670c9f"
-        },
+        "DebugBullet": null,
         "Interacted": null,
         "InteractionSFX": null,
         "IsInteractable": true,
@@ -67,7 +64,7 @@
             "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "6fa6daf4-78a9-42a4-b175-da1845e58ecd",
             "__enabled": true,
-            "AnimationGraph": null,
+            "AnimationGraph": "models/weapons/sbox_pistol_usp/v_usp.vanmgrph",
             "BodyGroups": 147,
             "BoneMergeTarget": null,
             "CreateAttachments": false,
@@ -100,8 +97,8 @@
             },
             "RenderType": "On",
             "Sequence": {
-              "Name": null,
-              "Looping": true,
+              "Name": "2H_Fire_02",
+              "Looping": false,
               "Blending": false
             },
             "Tint": "1,1,1,1",
@@ -111,14 +108,11 @@
             "__type": "SwepDroppedEntity",
             "__guid": "b4969f48-a28b-469b-a943-123ac3405ffc",
             "__enabled": true,
-            "DebugBullet": {
-              "_type": "gameobject",
-              "go": "2abb96e2-782b-4f38-b3e0-3507b5670c9f"
-            },
+            "DebugBullet": null,
             "Interacted": {
               "__version": 9,
               "__guid": "c44fa4a7-5755-4f20-ad2e-b8abc1df159d",
-              "__changeId": 729,
+              "__changeId": 771,
               "UserData": {
                 "Title": "Interacted With Swep",
                 "ReferencedComponentTypes": [
@@ -1026,7 +1020,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "228,396"
+                    "Position": "180,396"
                   }
                 },
                 {
@@ -2271,7 +2265,7 @@
                     "T": "Sandbox.SkinnedModelRenderer"
                   },
                   "UserData": {
-                    "Position": "5604,1440"
+                    "Position": "5592,1404"
                   }
                 },
                 {
@@ -2323,7 +2317,7 @@
                     "_type": "SwepDroppedEntity"
                   },
                   "UserData": {
-                    "Position": "6984,1464"
+                    "Position": "6972,1608"
                   }
                 },
                 {
@@ -2334,7 +2328,7 @@
                     "_type": "PickupableEntity"
                   },
                   "UserData": {
-                    "Position": "7284,1464"
+                    "Position": "7284,1560"
                   }
                 },
                 {
@@ -2377,7 +2371,7 @@
                     "T": "Sandbox.Rigidbody"
                   },
                   "UserData": {
-                    "Position": "8856,1476"
+                    "Position": "8868,1464"
                   }
                 },
                 {
@@ -2399,7 +2393,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "8688,1560"
+                    "Position": "8604,1512"
                   }
                 },
                 {
@@ -2409,7 +2403,46 @@
                     "T": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "9012,1560"
+                    "Position": "8868,1488"
+                  }
+                },
+                {
+                  "Id": 707,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "9456,1440"
+                  }
+                },
+                {
+                  "Id": 708,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "8628,1716"
+                  }
+                },
+                {
+                  "Id": 746,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldPosition",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "7992,1548"
+                  }
+                },
+                {
+                  "Id": 747,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "LocalPosition",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "7956,1644"
                   }
                 }
               ],
@@ -2907,7 +2940,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 649,
+                  "Id": 721,
                   "Value": "Fired Set Hot Bar Swep Info",
                   "DstId": 58,
                   "DstName": "format"
@@ -3141,7 +3174,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 650,
+                  "Id": 722,
                   "Value": 0,
                   "DstId": 83,
                   "DstName": "b"
@@ -3165,7 +3198,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 651,
+                  "Id": 723,
                   "Value": 0,
                   "DstId": 85,
                   "DstName": "b"
@@ -3189,7 +3222,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 652,
+                  "Id": 724,
                   "Value": 0,
                   "DstId": 87,
                   "DstName": "b"
@@ -3213,7 +3246,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 653,
+                  "Id": 725,
                   "Value": 0,
                   "DstId": 89,
                   "DstName": "b"
@@ -3297,7 +3330,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 654,
+                  "Id": 726,
                   "Value": {
                     "$type": "Simple",
                     "Type": "Vector3",
@@ -3325,7 +3358,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 655,
+                  "Id": 727,
                   "Value": 0.03,
                   "DstId": 100,
                   "DstName": "seconds"
@@ -3517,7 +3550,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 656,
+                  "Id": 728,
                   "Value": 0,
                   "DstId": 189,
                   "DstName": "b"
@@ -3571,7 +3604,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 657,
+                  "Id": 729,
                   "Value": "1",
                   "DstId": 200,
                   "DstName": "format"
@@ -3613,7 +3646,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 658,
+                  "Id": 730,
                   "Value": 0,
                   "DstId": 239,
                   "DstName": "b"
@@ -3673,7 +3706,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 659,
+                  "Id": 731,
                   "Value": 0.001,
                   "DstId": 251,
                   "DstName": "seconds"
@@ -3691,7 +3724,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 660,
+                  "Id": 732,
                   "Value": 0.001,
                   "DstId": 259,
                   "DstName": "seconds"
@@ -3805,7 +3838,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 661,
+                  "Id": 733,
                   "Value": 0,
                   "DstId": 327,
                   "DstName": "b"
@@ -3829,7 +3862,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 662,
+                  "Id": 734,
                   "Value": 0.001,
                   "DstId": 330,
                   "DstName": "seconds"
@@ -4189,7 +4222,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 663,
+                  "Id": 735,
                   "Value": 0.002,
                   "DstId": 520,
                   "DstName": "seconds"
@@ -4213,7 +4246,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 664,
+                  "Id": 736,
                   "Value": 0,
                   "DstId": 524,
                   "DstName": "b"
@@ -4567,7 +4600,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 665,
+                  "Id": 737,
                   "Value": 0,
                   "DstId": 612,
                   "DstName": "index"
@@ -4609,13 +4642,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 666,
+                  "Id": 738,
                   "Value": "holdtype",
                   "DstId": 617,
                   "DstName": "v"
                 },
                 {
-                  "Id": 667,
+                  "Id": 739,
                   "Value": 1,
                   "DstId": 617,
                   "DstName": "value"
@@ -4633,13 +4666,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 668,
+                  "Id": 740,
                   "Value": true,
                   "DstId": 628,
                   "DstName": "world"
                 },
                 {
-                  "Id": 669,
+                  "Id": 741,
                   "Value": 13,
                   "DstId": 630,
                   "DstName": "index"
@@ -4669,7 +4702,7 @@
                   "DstName": "parent"
                 },
                 {
-                  "Id": 674,
+                  "Id": 748,
                   "Value": "0,0,0",
                   "DstId": 633,
                   "DstName": "position"
@@ -4681,7 +4714,7 @@
                   "DstName": "prefab"
                 },
                 {
-                  "Id": 673,
+                  "Id": 742,
                   "Value": "1,1,1",
                   "DstId": 633,
                   "DstName": "scale"
@@ -4723,8 +4756,8 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 670,
-                  "Value": 13,
+                  "Id": 743,
+                  "Value": 27,
                   "DstId": 638,
                   "DstName": "index"
                 },
@@ -4747,7 +4780,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 671,
+                  "Id": 744,
                   "Value": false,
                   "DstId": 643,
                   "DstName": "_value"
@@ -4759,7 +4792,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 672,
+                  "Id": 745,
                   "Value": 0,
                   "DstId": 647,
                   "DstName": "index"
@@ -4769,6 +4802,36 @@
                   "SrcName": "_result",
                   "DstId": 647,
                   "DstName": "list"
+                },
+                {
+                  "SrcId": 643,
+                  "SrcName": "_signal",
+                  "DstId": 707,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 708,
+                  "SrcName": "_result",
+                  "DstId": 707,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 638,
+                  "SrcName": "_result",
+                  "DstId": 708,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 638,
+                  "SrcName": "_result",
+                  "DstId": 746,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 638,
+                  "SrcName": "_result",
+                  "DstId": 747,
+                  "DstName": "_target"
                 }
               ],
               "Defaults": {
@@ -4865,7 +4928,59 @@
             "StartAsleep": false
           }
         ],
-        "Children": []
+        "Children": [
+          {
+            "__guid": "3fc4d117-837f-4582-91d2-7bc7023ac13b",
+            "__version": 1,
+            "Flags": 0,
+            "Name": "muzzle",
+            "Position": "3.848412,0.0000004676039,4.945133",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "NetworkOrphaned": 0,
+            "OwnerTransfer": 1,
+            "Components": [],
+            "Children": []
+          },
+          {
+            "__guid": "30804305-e452-47f0-9bfb-1fb1e6620b9d",
+            "__version": 1,
+            "Flags": 0,
+            "Name": "eject",
+            "Position": "0.2193301,-0.1475519,5.091545",
+            "Rotation": "0.0000001053671,-0.7071066,0.00000002107342,0.7071068",
+            "Scale": "1,1,1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "NetworkOrphaned": 0,
+            "OwnerTransfer": 1,
+            "Components": [],
+            "Children": []
+          },
+          {
+            "__guid": "3e008c97-7ce3-4f10-a861-3fd37a7b7d66",
+            "__version": 1,
+            "Flags": 0,
+            "Name": "camera",
+            "Position": "0.000002605127,-0.000004555984,0.000003003693",
+            "Rotation": "-0.0000002682208,-0.00000004470347,0.000002950429,1",
+            "Scale": "1,1,1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "NetworkOrphaned": 0,
+            "OwnerTransfer": 1,
+            "Components": [],
+            "Children": []
+          }
+        ]
       },
       {
         "__guid": "b9c9b248-2e12-43fa-ba58-cb9840e8374a",
@@ -4900,68 +5015,6 @@
         "OwnerTransfer": 1,
         "Components": [],
         "Children": []
-      },
-      {
-        "__guid": "2abb96e2-782b-4f38-b3e0-3507b5670c9f",
-        "__version": 1,
-        "Flags": 0,
-        "Name": "DebugBullet",
-        "Position": "7.139627,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
-        "NetworkOrphaned": 0,
-        "OwnerTransfer": 1,
-        "Components": [
-          {
-            "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "67c23a87-56d4-45f2-bf93-aa55aa9392c4",
-            "__enabled": true,
-            "AnimationGraph": null,
-            "BodyGroups": 18446744073709551615,
-            "BoneMergeTarget": null,
-            "CreateAttachments": false,
-            "CreateBoneObjects": false,
-            "LodOverride": null,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Materials": null,
-            "Model": "models/props/packaged_food/cereal_closed.vmdl",
-            "Morphs": {},
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "Parameters": {
-              "bools": {},
-              "ints": {},
-              "floats": {},
-              "vectors": {},
-              "rotations": {}
-            },
-            "PlaybackRate": 1,
-            "RenderOptions": {
-              "GameLayer": true,
-              "OverlayLayer": false,
-              "BloomLayer": false,
-              "AfterUILayer": false
-            },
-            "RenderType": "On",
-            "Sequence": {
-              "Name": null,
-              "Looping": true,
-              "Blending": false
-            },
-            "Tint": "1,1,1,1",
-            "UseAnimGraph": true
-          }
-        ],
-        "Children": []
       }
     ],
     "__properties": {
@@ -4990,7 +5043,6 @@
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
   "__references": [
-    "facepunch.cereal_closed#55840",
     "facepunch.v_usp#122031"
   ],
   "__version": 2
