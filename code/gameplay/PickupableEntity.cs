@@ -6,27 +6,42 @@ using System.Collections.Generic;
 public class PickupableEntity : GameResource
 {
 	//PickupableEntity Info
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string EquipmentName { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), TextArea] public string EquipmentDescription { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile viewmodel { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile worldmodel { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public Texture SpawnMenuIcon { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("Default DarkRP Ballistic System Firemodes Index Goes as Listed: 0=Safety, 1=Manual Single Bolt, 2=Single bolt, 3=Semi, 4=Burst, 5=Auto, 6=Shotgun, 7=Gatling.")] public List<int> EquipmentFireMode { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("This places the weapon the in the catagory you set in the spawn menus.")] public string SpawnMenuCatagory{ get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool NeedWeaponLicense { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool NoStripSwep { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool DisallowDrop { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("If the weapon can be spawned.")] public bool Spawnable { get; set; } = true;
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("If the weapon can be ONLY spawned via admin rank.")] public bool AdminSpawnable { get; set; } = true;
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("Which hotbar you want the swep to be added to.")] public int HotbarSlot { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentRecoil { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentCone { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentFireSpeed { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentAimSpeed { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentReloadSpeed { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public float EquipmentBulletSpeed { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile EquipmentBulletDecal { get; set; }
-	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool EquipmentUsePresetWeaponSystem { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public string EquipmentName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info"), TextArea] public string EquipmentDescription { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public PrefabFile viewmodel { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public PrefabFile worldmodel { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public Texture SpawnMenuIcon { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public Vector3 SwepHandPosition { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info"), Description("This uses a string but the swep model NEEDS have a int or enum with a index of 1 to fire off the aiming logic. If not this won't work.")] public string SwepAimAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepFireAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepDryFireAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepDeploySkipAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepEmptyAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepGrabAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepHolsterAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepLowerWeaponAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepReloadAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepEquipAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepHoldTypeAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info"), Description("We Use Default S&Box Character that has hold types. The Hold Types are: 0=None, 1=Pistol, 2=Rifle, 3=Shotgun, 4=HoldItem, 5=MeleePunch, 6=MeleeWeapons, 7=RPG, 8=Physgun")] public int SwepHoldTypeParameter { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepHoldTypeHandednessAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info"), Description("We Use Default S&Box Character that has hold types. The Hold Types are: 0=2H, 1=RH, 2=LH")] public int SwepHoldTypeHandednessParameter { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info"), Description("Default DarkRP Ballistic System Firemodes Index Goes as Listed: 0=Safety, 1=Manual Single Bolt, 2=Single bolt, 3=Semi, 4=Burst, 5=Auto, 6=Shotgun, 7=Gatling.")] public List<int> EquipmentFireMode { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info"), Description("This places the weapon the in the catagory you set in the spawn menus.")] public string SpawnMenuCatagory{ get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public bool NeedWeaponLicense { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public bool NoStripSwep { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public bool DisallowDrop { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info"), Description("If the weapon can be spawned.")] public bool Spawnable { get; set; } = true;
+	[Property, Feature("Equipment Base Info"), Group("Base Info"), Description("If the weapon can be ONLY spawned via admin rank.")] public bool AdminSpawnable { get; set; } = true;
+	[Property, Feature("Equipment Base Info"), Group("Base Info"), Description("Which hotbar you want the swep to be added to.")] public int HotbarSlot { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public float EquipmentRecoil { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public float EquipmentCone { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public float EquipmentFireSpeed { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public float EquipmentAimSpeed { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public float EquipmentReloadSpeed { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public float EquipmentBulletSpeed { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public PrefabFile EquipmentBulletDecal { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public bool EquipmentUsePresetWeaponSystem { get; set; }
 
 
 	//PickupableEntity Damage Info

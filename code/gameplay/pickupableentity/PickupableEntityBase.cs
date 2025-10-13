@@ -11,6 +11,21 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile viewmodel { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile worldmodel { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public Texture SpawnMenuIcon { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public Vector3 SwepHandPosition { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepAimAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepFireAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepDryFireAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepDeploySkipAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepEmptyAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepGrabAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepHolsterAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepLowerWeaponAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepReloadAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepEquipAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepHoldTypeAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info"), Description("We Use Default S&Box Character that has hold types. The Hold Types are: 0=None, 1=Pistol, 2=Rifle, 3=Shotgun, 4=HoldItem, 5=MeleePunch, 6=MeleeWeapons, 7=RPG, 8=Physgun")] public int SwepHoldTypeParameter { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepHoldTypeHandednessAnimationParameterName { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info"), Description("We Use Default S&Box Character that has hold types. The Hold Types are: 0=2H, 1=RH, 2=LH")] public int SwepHoldTypeHandednessParameter { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public int EquipmentCurrentFireMode { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public int EquipmentFireModeTempLoopVar { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), Description("Default DarkRP Ballistic System Firemodes Index Goes as Listed: 0=Safety, 1=Manual Single Bolt, 2=Single bolt, 3=Semi, 4=Burst, 5=Auto, 6=Shotgun, 7=Gatling.")] public List<int> EquipmentFireMode { get; set; }

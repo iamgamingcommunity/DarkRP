@@ -12,6 +12,21 @@ public sealed class DarkrpPlayerInfo : Component
 	[Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string DisplayName { get; set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public JobResource CurrentJob { get; set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public int PlayerMoney { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyFireAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyclimbingAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyDeployAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyFirstPersonAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyGroundedAnimationParameterName { get; set; }	
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyJumpAnimationParameterName { get; set; }	
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyLongIdleAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyNoclipAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyReloadAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyReloadingAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyReloadingInsertAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodySwimAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyWeaponLowerAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodySitAnimationParameterName { get; set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public int BodySitAnimationParameterValue { get; set; }
 
 	// Not Needed??[Property] public string PlayerMoney { get; private set; }
 

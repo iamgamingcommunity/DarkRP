@@ -64,7 +64,7 @@
             "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "6fa6daf4-78a9-42a4-b175-da1845e58ecd",
             "__enabled": true,
-            "AnimationGraph": "models/weapons/sbox_pistol_usp/v_usp.vanmgrph",
+            "AnimationGraph": null,
             "BodyGroups": 147,
             "BoneMergeTarget": null,
             "CreateAttachments": false,
@@ -112,7 +112,7 @@
             "Interacted": {
               "__version": 9,
               "__guid": "c44fa4a7-5755-4f20-ad2e-b8abc1df159d",
-              "__changeId": 771,
+              "__changeId": 965,
               "UserData": {
                 "Title": "Interacted With Swep",
                 "ReferencedComponentTypes": [
@@ -127,12 +127,20 @@
               },
               "Variables": [
                 {
+                  "Name": "TempPickupableEntityBase",
+                  "Type": "PickupableEntityBase"
+                },
+                {
                   "Name": "TempPlayerBody",
                   "Type": "Sandbox.GameObject"
                 },
                 {
                   "Name": "TempPlayerSwep",
                   "Type": "PickupableEntityBase"
+                },
+                {
+                  "Name": "TempSwepDataFile",
+                  "Type": "PickupableEntity"
                 }
               ],
               "Nodes": [
@@ -1343,7 +1351,7 @@
                     "Size": "384,432",
                     "Title": "This Prevents Weird Dupe Bug",
                     "Description": "This Prevents Weird Dupe Bug of the Lists Being duped/Added too.",
-                    "Layer": 1,
+                    "Layer": 2,
                     "Color": 3
                   }
                 },
@@ -1607,7 +1615,7 @@
                     "Title": "Updating Lists For Swep",
                     "Color": 3,
                     "Description": "We Add to the lists to prevent the runtime editing to affect the main .swep(A.K.A Resource File).",
-                    "Layer": 2
+                    "Layer": 3
                   }
                 },
                 {
@@ -2255,7 +2263,7 @@
                     "_var": "TempPlayerBody"
                   },
                   "UserData": {
-                    "Position": "5424,1440"
+                    "Position": "5424,1416"
                   }
                 },
                 {
@@ -2289,7 +2297,7 @@
                     "_type": "Sandbox.SkinnedModelRenderer"
                   },
                   "UserData": {
-                    "Position": "6528,1440"
+                    "Position": "7176,1452"
                   }
                 },
                 {
@@ -2299,14 +2307,14 @@
                     "T": "Transform"
                   },
                   "UserData": {
-                    "Position": "6912,1488"
+                    "Position": "7560,1500"
                   }
                 },
                 {
                   "Id": 633,
                   "Type": "scene.instantiate",
                   "UserData": {
-                    "Position": "8400,1440"
+                    "Position": "9048,1452"
                   }
                 },
                 {
@@ -2317,7 +2325,7 @@
                     "_type": "SwepDroppedEntity"
                   },
                   "UserData": {
-                    "Position": "6972,1608"
+                    "Position": "6216,1692"
                   }
                 },
                 {
@@ -2328,7 +2336,7 @@
                     "_type": "PickupableEntity"
                   },
                   "UserData": {
-                    "Position": "7284,1560"
+                    "Position": "7932,1572"
                   }
                 },
                 {
@@ -2339,7 +2347,7 @@
                     "_type": "Transform"
                   },
                   "UserData": {
-                    "Position": "7140,1488"
+                    "Position": "7788,1500"
                   }
                 },
                 {
@@ -2349,7 +2357,7 @@
                     "T": "Sandbox.PrefabFile"
                   },
                   "UserData": {
-                    "Position": "7320,1608"
+                    "Position": "7968,1620"
                   }
                 },
                 {
@@ -2361,7 +2369,7 @@
                     "_type": "Sandbox.SkinnedModelRenderer"
                   },
                   "UserData": {
-                    "Position": "7608,1440"
+                    "Position": "8256,1452"
                   }
                 },
                 {
@@ -2371,7 +2379,7 @@
                     "T": "Sandbox.Rigidbody"
                   },
                   "UserData": {
-                    "Position": "8868,1464"
+                    "Position": "9516,1476"
                   }
                 },
                 {
@@ -2382,7 +2390,7 @@
                     "_type": "Sandbox.Component"
                   },
                   "UserData": {
-                    "Position": "9132,1440"
+                    "Position": "9780,1452"
                   }
                 },
                 {
@@ -2393,7 +2401,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "8604,1512"
+                    "Position": "9252,1524"
                   }
                 },
                 {
@@ -2403,14 +2411,14 @@
                     "T": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "8868,1488"
+                    "Position": "9516,1500"
                   }
                 },
                 {
                   "Id": 707,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "9456,1440"
+                    "Position": "10548,1452"
                   }
                 },
                 {
@@ -2420,7 +2428,7 @@
                     "T": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "8628,1716"
+                    "Position": "10068,1764"
                   }
                 },
                 {
@@ -2431,7 +2439,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "7992,1548"
+                    "Position": "8640,1560"
                   }
                 },
                 {
@@ -2442,7 +2450,674 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "7956,1644"
+                    "Position": "8604,1656"
+                  }
+                },
+                {
+                  "Id": 800,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "1092,12"
+                  }
+                },
+                {
+                  "Id": 801,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "1416,120"
+                  }
+                },
+                {
+                  "Id": 802,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "1896,180"
+                  }
+                },
+                {
+                  "Id": 803,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "1908,432"
+                  }
+                },
+                {
+                  "Id": 804,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "2028,840"
+                  }
+                },
+                {
+                  "Id": 805,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "2112,1428"
+                  }
+                },
+                {
+                  "Id": 806,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "2760,2328"
+                  }
+                },
+                {
+                  "Id": 807,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "3444,3612"
+                  }
+                },
+                {
+                  "Id": 808,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "5388,504"
+                  }
+                },
+                {
+                  "Id": 809,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "6180,984"
+                  }
+                },
+                {
+                  "Id": 810,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "5904,780"
+                  }
+                },
+                {
+                  "Id": 811,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "3948,1380"
+                  }
+                },
+                {
+                  "Id": 812,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "8748,396"
+                  }
+                },
+                {
+                  "Id": 813,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHandPosition",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "8388,324"
+                  }
+                },
+                {
+                  "Id": 814,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepFireAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "8772,300"
+                  }
+                },
+                {
+                  "Id": 816,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepDeploySkipAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "9540,288"
+                  }
+                },
+                {
+                  "Id": 817,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepEmptyAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "10020,288"
+                  }
+                },
+                {
+                  "Id": 818,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "10176,384"
+                  }
+                },
+                {
+                  "Id": 819,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepGrabAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "10416,300"
+                  }
+                },
+                {
+                  "Id": 820,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHolsterAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "10824,288"
+                  }
+                },
+                {
+                  "Id": 821,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepLowerWeaponAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "11220,288"
+                  }
+                },
+                {
+                  "Id": 823,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepReloadAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "11616,288"
+                  }
+                },
+                {
+                  "Id": 824,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepEquipAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "12108,276"
+                  }
+                },
+                {
+                  "Id": 825,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "576,-0"
+                  }
+                },
+                {
+                  "Id": 826,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "1512,264"
+                  }
+                },
+                {
+                  "Id": 827,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2220,456"
+                  }
+                },
+                {
+                  "Id": 828,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2808,852"
+                  }
+                },
+                {
+                  "Id": 829,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "3192,1092"
+                  }
+                },
+                {
+                  "Id": 830,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "2628,1944"
+                  }
+                },
+                {
+                  "Id": 831,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "4884,3288"
+                  }
+                },
+                {
+                  "Id": 832,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "4068,4872"
+                  }
+                },
+                {
+                  "Id": 833,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "5232,396"
+                  }
+                },
+                {
+                  "Id": 834,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "6108,852"
+                  }
+                },
+                {
+                  "Id": 835,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "8448,300"
+                  }
+                },
+                {
+                  "Id": 836,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHandPosition",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "8460,204"
+                  }
+                },
+                {
+                  "Id": 837,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepFireAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "8772,204"
+                  }
+                },
+                {
+                  "Id": 839,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepDeploySkipAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "9576,204"
+                  }
+                },
+                {
+                  "Id": 840,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepEmptyAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "10020,204"
+                  }
+                },
+                {
+                  "Id": 841,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "10488,480"
+                  }
+                },
+                {
+                  "Id": 842,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepGrabAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "10428,204"
+                  }
+                },
+                {
+                  "Id": 843,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHolsterAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "10824,204"
+                  }
+                },
+                {
+                  "Id": 844,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepLowerWeaponAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "11244,204"
+                  }
+                },
+                {
+                  "Id": 845,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepReloadAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "11700,204"
+                  }
+                },
+                {
+                  "Id": 846,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepEquipAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "12132,204"
+                  }
+                },
+                {
+                  "Id": 873,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepDryFireAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "9144,288"
+                  }
+                },
+                {
+                  "Id": 900,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepDryFireAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "9168,204"
+                  }
+                },
+                {
+                  "Id": 901,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepAimAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "14688,324"
+                  }
+                },
+                {
+                  "Id": 902,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepAimAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "14736,204"
+                  }
+                },
+                {
+                  "Id": 903,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHandPosition",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "8004,1716"
+                  }
+                },
+                {
+                  "Id": 904,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHoldTypeAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "12744,324"
+                  }
+                },
+                {
+                  "Id": 905,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHoldTypeParameter",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "13188,324"
+                  }
+                },
+                {
+                  "Id": 906,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHoldTypeParameter",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "13188,204"
+                  }
+                },
+                {
+                  "Id": 907,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHoldTypeAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "12720,204"
+                  }
+                },
+                {
+                  "Id": 908,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHoldTypeAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "5568,1452"
+                  }
+                },
+                {
+                  "Id": 909,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHoldTypeParameter",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "5628,1476"
+                  }
+                },
+                {
+                  "Id": 933,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Set",
+                    "_type": "Sandbox.SkinnedModelRenderer"
+                  },
+                  "UserData": {
+                    "Position": "6468,1404"
+                  }
+                },
+                {
+                  "Id": 934,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHoldTypeHandednessAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "6252,1512"
+                  }
+                },
+                {
+                  "Id": 935,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepHoldTypeHandednessParameter",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "6312,1560"
+                  }
+                },
+                {
+                  "Id": 936,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "5964,1272",
+                    "Size": "756,288",
+                    "Title": "Change ThirdPerson animations",
+                    "Description": "Change ThirdPerson animations to match the stuff the player is holding.",
+                    "Layer": 1,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 937,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempSwepDataFile"
+                  },
+                  "UserData": {
+                    "Position": "13548,504"
+                  }
+                },
+                {
+                  "Id": 938,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepDeploySkipAnimationParameterName",
+                    "_type": "PickupableEntity"
+                  },
+                  "UserData": {
+                    "Position": "13992,504"
+                  }
+                },
+                {
+                  "Id": 939,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempPickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "13680,648"
+                  }
+                },
+                {
+                  "Id": 940,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SwepDeploySkipAnimationParameterName",
+                    "_type": "PickupableEntityBase"
+                  },
+                  "UserData": {
+                    "Position": "13632,204"
                   }
                 }
               ],
@@ -2562,7 +3237,7 @@
                   "DstName": "_value"
                 },
                 {
-                  "SrcId": 610,
+                  "SrcId": 902,
                   "SrcName": "_signal",
                   "DstId": 11,
                   "DstName": "_signal"
@@ -2742,13 +3417,13 @@
                   "DstName": "_value"
                 },
                 {
-                  "SrcId": 4,
+                  "SrcId": 801,
                   "SrcName": "_result",
                   "DstId": 23,
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 4,
+                  "SrcId": 802,
                   "SrcName": "_result",
                   "DstId": 27,
                   "DstName": "_target"
@@ -2760,37 +3435,37 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 2,
+                  "SrcId": 827,
                   "SrcName": "_result",
                   "DstId": 29,
                   "DstName": "in"
                 },
                 {
-                  "SrcId": 2,
+                  "SrcId": 826,
                   "SrcName": "_result",
                   "DstId": 30,
                   "DstName": "in"
                 },
                 {
-                  "SrcId": 2,
+                  "SrcId": 828,
                   "SrcName": "_result",
                   "DstId": 31,
                   "DstName": "in"
                 },
                 {
-                  "SrcId": 4,
+                  "SrcId": 803,
                   "SrcName": "_result",
                   "DstId": 32,
                   "DstName": "in"
                 },
                 {
-                  "SrcId": 4,
+                  "SrcId": 804,
                   "SrcName": "_result",
                   "DstId": 33,
                   "DstName": "in"
                 },
                 {
-                  "SrcId": 4,
+                  "SrcId": 805,
                   "SrcName": "_result",
                   "DstId": 34,
                   "DstName": "in"
@@ -2934,13 +3609,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 94,
+                  "SrcId": 800,
                   "SrcName": "_signal",
                   "DstId": 58,
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 721,
+                  "Id": 910,
                   "Value": "Fired Set Hot Bar Swep Info",
                   "DstId": 58,
                   "DstName": "format"
@@ -2952,8 +3627,8 @@
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 91,
-                  "SrcName": "out",
+                  "SrcId": 830,
+                  "SrcName": "_result",
                   "DstId": 59,
                   "DstName": "_target"
                 },
@@ -2964,8 +3639,8 @@
                   "DstName": "_value"
                 },
                 {
-                  "SrcId": 34,
-                  "SrcName": "out",
+                  "SrcId": 806,
+                  "SrcName": "_result",
                   "DstId": 61,
                   "DstName": "in"
                 },
@@ -3174,7 +3849,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 722,
+                  "Id": 911,
                   "Value": 0,
                   "DstId": 83,
                   "DstName": "b"
@@ -3198,7 +3873,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 723,
+                  "Id": 912,
                   "Value": 0,
                   "DstId": 85,
                   "DstName": "b"
@@ -3222,7 +3897,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 724,
+                  "Id": 913,
                   "Value": 0,
                   "DstId": 87,
                   "DstName": "b"
@@ -3246,7 +3921,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 725,
+                  "Id": 914,
                   "Value": 0,
                   "DstId": 89,
                   "DstName": "b"
@@ -3264,7 +3939,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "SrcId": 2,
+                  "SrcId": 829,
                   "SrcName": "_result",
                   "DstId": 91,
                   "DstName": "in"
@@ -3282,7 +3957,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 614,
+                  "SrcId": 825,
                   "SrcName": "_signal",
                   "DstId": 94,
                   "DstName": "_signal"
@@ -3330,7 +4005,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 726,
+                  "Id": 915,
                   "Value": {
                     "$type": "Simple",
                     "Type": "Vector3",
@@ -3358,7 +4033,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 727,
+                  "Id": 916,
                   "Value": 0.03,
                   "DstId": 100,
                   "DstName": "seconds"
@@ -3394,7 +4069,7 @@
                   "DstName": "_value"
                 },
                 {
-                  "SrcId": 4,
+                  "SrcId": 811,
                   "SrcName": "_result",
                   "DstId": 126,
                   "DstName": "_target"
@@ -3550,7 +4225,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 728,
+                  "Id": 917,
                   "Value": 0,
                   "DstId": 189,
                   "DstName": "b"
@@ -3592,7 +4267,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 2,
+                  "SrcId": 831,
                   "SrcName": "_result",
                   "DstId": 199,
                   "DstName": "in"
@@ -3604,7 +4279,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 729,
+                  "Id": 918,
                   "Value": "1",
                   "DstId": 200,
                   "DstName": "format"
@@ -3646,7 +4321,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 730,
+                  "Id": 919,
                   "Value": 0,
                   "DstId": 239,
                   "DstName": "b"
@@ -3706,7 +4381,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 731,
+                  "Id": 920,
                   "Value": 0.001,
                   "DstId": 251,
                   "DstName": "seconds"
@@ -3724,7 +4399,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 732,
+                  "Id": 921,
                   "Value": 0.001,
                   "DstId": 259,
                   "DstName": "seconds"
@@ -3736,8 +4411,8 @@
                   "DstName": "target"
                 },
                 {
-                  "SrcId": 32,
-                  "SrcName": "out",
+                  "SrcId": 807,
+                  "SrcName": "_result",
                   "DstId": 262,
                   "DstName": "in"
                 },
@@ -3838,7 +4513,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 733,
+                  "Id": 922,
                   "Value": 0,
                   "DstId": 327,
                   "DstName": "b"
@@ -3862,7 +4537,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 734,
+                  "Id": 923,
                   "Value": 0.001,
                   "DstId": 330,
                   "DstName": "seconds"
@@ -4024,8 +4699,8 @@
                   "DstName": "_value"
                 },
                 {
-                  "SrcId": 34,
-                  "SrcName": "out",
+                  "SrcId": 810,
+                  "SrcName": "_result",
                   "DstId": 430,
                   "DstName": "_target"
                 },
@@ -4072,8 +4747,8 @@
                   "DstName": "_value"
                 },
                 {
-                  "SrcId": 34,
-                  "SrcName": "out",
+                  "SrcId": 809,
+                  "SrcName": "_result",
                   "DstId": 462,
                   "DstName": "in"
                 },
@@ -4084,8 +4759,8 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 31,
-                  "SrcName": "out",
+                  "SrcId": 834,
+                  "SrcName": "_result",
                   "DstId": 464,
                   "DstName": "in"
                 },
@@ -4222,7 +4897,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 735,
+                  "Id": 924,
                   "Value": 0.002,
                   "DstId": 520,
                   "DstName": "seconds"
@@ -4246,7 +4921,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 736,
+                  "Id": 925,
                   "Value": 0,
                   "DstId": 524,
                   "DstName": "b"
@@ -4342,7 +5017,7 @@
                   "DstName": "input"
                 },
                 {
-                  "SrcId": 2,
+                  "SrcId": 832,
                   "SrcName": "_result",
                   "DstId": 554,
                   "DstName": "in"
@@ -4414,8 +5089,8 @@
                   "DstName": "soundEvent"
                 },
                 {
-                  "SrcId": 32,
-                  "SrcName": "out",
+                  "SrcId": 808,
+                  "SrcName": "_result",
                   "DstId": 595,
                   "DstName": "in"
                 },
@@ -4456,8 +5131,8 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 29,
-                  "SrcName": "out",
+                  "SrcId": 833,
+                  "SrcName": "_result",
                   "DstId": 602,
                   "DstName": "in"
                 },
@@ -4600,7 +5275,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 737,
+                  "Id": 926,
                   "Value": 0,
                   "DstId": 612,
                   "DstName": "index"
@@ -4642,19 +5317,19 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 738,
-                  "Value": "holdtype",
+                  "SrcId": 908,
+                  "SrcName": "_result",
                   "DstId": 617,
                   "DstName": "v"
                 },
                 {
-                  "Id": 739,
-                  "Value": 1,
+                  "SrcId": 909,
+                  "SrcName": "_result",
                   "DstId": 617,
                   "DstName": "value"
                 },
                 {
-                  "SrcId": 617,
+                  "SrcId": 933,
                   "SrcName": "_signal",
                   "DstId": 628,
                   "DstName": "_signal"
@@ -4666,13 +5341,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 740,
+                  "Id": 927,
                   "Value": true,
                   "DstId": 628,
                   "DstName": "world"
                 },
                 {
-                  "Id": 741,
+                  "Id": 928,
                   "Value": 13,
                   "DstId": 630,
                   "DstName": "index"
@@ -4702,8 +5377,8 @@
                   "DstName": "parent"
                 },
                 {
-                  "Id": 748,
-                  "Value": "0,0,0",
+                  "SrcId": 903,
+                  "SrcName": "_result",
                   "DstId": 633,
                   "DstName": "position"
                 },
@@ -4714,7 +5389,7 @@
                   "DstName": "prefab"
                 },
                 {
-                  "Id": 742,
+                  "Id": 929,
                   "Value": "1,1,1",
                   "DstId": 633,
                   "DstName": "scale"
@@ -4756,7 +5431,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 743,
+                  "Id": 930,
                   "Value": 27,
                   "DstId": 638,
                   "DstName": "index"
@@ -4780,7 +5455,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 744,
+                  "Id": 931,
                   "Value": false,
                   "DstId": 643,
                   "DstName": "_value"
@@ -4792,7 +5467,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 745,
+                  "Id": 932,
                   "Value": 0,
                   "DstId": 647,
                   "DstName": "index"
@@ -4832,6 +5507,420 @@
                   "SrcName": "_result",
                   "DstId": 747,
                   "DstName": "_target"
+                },
+                {
+                  "SrcId": 94,
+                  "SrcName": "_signal",
+                  "DstId": 800,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 800,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 812,
+                  "SrcName": "_result",
+                  "DstId": 813,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 812,
+                  "SrcName": "_result",
+                  "DstId": 814,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 812,
+                  "SrcName": "_result",
+                  "DstId": 816,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 812,
+                  "SrcName": "_result",
+                  "DstId": 817,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 818,
+                  "SrcName": "_result",
+                  "DstId": 819,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 818,
+                  "SrcName": "_result",
+                  "DstId": 820,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 818,
+                  "SrcName": "_result",
+                  "DstId": 821,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 818,
+                  "SrcName": "_result",
+                  "DstId": 823,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 818,
+                  "SrcName": "_result",
+                  "DstId": 824,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 614,
+                  "SrcName": "_signal",
+                  "DstId": 825,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 825,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 610,
+                  "SrcName": "_signal",
+                  "DstId": 836,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 835,
+                  "SrcName": "_result",
+                  "DstId": 836,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 813,
+                  "SrcName": "_result",
+                  "DstId": 836,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 836,
+                  "SrcName": "_signal",
+                  "DstId": 837,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 835,
+                  "SrcName": "_result",
+                  "DstId": 837,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 814,
+                  "SrcName": "_result",
+                  "DstId": 837,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 900,
+                  "SrcName": "_signal",
+                  "DstId": 839,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 835,
+                  "SrcName": "_result",
+                  "DstId": 839,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 816,
+                  "SrcName": "_result",
+                  "DstId": 839,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 839,
+                  "SrcName": "_signal",
+                  "DstId": 840,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 835,
+                  "SrcName": "_result",
+                  "DstId": 840,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 817,
+                  "SrcName": "_result",
+                  "DstId": 840,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 840,
+                  "SrcName": "_signal",
+                  "DstId": 842,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 841,
+                  "SrcName": "_result",
+                  "DstId": 842,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 819,
+                  "SrcName": "_result",
+                  "DstId": 842,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 842,
+                  "SrcName": "_signal",
+                  "DstId": 843,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 841,
+                  "SrcName": "_result",
+                  "DstId": 843,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 820,
+                  "SrcName": "_result",
+                  "DstId": 843,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 843,
+                  "SrcName": "_signal",
+                  "DstId": 844,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 841,
+                  "SrcName": "_result",
+                  "DstId": 844,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 821,
+                  "SrcName": "_result",
+                  "DstId": 844,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 844,
+                  "SrcName": "_signal",
+                  "DstId": 845,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 841,
+                  "SrcName": "_result",
+                  "DstId": 845,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 823,
+                  "SrcName": "_result",
+                  "DstId": 845,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 845,
+                  "SrcName": "_signal",
+                  "DstId": 846,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 841,
+                  "SrcName": "_result",
+                  "DstId": 846,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 824,
+                  "SrcName": "_result",
+                  "DstId": 846,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 812,
+                  "SrcName": "_result",
+                  "DstId": 873,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 837,
+                  "SrcName": "_signal",
+                  "DstId": 900,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 835,
+                  "SrcName": "_result",
+                  "DstId": 900,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 873,
+                  "SrcName": "_result",
+                  "DstId": 900,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 818,
+                  "SrcName": "_result",
+                  "DstId": 901,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 940,
+                  "SrcName": "_signal",
+                  "DstId": 902,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 841,
+                  "SrcName": "_result",
+                  "DstId": 902,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 901,
+                  "SrcName": "_result",
+                  "DstId": 902,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 634,
+                  "SrcName": "_result",
+                  "DstId": 903,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 818,
+                  "SrcName": "_result",
+                  "DstId": 904,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 818,
+                  "SrcName": "_result",
+                  "DstId": 905,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 907,
+                  "SrcName": "_signal",
+                  "DstId": 906,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 841,
+                  "SrcName": "_result",
+                  "DstId": 906,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 905,
+                  "SrcName": "_result",
+                  "DstId": 906,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 846,
+                  "SrcName": "_signal",
+                  "DstId": 907,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 841,
+                  "SrcName": "_result",
+                  "DstId": 907,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 904,
+                  "SrcName": "_result",
+                  "DstId": 907,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 634,
+                  "SrcName": "_result",
+                  "DstId": 908,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 634,
+                  "SrcName": "_result",
+                  "DstId": 909,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 617,
+                  "SrcName": "_signal",
+                  "DstId": 933,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 616,
+                  "SrcName": "_result",
+                  "DstId": 933,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 934,
+                  "SrcName": "_result",
+                  "DstId": 933,
+                  "DstName": "v"
+                },
+                {
+                  "SrcId": 935,
+                  "SrcName": "_result",
+                  "DstId": 933,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 634,
+                  "SrcName": "_result",
+                  "DstId": 934,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 634,
+                  "SrcName": "_result",
+                  "DstId": 935,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 937,
+                  "SrcName": "_result",
+                  "DstId": 938,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 906,
+                  "SrcName": "_signal",
+                  "DstId": 940,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 939,
+                  "SrcName": "_result",
+                  "DstId": 940,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 938,
+                  "SrcName": "_result",
+                  "DstId": 940,
+                  "DstName": "_value"
                 }
               ],
               "Defaults": {
@@ -4968,7 +6057,7 @@
             "__version": 1,
             "Flags": 0,
             "Name": "camera",
-            "Position": "0.000002605127,-0.000004555984,0.000003003693",
+            "Position": "0,0,0",
             "Rotation": "-0.0000002682208,-0.00000004470347,0.000002950429,1",
             "Scale": "1,1,1",
             "Tags": "",
@@ -5043,7 +6132,7 @@
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
   "__references": [
-    "facepunch.v_usp#122031"
+    "facepunch.v_usp#123291"
   ],
   "__version": 2
 }
