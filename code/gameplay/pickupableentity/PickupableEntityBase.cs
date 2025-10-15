@@ -10,6 +10,8 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info"), TextArea] public string EquipmentDescription { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile viewmodel { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PrefabFile worldmodel { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public PrefabFile MuzzleFlash { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public PrefabFile BulletEjection { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public Texture SpawnMenuIcon { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public Vector3 SwepHandPosition { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public string SwepAimAnimationParameterName { get; set; }

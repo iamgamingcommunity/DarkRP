@@ -11,6 +11,8 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment Base Info"), Group("Base Info")] public PrefabFile viewmodel { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Info")] public PrefabFile worldmodel { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Info")] public Texture SpawnMenuIcon { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public PrefabFile MuzzleFlash { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info")] public PrefabFile BulletEjection { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public Vector3 SwepHandPosition { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info"), Description("This uses a string but the swep model NEEDS have a int or enum with a index of 1 to fire off the aiming logic. If not this won't work.")] public string SwepAimAnimationParameterName { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info")] public string SwepFireAnimationParameterName { get; set; }
