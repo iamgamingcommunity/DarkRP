@@ -48,6 +48,8 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public PickupableEntity SwepDataFile { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool EquipmentUsingDefaultWeaponSystem { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool IsReloading { get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Equipment Base Info")] public bool IsShooting { get; set; }
+
 
 
 
