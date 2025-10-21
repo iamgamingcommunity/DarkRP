@@ -53,8 +53,9 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Stored Ammo")] public int EquipmentMaxAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Max Stored Ammo")] public int EquipmentMaxStoredAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Mag Size")] public int EquipmentAmountOfRoundsToReload { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Shotgun Burst Bullet Fire Speed"), Description("IF you are using a Shotgun that has burst fire, you MUST use this to adjust the rounds fired out of the barrel speed. Don't Confuse this with Fire Speed on Shotgun burst, Fire Speed on Shotgun burst is the speed of which you use the next round in your mag.")] public float EquipmentShotgunBurstBulletSpeed { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Reload Time")] public int EquipmentReloadTimeDelay { get; set; }
-	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Amount Of Rounds Fired")] public int EquipmentAmountOfRoundsFired { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Amount Of Rounds Fired"), Description("Amount of Rounds sends X amount of Round out of the barrel. So if you want to make a Shotgun buckshot you use this, or if you're using Burst Fire. This will be the amount of burst rounds that are fired. If Burst you MUST have more than 1 round fired or it won't work.")] public int EquipmentAmountOfRoundsFired { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Swep Ammo Type")] public List<AmmoResource> EquipmentAmmoType { get; set; }
 
 
