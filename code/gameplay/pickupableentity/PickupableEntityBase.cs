@@ -60,7 +60,7 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentAmountOfRoundsToReload { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentReloadTimeDelay { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public bool EquipmentUnlimitedAmmo { get; set; }
-	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public int EquipmentAmountOfRoundsFired { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Title("Amount of Projectiles Fired"), Group("Equipment Damage/Ammo Info")] public int EquipmentAmountOfRoundsFired { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Shotgun Burst Bullet Fire Speed"), Description("IF you are using a Shotgun that has burst fire, you MUST use this to adjust the rounds fired out of the barrel speed. Don't Confuse this with Fire Speed on Shotgun burst, Fire Speed on Shotgun burst is the speed of which you use the next round in your mag.")] public float EquipmentShotgunBurstBulletSpeed { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public Curve DamageOverDistanceCurve { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Equipment Damage/Ammo Info")] public float EquipmentBaseDamage { get; set; }
@@ -92,6 +92,8 @@ public class PickupableEntityBase : Component
 	public delegate void ActionGraphSwepDefaultDRPEffectsSystem(GameObject PlayerControllerRef);
 	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Effects System")] public ActionGraphSwepDefaultDRPEffectsSystem GraphSwepDefaultDRPEffectsSystem { get; set; }
 
+	public delegate void ActionGraphSwepDefaultDRPDryFire(GameObject PlayerControllerRef);
+	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default DryFire")] public ActionGraphSwepDefaultDRPDryFire GraphSwepDefaultDRPDryFire { get; set; }
 
 	public delegate void ActionGraphSwepDefaultDRPSFXSystem(GameObject PlayerControllerRef);
 	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default SFX System")] public ActionGraphSwepDefaultDRPSFXSystem GraphSwepDefaultDRPSFXSystem { get; set; }
@@ -188,6 +190,10 @@ public struct PlayerKeyAction
 	}
 
 
+	public void SwepDefaultDRPDryFire (GameObject PlayerControllerRef)
+	{
+		GraphSwepDefaultDRPDryFire?.Invoke(PlayerControllerRef);
+	}
 
 
 
