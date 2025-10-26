@@ -54,6 +54,9 @@ public class PickupableEntityBase : Component
 
 
 	//PickupableEntity Damage Info
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Explosive Damage?")] public bool EquipmentExplosiveDamage { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Explosive Damage Amount"), Description("Explosive Damage Amount delt to the player in the radius. Note: If you want to heal the player put a negative amount here instead."), ShowIf ( nameof( EquipmentExplosiveDamage ), true)] public int EquipmentExplosiveDamageAmount { get; set; }
+	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Explosive Damage Radius"), Description("Explosive Damage radius where the bullet impacts."), ShowIf ( nameof( EquipmentExplosiveDamage ), true)] public float EquipmentExplosiveRadius { get; set; }	
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info")] public int EquipmentCurrentAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), ShowIf ( nameof( EquipmentUnlimitedAmmo ), false), Group("Equipment Damage/Ammo Info"), Title("Swep Stored Ammo")] public int EquipmentMaxAmmo { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Max Stored Ammo")] public int EquipmentMaxStoredAmmo { get; set; }
