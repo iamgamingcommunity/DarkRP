@@ -90,7 +90,7 @@ public class PickupableEntityBase : Component
 	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Reload Swep")] public PickupableEntity.ActionGraphReloadEquipment GraphReloadEquipment { get; set; }
 	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default FireMode Swep")] public PickupableEntity.ActionGraphFireModeEquipment GraphFireModeEquipment { get; set; }
 	
-	public delegate void ActionGraphSwepDefaultDRPDamageSystem(GameObject PlayerControllerRef, GameObject HitGameObjectRef, Vector3 TempNormal, Vector3 TempEndPos, float TempDistance, int BoneIndex);
+	public delegate void ActionGraphSwepDefaultDRPDamageSystem(GameObject PlayerControllerRef, GameObject HitGameObjectRef, Vector3 TempNormal, Vector3 TempEndPos, float TempDistance, int BoneIndex, float TempDamage);
 	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Damage System")] public ActionGraphSwepDefaultDRPDamageSystem GraphSwepDefaultDRPDamageSystem { get; set; }
 	public delegate void ActionGraphSwepDefaultDRPEffectsSystem(GameObject PlayerControllerRef);
 	[Property, Feature("Action Graphs"), Group("Default DarkRP Ballistic System"), ShowIf ( nameof( EquipmentUsingDefaultWeaponSystem ), true), Title("Default Effects System")] public ActionGraphSwepDefaultDRPEffectsSystem GraphSwepDefaultDRPEffectsSystem { get; set; }
@@ -175,9 +175,9 @@ public struct PlayerKeyAction
 
 
 
-	public void SwepDefaultDRPDamageSystem (GameObject PlayerControllerRef, GameObject HitGameObjectRef, Vector3 TempNormal, Vector3 TempEndPos, float TempDistance, int BoneIndex)
+	public void SwepDefaultDRPDamageSystem (GameObject PlayerControllerRef, GameObject HitGameObjectRef, Vector3 TempNormal, Vector3 TempEndPos, float TempDistance, int BoneIndex, float TempDamage)
 	{
-		GraphSwepDefaultDRPDamageSystem?.Invoke(PlayerControllerRef, HitGameObjectRef, TempNormal, TempEndPos, TempDistance, BoneIndex);
+		GraphSwepDefaultDRPDamageSystem?.Invoke(PlayerControllerRef, HitGameObjectRef, TempNormal, TempEndPos, TempDistance, BoneIndex, TempDamage);
 	}
 
 
