@@ -68,3 +68,61 @@ Playerhud
         }
     }
 }
+
+chat-menu-input {
+	position: absolute; 
+    bottom: 20px;
+	left: 50px;
+    pointer-events: all;
+
+	&.hide
+	{
+		opacity: 0;
+		pointer-events: none;
+	}
+	
+	.chat-input {
+    flex-direction: column;
+    gap: 8px;
+	padding: 8px;
+	width: 560px;
+	border: 2px solid #020202;
+	border-radius: 6px;
+	background-color: rgb(32, 32, 32);
+	color: white;
+	font-size: 17px;
+
+	TextEntry
+	{
+		
+	}
+
+
+
+    input {
+        &:focus {
+            outline: none;
+            border-color: #0af; // highlight when focused
+            background-color: #111;
+        }
+    }
+
+    button {
+        left: 430px;
+        width: 100px;
+        background-color: #00bfff;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+            background-color: #008ccc;
+        }
+		
+    }
+	
+}
+}

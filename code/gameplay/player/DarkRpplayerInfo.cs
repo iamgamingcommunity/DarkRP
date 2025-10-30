@@ -76,6 +76,10 @@ public sealed class DarkrpPlayerInfo : Component
 
 
 
+	//Action Graphs
+	public delegate void ActionGraphOpenChatLogic();
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Open Chat Logic")]
+	public ActionGraphOpenChatLogic OpenChatLogic { get; set; }
 
 
 

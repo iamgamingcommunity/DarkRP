@@ -33,8 +33,44 @@
         </div>
     }
 </div>
+
+<chat-menu-input class="@(IsDefaultDarkRPChatOpen ? "" : "hide")">
+ 	<div class="chat-input">
+    <TextEntry @ref="DefaultDarkRPChatMessage" placeholder="Enter Chat Message..." />
+    <button onclick="@(() => {GraphOpenChatSettings?.Invoke(); })">Send Chat</button>
+	</div>
+</chat-menu-input>
+
+
 @code
 {
+
+
+	//Actions Graphs For Default DarkRP Chat
+	public delegate void ActionGraphOpenChatSettings();
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphOpenChatSettings GraphOpenChatSettings { get; set; }
+
+	public delegate void ActionGraphSendChat(GameObject PlayerController, string ChatMessage);
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphSendChat GraphSendChat{ get; set; }
+
+
+	//UI Visability Vars for Default DarkRP Chat
+	public bool IsDefaultDarkRPChatOpen {get; set;}
+    public TextEntry DefaultDarkRPChatMessage {get; set;}
+
+
+
+
+	public void SendDefaultDarkRPChatMessage(GameObject PlayerController, string ChatMessage)
+	{
+		GraphSendChat?.Invoke(PlayerController, ChatMessage);
+	}
+
+
+
+
 
 
 	[Property] public DarkrpPlayerInfo Player { get; set; }
@@ -55,7 +91,7 @@
 
     foreach (var slot in Player.HotBarSlots)
     {
-        hash = System.HashCode.Combine(hash, slot.HotBarSlotCurrent, slot.HotBarSlotInfo.HotBarSlotHolder.Count);
+        hash = System.HashCode.Combine(hash, slot.HotBarSlotCurrent, slot.HotBarSlotInfo.HotBarSlotHolder.Count, IsDefaultDarkRPChatOpen);
     }
 
     return hash;

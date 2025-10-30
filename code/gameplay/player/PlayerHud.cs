@@ -18,6 +18,11 @@ public sealed class PlayerHud : Component
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphTab TabMenu { get; set; }
 
+	//Actions Graphs For Default DarkRP Chat
+	public delegate void ActionGraphOpenChatLogic();
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphOpenChatLogic GraphOpenChatLogic { get; set; }
+
 	public void TriggerF2Menu()
     {
 		 F2Menu?.Invoke();
@@ -37,6 +42,17 @@ public sealed class PlayerHud : Component
     {
 		 TabMenu?.Invoke();
     }
+
+	public void OpenChatLogic()
+	{
+		GraphOpenChatLogic?.Invoke();
+	}
+
+	// void OnTextChanged( string newValue )
+    // {
+    //     DoorCustomTitle = newValue;
+    //     Log.Info( $"Live text: {DoorCustomTitle}" );
+    // }
 	
 	// public void LineTraceCustom()
     // {

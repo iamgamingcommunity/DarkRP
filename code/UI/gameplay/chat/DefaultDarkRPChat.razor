@@ -1,0 +1,58 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+@using NetworkManager; 
+
+<root class="@(IsShowingDefaultDarkRPChat ? "" : "hide")">
+
+<setcustomtitle-menu>
+ 	<div class="chat-input">
+    <TextEntry @ref="DoorCustomTitleEntry" placeholder="Enter door title..." />
+    <button onclick="@(() => {GraphOpenChatLogic?.Invoke(); })">Set Title</button>
+	</div>
+</setcustomtitle-menu>
+
+</root>
+
+
+@code
+{
+	public delegate void ActionGraphOpenChatLogic();
+	[Property, Feature("Action Graphs")]
+	public ActionGraphOpenChatLogic GraphOpenChatLogic { get; set; }
+
+	public TextEntry DoorCustomTitleEntry {get; set;}
+	public string DoorCustomTitle {get; set;}
+	public bool IsShowingDefaultDarkRPChat {get; set;}
+
+    void OnTextChanged( string newValue )
+    {
+        DoorCustomTitle = newValue;
+        Log.Info( $"Live text: {DoorCustomTitle}" );
+    }
+
+
+	
+
+
+	void OpenDefaultDarkRPChatUI()
+	{
+		GraphOpenChatLogic?.Invoke();
+	}
+
+
+    void SaveDoorTitle()
+    {
+        Log.Info($"Player set door title: {DoorCustomTitle}");
+        // Here you’d call your door system to update the name
+    }
+
+
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// 
+	///</summary>
+	protected override int BuildHash() => System.HashCode.Combine(IsShowingDefaultDarkRPChat);
+}

@@ -53,6 +53,11 @@
 	</div>
 </setcustomtitle-menu>
 
+
+
+
+
+
     <!-- @foreach ( var job in Jobs )
     {
         <div class="job-card">
@@ -108,6 +113,10 @@
 
 
 </root>
+
+
+
+
 
 <f2menudoor-owner class="@(IsInDoorOwnerMenu ? "" : "hide")">
 	<div class="doorowneroptions">
@@ -399,6 +408,20 @@
 	public ActionGraphRemoveFriendFromDoor GraphRemoveFriendFromDoor { get; set; }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//List Vars For Populating F2Menu UI Button Lists
 	public NetworkManager NetworkManager { get; set; }
 
@@ -428,7 +451,7 @@
 	public GameObject[] AllPlayersInLobbyList {get; set;}
 
 
-	//UI Visability Vars
+	//UI Visability Vars for Default DarkRPF2Menu
 	public bool IsShowingF2Menu {get; set;}
 	public bool IsInDoorOwnerMenu {get; set;}
 	public bool IsInDoorNonOwnerMenu {get; set;}
@@ -600,15 +623,20 @@
 
 
 
-
-
-
 private void RefreshDoorGroups()
 {
     AllNonSelectedDoorGroupCategory = DoorGroupCategoryResource.All.ToList();
     Log.Info($"[F2Menu] Loaded {AllNonSelectedDoorGroupCategory.Count} Door Groups");
     StateHasChanged(); // rebuild UI
 }
+
+
+	//Default DarkRP Chat Functions
+
+
+
+
+
 
 
 
