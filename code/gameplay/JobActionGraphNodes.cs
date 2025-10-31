@@ -7,6 +7,7 @@ public sealed class Jobscore : Component
 
 	// Outputs a specific job resource into AG
     [ActionGraphNode("Jobs/Get Job By Name")]
+    [Group("DarkRP Action Graphs")]
     public static JobResource GetJobByName(string name)
     {
         return JobResource.All.FirstOrDefault(j => j.Title == name);
@@ -14,6 +15,7 @@ public sealed class Jobscore : Component
 
     // Outputs all jobs as a list
     [ActionGraphNode("Jobs/Get All Jobs")]
+    [Group("DarkRP Action Graphs")]
     public static List<JobResource> GetAllJobs()
     {
         return JobResource.All.ToList();

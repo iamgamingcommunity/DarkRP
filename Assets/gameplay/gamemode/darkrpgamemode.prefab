@@ -53,6 +53,7 @@
             "__enabled": true,
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "All",
+            "EnablePostProcessing": true,
             "FieldOfView": 60,
             "FovAxis": "Horizontal",
             "IsMainCamera": true,
@@ -64,9 +65,11 @@
             "OnComponentUpdate": null,
             "Orthographic": false,
             "OrthographicHeight": 1204,
+            "PostProcessAnchor": null,
             "Priority": 1,
             "RenderExcludeTags": "",
             "RenderTags": "",
+            "RenderTexture": null,
             "TargetEye": "None",
             "Viewport": "0,0,1,1",
             "ZFar": 10000,
@@ -100,6 +103,7 @@
             "__type": "Sandbox.ColorAdjustments",
             "__guid": "7e1e9880-8cc8-44f6-93e5-a8cdc595b4b4",
             "__enabled": true,
+            "Blend": 1,
             "Brightness": 1,
             "Contrast": 1,
             "HueRotate": 0,
@@ -172,6 +176,7 @@
             "__guid": "8fe722ff-f982-4d10-8bd4-19db95fd190a",
             "__enabled": true,
             "__version": 1,
+            "DenoiseMode": "Temporal",
             "FalloffRange": 1,
             "Intensity": 1,
             "OnComponentDestroy": null,
@@ -312,6 +317,238 @@
                 "RequirePropComponent": false,
                 "RequireTags": "grab",
                 "ThrowForce": 300
+              },
+              {
+                "__type": "DarkRPGamemode.DarkRPGamemode",
+                "__guid": "c222862a-076e-4269-859d-fde26ed29739",
+                "__enabled": true,
+                "AlarmSound": null,
+                "AllChatCommands": [],
+                "DefualtMinimumVoteRequired": 0,
+                "DefualtRequiredYesPercentage": 0,
+                "DefualtVoteDuration": 0,
+                "DisableDefualtF2MenuUI": false,
+                "DisableDefualtF4MenuUI": false,
+                "DisableDefualtModerationSystem": false,
+                "DisableDefualtScoreboardUI": false,
+                "DisableDefualtSpawnProtectionSystem": false,
+                "EntityPriceMultiplier": 0,
+                "JailPos": null,
+                "JailTime": 0,
+                "LockDownOnGoingSFX": null,
+                "LockDownStartSFX": null,
+                "MaxLawsOnBoard": 0,
+                "MaxPropSpawnedAmount": 0,
+                "MoneyEntity": null,
+                "NotifyErrorSound": null,
+                "NotifyGenericSound": null,
+                "NotifySuccessSound": null,
+                "NotifyWarningSound": null,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": {
+                  "__version": 9,
+                  "__guid": "29da3343-0db8-4917-a11b-514c7e80ef46",
+                  "__changeId": 38,
+                  "UserData": {
+                    "Title": "DarkRP Gamemode Start",
+                    "ReferencedComponentTypes": [],
+                    "Category": "Chat",
+                    "Icon": "start",
+                    "Description": "Starts all the needed logic for the DarkRP Gamemode"
+                  },
+                  "Variables": [],
+                  "Nodes": [
+                    {
+                      "Id": 0,
+                      "Type": "input"
+                    },
+                    {
+                      "Id": 1,
+                      "Type": "ChatCommands/Get All Commands",
+                      "UserData": {
+                        "Position": "204,-0"
+                      }
+                    },
+                    {
+                      "Id": 3,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "768,108"
+                      }
+                    },
+                    {
+                      "Id": 4,
+                      "Type": "property",
+                      "Properties": {
+                        "_name": "AllChatCommands",
+                        "_type": "DarkRPGamemode.DarkRPGamemode"
+                      },
+                      "UserData": {
+                        "Position": "888,144"
+                      }
+                    },
+                    {
+                      "Id": 5,
+                      "Type": "call",
+                      "Properties": {
+                        "_isStatic": false,
+                        "_name": "Add",
+                        "_type": "System.Collections.Generic.List`1"
+                      },
+                      "UserData": {
+                        "Position": "1392,36"
+                      }
+                    },
+                    {
+                      "Id": 6,
+                      "Type": "foreach",
+                      "Properties": {
+                        "T": "ChatCommandResource"
+                      },
+                      "UserData": {
+                        "Position": "828,-0"
+                      }
+                    },
+                    {
+                      "Id": 7,
+                      "Type": "log.info",
+                      "UserData": {
+                        "Position": "576,-0"
+                      }
+                    },
+                    {
+                      "Id": 8,
+                      "Type": "log.info",
+                      "UserData": {
+                        "Position": "1224,24"
+                      }
+                    },
+                    {
+                      "Id": 10,
+                      "Type": "sys.tostring",
+                      "Properties": {
+                        "T": {
+                          "$type": "Generic",
+                          "ElementType": "System.Collections.Generic.List`1",
+                          "TypeArguments": [
+                            "ChatCommandResource"
+                          ]
+                        }
+                      },
+                      "UserData": {
+                        "Position": "504,192"
+                      }
+                    },
+                    {
+                      "Id": 11,
+                      "Type": "sys.tostring",
+                      "Properties": {
+                        "T": "ChatCommandResource"
+                      },
+                      "UserData": {
+                        "Position": "1140,108"
+                      }
+                    }
+                  ],
+                  "Links": [
+                    {
+                      "SrcId": 0,
+                      "SrcName": "_signal",
+                      "DstId": 1,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 3,
+                      "SrcName": "_result",
+                      "DstId": 4,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 8,
+                      "SrcName": "_signal",
+                      "DstId": 5,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 4,
+                      "SrcName": "_result",
+                      "DstId": 5,
+                      "DstName": "_target"
+                    },
+                    {
+                      "SrcId": 6,
+                      "SrcName": "body.value",
+                      "DstId": 5,
+                      "DstName": "item"
+                    },
+                    {
+                      "SrcId": 7,
+                      "SrcName": "_signal",
+                      "DstId": 6,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 1,
+                      "SrcName": "_result",
+                      "DstId": 6,
+                      "DstName": "enumerable"
+                    },
+                    {
+                      "SrcId": 1,
+                      "SrcName": "_signal",
+                      "DstId": 7,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 10,
+                      "SrcName": "_result",
+                      "DstId": 7,
+                      "DstName": "format"
+                    },
+                    {
+                      "SrcId": 6,
+                      "SrcName": "body",
+                      "DstId": 8,
+                      "DstName": "_signal"
+                    },
+                    {
+                      "SrcId": 11,
+                      "SrcName": "_result",
+                      "DstId": 8,
+                      "DstName": "format"
+                    },
+                    {
+                      "SrcId": 1,
+                      "SrcName": "_result",
+                      "DstId": 10,
+                      "DstName": "input"
+                    },
+                    {
+                      "SrcId": 6,
+                      "SrcName": "body.value",
+                      "DstId": 11,
+                      "DstName": "input"
+                    }
+                  ],
+                  "Defaults": {
+                    "$3.component": {
+                      "_type": "component",
+                      "component_id": "c222862a-076e-4269-859d-fde26ed29739",
+                      "go": "f7e5b3c3-30de-45c8-ab6e-78b70f628d87",
+                      "component_type": "DarkRPGamemode"
+                    }
+                  }
+                },
+                "OnComponentUpdate": null,
+                "PDStartingEquipment": null,
+                "SalaryPaymentMultiplier": 0,
+                "SalaryPaymentSystemCycleTime": 0,
+                "StartingEquipment": [],
+                "TempPlayTimeTotalCycleAmount": 0,
+                "VoteStartSFX": null
               }
             ],
             "Children": []

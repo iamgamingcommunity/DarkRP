@@ -44,8 +44,8 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Notify SFX Info")] public SoundEvent NotifyWarningSound { get; set; }
 
 
-
-
+	//Chat Related Vars
+	[Property, Feature("Chat Info")] public List<ChatCommandResource> AllChatCommands { get; set; }
 
 
 

@@ -1,0 +1,44 @@
+{
+  "ChatCommands": {
+    "ChatCommandName": "/setjailpos",
+    "GraphChatCommand": {
+      "__version": 9,
+      "__guid": "43124183-8202-4260-b900-a8be3d14902b",
+      "__changeId": 24,
+      "UserData": {
+        "Title": "Chat Command",
+        "ReferencedComponentTypes": []
+      },
+      "Variables": [],
+      "Nodes": [
+        {
+          "Id": 0,
+          "Type": "input"
+        },
+        {
+          "Id": 1,
+          "Type": "log.info",
+          "UserData": {
+            "Position": "228,-0"
+          }
+        }
+      ],
+      "Links": [
+        {
+          "SrcId": 0,
+          "SrcName": "_signal",
+          "DstId": 1,
+          "DstName": "_signal"
+        },
+        {
+          "Id": 20,
+          "Value": "Set The Jail Pos!",
+          "DstId": 1,
+          "DstName": "format"
+        }
+      ]
+    }
+  },
+  "__references": [],
+  "__version": 0
+}
