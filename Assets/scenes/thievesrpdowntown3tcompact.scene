@@ -22,7 +22,7 @@
           "__enabled": true,
           "__version": 1,
           "EnableCollision": true,
-          "MapName": "thieves.rpdowntown3tcompact",
+          "MapName": "thieves.rpdowntown3t",
           "NoOrigin": false,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -33,22 +33,830 @@
           "OnMapLoaded": {
             "__version": 9,
             "__guid": "b8d8f17d-4151-42fd-a316-ed4935054fbd",
-            "__changeId": 18,
+            "__changeId": 262,
             "UserData": {
               "Title": "On Map Loaded",
-              "ReferencedComponentTypes": []
+              "ReferencedComponentTypes": [
+                "PermaGameObjectsSystem"
+              ]
             },
             "Variables": [],
             "Nodes": [
               {
                 "Id": 0,
-                "Type": "input"
+                "Type": "input",
+                "UserData": {
+                  "Position": "-72,24"
+                }
               },
               {
                 "Id": 1,
                 "Type": "log.info",
                 "UserData": {
                   "Position": "216,24"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "scene.ref",
+                "UserData": {
+                  "Position": "-72,96"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property",
+                "Properties": {
+                  "_name": "MapName",
+                  "_type": "Sandbox.MapInstance"
+                },
+                "UserData": {
+                  "Position": "72,132"
+                }
+              },
+              {
+                "Id": 17,
+                "Type": "scene.find",
+                "UserData": {
+                  "Position": "-132,600"
+                }
+              },
+              {
+                "Id": 18,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Children",
+                  "_type": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "36,624"
+                }
+              },
+              {
+                "Id": 19,
+                "Type": "list.get",
+                "Properties": {
+                  "T": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "300,600"
+                }
+              },
+              {
+                "Id": 27,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "PermaGameObjectsSystem"
+                },
+                "UserData": {
+                  "Position": "444,624"
+                }
+              },
+              {
+                "Id": 28,
+                "Type": "property",
+                "Properties": {
+                  "_name": "MapSaveFile",
+                  "_type": "PermaGameObjectsSystem"
+                },
+                "UserData": {
+                  "Position": "576,204"
+                }
+              },
+              {
+                "Id": 29,
+                "Type": "foreach",
+                "Properties": {
+                  "T": "MapSaveFileResource"
+                },
+                "UserData": {
+                  "Position": "864,36"
+                }
+              },
+              {
+                "Id": 42,
+                "Type": "op.equal",
+                "UserData": {
+                  "Position": "1104,156"
+                }
+              },
+              {
+                "Id": 43,
+                "Type": "if",
+                "UserData": {
+                  "Position": "1188,60"
+                }
+              },
+              {
+                "Id": 44,
+                "Type": "property",
+                "Properties": {
+                  "_name": "MapSaveFile",
+                  "_type": "MapSaveFileResource"
+                },
+                "UserData": {
+                  "Position": "648,228"
+                }
+              },
+              {
+                "Id": 45,
+                "Type": "property",
+                "Properties": {
+                  "_name": "MapInstanceName",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "PermaGameObjectsStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "636,252"
+                }
+              },
+              {
+                "Id": 47,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "2568,348"
+                }
+              },
+              {
+                "Id": 48,
+                "Type": "property",
+                "Properties": {
+                  "_name": "SaveGameObjects",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "PermaGameObjectsStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1044,288"
+                }
+              },
+              {
+                "Id": 49,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositions",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1428,348"
+                }
+              },
+              {
+                "Id": 50,
+                "Type": "property",
+                "Properties": {
+                  "_name": "ElevatorPositions",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1428,588"
+                }
+              },
+              {
+                "Id": 51,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Extra",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1500,804"
+                }
+              },
+              {
+                "Id": 52,
+                "Type": "property",
+                "Properties": {
+                  "_name": "JailPositions",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1476,1152"
+                }
+              },
+              {
+                "Id": 53,
+                "Type": "property",
+                "Properties": {
+                  "_name": "SpawnPoints",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1476,1344"
+                }
+              },
+              {
+                "Id": 54,
+                "Type": "property",
+                "Properties": {
+                  "_name": "WindowPositions",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1512,1656"
+                }
+              },
+              {
+                "Id": 55,
+                "Type": "foreach",
+                "Properties": {
+                  "T": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1788,324"
+                }
+              },
+              {
+                "Id": 56,
+                "Type": "foreach",
+                "Properties": {
+                  "T": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1800,600"
+                }
+              },
+              {
+                "Id": 57,
+                "Type": "foreach",
+                "Properties": {
+                  "T": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1788,816"
+                }
+              },
+              {
+                "Id": 58,
+                "Type": "foreach",
+                "Properties": {
+                  "T": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1788,1128"
+                }
+              },
+              {
+                "Id": 59,
+                "Type": "foreach",
+                "Properties": {
+                  "T": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1812,1320"
+                }
+              },
+              {
+                "Id": 60,
+                "Type": "foreach",
+                "Properties": {
+                  "T": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1872,1632"
+                }
+              },
+              {
+                "Id": 61,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "2592,612"
+                }
+              },
+              {
+                "Id": 62,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "2616,828"
+                }
+              },
+              {
+                "Id": 63,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "2688,1140"
+                }
+              },
+              {
+                "Id": 64,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "2616,1344"
+                }
+              },
+              {
+                "Id": 65,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "2760,1656"
+                }
+              },
+              {
+                "Id": 66,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositions",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "2268,372"
+                }
+              },
+              {
+                "Id": 67,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositionsTranforms",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1968,420"
+                }
+              },
+              {
+                "Id": 68,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2340,396"
+                }
+              },
+              {
+                "Id": 69,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2340,420"
+                }
+              },
+              {
+                "Id": 70,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Scale",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2352,444"
+                }
+              },
+              {
+                "Id": 71,
+                "Type": "sys.tostring",
+                "Properties": {
+                  "T": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "2352,516"
+                }
+              },
+              {
+                "Id": 74,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositions",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "2232,636"
+                }
+              },
+              {
+                "Id": 75,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositionsTranforms",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1932,684"
+                }
+              },
+              {
+                "Id": 76,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2316,660"
+                }
+              },
+              {
+                "Id": 77,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2304,684"
+                }
+              },
+              {
+                "Id": 78,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Scale",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2316,708"
+                }
+              },
+              {
+                "Id": 79,
+                "Type": "sys.tostring",
+                "Properties": {
+                  "T": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "2316,780"
+                }
+              },
+              {
+                "Id": 80,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositions",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "2268,840"
+                }
+              },
+              {
+                "Id": 81,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositionsTranforms",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1968,888"
+                }
+              },
+              {
+                "Id": 82,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2352,864"
+                }
+              },
+              {
+                "Id": 83,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2340,888"
+                }
+              },
+              {
+                "Id": 84,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Scale",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2352,912"
+                }
+              },
+              {
+                "Id": 85,
+                "Type": "sys.tostring",
+                "Properties": {
+                  "T": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "2352,984"
+                }
+              },
+              {
+                "Id": 86,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositions",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "2328,1176"
+                }
+              },
+              {
+                "Id": 87,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositionsTranforms",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "2028,1224"
+                }
+              },
+              {
+                "Id": 88,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2412,1200"
+                }
+              },
+              {
+                "Id": 89,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2424,1200"
+                }
+              },
+              {
+                "Id": 90,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Scale",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2412,1248"
+                }
+              },
+              {
+                "Id": 91,
+                "Type": "sys.tostring",
+                "Properties": {
+                  "T": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "2436,1308"
+                }
+              },
+              {
+                "Id": 92,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositions",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "2280,1368"
+                }
+              },
+              {
+                "Id": 93,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositionsTranforms",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "1968,1404"
+                }
+              },
+              {
+                "Id": 94,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2352,1380"
+                }
+              },
+              {
+                "Id": 95,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2340,1404"
+                }
+              },
+              {
+                "Id": 96,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Scale",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2352,1428"
+                }
+              },
+              {
+                "Id": 97,
+                "Type": "sys.tostring",
+                "Properties": {
+                  "T": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "2364,1500"
+                }
+              },
+              {
+                "Id": 98,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositions",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "2400,1680"
+                }
+              },
+              {
+                "Id": 99,
+                "Type": "property",
+                "Properties": {
+                  "_name": "DoorPositionsTranforms",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "MapSaveFileResource",
+                    "Name": "GameObjectsInfoStruct"
+                  }
+                },
+                "UserData": {
+                  "Position": "2088,1716"
+                }
+              },
+              {
+                "Id": 100,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2472,1692"
+                }
+              },
+              {
+                "Id": 101,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2484,1716"
+                }
+              },
+              {
+                "Id": 102,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Scale",
+                  "_type": "Transform"
+                },
+                "UserData": {
+                  "Position": "2496,1740"
+                }
+              },
+              {
+                "Id": 103,
+                "Type": "sys.tostring",
+                "Properties": {
+                  "T": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "2484,1824"
+                }
+              },
+              {
+                "Id": 107,
+                "Type": "log.warning",
+                "UserData": {
+                  "Position": "2964,348"
+                }
+              },
+              {
+                "Id": 112,
+                "Type": "sys.tostring",
+                "Properties": {
+                  "T": "Sandbox.MapInstance"
+                },
+                "UserData": {
+                  "Position": "84,204"
                 }
               }
             ],
@@ -60,12 +868,681 @@
                 "DstName": "_signal"
               },
               {
-                "Id": 2,
-                "Value": "MAP LOADED",
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 1,
+                "DstName": "args",
+                "DstIndex": 0
+              },
+              {
+                "Id": 104,
+                "Value": "MAP LOADED: {0}",
                 "DstId": 1,
                 "DstName": "format"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "Id": 105,
+                "Value": "darkrpgamemode",
+                "DstId": 17,
+                "DstName": "name"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_result",
+                "DstId": 18,
+                "DstName": "_target"
+              },
+              {
+                "Id": 106,
+                "Value": 0,
+                "DstId": 19,
+                "DstName": "index"
+              },
+              {
+                "SrcId": 18,
+                "SrcName": "_result",
+                "DstId": 19,
+                "DstName": "list"
+              },
+              {
+                "SrcId": 19,
+                "SrcName": "_result",
+                "DstId": 27,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 27,
+                "SrcName": "_result",
+                "DstId": 28,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 29,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 28,
+                "SrcName": "_result",
+                "DstId": 29,
+                "DstName": "enumerable"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 42,
+                "DstName": "a"
+              },
+              {
+                "SrcId": 45,
+                "SrcName": "_result",
+                "DstId": 42,
+                "DstName": "b"
+              },
+              {
+                "SrcId": 29,
+                "SrcName": "body",
+                "DstId": 43,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 42,
+                "SrcName": "_result",
+                "DstId": 43,
+                "DstName": "condition"
+              },
+              {
+                "SrcId": 29,
+                "SrcName": "body.value",
+                "DstId": 44,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 44,
+                "SrcName": "_result",
+                "DstId": 45,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 55,
+                "SrcName": "body",
+                "DstId": 47,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 71,
+                "SrcName": "_result",
+                "DstId": 47,
+                "DstName": "name"
+              },
+              {
+                "SrcId": 68,
+                "SrcName": "_result",
+                "DstId": 47,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 69,
+                "SrcName": "_result",
+                "DstId": 47,
+                "DstName": "rotation"
+              },
+              {
+                "SrcId": 70,
+                "SrcName": "_result",
+                "DstId": 47,
+                "DstName": "scale"
+              },
+              {
+                "SrcId": 66,
+                "SrcName": "_result",
+                "DstId": 47,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 44,
+                "SrcName": "_result",
+                "DstId": 48,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 48,
+                "SrcName": "_result",
+                "DstId": 49,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 48,
+                "SrcName": "_result",
+                "DstId": 50,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 48,
+                "SrcName": "_result",
+                "DstId": 51,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 48,
+                "SrcName": "_result",
+                "DstId": 52,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 48,
+                "SrcName": "_result",
+                "DstId": 53,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 48,
+                "SrcName": "_result",
+                "DstId": 54,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 43,
+                "SrcName": "true",
+                "DstId": 55,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 49,
+                "SrcName": "_result",
+                "DstId": 55,
+                "DstName": "enumerable"
+              },
+              {
+                "SrcId": 43,
+                "SrcName": "true",
+                "DstId": 56,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 50,
+                "SrcName": "_result",
+                "DstId": 56,
+                "DstName": "enumerable"
+              },
+              {
+                "SrcId": 43,
+                "SrcName": "true",
+                "DstId": 57,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 51,
+                "SrcName": "_result",
+                "DstId": 57,
+                "DstName": "enumerable"
+              },
+              {
+                "SrcId": 43,
+                "SrcName": "true",
+                "DstId": 58,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 52,
+                "SrcName": "_result",
+                "DstId": 58,
+                "DstName": "enumerable"
+              },
+              {
+                "SrcId": 43,
+                "SrcName": "true",
+                "DstId": 59,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 53,
+                "SrcName": "_result",
+                "DstId": 59,
+                "DstName": "enumerable"
+              },
+              {
+                "SrcId": 43,
+                "SrcName": "true",
+                "DstId": 60,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 54,
+                "SrcName": "_result",
+                "DstId": 60,
+                "DstName": "enumerable"
+              },
+              {
+                "SrcId": 56,
+                "SrcName": "body",
+                "DstId": 61,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 79,
+                "SrcName": "_result",
+                "DstId": 61,
+                "DstName": "name"
+              },
+              {
+                "SrcId": 76,
+                "SrcName": "_result",
+                "DstId": 61,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 77,
+                "SrcName": "_result",
+                "DstId": 61,
+                "DstName": "rotation"
+              },
+              {
+                "SrcId": 78,
+                "SrcName": "_result",
+                "DstId": 61,
+                "DstName": "scale"
+              },
+              {
+                "SrcId": 74,
+                "SrcName": "_result",
+                "DstId": 61,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 57,
+                "SrcName": "body",
+                "DstId": 62,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 85,
+                "SrcName": "_result",
+                "DstId": 62,
+                "DstName": "name"
+              },
+              {
+                "SrcId": 82,
+                "SrcName": "_result",
+                "DstId": 62,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 83,
+                "SrcName": "_result",
+                "DstId": 62,
+                "DstName": "rotation"
+              },
+              {
+                "SrcId": 84,
+                "SrcName": "_result",
+                "DstId": 62,
+                "DstName": "scale"
+              },
+              {
+                "SrcId": 80,
+                "SrcName": "_result",
+                "DstId": 62,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 58,
+                "SrcName": "body",
+                "DstId": 63,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 91,
+                "SrcName": "_result",
+                "DstId": 63,
+                "DstName": "name"
+              },
+              {
+                "SrcId": 88,
+                "SrcName": "_result",
+                "DstId": 63,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 89,
+                "SrcName": "_result",
+                "DstId": 63,
+                "DstName": "rotation"
+              },
+              {
+                "SrcId": 90,
+                "SrcName": "_result",
+                "DstId": 63,
+                "DstName": "scale"
+              },
+              {
+                "SrcId": 86,
+                "SrcName": "_result",
+                "DstId": 63,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 59,
+                "SrcName": "body",
+                "DstId": 64,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 97,
+                "SrcName": "_result",
+                "DstId": 64,
+                "DstName": "name"
+              },
+              {
+                "SrcId": 94,
+                "SrcName": "_result",
+                "DstId": 64,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 95,
+                "SrcName": "_result",
+                "DstId": 64,
+                "DstName": "rotation"
+              },
+              {
+                "SrcId": 96,
+                "SrcName": "_result",
+                "DstId": 64,
+                "DstName": "scale"
+              },
+              {
+                "SrcId": 92,
+                "SrcName": "_result",
+                "DstId": 64,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 60,
+                "SrcName": "body",
+                "DstId": 65,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 103,
+                "SrcName": "_result",
+                "DstId": 65,
+                "DstName": "name"
+              },
+              {
+                "SrcId": 100,
+                "SrcName": "_result",
+                "DstId": 65,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 101,
+                "SrcName": "_result",
+                "DstId": 65,
+                "DstName": "rotation"
+              },
+              {
+                "SrcId": 102,
+                "SrcName": "_result",
+                "DstId": 65,
+                "DstName": "scale"
+              },
+              {
+                "SrcId": 98,
+                "SrcName": "_result",
+                "DstId": 65,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 55,
+                "SrcName": "body.value",
+                "DstId": 66,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 55,
+                "SrcName": "body.value",
+                "DstId": 67,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 67,
+                "SrcName": "_result",
+                "DstId": 68,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 67,
+                "SrcName": "_result",
+                "DstId": 69,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 67,
+                "SrcName": "_result",
+                "DstId": 70,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 66,
+                "SrcName": "_result",
+                "DstId": 71,
+                "DstName": "input"
+              },
+              {
+                "SrcId": 56,
+                "SrcName": "body.value",
+                "DstId": 74,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 56,
+                "SrcName": "body.value",
+                "DstId": 75,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 75,
+                "SrcName": "_result",
+                "DstId": 76,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 75,
+                "SrcName": "_result",
+                "DstId": 77,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 75,
+                "SrcName": "_result",
+                "DstId": 78,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 74,
+                "SrcName": "_result",
+                "DstId": 79,
+                "DstName": "input"
+              },
+              {
+                "SrcId": 57,
+                "SrcName": "body.value",
+                "DstId": 80,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 57,
+                "SrcName": "body.value",
+                "DstId": 81,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 81,
+                "SrcName": "_result",
+                "DstId": 82,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 81,
+                "SrcName": "_result",
+                "DstId": 83,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 81,
+                "SrcName": "_result",
+                "DstId": 84,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 80,
+                "SrcName": "_result",
+                "DstId": 85,
+                "DstName": "input"
+              },
+              {
+                "SrcId": 58,
+                "SrcName": "body.value",
+                "DstId": 86,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 58,
+                "SrcName": "body.value",
+                "DstId": 87,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 87,
+                "SrcName": "_result",
+                "DstId": 88,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 87,
+                "SrcName": "_result",
+                "DstId": 89,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 87,
+                "SrcName": "_result",
+                "DstId": 90,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 86,
+                "SrcName": "_result",
+                "DstId": 91,
+                "DstName": "input"
+              },
+              {
+                "SrcId": 59,
+                "SrcName": "body.value",
+                "DstId": 92,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 59,
+                "SrcName": "body.value",
+                "DstId": 93,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 93,
+                "SrcName": "_result",
+                "DstId": 94,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 93,
+                "SrcName": "_result",
+                "DstId": 95,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 93,
+                "SrcName": "_result",
+                "DstId": 96,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 92,
+                "SrcName": "_result",
+                "DstId": 97,
+                "DstName": "input"
+              },
+              {
+                "SrcId": 60,
+                "SrcName": "body.value",
+                "DstId": 98,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 60,
+                "SrcName": "body.value",
+                "DstId": 99,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 99,
+                "SrcName": "_result",
+                "DstId": 100,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 99,
+                "SrcName": "_result",
+                "DstId": 101,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 99,
+                "SrcName": "_result",
+                "DstId": 102,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 98,
+                "SrcName": "_result",
+                "DstId": 103,
+                "DstName": "input"
+              },
+              {
+                "SrcId": 47,
+                "SrcName": "_signal",
+                "DstId": 107,
+                "DstName": "_signal"
+              },
+              {
+                "Id": 111,
+                "Value": "Test",
+                "DstId": 107,
+                "DstName": "format"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 112,
+                "DstName": "input"
               }
-            ]
+            ],
+            "Defaults": {
+              "$4.component": {
+                "_type": "component",
+                "component_id": "113dac07-d105-465d-b921-05c31d561060",
+                "go": "c4f275bf-73bd-445b-b55b-d963b822eea8",
+                "component_type": "MapInstance"
+              }
+            }
           },
           "OnMapUnloaded": null,
           "UseMapFromLaunch": false
@@ -115,6 +1592,33 @@
       "__Prefab": "gameplay/gamemode/darkrpgamemode.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "32eb83ee-22d0-44e1-9551-5b4d32781a63"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "7ea089ee-5062-45c8-b158-eeb5185c7c72"
+            },
+            "PreviousElement": null,
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "PermaGameObjectsSystem",
+              "__guid": "32eb83ee-22d0-44e1-9551-5b4d32781a63",
+              "__enabled": true,
+              "MapSaveFile": [
+                "gameplay/world/mapssavefiles/thievesrpdowntown 3tcompact.maps"
+              ],
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          },
           {
             "Id": {
               "Type": "Component",
@@ -169,10 +1673,7 @@
                   "_type": "gameobject",
                   "go": "111faa1e-c949-4956-9201-6c288e086a04"
                 },
-                {
-                  "_type": "gameobject",
-                  "go": "1e784012-0d3f-4628-89d6-fff762e94f39"
-                }
+                null
               ],
               "StartServer": true
             }
@@ -211,6 +1712,22 @@
             },
             "Property": "__enabled",
             "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
+            },
+            "Property": "JailPos",
+            "Value": []
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
+            },
+            "Property": "PDStartingEquipment",
+            "Value": []
           }
         ],
         "MovedObjects": [
@@ -4359,7 +5876,7 @@
               "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
             },
             "Property": "Position",
-            "Value": "-442.977,266.8668,0.2300568"
+            "Value": "-960.0281,448.2957,0.2300569"
           },
           {
             "Target": {
@@ -15899,7 +17416,16 @@
       "__PrefabInstancePatch": {
         "AddedObjects": [],
         "RemovedObjects": [],
-        "PropertyOverrides": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "ec81ead0-4e1a-4419-8b1d-af5a256f2249"
+            },
+            "Property": "Position",
+            "Value": "37.80811,100.0023,0"
+          }
+        ],
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
@@ -15964,7 +17490,7 @@
       "__version": 1,
       "Flags": 0,
       "Name": "SpawnPointTest",
-      "Position": "193.4922,-1089.765,41.82417",
+      "Position": "297.8585,202.4086,41.82417",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Scale": "1,1,1",
       "Tags": "",
@@ -15994,7 +17520,7 @@
       "__version": 1,
       "Flags": 0,
       "Name": "SpawnPointTest (1)",
-      "Position": "144.0456,-1089.765,41.82417",
+      "Position": "248.4119,202.4086,41.82417",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Scale": "1,1,1",
       "Tags": "",
@@ -16024,7 +17550,7 @@
       "__version": 1,
       "Flags": 0,
       "Name": "SpawnPointTest (2)",
-      "Position": "90.00015,-1089.765,41.82417",
+      "Position": "194.3664,202.4086,41.82417",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Scale": "1,1,1",
       "Tags": "",
@@ -16054,7 +17580,7 @@
       "__version": 1,
       "Flags": 0,
       "Name": "SpawnPointTest (3)",
-      "Position": "65.37695,-1089.765,41.82417",
+      "Position": "169.7432,202.4086,41.82417",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Scale": "1,1,1",
       "Tags": "",
@@ -16084,7 +17610,7 @@
       "__version": 1,
       "Flags": 0,
       "Name": "SpawnPointTest (4)",
-      "Position": "27.77197,-1089.765,41.82417",
+      "Position": "132.1382,202.4086,41.82417",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Scale": "1,1,1",
       "Tags": "",
@@ -16114,7 +17640,7 @@
       "__version": 1,
       "Flags": 0,
       "Name": "SpawnPointTest (5)",
-      "Position": "-20.18695,-1089.765,41.82417",
+      "Position": "41.8938,106.9564,41.82417",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Scale": "1,1,1",
       "Tags": "",
@@ -16140,11 +17666,11 @@
       "Children": []
     },
     {
-      "__guid": "1e784012-0d3f-4628-89d6-fff762e94f39",
+      "__guid": "53945ff8-0b17-4a3d-97e2-8d78e914fbc6",
       "__version": 1,
       "Flags": 0,
-      "Name": "SpawnPointTest (6)",
-      "Position": "-57.37671,-1089.765,41.82417",
+      "Name": "SpawnPointTest (8)",
+      "Position": "84.1793,202.4086,41.82417",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Scale": "1,1,1",
       "Tags": "",
@@ -16156,7 +17682,37 @@
       "Components": [
         {
           "__type": "Sandbox.SpawnPoint",
-          "__guid": "336d7e37-ed73-4f16-9279-5523c9ecd2ff",
+          "__guid": "47505297-9142-4a8e-a779-a0bdeaf84c9c",
+          "__enabled": true,
+          "Color": "0.8902,0.31765,0.05098,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "ba2c8020-fed4-472a-ab49-ab5be71ed261",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "SpawnPointTest (7)",
+      "Position": "46.98954,202.4086,41.82417",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "1de26ee4-3c67-4585-ad76-665ab4fc5005",
           "__enabled": true,
           "Color": "0.8902,0.31765,0.05098,1",
           "OnComponentDestroy": null,

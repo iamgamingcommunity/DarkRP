@@ -50,6 +50,12 @@ public partial class DarkRPGamemode : GameModeBase
 
 
 
+
+
+
+
+
+
 }
  public enum TypeOfCategorys
  {
