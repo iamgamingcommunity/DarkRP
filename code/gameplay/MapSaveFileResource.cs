@@ -31,20 +31,11 @@ public class MapSaveFileResource : GameResource
 
     public struct GameObjectsInfoStruct
 	{
-		[Property] public GameObject SpawnPoints { get; set; }
-    	[Property] public Transform SpawnPointsTranforms { get; set; }
-        [Property] public GameObject JailPositions { get; set; }
-        [Property] public Transform JailPositionsTranforms { get; set; }
-        [Property] public GameObject DoorPositions { get; set; }
-        [Property] public Transform DoorPositionsTranforms { get; set; }
-        [Property] public GameObject WindowPositions { get; set; }
-        [Property] public Transform WindowPositionsTranforms { get; set; }
-        [Property] public GameObject ElevatorPositions { get; set; }		
-        [Property] public Transform ElevatorPositionsTranforms { get; set; }	
-        [Property] public GameObject Extra { get; set; }
-        [Property] public Transform ExtraTranforms { get; set; }			
+		[Property] public GameObject GameObject { get; set; }
+    	[Property] public Vector3 GameObjectPosition { get; set; }
+    	[Property] public Rotation GameObjectRotation { get; set; }	
+    	[Property] public Vector3 GameObjectScale { get; set; }	
 	}
-
 
     public static IReadOnlyList<MapSaveFileResource> All => _all;
     internal static List<MapSaveFileResource> _all = new();

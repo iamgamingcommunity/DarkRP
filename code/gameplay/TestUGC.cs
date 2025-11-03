@@ -10,14 +10,17 @@ public class StorageMapSave : Component
 
 	[Property, Feature("Extra"), Group("Extra")] public string IdTest { get; set; }
 
+    [Property, Feature("Extra"), Group("Extra")] public int intTest { get; set; } = 1;
+
 
 
 [Button("New Save")]
-    public void SaveMapDirectly(GameObject TestGameOjbect)
+    public void SaveMapDirectly()
     {
-        var saveEntry = Storage.CreateEntry("save");
-        saveEntry.Files.WriteAllText("player.json", "playerJson");
-		saveEntry.SetMeta("level", TestGameOjbect);              // what level they are at
+        var saveEntry = Storage.CreateEntry("mapsaves");
+        saveEntry.Files.WriteAllText("player.json", "TestGameOjbect");
+        saveEntry.Files.WriteJson( "data.json", TestGameOjbect );
+		saveEntry.SetMeta("level", IdTest);              // what level they are at
 		saveEntry.SetMeta("playtime", 3600);        // how long they’ve been playing
         Log.Info($"Map saved! Entry ID: {saveEntry.Id}");
    }
@@ -38,12 +41,12 @@ public class StorageMapSave : Component
 
 
 
-
+[Button("Load All Saves")]
     // Load all saves
     public void LoadAllSaves()
     {
         // Get all save entries of type "save"
-        var allSaves = Storage.GetAll("save");
+        var allSaves = Storage.GetAll("mapsaves");
 
 
         // Loop through all saves
@@ -55,6 +58,9 @@ public class StorageMapSave : Component
             // Metadata
             var playerName = save.GetMeta<string>("playerName");
             var level = save.GetMeta<int>("level");
+            var TestGameOjbect = save.GetMeta<string>("_type");
+
+            Log.Info($" Test{TestGameOjbect}");
             Log.Info($"Player: {playerName}, Level: {level}");
 
             // Files
