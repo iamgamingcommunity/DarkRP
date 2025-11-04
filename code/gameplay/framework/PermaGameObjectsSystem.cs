@@ -11,6 +11,7 @@ public sealed class PermaGameObjectsSystem : Component
 
  [Property, Feature("Save Buttons"), Group("Save Buttons")] public MapSaveFileResource.GameObjectsInfoStruct InfoStruct { get; set; }
 
+ [Property, Feature("Save Buttons"), Group("Save Buttons")] public List<GameObject> TempGameObjects { get; set; }
 
     public struct GameObjectsInfoStruct
 	{
@@ -21,7 +22,7 @@ public sealed class PermaGameObjectsSystem : Component
 	}
 
     //Action Graphs
-	public delegate void ActionGraphSaveAllDoors(MapSaveFileResource SaveMapSaveFile);
+	public delegate void ActionGraphSaveAllDoors();
 	[Property, Feature("Save Buttons"), Group("Action Graphs"), Title("Save All Doors Logic")]
 	public ActionGraphSaveAllDoors GraphSaveAllDoors { get; set; }
 
@@ -31,9 +32,9 @@ public sealed class PermaGameObjectsSystem : Component
 
 
     [Button, Property, Feature("Save Buttons"), Group("Save Buttons"), Title("Save All Doors")]
-	public void SaveAllDoors(MapSaveFileResource SaveMapSaveFile)
+	public void SaveAllDoors()
 	{
-		GraphSaveAllDoors?.Invoke(SaveMapSaveFile);
+		GraphSaveAllDoors?.Invoke();
 	}
 
 
