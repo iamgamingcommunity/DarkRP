@@ -37,12 +37,17 @@
             "GraphSaveAllDoors": {
               "__version": 9,
               "__guid": "b2b81f98-499f-4af9-b0dd-27580394e5c8",
-              "__changeId": 121,
+              "__changeId": 178,
               "UserData": {
                 "Title": "Save All Doors Logic",
                 "ReferencedComponentTypes": []
               },
-              "Variables": [],
+              "Variables": [
+                {
+                  "Name": "stri",
+                  "Type": "System.String"
+                }
+              ],
               "Nodes": [
                 {
                   "Id": 0,
@@ -1179,6 +1184,51 @@
                   "UserData": {
                     "Position": "2136,744"
                   }
+                },
+                {
+                  "Id": 162,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "-1200,612"
+                  }
+                },
+                {
+                  "Id": 163,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Frefabfile",
+                    "_type": "SaveGameObject"
+                  },
+                  "UserData": {
+                    "Position": "-1056,624"
+                  }
+                },
+                {
+                  "Id": 164,
+                  "Type": "UGC/Save Prefab Metadata",
+                  "UserData": {
+                    "Position": "1812,672"
+                  }
+                },
+                {
+                  "Id": 165,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1464,876"
+                  }
+                },
+                {
+                  "Id": 167,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "stri"
+                  },
+                  "UserData": {
+                    "Position": "-324,1128"
+                  }
                 }
               ],
               "Links": [
@@ -1213,13 +1263,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 70,
+                  "Id": 153,
                   "Value": true,
                   "DstId": 6,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 71,
+                  "Id": 154,
                   "Value": "door",
                   "DstId": 6,
                   "DstName": "tag"
@@ -1483,7 +1533,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 72,
+                  "Id": 155,
                   "Value": 5,
                   "DstId": 32,
                   "DstName": "seconds"
@@ -1645,16 +1695,10 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 86,
+                  "Id": 156,
                   "Value": 0,
                   "DstId": 85,
                   "DstName": "b"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 87,
-                  "DstName": "_signal"
                 },
                 {
                   "SrcId": 85,
@@ -1705,22 +1749,16 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 141,
+                  "Id": 157,
                   "Value": true,
                   "DstId": 93,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 142,
+                  "Id": 158,
                   "Value": "door",
                   "DstId": 93,
                   "DstName": "tag"
-                },
-                {
-                  "SrcId": 121,
-                  "SrcName": "false",
-                  "DstId": 94,
-                  "DstName": "_signal"
                 },
                 {
                   "SrcId": 93,
@@ -1969,13 +2007,13 @@
                   "DstName": "item"
                 },
                 {
-                  "SrcId": 87,
-                  "SrcName": "false",
+                  "SrcId": 0,
+                  "SrcName": "_signal",
                   "DstId": 117,
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 143,
+                  "Id": 159,
                   "Value": 5,
                   "DstId": 117,
                   "DstName": "seconds"
@@ -2077,8 +2115,8 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 87,
-                  "SrcName": "false",
+                  "SrcId": 0,
+                  "SrcName": "_signal",
                   "DstId": 133,
                   "DstName": "_signal"
                 },
@@ -2114,19 +2152,43 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 158,
+                  "Id": 160,
                   "Value": "THIS IT!!! {0}",
                   "DstId": 144,
                   "DstName": "format"
+                },
+                {
+                  "SrcId": 162,
+                  "SrcName": "_result",
+                  "DstId": 163,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 121,
+                  "SrcName": "false",
+                  "DstId": 164,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 118,
+                  "SrcName": "body.value",
+                  "DstId": 164,
+                  "DstName": "obj"
+                },
+                {
+                  "SrcId": 165,
+                  "SrcName": "_result",
+                  "DstId": 164,
+                  "DstName": "saveName"
+                },
+                {
+                  "SrcId": 118,
+                  "SrcName": "body.value",
+                  "DstId": 165,
+                  "DstName": "input"
                 }
               ],
               "Defaults": {
-                "$76.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
                 "$37.component": {
                   "_type": "component",
                   "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
@@ -2145,12 +2207,6 @@
                   "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
                   "component_type": "PermaGameObjectsSystem"
                 },
-                "$78.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
                 "$51.component": {
                   "_type": "component",
                   "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
@@ -2158,6 +2214,18 @@
                   "component_type": "PermaGameObjectsSystem"
                 },
                 "$54.component": {
+                  "_type": "component",
+                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
+                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
+                  "component_type": "PermaGameObjectsSystem"
+                },
+                "$76.component": {
+                  "_type": "component",
+                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
+                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
+                  "component_type": "PermaGameObjectsSystem"
+                },
+                "$78.component": {
                   "_type": "component",
                   "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
                   "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
@@ -2210,6 +2278,12 @@
                   "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
                   "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
                   "component_type": "PermaGameObjectsSystem"
+                },
+                "$162.component": {
+                  "_type": "component",
+                  "component_id": "41d4de66-0778-414d-8c83-e573a2b0d000",
+                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
+                  "component_type": "SaveGameObject"
                 }
               }
             },
@@ -2379,6 +2453,18 @@
             "OnComponentStart": null,
             "OnComponentUpdate": null,
             "TestGameOjbect": null
+          },
+          {
+            "__type": "SaveGameObject",
+            "__guid": "41d4de66-0778-414d-8c83-e573a2b0d000",
+            "__enabled": true,
+            "Frefabfile": "gameplay/entities/equipment/weapons/w_usp.prefab",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
           }
         ],
         "Children": []

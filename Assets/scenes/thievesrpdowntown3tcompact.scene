@@ -33,7 +33,7 @@
           "OnMapLoaded": {
             "__version": 9,
             "__guid": "b8d8f17d-4151-42fd-a316-ed4935054fbd",
-            "__changeId": 584,
+            "__changeId": 591,
             "UserData": {
               "Title": "On Map Loaded",
               "ReferencedComponentTypes": [
@@ -951,6 +951,51 @@
                 "UserData": {
                   "Position": "2220,1764"
                 }
+              },
+              {
+                "Id": 346,
+                "Type": "scene.find",
+                "UserData": {
+                  "Position": "420,852"
+                }
+              },
+              {
+                "Id": 347,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Children",
+                  "_type": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "588,876"
+                }
+              },
+              {
+                "Id": 348,
+                "Type": "list.get",
+                "Properties": {
+                  "T": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "852,852"
+                }
+              },
+              {
+                "Id": 349,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "PermaGameObjectsSystem"
+                },
+                "UserData": {
+                  "Position": "996,876"
+                }
+              },
+              {
+                "Id": 354,
+                "Type": "UGC/Load Prefab Metadata",
+                "UserData": {
+                  "Position": "924,-348"
+                }
               }
             ],
             "Links": [
@@ -1014,12 +1059,6 @@
                 "SrcName": "_result",
                 "DstId": 28,
                 "DstName": "_target"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_signal",
-                "DstId": 29,
-                "DstName": "_signal"
               },
               {
                 "SrcId": 28,
@@ -1754,6 +1793,42 @@
                 "SrcName": "body.value",
                 "DstId": 332,
                 "DstName": "_target"
+              },
+              {
+                "Id": 352,
+                "Value": "darkrpgamemode",
+                "DstId": 346,
+                "DstName": "name"
+              },
+              {
+                "SrcId": 346,
+                "SrcName": "_result",
+                "DstId": 347,
+                "DstName": "_target"
+              },
+              {
+                "Id": 353,
+                "Value": 0,
+                "DstId": 348,
+                "DstName": "index"
+              },
+              {
+                "SrcId": 347,
+                "SrcName": "_result",
+                "DstId": 348,
+                "DstName": "list"
+              },
+              {
+                "SrcId": 348,
+                "SrcName": "_result",
+                "DstId": 349,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 354,
+                "DstName": "_signal"
               }
             ],
             "Defaults": {
@@ -8031,7 +8106,36 @@
       "__version": 1,
       "__Prefab": "gameplay/entities/door.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "823016de-b624-49cc-a7ad-0c1906b7486b"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c2b0b66c-1bcc-425a-98a1-c7af2fb362e6"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "SaveGameObject",
+              "__guid": "823016de-b624-49cc-a7ad-0c1906b7486b",
+              "__enabled": true,
+              "Frefabfile": "gameplay/entities/door.prefab",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -8081,7 +8185,36 @@
       "__version": 1,
       "__Prefab": "gameplay/entities/door.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "60a4a6fd-1f24-4ff6-abb9-05519a3beabd"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c2b0b66c-1bcc-425a-98a1-c7af2fb362e6"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "SaveGameObject",
+              "__guid": "60a4a6fd-1f24-4ff6-abb9-05519a3beabd",
+              "__enabled": true,
+              "Frefabfile": "gameplay/entities/door.prefab",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -11647,7 +11780,36 @@
       "__version": 1,
       "__Prefab": "gameplay/entities/door.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "ebed3d2b-e9be-4dad-af27-466e2edffba8"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c2b0b66c-1bcc-425a-98a1-c7af2fb362e6"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "SaveGameObject",
+              "__guid": "ebed3d2b-e9be-4dad-af27-466e2edffba8",
+              "__enabled": true,
+              "Frefabfile": "gameplay/entities/door.prefab",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -15213,7 +15375,36 @@
       "__version": 1,
       "__Prefab": "gameplay/entities/door.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "d412e594-4f63-401f-b819-28531bb7e6e1"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c2b0b66c-1bcc-425a-98a1-c7af2fb362e6"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "SaveGameObject",
+              "__guid": "d412e594-4f63-401f-b819-28531bb7e6e1",
+              "__enabled": true,
+              "Frefabfile": "gameplay/entities/door.prefab",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -19073,7 +19264,36 @@
       "__version": 1,
       "__Prefab": "gameplay/entities/door.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "0ee5873d-0daf-4c3a-9928-75eee8b3caa4"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c2b0b66c-1bcc-425a-98a1-c7af2fb362e6"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "SaveGameObject",
+              "__guid": "0ee5873d-0daf-4c3a-9928-75eee8b3caa4",
+              "__enabled": true,
+              "Frefabfile": "gameplay/entities/door.prefab",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -19973,7 +20193,8 @@
         "cda33bec-52ec-4d8d-ab86-1c03b43289e5": "3ed11951-1393-4ba9-b2a2-fc52b33df202",
         "a1165533-11c2-495f-be16-add99c9a0af0": "f3cbb7db-c5c3-4e6d-8e02-40f8d5114176",
         "c222862a-076e-4269-859d-fde26ed29739": "ad4d983b-fac0-4e6e-8dc6-dbd001d0aa89",
-        "7d77a8da-5ed0-4cd7-b5b1-7408302ae8e2": "6cb17dfb-2ab5-4390-8f9f-7eaa62251738"
+        "7d77a8da-5ed0-4cd7-b5b1-7408302ae8e2": "6cb17dfb-2ab5-4390-8f9f-7eaa62251738",
+        "41d4de66-0778-414d-8c83-e573a2b0d000": "00b9d041-bd2a-4aff-842c-6280aef900a4"
       }
     }
   ],
