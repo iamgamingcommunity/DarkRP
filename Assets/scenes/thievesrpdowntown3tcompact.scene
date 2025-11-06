@@ -33,7 +33,7 @@
           "OnMapLoaded": {
             "__version": 9,
             "__guid": "b8d8f17d-4151-42fd-a316-ed4935054fbd",
-            "__changeId": 591,
+            "__changeId": 653,
             "UserData": {
               "Title": "On Map Loaded",
               "ReferencedComponentTypes": [
@@ -991,10 +991,57 @@
                 }
               },
               {
-                "Id": 354,
-                "Type": "UGC/Load Prefab Metadata",
+                "Id": 391,
+                "Type": "list.get",
+                "Properties": {},
                 "UserData": {
-                  "Position": "924,-348"
+                  "Position": "888,-324"
+                }
+              },
+              {
+                "Id": 392,
+                "Type": "property",
+                "Properties": {
+                  "_name": "PrefabPath"
+                },
+                "UserData": {
+                  "Position": "1104,-336"
+                }
+              },
+              {
+                "Id": 393,
+                "Type": "Get Prefabs By Name With Transform",
+                "UserData": {
+                  "Position": "504,-312"
+                }
+              },
+              {
+                "Id": 394,
+                "Type": "list.get",
+                "Properties": {
+                  "T": {
+                    "$type": "Nested",
+                    "DeclaringType": "PrefabFileVariable",
+                    "Name": "PrefabData"
+                  }
+                },
+                "UserData": {
+                  "Position": "744,-216"
+                }
+              },
+              {
+                "Id": 395,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Prefab",
+                  "_type": {
+                    "$type": "Nested",
+                    "DeclaringType": "PrefabFileVariable",
+                    "Name": "PrefabData"
+                  }
+                },
+                "UserData": {
+                  "Position": "972,-180"
                 }
               }
             ],
@@ -1013,7 +1060,7 @@
                 "DstIndex": 0
               },
               {
-                "Id": 333,
+                "Id": 355,
                 "Value": "MAP LOADED: {0}",
                 "DstId": 1,
                 "DstName": "format"
@@ -1025,7 +1072,7 @@
                 "DstName": "_target"
               },
               {
-                "Id": 334,
+                "Id": 356,
                 "Value": "darkrpgamemode",
                 "DstId": 17,
                 "DstName": "name"
@@ -1037,7 +1084,7 @@
                 "DstName": "_target"
               },
               {
-                "Id": 335,
+                "Id": 357,
                 "Value": 0,
                 "DstId": 19,
                 "DstName": "index"
@@ -1331,7 +1378,7 @@
                 "DstName": "_signal"
               },
               {
-                "Id": 336,
+                "Id": 358,
                 "Value": "Test Cloned",
                 "DstId": 107,
                 "DstName": "format"
@@ -1363,7 +1410,7 @@
                 "DstIndex": 1
               },
               {
-                "Id": 337,
+                "Id": 359,
                 "Value": "Get Map Instance Name: {0} {1}",
                 "DstId": 125,
                 "DstName": "format"
@@ -1375,7 +1422,7 @@
                 "DstName": "_signal"
               },
               {
-                "Id": 338,
+                "Id": 360,
                 "Value": "Test Cloned Extra 2",
                 "DstId": 165,
                 "DstName": "format"
@@ -1387,7 +1434,7 @@
                 "DstName": "_signal"
               },
               {
-                "Id": 339,
+                "Id": 361,
                 "Value": 5,
                 "DstId": 200,
                 "DstName": "seconds"
@@ -1519,7 +1566,7 @@
                 "DstName": "a"
               },
               {
-                "Id": 340,
+                "Id": 362,
                 "Value": 0,
                 "DstId": 253,
                 "DstName": "b"
@@ -1549,7 +1596,7 @@
                 "DstName": "a"
               },
               {
-                "Id": 341,
+                "Id": 363,
                 "Value": 0,
                 "DstId": 257,
                 "DstName": "b"
@@ -1579,7 +1626,7 @@
                 "DstName": "a"
               },
               {
-                "Id": 342,
+                "Id": 364,
                 "Value": 0,
                 "DstId": 262,
                 "DstName": "b"
@@ -1609,7 +1656,7 @@
                 "DstName": "a"
               },
               {
-                "Id": 343,
+                "Id": 365,
                 "Value": 0,
                 "DstId": 267,
                 "DstName": "b"
@@ -1639,7 +1686,7 @@
                 "DstName": "a"
               },
               {
-                "Id": 344,
+                "Id": 366,
                 "Value": 0,
                 "DstId": 272,
                 "DstName": "b"
@@ -1669,7 +1716,7 @@
                 "DstName": "a"
               },
               {
-                "Id": 345,
+                "Id": 367,
                 "Value": 0,
                 "DstId": 277,
                 "DstName": "b"
@@ -1795,7 +1842,7 @@
                 "DstName": "_target"
               },
               {
-                "Id": 352,
+                "Id": 368,
                 "Value": "darkrpgamemode",
                 "DstId": 346,
                 "DstName": "name"
@@ -1807,7 +1854,7 @@
                 "DstName": "_target"
               },
               {
-                "Id": 353,
+                "Id": 369,
                 "Value": 0,
                 "DstId": 348,
                 "DstName": "index"
@@ -1825,10 +1872,22 @@
                 "DstName": "_this"
               },
               {
-                "SrcId": 1,
-                "SrcName": "_signal",
-                "DstId": 354,
-                "DstName": "_signal"
+                "SrcId": 391,
+                "SrcName": "_result",
+                "DstId": 392,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 393,
+                "SrcName": "_result",
+                "DstId": 394,
+                "DstName": "list"
+              },
+              {
+                "SrcId": 394,
+                "SrcName": "_result",
+                "DstId": 395,
+                "DstName": "_target"
               }
             ],
             "Defaults": {
@@ -7253,6 +7312,7 @@
               "__guid": "6c15a5a9-88ca-4d7f-9c86-7b76969beb98",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -7336,6 +7396,7 @@
               "__enabled": true,
               "AngularDamping": 0,
               "Gravity": true,
+              "GravityScale": 1,
               "LinearDamping": 0,
               "Locking": {
                 "X": false,
@@ -7379,6 +7440,7 @@
               "__guid": "ffde15b7-3984-4833-b101-25c652b8bfe4",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -7493,6 +7555,7 @@
               "__guid": "1fee76bb-02b9-44a7-afec-45feffbdfa5e",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -7576,6 +7639,7 @@
               "__enabled": true,
               "AngularDamping": 0,
               "Gravity": true,
+              "GravityScale": 1,
               "LinearDamping": 0,
               "Locking": {
                 "X": false,
@@ -7619,6 +7683,7 @@
               "__guid": "2d7b7462-84b9-41d0-b3fe-ae8e7226349c",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -19018,6 +19083,22 @@
               "Type": "Component",
               "IdValue": "6e29f15c-f309-4fdf-aa25-c9c5453ee2e7"
             },
+            "Property": "IsArrested",
+            "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "6e29f15c-f309-4fdf-aa25-c9c5453ee2e7"
+            },
+            "Property": "IsHasWeaponLicense",
+            "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "6e29f15c-f309-4fdf-aa25-c9c5453ee2e7"
+            },
             "Property": "PlayerListData",
             "Value": {
               "PlayerID": "Bot00",
@@ -19094,6 +19175,7 @@
           "__guid": "51cd2bac-14ba-477c-8f11-131be8dc2a18",
           "__enabled": true,
           "Center": "0,0,0",
+          "ColliderFlags": 0,
           "Elasticity": null,
           "Friction": null,
           "IsTrigger": true,
@@ -20122,9 +20204,67 @@
       "__version": 1,
       "__Prefab": "gameplay/gamemode/darkrpgamemode.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "169bb08b-0ae5-4767-b3c4-b9bc5f526b5f"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "f7e5b3c3-30de-45c8-ab6e-78b70f628d87"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "169bb08b-0ae5-4767-b3c4-b9bc5f526b5f",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": null,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          }
+        ],
+        "RemovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "a1165533-11c2-495f-be16-add99c9a0af0"
+            }
+          }
+        ],
         "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "34016af8-3bb1-483d-b50d-81a16ef709ff"
+            },
+            "Property": "Flags",
+            "Value": 0
+          },
           {
             "Target": {
               "Type": "Component",
@@ -20165,9 +20305,50 @@
                 "go": "ba2c8020-fed4-472a-ab49-ab5be71ed261"
               }
             ]
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
+            },
+            "Property": "JailPos",
+            "Value": []
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
+            },
+            "Property": "LicensedEquipment",
+            "Value": []
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
+            },
+            "Property": "PDStartingEquipment",
+            "Value": []
           }
         ],
-        "MovedObjects": []
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "f7e5b3c3-30de-45c8-ab6e-78b70f628d87"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "cda33bec-52ec-4d8d-ab86-1c03b43289e5"
+            }
+          }
+        ]
       },
       "__PrefabIdToInstanceId": {
         "3f154697-f50d-4ead-8f92-a3c3a1c95717": "93be3da6-3f6c-4cc8-86d6-d089924d98de",
@@ -20191,7 +20372,7 @@
         "5118ee51-4b53-4618-8899-e71d58293e3a": "57f720e1-0512-4e9d-b416-ad91e4921f2b",
         "f7e5b3c3-30de-45c8-ab6e-78b70f628d87": "b1fa1999-bcf4-4472-9587-7df574a3bea1",
         "cda33bec-52ec-4d8d-ab86-1c03b43289e5": "3ed11951-1393-4ba9-b2a2-fc52b33df202",
-        "a1165533-11c2-495f-be16-add99c9a0af0": "f3cbb7db-c5c3-4e6d-8e02-40f8d5114176",
+        "38d147ca-5838-4332-b9c2-db0b29a3e3cd": "da74dc40-9ad2-475d-bf28-74567734b640",
         "c222862a-076e-4269-859d-fde26ed29739": "ad4d983b-fac0-4e6e-8dc6-dbd001d0aa89",
         "7d77a8da-5ed0-4cd7-b5b1-7408302ae8e2": "6cb17dfb-2ab5-4390-8f9f-7eaa62251738",
         "41d4de66-0778-414d-8c83-e573a2b0d000": "00b9d041-bd2a-4aff-842c-6280aef900a4"

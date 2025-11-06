@@ -22,11 +22,16 @@ public partial class DarkRPGamemode : GameModeBase
 	//DarkRP Law System Info
 	[Property, Feature("Law Info")] public Vector3[] JailPos { get; set; }
 	[Property, Feature("Law Info")] public int JailTime { get; set; }
+	[Property, Feature("Law Info")] public Model LawBoardModel { get; set; }
 	[Property, Feature("Law Info")] public int MaxLawsOnBoard { get; set; }
+	[Property, Feature("Law Info"), Title("Lottery System")] public bool ToggleLottery { get; set; }
+	[Property, Feature("Law Info")] public int MinLotteryPrice { get; set; }
+	[Property, Feature("Law Info")] public int MaxLotteryPrice { get; set; }
 	[Property, Feature("Law Info")] public SoundEvent LockDownStartSFX { get; set; }
 	[Property, Feature("Law Info")] public SoundEvent LockDownOnGoingSFX { get; set; }
 	[Property, Feature("Law Info")] public SoundEvent AlarmSound { get; set; }
 	[Property, Feature("Law Info")] public PickupableEntityBase[] PDStartingEquipment { get; set; }
+	[Property, Feature("Law Info")] public PickupableEntityBase[] LicensedEquipment { get; set; }
 	
 	//DarkRP Vote System Info
 	[Property, Feature("Vote Info")] public int DefualtVoteDuration { get; set; }
@@ -47,6 +52,9 @@ public partial class DarkRPGamemode : GameModeBase
 	//Chat Related Vars
 	[Property, Feature("Chat Info")] public List<ChatCommandResource> AllChatCommands { get; set; }
 
+	//Chat Related Vars
+	[Property, Feature("Hitman Info")] public int MinHitPrice { get; set; }
+	[Property, Feature("Hitman Info")] public int MaxHitPrice { get; set; }
 
 
 

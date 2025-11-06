@@ -68,6 +68,8 @@ public sealed class DarkrpPlayerInfo : Component
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public GameObject F2MenuUIPanel { get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public GameObject SecondaryInteractionTraceHitVar { get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public bool IsInUIMenu { get; set; }
+	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public bool IsHasWeaponLicense { get; set; }
+	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public bool IsArrested { get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public int PlayerCurrentJobTempTime { get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public bool DropPlayerMoneyOnDeath { get; set; }
 	[Property, ShowIf ( nameof( DropPlayerMoneyOnDeath ), true), Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public bool PlayerDeathMoneyDropAll{ get; set; }
