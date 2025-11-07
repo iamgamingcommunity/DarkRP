@@ -401,6 +401,340 @@
             "__type": "DarkrpPlayerInfo",
             "__guid": "e76150e2-fac2-4851-8c5e-fea454bb06f6",
             "__enabled": true,
+            "ArrestedLogic": {
+              "__version": 9,
+              "__guid": "4b771db4-e713-4842-978e-731ebeb503af",
+              "__changeId": 83,
+              "UserData": {
+                "Title": "Arrested Logic",
+                "ReferencedComponentTypes": [],
+                "Icon": "watch",
+                "Description": "Triggers logic to arrest the player and move them to a jail cell.",
+                "Category": "PD"
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 3,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "156,84"
+                  }
+                },
+                {
+                  "Id": 5,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsArrested",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "240,-0"
+                  }
+                },
+                {
+                  "Id": 19,
+                  "Type": "scene.findall",
+                  "UserData": {
+                    "Position": "648,60"
+                  }
+                },
+                {
+                  "Id": 21,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "816,0"
+                  }
+                },
+                {
+                  "Id": 22,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "TempGameObjectList",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1356,144"
+                  }
+                },
+                {
+                  "Id": 23,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Add",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "1488,24"
+                  }
+                },
+                {
+                  "Id": 25,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1176,24"
+                  }
+                },
+                {
+                  "Id": 44,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1788,120"
+                  }
+                },
+                {
+                  "Id": 45,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Count",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "1608,240"
+                  }
+                },
+                {
+                  "Id": 46,
+                  "Type": "random.int",
+                  "UserData": {
+                    "Position": "1788,192"
+                  }
+                },
+                {
+                  "Id": 48,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldPosition",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1968,120"
+                  }
+                },
+                {
+                  "Id": 50,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "2256,96"
+                  }
+                },
+                {
+                  "Id": 51,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldPosition",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "2268,24"
+                  }
+                },
+                {
+                  "Id": 52,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldRotation",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "2556,24"
+                  }
+                },
+                {
+                  "Id": 53,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldRotation",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "2556,96"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 5,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 5,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 16,
+                  "Value": true,
+                  "DstId": 5,
+                  "DstName": "_value"
+                },
+                {
+                  "Id": 20,
+                  "Value": "jailpos",
+                  "DstId": 19,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_signal",
+                  "DstId": 21,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 19,
+                  "SrcName": "_result",
+                  "DstId": 21,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 22,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 25,
+                  "SrcName": "_signal",
+                  "DstId": 23,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 22,
+                  "SrcName": "_result",
+                  "DstId": 23,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "body.value",
+                  "DstId": 23,
+                  "DstName": "item"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "body",
+                  "DstId": 25,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "body.value",
+                  "DstId": 25,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "Id": 43,
+                  "Value": "JailPos: {0}",
+                  "DstId": 25,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 46,
+                  "SrcName": "_result",
+                  "DstId": 44,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 22,
+                  "SrcName": "_result",
+                  "DstId": 44,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 22,
+                  "SrcName": "_result",
+                  "DstId": 45,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 45,
+                  "SrcName": "_result",
+                  "DstId": 46,
+                  "DstName": "max"
+                },
+                {
+                  "Id": 47,
+                  "Value": 1,
+                  "DstId": 46,
+                  "DstName": "min"
+                },
+                {
+                  "SrcId": 44,
+                  "SrcName": "_result",
+                  "DstId": 48,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_signal",
+                  "DstId": 51,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 50,
+                  "SrcName": "_result",
+                  "DstId": 51,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 48,
+                  "SrcName": "_result",
+                  "DstId": 51,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 51,
+                  "SrcName": "_signal",
+                  "DstId": 52,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 50,
+                  "SrcName": "_result",
+                  "DstId": 52,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 53,
+                  "SrcName": "_result",
+                  "DstId": 52,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 44,
+                  "SrcName": "_result",
+                  "DstId": 53,
+                  "DstName": "_target"
+                }
+              ],
+              "Defaults": {
+                "$3.component": {
+                  "_type": "component",
+                  "component_id": "e76150e2-fac2-4851-8c5e-fea454bb06f6",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
+                  "component_type": "DarkrpPlayerInfo"
+                },
+                "$50.gameobject": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/player/player.prefab"
+                }
+              }
+            },
             "BodyclimbingAnimationParameterName": "b_climbing",
             "BodyDeployAnimationParameterName": "b_deploy",
             "BodyFireAnimationParameterName": "b_attack",
@@ -30533,7 +30867,8 @@
             "PlayerMoney": 2000,
             "SecondaryInteractionTraceHitVar": null,
             "SteamId": 0,
-            "SteamName": null
+            "SteamName": null,
+            "TempGameObjectList": []
           },
           {
             "__type": "PlayerHud",
@@ -34265,7 +34600,7 @@
             "GraphFireEquipment": {
               "__version": 9,
               "__guid": "8d86bbbe-7c0d-4916-b497-51a617e24ee3",
-              "__changeId": 1140,
+              "__changeId": 1143,
               "UserData": {
                 "Title": "Graph Fire Default DarkRP Swep",
                 "ReferencedComponentTypes": [
@@ -70256,7 +70591,7 @@
                 ]
               },
               {
-                "__guid": "a6aac1cd-d86f-45fd-92ea-2c30e9c444cc",
+                "__guid": "9e056c9b-ea85-45e5-add9-34d0648dade5",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - chef_shirt",
@@ -70272,7 +70607,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "5f5adc29-6166-4554-87ba-f75b957d5291",
+                    "__guid": "612d2fe8-3819-4dd6-94b2-0f91873a1f89",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -70323,7 +70658,7 @@
                 "Children": []
               },
               {
-                "__guid": "67c095b4-6973-4c52-b3e1-10f8b48dea08",
+                "__guid": "317b9f29-eef0-4dd7-a412-68bce02c0d11",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - brown_cargo_pants",
@@ -70339,7 +70674,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "7d121447-b593-4b5d-9181-b0778823f204",
+                    "__guid": "13af124a-3cbf-492a-8342-55684792579d",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -70461,6 +70796,23 @@
             "Children": []
           }
         ]
+      },
+      {
+        "__guid": "50148896-6357-49a7-a890-9b4b5d442ca8",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "GameObject",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
       },
       {
         "__guid": "eda13ea4-3081-4ace-84df-11ad41c7c8b4",

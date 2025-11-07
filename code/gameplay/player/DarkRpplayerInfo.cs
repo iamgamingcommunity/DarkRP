@@ -76,13 +76,20 @@ public sealed class DarkrpPlayerInfo : Component
 	[Property, ShowIf ( nameof( DropPlayerMoneyOnDeath ), true), Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public int PlayerDeathMoneyDropAmount{ get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public GameObject PlayerCameraRef { get; set; }
 
-
+	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public List<GameObject> TempGameObjectList { get; set; }
 
 	//Action Graphs
 	public delegate void ActionGraphOpenChatLogic();
 	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Open Chat Logic")]
 	public ActionGraphOpenChatLogic OpenChatLogic { get; set; }
 
+	public delegate void ActionGraphArrested();
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Arrested Logic")]
+	public ActionGraphArrested ArrestedLogic { get; set; }
+
+	public delegate void ActionGraphUnArrest();
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Unarrest Logic")]
+	public ActionGraphUnArrest UnArrestLogic { get; set; }
 
 
 
@@ -92,7 +99,15 @@ public sealed class DarkrpPlayerInfo : Component
 
 
 
+	public void ArrestPlayer()
+	{
+		ArrestedLogic?.Invoke();
+	}
 
+	public void UnArrestPlayer()
+	{
+		UnArrestLogic?.Invoke();
+	}
 
 
 
@@ -101,14 +116,14 @@ public sealed class DarkrpPlayerInfo : Component
 
 	protected override void OnStart()
 	{
-		if ( !IsBot )
+		if (!IsBot)
 		{
-		//Gets and sets SteamID to Be the Players SteamID for Using Later
-		DisplayName = Steam.PersonaName;
-		SteamId = Steam.SteamId;
-		Log.Info( $"Local Player Name: {DisplayName}" );
-		Log.Info($"Local Player Name: {SteamId}");
-		 }
+			//Gets and sets SteamID to Be the Players SteamID for Using Later
+			DisplayName = Steam.PersonaName;
+			SteamId = Steam.SteamId;
+			Log.Info($"Local Player Name: {DisplayName}");
+			Log.Info($"Local Player Name: {SteamId}");
+		}
 	}
 
 	// protected override void OnUpdate()
