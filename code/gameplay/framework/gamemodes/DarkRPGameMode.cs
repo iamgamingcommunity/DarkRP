@@ -20,7 +20,7 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Basic Info"), Description("If True a Job has ")] public int TempPlayTimeTotalCycleAmount { get; set; }
 
 	//DarkRP Law System Info
-	[Property, Feature("Law Info")] public Vector3[] JailPos { get; set; }
+	[Property, Feature("Law Info")] public GameObject[] JailPos { get; set; }
 	[Property, Feature("Law Info")] public int JailTime { get; set; }
 	[Property, Feature("Law Info")] public Model LawBoardModel { get; set; }
 	[Property, Feature("Law Info")] public int MaxLawsOnBoard { get; set; }

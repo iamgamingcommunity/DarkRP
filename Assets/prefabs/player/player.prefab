@@ -409,10 +409,12 @@
             "ArrestedLogic": {
               "__version": 9,
               "__guid": "4b771db4-e713-4842-978e-731ebeb503af",
-              "__changeId": 336,
+              "__changeId": 434,
               "UserData": {
                 "Title": "Arrested Logic",
-                "ReferencedComponentTypes": [],
+                "ReferencedComponentTypes": [
+                  "DarkRPGamemode.DarkRPGamemode"
+                ],
                 "Icon": "watch",
                 "Description": "Triggers logic to arrest the player and move them to a jail cell.",
                 "Category": "PD"
@@ -462,61 +464,17 @@
                   }
                 },
                 {
-                  "Id": 22,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "TempGameObjectList",
-                    "_type": "DarkrpPlayerInfo"
-                  },
-                  "UserData": {
-                    "Position": "2052,156"
-                  }
-                },
-                {
-                  "Id": 23,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Add",
-                    "_type": "System.Collections.Generic.List`1"
-                  },
-                  "UserData": {
-                    "Position": "2184,36"
-                  }
-                },
-                {
                   "Id": 25,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "1872,36"
-                  }
-                },
-                {
-                  "Id": 44,
-                  "Type": "list.get",
-                  "Properties": {
-                    "T": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "3036,252"
-                  }
-                },
-                {
-                  "Id": 45,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Count",
-                    "_type": "System.Collections.Generic.List`1"
-                  },
-                  "UserData": {
-                    "Position": "1788,384"
+                    "Position": "1872,72"
                   }
                 },
                 {
                   "Id": 46,
                   "Type": "random.int",
                   "UserData": {
-                    "Position": "2880,348"
+                    "Position": "2772,324"
                   }
                 },
                 {
@@ -527,14 +485,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "3216,108"
-                  }
-                },
-                {
-                  "Id": 50,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "3432,264"
+                    "Position": "3180,120"
                   }
                 },
                 {
@@ -571,38 +522,10 @@
                   }
                 },
                 {
-                  "Id": 62,
-                  "Type": "log.info",
-                  "UserData": {
-                    "Position": "2028,492"
-                  }
-                },
-                {
                   "Id": 156,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "2988,60"
-                  }
-                },
-                {
-                  "Id": 255,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "2580,180"
-                  }
-                },
-                {
-                  "Id": 256,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "2544,36"
-                  }
-                },
-                {
-                  "Id": 257,
-                  "Type": "op.subtract",
-                  "UserData": {
-                    "Position": "2484,168"
+                    "Position": "2952,60"
                   }
                 },
                 {
@@ -612,7 +535,89 @@
                     "T": "DarkRPGamemode.DarkRPGamemode"
                   },
                   "UserData": {
-                    "Position": "876,168"
+                    "Position": "864,240"
+                  }
+                },
+                {
+                  "Id": 289,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JailPos",
+                    "_type": "DarkRPGamemode.DarkRPGamemode"
+                  },
+                  "UserData": {
+                    "Position": "1188,240"
+                  }
+                },
+                {
+                  "Id": 298,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Length",
+                    "_type": "System.Array"
+                  },
+                  "UserData": {
+                    "Position": "1452,240"
+                  }
+                },
+                {
+                  "Id": 336,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "2772,240"
+                  }
+                },
+                {
+                  "Id": 342,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "2964,300"
+                  }
+                },
+                {
+                  "Id": 343,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldTransform",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "3672,300"
+                  }
+                },
+                {
+                  "Id": 344,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldTransform",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "3684,228"
+                  }
+                },
+                {
+                  "Id": 348,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Children",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "3120,384"
+                  }
+                },
+                {
+                  "Id": 349,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "3408,384"
                   }
                 }
               ],
@@ -630,13 +635,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 58,
+                  "Id": 360,
                   "Value": true,
                   "DstId": 5,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 269,
+                  "Id": 361,
                   "Value": "DarkRP",
                   "DstId": 19,
                   "DstName": "name"
@@ -654,30 +659,6 @@
                   "DstName": "enumerable"
                 },
                 {
-                  "SrcId": 3,
-                  "SrcName": "_result",
-                  "DstId": 22,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 25,
-                  "SrcName": "_signal",
-                  "DstId": 23,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 22,
-                  "SrcName": "_result",
-                  "DstId": 23,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 21,
-                  "SrcName": "body.value",
-                  "DstId": 23,
-                  "DstName": "item"
-                },
-                {
                   "SrcId": 21,
                   "SrcName": "body",
                   "DstId": 25,
@@ -691,15 +672,15 @@
                   "DstIndex": 0
                 },
                 {
-                  "SrcId": 22,
-                  "SrcName": "_result",
+                  "Id": 358,
+                  "Value": null,
                   "DstId": 25,
                   "DstName": "args",
                   "DstIndex": 1
                 },
                 {
-                  "SrcId": 45,
-                  "SrcName": "_result",
+                  "Id": 359,
+                  "Value": null,
                   "DstId": 25,
                   "DstName": "args",
                   "DstIndex": 2
@@ -712,43 +693,32 @@
                   "DstIndex": 3
                 },
                 {
-                  "Id": 155,
-                  "Value": "JailPos: {0} {1} Jail Pos Count : {2} Jail Random Pos Index:{3} ",
+                  "SrcId": 298,
+                  "SrcName": "_result",
+                  "DstId": 25,
+                  "DstName": "args",
+                  "DstIndex": 4
+                },
+                {
+                  "Id": 362,
+                  "Value": "JailPos: {0} {1} Jail Pos Count : {2} Jail Random Pos Index:{3}  Jail Pos Array Length: {4}",
                   "DstId": 25,
                   "DstName": "format"
                 },
                 {
-                  "SrcId": 46,
-                  "SrcName": "_result",
-                  "DstId": 44,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 22,
-                  "SrcName": "_result",
-                  "DstId": 44,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 22,
-                  "SrcName": "_result",
-                  "DstId": 45,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 45,
+                  "SrcId": 298,
                   "SrcName": "_result",
                   "DstId": 46,
                   "DstName": "max"
                 },
                 {
-                  "Id": 260,
-                  "Value": 1,
+                  "Id": 363,
+                  "Value": 0,
                   "DstId": 46,
                   "DstName": "min"
                 },
                 {
-                  "SrcId": 44,
+                  "SrcId": 336,
                   "SrcName": "_result",
                   "DstId": 48,
                   "DstName": "_target"
@@ -760,7 +730,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 50,
+                  "SrcId": 342,
                   "SrcName": "_result",
                   "DstId": 51,
                   "DstName": "_target"
@@ -778,7 +748,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 50,
+                  "SrcId": 342,
                   "SrcName": "_result",
                   "DstId": 52,
                   "DstName": "_target"
@@ -790,14 +760,14 @@
                   "DstName": "_value"
                 },
                 {
-                  "SrcId": 44,
+                  "SrcId": 336,
                   "SrcName": "_result",
                   "DstId": 53,
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 256,
-                  "SrcName": "true",
+                  "SrcId": 25,
+                  "SrcName": "_signal",
                   "DstId": 156,
                   "DstName": "_signal"
                 },
@@ -816,59 +786,83 @@
                   "DstIndex": 1
                 },
                 {
-                  "SrcId": 44,
+                  "SrcId": 336,
                   "SrcName": "_result",
                   "DstId": 156,
                   "DstName": "args",
                   "DstIndex": 2
                 },
                 {
-                  "Id": 254,
+                  "Id": 364,
                   "Value": "Jail Pos Game Object: {2} Jail Pos: {0} Jail Rot: {1} ",
                   "DstId": 156,
                   "DstName": "format"
-                },
-                {
-                  "SrcId": 257,
-                  "SrcName": "_result",
-                  "DstId": 255,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 21,
-                  "SrcName": "body.index",
-                  "DstId": 255,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 23,
-                  "SrcName": "_signal",
-                  "DstId": 256,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 255,
-                  "SrcName": "_result",
-                  "DstId": 256,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 45,
-                  "SrcName": "_result",
-                  "DstId": 257,
-                  "DstName": "a"
-                },
-                {
-                  "Id": 258,
-                  "Value": 1,
-                  "DstId": 257,
-                  "DstName": "b"
                 },
                 {
                   "SrcId": 21,
                   "SrcName": "body.value",
                   "DstId": 270,
                   "DstName": "_this"
+                },
+                {
+                  "SrcId": 270,
+                  "SrcName": "_result",
+                  "DstId": 289,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 289,
+                  "SrcName": "_result",
+                  "DstId": 298,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 46,
+                  "SrcName": "_result",
+                  "DstId": 336,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 289,
+                  "SrcName": "_result",
+                  "DstId": 336,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 342,
+                  "SrcName": "_result",
+                  "DstId": 343,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 336,
+                  "SrcName": "_result",
+                  "DstId": 344,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 343,
+                  "SrcName": "_result",
+                  "DstId": 344,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 342,
+                  "SrcName": "_result",
+                  "DstId": 348,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 365,
+                  "Value": 0,
+                  "DstId": 349,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 348,
+                  "SrcName": "_result",
+                  "DstId": 349,
+                  "DstName": "list"
                 }
               ],
               "Defaults": {
@@ -878,7 +872,7 @@
                   "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
                   "component_type": "DarkrpPlayerInfo"
                 },
-                "$50.gameobject": {
+                "$342.gameobject": {
                   "_type": "gameobject",
                   "prefab": "prefabs/player/player.prefab"
                 }
@@ -70919,7 +70913,7 @@
                 ]
               },
               {
-                "__guid": "dc2f65f0-5e4d-4b95-a11a-a47205713e95",
+                "__guid": "17f7ff26-c649-4335-b25c-1b8df1252481",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - chef_shirt",
@@ -70936,7 +70930,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "45dfe73e-9371-43ea-9c7d-a45700f85038",
+                    "__guid": "ed232839-4ac7-44c6-824c-39a2b3f97b1c",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -70987,7 +70981,7 @@
                 "Children": []
               },
               {
-                "__guid": "e9f4c429-5f1b-49ab-a45d-935e21288155",
+                "__guid": "c6ac9a78-20ff-42e7-b786-b085d3950911",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - brown_cargo_pants",
@@ -71004,7 +70998,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "41a9cd6a-e4f3-4ad0-a9be-dbd73176d950",
+                    "__guid": "12f1a0af-fa53-4ab4-a0dc-91ef416d10bf",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -71145,6 +71139,42 @@
             "Children": []
           }
         ]
+      },
+      {
+        "__guid": "e2a55225-2b75-4555-9795-06d77de7a9ff",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "GameObject",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
+      },
+      {
+        "__guid": "a8ab7604-0884-4c63-b68c-dce62c56ccf8",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "GameObject",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
       },
       {
         "__guid": "29225860-5a3d-4207-a6ec-b14120b5d7c4",
