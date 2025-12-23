@@ -12,6 +12,7 @@
     "NetworkMode": 1,
     "NetworkInterpolation": true,
     "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [],
     "Children": [
@@ -28,6 +29,7 @@
         "NetworkMode": 1,
         "NetworkInterpolation": true,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [
           {
@@ -122,8 +124,10 @@
             "__guid": "39d03ff5-8606-4ed0-b251-e2045d65b261",
             "__enabled": true,
             "AngularDamping": 1,
+            "EnableImpactDamage": true,
             "Gravity": true,
             "GravityScale": 1,
+            "ImpactDamage": 0,
             "LinearDamping": 0.1,
             "Locking": {
               "X": false,
@@ -135,6 +139,7 @@
             },
             "MassCenterOverride": "0,0,36",
             "MassOverride": 500,
+            "MinImpactDamageSpeed": 500,
             "MotionEnabled": true,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -404,7 +409,7 @@
             "ArrestedLogic": {
               "__version": 9,
               "__guid": "4b771db4-e713-4842-978e-731ebeb503af",
-              "__changeId": 83,
+              "__changeId": 336,
               "UserData": {
                 "Title": "Arrested Logic",
                 "ReferencedComponentTypes": [],
@@ -416,13 +421,16 @@
               "Nodes": [
                 {
                   "Id": 0,
-                  "Type": "input"
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "-120,-0"
+                  }
                 },
                 {
                   "Id": 3,
                   "Type": "scene.ref",
                   "UserData": {
-                    "Position": "156,84"
+                    "Position": "36,84"
                   }
                 },
                 {
@@ -433,14 +441,14 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "240,-0"
+                    "Position": "120,-0"
                   }
                 },
                 {
                   "Id": 19,
                   "Type": "scene.findall",
                   "UserData": {
-                    "Position": "648,60"
+                    "Position": "456,60"
                   }
                 },
                 {
@@ -450,7 +458,7 @@
                     "T": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "816,0"
+                    "Position": "648,0"
                   }
                 },
                 {
@@ -461,7 +469,7 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "1356,144"
+                    "Position": "2052,156"
                   }
                 },
                 {
@@ -473,14 +481,14 @@
                     "_type": "System.Collections.Generic.List`1"
                   },
                   "UserData": {
-                    "Position": "1488,24"
+                    "Position": "2184,36"
                   }
                 },
                 {
                   "Id": 25,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "1176,24"
+                    "Position": "1872,36"
                   }
                 },
                 {
@@ -490,7 +498,7 @@
                     "T": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "1788,120"
+                    "Position": "3036,252"
                   }
                 },
                 {
@@ -501,14 +509,14 @@
                     "_type": "System.Collections.Generic.List`1"
                   },
                   "UserData": {
-                    "Position": "1608,240"
+                    "Position": "1788,384"
                   }
                 },
                 {
                   "Id": 46,
                   "Type": "random.int",
                   "UserData": {
-                    "Position": "1788,192"
+                    "Position": "2880,348"
                   }
                 },
                 {
@@ -519,14 +527,14 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "1968,120"
+                    "Position": "3216,108"
                   }
                 },
                 {
                   "Id": 50,
                   "Type": "scene.ref",
                   "UserData": {
-                    "Position": "2256,96"
+                    "Position": "3432,264"
                   }
                 },
                 {
@@ -537,7 +545,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "2268,24"
+                    "Position": "3516,60"
                   }
                 },
                 {
@@ -548,7 +556,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "2556,24"
+                    "Position": "3804,60"
                   }
                 },
                 {
@@ -559,7 +567,52 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "2556,96"
+                    "Position": "3804,132"
+                  }
+                },
+                {
+                  "Id": 62,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "2028,492"
+                  }
+                },
+                {
+                  "Id": 156,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "2988,60"
+                  }
+                },
+                {
+                  "Id": 255,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "2580,180"
+                  }
+                },
+                {
+                  "Id": 256,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2544,36"
+                  }
+                },
+                {
+                  "Id": 257,
+                  "Type": "op.subtract",
+                  "UserData": {
+                    "Position": "2484,168"
+                  }
+                },
+                {
+                  "Id": 270,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkRPGamemode.DarkRPGamemode"
+                  },
+                  "UserData": {
+                    "Position": "876,168"
                   }
                 }
               ],
@@ -583,8 +636,8 @@
                   "DstName": "_value"
                 },
                 {
-                  "Id": 59,
-                  "Value": "jailpos",
+                  "Id": 269,
+                  "Value": "DarkRP",
                   "DstId": 19,
                   "DstName": "name"
                 },
@@ -638,8 +691,29 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 60,
-                  "Value": "JailPos: {0}",
+                  "SrcId": 22,
+                  "SrcName": "_result",
+                  "DstId": 25,
+                  "DstName": "args",
+                  "DstIndex": 1
+                },
+                {
+                  "SrcId": 45,
+                  "SrcName": "_result",
+                  "DstId": 25,
+                  "DstName": "args",
+                  "DstIndex": 2
+                },
+                {
+                  "SrcId": 46,
+                  "SrcName": "_result",
+                  "DstId": 25,
+                  "DstName": "args",
+                  "DstIndex": 3
+                },
+                {
+                  "Id": 155,
+                  "Value": "JailPos: {0} {1} Jail Pos Count : {2} Jail Random Pos Index:{3} ",
                   "DstId": 25,
                   "DstName": "format"
                 },
@@ -668,7 +742,7 @@
                   "DstName": "max"
                 },
                 {
-                  "Id": 61,
+                  "Id": 260,
                   "Value": 1,
                   "DstId": 46,
                   "DstName": "min"
@@ -680,7 +754,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 23,
+                  "SrcId": 156,
                   "SrcName": "_signal",
                   "DstId": 51,
                   "DstName": "_signal"
@@ -720,6 +794,81 @@
                   "SrcName": "_result",
                   "DstId": 53,
                   "DstName": "_target"
+                },
+                {
+                  "SrcId": 256,
+                  "SrcName": "true",
+                  "DstId": 156,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 48,
+                  "SrcName": "_result",
+                  "DstId": 156,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "SrcId": 53,
+                  "SrcName": "_result",
+                  "DstId": 156,
+                  "DstName": "args",
+                  "DstIndex": 1
+                },
+                {
+                  "SrcId": 44,
+                  "SrcName": "_result",
+                  "DstId": 156,
+                  "DstName": "args",
+                  "DstIndex": 2
+                },
+                {
+                  "Id": 254,
+                  "Value": "Jail Pos Game Object: {2} Jail Pos: {0} Jail Rot: {1} ",
+                  "DstId": 156,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 257,
+                  "SrcName": "_result",
+                  "DstId": 255,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "body.index",
+                  "DstId": 255,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_signal",
+                  "DstId": 256,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 255,
+                  "SrcName": "_result",
+                  "DstId": 256,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 45,
+                  "SrcName": "_result",
+                  "DstId": 257,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 258,
+                  "Value": 1,
+                  "DstId": 257,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "body.value",
+                  "DstId": 270,
+                  "DstName": "_this"
                 }
               ],
               "Defaults": {
@@ -758,12 +907,6 @@
               "go": "c023033f-8f52-44f5-bf42-48c819645c27"
             },
             "HotBarSlots": [
-              {
-                "HotBarSlotInfo": {
-                  "HotBarSlotHolder": []
-                },
-                "HotBarSlotCurrent": 0
-              },
               {
                 "HotBarSlotInfo": {
                   "HotBarSlotHolder": []
@@ -30880,7 +31023,7 @@
             "OpenChatLogic": {
               "__version": 9,
               "__guid": "7ffbc315-2bf4-4d9d-8b54-550ce02850df",
-              "__changeId": 31,
+              "__changeId": 33,
               "UserData": {
                 "Title": "Open Chat Logic",
                 "ReferencedComponentTypes": [
@@ -30921,7 +31064,23 @@
             "SteamId": 0,
             "SteamName": null,
             "TempGameObjectList": [],
-            "UnArrestLogic": null
+            "TempJailHotBarSlots": [],
+            "UnArrestLogic": {
+              "__version": 9,
+              "__guid": "7bc53671-4421-4928-8488-fb0dc685b992",
+              "__changeId": 1,
+              "UserData": {
+                "Title": "Unarrest Logic"
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                }
+              ],
+              "Links": []
+            }
           },
           {
             "__type": "PlayerHud",
@@ -34216,7 +34375,7 @@
             "EquipmentReloadTimeDelay": 0,
             "EquipmentShotgunBurstBulletSpeed": 0,
             "EquipmentUnlimitedAmmo": false,
-            "EquipmentUsingDefaultWeaponSystem": false,
+            "EquipmentUsingDefaultWeaponSystem": true,
             "ExtraBools": [],
             "ExtraFloat": [],
             "ExtraInt": [],
@@ -34653,7 +34812,7 @@
             "GraphFireEquipment": {
               "__version": 9,
               "__guid": "8d86bbbe-7c0d-4916-b497-51a617e24ee3",
-              "__changeId": 1145,
+              "__changeId": 1185,
               "UserData": {
                 "Title": "Graph Fire Default DarkRP Swep",
                 "ReferencedComponentTypes": [
@@ -38059,7 +38218,7 @@
                   "Id": 352,
                   "Type": "scene.ref",
                   "UserData": {
-                    "Position": "3156,15060"
+                    "Position": "3024,14964"
                   }
                 },
                 {
@@ -38070,14 +38229,14 @@
                     "_type": "PickupableEntityBase"
                   },
                   "UserData": {
-                    "Position": "3324,15084"
+                    "Position": "3168,15000"
                   }
                 },
                 {
                   "Id": 354,
                   "Type": "op.equal",
                   "UserData": {
-                    "Position": "3684,15084"
+                    "Position": "3528,15000"
                   }
                 },
                 {
@@ -42077,7 +42236,7 @@
                   "Id": 3186,
                   "Type": "scene.find",
                   "UserData": {
-                    "Position": "4512,14904"
+                    "Position": "4560,14688"
                   }
                 },
                 {
@@ -42088,7 +42247,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "4680,14928"
+                    "Position": "4728,14712"
                   }
                 },
                 {
@@ -42098,7 +42257,7 @@
                     "T": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "4776,14856"
+                    "Position": "4824,14640"
                   }
                 },
                 {
@@ -42129,7 +42288,7 @@
                     "T": "SwepDroppedEntity"
                   },
                   "UserData": {
-                    "Position": "4992,14904"
+                    "Position": "5040,14688"
                   }
                 },
                 {
@@ -42256,7 +42415,7 @@
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "4944,14880"
+                    "Position": "4992,14664"
                   }
                 },
                 {
@@ -42266,7 +42425,7 @@
                     "T": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "5040,14808"
+                    "Position": "5088,14592"
                   }
                 },
                 {
@@ -42515,7 +42674,7 @@
                     "_type": "PickupableEntityBase"
                   },
                   "UserData": {
-                    "Position": "6072,15156"
+                    "Position": "6204,15168"
                   }
                 },
                 {
@@ -42904,49 +43063,49 @@
                     "_type": "PickupableEntityBase"
                   },
                   "UserData": {
-                    "Position": "4944,15492"
+                    "Position": "4944,15552"
                   }
                 },
                 {
                   "Id": 3275,
                   "Type": "random.float",
                   "UserData": {
-                    "Position": "5352,15420"
+                    "Position": "5352,15480"
                   }
                 },
                 {
                   "Id": 3276,
                   "Type": "op.multiply",
                   "UserData": {
-                    "Position": "5280,15432"
+                    "Position": "5280,15492"
                   }
                 },
                 {
                   "Id": 3277,
                   "Type": "op.add",
                   "UserData": {
-                    "Position": "5472,15384"
+                    "Position": "5472,15444"
                   }
                 },
                 {
                   "Id": 3278,
                   "Type": "op.add",
                   "UserData": {
-                    "Position": "5472,15624"
+                    "Position": "5472,15684"
                   }
                 },
                 {
                   "Id": 3279,
                   "Type": "random.float",
                   "UserData": {
-                    "Position": "5472,15672"
+                    "Position": "5472,15732"
                   }
                 },
                 {
                   "Id": 3280,
                   "Type": "op.multiply",
                   "UserData": {
-                    "Position": "5376,15684"
+                    "Position": "5376,15744"
                   }
                 },
                 {
@@ -42956,7 +43115,7 @@
                     "_var": "Temp"
                   },
                   "UserData": {
-                    "Position": "4824,15624"
+                    "Position": "4824,15684"
                   }
                 },
                 {
@@ -42967,7 +43126,7 @@
                     "_type": "Vector3"
                   },
                   "UserData": {
-                    "Position": "5280,15384"
+                    "Position": "5280,15444"
                   }
                 },
                 {
@@ -43000,7 +43159,7 @@
                     "_type": "System.Double"
                   },
                   "UserData": {
-                    "Position": "5544,15336"
+                    "Position": "5556,15456"
                   }
                 },
                 {
@@ -43011,7 +43170,7 @@
                     "_type": "Rotation"
                   },
                   "UserData": {
-                    "Position": "6240,15396"
+                    "Position": "6252,15516"
                   }
                 },
                 {
@@ -43022,7 +43181,7 @@
                     "_type": "Vector3"
                   },
                   "UserData": {
-                    "Position": "5112,15624"
+                    "Position": "5112,15684"
                   }
                 },
                 {
@@ -43034,14 +43193,14 @@
                     "_type": "System.Double"
                   },
                   "UserData": {
-                    "Position": "5568,15420"
+                    "Position": "5580,15540"
                   }
                 },
                 {
                   "Id": 3289,
                   "Type": "op.multiply",
                   "UserData": {
-                    "Position": "6216,15288"
+                    "Position": "6228,15408"
                   }
                 },
                 {
@@ -43053,7 +43212,7 @@
                     "_type": "System.Double"
                   },
                   "UserData": {
-                    "Position": "5760,15336"
+                    "Position": "5772,15456"
                   }
                 },
                 {
@@ -43063,7 +43222,7 @@
                     "T": "System.Double"
                   },
                   "UserData": {
-                    "Position": "5904,15336"
+                    "Position": "5916,15456"
                   }
                 },
                 {
@@ -43075,7 +43234,7 @@
                     "_type": "System.Single"
                   },
                   "UserData": {
-                    "Position": "6120,15312"
+                    "Position": "6132,15432"
                   }
                 },
                 {
@@ -43087,7 +43246,7 @@
                     "_type": "System.Double"
                   },
                   "UserData": {
-                    "Position": "5784,15420"
+                    "Position": "5796,15540"
                   }
                 },
                 {
@@ -43097,7 +43256,7 @@
                     "T": "System.Double"
                   },
                   "UserData": {
-                    "Position": "5904,15420"
+                    "Position": "5916,15540"
                   }
                 },
                 {
@@ -43109,14 +43268,14 @@
                     "_type": "System.Single"
                   },
                   "UserData": {
-                    "Position": "6120,15396"
+                    "Position": "6132,15516"
                   }
                 },
                 {
                   "Id": 3296,
                   "Type": "op.multiply",
                   "UserData": {
-                    "Position": "6408,15396"
+                    "Position": "6420,15516"
                   }
                 },
                 {
@@ -43130,21 +43289,21 @@
                   "Id": 3298,
                   "Type": "op.add",
                   "UserData": {
-                    "Position": "6408,15300"
+                    "Position": "6420,15420"
                   }
                 },
                 {
                   "Id": 3299,
                   "Type": "scene.ref",
                   "UserData": {
-                    "Position": "4800,15456"
+                    "Position": "4800,15516"
                   }
                 },
                 {
                   "Id": 3300,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "6156,14940"
+                    "Position": "6180,14880"
                   }
                 },
                 {
@@ -43154,7 +43313,7 @@
                     "T": "System.Double"
                   },
                   "UserData": {
-                    "Position": "6024,15060"
+                    "Position": "5952,15036"
                   }
                 },
                 {
@@ -43193,14 +43352,14 @@
                   "Id": 3363,
                   "Type": "op.or",
                   "UserData": {
-                    "Position": "3696,15180"
+                    "Position": "3636,15060"
                   }
                 },
                 {
                   "Id": 3364,
                   "Type": "scene.ref",
                   "UserData": {
-                    "Position": "3228,15168"
+                    "Position": "3024,15072"
                   }
                 },
                 {
@@ -43211,7 +43370,7 @@
                     "_type": "PickupableEntityBase"
                   },
                   "UserData": {
-                    "Position": "3360,15204"
+                    "Position": "3276,15084"
                   }
                 },
                 {
@@ -43416,6 +43575,13 @@
                   "UserData": {
                     "Position": "14448,15888"
                   }
+                },
+                {
+                  "Id": 5339,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "4032,15012"
+                  }
                 }
               ],
               "Links": [
@@ -43438,7 +43604,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5147,
+                  "Id": 5533,
                   "Value": 0,
                   "DstId": 4,
                   "DstName": "index"
@@ -43474,7 +43640,7 @@
                   "DstName": "v"
                 },
                 {
-                  "Id": 5148,
+                  "Id": 5534,
                   "Value": true,
                   "DstId": 6,
                   "DstName": "value"
@@ -43498,7 +43664,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 5149,
+                  "Id": 5535,
                   "Value": 0,
                   "DstId": 9,
                   "DstName": "index"
@@ -43588,7 +43754,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5150,
+                  "Id": 5536,
                   "Value": 1E+15,
                   "DstId": 18,
                   "DstName": "maxLength"
@@ -43630,7 +43796,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5151,
+                  "Id": 5537,
                   "Value": "Fired key usp?",
                   "DstId": 22,
                   "DstName": "format"
@@ -43672,7 +43838,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 5152,
+                  "Id": 5538,
                   "Value": "darkrpgamemode",
                   "DstId": 27,
                   "DstName": "name"
@@ -43684,7 +43850,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5153,
+                  "Id": 5539,
                   "Value": 1,
                   "DstId": 29,
                   "DstName": "index"
@@ -43792,7 +43958,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5154,
+                  "Id": 5540,
                   "Value": 0.01,
                   "DstId": 41,
                   "DstName": "seconds"
@@ -43810,7 +43976,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5155,
+                  "Id": 5541,
                   "Value": true,
                   "DstId": 43,
                   "DstName": "_value"
@@ -43846,7 +44012,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5156,
+                  "Id": 5542,
                   "Value": 0,
                   "DstId": 47,
                   "DstName": "index"
@@ -43930,7 +44096,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 5157,
+                  "Id": 5543,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -43940,7 +44106,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5158,
+                  "Id": 5544,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -43950,7 +44116,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 5159,
+                  "Id": 5545,
                   "Value": "0,0,0",
                   "DstId": 62,
                   "DstName": "_target"
@@ -44076,7 +44242,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5160,
+                  "Id": 5546,
                   "Value": 0,
                   "DstId": 78,
                   "DstName": "index"
@@ -44112,7 +44278,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5161,
+                  "Id": 5547,
                   "Value": "hands",
                   "DstId": 81,
                   "DstName": "bone"
@@ -44130,7 +44296,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5162,
+                  "Id": 5548,
                   "Value": "FIRED SEMI Default Weapon System!!",
                   "DstId": 86,
                   "DstName": "format"
@@ -44142,7 +44308,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5163,
+                  "Id": 5549,
                   "Value": 0,
                   "DstId": 88,
                   "DstName": "b"
@@ -44178,7 +44344,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5164,
+                  "Id": 5550,
                   "Value": 3,
                   "DstId": 93,
                   "DstName": "b"
@@ -44208,7 +44374,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5165,
+                  "Id": 5551,
                   "Value": 1,
                   "DstId": 97,
                   "DstName": "b"
@@ -44238,7 +44404,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5166,
+                  "Id": 5552,
                   "Value": 2,
                   "DstId": 101,
                   "DstName": "b"
@@ -44268,7 +44434,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5167,
+                  "Id": 5553,
                   "Value": 6,
                   "DstId": 105,
                   "DstName": "b"
@@ -44298,7 +44464,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5168,
+                  "Id": 5554,
                   "Value": 4,
                   "DstId": 109,
                   "DstName": "b"
@@ -44328,7 +44494,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5169,
+                  "Id": 5555,
                   "Value": 5,
                   "DstId": 113,
                   "DstName": "b"
@@ -44358,7 +44524,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5170,
+                  "Id": 5556,
                   "Value": 7,
                   "DstId": 117,
                   "DstName": "b"
@@ -44418,7 +44584,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5171,
+                  "Id": 5557,
                   "Value": 0,
                   "DstId": 133,
                   "DstName": "b"
@@ -44460,7 +44626,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5172,
+                  "Id": 5558,
                   "Value": 0,
                   "DstId": 138,
                   "DstName": "index"
@@ -44496,7 +44662,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5173,
+                  "Id": 5559,
                   "Value": "hands",
                   "DstId": 141,
                   "DstName": "bone"
@@ -44538,7 +44704,7 @@
                   "DstName": "v"
                 },
                 {
-                  "Id": 5174,
+                  "Id": 5560,
                   "Value": true,
                   "DstId": 146,
                   "DstName": "value"
@@ -44682,7 +44848,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5175,
+                  "Id": 5561,
                   "Value": 1E+15,
                   "DstId": 163,
                   "DstName": "maxLength"
@@ -44736,7 +44902,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5176,
+                  "Id": 5562,
                   "Value": 0.01,
                   "DstId": 169,
                   "DstName": "seconds"
@@ -44838,7 +45004,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 5177,
+                  "Id": 5563,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -44848,7 +45014,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5178,
+                  "Id": 5564,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -44858,7 +45024,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 5179,
+                  "Id": 5565,
                   "Value": "0,0,0",
                   "DstId": 187,
                   "DstName": "_target"
@@ -44948,7 +45114,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5180,
+                  "Id": 5566,
                   "Value": false,
                   "DstId": 203,
                   "DstName": "_value"
@@ -45074,7 +45240,7 @@
                   "DstName": "target"
                 },
                 {
-                  "Id": 5181,
+                  "Id": 5567,
                   "Value": "darkrpgamemode",
                   "DstId": 215,
                   "DstName": "name"
@@ -45086,7 +45252,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5182,
+                  "Id": 5568,
                   "Value": 1,
                   "DstId": 217,
                   "DstName": "index"
@@ -45122,7 +45288,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5183,
+                  "Id": 5569,
                   "Value": 0,
                   "DstId": 222,
                   "DstName": "index"
@@ -45164,7 +45330,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5184,
+                  "Id": 5570,
                   "Value": 27,
                   "DstId": 226,
                   "DstName": "index"
@@ -45182,7 +45348,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5185,
+                  "Id": 5571,
                   "Value": 0,
                   "DstId": 230,
                   "DstName": "index"
@@ -45200,7 +45366,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5186,
+                  "Id": 5572,
                   "Value": 1,
                   "DstId": 232,
                   "DstName": "index"
@@ -45272,7 +45438,7 @@
                   "DstName": "v"
                 },
                 {
-                  "Id": 5187,
+                  "Id": 5573,
                   "Value": true,
                   "DstId": 239,
                   "DstName": "value"
@@ -45374,7 +45540,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5188,
+                  "Id": 5574,
                   "Value": 0,
                   "DstId": 252,
                   "DstName": "index"
@@ -45392,7 +45558,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5189,
+                  "Id": 5575,
                   "Value": 0,
                   "DstId": 254,
                   "DstName": "index"
@@ -45410,7 +45576,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5190,
+                  "Id": 5576,
                   "Value": 0,
                   "DstId": 256,
                   "DstName": "index"
@@ -45440,7 +45606,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5191,
+                  "Id": 5577,
                   "Value": 27,
                   "DstId": 258,
                   "DstName": "index"
@@ -45452,7 +45618,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5192,
+                  "Id": 5578,
                   "Value": 0,
                   "DstId": 260,
                   "DstName": "index"
@@ -45470,7 +45636,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5193,
+                  "Id": 5579,
                   "Value": 0,
                   "DstId": 262,
                   "DstName": "index"
@@ -45488,7 +45654,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5194,
+                  "Id": 5580,
                   "Value": 10,
                   "DstId": 263,
                   "DstName": "seconds"
@@ -45506,7 +45672,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5195,
+                  "Id": 5581,
                   "Value": 10,
                   "DstId": 264,
                   "DstName": "seconds"
@@ -45542,7 +45708,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5196,
+                  "Id": 5582,
                   "Value": 1,
                   "DstId": 267,
                   "DstName": "index"
@@ -45572,7 +45738,7 @@
                   "DstName": "target"
                 },
                 {
-                  "Id": 5197,
+                  "Id": 5583,
                   "Value": "darkrpgamemode",
                   "DstId": 271,
                   "DstName": "name"
@@ -45584,7 +45750,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5198,
+                  "Id": 5584,
                   "Value": 1,
                   "DstId": 273,
                   "DstName": "index"
@@ -45620,7 +45786,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5199,
+                  "Id": 5585,
                   "Value": 0,
                   "DstId": 278,
                   "DstName": "index"
@@ -45722,7 +45888,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5200,
+                  "Id": 5586,
                   "Value": 0,
                   "DstId": 289,
                   "DstName": "index"
@@ -45740,7 +45906,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5201,
+                  "Id": 5587,
                   "Value": 0,
                   "DstId": 291,
                   "DstName": "index"
@@ -45758,7 +45924,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5202,
+                  "Id": 5588,
                   "Value": 0,
                   "DstId": 293,
                   "DstName": "index"
@@ -45788,13 +45954,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5203,
+                  "Id": 5589,
                   "Value": 27,
                   "DstId": 295,
                   "DstName": "index"
                 },
                 {
-                  "Id": 5204,
+                  "Id": 5590,
                   "Value": 0,
                   "DstId": 296,
                   "DstName": "index"
@@ -45812,7 +45978,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5205,
+                  "Id": 5591,
                   "Value": 0,
                   "DstId": 298,
                   "DstName": "index"
@@ -45830,7 +45996,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5206,
+                  "Id": 5592,
                   "Value": 60,
                   "DstId": 299,
                   "DstName": "seconds"
@@ -45848,7 +46014,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5207,
+                  "Id": 5593,
                   "Value": 60,
                   "DstId": 300,
                   "DstName": "seconds"
@@ -45884,7 +46050,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5208,
+                  "Id": 5594,
                   "Value": 2,
                   "DstId": 303,
                   "DstName": "index"
@@ -45926,7 +46092,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5209,
+                  "Id": 5595,
                   "Value": 0,
                   "DstId": 309,
                   "DstName": "index"
@@ -46010,7 +46176,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5210,
+                  "Id": 5596,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -46026,7 +46192,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5211,
+                  "Id": 5597,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -46114,7 +46280,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5212,
+                  "Id": 5598,
                   "Value": 0,
                   "DstId": 327,
                   "DstName": "index"
@@ -46132,7 +46298,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5213,
+                  "Id": 5599,
                   "Value": false,
                   "DstId": 328,
                   "DstName": "_value"
@@ -46144,7 +46310,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5214,
+                  "Id": 5600,
                   "Value": 50,
                   "DstId": 329,
                   "DstName": "maxLength"
@@ -46186,7 +46352,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5215,
+                  "Id": 5601,
                   "Value": 1,
                   "DstId": 338,
                   "DstName": "index"
@@ -46234,7 +46400,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5216,
+                  "Id": 5602,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -46250,7 +46416,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5217,
+                  "Id": 5603,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -46272,7 +46438,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5218,
+                  "Id": 5604,
                   "Value": 1,
                   "DstId": 347,
                   "DstName": "index"
@@ -46284,7 +46450,7 @@
                   "DstName": "list"
                 },
                 {
-                  "Id": 5219,
+                  "Id": 5605,
                   "Value": 0,
                   "DstId": 348,
                   "DstName": "index"
@@ -46308,7 +46474,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5220,
+                  "Id": 5606,
                   "Value": {
                     "$type": "Simple",
                     "Type": "Vector3",
@@ -46330,7 +46496,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5221,
+                  "Id": 5607,
                   "Value": 8,
                   "DstId": 354,
                   "DstName": "b"
@@ -46360,7 +46526,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5222,
+                  "Id": 5608,
                   "Value": 9,
                   "DstId": 358,
                   "DstName": "b"
@@ -46396,7 +46562,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5223,
+                  "Id": 5609,
                   "Value": 0,
                   "DstId": 363,
                   "DstName": "index"
@@ -46432,7 +46598,7 @@
                   "DstName": "v"
                 },
                 {
-                  "Id": 5224,
+                  "Id": 5610,
                   "Value": true,
                   "DstId": 365,
                   "DstName": "value"
@@ -46456,7 +46622,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 5225,
+                  "Id": 5611,
                   "Value": 0,
                   "DstId": 368,
                   "DstName": "index"
@@ -46546,7 +46712,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5226,
+                  "Id": 5612,
                   "Value": 1E+15,
                   "DstId": 377,
                   "DstName": "maxLength"
@@ -46582,7 +46748,7 @@
                   "DstName": "in"
                 },
                 {
-                  "Id": 5227,
+                  "Id": 5613,
                   "Value": "Fired key usp auto?",
                   "DstId": 381,
                   "DstName": "format"
@@ -46624,7 +46790,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 5228,
+                  "Id": 5614,
                   "Value": "darkrpgamemode",
                   "DstId": 386,
                   "DstName": "name"
@@ -46636,7 +46802,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5229,
+                  "Id": 5615,
                   "Value": 1,
                   "DstId": 388,
                   "DstName": "index"
@@ -46732,7 +46898,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5230,
+                  "Id": 5616,
                   "Value": 0.01,
                   "DstId": 399,
                   "DstName": "seconds"
@@ -46750,7 +46916,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5231,
+                  "Id": 5617,
                   "Value": true,
                   "DstId": 401,
                   "DstName": "_value"
@@ -46786,7 +46952,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5232,
+                  "Id": 5618,
                   "Value": 0,
                   "DstId": 405,
                   "DstName": "index"
@@ -46870,7 +47036,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 5233,
+                  "Id": 5619,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -46880,7 +47046,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5234,
+                  "Id": 5620,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -46890,7 +47056,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 5235,
+                  "Id": 5621,
                   "Value": "0,0,0",
                   "DstId": 420,
                   "DstName": "_target"
@@ -47016,7 +47182,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5236,
+                  "Id": 5622,
                   "Value": 0,
                   "DstId": 436,
                   "DstName": "index"
@@ -47052,7 +47218,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5237,
+                  "Id": 5623,
                   "Value": "hands",
                   "DstId": 439,
                   "DstName": "bone"
@@ -47076,7 +47242,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5238,
+                  "Id": 5624,
                   "Value": "FIRED Default AUTO Weapon System!!",
                   "DstId": 444,
                   "DstName": "format"
@@ -47118,7 +47284,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5239,
+                  "Id": 5625,
                   "Value": 1,
                   "DstId": 452,
                   "DstName": "b"
@@ -47142,7 +47308,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5240,
+                  "Id": 5626,
                   "Value": 0,
                   "DstId": 456,
                   "DstName": "b"
@@ -47184,7 +47350,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5241,
+                  "Id": 5627,
                   "Value": 0,
                   "DstId": 461,
                   "DstName": "index"
@@ -47220,7 +47386,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5242,
+                  "Id": 5628,
                   "Value": "hands",
                   "DstId": 464,
                   "DstName": "bone"
@@ -47262,7 +47428,7 @@
                   "DstName": "v"
                 },
                 {
-                  "Id": 5243,
+                  "Id": 5629,
                   "Value": true,
                   "DstId": 469,
                   "DstName": "value"
@@ -47412,7 +47578,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5244,
+                  "Id": 5630,
                   "Value": 1E+15,
                   "DstId": 486,
                   "DstName": "maxLength"
@@ -47466,7 +47632,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5245,
+                  "Id": 5631,
                   "Value": 0.01,
                   "DstId": 492,
                   "DstName": "seconds"
@@ -47568,7 +47734,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 5246,
+                  "Id": 5632,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -47578,7 +47744,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5247,
+                  "Id": 5633,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -47588,7 +47754,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 5248,
+                  "Id": 5634,
                   "Value": "0,0,0",
                   "DstId": 510,
                   "DstName": "_target"
@@ -47678,7 +47844,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5249,
+                  "Id": 5635,
                   "Value": false,
                   "DstId": 526,
                   "DstName": "_value"
@@ -47804,7 +47970,7 @@
                   "DstName": "target"
                 },
                 {
-                  "Id": 5250,
+                  "Id": 5636,
                   "Value": "darkrpgamemode",
                   "DstId": 538,
                   "DstName": "name"
@@ -47816,7 +47982,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5251,
+                  "Id": 5637,
                   "Value": 1,
                   "DstId": 540,
                   "DstName": "index"
@@ -47852,7 +48018,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5252,
+                  "Id": 5638,
                   "Value": 0,
                   "DstId": 545,
                   "DstName": "index"
@@ -47894,7 +48060,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5253,
+                  "Id": 5639,
                   "Value": 27,
                   "DstId": 549,
                   "DstName": "index"
@@ -47912,7 +48078,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5254,
+                  "Id": 5640,
                   "Value": 0,
                   "DstId": 553,
                   "DstName": "index"
@@ -47930,7 +48096,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5255,
+                  "Id": 5641,
                   "Value": 1,
                   "DstId": 555,
                   "DstName": "index"
@@ -48002,7 +48168,7 @@
                   "DstName": "v"
                 },
                 {
-                  "Id": 5256,
+                  "Id": 5642,
                   "Value": true,
                   "DstId": 562,
                   "DstName": "value"
@@ -48104,7 +48270,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5257,
+                  "Id": 5643,
                   "Value": 0,
                   "DstId": 575,
                   "DstName": "index"
@@ -48122,7 +48288,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5258,
+                  "Id": 5644,
                   "Value": 0,
                   "DstId": 577,
                   "DstName": "index"
@@ -48140,7 +48306,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5259,
+                  "Id": 5645,
                   "Value": 0,
                   "DstId": 579,
                   "DstName": "index"
@@ -48170,7 +48336,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5260,
+                  "Id": 5646,
                   "Value": 27,
                   "DstId": 581,
                   "DstName": "index"
@@ -48182,7 +48348,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5261,
+                  "Id": 5647,
                   "Value": 0,
                   "DstId": 583,
                   "DstName": "index"
@@ -48200,7 +48366,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5262,
+                  "Id": 5648,
                   "Value": 0,
                   "DstId": 585,
                   "DstName": "index"
@@ -48218,7 +48384,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5263,
+                  "Id": 5649,
                   "Value": 10,
                   "DstId": 586,
                   "DstName": "seconds"
@@ -48236,7 +48402,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5264,
+                  "Id": 5650,
                   "Value": 10,
                   "DstId": 587,
                   "DstName": "seconds"
@@ -48272,7 +48438,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5265,
+                  "Id": 5651,
                   "Value": 1,
                   "DstId": 590,
                   "DstName": "index"
@@ -48302,7 +48468,7 @@
                   "DstName": "target"
                 },
                 {
-                  "Id": 5266,
+                  "Id": 5652,
                   "Value": "darkrpgamemode",
                   "DstId": 594,
                   "DstName": "name"
@@ -48314,7 +48480,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5267,
+                  "Id": 5653,
                   "Value": 1,
                   "DstId": 596,
                   "DstName": "index"
@@ -48350,7 +48516,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5268,
+                  "Id": 5654,
                   "Value": 0,
                   "DstId": 601,
                   "DstName": "index"
@@ -48452,7 +48618,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5269,
+                  "Id": 5655,
                   "Value": 0,
                   "DstId": 612,
                   "DstName": "index"
@@ -48470,7 +48636,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5270,
+                  "Id": 5656,
                   "Value": 0,
                   "DstId": 614,
                   "DstName": "index"
@@ -48488,7 +48654,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5271,
+                  "Id": 5657,
                   "Value": 0,
                   "DstId": 616,
                   "DstName": "index"
@@ -48518,13 +48684,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5272,
+                  "Id": 5658,
                   "Value": 27,
                   "DstId": 618,
                   "DstName": "index"
                 },
                 {
-                  "Id": 5273,
+                  "Id": 5659,
                   "Value": 0,
                   "DstId": 619,
                   "DstName": "index"
@@ -48542,7 +48708,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5274,
+                  "Id": 5660,
                   "Value": 0,
                   "DstId": 621,
                   "DstName": "index"
@@ -48560,7 +48726,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5275,
+                  "Id": 5661,
                   "Value": 60,
                   "DstId": 622,
                   "DstName": "seconds"
@@ -48578,7 +48744,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5276,
+                  "Id": 5662,
                   "Value": 60,
                   "DstId": 623,
                   "DstName": "seconds"
@@ -48614,7 +48780,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5277,
+                  "Id": 5663,
                   "Value": 2,
                   "DstId": 626,
                   "DstName": "index"
@@ -48656,7 +48822,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5278,
+                  "Id": 5664,
                   "Value": 0,
                   "DstId": 632,
                   "DstName": "index"
@@ -48740,7 +48906,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5279,
+                  "Id": 5665,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -48756,7 +48922,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5280,
+                  "Id": 5666,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -48844,7 +49010,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5281,
+                  "Id": 5667,
                   "Value": 0,
                   "DstId": 650,
                   "DstName": "index"
@@ -48862,7 +49028,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5282,
+                  "Id": 5668,
                   "Value": false,
                   "DstId": 651,
                   "DstName": "_value"
@@ -48874,7 +49040,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5283,
+                  "Id": 5669,
                   "Value": 50,
                   "DstId": 652,
                   "DstName": "maxLength"
@@ -48916,7 +49082,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5284,
+                  "Id": 5670,
                   "Value": 1,
                   "DstId": 661,
                   "DstName": "index"
@@ -48964,7 +49130,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5285,
+                  "Id": 5671,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -48980,7 +49146,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5286,
+                  "Id": 5672,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -49002,7 +49168,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5287,
+                  "Id": 5673,
                   "Value": 1,
                   "DstId": 670,
                   "DstName": "index"
@@ -49014,7 +49180,7 @@
                   "DstName": "list"
                 },
                 {
-                  "Id": 5288,
+                  "Id": 5674,
                   "Value": 0,
                   "DstId": 671,
                   "DstName": "index"
@@ -49038,7 +49204,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5289,
+                  "Id": 5675,
                   "Value": {
                     "$type": "Simple",
                     "Type": "Vector3",
@@ -49078,7 +49244,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5290,
+                  "Id": 5676,
                   "Value": true,
                   "DstId": 677,
                   "DstName": "_value"
@@ -49090,7 +49256,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5291,
+                  "Id": 5677,
                   "Value": false,
                   "DstId": 678,
                   "DstName": "_value"
@@ -49102,7 +49268,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5292,
+                  "Id": 5678,
                   "Value": 0.1,
                   "DstId": 679,
                   "DstName": "seconds"
@@ -49126,7 +49292,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5293,
+                  "Id": 5679,
                   "Value": false,
                   "DstId": 682,
                   "DstName": "_value"
@@ -49150,7 +49316,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 5294,
+                  "Id": 5680,
                   "Value": "Attack1",
                   "DstId": 685,
                   "DstName": "action"
@@ -49186,7 +49352,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5295,
+                  "Id": 5681,
                   "Value": true,
                   "DstId": 690,
                   "DstName": "_value"
@@ -49204,7 +49370,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5296,
+                  "Id": 5682,
                   "Value": false,
                   "DstId": 691,
                   "DstName": "_value"
@@ -49216,13 +49382,13 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5297,
+                  "Id": 5683,
                   "Value": "HERE2?",
                   "DstId": 694,
                   "DstName": "format"
                 },
                 {
-                  "Id": 5298,
+                  "Id": 5684,
                   "Value": "HERE4?",
                   "DstId": 695,
                   "DstName": "format"
@@ -49234,7 +49400,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5299,
+                  "Id": 5685,
                   "Value": 0.0001,
                   "DstId": 696,
                   "DstName": "seconds"
@@ -49252,7 +49418,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5300,
+                  "Id": 5686,
                   "Value": 0.0001,
                   "DstId": 697,
                   "DstName": "seconds"
@@ -49276,7 +49442,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5301,
+                  "Id": 5687,
                   "Value": false,
                   "DstId": 699,
                   "DstName": "_value"
@@ -49307,7 +49473,7 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 5302,
+                  "Id": 5688,
                   "Value": "Sound Pos: {0}",
                   "DstId": 703,
                   "DstName": "format"
@@ -49337,13 +49503,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5303,
+                  "Id": 5689,
                   "Value": 27,
                   "DstId": 706,
                   "DstName": "index"
                 },
                 {
-                  "Id": 5304,
+                  "Id": 5690,
                   "Value": 0,
                   "DstId": 707,
                   "DstName": "index"
@@ -49361,7 +49527,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5305,
+                  "Id": 5691,
                   "Value": 0,
                   "DstId": 709,
                   "DstName": "index"
@@ -49385,7 +49551,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5306,
+                  "Id": 5692,
                   "Value": 0,
                   "DstId": 712,
                   "DstName": "index"
@@ -49421,13 +49587,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5307,
+                  "Id": 5693,
                   "Value": 27,
                   "DstId": 715,
                   "DstName": "index"
                 },
                 {
-                  "Id": 5308,
+                  "Id": 5694,
                   "Value": 0,
                   "DstId": 716,
                   "DstName": "index"
@@ -49445,7 +49611,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5309,
+                  "Id": 5695,
                   "Value": 0,
                   "DstId": 718,
                   "DstName": "index"
@@ -49469,7 +49635,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5310,
+                  "Id": 5696,
                   "Value": 0,
                   "DstId": 721,
                   "DstName": "index"
@@ -49529,7 +49695,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5311,
+                  "Id": 5697,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -49575,7 +49741,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5312,
+                  "Id": 5698,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -49597,7 +49763,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5313,
+                  "Id": 5699,
                   "Value": "0,0,0",
                   "DstId": 1838,
                   "DstName": "_value"
@@ -49744,7 +49910,7 @@
                   "DstIndex": 2
                 },
                 {
-                  "Id": 5314,
+                  "Id": 5700,
                   "Value": "THIS IS THE ONE: {0} WHAT IS MUZZLE: {1} {2}",
                   "DstId": 2442,
                   "DstName": "format"
@@ -49780,7 +49946,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5315,
+                  "Id": 5701,
                   "Value": 4,
                   "DstId": 2468,
                   "DstName": "b"
@@ -49870,7 +50036,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5316,
+                  "Id": 5702,
                   "Value": 1E+15,
                   "DstId": 3180,
                   "DstName": "maxLength"
@@ -49924,7 +50090,7 @@
                   "DstName": "input"
                 },
                 {
-                  "Id": 5317,
+                  "Id": 5703,
                   "Value": "darkrpgamemode",
                   "DstId": 3186,
                   "DstName": "name"
@@ -49936,7 +50102,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5318,
+                  "Id": 5704,
                   "Value": 1,
                   "DstId": 3188,
                   "DstName": "index"
@@ -50032,7 +50198,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5319,
+                  "Id": 5705,
                   "Value": 0.01,
                   "DstId": 3199,
                   "DstName": "seconds"
@@ -50050,7 +50216,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5320,
+                  "Id": 5706,
                   "Value": true,
                   "DstId": 3201,
                   "DstName": "_value"
@@ -50086,7 +50252,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5321,
+                  "Id": 5707,
                   "Value": 0,
                   "DstId": 3205,
                   "DstName": "index"
@@ -50170,7 +50336,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 5322,
+                  "Id": 5708,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -50180,7 +50346,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5323,
+                  "Id": 5709,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -50190,7 +50356,7 @@
                   "DstName": "b"
                 },
                 {
-                  "Id": 5324,
+                  "Id": 5710,
                   "Value": "0,0,0",
                   "DstId": 3220,
                   "DstName": "_target"
@@ -50352,7 +50518,7 @@
                   "DstName": "target"
                 },
                 {
-                  "Id": 5325,
+                  "Id": 5711,
                   "Value": "darkrpgamemode",
                   "DstId": 3252,
                   "DstName": "name"
@@ -50364,7 +50530,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5326,
+                  "Id": 5712,
                   "Value": 1,
                   "DstId": 3254,
                   "DstName": "index"
@@ -50400,7 +50566,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5327,
+                  "Id": 5713,
                   "Value": 0,
                   "DstId": 3259,
                   "DstName": "index"
@@ -50418,8 +50584,8 @@
                   "DstName": "in"
                 },
                 {
-                  "SrcId": 355,
-                  "SrcName": "true",
+                  "SrcId": 5339,
+                  "SrcName": "_signal",
                   "DstId": 3261,
                   "DstName": "_signal"
                 },
@@ -50430,7 +50596,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5328,
+                  "Id": 5714,
                   "Value": 27,
                   "DstId": 3261,
                   "DstName": "index"
@@ -50448,7 +50614,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5329,
+                  "Id": 5715,
                   "Value": 0,
                   "DstId": 3265,
                   "DstName": "index"
@@ -50466,7 +50632,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 5330,
+                  "Id": 5716,
                   "Value": 1,
                   "DstId": 3267,
                   "DstName": "index"
@@ -50508,7 +50674,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5331,
+                  "Id": 5717,
                   "Value": false,
                   "DstId": 3271,
                   "DstName": "_value"
@@ -50556,7 +50722,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5332,
+                  "Id": 5718,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -50602,7 +50768,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5333,
+                  "Id": 5719,
                   "Value": {
                     "$type": "Simple",
                     "Type": "System.Single",
@@ -50624,7 +50790,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5334,
+                  "Id": 5720,
                   "Value": "0,0,0",
                   "DstId": 3283,
                   "DstName": "_value"
@@ -50771,7 +50937,7 @@
                   "DstIndex": 2
                 },
                 {
-                  "Id": 5335,
+                  "Id": 5721,
                   "Value": "THIS IS THE ONE: {0} WHAT IS MUZZLE: {1} {2}",
                   "DstId": 3300,
                   "DstName": "format"
@@ -50825,7 +50991,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 5336,
+                  "Id": 5722,
                   "Value": -1,
                   "DstId": 3408,
                   "DstName": "b"
@@ -50843,7 +51009,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5337,
+                  "Id": 5723,
                   "Value": false,
                   "DstId": 4395,
                   "DstName": "_value"
@@ -50861,7 +51027,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 5338,
+                  "Id": 5724,
                   "Value": "2",
                   "DstId": 4531,
                   "DstName": "format"
@@ -51009,6 +51175,18 @@
                   "SrcName": "_result",
                   "DstId": 4954,
                   "DstName": "_value"
+                },
+                {
+                  "SrcId": 355,
+                  "SrcName": "true",
+                  "DstId": 5339,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 5725,
+                  "Value": "Triggered: Rocket Launcher Logic 1",
+                  "DstId": 5339,
+                  "DstName": "format"
                 }
               ],
               "Defaults": {
@@ -68911,6 +69089,7 @@
             "NetworkMode": 1,
             "NetworkInterpolation": true,
             "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
             "OwnerTransfer": 1,
             "Components": [
               {
@@ -68972,6 +69151,7 @@
                 "NetworkMode": 2,
                 "NetworkInterpolation": true,
                 "NetworkOrphaned": 0,
+                "NetworkTransmit": true,
                 "OwnerTransfer": 1,
                 "Components": [],
                 "Children": [
@@ -68988,6 +69168,7 @@
                     "NetworkMode": 2,
                     "NetworkInterpolation": true,
                     "NetworkOrphaned": 0,
+                    "NetworkTransmit": true,
                     "OwnerTransfer": 1,
                     "Components": [],
                     "Children": []
@@ -69005,6 +69186,7 @@
                     "NetworkMode": 2,
                     "NetworkInterpolation": true,
                     "NetworkOrphaned": 0,
+                    "NetworkTransmit": true,
                     "OwnerTransfer": 1,
                     "Components": [],
                     "Children": [
@@ -69021,6 +69203,7 @@
                         "NetworkMode": 2,
                         "NetworkInterpolation": true,
                         "NetworkOrphaned": 0,
+                        "NetworkTransmit": true,
                         "OwnerTransfer": 1,
                         "Components": [],
                         "Children": []
@@ -69040,6 +69223,7 @@
                     "NetworkMode": 2,
                     "NetworkInterpolation": true,
                     "NetworkOrphaned": 0,
+                    "NetworkTransmit": true,
                     "OwnerTransfer": 1,
                     "Components": [],
                     "Children": [
@@ -69056,6 +69240,7 @@
                         "NetworkMode": 2,
                         "NetworkInterpolation": true,
                         "NetworkOrphaned": 0,
+                        "NetworkTransmit": true,
                         "OwnerTransfer": 1,
                         "Components": [],
                         "Children": []
@@ -69075,6 +69260,7 @@
                     "NetworkMode": 2,
                     "NetworkInterpolation": true,
                     "NetworkOrphaned": 0,
+                    "NetworkTransmit": true,
                     "OwnerTransfer": 1,
                     "Components": [],
                     "Children": [
@@ -69091,6 +69277,7 @@
                         "NetworkMode": 2,
                         "NetworkInterpolation": true,
                         "NetworkOrphaned": 0,
+                        "NetworkTransmit": true,
                         "OwnerTransfer": 1,
                         "Components": [],
                         "Children": []
@@ -69110,6 +69297,7 @@
                     "NetworkMode": 2,
                     "NetworkInterpolation": true,
                     "NetworkOrphaned": 0,
+                    "NetworkTransmit": true,
                     "OwnerTransfer": 1,
                     "Components": [],
                     "Children": []
@@ -69127,6 +69315,7 @@
                     "NetworkMode": 2,
                     "NetworkInterpolation": true,
                     "NetworkOrphaned": 0,
+                    "NetworkTransmit": true,
                     "OwnerTransfer": 1,
                     "Components": [],
                     "Children": []
@@ -69146,6 +69335,7 @@
                 "NetworkMode": 2,
                 "NetworkInterpolation": true,
                 "NetworkOrphaned": 0,
+                "NetworkTransmit": true,
                 "OwnerTransfer": 1,
                 "Components": [],
                 "Children": [
@@ -69162,6 +69352,7 @@
                     "NetworkMode": 2,
                     "NetworkInterpolation": true,
                     "NetworkOrphaned": 0,
+                    "NetworkTransmit": true,
                     "OwnerTransfer": 1,
                     "Components": [],
                     "Children": [
@@ -69178,6 +69369,7 @@
                         "NetworkMode": 2,
                         "NetworkInterpolation": true,
                         "NetworkOrphaned": 0,
+                        "NetworkTransmit": true,
                         "OwnerTransfer": 1,
                         "Components": [],
                         "Children": [
@@ -69194,6 +69386,7 @@
                             "NetworkMode": 2,
                             "NetworkInterpolation": true,
                             "NetworkOrphaned": 0,
+                            "NetworkTransmit": true,
                             "OwnerTransfer": 1,
                             "Components": [],
                             "Children": [
@@ -69210,6 +69403,7 @@
                                 "NetworkMode": 2,
                                 "NetworkInterpolation": true,
                                 "NetworkOrphaned": 0,
+                                "NetworkTransmit": true,
                                 "OwnerTransfer": 1,
                                 "Components": [],
                                 "Children": [
@@ -69226,6 +69420,7 @@
                                     "NetworkMode": 2,
                                     "NetworkInterpolation": true,
                                     "NetworkOrphaned": 0,
+                                    "NetworkTransmit": true,
                                     "OwnerTransfer": 1,
                                     "Components": [],
                                     "Children": [
@@ -69242,6 +69437,7 @@
                                         "NetworkMode": 2,
                                         "NetworkInterpolation": true,
                                         "NetworkOrphaned": 0,
+                                        "NetworkTransmit": true,
                                         "OwnerTransfer": 1,
                                         "Components": [],
                                         "Children": []
@@ -69259,6 +69455,7 @@
                                         "NetworkMode": 2,
                                         "NetworkInterpolation": true,
                                         "NetworkOrphaned": 0,
+                                        "NetworkTransmit": true,
                                         "OwnerTransfer": 1,
                                         "Components": [],
                                         "Children": []
@@ -69280,6 +69477,7 @@
                                 "NetworkMode": 2,
                                 "NetworkInterpolation": true,
                                 "NetworkOrphaned": 0,
+                                "NetworkTransmit": true,
                                 "OwnerTransfer": 1,
                                 "Components": [],
                                 "Children": [
@@ -69296,6 +69494,7 @@
                                     "NetworkMode": 2,
                                     "NetworkInterpolation": true,
                                     "NetworkOrphaned": 0,
+                                    "NetworkTransmit": true,
                                     "OwnerTransfer": 1,
                                     "Components": [],
                                     "Children": [
@@ -69312,6 +69511,7 @@
                                         "NetworkMode": 2,
                                         "NetworkInterpolation": true,
                                         "NetworkOrphaned": 0,
+                                        "NetworkTransmit": true,
                                         "OwnerTransfer": 1,
                                         "Components": [],
                                         "Children": []
@@ -69329,6 +69529,7 @@
                                         "NetworkMode": 2,
                                         "NetworkInterpolation": true,
                                         "NetworkOrphaned": 0,
+                                        "NetworkTransmit": true,
                                         "OwnerTransfer": 1,
                                         "Components": [],
                                         "Children": [
@@ -69345,6 +69546,7 @@
                                             "NetworkMode": 2,
                                             "NetworkInterpolation": true,
                                             "NetworkOrphaned": 0,
+                                            "NetworkTransmit": true,
                                             "OwnerTransfer": 1,
                                             "Components": [],
                                             "Children": []
@@ -69362,6 +69564,7 @@
                                             "NetworkMode": 2,
                                             "NetworkInterpolation": true,
                                             "NetworkOrphaned": 0,
+                                            "NetworkTransmit": true,
                                             "OwnerTransfer": 1,
                                             "Components": [],
                                             "Children": [
@@ -69378,6 +69581,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": []
@@ -69395,6 +69599,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": [
@@ -69411,6 +69616,7 @@
                                                     "NetworkMode": 2,
                                                     "NetworkInterpolation": true,
                                                     "NetworkOrphaned": 0,
+                                                    "NetworkTransmit": true,
                                                     "OwnerTransfer": 1,
                                                     "Components": [],
                                                     "Children": [
@@ -69427,6 +69633,7 @@
                                                         "NetworkMode": 2,
                                                         "NetworkInterpolation": true,
                                                         "NetworkOrphaned": 0,
+                                                        "NetworkTransmit": true,
                                                         "OwnerTransfer": 1,
                                                         "Components": [],
                                                         "Children": []
@@ -69448,6 +69655,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": [
@@ -69464,6 +69672,7 @@
                                                     "NetworkMode": 2,
                                                     "NetworkInterpolation": true,
                                                     "NetworkOrphaned": 0,
+                                                    "NetworkTransmit": true,
                                                     "OwnerTransfer": 1,
                                                     "Components": [],
                                                     "Children": [
@@ -69480,6 +69689,7 @@
                                                         "NetworkMode": 2,
                                                         "NetworkInterpolation": true,
                                                         "NetworkOrphaned": 0,
+                                                        "NetworkTransmit": true,
                                                         "OwnerTransfer": 1,
                                                         "Components": [],
                                                         "Children": [
@@ -69496,6 +69706,7 @@
                                                             "NetworkMode": 2,
                                                             "NetworkInterpolation": true,
                                                             "NetworkOrphaned": 0,
+                                                            "NetworkTransmit": true,
                                                             "OwnerTransfer": 1,
                                                             "Components": [],
                                                             "Children": []
@@ -69519,6 +69730,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": [
@@ -69535,6 +69747,7 @@
                                                     "NetworkMode": 2,
                                                     "NetworkInterpolation": true,
                                                     "NetworkOrphaned": 0,
+                                                    "NetworkTransmit": true,
                                                     "OwnerTransfer": 1,
                                                     "Components": [],
                                                     "Children": [
@@ -69551,6 +69764,7 @@
                                                         "NetworkMode": 2,
                                                         "NetworkInterpolation": true,
                                                         "NetworkOrphaned": 0,
+                                                        "NetworkTransmit": true,
                                                         "OwnerTransfer": 1,
                                                         "Components": [],
                                                         "Children": [
@@ -69567,6 +69781,7 @@
                                                             "NetworkMode": 2,
                                                             "NetworkInterpolation": true,
                                                             "NetworkOrphaned": 0,
+                                                            "NetworkTransmit": true,
                                                             "OwnerTransfer": 1,
                                                             "Components": [],
                                                             "Children": []
@@ -69590,6 +69805,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": [
@@ -69606,6 +69822,7 @@
                                                     "NetworkMode": 2,
                                                     "NetworkInterpolation": true,
                                                     "NetworkOrphaned": 0,
+                                                    "NetworkTransmit": true,
                                                     "OwnerTransfer": 1,
                                                     "Components": [],
                                                     "Children": [
@@ -69622,6 +69839,7 @@
                                                         "NetworkMode": 2,
                                                         "NetworkInterpolation": true,
                                                         "NetworkOrphaned": 0,
+                                                        "NetworkTransmit": true,
                                                         "OwnerTransfer": 1,
                                                         "Components": [],
                                                         "Children": [
@@ -69638,6 +69856,7 @@
                                                             "NetworkMode": 2,
                                                             "NetworkInterpolation": true,
                                                             "NetworkOrphaned": 0,
+                                                            "NetworkTransmit": true,
                                                             "OwnerTransfer": 1,
                                                             "Components": [],
                                                             "Children": []
@@ -69661,6 +69880,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": [
@@ -69677,6 +69897,7 @@
                                                     "NetworkMode": 2,
                                                     "NetworkInterpolation": true,
                                                     "NetworkOrphaned": 0,
+                                                    "NetworkTransmit": true,
                                                     "OwnerTransfer": 1,
                                                     "Components": [],
                                                     "Children": [
@@ -69693,6 +69914,7 @@
                                                         "NetworkMode": 2,
                                                         "NetworkInterpolation": true,
                                                         "NetworkOrphaned": 0,
+                                                        "NetworkTransmit": true,
                                                         "OwnerTransfer": 1,
                                                         "Components": [],
                                                         "Children": [
@@ -69709,6 +69931,7 @@
                                                             "NetworkMode": 2,
                                                             "NetworkInterpolation": true,
                                                             "NetworkOrphaned": 0,
+                                                            "NetworkTransmit": true,
                                                             "OwnerTransfer": 1,
                                                             "Components": [],
                                                             "Children": []
@@ -69732,6 +69955,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": []
@@ -69751,6 +69975,7 @@
                                             "NetworkMode": 2,
                                             "NetworkInterpolation": true,
                                             "NetworkOrphaned": 0,
+                                            "NetworkTransmit": true,
                                             "OwnerTransfer": 1,
                                             "Components": [],
                                             "Children": []
@@ -69768,6 +69993,7 @@
                                             "NetworkMode": 2,
                                             "NetworkInterpolation": true,
                                             "NetworkOrphaned": 0,
+                                            "NetworkTransmit": true,
                                             "OwnerTransfer": 1,
                                             "Components": [],
                                             "Children": []
@@ -69787,6 +70013,7 @@
                                         "NetworkMode": 2,
                                         "NetworkInterpolation": true,
                                         "NetworkOrphaned": 0,
+                                        "NetworkTransmit": true,
                                         "OwnerTransfer": 1,
                                         "Components": [],
                                         "Children": []
@@ -69808,6 +70035,7 @@
                                 "NetworkMode": 2,
                                 "NetworkInterpolation": true,
                                 "NetworkOrphaned": 0,
+                                "NetworkTransmit": true,
                                 "OwnerTransfer": 1,
                                 "Components": [],
                                 "Children": [
@@ -69824,6 +70052,7 @@
                                     "NetworkMode": 2,
                                     "NetworkInterpolation": true,
                                     "NetworkOrphaned": 0,
+                                    "NetworkTransmit": true,
                                     "OwnerTransfer": 1,
                                     "Components": [],
                                     "Children": [
@@ -69840,6 +70069,7 @@
                                         "NetworkMode": 2,
                                         "NetworkInterpolation": true,
                                         "NetworkOrphaned": 0,
+                                        "NetworkTransmit": true,
                                         "OwnerTransfer": 1,
                                         "Components": [],
                                         "Children": []
@@ -69857,6 +70087,7 @@
                                         "NetworkMode": 2,
                                         "NetworkInterpolation": true,
                                         "NetworkOrphaned": 0,
+                                        "NetworkTransmit": true,
                                         "OwnerTransfer": 1,
                                         "Components": [],
                                         "Children": [
@@ -69873,6 +70104,7 @@
                                             "NetworkMode": 2,
                                             "NetworkInterpolation": true,
                                             "NetworkOrphaned": 0,
+                                            "NetworkTransmit": true,
                                             "OwnerTransfer": 1,
                                             "Components": [],
                                             "Children": []
@@ -69890,6 +70122,7 @@
                                             "NetworkMode": 2,
                                             "NetworkInterpolation": true,
                                             "NetworkOrphaned": 0,
+                                            "NetworkTransmit": true,
                                             "OwnerTransfer": 1,
                                             "Components": [],
                                             "Children": [
@@ -69906,6 +70139,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": []
@@ -69923,6 +70157,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": [
@@ -69939,6 +70174,7 @@
                                                     "NetworkMode": 2,
                                                     "NetworkInterpolation": true,
                                                     "NetworkOrphaned": 0,
+                                                    "NetworkTransmit": true,
                                                     "OwnerTransfer": 1,
                                                     "Components": [],
                                                     "Children": [
@@ -69955,6 +70191,7 @@
                                                         "NetworkMode": 2,
                                                         "NetworkInterpolation": true,
                                                         "NetworkOrphaned": 0,
+                                                        "NetworkTransmit": true,
                                                         "OwnerTransfer": 1,
                                                         "Components": [],
                                                         "Children": []
@@ -69976,6 +70213,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": [
@@ -69992,6 +70230,7 @@
                                                     "NetworkMode": 2,
                                                     "NetworkInterpolation": true,
                                                     "NetworkOrphaned": 0,
+                                                    "NetworkTransmit": true,
                                                     "OwnerTransfer": 1,
                                                     "Components": [],
                                                     "Children": [
@@ -70008,6 +70247,7 @@
                                                         "NetworkMode": 2,
                                                         "NetworkInterpolation": true,
                                                         "NetworkOrphaned": 0,
+                                                        "NetworkTransmit": true,
                                                         "OwnerTransfer": 1,
                                                         "Components": [],
                                                         "Children": [
@@ -70024,6 +70264,7 @@
                                                             "NetworkMode": 2,
                                                             "NetworkInterpolation": true,
                                                             "NetworkOrphaned": 0,
+                                                            "NetworkTransmit": true,
                                                             "OwnerTransfer": 1,
                                                             "Components": [],
                                                             "Children": []
@@ -70047,6 +70288,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": [
@@ -70063,6 +70305,7 @@
                                                     "NetworkMode": 2,
                                                     "NetworkInterpolation": true,
                                                     "NetworkOrphaned": 0,
+                                                    "NetworkTransmit": true,
                                                     "OwnerTransfer": 1,
                                                     "Components": [],
                                                     "Children": [
@@ -70079,6 +70322,7 @@
                                                         "NetworkMode": 2,
                                                         "NetworkInterpolation": true,
                                                         "NetworkOrphaned": 0,
+                                                        "NetworkTransmit": true,
                                                         "OwnerTransfer": 1,
                                                         "Components": [],
                                                         "Children": [
@@ -70095,6 +70339,7 @@
                                                             "NetworkMode": 2,
                                                             "NetworkInterpolation": true,
                                                             "NetworkOrphaned": 0,
+                                                            "NetworkTransmit": true,
                                                             "OwnerTransfer": 1,
                                                             "Components": [],
                                                             "Children": []
@@ -70118,6 +70363,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": [
@@ -70134,6 +70380,7 @@
                                                     "NetworkMode": 2,
                                                     "NetworkInterpolation": true,
                                                     "NetworkOrphaned": 0,
+                                                    "NetworkTransmit": true,
                                                     "OwnerTransfer": 1,
                                                     "Components": [],
                                                     "Children": [
@@ -70150,6 +70397,7 @@
                                                         "NetworkMode": 2,
                                                         "NetworkInterpolation": true,
                                                         "NetworkOrphaned": 0,
+                                                        "NetworkTransmit": true,
                                                         "OwnerTransfer": 1,
                                                         "Components": [],
                                                         "Children": [
@@ -70166,6 +70414,7 @@
                                                             "NetworkMode": 2,
                                                             "NetworkInterpolation": true,
                                                             "NetworkOrphaned": 0,
+                                                            "NetworkTransmit": true,
                                                             "OwnerTransfer": 1,
                                                             "Components": [],
                                                             "Children": []
@@ -70189,6 +70438,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": [
@@ -70205,6 +70455,7 @@
                                                     "NetworkMode": 2,
                                                     "NetworkInterpolation": true,
                                                     "NetworkOrphaned": 0,
+                                                    "NetworkTransmit": true,
                                                     "OwnerTransfer": 1,
                                                     "Components": [],
                                                     "Children": [
@@ -70221,6 +70472,7 @@
                                                         "NetworkMode": 2,
                                                         "NetworkInterpolation": true,
                                                         "NetworkOrphaned": 0,
+                                                        "NetworkTransmit": true,
                                                         "OwnerTransfer": 1,
                                                         "Components": [],
                                                         "Children": [
@@ -70237,6 +70489,7 @@
                                                             "NetworkMode": 2,
                                                             "NetworkInterpolation": true,
                                                             "NetworkOrphaned": 0,
+                                                            "NetworkTransmit": true,
                                                             "OwnerTransfer": 1,
                                                             "Components": [],
                                                             "Children": []
@@ -70260,6 +70513,7 @@
                                                 "NetworkMode": 2,
                                                 "NetworkInterpolation": true,
                                                 "NetworkOrphaned": 0,
+                                                "NetworkTransmit": true,
                                                 "OwnerTransfer": 1,
                                                 "Components": [],
                                                 "Children": []
@@ -70279,6 +70533,7 @@
                                             "NetworkMode": 2,
                                             "NetworkInterpolation": true,
                                             "NetworkOrphaned": 0,
+                                            "NetworkTransmit": true,
                                             "OwnerTransfer": 1,
                                             "Components": [],
                                             "Children": []
@@ -70296,6 +70551,7 @@
                                             "NetworkMode": 2,
                                             "NetworkInterpolation": true,
                                             "NetworkOrphaned": 0,
+                                            "NetworkTransmit": true,
                                             "OwnerTransfer": 1,
                                             "Components": [],
                                             "Children": []
@@ -70315,6 +70571,7 @@
                                         "NetworkMode": 2,
                                         "NetworkInterpolation": true,
                                         "NetworkOrphaned": 0,
+                                        "NetworkTransmit": true,
                                         "OwnerTransfer": 1,
                                         "Components": [],
                                         "Children": []
@@ -70342,6 +70599,7 @@
                     "NetworkMode": 2,
                     "NetworkInterpolation": true,
                     "NetworkOrphaned": 0,
+                    "NetworkTransmit": true,
                     "OwnerTransfer": 1,
                     "Components": [],
                     "Children": [
@@ -70358,6 +70616,7 @@
                         "NetworkMode": 2,
                         "NetworkInterpolation": true,
                         "NetworkOrphaned": 0,
+                        "NetworkTransmit": true,
                         "OwnerTransfer": 1,
                         "Components": [],
                         "Children": []
@@ -70375,6 +70634,7 @@
                         "NetworkMode": 2,
                         "NetworkInterpolation": true,
                         "NetworkOrphaned": 0,
+                        "NetworkTransmit": true,
                         "OwnerTransfer": 1,
                         "Components": [],
                         "Children": [
@@ -70391,6 +70651,7 @@
                             "NetworkMode": 2,
                             "NetworkInterpolation": true,
                             "NetworkOrphaned": 0,
+                            "NetworkTransmit": true,
                             "OwnerTransfer": 1,
                             "Components": [],
                             "Children": []
@@ -70408,6 +70669,7 @@
                             "NetworkMode": 2,
                             "NetworkInterpolation": true,
                             "NetworkOrphaned": 0,
+                            "NetworkTransmit": true,
                             "OwnerTransfer": 1,
                             "Components": [],
                             "Children": [
@@ -70424,6 +70686,7 @@
                                 "NetworkMode": 2,
                                 "NetworkInterpolation": true,
                                 "NetworkOrphaned": 0,
+                                "NetworkTransmit": true,
                                 "OwnerTransfer": 1,
                                 "Components": [],
                                 "Children": []
@@ -70443,6 +70706,7 @@
                             "NetworkMode": 2,
                             "NetworkInterpolation": true,
                             "NetworkOrphaned": 0,
+                            "NetworkTransmit": true,
                             "OwnerTransfer": 1,
                             "Components": [],
                             "Children": []
@@ -70460,6 +70724,7 @@
                             "NetworkMode": 2,
                             "NetworkInterpolation": true,
                             "NetworkOrphaned": 0,
+                            "NetworkTransmit": true,
                             "OwnerTransfer": 1,
                             "Components": [],
                             "Children": []
@@ -70479,6 +70744,7 @@
                         "NetworkMode": 2,
                         "NetworkInterpolation": true,
                         "NetworkOrphaned": 0,
+                        "NetworkTransmit": true,
                         "OwnerTransfer": 1,
                         "Components": [],
                         "Children": []
@@ -70498,6 +70764,7 @@
                     "NetworkMode": 2,
                     "NetworkInterpolation": true,
                     "NetworkOrphaned": 0,
+                    "NetworkTransmit": true,
                     "OwnerTransfer": 1,
                     "Components": [],
                     "Children": [
@@ -70514,6 +70781,7 @@
                         "NetworkMode": 2,
                         "NetworkInterpolation": true,
                         "NetworkOrphaned": 0,
+                        "NetworkTransmit": true,
                         "OwnerTransfer": 1,
                         "Components": [],
                         "Children": []
@@ -70531,6 +70799,7 @@
                         "NetworkMode": 2,
                         "NetworkInterpolation": true,
                         "NetworkOrphaned": 0,
+                        "NetworkTransmit": true,
                         "OwnerTransfer": 1,
                         "Components": [],
                         "Children": [
@@ -70547,6 +70816,7 @@
                             "NetworkMode": 2,
                             "NetworkInterpolation": true,
                             "NetworkOrphaned": 0,
+                            "NetworkTransmit": true,
                             "OwnerTransfer": 1,
                             "Components": [],
                             "Children": []
@@ -70564,6 +70834,7 @@
                             "NetworkMode": 2,
                             "NetworkInterpolation": true,
                             "NetworkOrphaned": 0,
+                            "NetworkTransmit": true,
                             "OwnerTransfer": 1,
                             "Components": [],
                             "Children": [
@@ -70580,6 +70851,7 @@
                                 "NetworkMode": 2,
                                 "NetworkInterpolation": true,
                                 "NetworkOrphaned": 0,
+                                "NetworkTransmit": true,
                                 "OwnerTransfer": 1,
                                 "Components": [],
                                 "Children": []
@@ -70599,6 +70871,7 @@
                             "NetworkMode": 2,
                             "NetworkInterpolation": true,
                             "NetworkOrphaned": 0,
+                            "NetworkTransmit": true,
                             "OwnerTransfer": 1,
                             "Components": [],
                             "Children": []
@@ -70616,6 +70889,7 @@
                             "NetworkMode": 2,
                             "NetworkInterpolation": true,
                             "NetworkOrphaned": 0,
+                            "NetworkTransmit": true,
                             "OwnerTransfer": 1,
                             "Components": [],
                             "Children": []
@@ -70635,6 +70909,7 @@
                         "NetworkMode": 2,
                         "NetworkInterpolation": true,
                         "NetworkOrphaned": 0,
+                        "NetworkTransmit": true,
                         "OwnerTransfer": 1,
                         "Components": [],
                         "Children": []
@@ -70644,7 +70919,7 @@
                 ]
               },
               {
-                "__guid": "6af4a8e8-dd09-42fe-b579-9b30a4c378ed",
+                "__guid": "dc2f65f0-5e4d-4b95-a11a-a47205713e95",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - chef_shirt",
@@ -70656,11 +70931,12 @@
                 "NetworkMode": 2,
                 "NetworkInterpolation": true,
                 "NetworkOrphaned": 0,
+                "NetworkTransmit": true,
                 "OwnerTransfer": 1,
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "e1651b1c-7800-4d72-a479-109f4a7df444",
+                    "__guid": "45dfe73e-9371-43ea-9c7d-a45700f85038",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -70711,7 +70987,7 @@
                 "Children": []
               },
               {
-                "__guid": "41b3945a-3e70-4744-9501-c213dc6df1d0",
+                "__guid": "e9f4c429-5f1b-49ab-a45d-935e21288155",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - brown_cargo_pants",
@@ -70723,11 +70999,12 @@
                 "NetworkMode": 2,
                 "NetworkInterpolation": true,
                 "NetworkOrphaned": 0,
+                "NetworkTransmit": true,
                 "OwnerTransfer": 1,
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "c03fc08e-283e-474f-861e-67062a55c71b",
+                    "__guid": "41a9cd6a-e4f3-4ad0-a9be-dbd73176d950",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -70792,6 +71069,7 @@
             "NetworkMode": 2,
             "NetworkInterpolation": true,
             "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
             "OwnerTransfer": 1,
             "Components": [
               {
@@ -70800,7 +71078,7 @@
                 "__enabled": true,
                 "ColliderFlags": 0,
                 "Elasticity": null,
-                "End": "0,0,45.05097",
+                "End": "0,0,36",
                 "Friction": 0,
                 "IsTrigger": false,
                 "OnComponentDestroy": null,
@@ -70861,45 +71139,12 @@
             "NetworkMode": 1,
             "NetworkInterpolation": true,
             "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
             "OwnerTransfer": 1,
             "Components": [],
             "Children": []
           }
         ]
-      },
-      {
-        "__guid": "a00c0bed-22a6-41c7-81e3-eaab69bfd1f6",
-        "__version": 1,
-        "Flags": 0,
-        "Name": "GameObject",
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
-        "NetworkOrphaned": 0,
-        "OwnerTransfer": 1,
-        "Components": [],
-        "Children": []
-      },
-      {
-        "__guid": "2f0f145d-9e04-49f7-9024-0ecd58734329",
-        "__version": 1,
-        "Flags": 0,
-        "Name": "GameObject",
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
-        "NetworkOrphaned": 0,
-        "OwnerTransfer": 1,
-        "Components": [],
-        "Children": []
       },
       {
         "__guid": "29225860-5a3d-4207-a6ec-b14120b5d7c4",
@@ -70914,6 +71159,7 @@
         "NetworkMode": 2,
         "NetworkInterpolation": true,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [],
         "Children": [
@@ -70930,6 +71176,7 @@
             "NetworkMode": 2,
             "NetworkInterpolation": true,
             "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
             "OwnerTransfer": 1,
             "Components": [
               {
@@ -71220,6 +71467,7 @@
             "NetworkMode": 2,
             "NetworkInterpolation": true,
             "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
             "OwnerTransfer": 1,
             "Components": [
               {

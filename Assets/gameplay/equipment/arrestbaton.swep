@@ -73,15 +73,17 @@
   "GraphFireEquipment": {
     "__version": 9,
     "__guid": "c53e1ba5-3c4a-4fab-8511-b8b1eafd7a6d",
-    "__changeId": 69,
+    "__changeId": 135,
     "UserData": {
-      "Title": "Custom Fire Swep",
+      "Title": "Arrest Player Logic",
       "ReferencedComponentTypes": [
         "SwepDroppedEntity",
         "Sandbox.SkinnedModelRenderer",
         "PickupableEntityBase",
         "Sandbox.PlayerController"
-      ]
+      ],
+      "Description": "When in the range of the Arrest Baton it will arrest the player and transport them into a random jail cell pos.",
+      "Icon": "person_4"
     },
     "Variables": [
       {
@@ -984,6 +986,65 @@
         "UserData": {
           "Position": "2364,-24"
         }
+      },
+      {
+        "Id": 201,
+        "Type": "property",
+        "Properties": {
+          "_name": "TempJailHotBarSlots",
+          "_type": "DarkrpPlayerInfo"
+        },
+        "UserData": {
+          "Position": "2700,-24"
+        }
+      },
+      {
+        "Id": 202,
+        "Type": "property",
+        "Properties": {
+          "_name": "HotBarSlots",
+          "_type": "DarkrpPlayerInfo"
+        },
+        "UserData": {
+          "Position": "2700,48"
+        }
+      },
+      {
+        "Id": 215,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_name": "Clear",
+          "_type": "System.Collections.Generic.List`1"
+        },
+        "UserData": {
+          "Position": "3072,-24"
+        }
+      },
+      {
+        "Id": 216,
+        "Type": "property",
+        "Properties": {
+          "_name": "HotBarSlots",
+          "_type": "DarkrpPlayerInfo"
+        },
+        "UserData": {
+          "Position": "3024,132"
+        }
+      },
+      {
+        "Id": 221,
+        "Type": "list.set",
+        "Properties": {
+          "T": {
+            "$type": "Nested",
+            "DeclaringType": "DarkrpPlayerInfo",
+            "Name": "HotbarSlot"
+          }
+        },
+        "UserData": {
+          "Position": "3576,-24"
+        }
       }
     ],
     "Links": [
@@ -1060,7 +1121,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 172,
+        "Id": 187,
         "Value": 1E+15,
         "DstId": 8,
         "DstName": "maxLength"
@@ -1180,7 +1241,7 @@
         "DstName": "_value"
       },
       {
-        "Id": 173,
+        "Id": 188,
         "Value": "darkrpgamemode",
         "DstId": 35,
         "DstName": "name"
@@ -1192,7 +1253,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 174,
+        "Id": 189,
         "Value": 1,
         "DstId": 37,
         "DstName": "index"
@@ -1276,7 +1337,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 175,
+        "Id": 190,
         "Value": 0,
         "DstId": 47,
         "DstName": "index"
@@ -1306,7 +1367,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 176,
+        "Id": 191,
         "Value": 27,
         "DstId": 50,
         "DstName": "index"
@@ -1324,7 +1385,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 177,
+        "Id": 192,
         "Value": 0,
         "DstId": 54,
         "DstName": "index"
@@ -1342,7 +1403,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 178,
+        "Id": 193,
         "Value": 1,
         "DstId": 56,
         "DstName": "index"
@@ -1402,7 +1463,7 @@
         "DstName": "a"
       },
       {
-        "Id": 179,
+        "Id": 194,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -1448,7 +1509,7 @@
         "DstName": "a"
       },
       {
-        "Id": 180,
+        "Id": 195,
         "Value": {
           "$type": "Simple",
           "Type": "System.Single",
@@ -1470,7 +1531,7 @@
         "DstName": "_signal"
       },
       {
-        "Id": 181,
+        "Id": 196,
         "Value": "0,0,0",
         "DstId": 69,
         "DstName": "_value"
@@ -1617,7 +1678,7 @@
         "DstIndex": 2
       },
       {
-        "Id": 182,
+        "Id": 197,
         "Value": "THIS IS THE ONE: {0} WHAT IS MUZZLE: {1} {2}",
         "DstId": 86,
         "DstName": "format"
@@ -1647,7 +1708,7 @@
         "DstName": "_target"
       },
       {
-        "Id": 183,
+        "Id": 198,
         "Value": 0,
         "DstId": 114,
         "DstName": "index"
@@ -1717,6 +1778,79 @@
         "SrcName": "component",
         "DstId": 186,
         "DstName": "_target"
+      },
+      {
+        "SrcId": 186,
+        "SrcName": "_signal",
+        "DstId": 201,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 184,
+        "SrcName": "component",
+        "DstId": 201,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 202,
+        "SrcName": "_result",
+        "DstId": 201,
+        "DstName": "_value"
+      },
+      {
+        "SrcId": 184,
+        "SrcName": "component",
+        "DstId": 202,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 201,
+        "SrcName": "_signal",
+        "DstId": 215,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 202,
+        "SrcName": "_result",
+        "DstId": 215,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 184,
+        "SrcName": "component",
+        "DstId": 216,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 215,
+        "SrcName": "_signal",
+        "DstId": 221,
+        "DstName": "_signal"
+      },
+      {
+        "Id": 224,
+        "Value": 0,
+        "DstId": 221,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 216,
+        "SrcName": "_result",
+        "DstId": 221,
+        "DstName": "list"
+      },
+      {
+        "Id": 223,
+        "Value": {
+          "HotBarSlotInfo": {
+            "HotBarSlotHolder": [
+              "gameplay/equipment/hands.swep"
+            ]
+          },
+          "HotBarSlotCurrent": 0
+        },
+        "DstId": 221,
+        "DstName": "value"
       }
     ]
   },

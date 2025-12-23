@@ -46,8 +46,10 @@ public sealed class DarkrpPlayerInfo : Component
 	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot9 { get; set; }	
 	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public int MaxSlots { get; set; } = 9;
 	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public List<HotbarSlot> HotBarSlots { get; set; }
-	// Keep track of the currently active slot index
-    public int ActiveSlot { get; set; } = 0;
+	
+	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public List<HotbarSlot> TempJailHotBarSlots { get; set; }
+	// Keep track of the currently active slot index for the Inventory
+   public int ActiveSlot { get; set; } = 0;
 
 	public struct HotbarSlot
 	{
@@ -59,6 +61,25 @@ public sealed class DarkrpPlayerInfo : Component
 	{
 	[KeyProperty] public List<PickupableEntity> HotBarSlotHolder { get; set; }
 	}
+
+
+
+
+    [Button, Property, Feature("Debug"), Group("PD"), Title("Arrest Player")]
+	public void DebugArrestPlayer()
+	{
+		ArrestedLogic?.Invoke();
+	}
+
+
+    [Button, Property, Feature("Debug"), Group("PD"), Title("Unarrest Player")]
+	public void DebugUnArrestPlayer()
+	{
+		UnArrestLogic?.Invoke();
+	}
+
+
+
 
 
 	//Extra DarkRP Info
