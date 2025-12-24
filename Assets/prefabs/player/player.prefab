@@ -409,11 +409,12 @@
             "ArrestedLogic": {
               "__version": 9,
               "__guid": "4b771db4-e713-4842-978e-731ebeb503af",
-              "__changeId": 434,
+              "__changeId": 765,
               "UserData": {
                 "Title": "Arrested Logic",
                 "ReferencedComponentTypes": [
-                  "DarkRPGamemode.DarkRPGamemode"
+                  "DarkRPGamemode.DarkRPGamemode",
+                  "DarkrpPlayerInfo"
                 ],
                 "Icon": "watch",
                 "Description": "Triggers logic to arrest the player and move them to a jail cell.",
@@ -461,13 +462,6 @@
                   },
                   "UserData": {
                     "Position": "648,0"
-                  }
-                },
-                {
-                  "Id": 25,
-                  "Type": "log.info",
-                  "UserData": {
-                    "Position": "1872,72"
                   }
                 },
                 {
@@ -522,13 +516,6 @@
                   }
                 },
                 {
-                  "Id": 156,
-                  "Type": "log.info",
-                  "UserData": {
-                    "Position": "2952,60"
-                  }
-                },
-                {
                   "Id": 270,
                   "Type": "scene.get",
                   "Properties": {
@@ -571,53 +558,267 @@
                   }
                 },
                 {
-                  "Id": 342,
+                  "Id": 392,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3084,528"
+                  }
+                },
+                {
+                  "Id": 412,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "DisplayName",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3444,528"
+                  }
+                },
+                {
+                  "Id": 489,
                   "Type": "scene.ref",
                   "UserData": {
-                    "Position": "2964,300"
+                    "Position": "2976,312"
                   }
                 },
                 {
-                  "Id": 343,
+                  "Id": 523,
                   "Type": "property",
                   "Properties": {
-                    "_name": "WorldTransform",
-                    "_type": "Sandbox.GameObject"
+                    "_name": "HotBarSlots",
+                    "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "3672,300"
+                    "Position": "3996,324"
                   }
                 },
                 {
-                  "Id": 344,
+                  "Id": 525,
                   "Type": "property",
                   "Properties": {
-                    "_name": "WorldTransform",
-                    "_type": "Sandbox.GameObject"
+                    "_name": "HotBarSlots",
+                    "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "3684,228"
+                    "Position": "5484,132"
                   }
                 },
                 {
-                  "Id": 348,
+                  "Id": 526,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "5916,108"
+                  }
+                },
+                {
+                  "Id": 531,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "4128,60"
+                  }
+                },
+                {
+                  "Id": 533,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "4560,132"
+                  }
+                },
+                {
+                  "Id": 534,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "4620,84"
+                  }
+                },
+                {
+                  "Id": 541,
                   "Type": "property",
                   "Properties": {
-                    "_name": "Children",
-                    "_type": "Sandbox.GameObject"
+                    "_name": "TempJailHotBarSlots",
+                    "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "3120,384"
+                    "Position": "4308,588"
                   }
                 },
                 {
-                  "Id": 349,
-                  "Type": "list.get",
+                  "Id": 545,
+                  "Type": "list.set",
                   "Properties": {
-                    "T": "Sandbox.GameObject"
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
                   },
                   "UserData": {
-                    "Position": "3408,384"
+                    "Position": "4956,444"
+                  }
+                },
+                {
+                  "Id": 547,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "5076,108"
+                  }
+                },
+                {
+                  "Id": 550,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "5580,444"
+                  }
+                },
+                {
+                  "Id": 582,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "5328,108"
+                  }
+                },
+                {
+                  "Id": 586,
+                  "Type": "time.delayobj",
+                  "UserData": {
+                    "Position": "7320,108"
+                  }
+                },
+                {
+                  "Id": 587,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JailTime",
+                    "_type": "DarkRPGamemode.DarkRPGamemode"
+                  },
+                  "UserData": {
+                    "Position": "7284,180"
+                  }
+                },
+                {
+                  "Id": 588,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "DebugUnArrestPlayer",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "7680,108"
+                  }
+                },
+                {
+                  "Id": 590,
+                  "Type": "sound.play",
+                  "UserData": {
+                    "Position": "6300,108"
+                  }
+                },
+                {
+                  "Id": 591,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkRPGamemode.DarkRPGamemode"
+                  },
+                  "UserData": {
+                    "Position": "6120,372"
+                  }
+                },
+                {
+                  "Id": 607,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ArrestedSFX",
+                    "_type": "DarkRPGamemode.DarkRPGamemode"
+                  },
+                  "UserData": {
+                    "Position": "6252,156"
+                  }
+                },
+                {
+                  "Id": 616,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "7272,-96",
+                    "Size": "828,456",
+                    "Title": "Unarrest Player After Jail Time",
+                    "Layer": 2,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 617,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "2580,-336",
+                    "Size": "4212,1416",
+                    "Title": "Moves Player/Removes Sweps/Plays Audio",
+                    "Layer": 1,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 618,
+                  "Type": "time.delayobj",
+                  "UserData": {
+                    "Position": "7644,744"
+                  }
+                },
+                {
+                  "Id": 623,
+                  "Type": "forrange",
+                  "UserData": {
+                    "Position": "7392,720"
+                  }
+                },
+                {
+                  "Id": 626,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JailTime",
+                    "_type": "DarkRPGamemode.DarkRPGamemode"
+                  },
+                  "UserData": {
+                    "Position": "7092,792"
                   }
                 }
               ],
@@ -635,13 +836,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 360,
+                  "Id": 595,
                   "Value": true,
                   "DstId": 5,
                   "DstName": "_value"
                 },
                 {
-                  "Id": 361,
+                  "Id": 596,
                   "Value": "DarkRP",
                   "DstId": 19,
                   "DstName": "name"
@@ -659,60 +860,13 @@
                   "DstName": "enumerable"
                 },
                 {
-                  "SrcId": 21,
-                  "SrcName": "body",
-                  "DstId": 25,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 21,
-                  "SrcName": "body.value",
-                  "DstId": 25,
-                  "DstName": "args",
-                  "DstIndex": 0
-                },
-                {
-                  "Id": 358,
-                  "Value": null,
-                  "DstId": 25,
-                  "DstName": "args",
-                  "DstIndex": 1
-                },
-                {
-                  "Id": 359,
-                  "Value": null,
-                  "DstId": 25,
-                  "DstName": "args",
-                  "DstIndex": 2
-                },
-                {
-                  "SrcId": 46,
-                  "SrcName": "_result",
-                  "DstId": 25,
-                  "DstName": "args",
-                  "DstIndex": 3
-                },
-                {
-                  "SrcId": 298,
-                  "SrcName": "_result",
-                  "DstId": 25,
-                  "DstName": "args",
-                  "DstIndex": 4
-                },
-                {
-                  "Id": 362,
-                  "Value": "JailPos: {0} {1} Jail Pos Count : {2} Jail Random Pos Index:{3}  Jail Pos Array Length: {4}",
-                  "DstId": 25,
-                  "DstName": "format"
-                },
-                {
                   "SrcId": 298,
                   "SrcName": "_result",
                   "DstId": 46,
                   "DstName": "max"
                 },
                 {
-                  "Id": 363,
+                  "Id": 598,
                   "Value": 0,
                   "DstId": 46,
                   "DstName": "min"
@@ -724,13 +878,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 156,
-                  "SrcName": "_signal",
+                  "SrcId": 21,
+                  "SrcName": "body",
                   "DstId": 51,
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 342,
+                  "SrcId": 489,
                   "SrcName": "_result",
                   "DstId": 51,
                   "DstName": "_target"
@@ -748,7 +902,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 342,
+                  "SrcId": 489,
                   "SrcName": "_result",
                   "DstId": 52,
                   "DstName": "_target"
@@ -764,39 +918,6 @@
                   "SrcName": "_result",
                   "DstId": 53,
                   "DstName": "_target"
-                },
-                {
-                  "SrcId": 25,
-                  "SrcName": "_signal",
-                  "DstId": 156,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 48,
-                  "SrcName": "_result",
-                  "DstId": 156,
-                  "DstName": "args",
-                  "DstIndex": 0
-                },
-                {
-                  "SrcId": 53,
-                  "SrcName": "_result",
-                  "DstId": 156,
-                  "DstName": "args",
-                  "DstIndex": 1
-                },
-                {
-                  "SrcId": 336,
-                  "SrcName": "_result",
-                  "DstId": 156,
-                  "DstName": "args",
-                  "DstIndex": 2
-                },
-                {
-                  "Id": 364,
-                  "Value": "Jail Pos Game Object: {2} Jail Pos: {0} Jail Rot: {1} ",
-                  "DstId": 156,
-                  "DstName": "format"
                 },
                 {
                   "SrcId": 21,
@@ -829,40 +950,315 @@
                   "DstName": "list"
                 },
                 {
-                  "SrcId": 342,
+                  "SrcId": 489,
                   "SrcName": "_result",
-                  "DstId": 343,
+                  "DstId": 392,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 392,
+                  "SrcName": "_result",
+                  "DstId": 412,
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 336,
+                  "SrcId": 392,
                   "SrcName": "_result",
-                  "DstId": 344,
+                  "DstId": 523,
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 343,
+                  "SrcId": 392,
                   "SrcName": "_result",
-                  "DstId": 344,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 342,
-                  "SrcName": "_result",
-                  "DstId": 348,
+                  "DstId": 525,
                   "DstName": "_target"
                 },
                 {
-                  "Id": 365,
-                  "Value": 0,
-                  "DstId": 349,
+                  "SrcId": 582,
+                  "SrcName": "_signal",
+                  "DstId": 526,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 602,
+                  "Value": 1,
+                  "DstId": 526,
                   "DstName": "index"
                 },
                 {
-                  "SrcId": 348,
+                  "SrcId": 525,
                   "SrcName": "_result",
-                  "DstId": 349,
+                  "DstId": 526,
                   "DstName": "list"
+                },
+                {
+                  "Id": 603,
+                  "Value": {
+                    "HotBarSlotInfo": {
+                      "HotBarSlotHolder": [
+                        "gameplay/equipment/hands.swep"
+                      ]
+                    },
+                    "HotBarSlotCurrent": 0
+                  },
+                  "DstId": 526,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 52,
+                  "SrcName": "_signal",
+                  "DstId": 531,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 523,
+                  "SrcName": "_result",
+                  "DstId": 531,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 531,
+                  "SrcName": "body.index",
+                  "DstId": 533,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 604,
+                  "Value": 8,
+                  "DstId": 533,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 531,
+                  "SrcName": "body",
+                  "DstId": 534,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 533,
+                  "SrcName": "_result",
+                  "DstId": 534,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 392,
+                  "SrcName": "_result",
+                  "DstId": 541,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 534,
+                  "SrcName": "false",
+                  "DstId": 545,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 531,
+                  "SrcName": "body.index",
+                  "DstId": 545,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 541,
+                  "SrcName": "_result",
+                  "DstId": 545,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 531,
+                  "SrcName": "body.value",
+                  "DstId": 545,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 534,
+                  "SrcName": "true",
+                  "DstId": 547,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 531,
+                  "SrcName": "body.index",
+                  "DstId": 547,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 541,
+                  "SrcName": "_result",
+                  "DstId": 547,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 531,
+                  "SrcName": "body.value",
+                  "DstId": 547,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 545,
+                  "SrcName": "_signal",
+                  "DstId": 550,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 531,
+                  "SrcName": "body.index",
+                  "DstId": 550,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 523,
+                  "SrcName": "_result",
+                  "DstId": 550,
+                  "DstName": "list"
+                },
+                {
+                  "Id": 605,
+                  "Value": {
+                    "HotBarSlotInfo": {
+                      "HotBarSlotHolder": []
+                    },
+                    "HotBarSlotCurrent": 0
+                  },
+                  "DstId": 550,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 547,
+                  "SrcName": "_signal",
+                  "DstId": 582,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 531,
+                  "SrcName": "body.index",
+                  "DstId": 582,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 523,
+                  "SrcName": "_result",
+                  "DstId": 582,
+                  "DstName": "list"
+                },
+                {
+                  "Id": 606,
+                  "Value": {
+                    "HotBarSlotInfo": {
+                      "HotBarSlotHolder": []
+                    },
+                    "HotBarSlotCurrent": 0
+                  },
+                  "DstId": 582,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 590,
+                  "SrcName": "_signal",
+                  "DstId": 586,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 587,
+                  "SrcName": "_result",
+                  "DstId": 586,
+                  "DstName": "seconds"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 586,
+                  "DstName": "target"
+                },
+                {
+                  "SrcId": 591,
+                  "SrcName": "_result",
+                  "DstId": 587,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 586,
+                  "SrcName": "_signal",
+                  "DstId": 588,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 392,
+                  "SrcName": "_result",
+                  "DstId": 588,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 526,
+                  "SrcName": "_signal",
+                  "DstId": 590,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 590,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 607,
+                  "SrcName": "_result",
+                  "DstId": 590,
+                  "DstName": "soundEvent"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "body.value",
+                  "DstId": 591,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 591,
+                  "SrcName": "_result",
+                  "DstId": 607,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 623,
+                  "SrcName": "body",
+                  "DstId": 618,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 621,
+                  "Value": 1,
+                  "DstId": 618,
+                  "DstName": "seconds"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 618,
+                  "DstName": "target"
+                },
+                {
+                  "SrcId": 590,
+                  "SrcName": "_signal",
+                  "DstId": 623,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 625,
+                  "Value": 1,
+                  "DstId": 623,
+                  "DstName": "count"
+                },
+                {
+                  "SrcId": 626,
+                  "SrcName": "_result",
+                  "DstId": 623,
+                  "DstName": "increment"
+                },
+                {
+                  "SrcId": 591,
+                  "SrcName": "_result",
+                  "DstId": 626,
+                  "DstName": "_target"
                 }
               ],
               "Defaults": {
@@ -872,9 +1268,9 @@
                   "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
                   "component_type": "DarkrpPlayerInfo"
                 },
-                "$342.gameobject": {
+                "$489.gameobject": {
                   "_type": "gameobject",
-                  "prefab": "prefabs/player/player.prefab"
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
                 }
               }
             },
@@ -903,57 +1299,61 @@
             "HotBarSlots": [
               {
                 "HotBarSlotInfo": {
-                  "HotBarSlotHolder": []
+                  "HotBarSlotHolder": [
+                    "gameplay/equipment/usp.swep"
+                  ]
                 },
-                "HotBarSlotCurrent": 1
+                "HotBarSlotCurrent": 0
+              },
+              {
+                "HotBarSlotInfo": {
+                  "HotBarSlotHolder": [
+                    "gameplay/equipment/smg.swep"
+                  ]
+                },
+                "HotBarSlotCurrent": 0
               },
               {
                 "HotBarSlotInfo": {
                   "HotBarSlotHolder": []
                 },
-                "HotBarSlotCurrent": 2
+                "HotBarSlotCurrent": 0
               },
               {
                 "HotBarSlotInfo": {
                   "HotBarSlotHolder": []
                 },
-                "HotBarSlotCurrent": 3
+                "HotBarSlotCurrent": 0
               },
               {
                 "HotBarSlotInfo": {
                   "HotBarSlotHolder": []
                 },
-                "HotBarSlotCurrent": 4
+                "HotBarSlotCurrent": 0
               },
               {
                 "HotBarSlotInfo": {
                   "HotBarSlotHolder": []
                 },
-                "HotBarSlotCurrent": 5
+                "HotBarSlotCurrent": 0
               },
               {
                 "HotBarSlotInfo": {
                   "HotBarSlotHolder": []
                 },
-                "HotBarSlotCurrent": 6
+                "HotBarSlotCurrent": 0
               },
               {
                 "HotBarSlotInfo": {
                   "HotBarSlotHolder": []
                 },
-                "HotBarSlotCurrent": 7
+                "HotBarSlotCurrent": 0
               },
               {
                 "HotBarSlotInfo": {
                   "HotBarSlotHolder": []
                 },
-                "HotBarSlotCurrent": 8
-              },
-              {
-                "HotBarSlotInfo": {
-                  "HotBarSlotHolder": []
-                },
-                "HotBarSlotCurrent": 9
+                "HotBarSlotCurrent": 0
               }
             ],
             "IsArrested": false,
@@ -967,7 +1367,7 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "f3a07f66-dc23-4b68-a2ca-47b13abdf0e3",
-              "__changeId": 3845,
+              "__changeId": 3861,
               "UserData": {
                 "Title": "Start DarkRP Player",
                 "ReferencedComponentTypes": [
@@ -31058,22 +31458,1191 @@
             "SteamId": 0,
             "SteamName": null,
             "TempGameObjectList": [],
-            "TempJailHotBarSlots": [],
+            "TempJailHotBarSlots": [
+              {
+                "HotBarSlotInfo": {
+                  "HotBarSlotHolder": []
+                },
+                "HotBarSlotCurrent": 0
+              },
+              {
+                "HotBarSlotInfo": {
+                  "HotBarSlotHolder": []
+                },
+                "HotBarSlotCurrent": 0
+              },
+              {
+                "HotBarSlotInfo": {
+                  "HotBarSlotHolder": []
+                },
+                "HotBarSlotCurrent": 0
+              },
+              {
+                "HotBarSlotInfo": {
+                  "HotBarSlotHolder": []
+                },
+                "HotBarSlotCurrent": 0
+              },
+              {
+                "HotBarSlotInfo": {
+                  "HotBarSlotHolder": []
+                },
+                "HotBarSlotCurrent": 0
+              },
+              {
+                "HotBarSlotInfo": {
+                  "HotBarSlotHolder": []
+                },
+                "HotBarSlotCurrent": 0
+              },
+              {
+                "HotBarSlotInfo": {
+                  "HotBarSlotHolder": []
+                },
+                "HotBarSlotCurrent": 0
+              },
+              {
+                "HotBarSlotInfo": {
+                  "HotBarSlotHolder": []
+                },
+                "HotBarSlotCurrent": 0
+              },
+              {
+                "HotBarSlotInfo": {
+                  "HotBarSlotHolder": []
+                },
+                "HotBarSlotCurrent": 0
+              }
+            ],
             "UnArrestLogic": {
               "__version": 9,
               "__guid": "7bc53671-4421-4928-8488-fb0dc685b992",
-              "__changeId": 1,
+              "__changeId": 183,
               "UserData": {
-                "Title": "Unarrest Logic"
+                "Title": "Unarrest Logic",
+                "ReferencedComponentTypes": [
+                  "DarkrpPlayerInfo",
+                  "Sandbox.NetworkHelper",
+                  "DarkRPGamemode.DarkRPGamemode"
+                ]
               },
               "Variables": [],
               "Nodes": [
                 {
                   "Id": 0,
                   "Type": "input"
+                },
+                {
+                  "Id": 2,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "1908,516"
+                  }
+                },
+                {
+                  "Id": 3,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2076,396"
+                  }
+                },
+                {
+                  "Id": 5,
+                  "Type": "scene.findall",
+                  "UserData": {
+                    "Position": "180,60"
+                  }
+                },
+                {
+                  "Id": 6,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "372,0"
+                  }
+                },
+                {
+                  "Id": 10,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.NetworkHelper"
+                  },
+                  "UserData": {
+                    "Position": "492,108"
+                  }
+                },
+                {
+                  "Id": 12,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SpawnPoints",
+                    "_type": "Sandbox.NetworkHelper"
+                  },
+                  "UserData": {
+                    "Position": "540,84"
+                  }
+                },
+                {
+                  "Id": 13,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1452,336"
+                  }
+                },
+                {
+                  "Id": 14,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Count",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "828,72"
+                  }
+                },
+                {
+                  "Id": 17,
+                  "Type": "random.int",
+                  "UserData": {
+                    "Position": "1464,444"
+                  }
+                },
+                {
+                  "Id": 19,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "1104,84"
+                  }
+                },
+                {
+                  "Id": 20,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "1092,12"
+                  }
+                },
+                {
+                  "Id": 22,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1440,-60"
+                  }
+                },
+                {
+                  "Id": 26,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldPosition",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1680,288"
+                  }
+                },
+                {
+                  "Id": 27,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldRotation",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1944,288"
+                  }
+                },
+                {
+                  "Id": 28,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldPosition",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1668,-204"
+                  }
+                },
+                {
+                  "Id": 29,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldRotation",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1932,-204"
+                  }
+                },
+                {
+                  "Id": 30,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldPosition",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1668,216"
+                  }
+                },
+                {
+                  "Id": 31,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldRotation",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1932,216"
+                  }
+                },
+                {
+                  "Id": 33,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldPosition",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1680,-276"
+                  }
+                },
+                {
+                  "Id": 34,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "WorldRotation",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1944,-276"
+                  }
+                },
+                {
+                  "Id": 36,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "1752,-96"
+                  }
+                },
+                {
+                  "Id": 38,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2016,-120"
+                  }
+                },
+                {
+                  "Id": 39,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "TempJailHotBarSlots",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2304,-168"
+                  }
+                },
+                {
+                  "Id": 40,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "TempJailHotBarSlots",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2376,360"
+                  }
+                },
+                {
+                  "Id": 42,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "2616,216"
+                  }
+                },
+                {
+                  "Id": 43,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "2940,288"
+                  }
+                },
+                {
+                  "Id": 44,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "3000,240"
+                  }
+                },
+                {
+                  "Id": 47,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "HotBarSlots",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2916,432"
+                  }
+                },
+                {
+                  "Id": 48,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3336,324"
+                  }
+                },
+                {
+                  "Id": 51,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3384,120"
+                  }
+                },
+                {
+                  "Id": 54,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3720,324"
+                  }
+                },
+                {
+                  "Id": 56,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3720,120"
+                  }
+                },
+                {
+                  "Id": 59,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "2592,-276"
+                  }
+                },
+                {
+                  "Id": 60,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "2916,-204"
+                  }
+                },
+                {
+                  "Id": 61,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2976,-252"
+                  }
+                },
+                {
+                  "Id": 62,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "HotBarSlots",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2892,-60"
+                  }
+                },
+                {
+                  "Id": 63,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3312,-168"
+                  }
+                },
+                {
+                  "Id": 64,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3360,-372"
+                  }
+                },
+                {
+                  "Id": 65,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3696,-168"
+                  }
+                },
+                {
+                  "Id": 66,
+                  "Type": "list.set",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "DarkrpPlayerInfo",
+                      "Name": "HotbarSlot"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3696,-372"
+                  }
+                },
+                {
+                  "Id": 77,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsArrested",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3912,-372"
+                  }
+                },
+                {
+                  "Id": 80,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsArrested",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3924,120"
+                  }
+                },
+                {
+                  "Id": 86,
+                  "Type": "scene.findall",
+                  "UserData": {
+                    "Position": "4092,240"
+                  }
+                },
+                {
+                  "Id": 87,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "4212,120"
+                  }
+                },
+                {
+                  "Id": 98,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkRPGamemode.DarkRPGamemode"
+                  },
+                  "UserData": {
+                    "Position": "4404,240"
+                  }
+                },
+                {
+                  "Id": 99,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "UnArrestedSFX",
+                    "_type": "DarkRPGamemode.DarkRPGamemode"
+                  },
+                  "UserData": {
+                    "Position": "4584,192"
+                  }
+                },
+                {
+                  "Id": 100,
+                  "Type": "sound.play",
+                  "UserData": {
+                    "Position": "4632,144"
+                  }
+                },
+                {
+                  "Id": 101,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "576,-1092",
+                    "Size": "4320,2472",
+                    "Title": "Looks For A Spawn Point/Moves Player/Gives Back Basic legal Weapons/Plays Audio",
+                    "Layer": 1,
+                    "Color": 3
+                  }
                 }
               ],
-              "Links": []
+              "Links": [
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 3,
+                  "DstName": "_this"
+                },
+                {
+                  "Id": 9,
+                  "Value": "Gamemodes",
+                  "DstId": 5,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 6,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 6,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "body.value",
+                  "DstId": 10,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 10,
+                  "SrcName": "_result",
+                  "DstId": 12,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 17,
+                  "SrcName": "_result",
+                  "DstId": 13,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_result",
+                  "DstId": 13,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_result",
+                  "DstId": 14,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "_result",
+                  "DstId": 17,
+                  "DstName": "max"
+                },
+                {
+                  "Id": 18,
+                  "Value": 1,
+                  "DstId": 17,
+                  "DstName": "min"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "_result",
+                  "DstId": 19,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 21,
+                  "Value": 1,
+                  "DstId": 19,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "body",
+                  "DstId": 20,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 19,
+                  "SrcName": "_result",
+                  "DstId": 20,
+                  "DstName": "condition"
+                },
+                {
+                  "Id": 25,
+                  "Value": 0,
+                  "DstId": 22,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_result",
+                  "DstId": 22,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 13,
+                  "SrcName": "_result",
+                  "DstId": 26,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 13,
+                  "SrcName": "_result",
+                  "DstId": 27,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 22,
+                  "SrcName": "_result",
+                  "DstId": 28,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 22,
+                  "SrcName": "_result",
+                  "DstId": 29,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 20,
+                  "SrcName": "false",
+                  "DstId": 30,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 30,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 26,
+                  "SrcName": "_result",
+                  "DstId": 30,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 30,
+                  "SrcName": "_signal",
+                  "DstId": 31,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 31,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 27,
+                  "SrcName": "_result",
+                  "DstId": 31,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 20,
+                  "SrcName": "true",
+                  "DstId": 33,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "_result",
+                  "DstId": 33,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 28,
+                  "SrcName": "_result",
+                  "DstId": 33,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 33,
+                  "SrcName": "_signal",
+                  "DstId": 34,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "_result",
+                  "DstId": 34,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 29,
+                  "SrcName": "_result",
+                  "DstId": 34,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 36,
+                  "SrcName": "_result",
+                  "DstId": 38,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "_result",
+                  "DstId": 39,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 40,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 31,
+                  "SrcName": "_signal",
+                  "DstId": 42,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 40,
+                  "SrcName": "_result",
+                  "DstId": 42,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "body.index",
+                  "DstId": 43,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 46,
+                  "Value": 8,
+                  "DstId": 43,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "body",
+                  "DstId": 44,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 43,
+                  "SrcName": "_result",
+                  "DstId": 44,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 47,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 44,
+                  "SrcName": "false",
+                  "DstId": 48,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "body.index",
+                  "DstId": 48,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 47,
+                  "SrcName": "_result",
+                  "DstId": 48,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "body.value",
+                  "DstId": 48,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 44,
+                  "SrcName": "true",
+                  "DstId": 51,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "body.index",
+                  "DstId": 51,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 47,
+                  "SrcName": "_result",
+                  "DstId": 51,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "body.value",
+                  "DstId": 51,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 48,
+                  "SrcName": "_signal",
+                  "DstId": 54,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "body.index",
+                  "DstId": 54,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 40,
+                  "SrcName": "_result",
+                  "DstId": 54,
+                  "DstName": "list"
+                },
+                {
+                  "Id": 55,
+                  "Value": {
+                    "HotBarSlotInfo": {
+                      "HotBarSlotHolder": []
+                    },
+                    "HotBarSlotCurrent": 0
+                  },
+                  "DstId": 54,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 51,
+                  "SrcName": "_signal",
+                  "DstId": 56,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "body.index",
+                  "DstId": 56,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 40,
+                  "SrcName": "_result",
+                  "DstId": 56,
+                  "DstName": "list"
+                },
+                {
+                  "Id": 58,
+                  "Value": {
+                    "HotBarSlotInfo": {
+                      "HotBarSlotHolder": []
+                    },
+                    "HotBarSlotCurrent": 0
+                  },
+                  "DstId": 56,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 34,
+                  "SrcName": "_signal",
+                  "DstId": 59,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 39,
+                  "SrcName": "_result",
+                  "DstId": 59,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "body.index",
+                  "DstId": 60,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 72,
+                  "Value": 8,
+                  "DstId": 60,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "body",
+                  "DstId": 61,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 60,
+                  "SrcName": "_result",
+                  "DstId": 61,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "_result",
+                  "DstId": 62,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 61,
+                  "SrcName": "false",
+                  "DstId": 63,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "body.index",
+                  "DstId": 63,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 62,
+                  "SrcName": "_result",
+                  "DstId": 63,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "body.value",
+                  "DstId": 63,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 61,
+                  "SrcName": "true",
+                  "DstId": 64,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "body.index",
+                  "DstId": 64,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 62,
+                  "SrcName": "_result",
+                  "DstId": 64,
+                  "DstName": "list"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "body.value",
+                  "DstId": 64,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 63,
+                  "SrcName": "_signal",
+                  "DstId": 65,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "body.index",
+                  "DstId": 65,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 39,
+                  "SrcName": "_result",
+                  "DstId": 65,
+                  "DstName": "list"
+                },
+                {
+                  "Id": 75,
+                  "Value": {
+                    "HotBarSlotInfo": {
+                      "HotBarSlotHolder": []
+                    },
+                    "HotBarSlotCurrent": 0
+                  },
+                  "DstId": 65,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 64,
+                  "SrcName": "_signal",
+                  "DstId": 66,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 59,
+                  "SrcName": "body.index",
+                  "DstId": 66,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 39,
+                  "SrcName": "_result",
+                  "DstId": 66,
+                  "DstName": "list"
+                },
+                {
+                  "Id": 76,
+                  "Value": {
+                    "HotBarSlotInfo": {
+                      "HotBarSlotHolder": []
+                    },
+                    "HotBarSlotCurrent": 0
+                  },
+                  "DstId": 66,
+                  "DstName": "value"
+                },
+                {
+                  "SrcId": 66,
+                  "SrcName": "_signal",
+                  "DstId": 77,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "_result",
+                  "DstId": 77,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 79,
+                  "Value": false,
+                  "DstId": 77,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 56,
+                  "SrcName": "_signal",
+                  "DstId": 80,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 80,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 82,
+                  "Value": false,
+                  "DstId": 80,
+                  "DstName": "_value"
+                },
+                {
+                  "Id": 97,
+                  "Value": "DarkRP",
+                  "DstId": 86,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 80,
+                  "SrcName": "_signal",
+                  "DstId": 87,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 86,
+                  "SrcName": "_result",
+                  "DstId": 87,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 87,
+                  "SrcName": "body.value",
+                  "DstId": 98,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 98,
+                  "SrcName": "_result",
+                  "DstId": 99,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 87,
+                  "SrcName": "body",
+                  "DstId": 100,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 100,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 99,
+                  "SrcName": "_result",
+                  "DstId": 100,
+                  "DstName": "soundEvent"
+                }
+              ],
+              "Defaults": {
+                "$2.gameobject": {
+                  "_type": "gameobject",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                },
+                "$36.gameobject": {
+                  "_type": "gameobject",
+                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
+                }
+              }
             }
           },
           {
@@ -70913,7 +72482,7 @@
                 ]
               },
               {
-                "__guid": "17f7ff26-c649-4335-b25c-1b8df1252481",
+                "__guid": "519a2b33-db1d-45fc-a27c-124eb2c22b52",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - chef_shirt",
@@ -70930,7 +72499,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "ed232839-4ac7-44c6-824c-39a2b3f97b1c",
+                    "__guid": "2c2ad3c4-d59e-444d-8e19-16152a805517",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -70981,7 +72550,7 @@
                 "Children": []
               },
               {
-                "__guid": "c6ac9a78-20ff-42e7-b786-b085d3950911",
+                "__guid": "3593a940-64c7-4913-9893-8447b842ae43",
                 "__version": 1,
                 "Flags": 0,
                 "Name": "Clothing - brown_cargo_pants",
@@ -70998,7 +72567,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "12f1a0af-fa53-4ab4-a0dc-91ef416d10bf",
+                    "__guid": "59bf7d3a-177b-4eb0-a9f4-41be4387ded5",
                     "__enabled": true,
                     "AnimationGraph": null,
                     "BodyGroups": 18446744073709551615,
@@ -71139,6 +72708,24 @@
             "Children": []
           }
         ]
+      },
+      {
+        "__guid": "6f6de9b6-60b0-4aa1-a5a4-ffc1e1802ee5",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "GameObject",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
       },
       {
         "__guid": "e2a55225-2b75-4555-9795-06d77de7a9ff",
@@ -73410,7 +74997,7 @@
                 "GraphBuyDoor": {
                   "__version": 9,
                   "__guid": "670213ac-ec44-47d5-b4ef-7342cd8f2762",
-                  "__changeId": 98,
+                  "__changeId": 99,
                   "UserData": {
                     "Title": "Graph Buy Door",
                     "ReferencedComponentTypes": [

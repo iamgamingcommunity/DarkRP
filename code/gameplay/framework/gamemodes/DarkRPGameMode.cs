@@ -30,8 +30,11 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Law Info")] public SoundEvent LockDownStartSFX { get; set; }
 	[Property, Feature("Law Info")] public SoundEvent LockDownOnGoingSFX { get; set; }
 	[Property, Feature("Law Info")] public SoundEvent AlarmSound { get; set; }
+	[Property, Feature("Law Info")] public SoundEvent ArrestedSFX { get; set; }
+	[Property, Feature("Law Info")] public SoundEvent UnArrestedSFX { get; set; }
 	[Property, Feature("Law Info")] public PickupableEntityBase[] PDStartingEquipment { get; set; }
 	[Property, Feature("Law Info")] public PickupableEntityBase[] LicensedEquipment { get; set; }
+
 	
 	//DarkRP Vote System Info
 	[Property, Feature("Vote Info")] public int DefualtVoteDuration { get; set; }

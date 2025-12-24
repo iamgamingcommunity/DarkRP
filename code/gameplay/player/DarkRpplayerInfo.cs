@@ -54,7 +54,7 @@ public sealed class DarkrpPlayerInfo : Component
 	public struct HotbarSlot
 	{
 	[KeyProperty, Group("Player Hotbar Info")] public HotbarSlotInfo HotBarSlotInfo { get; set; }
-		[Property] public int HotBarSlotCurrent { get; set; }
+		[Property, Description("This is the current slot A.K.A Swep you have active in the specific weapon catagory. THIS IS NEEDED!")] public int HotBarSlotCurrent { get; set; }
 	}
 
 	public struct HotbarSlotInfo

@@ -41,6 +41,14 @@
 	</div>
 </chat-menu-input>
 
+<arrested-ui class="arrestedui">
+	<div class="arresteduibackground">
+					<div class="arresteduitext">
+						Released in @JailTime
+					</div>
+                    </div>
+</arrested-ui>
+
 
 @code
 {
@@ -60,6 +68,7 @@
 	public bool IsDefaultDarkRPChatOpen {get; set;}
     public TextEntry DefaultDarkRPChatMessage {get; set;}
 
+	public int JailTime {get; set;}
 
 
 
@@ -91,7 +100,7 @@
 
     foreach (var slot in Player.HotBarSlots)
     {
-        hash = System.HashCode.Combine(hash, slot.HotBarSlotCurrent, slot.HotBarSlotInfo.HotBarSlotHolder.Count, IsDefaultDarkRPChatOpen);
+        hash = System.HashCode.Combine(hash, slot.HotBarSlotCurrent, slot.HotBarSlotInfo.HotBarSlotHolder.Count, IsDefaultDarkRPChatOpen, JailTime);
     }
 
     return hash;
