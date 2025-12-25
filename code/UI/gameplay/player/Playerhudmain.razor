@@ -41,10 +41,13 @@
 	</div>
 </chat-menu-input>
 
-<arrested-ui class="arrestedui">
+
+
+
+<arrested-ui class="@(IsArrested ? "" : "hide")">
 	<div class="arresteduibackground">
 					<div class="arresteduitext">
-						Released in @JailTime
+						Released in <span class="Jailtime">@JailTime Seconds</span>
 					</div>
                     </div>
 </arrested-ui>
@@ -68,8 +71,14 @@
 	public bool IsDefaultDarkRPChatOpen {get; set;}
     public TextEntry DefaultDarkRPChatMessage {get; set;}
 
-	public int JailTime {get; set;}
 
+
+
+
+    //Arrested UI Vars
+
+	public int JailTime {get; set;}
+	public bool IsArrested {get; set;}
 
 
 	public void SendDefaultDarkRPChatMessage(GameObject PlayerController, string ChatMessage)
@@ -96,11 +105,11 @@
 	/// </summary>
 	protected override int BuildHash()
 {
-    int hash = System.HashCode.Combine(MyStringValue, Player.ActiveSlot, Player.HotBarSlots.Count);
+    int hash = System.HashCode.Combine(MyStringValue, Player.ActiveSlot, Player.HotBarSlots.Count, JailTime, IsArrested);
 
     foreach (var slot in Player.HotBarSlots)
     {
-        hash = System.HashCode.Combine(hash, slot.HotBarSlotCurrent, slot.HotBarSlotInfo.HotBarSlotHolder.Count, IsDefaultDarkRPChatOpen, JailTime);
+        hash = System.HashCode.Combine(hash, slot.HotBarSlotCurrent, slot.HotBarSlotInfo.HotBarSlotHolder.Count, IsDefaultDarkRPChatOpen);
     }
 
     return hash;
