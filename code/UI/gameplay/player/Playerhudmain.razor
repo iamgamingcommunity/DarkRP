@@ -11,7 +11,7 @@
 
 </root>
 
-<div class="hotbar">
+@* <div class="hotbar">
     @for ( int i = 0; i < Player.HotBarSlots.Count; i++ )
     {
         var slot = Player.HotBarSlots[i];
@@ -25,14 +25,13 @@
                     {
                         var item = slot.HotBarSlotInfo.HotBarSlotHolder[j];
                         <div class="slot-item @(slot.HotBarSlotCurrent == j ? "selected" : "")">
-                            @item.ToString()  @* Replace with icon *@
+                            @item.ToString()  @* Replace with icon 
                         </div>
                     }
                 </div>
             }
         </div>
-    }
-</div>
+</div>*@
 
 <chat-menu-input class="@(IsDefaultDarkRPChatOpen ? "" : "hide")">
  	<div class="chat-input">
@@ -109,7 +108,7 @@
 
     foreach (var slot in Player.HotBarSlots)
     {
-        hash = System.HashCode.Combine(hash, slot.HotBarSlotCurrent, slot.HotBarSlotInfo.HotBarSlotHolder.Count, IsDefaultDarkRPChatOpen);
+        hash = System.HashCode.Combine(hash, IsDefaultDarkRPChatOpen);
     }
 
     return hash;

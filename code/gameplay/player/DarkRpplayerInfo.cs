@@ -59,7 +59,15 @@ public sealed class DarkrpPlayerInfo : Component
 
 	public struct HotbarSlotInfo
 	{
-	[KeyProperty] public List<PickupableEntity> HotBarSlotHolder { get; set; }
+	[KeyProperty] public List<PickupableEntityHotbarStructure> PickupableEntityHotbarStructure { get; set; }
+	}
+
+
+
+	public struct PickupableEntityHotbarStructure
+	{
+	[Description("This is used for keeping the sweps with the player after they are unarrested. The Lists it checks for are 'Starting Equipment' & 'Legalized Equipment'.")]public bool KeepSwep { get; set; }
+	[KeyProperty] public PickupableEntity HotBarSlotHolder { get; set; }
 	}
 
 

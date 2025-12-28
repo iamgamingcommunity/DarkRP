@@ -14,7 +14,7 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Basic Info")] public int SalaryPaymentSystemCycleTime { get; set; }
 	[Property, Feature("Basic Info")] public int SalaryPaymentMultiplier { get; set; }
 	[Property, Feature("Basic Info")] public int EntityPriceMultiplier { get; set; }
-	[Property, Feature("Basic Info")] public List<SwepLists> StartingEquipment { get; set; }
+	[Property, Feature("Basic Info")] public List<PickupableEntity> StartingEquipment { get; set; }
 	[Property, Feature("Basic Info")] public PrefabFile MoneyEntity { get; set; }
 	[Property, Feature("Basic Info")] public int MaxPropSpawnedAmount { get; set; }
 	[Property, Feature("Basic Info"), Description("If True a Job has ")] public int TempPlayTimeTotalCycleAmount { get; set; }
@@ -62,12 +62,12 @@ public partial class DarkRPGamemode : GameModeBase
 
 
 
- 	public struct SwepLists
-	{
-	[KeyProperty] public List<PickupableEntity> Swep { get; set; }
-	public int SwepPosIndex { get; set; }
+ 	// public struct SwepLists
+	// {
+	// [KeyProperty] public List<PickupableEntity> Swep { get; set; }
+	// public int SwepPosIndex { get; set; }
 
-	}
+	// }
 
 
 
