@@ -2,6 +2,7 @@ using Sandbox;
 
 namespace DarkRPGamemode
 {
+[Description("This is the main Component that houses most variables throughout everything related to DarkRP.")]
 public partial class DarkRPGamemode : GameModeBase
 {
 	//DarkRP Basic Info
@@ -59,6 +60,12 @@ public partial class DarkRPGamemode : GameModeBase
 	//Chat Related Vars
 	[Property, Feature("Hitman Info")] public int MinHitPrice { get; set; }
 	[Property, Feature("Hitman Info")] public int MaxHitPrice { get; set; }
+
+
+
+	//Debug Related Vars
+
+	[Property, Feature("Debug"), Group("Debug Settings")] public bool JailPositionDebug { get; set; }
 
 
 

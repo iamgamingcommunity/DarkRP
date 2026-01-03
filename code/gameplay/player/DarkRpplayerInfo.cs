@@ -2,6 +2,7 @@ using Sandbox;
 using Sandbox.Utility;
 using PlayerData = NetworkManager.NetworkManager.PlayerData;
 
+[Description("All Info related to The DarkRP Player is here within this component. This is to be only used on Players and Bots.")]
 public sealed class DarkrpPlayerInfo : Component
 {
 
@@ -45,9 +46,9 @@ public sealed class DarkrpPlayerInfo : Component
 	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot8 { get; set; }
 	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public HotbarSlot Slot9 { get; set; }	
 	// [Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public int MaxSlots { get; set; } = 9;
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public List<HotbarSlot> HotBarSlots { get; set; }
+	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public List<HotbarSlot> HotBarSlots { get; set; } = new();
 	
-	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public List<HotbarSlot> TempJailHotBarSlots { get; set; }
+	[Property, Feature("Player Hotbar Info"), Group("Player Hotbar Info")] public List<HotbarSlot> TempJailHotBarSlots { get; set; } = new();
 	// Keep track of the currently active slot index for the Inventory
    public int ActiveSlot { get; set; } = 0;
 
