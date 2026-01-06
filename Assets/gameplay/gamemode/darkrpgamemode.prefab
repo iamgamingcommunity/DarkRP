@@ -12,6 +12,7 @@
     "NetworkMode": 2,
     "NetworkInterpolation": true,
     "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [],
     "Children": [
@@ -28,6 +29,7 @@
         "NetworkMode": 2,
         "NetworkInterpolation": true,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [
           {
@@ -1256,13 +1258,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 184,
+                  "Id": 176,
                   "Value": true,
                   "DstId": 6,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 185,
+                  "Id": 177,
                   "Value": "door",
                   "DstId": 6,
                   "DstName": "tag"
@@ -1526,7 +1528,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 186,
+                  "Id": 178,
                   "Value": 5,
                   "DstId": 32,
                   "DstName": "seconds"
@@ -1688,7 +1690,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 187,
+                  "Id": 179,
                   "Value": 0,
                   "DstId": 85,
                   "DstName": "b"
@@ -1742,13 +1744,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 188,
+                  "Id": 180,
                   "Value": true,
                   "DstId": 93,
                   "DstName": "includeAncestors"
                 },
                 {
-                  "Id": 189,
+                  "Id": 181,
                   "Value": "door",
                   "DstId": 93,
                   "DstName": "tag"
@@ -2006,7 +2008,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 190,
+                  "Id": 182,
                   "Value": 5,
                   "DstId": 117,
                   "DstName": "seconds"
@@ -2145,7 +2147,7 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 191,
+                  "Id": 183,
                   "Value": "THIS IT!!! {0}",
                   "DstId": 144,
                   "DstName": "format"
@@ -2457,6 +2459,7 @@
         "NetworkMode": 2,
         "NetworkInterpolation": true,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [
           {
@@ -2628,6 +2631,7 @@
         "NetworkMode": 2,
         "NetworkInterpolation": true,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [
           {
@@ -2707,6 +2711,7 @@
             "NetworkMode": 2,
             "NetworkInterpolation": true,
             "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
             "OwnerTransfer": 1,
             "Components": [
               {
@@ -2753,19 +2758,31 @@
                 "__enabled": true,
                 "AlarmSound": null,
                 "AllChatCommands": [],
-                "DefualtMinimumVoteRequired": 0,
-                "DefualtRequiredYesPercentage": 0,
-                "DefualtVoteDuration": 0,
-                "DisableDefualtF2MenuUI": false,
-                "DisableDefualtF4MenuUI": false,
-                "DisableDefualtModerationSystem": false,
-                "DisableDefualtScoreboardUI": false,
-                "DisableDefualtSpawnProtectionSystem": false,
+                "ArrestedSFX": "sounds/kenney/ui/ui.navigate.forward.sound",
+                "DefaultMinimumVoteRequired": 0,
+                "DefaultRequiredYesPercentage": 0,
+                "DefaultVoteDuration": 0,
+                "DisableDefaultF2MenuUI": false,
+                "DisableDefaultF4MenuUI": false,
+                "DisableDefaultModerationSystem": false,
+                "DisableDefaultScoreboardUI": false,
+                "DisableDefaultSpawnProtectionSystem": false,
                 "EntityPriceMultiplier": 0,
-                "JailPos": null,
-                "JailTime": 0,
+                "GiveIllegalSwepsBackOnUnarrest": false,
+                "JailPos": [
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null
+                ],
+                "JailPositionDebug": false,
+                "JailTime": 10,
                 "LawBoardModel": null,
-                "LicensedEquipment": null,
+                "LicensedEquipment": [
+                  "gameplay/equipment/usp.swep"
+                ],
                 "LockDownOnGoingSFX": null,
                 "LockDownStartSFX": null,
                 "MaxHitPrice": 0,
@@ -2971,19 +2988,27 @@
                   "Defaults": {
                     "$3.component": {
                       "_type": "component",
-                      "component_id": "c222862a-076e-4269-859d-fde26ed29739",
-                      "go": "f7e5b3c3-30de-45c8-ab6e-78b70f628d87",
+                      "component_id": "db37f26e-6325-40dd-9d89-cb5f7cfe91ab",
+                      "go": "cf8ef432-5121-4c0d-a966-6fcf052d7670",
                       "component_type": "DarkRPGamemode"
                     }
                   }
                 },
                 "OnComponentUpdate": null,
-                "PDStartingEquipment": null,
+                "PDStartingEquipment": [],
                 "SalaryPaymentMultiplier": 0,
                 "SalaryPaymentSystemCycleTime": 0,
-                "StartingEquipment": [],
+                "StaffSweps": [
+                  "gameplay/equipment/arrestbaton.swep",
+                  "gameplay/equipment/unarrestbaton.swep"
+                ],
+                "StartingEquipment": [
+                  "gameplay/equipment/keys.swep",
+                  "gameplay/equipment/hands.swep"
+                ],
                 "TempPlayTimeTotalCycleAmount": 0,
                 "ToggleLottery": false,
+                "UnArrestedSFX": "sounds/kenney/ui/ui.navigate.back.sound",
                 "VoteStartSFX": null
               }
             ],

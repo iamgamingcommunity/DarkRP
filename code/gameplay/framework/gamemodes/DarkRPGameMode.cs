@@ -37,6 +37,9 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Law Info")] public List<PickupableEntity> PDStartingEquipment { get; set; }
 	[Property, Feature("Law Info")] public List<PickupableEntity> LicensedEquipment { get; set; }
 
+
+	//DarkRP Admin System Info
+	[Property, Feature("Admin Info"), Description("'Staff Sweps' is the sweps that any staff member will spawn and respawn with.")] public List<PickupableEntity> StaffSweps { get; set; }
 	
 	//DarkRP Vote System Info
 	[Property, Feature("Vote Info")] public int DefaultVoteDuration { get; set; }

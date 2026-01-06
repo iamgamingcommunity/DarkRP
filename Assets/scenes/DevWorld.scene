@@ -208,14 +208,6 @@
               "Type": "Component",
               "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
             },
-            "Property": "ArrestedSFX",
-            "Value": "sounds/kenney/ui/ui.navigate.forward.sound"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
-            },
             "Property": "JailPos",
             "Value": [
               {
@@ -249,53 +241,201 @@
               "Type": "Component",
               "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
             },
-            "Property": "JailPositionDebug",
-            "Value": false
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
-            },
-            "Property": "JailTime",
-            "Value": 10
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
-            },
-            "Property": "LicensedEquipment",
-            "Value": [
-              "gameplay/equipment/usp.swep"
-            ]
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
-            },
-            "Property": "PDStartingEquipment",
-            "Value": []
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
-            },
-            "Property": "StartingEquipment",
-            "Value": [
-              "gameplay/equipment/keys.swep",
-              "gameplay/equipment/hands.swep"
-            ]
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "c222862a-076e-4269-859d-fde26ed29739"
-            },
-            "Property": "UnArrestedSFX",
-            "Value": "sounds/kenney/ui/ui.navigate.back.sound"
+            "Property": "OnComponentStart",
+            "Value": {
+              "__version": 9,
+              "__guid": "29da3343-0db8-4917-a11b-514c7e80ef46",
+              "__changeId": 38,
+              "UserData": {
+                "Title": "DarkRP Gamemode Start",
+                "ReferencedComponentTypes": [],
+                "Category": "Chat",
+                "Icon": "start",
+                "Description": "Starts all the needed logic for the DarkRP Gamemode"
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "ChatCommands/Get All Commands",
+                  "UserData": {
+                    "Position": "204,-0"
+                  }
+                },
+                {
+                  "Id": 3,
+                  "Type": "scene.ref",
+                  "UserData": {
+                    "Position": "768,108"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "AllChatCommands",
+                    "_type": "DarkRPGamemode.DarkRPGamemode"
+                  },
+                  "UserData": {
+                    "Position": "888,144"
+                  }
+                },
+                {
+                  "Id": 5,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Add",
+                    "_type": "System.Collections.Generic.List`1"
+                  },
+                  "UserData": {
+                    "Position": "1392,36"
+                  }
+                },
+                {
+                  "Id": 6,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "ChatCommandResource"
+                  },
+                  "UserData": {
+                    "Position": "828,-0"
+                  }
+                },
+                {
+                  "Id": 7,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "576,-0"
+                  }
+                },
+                {
+                  "Id": 8,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1224,24"
+                  }
+                },
+                {
+                  "Id": 10,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": {
+                      "$type": "Generic",
+                      "ElementType": "System.Collections.Generic.List`1",
+                      "TypeArguments": [
+                        "ChatCommandResource"
+                      ]
+                    }
+                  },
+                  "UserData": {
+                    "Position": "504,192"
+                  }
+                },
+                {
+                  "Id": 11,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "ChatCommandResource"
+                  },
+                  "UserData": {
+                    "Position": "1140,108"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 1,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 4,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 8,
+                  "SrcName": "_signal",
+                  "DstId": 5,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_result",
+                  "DstId": 5,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "body.value",
+                  "DstId": 5,
+                  "DstName": "item"
+                },
+                {
+                  "SrcId": 7,
+                  "SrcName": "_signal",
+                  "DstId": 6,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 6,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_signal",
+                  "DstId": 7,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 10,
+                  "SrcName": "_result",
+                  "DstId": 7,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "body",
+                  "DstId": 8,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 11,
+                  "SrcName": "_result",
+                  "DstId": 8,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 10,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "body.value",
+                  "DstId": 11,
+                  "DstName": "input"
+                }
+              ],
+              "Defaults": {
+                "$3.component": {
+                  "_type": "component",
+                  "component_id": "c222862a-076e-4269-859d-fde26ed29739",
+                  "go": "f7e5b3c3-30de-45c8-ab6e-78b70f628d87",
+                  "component_type": "DarkRPGamemode"
+                }
+              }
+            }
           }
         ],
         "MovedObjects": [
@@ -2004,7 +2144,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "59b517fb-993b-48df-9bb2-093aa5f7ad13"
+                  "IdValue": "ff14e9c0-ab99-42d8-9977-534038265989"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2014,7 +2154,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "59b517fb-993b-48df-9bb2-093aa5f7ad13",
+                  "__guid": "ff14e9c0-ab99-42d8-9977-534038265989",
                   "__version": 1,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2035,18 +2175,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "d5644efa-1ad3-4390-9fc4-b30fe84af257"
+                  "IdValue": "b7d27e19-599a-4ea9-8eee-3d4ae738400d"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "59b517fb-993b-48df-9bb2-093aa5f7ad13"
+                  "IdValue": "ff14e9c0-ab99-42d8-9977-534038265989"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "d5644efa-1ad3-4390-9fc4-b30fe84af257",
+                  "__guid": "b7d27e19-599a-4ea9-8eee-3d4ae738400d",
                   "__enabled": true,
                   "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
@@ -2099,13 +2239,13 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "7e07bb3c-c604-4d13-8124-3945faf2cfd9"
+                  "IdValue": "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e"
                 }
               },
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "9d4a3ae2-855f-4b0e-923a-64a020bee78c"
+                  "IdValue": "79ee4898-108b-4465-bd8a-1afd6662cc82"
                 }
               }
             ],
@@ -2128,8 +2268,8 @@
             "ffa58e47-207b-40be-8523-e7c8f3e67dfa": "ddf00132-b4a4-4cad-ae45-2fd32e8ca511",
             "2e852376-220d-4d43-9574-950f0c61760d": "be965006-bb60-4ced-b5de-224bf7b54967",
             "a479d651-133b-4380-89eb-4ff9f3d59b43": "2463eead-1d6a-45b2-bddd-5b86ac78f33b",
-            "9d4a3ae2-855f-4b0e-923a-64a020bee78c": "bb7d61f1-29a5-44cf-9d8a-75fad4aa83b4",
-            "7e07bb3c-c604-4d13-8124-3945faf2cfd9": "e128f447-13d1-4d21-b0c4-6a617002e1d2",
+            "79ee4898-108b-4465-bd8a-1afd6662cc82": "0c49a705-372e-4c26-b561-287d84855d8b",
+            "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e": "aa45757e-3913-4e51-9278-81d31eebd279",
             "4deafa01-ea50-4736-8e65-412a50656d25": "e2d4d634-9267-48eb-bbf1-f84bbdf5fa0e"
           }
         },
@@ -2142,7 +2282,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "886acbe2-d681-480a-bb64-438bd1b42af2"
+                  "IdValue": "1316fc97-bdc0-42bc-9c03-86b866cc6fdb"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2152,7 +2292,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "886acbe2-d681-480a-bb64-438bd1b42af2",
+                  "__guid": "1316fc97-bdc0-42bc-9c03-86b866cc6fdb",
                   "__version": 1,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2173,18 +2313,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "29ae99c5-0fea-47e8-95f4-4d9e475850b9"
+                  "IdValue": "f544192a-26ee-4fba-bb9c-1c63b5a73821"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "886acbe2-d681-480a-bb64-438bd1b42af2"
+                  "IdValue": "1316fc97-bdc0-42bc-9c03-86b866cc6fdb"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "29ae99c5-0fea-47e8-95f4-4d9e475850b9",
+                  "__guid": "f544192a-26ee-4fba-bb9c-1c63b5a73821",
                   "__enabled": true,
                   "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
@@ -2237,13 +2377,13 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "7e07bb3c-c604-4d13-8124-3945faf2cfd9"
+                  "IdValue": "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e"
                 }
               },
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "9d4a3ae2-855f-4b0e-923a-64a020bee78c"
+                  "IdValue": "79ee4898-108b-4465-bd8a-1afd6662cc82"
                 }
               }
             ],
@@ -2274,8 +2414,8 @@
             "ffa58e47-207b-40be-8523-e7c8f3e67dfa": "d476a880-7182-4bc9-ad5f-4696c206c45e",
             "2e852376-220d-4d43-9574-950f0c61760d": "fb5c2c10-5c7f-4363-a7c8-c36b025969b9",
             "a479d651-133b-4380-89eb-4ff9f3d59b43": "eb783d4f-536d-41f4-8f4e-2bcb61ce1204",
-            "9d4a3ae2-855f-4b0e-923a-64a020bee78c": "30d5bf0e-488d-41a1-b5db-eb4d67e7d766",
-            "7e07bb3c-c604-4d13-8124-3945faf2cfd9": "05149db1-fa74-45aa-9058-8f66a3cdeae8",
+            "79ee4898-108b-4465-bd8a-1afd6662cc82": "2272b905-1ee2-43af-9041-a275c43df5dd",
+            "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e": "452bdfb7-6f1f-4c05-a865-2fd592e752d1",
             "4deafa01-ea50-4736-8e65-412a50656d25": "9328bf07-0839-4dcd-9f2b-bab4331ba8bc"
           }
         },
@@ -2288,7 +2428,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "62bd1065-5c66-4026-ab05-327c2b3a5152"
+                  "IdValue": "63df5bdb-a635-4de3-a38e-7086dd0bda17"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2298,7 +2438,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "62bd1065-5c66-4026-ab05-327c2b3a5152",
+                  "__guid": "63df5bdb-a635-4de3-a38e-7086dd0bda17",
                   "__version": 1,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2319,18 +2459,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "45d8432a-a1cf-4ca7-b860-2977bf8b3136"
+                  "IdValue": "b524caa7-6f26-41b3-9028-2041cc88b762"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "62bd1065-5c66-4026-ab05-327c2b3a5152"
+                  "IdValue": "63df5bdb-a635-4de3-a38e-7086dd0bda17"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "45d8432a-a1cf-4ca7-b860-2977bf8b3136",
+                  "__guid": "b524caa7-6f26-41b3-9028-2041cc88b762",
                   "__enabled": true,
                   "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
@@ -2383,13 +2523,13 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "7e07bb3c-c604-4d13-8124-3945faf2cfd9"
+                  "IdValue": "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e"
                 }
               },
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "9d4a3ae2-855f-4b0e-923a-64a020bee78c"
+                  "IdValue": "79ee4898-108b-4465-bd8a-1afd6662cc82"
                 }
               }
             ],
@@ -2420,8 +2560,8 @@
             "ffa58e47-207b-40be-8523-e7c8f3e67dfa": "89d7d93a-8741-4c7c-a4cb-43f255f7623e",
             "2e852376-220d-4d43-9574-950f0c61760d": "510f9024-cf26-4e92-b387-97c64debfd70",
             "a479d651-133b-4380-89eb-4ff9f3d59b43": "f9d14217-12e0-4782-a2cc-40c8de09641d",
-            "9d4a3ae2-855f-4b0e-923a-64a020bee78c": "bae1d8da-b1d5-4928-8233-e655e67b8996",
-            "7e07bb3c-c604-4d13-8124-3945faf2cfd9": "e3596770-49ca-483f-bd27-b39987f08d8a",
+            "79ee4898-108b-4465-bd8a-1afd6662cc82": "7fef262e-f202-473f-b1db-0f7fd20a55b5",
+            "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e": "74c5621b-a0dc-47dc-b71c-e98f3acf4b00",
             "4deafa01-ea50-4736-8e65-412a50656d25": "6bbbc479-403c-4169-a025-ee8767e04927"
           }
         },
@@ -2434,7 +2574,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "e5c558ea-d4d6-4da1-8e49-115b723d4691"
+                  "IdValue": "ed2777e0-6665-49a1-9212-8fcbf25a846b"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2444,7 +2584,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "e5c558ea-d4d6-4da1-8e49-115b723d4691",
+                  "__guid": "ed2777e0-6665-49a1-9212-8fcbf25a846b",
                   "__version": 1,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2465,18 +2605,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "56b3ad6e-2a5a-4835-a09b-468c9ae419de"
+                  "IdValue": "5c136489-410d-4e7f-8222-c27e19f97d86"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "e5c558ea-d4d6-4da1-8e49-115b723d4691"
+                  "IdValue": "ed2777e0-6665-49a1-9212-8fcbf25a846b"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "56b3ad6e-2a5a-4835-a09b-468c9ae419de",
+                  "__guid": "5c136489-410d-4e7f-8222-c27e19f97d86",
                   "__enabled": true,
                   "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
@@ -2529,13 +2669,13 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "7e07bb3c-c604-4d13-8124-3945faf2cfd9"
+                  "IdValue": "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e"
                 }
               },
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "9d4a3ae2-855f-4b0e-923a-64a020bee78c"
+                  "IdValue": "79ee4898-108b-4465-bd8a-1afd6662cc82"
                 }
               }
             ],
@@ -2566,8 +2706,8 @@
             "ffa58e47-207b-40be-8523-e7c8f3e67dfa": "68e09a3c-b0d1-49c7-996f-c9f24b5f916a",
             "2e852376-220d-4d43-9574-950f0c61760d": "bed28ecd-ee8f-4fba-9edf-724ce363fad1",
             "a479d651-133b-4380-89eb-4ff9f3d59b43": "181eb30c-8e47-4941-94a2-7940b7a2308b",
-            "9d4a3ae2-855f-4b0e-923a-64a020bee78c": "d083c87c-c6b4-47d2-97db-531a7dd96b83",
-            "7e07bb3c-c604-4d13-8124-3945faf2cfd9": "0a3b0036-9caf-4a83-ac28-9e189bccbdbe",
+            "79ee4898-108b-4465-bd8a-1afd6662cc82": "dd8b4177-03d6-487e-83ca-b8bfd5b300fa",
+            "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e": "d63564e1-2ad6-4e67-a5dc-4f0e2a2c5b7f",
             "4deafa01-ea50-4736-8e65-412a50656d25": "30e55f69-944a-45f1-826e-880f12bd07a4"
           }
         },
@@ -2580,7 +2720,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "15cb92d0-68a8-41c0-8e68-d66c3aa385c7"
+                  "IdValue": "dc81a5db-d3cc-440e-b8e7-6cb078d87fcb"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2590,7 +2730,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "15cb92d0-68a8-41c0-8e68-d66c3aa385c7",
+                  "__guid": "dc81a5db-d3cc-440e-b8e7-6cb078d87fcb",
                   "__version": 1,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2611,18 +2751,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "ba7d5d5a-5c57-440b-8b60-b7f06e128880"
+                  "IdValue": "0ebc8530-1856-410b-a635-8164619253ce"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "15cb92d0-68a8-41c0-8e68-d66c3aa385c7"
+                  "IdValue": "dc81a5db-d3cc-440e-b8e7-6cb078d87fcb"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "ba7d5d5a-5c57-440b-8b60-b7f06e128880",
+                  "__guid": "0ebc8530-1856-410b-a635-8164619253ce",
                   "__enabled": true,
                   "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
@@ -2675,13 +2815,13 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "7e07bb3c-c604-4d13-8124-3945faf2cfd9"
+                  "IdValue": "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e"
                 }
               },
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "9d4a3ae2-855f-4b0e-923a-64a020bee78c"
+                  "IdValue": "79ee4898-108b-4465-bd8a-1afd6662cc82"
                 }
               }
             ],
@@ -2712,8 +2852,8 @@
             "ffa58e47-207b-40be-8523-e7c8f3e67dfa": "6ac6c7fc-c3b2-40c1-b54e-72a41252f046",
             "2e852376-220d-4d43-9574-950f0c61760d": "054377e2-996f-4edb-9f6b-7ec99c46b7e0",
             "a479d651-133b-4380-89eb-4ff9f3d59b43": "daca911f-a142-4bf8-8878-8507aaf2f5a9",
-            "9d4a3ae2-855f-4b0e-923a-64a020bee78c": "4b89f7db-5c8d-4fa6-85e8-7109a9820dba",
-            "7e07bb3c-c604-4d13-8124-3945faf2cfd9": "b233e27a-0908-40a5-922b-c115f5b8de42",
+            "79ee4898-108b-4465-bd8a-1afd6662cc82": "39ad9496-3639-4f07-9fb0-f7098fe9e010",
+            "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e": "9570ca71-aa7a-4089-90eb-11352dd78b8a",
             "4deafa01-ea50-4736-8e65-412a50656d25": "c662f8fd-3c19-40b0-8f51-ae4e502da859"
           }
         },
@@ -2726,7 +2866,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "104a4ce6-dee1-4324-8303-cf011453a3f6"
+                  "IdValue": "4f908551-a771-4121-a857-1ff1517a2de4"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2736,7 +2876,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "104a4ce6-dee1-4324-8303-cf011453a3f6",
+                  "__guid": "4f908551-a771-4121-a857-1ff1517a2de4",
                   "__version": 1,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2757,18 +2897,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "6ed7b8fe-b208-43e2-ba2c-06d5ab57ef6e"
+                  "IdValue": "2cc8adb2-378c-44c7-8722-41327d7afa01"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "104a4ce6-dee1-4324-8303-cf011453a3f6"
+                  "IdValue": "4f908551-a771-4121-a857-1ff1517a2de4"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "6ed7b8fe-b208-43e2-ba2c-06d5ab57ef6e",
+                  "__guid": "2cc8adb2-378c-44c7-8722-41327d7afa01",
                   "__enabled": true,
                   "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
@@ -2821,13 +2961,13 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "7e07bb3c-c604-4d13-8124-3945faf2cfd9"
+                  "IdValue": "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e"
                 }
               },
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "9d4a3ae2-855f-4b0e-923a-64a020bee78c"
+                  "IdValue": "79ee4898-108b-4465-bd8a-1afd6662cc82"
                 }
               }
             ],
@@ -2858,8 +2998,8 @@
             "ffa58e47-207b-40be-8523-e7c8f3e67dfa": "4da038d1-db53-4327-9cbf-f9a18aa8615b",
             "2e852376-220d-4d43-9574-950f0c61760d": "93433b73-f7a9-48af-ac94-3aa9652cbd73",
             "a479d651-133b-4380-89eb-4ff9f3d59b43": "134b4711-6027-450b-b4e0-689be6dc11dd",
-            "9d4a3ae2-855f-4b0e-923a-64a020bee78c": "a13b13c7-a6e0-4406-90c2-d71e5ea84681",
-            "7e07bb3c-c604-4d13-8124-3945faf2cfd9": "9e741e99-c194-4b96-8a0c-ae4781d7759c",
+            "79ee4898-108b-4465-bd8a-1afd6662cc82": "3f8b3693-06ee-445c-a547-fee9cf4e5072",
+            "8d9d79f8-1c29-4d3d-ae3f-afa2c514515e": "afc1c3ad-26b2-4f6b-80ae-9c50e7e8e667",
             "4deafa01-ea50-4736-8e65-412a50656d25": "cf4a83e9-fa4f-4372-8bad-07ae0b596d5e"
           }
         }
@@ -2992,13 +3132,13 @@
                     "DstName": "_target"
                   },
                   {
-                    "Id": 61,
+                    "Id": 22,
                     "Value": true,
                     "DstId": 2,
                     "DstName": "includeAncestors"
                   },
                   {
-                    "Id": 62,
+                    "Id": 23,
                     "Value": "player",
                     "DstId": 2,
                     "DstName": "tag"
@@ -3028,7 +3168,7 @@
                     "DstName": "_target"
                   },
                   {
-                    "Id": 63,
+                    "Id": 24,
                     "Value": "facepunch.construct23",
                     "DstId": 16,
                     "DstName": "_value"
