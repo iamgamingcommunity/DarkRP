@@ -51,6 +51,61 @@
                     </div>
 </arrested-ui>
 
+<f4menu-ui class="@(IsF4MenuOpen ? "" : "hide")">
+	<div class="f4menubackground">
+				<div class="F4MenuButtonHolder">
+                	<div class="f4Menu Text">
+						WE GO HARD IN THE PAINT
+					</div>
+
+	                <div class="F4Button">
+					    <div class="F4ButtonText">
+						Jobs
+                        </div>
+					</div>
+
+					<div class="F4Button">
+					    <div class="F4ButtonText">
+						Miscellaneous
+                        </div>
+					</div>
+
+					<div class="F4Button">
+					    <div class="F4ButtonText">
+						Shipments
+                        </div>
+					</div>
+
+                    <div class="F4Button">
+					    <div class="F4ButtonText">
+						Weapons
+                        </div>
+					</div>
+
+                    <div class="F4Button">
+					    <div class="F4ButtonText">
+						Ammo
+                        </div>
+					</div>
+
+					<div class="F4Button">
+					    <div class="F4ButtonText">
+						Vehicles
+                        </div>
+					</div>
+                </div>
+
+
+
+
+
+
+
+
+            
+                    </div>
+</f4menu-ui>
+
 
 @code
 {
@@ -66,9 +121,34 @@
 	public ActionGraphSendChat GraphSendChat{ get; set; }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//UI Visability Vars for Default DarkRP Chat
-	public bool IsDefaultDarkRPChatOpen {get; set;}
+    public bool IsDefaultDarkRPChatOpen {get; set;}
     public TextEntry DefaultDarkRPChatMessage {get; set;}
+
+
+
+
+
+    //F4 Menu UI Vars
+    public bool IsF4MenuOpen {get; set;}
+
 
 
 
@@ -104,7 +184,7 @@
 	/// </summary>
 	protected override int BuildHash()
 {
-    int hash = System.HashCode.Combine(MyStringValue, Player.ActiveSlot, Player.HotBarSlots.Count, JailTime, IsArrested);
+    int hash = System.HashCode.Combine(MyStringValue, Player.ActiveSlot, Player.HotBarSlots.Count, JailTime, IsArrested, IsF4MenuOpen);
 
     foreach (var slot in Player.HotBarSlots)
     {

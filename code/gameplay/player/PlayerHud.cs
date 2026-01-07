@@ -30,12 +30,12 @@ public sealed class PlayerHud : Component
 
 	public void TriggerF3Menu()
     {
-		 F2Menu?.Invoke();
+		 F3Menu?.Invoke();
     }
 
 	public void TriggerF4Menu()
     {
-		 F2Menu?.Invoke();
+		 F4Menu?.Invoke();
     }
 
 	public void TriggerTabMenu()

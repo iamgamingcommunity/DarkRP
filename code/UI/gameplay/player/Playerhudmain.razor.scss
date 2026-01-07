@@ -101,7 +101,6 @@ chat-menu-input {
 
     input {
         &:focus {
-            outline: none;
             border-color: #0af; // highlight when focused
             background-color: #111;
         }
@@ -135,8 +134,6 @@ arrested-ui {
     right: 990px;
     text-align: center;
     font-size: 28px;
-    color: #dddddd;
-    outline: #008ccc;
 
 	&.hide
 	{
@@ -150,4 +147,184 @@ arrested-ui {
 
 
 
+}
+
+f4menu-ui {
+	position: absolute; 
+    top: 85;
+    left: 250;
+    bottom: 85;
+
+
+    .f4menubackground
+    {
+    width: 160vw;
+    height: 60vh;
+    
+    min-width: 900px;
+    min-height: 900px;
+   
+    max-width: 1750px;
+    max-height: 800px;
+    
+    padding: 2vh;
+	justify-content: center;
+	pointer-events: all;
+ 	background-color:rgba(0, 0, 0, 0.801);
+    }
+
+    .F4MenuButtonHolder{
+        
+    display: flex; /* horizontal row layout */
+    flex-direction: row;
+    gap: 0.2rem; /* spacing between buttons */
+    margin-top: 2vh;
+    width: 80vw;
+    max-width: 1400px;
+    min-width: 800px;
+    
+    
+    
+    
+    }
+    
+
+
+    
+
+   .F4Button{
+    	flex: 0 0 auto; /* don’t grow, don’t shrink */
+        
+        justify-content: center;  /* center horizontally */
+        align-items: center;      /* center vertically */
+        background-color:rgb(162, 194, 163);
+
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        border: 1px solid rgba(0, 0, 0, 0.555);
+        top: -33;
+        left: 0;
+         width: auto;   
+         padding: 0.2rem 4rem;
+        height: 3vh;
+
+        min-width: 10px;
+        min-height: 10px;
+    
+        max-width: 1750px;
+        max-height: 800px;
+    
+    
+    
+   .F4ButtonText{
+    position: absolute; 
+    color: #ffffff;
+    font-size: 20px;
+    
+    font-weight: 1000;
+        text-align: left;
+
+    }
+
+}
+
+/*
+   .MiscButtonBackground{
+    	position: relative; 
+        background-color:rgb(162, 194, 163);
+
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        border: 1px solid rgba(0, 0, 0, 0.555);
+        top: -33;
+        left: 0;
+        width: 4vw;
+        height: 3vh;
+
+        min-width: 10px;
+        min-height: 10px;
+    
+        max-width: 1750px;
+        max-height: 800px;
+    
+    .MiscButtonText{
+    position: absolute; 
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 1000;
+        top: 3;
+        left: 20;
+
+    }
+  
+    }
+
+
+
+
+
+    .ShipmentsButtonBackground{
+    position: absolute; 
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 1000;
+        top: 3;
+        left: 20;
+
+    }
+
+    .WeaponsButtonBackground{
+    position: absolute; 
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 1000;
+        top: 3;
+        left: 20;
+
+    }
+
+    .AmmoButtonBackground{
+    position: absolute; 
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 1000;
+        top: 3;
+        left: 20;
+
+    }
+
+    .VehiclesButtonBackground{
+    position: absolute; 
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 1000;
+        top: 3;
+        left: 20;
+
+    }
+
+*/
+
+
+
+
+	&.hide
+	{
+		opacity: 0;
 	}
+
+    .f4Menu Text{
+        margin-left: 6px;
+        color: #dddddd;
+    }
+
+
+
+}
+
