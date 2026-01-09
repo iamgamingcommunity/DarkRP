@@ -92,6 +92,7 @@ public partial class DarkRPGamemode : GameModeBase
 	Shipments,
 	Ammo,
 	Vehicles,
+	Miscellaneous,
 
  }
 }

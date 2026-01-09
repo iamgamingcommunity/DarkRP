@@ -174,8 +174,11 @@ f4menu-ui {
     }
 
     .F4MenuButtonHolder{
-        
+
+    position: absolute; 
     display: flex; /* horizontal row layout */
+    top: -53;
+    left: 0;
     flex-direction: row;
     gap: 0.2rem; /* spacing between buttons */
     margin-top: 2vh;
@@ -208,7 +211,7 @@ f4menu-ui {
         top: -33;
         left: 0;
          width: auto;   
-         padding: 0.2rem 4rem;
+         padding: 0.2rem 5rem;
         height: 3vh;
 
         min-width: 10px;
@@ -224,92 +227,14 @@ f4menu-ui {
     color: #ffffff;
     font-size: 20px;
     
+    
     font-weight: 1000;
-        text-align: left;
+    text-align: left;
 
     }
 
 }
 
-/*
-   .MiscButtonBackground{
-    	position: relative; 
-        background-color:rgb(162, 194, 163);
-
-        border-top-left-radius: 2px;
-        border-top-right-radius: 2px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-
-        border: 1px solid rgba(0, 0, 0, 0.555);
-        top: -33;
-        left: 0;
-        width: 4vw;
-        height: 3vh;
-
-        min-width: 10px;
-        min-height: 10px;
-    
-        max-width: 1750px;
-        max-height: 800px;
-    
-    .MiscButtonText{
-    position: absolute; 
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 1000;
-        top: 3;
-        left: 20;
-
-    }
-  
-    }
-
-
-
-
-
-    .ShipmentsButtonBackground{
-    position: absolute; 
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 1000;
-        top: 3;
-        left: 20;
-
-    }
-
-    .WeaponsButtonBackground{
-    position: absolute; 
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 1000;
-        top: 3;
-        left: 20;
-
-    }
-
-    .AmmoButtonBackground{
-    position: absolute; 
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 1000;
-        top: 3;
-        left: 20;
-
-    }
-
-    .VehiclesButtonBackground{
-    position: absolute; 
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 1000;
-        top: 3;
-        left: 20;
-
-    }
-
-*/
 
 
 
@@ -325,6 +250,80 @@ f4menu-ui {
     }
 
 
+    .F4ExitButton {
+        position: absolute;
+        background-color: #cf0000;
+
+        
+    width: 1vw;
+    height: 2vh;
+    
+    min-width: 1px;
+    min-height: 1px;
+   
+    max-width: 1750px;
+    max-height: 800px;
+
+    top: -23;
+    left: 1728;
+
+    }
+
+
+.category-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    padding: 8px 12px;
+
+    width: 55vw;
+    height: 4vh;
+    
+    min-width: 1px;
+    min-height: 1px;
+   
+    max-width: 1750px;
+    max-height: 800px;
+
+    background-color: #00cf45;
+    padding: 8px 12px;
+    gap: 12px;
+
+    left: 5;
+    
+    font-weight: bold;
+
+
+    .job-entry{
+
+        background-color: #a6ff00;
+   
+        
+    }
+
+    .jobs-list{
+
+    background-color: #74af06ad;
+        display: flex;
+        flex-direction: row;   /* stack jobs vertically under the header */
+        flex-wrap: wrap;
+        gap: 12px;                 /* spacing between jobs */
+        padding-left: 12px; 
+
+    }
+
+.category-block {
+    margin-bottom: 16px;   /* spacing between categories */
+}
+
+
+}
+
+
+
+
+    
 
 }
 

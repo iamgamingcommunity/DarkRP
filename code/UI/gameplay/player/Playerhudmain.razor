@@ -54,10 +54,6 @@
 <f4menu-ui class="@(IsF4MenuOpen ? "" : "hide")">
 	<div class="f4menubackground">
 				<div class="F4MenuButtonHolder">
-                	<div class="f4Menu Text">
-						WE GO HARD IN THE PAINT
-					</div>
-
 	                <div class="F4Button">
 					    <div class="F4ButtonText">
 						Jobs
@@ -95,13 +91,28 @@
 					</div>
                 </div>
 
+                <div class="F4ExitButton" onclick="@(() => {GraphCloseF4Menu?.Invoke(); })">
+				</div>
 
 
+@foreach (var category in JobCatagory)
+{
+    <div class="category-block">
+        <div class="category-header" style="background-color:@category.Color">
+            @category.Name
+        </div>
 
-
-
-
-
+        <div class="jobs-list">
+            @foreach (var job in category.JobsInCatagory)
+            {
+                <div class="job-entry">
+                    <div class="job-name">@job.Title</div>
+                    <div class="job-desc">@job.Description</div>
+                </div>
+            }
+        </div>
+    </div>
+}
             
                     </div>
 </f4menu-ui>
@@ -120,10 +131,13 @@
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphSendChat GraphSendChat{ get; set; }
 
+	public delegate void ActionGraphCloseF4Menu();
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphCloseF4Menu GraphCloseF4Menu { get; set; }
 
 
 
-
+  	[Property] public List<CategoryResource> JobCatagory {get; set;}
 
 
 
@@ -148,7 +162,13 @@
 
     //F4 Menu UI Vars
     public bool IsF4MenuOpen {get; set;}
-
+   
+    public bool JobsF4TabRemoved {get; set;}
+    public bool ShipmentsF4TabRemoved {get; set;}
+	public bool MiscellaneousF4TabRemoved {get; set;}
+	public bool WeaponsF4TabRemoved {get; set;}
+	public bool AmmoF4TabRemoved {get; set;}
+	public bool VehiclesF4TabRemoved {get; set;}
 
 
 
@@ -170,6 +190,10 @@
 
 
 
+
+
+
+
 	[Property] public DarkrpPlayerInfo Player { get; set; }
 
     private bool IsActiveSlot(int index)
@@ -178,6 +202,17 @@
     }
 
 	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+
+
+	void CloseF4Menu()
+	{
+	 	GraphCloseF4Menu?.Invoke();
+	}
+
+
+
+
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
