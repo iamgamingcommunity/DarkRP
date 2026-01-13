@@ -94,10 +94,12 @@
                 <div class="F4ExitButton" onclick="@(() => {GraphCloseF4Menu?.Invoke(); })">
 				</div>
 
+ <div class="JobcategoryMenu">
 
+ <!-- LEFT SIDE -->
 @foreach (var category in JobCatagory)
 {
-    <div class="category-block">
+    <div class="jobcategory-block">
         <div class="category-header" style="background-color:@category.Color">
             @category.Name
         </div>
@@ -107,19 +109,68 @@
             {
                 <div class="job-entry">
                     <div class="job-name">@job.Title</div>
-                    <div class="job-desc">@job.Description</div>
+                    @* <div class="job-desc">@job.Description</div> *@
                 </div>
             }
         </div>
     </div>
 }
+
+    <!-- RIGHT SIDE -->
+<div class="job-infoHolder">
+    <div class="job-info">
+        @if (SelectedJob != null)
+        {
+            <h2>@SelectedJob.Title</h2>
+            <p>@SelectedJob.Description</p>
+
+
+        }
+         </div>
+
+
+
+
+            <button class="become-job"
+                    @onclick="() => BecomeJob(SelectedJob)">
+                Become Job
+            </button>
+
             
-                    </div>
+        </div>
+
+</div>
 </f4menu-ui>
 
 
 @code
 {
+
+
+
+    CategoryResource ExpandedCategory;
+    JobResource SelectedJob;
+
+    List<CategoryResource> Categories = new();
+    List<JobResource> Jobs = new();
+
+    void ToggleCategory(CategoryResource category)
+    {
+        ExpandedCategory = ExpandedCategory == category ? null : category;
+    }
+
+    void SelectJob(JobResource job)
+    {
+        SelectedJob = job;
+    }
+
+    void BecomeJob(JobResource job)
+    {
+        // DarkRP logic here
+        Log.Info($"Becoming job: {job.Title}");
+    }
+
+
 
 
 	//Actions Graphs For Default DarkRP Chat
