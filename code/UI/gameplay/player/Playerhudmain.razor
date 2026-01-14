@@ -11,6 +11,7 @@
 
 </root>
 
+ <!-- Hot Bar(BROKEN) -->
 @* <div class="hotbar">
     @for ( int i = 0; i < Player.HotBarSlots.Count; i++ )
     {
@@ -32,7 +33,7 @@
             }
         </div>
 </div>*@
-
+ <!-- Chat Menu UI -->
 <chat-menu-input class="@(IsDefaultDarkRPChatOpen ? "" : "hide")">
  	<div class="chat-input">
     <TextEntry @ref="DefaultDarkRPChatMessage" placeholder="Enter Chat Message..." />
@@ -42,7 +43,7 @@
 
 
 
-
+ <!-- Arrest UI That Pops up when Arrested Logic Is Triggered -->
 <arrested-ui class="@(IsArrested ? "" : "hide")">
 	<div class="arresteduibackground">
 					<div class="arresteduitext">
@@ -50,7 +51,7 @@
 					</div>
                     </div>
 </arrested-ui>
-
+ <!-- F4Menu Base UI -->
 <f4menu-ui class="@(IsF4MenuOpen ? "" : "hide")">
 	<div class="f4menubackground">
 				<div class="F4MenuButtonHolder">
@@ -90,12 +91,14 @@
                         </div>
 					</div>
                 </div>
-
+                 <!-- F4 Menu Exit Button -->
                 <div class="F4ExitButton" onclick="@(() => {GraphCloseF4Menu?.Invoke(); })">
 				</div>
 
- <div class="JobcategoryMenu">
 
+
+
+ <div class="JobcategoryMenu">
  <!-- LEFT SIDE -->
 @foreach (var category in JobCatagory)
 {
@@ -107,24 +110,39 @@
         <div class="jobs-list">
             @foreach (var job in category.JobsInCatagory)
             {
-                <div class="job-entry">
+                <div class="job-entry" tabindex="0" onclick="@(() => {SelectJob(job); })">
                     <div class="job-name">@job.Title</div>
-                    @* <div class="job-desc">@job.Description</div> *@
+                                     @if (job.JobImage != null)
+                    {
+                        <img src="@job.JobImage" alt="@job.Title" class="job-icon" />
+                    }
                 </div>
             }
         </div>
     </div>
 }
 
-    <!-- RIGHT SIDE -->
+    <!-- RIGHT SIDE @<h2>@SelectedJob.Title</h2>@ -->
 <div class="job-infoHolder">
-    <div class="job-info">
+    <div class="job-infodesc">
         @if (SelectedJob != null)
         {
-            <h2>@SelectedJob.Title</h2>
-            <p>@SelectedJob.Description</p>
+            
+            <p>Job Description: @SelectedJob.Description</p>
+        
 
-
+        }
+         </div>
+    <div class="job-infosweps">
+        @if (SelectedJob != null && SelectedJob.StartingEquipment != null)
+        {
+            <p>Job Sweps:</p>
+            <ul>
+                @foreach (var swep in SelectedJob.StartingEquipment)
+                {
+                    <li>@swep.EquipmentName</li>
+                }
+            </ul>
         }
          </div>
 
@@ -133,7 +151,7 @@
 
             <button class="become-job"
                     @onclick="() => BecomeJob(SelectedJob)">
-                Become Job
+                <div class="becomejobtitle">Become Job</div>
             </button>
 
             
@@ -148,8 +166,14 @@
 
 
 
+
+
+
+
     CategoryResource ExpandedCategory;
-    JobResource SelectedJob;
+
+
+
 
     List<CategoryResource> Categories = new();
     List<JobResource> Jobs = new();
@@ -158,11 +182,18 @@
     {
         ExpandedCategory = ExpandedCategory == category ? null : category;
     }
+    
+    
+    //Selected Job Info
+    [Property] JobResource SelectedJob;
 
     void SelectJob(JobResource job)
     {
         SelectedJob = job;
+        Log.Info($"Selected job: {job.Title}");
     }
+
+
 
     void BecomeJob(JobResource job)
     {

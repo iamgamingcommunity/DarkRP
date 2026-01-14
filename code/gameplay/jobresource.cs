@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class JobResource : GameResource
 {
     [Property, Group("Basic Job Info")] public string Title { get; set; }
+    [Property, Group("Basic Job Info")] public Texture JobImage { get; set; }
     [Property, Group("Basic Job Info")] public string JobCommandName { get; set; }
     [Property, TextArea, Group("Basic Job Info")] public string Description { get; set; }
     [Property, Group("Basic Job Info")] public int Salary { get; set; }
