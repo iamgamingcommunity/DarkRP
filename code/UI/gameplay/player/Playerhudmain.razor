@@ -96,19 +96,29 @@
 				</div>
 
 
-    <!-- RIGHT SIDE @<h2>@SelectedJob.Title</h2>@ -->
+    <!-- DarkRP F4 Job Menu RIGHT SIDE -->
 <div class="job-infoHolder">
+
     <div class="job-infodesc">
+        <h3>Job Description</h3>
+
         @if (SelectedJob != null)
         {
-            <p>Job Description: @SelectedJob.Description</p>
+            <p>@SelectedJob.Description</p>
+        }
+        else
+        {
+            <p class="job-placeholder">
+                Select a job to see its description.
+            </p>
         }
     </div>
 
     <div class="job-infosweps-scroll">
-        @if (SelectedJob != null && SelectedJob.StartingEquipment != null)
+        <h3>Job Sweps</h3>
+
+        @if (SelectedJob != null && SelectedJob.StartingEquipment != null && SelectedJob.StartingEquipment.Count > 0)
         {
-            <p>Job Sweps:</p>
             <ul>
                 @foreach (var swep in SelectedJob.StartingEquipment)
                 {
@@ -116,15 +126,25 @@
                 }
             </ul>
         }
+        else
+        {
+            <p class="job-placeholder">
+                No equipment information available.
+            </p>
+        }
     </div>
 
-    <button class="become-job" @onclick="() => BecomeJob(SelectedJob)">
-        <div class="becomejobtitle">Become Job</div>
+    <button class="become-job"
+            disabled="@(SelectedJob == null)"
+            onclick="@(() => {BecomeJob(); })">
+        <div class="becomejobtitle">
+            @(SelectedJob != null ? "Become Job" : "Select a Job")
+        </div>
     </button>
+
 </div>
 
-
-@* <div class="job-list-panel"> *@
+@* <div class="job-list-panel"> 
  <div class="JobcategoryMenu">
  <!-- LEFT SIDE -->
 @foreach (var category in JobCatagory)
@@ -147,9 +167,62 @@
             }
         </div>
     </div>
-
+</div>
 }
 @* </div> *@
+
+
+
+
+
+
+
+    <!-- DarkRP F4 Job Menu LEFT SIDE -->
+<div class="job-menu">
+    @foreach ( var category in CategoryResource.All.Where( c => c.IsJobCategory ) )
+    {
+        <div class="category">
+            <button class="category-button"
+                    style="background-color:@category.Color"
+                    onclick="@(() => {ToggleCategory(category); })">
+                @category.Name
+            </button>
+
+            <div class="job-list @(IsOpen(category) ? "open" : "")">
+                @foreach ( var job in category.JobsInCatagory )
+                {
+    <button class="job-button" onclick="@(() => {SelectJob(job); })">
+          <ul>
+            @if (job.JobImage != null)
+        {
+            <Image Texture="@job.JobImage" class="job-img" />
+        }
+        </ul>
+        <span>@job.Title</span>
+        <div class="jobbottomborder"
+             style="background-color:@job.Color">
+            </div>
+    </button>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </f4menu-ui>
 
@@ -157,6 +230,44 @@
 @code
 {
 
+
+
+
+public Playerhudmain()
+{
+    OpenCategories = new HashSet<CategoryResource>(
+        CategoryResource.All.Where(c => c.IsJobCategory)
+    );
+
+    CategoryResource.OnCategoriesLoaded += () =>
+    {
+        foreach (var cat in CategoryResource.All.Where(c => c.IsJobCategory))
+        {
+            OpenCategories.Add(cat);
+        }
+    };
+}
+
+
+
+
+
+HashSet<CategoryResource> OpenCategories = new HashSet<CategoryResource>(
+    CategoryResource.All.Where(c => c.IsJobCategory)
+);
+
+void ToggleCategory( CategoryResource category )
+{
+    if ( OpenCategories.Contains( category ) )
+        OpenCategories.Remove( category );
+    else
+        OpenCategories.Add( category );
+}
+
+bool IsOpen( CategoryResource category )
+{
+    return OpenCategories.Contains( category );
+}
 
 
 
@@ -171,10 +282,6 @@
     List<CategoryResource> Categories = new();
     List<JobResource> Jobs = new();
 
-    void ToggleCategory(CategoryResource category)
-    {
-        ExpandedCategory = ExpandedCategory == category ? null : category;
-    }
     
     
     //Selected Job Info
@@ -183,17 +290,17 @@
     void SelectJob(JobResource job)
     {
         SelectedJob = job;
-        GraphBecomeJob?.Invoke(job);
-        Log.Info($"Selected job: {job.Title}");
+        Log.Info($"Selected job: {SelectedJob.Title}");
     }
 
 
 
-    void BecomeJob(JobResource job)
+    void BecomeJob()
     {
+        if (SelectedJob == null) return;
         // DarkRP logic here
-       
-        Log.Info($"Becoming job: {job.Title}");
+        GraphBecomeJob?.Invoke(SelectedJob);
+        Log.Info($"Becoming job: {SelectedJob.Title}");
     }
 
 
@@ -212,7 +319,7 @@
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphCloseF4Menu GraphCloseF4Menu { get; set; }
 
-    public delegate void ActionGraphBecomeJob(JobResource job);
+    public delegate void ActionGraphBecomeJob(JobResource SelectedJob);
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphBecomeJob GraphBecomeJob { get; set; }
 
@@ -300,12 +407,20 @@
 
 
 
+
+
+
+
+
+
+
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
 	protected override int BuildHash()
 {
-    int hash = System.HashCode.Combine(MyStringValue, Player.ActiveSlot, Player.HotBarSlots.Count, JailTime, IsArrested, IsF4MenuOpen);
+    int hash = System.HashCode.Combine(MyStringValue, Player.ActiveSlot, Player.HotBarSlots.Count, JailTime, IsArrested, IsF4MenuOpen, SelectedJob);
 
     foreach (var slot in Player.HotBarSlots)
     {
