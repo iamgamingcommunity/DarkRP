@@ -96,8 +96,35 @@
 				</div>
 
 
+    <!-- RIGHT SIDE @<h2>@SelectedJob.Title</h2>@ -->
+<div class="job-infoHolder">
+    <div class="job-infodesc">
+        @if (SelectedJob != null)
+        {
+            <p>Job Description: @SelectedJob.Description</p>
+        }
+    </div>
+
+    <div class="job-infosweps-scroll">
+        @if (SelectedJob != null && SelectedJob.StartingEquipment != null)
+        {
+            <p>Job Sweps:</p>
+            <ul>
+                @foreach (var swep in SelectedJob.StartingEquipment)
+                {
+                    <li>@swep.EquipmentName</li>
+                }
+            </ul>
+        }
+    </div>
+
+    <button class="become-job" @onclick="() => BecomeJob(SelectedJob)">
+        <div class="becomejobtitle">Become Job</div>
+    </button>
+</div>
 
 
+@* <div class="job-list-panel"> *@
  <div class="JobcategoryMenu">
  <!-- LEFT SIDE -->
 @foreach (var category in JobCatagory)
@@ -120,44 +147,10 @@
             }
         </div>
     </div>
+
 }
+@* </div> *@
 
-    <!-- RIGHT SIDE @<h2>@SelectedJob.Title</h2>@ -->
-<div class="job-infoHolder">
-    <div class="job-infodesc">
-        @if (SelectedJob != null)
-        {
-            
-            <p>Job Description: @SelectedJob.Description</p>
-        
-
-        }
-         </div>
-    <div class="job-infosweps">
-        @if (SelectedJob != null && SelectedJob.StartingEquipment != null)
-        {
-            <p>Job Sweps:</p>
-            <ul>
-                @foreach (var swep in SelectedJob.StartingEquipment)
-                {
-                    <li>@swep.EquipmentName</li>
-                }
-            </ul>
-        }
-         </div>
-
-
-
-
-            <button class="become-job"
-                    @onclick="() => BecomeJob(SelectedJob)">
-                <div class="becomejobtitle">Become Job</div>
-            </button>
-
-            
-        </div>
-
-</div>
 </f4menu-ui>
 
 
@@ -190,6 +183,7 @@
     void SelectJob(JobResource job)
     {
         SelectedJob = job;
+        GraphBecomeJob?.Invoke(job);
         Log.Info($"Selected job: {job.Title}");
     }
 
@@ -198,6 +192,7 @@
     void BecomeJob(JobResource job)
     {
         // DarkRP logic here
+       
         Log.Info($"Becoming job: {job.Title}");
     }
 
@@ -217,6 +212,11 @@
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphCloseF4Menu GraphCloseF4Menu { get; set; }
 
+    public delegate void ActionGraphBecomeJob(JobResource job);
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphBecomeJob GraphBecomeJob { get; set; }
+
+
 
 
   	[Property] public List<CategoryResource> JobCatagory {get; set;}
@@ -224,6 +224,10 @@
 
 
 
+	@* void GraphBecomeJob()
+	{
+	 	GraphBecomeJob?.Invoke();
+	} *@
 
 
 

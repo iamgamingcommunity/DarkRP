@@ -12,6 +12,7 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Basic Info")] public bool DisableDefaultScoreboardUI { get; set; }	
 	[Property, Feature("Basic Info")] public bool DisableDefaultModerationSystem { get; set; }	
 	[Property, Feature("Basic Info")] public bool DisableDefaultSpawnProtectionSystem { get; set; }	
+	[Property, Feature("Basic Info")] public bool DisableRespawningAfterBecomingJob { get; set; }	
 	[Property, Feature("Basic Info")] public int SalaryPaymentSystemCycleTime { get; set; }
 	[Property, Feature("Basic Info")] public int SalaryPaymentMultiplier { get; set; }
 	[Property, Feature("Basic Info")] public int EntityPriceMultiplier { get; set; }
