@@ -55,37 +55,37 @@
 <f4menu-ui class="@(IsF4MenuOpen ? "" : "hide")">
 	<div class="f4menubackground">
 				<div class="F4MenuButtonHolder">
-	                <div class="F4Button">
+	                <div class="F4Button" onclick="@(() => {SwitchF4MenuTab(0); })">
 					    <div class="F4ButtonText">
 						Jobs
                         </div>
 					</div>
 
-					<div class="F4Button">
+					<div class="F4Button" onclick="@(() => {SwitchF4MenuTab(1); })">
 					    <div class="F4ButtonText">
 						Miscellaneous
                         </div>
 					</div>
 
-					<div class="F4Button">
+					<div class="F4Button" onclick="@(() => {SwitchF4MenuTab(2); })">
 					    <div class="F4ButtonText">
 						Shipments
                         </div>
 					</div>
 
-                    <div class="F4Button">
+                    <div class="F4Button" onclick="@(() => {SwitchF4MenuTab(3); })">
 					    <div class="F4ButtonText">
 						Weapons
                         </div>
 					</div>
 
-                    <div class="F4Button">
+                    <div class="F4Button" onclick="@(() => {SwitchF4MenuTab(4); })">
 					    <div class="F4ButtonText">
 						Ammo
                         </div>
 					</div>
 
-					<div class="F4Button">
+					<div class="F4Button" onclick="@(() => {SwitchF4MenuTab(5); })">
 					    <div class="F4ButtonText">
 						Vehicles
                         </div>
@@ -96,6 +96,10 @@
 				</div>
 
 
+
+ <!-- | DarkRP F4 Job Menu | -->
+
+<div class="job-f4-menu @(IsF4JobMenuOpen ? "" : "hide")">
     <!-- DarkRP F4 Job Menu RIGHT SIDE -->
 <div class="job-infoHolder">
 
@@ -211,16 +215,116 @@
 
 
 
+</div>
+
+<!-- | DarkRP F4 Misc Menu | -->
+
+<div class="Misc-f4-menu @(IsF4MiscMenuOpen ? "" : "hide")">
+
+    <!-- DarkRP F4 Job Menu RIGHT SIDE -->
+<div class="Misc-infoHolder">
+
+    <div class="Misc-infodesc">
+        <h3>Job Description</h3>
+
+        @if (SelectedJob != null)
+        {
+            <p>@SelectedJob.Description</p>
+        }
+        else
+        {
+            <p class="Misc-placeholder">
+                Select a job to see its description.
+            </p>
+        }
+    </div>
+
+    <div class="Misc-infosweps-scroll">
+        <h3>Job Sweps</h3>
+
+        @if (SelectedJob != null && SelectedJob.StartingEquipment != null && SelectedJob.StartingEquipment.Count > 0)
+        {
+            <ul>
+                @foreach (var swep in SelectedJob.StartingEquipment)
+                {
+                    <li>@swep.EquipmentName</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p class="Misc-placeholder">
+                No equipment information available.
+            </p>
+        }
+    </div>
+
+    <button class="Misc-BuyItem"
+            disabled="@(SelectedJob == null)"
+            onclick="@(() => {BecomeJob(); })">
+        <div class="Misc-BuyItemtitle">
+            @(SelectedJob != null ? "Become Job" : "Select a Job")
+        </div>
+    </button>
+
+</div>
 
 
+    <!-- DarkRP F4 Job Menu LEFT SIDE -->
+<div class="Misc-menu">
+    @foreach ( var category in CategoryResource.All.Where( c => c.IsJobCategory ) )
+    {
+        <div class="category">
+            <button class="category-button"
+                    style="background-color:@category.Color"
+                    onclick="@(() => {ToggleCategory(category); })">
+                @category.Name
+            </button>
+
+            <div class="Misc-list @(IsOpen(category) ? "open" : "")">
+                @foreach ( var job in category.JobsInCatagory )
+                {
+    <button class="Misc-button" onclick="@(() => {SelectJob(job); })">
+          <ul>
+            @if (job.JobImage != null)
+        {
+            <Image Texture="@job.JobImage" class="job-img" />
+        }
+        </ul>
+        <span>@job.Title</span>
+        <div class="Miscbottomborder"
+             style="background-color:@job.Color">
+            </div>
+    </button>
+                }
+            </div>
+        </div>
+    }
+</div>
 
 
+</div>
 
+<!-- | DarkRP F4 Shipments Menu | -->
 
+<div class="Shipments-f4-menu @(IsF4ShipmentsMenuOpen ? "" : "hide")">
 
+</div>
 
+<!-- | DarkRP F4 Weapons Menu | -->
+<div class="Weapons-f4-menu @(IsF4WeaponsMenuOpen ? "" : "hide")">
 
+</div>
 
+<!-- | DarkRP F4 Ammo Menu | -->
+<div class="Ammo-f4-menu @(IsF4AmmoMenuOpen ? "" : "hide")">
+
+</div>
+
+<!-- | DarkRP F4 Vehicles Menu | -->
+<div class="Vehicles-f4-menu @(IsF4VehiclesMenuOpen ? "" : "hide")">
+
+</div>
 
 
 
@@ -232,7 +336,7 @@
 
 
 
-
+//F4 Job Menu Functions/Vars
 public Playerhudmain()
 {
     OpenCategories = new HashSet<CategoryResource>(
@@ -248,8 +352,15 @@ public Playerhudmain()
     };
 }
 
-
-
+//Testing How to call a enum
+	public enum F4BuyMenuCategorys {
+		Jobs,
+		Misc,
+		Shipments,
+		Weapons,
+		Ammo,
+		Vehicles
+	}
 
 
 HashSet<CategoryResource> OpenCategories = new HashSet<CategoryResource>(
@@ -270,30 +381,21 @@ bool IsOpen( CategoryResource category )
 }
 
 
-
-
-
-
+  //Is This needed?
     CategoryResource ExpandedCategory;
+    
+    [Property] JobResource SelectedJob;
 
-
-
-
+  //Is This needed?
     List<CategoryResource> Categories = new();
     List<JobResource> Jobs = new();
 
-    
-    
-    //Selected Job Info
-    [Property] JobResource SelectedJob;
 
     void SelectJob(JobResource job)
     {
         SelectedJob = job;
         Log.Info($"Selected job: {SelectedJob.Title}");
     }
-
-
 
     void BecomeJob()
     {
@@ -303,6 +405,14 @@ bool IsOpen( CategoryResource category )
         Log.Info($"Becoming job: {SelectedJob.Title}");
     }
 
+   [Property] int Selectedtabindex { get; set; }
+
+    void SwitchF4MenuTab(int tabindex)
+    {
+        Selectedtabindex = tabindex;
+        GraphSelectedTabIndex?.Invoke(Selectedtabindex);
+        Log.Info($"Switching F4 Menu Tab: {tabindex}");
+    }
 
 
 
@@ -319,22 +429,25 @@ bool IsOpen( CategoryResource category )
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphCloseF4Menu GraphCloseF4Menu { get; set; }
 
+
+    //Action Graph For Becoming Job
     public delegate void ActionGraphBecomeJob(JobResource SelectedJob);
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphBecomeJob GraphBecomeJob { get; set; }
 
+    //Action Graph For Switching F4 Menu Tabs
+    public delegate void ActionGraphSelectedTabIndex(int Selectedtabindex);
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphSelectedTabIndex GraphSelectedTabIndex { get; set; }
 
 
 
+
+
+    //Is This needed?
   	[Property] public List<CategoryResource> JobCatagory {get; set;}
 
 
-
-
-	@* void GraphBecomeJob()
-	{
-	 	GraphBecomeJob?.Invoke();
-	} *@
 
 
 
@@ -353,8 +466,16 @@ bool IsOpen( CategoryResource category )
 
 
 
+
+
     //F4 Menu UI Vars
-    public bool IsF4MenuOpen {get; set;}
+    [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")] public bool IsF4MenuOpen {get; set;}
+    [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")]  public bool IsF4JobMenuOpen {get; set;}
+    [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")]  public bool IsF4MiscMenuOpen {get; set;}
+    [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")]  public bool IsF4ShipmentsMenuOpen {get; set;}
+    [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")]  public bool IsF4WeaponsMenuOpen {get; set;}
+    [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")]  public bool IsF4AmmoMenuOpen {get; set;}
+    [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")]  public bool IsF4VehiclesMenuOpen {get; set;}
    
     public bool JobsF4TabRemoved {get; set;}
     public bool ShipmentsF4TabRemoved {get; set;}
@@ -420,7 +541,26 @@ bool IsOpen( CategoryResource category )
 	/// </summary>
 	protected override int BuildHash()
 {
-    int hash = System.HashCode.Combine(MyStringValue, Player.ActiveSlot, Player.HotBarSlots.Count, JailTime, IsArrested, IsF4MenuOpen, SelectedJob);
+    int hash = 17;
+
+    hash = hash * 31 + (MyStringValue?.GetHashCode() ?? 0);
+    hash = hash * 31 + Player.ActiveSlot.GetHashCode();
+    hash = hash * 31 + Player.HotBarSlots.Count.GetHashCode();
+    hash = hash * 31 + JailTime.GetHashCode();
+    hash = hash * 31 + IsArrested.GetHashCode();
+    hash = hash * 31 + IsF4MenuOpen.GetHashCode();
+
+    hash = hash * 31 + IsF4JobMenuOpen.GetHashCode();
+    hash = hash * 31 + IsF4MiscMenuOpen.GetHashCode();
+    hash = hash * 31 + IsF4ShipmentsMenuOpen.GetHashCode();
+    hash = hash * 31 + IsF4WeaponsMenuOpen.GetHashCode();
+    hash = hash * 31 + IsF4AmmoMenuOpen.GetHashCode();
+    hash = hash * 31 + IsF4VehiclesMenuOpen.GetHashCode();
+
+    if (SelectedJob != null)
+        hash = hash * 31 + SelectedJob.GetHashCode();
+
+
 
     foreach (var slot in Player.HotBarSlots)
     {

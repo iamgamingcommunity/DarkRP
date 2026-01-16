@@ -30,6 +30,8 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment Base Info"), Group("Base Swep Pos Info"), Description("We Use Default S&Box Character that has hold types. The Hold Types are: 0=2H, 1=RH, 2=LH")] public int SwepHoldTypeHandednessParameter { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Info"), Description("Default DarkRP Ballistic System Firemodes Index Goes as Listed: 0=Safety, 1=Manual Single Bolt, 2=Single bolt, 3=Semi, 4=Burst, 5=Auto, 6=Shotgun, 7=Gatling.")] public List<int> EquipmentFireMode { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Info"), Description("This places the weapon the in the catagory you set in the spawn menus.")] public string SpawnMenuCatagory{ get; set; }
+	[Property, Feature("Equipment Base Info"), Group("Base Info"), Description("This places the weapon the in the catagory you set in the spawn menus.")] public string F4BuyMenuCategory{ get; set; }
+
 	[Property, Feature("Equipment Base Info"), Group("Base Info")] public bool NeedWeaponLicense { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Info")] public bool NoStripSwep { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Info")] public bool DisallowDrop { get; set; }
