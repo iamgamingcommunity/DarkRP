@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using DarkRPGamemode;
 using System.Diagnostics.CodeAnalysis;
+using System.ComponentModel;
 
 [GameResource("Category", "category", "Defines a DarkRP style category for Jobs, Entity's, Ammo. Etc.")]
 public class CategoryResource : GameResource
@@ -17,9 +18,29 @@ public class CategoryResource : GameResource
 
 
 
+public struct JobCategoryInfoStructMain
+{
+    public JobResource JobsInCategory { get; set; }
+    public int JobSlotsTaken { get; set; }
 
-        [Property, ShowIf ( nameof( TypeOfCategorys ), DarkRPGamemode.TypeOfCategorys.Jobs), Feature("Jobs"), Group("JobCatagory")] public List<JobResource> JobsInCatagory { get; set; }
+    public bool HideUI { get; set; }
+    [Description("Only Allow Certain Usergroup to Use The jobs.")]public List<string> Whitelist { get; set; }
 
+}
+
+public struct MiscCategoryInfoStructMain
+{
+    public PrefabFile MiscEntitiesInCategory { get; set; }
+    public int MiscCurrentItemsBought { get; set; }
+
+    public bool HideUI { get; set; }
+    [Description("Only Allow Certain Usergroup to Buy The Misc Items.")]public List<string> Whitelist { get; set; }
+}
+
+
+
+        [Property, ShowIf ( nameof( TypeOfCategorys ), DarkRPGamemode.TypeOfCategorys.Jobs), Feature("Jobs"), Group("JobCategory")] public List<JobCategoryInfoStructMain> JobCategoryInfo { get; set; } 
+        [Property, ShowIf ( nameof( TypeOfCategorys ), DarkRPGamemode.TypeOfCategorys.Miscellaneous), Feature("Misc"), Group("MiscCategory")] public List<MiscCategoryInfoStructMain> MiscEntitiesInCategory { get; set; }
         public bool IsJobCategory =>
         TypeOfCategorys == DarkRPGamemode.TypeOfCategorys.Jobs;
 

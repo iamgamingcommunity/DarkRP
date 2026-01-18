@@ -1,7 +1,7 @@
 {
   "RootObject": {
     "__guid": "873a37bf-f47c-4489-84e8-0e04a8004867",
-    "__version": 1,
+    "__version": 2,
     "Flags": 0,
     "Name": "shipment",
     "Position": "0,0,0",
@@ -10,16 +10,19 @@
     "Tags": "",
     "Enabled": true,
     "NetworkMode": 2,
-    "NetworkInterpolation": true,
+    "NetworkFlags": 0,
     "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
         "__guid": "4ccd2be9-cc16-4d9f-b16f-4e3e83cb2667",
         "__enabled": true,
+        "Flags": 0,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
+        "LodOverride": null,
         "MaterialGroup": null,
         "MaterialOverride": null,
         "Materials": null,
@@ -43,8 +46,13 @@
         "__type": "Sandbox.Rigidbody",
         "__guid": "d3980c9c-95d6-4655-b6a8-524dba008808",
         "__enabled": true,
+        "Flags": 0,
         "AngularDamping": 0,
+        "EnableImpactDamage": true,
+        "EnhancedCcd": false,
         "Gravity": true,
+        "GravityScale": 1,
+        "ImpactDamage": 0,
         "LinearDamping": 0,
         "Locking": {
           "X": false,
@@ -56,6 +64,7 @@
         },
         "MassCenterOverride": "0,0,0",
         "MassOverride": 0,
+        "MinImpactDamageSpeed": 500,
         "MotionEnabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -71,12 +80,14 @@
         "__type": "HealthComponent",
         "__guid": "f56d1f92-a570-4da7-b20f-331c836e3799",
         "__enabled": true,
+        "Flags": 0,
         "Armor": 0,
         "ArmorInfo": false,
         "Health": 15,
         "HungerSystem": false,
         "IsGodMode": false,
         "IsHungerEnabled": false,
+        "IsStaticArmor": false,
         "IsThirstEnabled": false,
         "MaxArmor": 0,
         "MaxHealth": 0,
@@ -95,7 +106,9 @@
         "__type": "Sandbox.BoxCollider",
         "__guid": "7d9b8ebd-6c0a-4d11-b86b-c87473959246",
         "__enabled": true,
+        "Flags": 0,
         "Center": "0,0,1.900001",
+        "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
@@ -119,6 +132,7 @@
         "__type": "Shipment",
         "__guid": "38773694-407f-44ab-8667-901aa60ec8aa",
         "__enabled": true,
+        "Flags": 0,
         "Interacted": {
           "__version": 9,
           "__guid": "462c594b-308e-4d82-8799-10a3b57dd410",
@@ -728,6 +742,7 @@
             }
           }
         },
+        "InteractionSFX": null,
         "IsInteractable": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -967,7 +982,8 @@
           }
         },
         "OnComponentUpdate": null,
-        "ShipmentEntity": "gameplay/entities/teaguy/teabag/teabag.prefab",
+        "ShipmentEntity": null,
+        "ShipmentFloatingModel": null,
         "ShipmentSpawnEntityAmount": 5,
         "ShipmentSpawnEntityPosAdjustment": 0
       }
@@ -975,7 +991,7 @@
     "Children": [
       {
         "__guid": "a9fe3906-c15e-4cb4-86a4-10192f4a9d2a",
-        "__version": 1,
+        "__version": 2,
         "Flags": 0,
         "Name": "ShipmentEntitySpawnPos",
         "Position": "0,0,45.60683",
@@ -984,8 +1000,9 @@
         "Tags": "",
         "Enabled": true,
         "NetworkMode": 2,
-        "NetworkInterpolation": true,
+        "NetworkFlags": 0,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [],
         "Children": []

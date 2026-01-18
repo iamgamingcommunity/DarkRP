@@ -181,32 +181,55 @@
 
 
 
-    <!-- DarkRP F4 Job Menu LEFT SIDE -->
+@{
+    // Get the component from this prefab
+    var playerInfo = this.GetComponent<DarkrpPlayerInfo>();
+    var usergroup = playerInfo?.Usergroup ?? "";
+}
+
 <div class="job-menu">
-    @foreach ( var category in CategoryResource.All.Where( c => c.IsJobCategory ) )
+    @foreach (var category in CategoryResource.All.Where(c => c.IsJobCategory))
     {
+        // Skip empty categories
+        if (category.JobCategoryInfo == null || !category.JobCategoryInfo.Any())
+            continue;
+
+        // Filter jobs by usergroup
+        var allowedJobs = category.JobCategoryInfo
+            .Where(jobInfo => jobInfo.JobsInCategory != null &&
+                              (jobInfo.Whitelist == null || jobInfo.Whitelist.Count == 0 ||
+                               jobInfo.Whitelist.Contains(usergroup)))
+            .ToList();
+
+        // Skip category if no allowed jobs
+        if (!allowedJobs.Any())
+            continue;
+
         <div class="category">
             <button class="category-button"
                     style="background-color:@category.Color"
-                    onclick="@(() => {ToggleCategory(category); })">
+                    onclick="@(() => ToggleCategory(category))">
                 @category.Name
             </button>
 
             <div class="job-list @(IsOpen(category) ? "open" : "")">
-                @foreach ( var job in category.JobsInCatagory )
+                @foreach (var jobInfo in allowedJobs)
                 {
-    <button class="job-button" onclick="@(() => {SelectJob(job); })">
-          <ul>
-            @if (job.JobImage != null)
-        {
-            <Image Texture="@job.JobImage" class="job-img" />
-        }
-        </ul>
-        <span>@job.Title</span>
-        <div class="jobbottomborder"
-             style="background-color:@job.Color">
-            </div>
-    </button>
+                    var job = jobInfo.JobsInCategory;
+
+                    <button class="job-button"
+                            onclick="@(() => SelectJob(job))">
+                        <ul>
+                            @if (job.JobImage != null)
+                            {
+                                <Image Texture="@job.JobImage" class="job-img" />
+                            }
+                        </ul>
+                        <span>@job.Title</span>
+                        <div class="jobbottomborder"
+                             style="background-color:@job.Color">
+                        </div>
+                    </button>
                 }
             </div>
         </div>
@@ -274,28 +297,36 @@
 <div class="Misc-menu">
     @foreach ( var category in CategoryResource.All.Where( c => c.IsJobCategory ) )
     {
+        var categoryPickupables = Pickupables
+            .Where( p =>
+                !string.IsNullOrWhiteSpace( p.F4BuyMenuCategory ) &&
+                p.F4BuyMenuCategory == category.Name
+            )
+            .ToList();
+
+        // If this category has no items, don't render it at all
+        if ( !categoryPickupables.Any() )
+            continue;
+
         <div class="category">
             <button class="category-button"
                     style="background-color:@category.Color"
-                    onclick="@(() => {ToggleCategory(category); })">
+                    onclick="@(() => ToggleCategory(category))">
                 @category.Name
             </button>
 
             <div class="Misc-list @(IsOpen(category) ? "open" : "")">
-                @foreach ( var job in category.JobsInCatagory )
+                @foreach ( var item in categoryPickupables )
                 {
-    <button class="Misc-button" onclick="@(() => {SelectJob(job); })">
-          <ul>
-            @if (job.JobImage != null)
-        {
-            <Image Texture="@job.JobImage" class="job-img" />
-        }
-        </ul>
-        <span>@job.Title</span>
-        <div class="Miscbottomborder"
-             style="background-color:@job.Color">
-            </div>
-    </button>
+                    <button class="Misc-button">
+
+                        <span>@item.EquipmentName</span>
+
+                        <div class="Miscbottomborder"
+                             style="background-color:@category.Color">
+                        </div>
+
+                    </button>
                 }
             </div>
         </div>
@@ -416,6 +447,18 @@ bool IsOpen( CategoryResource category )
 
 
 
+
+
+    private IReadOnlyList<PickupableEntity> Pickupables
+        = ResourceLibrary.GetAll<PickupableEntity>().ToList();
+
+
+
+
+
+
+
+
 	//Actions Graphs For Default DarkRP Chat
 	public delegate void ActionGraphOpenChatSettings();
 	[Property, Feature("Player Hud Info")]
@@ -441,6 +484,11 @@ bool IsOpen( CategoryResource category )
 	public ActionGraphSelectedTabIndex GraphSelectedTabIndex { get; set; }
 
 
+    //Action Graph For Buying F4MenuItems
+    public delegate void ActionGraphBuyF4MenuItem(PrefabFile PrefabFile);
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphBuyF4MenuItem GraphBuyF4MenuItem { get; set; }
+
 
 
 
@@ -451,7 +499,10 @@ bool IsOpen( CategoryResource category )
 
 
 
-
+	void BuyF4MenuItem(PrefabFile PrefabFile)
+	{
+	 	GraphBuyF4MenuItem?.Invoke(PrefabFile);
+	}
 
 
 

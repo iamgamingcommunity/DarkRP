@@ -92,6 +92,7 @@ public sealed class DarkrpPlayerInfo : Component
 
 
 	//Extra DarkRP Info
+	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info"), ] public string Usergroup { get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public bool IsBot { get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public int PlayerDoorInt{ get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public PlayerData PlayerListData { get; set; }
