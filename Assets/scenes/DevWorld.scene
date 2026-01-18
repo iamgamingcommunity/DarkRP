@@ -247,7 +247,7 @@
             "Value": {
               "__version": 9,
               "__guid": "29da3343-0db8-4917-a11b-514c7e80ef46",
-              "__changeId": 38,
+              "__changeId": 71,
               "UserData": {
                 "Title": "DarkRP Gamemode Start",
                 "ReferencedComponentTypes": [],
@@ -295,7 +295,7 @@
                     "_type": "System.Collections.Generic.List`1"
                   },
                   "UserData": {
-                    "Position": "1392,36"
+                    "Position": "1452,24"
                   }
                 },
                 {
@@ -346,6 +346,93 @@
                   },
                   "UserData": {
                     "Position": "1140,108"
+                  }
+                },
+                {
+                  "Id": 12,
+                  "Type": "Categories/Get Job Categories",
+                  "UserData": {
+                    "Position": "1632,24"
+                  }
+                },
+                {
+                  "Id": 14,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsJobCategory",
+                    "_type": "CategoryResource"
+                  },
+                  "UserData": {
+                    "Position": "2112,120"
+                  }
+                },
+                {
+                  "Id": 15,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2208,48"
+                  }
+                },
+                {
+                  "Id": 16,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "CategoryResource"
+                  },
+                  "UserData": {
+                    "Position": "1896,24"
+                  }
+                },
+                {
+                  "Id": 18,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobCategoryInfo",
+                    "_type": "CategoryResource"
+                  },
+                  "UserData": {
+                    "Position": "2460,168"
+                  }
+                },
+                {
+                  "Id": 19,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CategoryResource",
+                      "Name": "JobCategoryInfoStructMain"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "2580,72"
+                  }
+                },
+                {
+                  "Id": 20,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobSlotsTaken",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CategoryResource",
+                      "Name": "JobCategoryInfoStructMain"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "2808,96"
+                  }
+                },
+                {
+                  "Id": 22,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "1596,-120",
+                    "Size": "1644,384",
+                    "Title": "Reset Job Values",
+                    "Description": "When The Server Starts all Jobs categorys get their 'JobSlotTaken' to 0.",
+                    "Color": 3,
+                    "Layer": 1
                   }
                 }
               ],
@@ -427,6 +514,78 @@
                   "SrcName": "body.value",
                   "DstId": 11,
                   "DstName": "input"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_signal",
+                  "DstId": 12,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 16,
+                  "SrcName": "body.value",
+                  "DstId": 14,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 16,
+                  "SrcName": "body",
+                  "DstId": 15,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "_result",
+                  "DstId": 15,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_signal",
+                  "DstId": 16,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 12,
+                  "SrcName": "_result",
+                  "DstId": 16,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 16,
+                  "SrcName": "body.value",
+                  "DstId": 18,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 15,
+                  "SrcName": "true",
+                  "DstId": 19,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 18,
+                  "SrcName": "_result",
+                  "DstId": 19,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 19,
+                  "SrcName": "body",
+                  "DstId": 20,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 19,
+                  "SrcName": "body.value",
+                  "DstId": 20,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 21,
+                  "Value": 0,
+                  "DstId": 20,
+                  "DstName": "_value"
                 }
               ],
               "Defaults": {
@@ -2180,7 +2339,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "08749eb0-fcac-4594-837e-c7422e39317c"
+                  "IdValue": "21200c4c-bbcc-43f4-b2ac-c6e7547cceb9"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2190,7 +2349,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "08749eb0-fcac-4594-837e-c7422e39317c",
+                  "__guid": "21200c4c-bbcc-43f4-b2ac-c6e7547cceb9",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2211,18 +2370,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "61582b01-bbaf-463e-979c-24cb920f9cb9"
+                  "IdValue": "3e73a154-dcec-429f-922d-cacfe90c83fc"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "08749eb0-fcac-4594-837e-c7422e39317c"
+                  "IdValue": "21200c4c-bbcc-43f4-b2ac-c6e7547cceb9"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "61582b01-bbaf-463e-979c-24cb920f9cb9",
+                  "__guid": "3e73a154-dcec-429f-922d-cacfe90c83fc",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -2318,7 +2477,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "a7a61b8e-3554-41a8-a75d-de17a1df2678"
+                  "IdValue": "324ffd89-b6e1-4096-9dfb-a5f9549e3fa0"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2328,7 +2487,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "a7a61b8e-3554-41a8-a75d-de17a1df2678",
+                  "__guid": "324ffd89-b6e1-4096-9dfb-a5f9549e3fa0",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2349,18 +2508,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "a76eb592-caf6-496f-9222-7adfef9abaab"
+                  "IdValue": "57907770-53c3-40ca-a0d1-ac457a2b81e9"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "a7a61b8e-3554-41a8-a75d-de17a1df2678"
+                  "IdValue": "324ffd89-b6e1-4096-9dfb-a5f9549e3fa0"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "a76eb592-caf6-496f-9222-7adfef9abaab",
+                  "__guid": "57907770-53c3-40ca-a0d1-ac457a2b81e9",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -2464,7 +2623,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "ba8a3425-7862-4899-8057-20816dfbf56f"
+                  "IdValue": "53fb7e32-8ed6-4ca9-8a53-45beb0e555d5"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2474,7 +2633,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "ba8a3425-7862-4899-8057-20816dfbf56f",
+                  "__guid": "53fb7e32-8ed6-4ca9-8a53-45beb0e555d5",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2495,18 +2654,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "98aa319d-f58e-4f31-bec9-df2c02b49cb2"
+                  "IdValue": "8a71c6d2-c843-421a-87d7-015940400e95"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "ba8a3425-7862-4899-8057-20816dfbf56f"
+                  "IdValue": "53fb7e32-8ed6-4ca9-8a53-45beb0e555d5"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "98aa319d-f58e-4f31-bec9-df2c02b49cb2",
+                  "__guid": "8a71c6d2-c843-421a-87d7-015940400e95",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -2610,7 +2769,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "501604fa-490b-4c69-9bc1-114407861242"
+                  "IdValue": "0fec6ca0-e98e-45d7-9396-1116f8035680"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2620,7 +2779,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "501604fa-490b-4c69-9bc1-114407861242",
+                  "__guid": "0fec6ca0-e98e-45d7-9396-1116f8035680",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2641,18 +2800,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "a1b2a89f-8f11-47ce-9a37-64671acfed7e"
+                  "IdValue": "03a14dff-c825-48b8-9d5b-e454fa2085e4"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "501604fa-490b-4c69-9bc1-114407861242"
+                  "IdValue": "0fec6ca0-e98e-45d7-9396-1116f8035680"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "a1b2a89f-8f11-47ce-9a37-64671acfed7e",
+                  "__guid": "03a14dff-c825-48b8-9d5b-e454fa2085e4",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -2756,7 +2915,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "ada7d890-5f76-45c7-8974-308f47abdca8"
+                  "IdValue": "e80e6e85-1f6c-412a-bf45-ed6088a8a01c"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2766,7 +2925,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "ada7d890-5f76-45c7-8974-308f47abdca8",
+                  "__guid": "e80e6e85-1f6c-412a-bf45-ed6088a8a01c",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2787,18 +2946,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "c3712ead-caa2-4995-b160-a8f212634406"
+                  "IdValue": "f8d40f47-df49-4a7b-a002-2696aef95bcd"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "ada7d890-5f76-45c7-8974-308f47abdca8"
+                  "IdValue": "e80e6e85-1f6c-412a-bf45-ed6088a8a01c"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "c3712ead-caa2-4995-b160-a8f212634406",
+                  "__guid": "f8d40f47-df49-4a7b-a002-2696aef95bcd",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -2902,7 +3061,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "e9be9fe9-7dae-470e-aaa6-51ccccb75fe8"
+                  "IdValue": "ad0ff8f6-46b3-4d5e-b700-515ea1cc0f08"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -2912,7 +3071,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "e9be9fe9-7dae-470e-aaa6-51ccccb75fe8",
+                  "__guid": "ad0ff8f6-46b3-4d5e-b700-515ea1cc0f08",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -2933,18 +3092,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "7e64279f-ade5-460b-951e-528bd2605966"
+                  "IdValue": "adfd79f3-af8c-4bd8-a574-677988d82e61"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "e9be9fe9-7dae-470e-aaa6-51ccccb75fe8"
+                  "IdValue": "ad0ff8f6-46b3-4d5e-b700-515ea1cc0f08"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "7e64279f-ade5-460b-951e-528bd2605966",
+                  "__guid": "adfd79f3-af8c-4bd8-a574-677988d82e61",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -3169,13 +3328,13 @@
                     "DstName": "_target"
                   },
                   {
-                    "Id": 31,
+                    "Id": 22,
                     "Value": true,
                     "DstId": 2,
                     "DstName": "includeAncestors"
                   },
                   {
-                    "Id": 32,
+                    "Id": 23,
                     "Value": "player",
                     "DstId": 2,
                     "DstName": "tag"
@@ -3205,7 +3364,7 @@
                     "DstName": "_target"
                   },
                   {
-                    "Id": 33,
+                    "Id": 24,
                     "Value": "facepunch.construct23",
                     "DstId": 16,
                     "DstName": "_value"

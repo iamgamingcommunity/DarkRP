@@ -18,7 +18,7 @@ public class CategoryResource : GameResource
 
 
 
-public struct JobCategoryInfoStructMain
+public class JobCategoryInfoStructMain
 {
     public JobResource JobsInCategory { get; set; }
     public int JobSlotsTaken { get; set; }

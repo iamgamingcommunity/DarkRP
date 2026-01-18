@@ -218,7 +218,7 @@
                     var job = jobInfo.JobsInCategory;
 
                     <button class="job-button"
-                            onclick="@(() => SelectJob(job))">
+                            onclick="@(() => SelectJob(job, jobInfo))">
                         <ul>
                             @if (job.JobImage != null)
                             {
@@ -226,6 +226,9 @@
                             }
                         </ul>
                         <span>@job.Title</span>
+                        <div class="jobcounter">
+                            @jobInfo.JobSlotsTaken/@job.MaxPlayersAllowedOnJob
+                        </div>
                         <div class="jobbottomborder"
                              style="background-color:@job.Color">
                         </div>
@@ -421,11 +424,19 @@ bool IsOpen( CategoryResource category )
     List<CategoryResource> Categories = new();
     List<JobResource> Jobs = new();
 
-
-    void SelectJob(JobResource job)
+        //Select Job Button, this is NOT the 'Become Job Button'
+    void SelectJob(JobResource job, CategoryResource.JobCategoryInfoStructMain jobInfo)
     {
+        if (jobInfo.JobSlotsTaken >= job.MaxPlayersAllowedOnJob)
+        {
+            Log.Info($"Job {job.Title} is full ({jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob})");
+            return;
+        }
+
         SelectedJob = job;
-        Log.Info($"Selected job: {SelectedJob.Title}");
+        jobInfo.JobSlotsTaken++;
+
+        Log.Info($"Selected job: {job.Title}, {jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob}");
     }
 
     void BecomeJob()
