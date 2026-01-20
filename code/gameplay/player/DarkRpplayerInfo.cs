@@ -10,9 +10,9 @@ public sealed class DarkrpPlayerInfo : Component
 	//Steam Player Related Info
     [Property, ReadOnly, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public SteamId SteamId { get; private set; }
 	[Property, ReadOnly, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string SteamName { get; private set; }
-	[Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string DisplayName { get; set; }
+	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string DisplayName { get; set; }
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public JobResource CurrentJob { get; set; }
-	[Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public int PlayerMoney { get; set; }
+	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public int PlayerMoney { get; set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyFireAnimationParameterName { get; set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyclimbingAnimationParameterName { get; set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyDeployAnimationParameterName { get; set; }
@@ -71,6 +71,13 @@ public sealed class DarkrpPlayerInfo : Component
 	[KeyProperty] public PickupableEntity HotBarSlotHolder { get; set; }
 	}
 
+
+
+  [Button, Property, Feature("Debug"), Group("PD"), Title("Arrest Player")]
+	public void DebugTest()
+	{
+		GraTest?.Invoke();
+	}
 
 
 
@@ -134,7 +141,9 @@ public sealed class DarkrpPlayerInfo : Component
 	public ActionGraphUnArrest UnArrestLogic { get; set; }
 
 
-
+	public delegate void ActionTest();
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Unarrest Logic")]
+	public ActionTest GraTest { get; set; }
 
 
 

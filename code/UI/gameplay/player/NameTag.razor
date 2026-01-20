@@ -4,11 +4,15 @@
 @namespace Sandbox
 
 <root class="@(Network.IsProxy ? "" : "hidden")">
-	<div class="title">@(Network.OwnerConnection.DisplayName)</div>
+	<div class="title">@(DisplayName)</div>
 </root>
 
 @code
 {
 
-	protected override int BuildHash() => System.HashCode.Combine( Network.OwnerConnection.DisplayName );
+
+	[Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string DisplayName { get; set; }
+
+
+	protected override int BuildHash() => System.HashCode.Combine( DisplayName );
 }
