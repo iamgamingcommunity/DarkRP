@@ -11,7 +11,7 @@ public sealed class DarkrpPlayerInfo : Component
     [Property, ReadOnly, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public SteamId SteamId { get; private set; }
 	[Property, ReadOnly, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string SteamName { get; private set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string DisplayName { get; set; }
-	[Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public JobResource CurrentJob { get; set; }
+	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public JobResource CurrentJob { get; set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public int PlayerMoney { get; set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyFireAnimationParameterName { get; set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyclimbingAnimationParameterName { get; set; }
@@ -87,8 +87,19 @@ public sealed class DarkrpPlayerInfo : Component
 		UnArrestLogic?.Invoke();
 	}
 
+	[Rpc.Host]
+	public void RequestBecomeJob(JobResource job)
+	{
+	#if SERVER
+		if (job == null) return;
 
+		// server logic: assign job
+		JobManager.Instance.TryAssignJob(this, job);
+	#endif
+	}
 
+		// public static DarkrpPlayerInfo Local =>
+		// 	Game.LocalClient?.Pawn?.Components.Get<DarkrpPlayerInfo>();
 
 
 	//Extra DarkRP Info

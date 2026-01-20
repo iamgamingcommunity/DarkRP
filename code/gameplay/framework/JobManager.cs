@@ -1,47 +1,59 @@
 using Sandbox;
 using System.Collections.Generic;
 
-public partial class JobManager : Entity
+public sealed class JobManager : Component
 {
     public static JobManager Instance { get; private set; }
 
-    [Net] private IDictionary<string, int> JobSlots { get; set; }
+    [Sync] public NetDictionary<string, int> JobSlotsTaken { get; set; } = new();
 
-    public override void Spawn()
+    protected override void OnAwake()
     {
-        if (!Game.IsServer)
-            return;
-
         Instance = this;
-        JobSlots = new Dictionary<string, int>();
     }
 
-    public bool TryTakeJob(JobResource job)
+
+protected override void OnStart()
+{
+#if SERVER
+    foreach ( var category in JobCategoryInfo )
     {
-        var id = job.ResourceId;
+        var job = category.JobsInCategory;
+        if ( job == null ) continue;
 
-        JobSlots.TryGetValue(id, out var current);
-
-        if (current >= job.MaxPlayersAllowedOnJob)
-            return false;
-
-        JobSlots[id] = current + 1;
-        return true;
+        JobRuntimeState.Instance.JobSlotsTaken.TryAdd(
+            job.ResourcePath,
+            0
+        );
     }
+#endif
+}
 
-    public void ReleaseJob(JobResource job)
-    {
-        var id = job.ResourceId;
 
-        if (!JobSlots.ContainsKey(id))
-            return;
+//Become Job Button Logic for DarkRP F4 Job Menu
+void BecomeJob_Server( Connection conn, JobResource job )
+{
+    var jobId = job.ResourcePath;
+    var runtime = JobManager.Instance;
 
-        JobSlots[id] = System.Math.Max(0, JobSlots[id] - 1);
-    }
+    int taken = runtime.JobSlotsTaken.GetValueOrDefault( jobId );
 
-    public int GetJobSlots(JobResource job)
-    {
-        JobSlots.TryGetValue(job.ResourceId, out var count);
-        return count;
-    }
+    if ( taken >= job.MaxPlayersAllowedOnJob )
+        return;
+
+    runtime.JobSlotsTaken[jobId] = taken + 1;
+}
+
+public void TryAssignJob( DarkrpPlayerInfo player, JobResource job )
+{
+#if SERVER
+    if ( job == null )
+        return;
+
+    AssignJob( player, job );
+#endif
+}
+
+
+
 }

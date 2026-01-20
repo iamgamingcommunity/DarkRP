@@ -1535,7 +1535,7 @@
             "BodySitAnimationParameterValue": 0,
             "BodySwimAnimationParameterName": "b_swim",
             "BodyWeaponLowerAnimationParameterName": "b_weapon_lower",
-            "CurrentJob": "gameplay/jobs/citizen.job",
+            "CurrentJob": null,
             "DisplayName": null,
             "DropPlayerMoneyOnDeath": false,
             "F2MenuUIPanel": {
@@ -81687,7 +81687,7 @@
                 ]
               },
               {
-                "__guid": "7c56f3d6-ea3e-437f-b624-5eb1b8f60d2d",
+                "__guid": "498a6714-f531-4737-9f66-5db2e92f9446",
                 "__version": 2,
                 "Flags": 0,
                 "Name": "Clothing - chef_shirt",
@@ -81704,7 +81704,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "6d117776-a1eb-4820-ac51-460083fb70c5",
+                    "__guid": "17c71ee6-4750-418b-9850-9ba634187c5e",
                     "__enabled": true,
                     "Flags": 0,
                     "AnimationGraph": null,
@@ -81756,7 +81756,7 @@
                 "Children": []
               },
               {
-                "__guid": "fd5fcfa6-88b4-4c91-93fb-bc743cf1890c",
+                "__guid": "695c892c-3206-4cd7-9263-407dfea3d440",
                 "__version": 2,
                 "Flags": 0,
                 "Name": "Clothing - brown_cargo_pants",
@@ -81773,7 +81773,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "1dc3bbf6-fcb6-4eab-b23e-fcbea02ed782",
+                    "__guid": "5138973b-1280-4cbc-a6e2-60a3e726a558",
                     "__enabled": true,
                     "Flags": 0,
                     "AnimationGraph": null,
@@ -81915,15 +81915,70 @@
             "OwnerTransfer": 1,
             "Components": [],
             "Children": []
+          },
+          {
+            "__guid": "fcfa2366-07cb-4fa1-ab34-89a7e15e5c70",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "NameTag",
+            "Position": "0,0,81.70977",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 1,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.WorldPanel",
+                "__guid": "1c9bdef5-58f5-4567-8c70-67dac686b019",
+                "__enabled": true,
+                "Flags": 0,
+                "HorizontalAlign": "Center",
+                "InteractionRange": 1000,
+                "LookAtCamera": true,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "PanelSize": "512,512",
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderScale": 1,
+                "VerticalAlign": "Center"
+              },
+              {
+                "__type": "Sandbox.NameTag",
+                "__guid": "f9a9f7a9-930f-42d8-98c7-d30d7b4e045a",
+                "__enabled": true,
+                "Flags": 0,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null
+              }
+            ],
+            "Children": []
           }
         ]
       },
       {
-        "__guid": "3eb2a0fc-d794-4093-aa21-7b840f5e2eb4",
+        "__guid": "1e702753-e971-4714-a3c0-3bc244f680e5",
         "__version": 2,
         "Flags": 0,
-        "Name": "F4MenuSpawnPoint",
-        "Position": "49.76796,0,0",
+        "Name": "GameObject",
+        "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Tags": "",
@@ -81937,11 +81992,29 @@
         "Children": []
       },
       {
-        "__guid": "6d0387b1-eb7e-4124-bc06-b81f2d430673",
+        "__guid": "d452d5ff-93da-40c2-812f-27c77610f936",
         "__version": 2,
         "Flags": 0,
         "Name": "GameObject",
         "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [],
+        "Children": []
+      },
+      {
+        "__guid": "3eb2a0fc-d794-4093-aa21-7b840f5e2eb4",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "F4MenuSpawnPoint",
+        "Position": "49.76796,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Tags": "",
@@ -81964,7 +82037,7 @@
         "Scale": "1,1,1",
         "Tags": "",
         "Enabled": true,
-        "NetworkMode": 2,
+        "NetworkMode": 0,
         "NetworkFlags": 0,
         "NetworkOrphaned": 0,
         "NetworkTransmit": true,
@@ -82410,7 +82483,7 @@
                       "DstName": "_target"
                     },
                     {
-                      "Id": 28,
+                      "Id": 30,
                       "Value": {
                         "__version": 9,
                         "__guid": "3d9d21bb-c337-4757-88e0-9f6a02e3480c",

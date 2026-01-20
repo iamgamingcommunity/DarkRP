@@ -5,6 +5,7 @@ using System.Drawing;
 using DarkRPGamemode;
 using System.Diagnostics.CodeAnalysis;
 using System.ComponentModel;
+using System.Data;
 
 [GameResource("Category", "category", "Defines a DarkRP style category for Jobs, Entity's, Ammo. Etc.")]
 public class CategoryResource : GameResource
