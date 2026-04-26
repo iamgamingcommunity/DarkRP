@@ -3,54 +3,54 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-[Title("Get Prefab Files With Transform (PrefabFile Version)")]
-[Category("IAG | Prefab Search")]
-public static class PrefabFileVariable
-{
-    // Predefined list of prefab references (must be assigned via editor)
-    [Property, Title("Prefab References")]
-    public static PrefabFile[] PrefabFiles { get; set; } = new PrefabFile[0];
+// [Title("Get Prefab Files With Transform (PrefabFile Version)")]
+// [Category("IAG | Prefab Search")]
+// public static class PrefabFileVariable
+// {
+//     // Predefined list of prefab references (must be assigned via editor)
+//     [Property, Title("Prefab References")]
+//     public static PrefabFile[] PrefabFiles { get; set; } = new PrefabFile[0];
 
-    // Struct to hold prefab + transform info
-    public struct PrefabData
-    {
-        [Property, Title("Prefab")]
-        public PrefabFile Prefab { get; set; }
+//     // Struct to hold prefab + transform info
+//     public struct PrefabData
+//     {
+//         [Property, Title("Prefab")]
+//         public PrefabFile Prefab { get; set; }
 
-        [Property, Title("Position")]
-        public Vector3 Position { get; set; }
+//         [Property, Title("Position")]
+//         public Vector3 Position { get; set; }
 
-        [Property, Title("Rotation")]
-        public Rotation Rotation { get; set; }
-    }
+//         [Property, Title("Rotation")]
+//         public Rotation Rotation { get; set; }
+//     }
 
-    // Action Graph Node: find prefabs by name and return PrefabData array
-    [ActionGraphNode("Get Prefabs By Name With Transform")]
-    public static PrefabData[] GetPrefabsByName(string searchName)
-    {
-        List<PrefabData> results = new List<PrefabData>();
+//     // Action Graph Node: find prefabs by name and return PrefabData array
+//     [ActionGraphNode("Get Prefabs By Name With Transform")]
+//     public static PrefabData[] GetPrefabsByName(string searchName)
+//     {
+//         List<PrefabData> results = new List<PrefabData>();
 
-        if (PrefabFiles == null) return results.ToArray();
+//         if (PrefabFiles == null) return results.ToArray();
 
-        foreach (var prefab in PrefabFiles)
-        {
-            if (prefab == null) continue;
+//         foreach (var prefab in PrefabFiles)
+//         {
+//             if (prefab == null) continue;
 
-            var fileName = prefab.ResourceName.Split("/").Last().Replace(".prefab", "");
-            if (fileName.Equals(searchName, StringComparison.OrdinalIgnoreCase))
-            {
-                results.Add(new PrefabData
-                {
-                    Prefab = prefab,
-                    Position = Vector3.Zero,
-                    Rotation = Rotation.Identity
-                });
-            }
-        }
+//             var fileName = prefab.ResourceName.Split("/").Last().Replace(".prefab", "");
+//             if (fileName.Equals(searchName, StringComparison.OrdinalIgnoreCase))
+//             {
+//                 results.Add(new PrefabData
+//                 {
+//                     Prefab = prefab,
+//                     Position = Vector3.Zero,
+//                     Rotation = Rotation.Identity
+//                 });
+//             }
+//         }
 
-        return results.ToArray();
-    }
-}
+//         return results.ToArray();
+//     }
+// }
 
 
 // using Sandbox;

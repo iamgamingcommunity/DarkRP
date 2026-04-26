@@ -6,7 +6,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Map Instance",
-      "Position": "-362.9251,1125.463,100.8173",
+      "Position": "-362.92511,1125.46301,100.817299",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -135,2241 +135,6 @@
               "Type": "Component",
               "IdValue": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d"
             },
-            "Property": "GraphSaveAllDoors",
-            "Value": {
-              "__version": 9,
-              "__guid": "b2b81f98-499f-4af9-b0dd-27580394e5c8",
-              "__changeId": 245,
-              "UserData": {
-                "Title": "Save All Doors Logic",
-                "ReferencedComponentTypes": []
-              },
-              "Variables": [
-                {
-                  "Name": "stri",
-                  "Type": "System.String"
-                }
-              ],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input",
-                  "UserData": {
-                    "Position": "-1560,-60"
-                  }
-                },
-                {
-                  "Id": 1,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "MapSaveFile",
-                    "_type": "MapSaveFileResource"
-                  },
-                  "UserData": {
-                    "Position": "1476,-540"
-                  }
-                },
-                {
-                  "Id": 2,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveGameObjects",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "PermaGameObjectsStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "1824,-540"
-                  }
-                },
-                {
-                  "Id": 3,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "DoorPositions",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2244,-672"
-                  }
-                },
-                {
-                  "Id": 5,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Tags",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "2124,-864"
-                  }
-                },
-                {
-                  "Id": 6,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Has",
-                    "_type": "Sandbox.GameTags"
-                  },
-                  "UserData": {
-                    "Position": "2364,-876"
-                  }
-                },
-                {
-                  "Id": 7,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "2592,-960"
-                  }
-                },
-                {
-                  "Id": 9,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Add",
-                    "_type": "System.Collections.Generic.List`1"
-                  },
-                  "UserData": {
-                    "Position": "4440,-924"
-                  }
-                },
-                {
-                  "Id": 10,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "InfoStruct",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "2700,-684"
-                  }
-                },
-                {
-                  "Id": 11,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GameObject",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsInfoStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2868,-852"
-                  }
-                },
-                {
-                  "Id": 12,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GameObjectPosition",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsInfoStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "3252,-876"
-                  }
-                },
-                {
-                  "Id": 13,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GameObjectRotation",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsInfoStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "3576,-840"
-                  }
-                },
-                {
-                  "Id": 14,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GameObjectScale",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsInfoStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "3984,-864"
-                  }
-                },
-                {
-                  "Id": 15,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "WorldPosition",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "3180,-816"
-                  }
-                },
-                {
-                  "Id": 16,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "WorldRotation",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "3552,-732"
-                  }
-                },
-                {
-                  "Id": 17,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "WorldScale",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "4044,-768"
-                  }
-                },
-                {
-                  "Id": 18,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "InfoStruct",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "2892,-936"
-                  }
-                },
-                {
-                  "Id": 19,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "InfoStruct",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "3264,-948"
-                  }
-                },
-                {
-                  "Id": 20,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "InfoStruct",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "4020,-936"
-                  }
-                },
-                {
-                  "Id": 21,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "InfoStruct",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "3624,-948"
-                  }
-                },
-                {
-                  "Id": 22,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "MapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "2664,-1572"
-                  }
-                },
-                {
-                  "Id": 23,
-                  "Type": "nop",
-                  "UserData": {
-                    "Position": "4368,-744"
-                  }
-                },
-                {
-                  "Id": 24,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": "MapSaveFileResource"
-                  },
-                  "UserData": {
-                    "Position": "3024,-1596"
-                  }
-                },
-                {
-                  "Id": 25,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "MapSaveFile",
-                    "_type": "MapSaveFileResource"
-                  },
-                  "UserData": {
-                    "Position": "3132,-1236"
-                  }
-                },
-                {
-                  "Id": 26,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "MapInstanceName",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "PermaGameObjectsStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "3456,-1272"
-                  }
-                },
-                {
-                  "Id": 27,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "3288,-1500"
-                  }
-                },
-                {
-                  "Id": 28,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "3444,-1572"
-                  }
-                },
-                {
-                  "Id": 29,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "TempGameObjects",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "900,-888"
-                  }
-                },
-                {
-                  "Id": 31,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Add",
-                    "_type": "System.Collections.Generic.List`1"
-                  },
-                  "UserData": {
-                    "Position": "1044,-972"
-                  }
-                },
-                {
-                  "Id": 32,
-                  "Type": "time.delayobj",
-                  "UserData": {
-                    "Position": "1476,-744"
-                  }
-                },
-                {
-                  "Id": 33,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "1668,-744"
-                  }
-                },
-                {
-                  "Id": 34,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Count",
-                    "_type": "System.Collections.Generic.List`1"
-                  },
-                  "UserData": {
-                    "Position": "1596,-612"
-                  }
-                },
-                {
-                  "Id": 35,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "1932,-612"
-                  }
-                },
-                {
-                  "Id": 36,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "2232,-1020"
-                  }
-                },
-                {
-                  "Id": 37,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "3552,-1464"
-                  }
-                },
-                {
-                  "Id": 38,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveMapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "3612,-1428"
-                  }
-                },
-                {
-                  "Id": 39,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveMapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "3708,-1548"
-                  }
-                },
-                {
-                  "Id": 40,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "2436,-468"
-                  }
-                },
-                {
-                  "Id": 41,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "2376,-1548"
-                  }
-                },
-                {
-                  "Id": 51,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "1320,-480"
-                  }
-                },
-                {
-                  "Id": 53,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveMapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "1464,-468"
-                  }
-                },
-                {
-                  "Id": 54,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "2472,-1392"
-                  }
-                },
-                {
-                  "Id": 55,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveMapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "2616,-1380"
-                  }
-                },
-                {
-                  "Id": 68,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Scene",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "204,-972"
-                  }
-                },
-                {
-                  "Id": 69,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "GetAll",
-                    "_type": "Sandbox.Scene",
-                    "T": "door"
-                  },
-                  "UserData": {
-                    "Position": "408,-960"
-                  }
-                },
-                {
-                  "Id": 73,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": "door"
-                  },
-                  "UserData": {
-                    "Position": "600,-1020"
-                  }
-                },
-                {
-                  "Id": 74,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GameObject",
-                    "_type": "Sandbox.Component"
-                  },
-                  "UserData": {
-                    "Position": "888,-1140"
-                  }
-                },
-                {
-                  "Id": 76,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "588,-864"
-                  }
-                },
-                {
-                  "Id": 77,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "TempGameObjects",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "1044,-600"
-                  }
-                },
-                {
-                  "Id": 78,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "828,-636"
-                  }
-                },
-                {
-                  "Id": 79,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "-1524,264"
-                  }
-                },
-                {
-                  "Id": 80,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveMapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "-1284,264"
-                  }
-                },
-                {
-                  "Id": 81,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "MapSaveFile",
-                    "_type": "MapSaveFileResource"
-                  },
-                  "UserData": {
-                    "Position": "-1296,240"
-                  }
-                },
-                {
-                  "Id": 82,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveGameObjects",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "PermaGameObjectsStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "-1332,204"
-                  }
-                },
-                {
-                  "Id": 83,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "DoorPositions",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "-1260,120"
-                  }
-                },
-                {
-                  "Id": 84,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Count",
-                    "_type": "System.Collections.Generic.List`1"
-                  },
-                  "UserData": {
-                    "Position": "-1368,72"
-                  }
-                },
-                {
-                  "Id": 85,
-                  "Type": "op.greaterthan",
-                  "UserData": {
-                    "Position": "-1200,24"
-                  }
-                },
-                {
-                  "Id": 87,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "-1260,-108"
-                  }
-                },
-                {
-                  "Id": 88,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Clear",
-                    "_type": "System.Collections.Generic.List`1"
-                  },
-                  "UserData": {
-                    "Position": "-924,-96"
-                  }
-                },
-                {
-                  "Id": 89,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "MapSaveFile",
-                    "_type": "MapSaveFileResource"
-                  },
-                  "UserData": {
-                    "Position": "864,1104"
-                  }
-                },
-                {
-                  "Id": 90,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveGameObjects",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "PermaGameObjectsStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "1212,1104"
-                  }
-                },
-                {
-                  "Id": 91,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "DoorPositions",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "1632,972"
-                  }
-                },
-                {
-                  "Id": 92,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Tags",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "1512,780"
-                  }
-                },
-                {
-                  "Id": 93,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Has",
-                    "_type": "Sandbox.GameTags"
-                  },
-                  "UserData": {
-                    "Position": "1752,768"
-                  }
-                },
-                {
-                  "Id": 94,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "1980,684"
-                  }
-                },
-                {
-                  "Id": 95,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Add",
-                    "_type": "System.Collections.Generic.List`1"
-                  },
-                  "UserData": {
-                    "Position": "3828,720"
-                  }
-                },
-                {
-                  "Id": 96,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "InfoStruct",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "2340,1200"
-                  }
-                },
-                {
-                  "Id": 97,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GameObject",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsInfoStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2316,936"
-                  }
-                },
-                {
-                  "Id": 98,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GameObjectPosition",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsInfoStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2640,768"
-                  }
-                },
-                {
-                  "Id": 99,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GameObjectRotation",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsInfoStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2964,804"
-                  }
-                },
-                {
-                  "Id": 100,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GameObjectScale",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "GameObjectsInfoStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "3372,780"
-                  }
-                },
-                {
-                  "Id": 101,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "WorldPosition",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "2568,828"
-                  }
-                },
-                {
-                  "Id": 102,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "WorldRotation",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "2940,912"
-                  }
-                },
-                {
-                  "Id": 103,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "WorldScale",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "3432,876"
-                  }
-                },
-                {
-                  "Id": 104,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "InfoStruct",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "2280,708"
-                  }
-                },
-                {
-                  "Id": 105,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "InfoStruct",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "2652,696"
-                  }
-                },
-                {
-                  "Id": 106,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "InfoStruct",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "3408,708"
-                  }
-                },
-                {
-                  "Id": 107,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "InfoStruct",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "3012,696"
-                  }
-                },
-                {
-                  "Id": 108,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "MapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "2052,72"
-                  }
-                },
-                {
-                  "Id": 109,
-                  "Type": "nop",
-                  "UserData": {
-                    "Position": "3756,900"
-                  }
-                },
-                {
-                  "Id": 110,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": "MapSaveFileResource"
-                  },
-                  "UserData": {
-                    "Position": "2412,48"
-                  }
-                },
-                {
-                  "Id": 111,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "MapSaveFile",
-                    "_type": "MapSaveFileResource"
-                  },
-                  "UserData": {
-                    "Position": "2520,408"
-                  }
-                },
-                {
-                  "Id": 112,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "MapInstanceName",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "MapSaveFileResource",
-                      "Name": "PermaGameObjectsStruct"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2844,372"
-                  }
-                },
-                {
-                  "Id": 113,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "2676,144"
-                  }
-                },
-                {
-                  "Id": 114,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "2832,72"
-                  }
-                },
-                {
-                  "Id": 115,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "TempGameObjects",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "288,756"
-                  }
-                },
-                {
-                  "Id": 116,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Add",
-                    "_type": "System.Collections.Generic.List`1"
-                  },
-                  "UserData": {
-                    "Position": "432,672"
-                  }
-                },
-                {
-                  "Id": 117,
-                  "Type": "time.delayobj",
-                  "UserData": {
-                    "Position": "864,900"
-                  }
-                },
-                {
-                  "Id": 118,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "1056,900"
-                  }
-                },
-                {
-                  "Id": 119,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Count",
-                    "_type": "System.Collections.Generic.List`1"
-                  },
-                  "UserData": {
-                    "Position": "984,1032"
-                  }
-                },
-                {
-                  "Id": 120,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "1320,1032"
-                  }
-                },
-                {
-                  "Id": 121,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "1620,624"
-                  }
-                },
-                {
-                  "Id": 122,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "2940,180"
-                  }
-                },
-                {
-                  "Id": 123,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveMapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "3000,216"
-                  }
-                },
-                {
-                  "Id": 124,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveMapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "3096,96"
-                  }
-                },
-                {
-                  "Id": 125,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "1824,1176"
-                  }
-                },
-                {
-                  "Id": 126,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "1764,96"
-                  }
-                },
-                {
-                  "Id": 127,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "708,1164"
-                  }
-                },
-                {
-                  "Id": 128,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveMapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "852,1176"
-                  }
-                },
-                {
-                  "Id": 129,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "1860,252"
-                  }
-                },
-                {
-                  "Id": 130,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "SaveMapSaveFile",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "2004,264"
-                  }
-                },
-                {
-                  "Id": 131,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Scene",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "-408,672"
-                  }
-                },
-                {
-                  "Id": 132,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "GetAll",
-                    "_type": "Sandbox.Scene",
-                    "T": "door"
-                  },
-                  "UserData": {
-                    "Position": "-204,684"
-                  }
-                },
-                {
-                  "Id": 133,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": "door"
-                  },
-                  "UserData": {
-                    "Position": "-12,624"
-                  }
-                },
-                {
-                  "Id": 134,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "GameObject",
-                    "_type": "Sandbox.Component"
-                  },
-                  "UserData": {
-                    "Position": "276,504"
-                  }
-                },
-                {
-                  "Id": 135,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "-24,780"
-                  }
-                },
-                {
-                  "Id": 136,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "TempGameObjects",
-                    "_type": "PermaGameObjectsSystem"
-                  },
-                  "UserData": {
-                    "Position": "432,1044"
-                  }
-                },
-                {
-                  "Id": 137,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "216,1008"
-                  }
-                },
-                {
-                  "Id": 144,
-                  "Type": "log.info",
-                  "UserData": {
-                    "Position": "2136,744"
-                  }
-                },
-                {
-                  "Id": 162,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "-1200,612"
-                  }
-                },
-                {
-                  "Id": 163,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Frefabfile",
-                    "_type": "SaveGameObject"
-                  },
-                  "UserData": {
-                    "Position": "-1056,624"
-                  }
-                },
-                {
-                  "Id": 165,
-                  "Type": "sys.tostring",
-                  "Properties": {
-                    "T": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "1464,876"
-                  }
-                },
-                {
-                  "Id": 167,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "stri"
-                  },
-                  "UserData": {
-                    "Position": "-324,1128"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "SrcId": 53,
-                  "SrcName": "_result",
-                  "DstId": 1,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 1,
-                  "SrcName": "_result",
-                  "DstId": 2,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 2,
-                  "SrcName": "_result",
-                  "DstId": 3,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 33,
-                  "SrcName": "body.value",
-                  "DstId": 5,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5,
-                  "SrcName": "_result",
-                  "DstId": 6,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 176,
-                  "Value": true,
-                  "DstId": 6,
-                  "DstName": "includeAncestors"
-                },
-                {
-                  "Id": 177,
-                  "Value": "door",
-                  "DstId": 6,
-                  "DstName": "tag"
-                },
-                {
-                  "SrcId": 36,
-                  "SrcName": "false",
-                  "DstId": 7,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 6,
-                  "SrcName": "_result",
-                  "DstId": 7,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 20,
-                  "SrcName": "_signal",
-                  "DstId": 9,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 23,
-                  "SrcName": "out",
-                  "DstId": 9,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 10,
-                  "SrcName": "_result",
-                  "DstId": 9,
-                  "DstName": "item"
-                },
-                {
-                  "SrcId": 40,
-                  "SrcName": "_result",
-                  "DstId": 10,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 10,
-                  "SrcName": "_result",
-                  "DstId": 11,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 33,
-                  "SrcName": "body.value",
-                  "DstId": 11,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 10,
-                  "SrcName": "_result",
-                  "DstId": 12,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 15,
-                  "SrcName": "_result",
-                  "DstId": 12,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 10,
-                  "SrcName": "_result",
-                  "DstId": 13,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 16,
-                  "SrcName": "_result",
-                  "DstId": 13,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 10,
-                  "SrcName": "_result",
-                  "DstId": 14,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 17,
-                  "SrcName": "_result",
-                  "DstId": 14,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 33,
-                  "SrcName": "body.value",
-                  "DstId": 15,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 33,
-                  "SrcName": "body.value",
-                  "DstId": 16,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 7,
-                  "SrcName": "true",
-                  "DstId": 18,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 40,
-                  "SrcName": "_result",
-                  "DstId": 18,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 11,
-                  "SrcName": "_target",
-                  "DstId": 18,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 18,
-                  "SrcName": "_signal",
-                  "DstId": 19,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 40,
-                  "SrcName": "_result",
-                  "DstId": 19,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 12,
-                  "SrcName": "_target",
-                  "DstId": 19,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 21,
-                  "SrcName": "_signal",
-                  "DstId": 20,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 40,
-                  "SrcName": "_result",
-                  "DstId": 20,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 14,
-                  "SrcName": "_target",
-                  "DstId": 20,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 19,
-                  "SrcName": "_signal",
-                  "DstId": 21,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 40,
-                  "SrcName": "_result",
-                  "DstId": 21,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 13,
-                  "SrcName": "_target",
-                  "DstId": 21,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 41,
-                  "SrcName": "_result",
-                  "DstId": 22,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 3,
-                  "SrcName": "_result",
-                  "DstId": 23,
-                  "DstName": "in"
-                },
-                {
-                  "SrcId": 36,
-                  "SrcName": "true",
-                  "DstId": 24,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 22,
-                  "SrcName": "_result",
-                  "DstId": 24,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 24,
-                  "SrcName": "body.value",
-                  "DstId": 25,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 25,
-                  "SrcName": "_result",
-                  "DstId": 26,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 55,
-                  "SrcName": "_result",
-                  "DstId": 27,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 24,
-                  "SrcName": "body.value",
-                  "DstId": 27,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 24,
-                  "SrcName": "body",
-                  "DstId": 28,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 27,
-                  "SrcName": "_result",
-                  "DstId": 28,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 76,
-                  "SrcName": "_result",
-                  "DstId": 29,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 73,
-                  "SrcName": "body",
-                  "DstId": 31,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 29,
-                  "SrcName": "_result",
-                  "DstId": 31,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 74,
-                  "SrcName": "_result",
-                  "DstId": 31,
-                  "DstName": "item"
-                },
-                {
-                  "SrcId": 88,
-                  "SrcName": "_signal",
-                  "DstId": 32,
-                  "DstName": "_signal"
-                },
-                {
-                  "Id": 178,
-                  "Value": 5,
-                  "DstId": 32,
-                  "DstName": "seconds"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 32,
-                  "DstName": "target"
-                },
-                {
-                  "SrcId": 32,
-                  "SrcName": "_signal",
-                  "DstId": 33,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 77,
-                  "SrcName": "_result",
-                  "DstId": 33,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 29,
-                  "SrcName": "_result",
-                  "DstId": 34,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 34,
-                  "SrcName": "_result",
-                  "DstId": 35,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 33,
-                  "SrcName": "body.index",
-                  "DstId": 35,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 33,
-                  "SrcName": "body",
-                  "DstId": 36,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 35,
-                  "SrcName": "_result",
-                  "DstId": 36,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 37,
-                  "SrcName": "_result",
-                  "DstId": 38,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 28,
-                  "SrcName": "true",
-                  "DstId": 39,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 37,
-                  "SrcName": "_result",
-                  "DstId": 39,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 38,
-                  "SrcName": "_result",
-                  "DstId": 39,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 51,
-                  "SrcName": "_result",
-                  "DstId": 53,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 54,
-                  "SrcName": "_result",
-                  "DstId": 55,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 68,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 68,
-                  "SrcName": "_result",
-                  "DstId": 69,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 88,
-                  "SrcName": "_signal",
-                  "DstId": 73,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 69,
-                  "SrcName": "_result",
-                  "DstId": 73,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 73,
-                  "SrcName": "body.value",
-                  "DstId": 74,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 78,
-                  "SrcName": "_result",
-                  "DstId": 77,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 79,
-                  "SrcName": "_result",
-                  "DstId": 80,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 80,
-                  "SrcName": "_result",
-                  "DstId": 81,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 81,
-                  "SrcName": "_result",
-                  "DstId": 82,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 82,
-                  "SrcName": "_result",
-                  "DstId": 83,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 83,
-                  "SrcName": "_result",
-                  "DstId": 84,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 84,
-                  "SrcName": "_result",
-                  "DstId": 85,
-                  "DstName": "a"
-                },
-                {
-                  "Id": 179,
-                  "Value": 0,
-                  "DstId": 85,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 85,
-                  "SrcName": "_result",
-                  "DstId": 87,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 87,
-                  "SrcName": "true",
-                  "DstId": 88,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 83,
-                  "SrcName": "_result",
-                  "DstId": 88,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 128,
-                  "SrcName": "_result",
-                  "DstId": 89,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 89,
-                  "SrcName": "_result",
-                  "DstId": 90,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 90,
-                  "SrcName": "_result",
-                  "DstId": 91,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 118,
-                  "SrcName": "body.value",
-                  "DstId": 92,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 92,
-                  "SrcName": "_result",
-                  "DstId": 93,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 180,
-                  "Value": true,
-                  "DstId": 93,
-                  "DstName": "includeAncestors"
-                },
-                {
-                  "Id": 181,
-                  "Value": "door",
-                  "DstId": 93,
-                  "DstName": "tag"
-                },
-                {
-                  "SrcId": 93,
-                  "SrcName": "_result",
-                  "DstId": 94,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 106,
-                  "SrcName": "_signal",
-                  "DstId": 95,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 109,
-                  "SrcName": "out",
-                  "DstId": 95,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 96,
-                  "SrcName": "_result",
-                  "DstId": 95,
-                  "DstName": "item"
-                },
-                {
-                  "SrcId": 125,
-                  "SrcName": "_result",
-                  "DstId": 96,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 96,
-                  "SrcName": "_result",
-                  "DstId": 97,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 118,
-                  "SrcName": "body.value",
-                  "DstId": 97,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 96,
-                  "SrcName": "_result",
-                  "DstId": 98,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 101,
-                  "SrcName": "_result",
-                  "DstId": 98,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 96,
-                  "SrcName": "_result",
-                  "DstId": 99,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 102,
-                  "SrcName": "_result",
-                  "DstId": 99,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 96,
-                  "SrcName": "_result",
-                  "DstId": 100,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 103,
-                  "SrcName": "_result",
-                  "DstId": 100,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 118,
-                  "SrcName": "body.value",
-                  "DstId": 101,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 118,
-                  "SrcName": "body.value",
-                  "DstId": 102,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 144,
-                  "SrcName": "_signal",
-                  "DstId": 104,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 125,
-                  "SrcName": "_result",
-                  "DstId": 104,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 97,
-                  "SrcName": "_target",
-                  "DstId": 104,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 104,
-                  "SrcName": "_signal",
-                  "DstId": 105,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 125,
-                  "SrcName": "_result",
-                  "DstId": 105,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 98,
-                  "SrcName": "_target",
-                  "DstId": 105,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 107,
-                  "SrcName": "_signal",
-                  "DstId": 106,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 125,
-                  "SrcName": "_result",
-                  "DstId": 106,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 100,
-                  "SrcName": "_target",
-                  "DstId": 106,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 105,
-                  "SrcName": "_signal",
-                  "DstId": 107,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 125,
-                  "SrcName": "_result",
-                  "DstId": 107,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 99,
-                  "SrcName": "_target",
-                  "DstId": 107,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 126,
-                  "SrcName": "_result",
-                  "DstId": 108,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 91,
-                  "SrcName": "_result",
-                  "DstId": 109,
-                  "DstName": "in"
-                },
-                {
-                  "SrcId": 121,
-                  "SrcName": "true",
-                  "DstId": 110,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 108,
-                  "SrcName": "_result",
-                  "DstId": 110,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 110,
-                  "SrcName": "body.value",
-                  "DstId": 111,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 111,
-                  "SrcName": "_result",
-                  "DstId": 112,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 130,
-                  "SrcName": "_result",
-                  "DstId": 113,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 110,
-                  "SrcName": "body.value",
-                  "DstId": 113,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 110,
-                  "SrcName": "body",
-                  "DstId": 114,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 113,
-                  "SrcName": "_result",
-                  "DstId": 114,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 135,
-                  "SrcName": "_result",
-                  "DstId": 115,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 133,
-                  "SrcName": "body",
-                  "DstId": 116,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 115,
-                  "SrcName": "_result",
-                  "DstId": 116,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 134,
-                  "SrcName": "_result",
-                  "DstId": 116,
-                  "DstName": "item"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 117,
-                  "DstName": "_signal"
-                },
-                {
-                  "Id": 182,
-                  "Value": 5,
-                  "DstId": 117,
-                  "DstName": "seconds"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 117,
-                  "DstName": "target"
-                },
-                {
-                  "SrcId": 117,
-                  "SrcName": "_signal",
-                  "DstId": 118,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 136,
-                  "SrcName": "_result",
-                  "DstId": 118,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 115,
-                  "SrcName": "_result",
-                  "DstId": 119,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 119,
-                  "SrcName": "_result",
-                  "DstId": 120,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 118,
-                  "SrcName": "body.index",
-                  "DstId": 120,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 118,
-                  "SrcName": "body",
-                  "DstId": 121,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 120,
-                  "SrcName": "_result",
-                  "DstId": 121,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 122,
-                  "SrcName": "_result",
-                  "DstId": 123,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 114,
-                  "SrcName": "true",
-                  "DstId": 124,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 122,
-                  "SrcName": "_result",
-                  "DstId": 124,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 123,
-                  "SrcName": "_result",
-                  "DstId": 124,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 127,
-                  "SrcName": "_result",
-                  "DstId": 128,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 129,
-                  "SrcName": "_result",
-                  "DstId": 130,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 131,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 131,
-                  "SrcName": "_result",
-                  "DstId": 132,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 133,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 132,
-                  "SrcName": "_result",
-                  "DstId": 133,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 133,
-                  "SrcName": "body.value",
-                  "DstId": 134,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 137,
-                  "SrcName": "_result",
-                  "DstId": 136,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 94,
-                  "SrcName": "true",
-                  "DstId": 144,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 118,
-                  "SrcName": "body.value",
-                  "DstId": 144,
-                  "DstName": "args",
-                  "DstIndex": 0
-                },
-                {
-                  "Id": 183,
-                  "Value": "THIS IT!!! {0}",
-                  "DstId": 144,
-                  "DstName": "format"
-                },
-                {
-                  "SrcId": 162,
-                  "SrcName": "_result",
-                  "DstId": 163,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 118,
-                  "SrcName": "body.value",
-                  "DstId": 165,
-                  "DstName": "input"
-                }
-              ],
-              "Defaults": {
-                "$37.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$40.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$41.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$51.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$54.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$76.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$78.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$79.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$122.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$125.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$126.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$127.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$129.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$135.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$137.component": {
-                  "_type": "component",
-                  "component_id": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "PermaGameObjectsSystem"
-                },
-                "$162.component": {
-                  "_type": "component",
-                  "component_id": "41d4de66-0778-414d-8c83-e573a2b0d000",
-                  "go": "7ea089ee-5062-45c8-b158-eeb5185c7c72",
-                  "component_type": "SaveGameObject"
-                }
-              }
-            }
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "e4c8546a-da56-4c46-a42e-b929e1ce0a5d"
-            },
             "Property": "MapSaveFile",
             "Value": [
               "gameplay/maps/thievesrpdowntown 3tcompact.maps"
@@ -2482,7 +247,7 @@
             "Value": {
               "__version": 9,
               "__guid": "29da3343-0db8-4917-a11b-514c7e80ef46",
-              "__changeId": 71,
+              "__changeId": 72,
               "UserData": {
                 "Title": "DarkRP Gamemode Start",
                 "ReferencedComponentTypes": [],
@@ -2886,8 +651,8 @@
       "__version": 2,
       "Flags": 0,
       "Name": "All Spawn Positions",
-      "Position": "243.5284,315.9403,2",
-      "Rotation": "0,0,0.7071067,0.7071068",
+      "Position": "243.528397,315.940308,2",
+      "Rotation": "0,0,0.707106709,0.707106829",
       "Scale": "1,1,1",
       "Tags": "",
       "Enabled": true,
@@ -2935,7 +700,7 @@
                   "IdValue": "37f16f6b-db9b-4550-a08e-924d355bb6b7"
                 },
                 "Property": "Position",
-                "Value": "-0.00004196167,54.40598,-0.0000002682209"
+                "Value": "-4.19616699E-05,54.4059792,-2.68220901E-07"
               }
             ],
             "MovedObjects": []
@@ -2967,7 +732,7 @@
                   "IdValue": "37f16f6b-db9b-4550-a08e-924d355bb6b7"
                 },
                 "Property": "Position",
-                "Value": "-0.00004577637,100.7566,-0.0000002682209"
+                "Value": "-4.57763708E-05,100.756599,-2.68220901E-07"
               }
             ],
             "MovedObjects": []
@@ -2999,7 +764,7 @@
                   "IdValue": "37f16f6b-db9b-4550-a08e-924d355bb6b7"
                 },
                 "Property": "Position",
-                "Value": "-0.00008392334,150.5244,-0.0000002682209"
+                "Value": "-8.39233398E-05,150.524399,-2.68220901E-07"
               }
             ],
             "MovedObjects": []
@@ -3031,7 +796,7 @@
                   "IdValue": "37f16f6b-db9b-4550-a08e-924d355bb6b7"
                 },
                 "Property": "Position",
-                "Value": "-0.0001220703,198.2297,-0.0000002682209"
+                "Value": "-0.000122070298,198.229706,-2.68220901E-07"
               }
             ],
             "MovedObjects": []
@@ -3063,7 +828,7 @@
                   "IdValue": "37f16f6b-db9b-4550-a08e-924d355bb6b7"
                 },
                 "Property": "Position",
-                "Value": "-104.201,0.00001144409,-0.00000005960464"
+                "Value": "-104.200996,1.144409E-05,-5.96046412E-08"
               }
             ],
             "MovedObjects": []
@@ -3095,7 +860,7 @@
                   "IdValue": "37f16f6b-db9b-4550-a08e-924d355bb6b7"
                 },
                 "Property": "Position",
-                "Value": "-104.201,54.40599,-0.0000003576279"
+                "Value": "-104.200996,54.4059906,-3.57627897E-07"
               }
             ],
             "MovedObjects": []
@@ -3127,7 +892,7 @@
                   "IdValue": "37f16f6b-db9b-4550-a08e-924d355bb6b7"
                 },
                 "Property": "Position",
-                "Value": "-104.201,100.7566,-0.0000003576279"
+                "Value": "-104.200996,100.756599,-3.57627897E-07"
               }
             ],
             "MovedObjects": []
@@ -3159,7 +924,7 @@
                   "IdValue": "37f16f6b-db9b-4550-a08e-924d355bb6b7"
                 },
                 "Property": "Position",
-                "Value": "-104.2011,150.5244,-0.0000003576279"
+                "Value": "-104.201103,150.524399,-3.57627897E-07"
               }
             ],
             "MovedObjects": []
@@ -3191,7 +956,7 @@
                   "IdValue": "37f16f6b-db9b-4550-a08e-924d355bb6b7"
                 },
                 "Property": "Position",
-                "Value": "-104.2011,198.2297,-0.0000003576279"
+                "Value": "-104.201103,198.229706,-3.57627897E-07"
               }
             ],
             "MovedObjects": []
@@ -3208,7 +973,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "All Dev World Text Signs",
-      "Position": "760.9283,1659.107,197.2536",
+      "Position": "760.928284,1659.10706,197.253601",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -3265,6 +1030,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -3303,7 +1069,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (3)",
-          "Position": "0,-532.311,0",
+          "Position": "0,-532.310974,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -3343,6 +1109,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -3381,8 +1148,8 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (16)",
-          "Position": "-720.6791,-3087.058,-114.1694",
-          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Position": "-720.679077,-3087.05811,-114.169403",
+          "Rotation": "0,0,-0.707106709,0.707106829",
           "Scale": "1,1,1",
           "Tags": "",
           "Enabled": true,
@@ -3421,6 +1188,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -3459,8 +1227,8 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (15)",
-          "Position": "-865.4715,-3106.374,0",
-          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Position": "-865.471497,-3106.37402,0",
+          "Rotation": "0,0,-0.707106709,0.707106829",
           "Scale": "1,1,1",
           "Tags": "",
           "Enabled": true,
@@ -3499,6 +1267,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -3537,8 +1306,8 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (4)",
-          "Position": "-182.8757,-3021.85,0",
-          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Position": "-182.875702,-3021.8501,0",
+          "Rotation": "0,0,-0.707106709,0.707106829",
           "Scale": "1,1,1",
           "Tags": "",
           "Enabled": true,
@@ -3577,6 +1346,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -3615,8 +1385,8 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (6)",
-          "Position": "-720.6577,-244.1051,-125.9022",
-          "Rotation": "0,0,0.7071067,0.7071068",
+          "Position": "-720.657715,-244.105103,-125.902199",
+          "Rotation": "0,0,0.707106709,0.707106829",
           "Scale": "1,1,1",
           "Tags": "",
           "Enabled": true,
@@ -3655,6 +1425,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -3693,8 +1464,8 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (7)",
-          "Position": "-1453.623,-959.2593,0",
-          "Rotation": "0,0,0.9999999,0.0000001490116",
+          "Position": "-1453.62305,-959.259277,0",
+          "Rotation": "0,0,0.999999881,1.49011598E-07",
           "Scale": "1,1,1",
           "Tags": "",
           "Enabled": true,
@@ -3733,6 +1504,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -3771,8 +1543,8 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (14)",
-          "Position": "-1368.928,68.89197,-37.2536",
-          "Rotation": "0,0,0.7071067,0.7071068",
+          "Position": "-1368.92798,68.8919678,-37.2536011",
+          "Rotation": "0,0,0.707106709,0.707106829",
           "Scale": "1,1,1",
           "Tags": "",
           "Enabled": true,
@@ -3811,6 +1583,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -3849,8 +1622,8 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (13)",
-          "Position": "-1336.928,-238.13,0",
-          "Rotation": "0,0,0.7071067,0.7071068",
+          "Position": "-1336.92798,-238.130005,0",
+          "Rotation": "0,0,0.707106709,0.707106829",
           "Scale": "1,1,1",
           "Tags": "",
           "Enabled": true,
@@ -3889,6 +1662,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -3927,8 +1701,8 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (5)",
-          "Position": "-734.3215,-238.13,0",
-          "Rotation": "0,0,0.7071067,0.7071068",
+          "Position": "-734.321472,-238.130005,0",
+          "Rotation": "0,0,0.707106709,0.707106829",
           "Scale": "1,1,1",
           "Tags": "",
           "Enabled": true,
@@ -3967,6 +1741,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -4005,7 +1780,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (9)",
-          "Position": "89.78619,-2297.375,-98.26513",
+          "Position": "89.7861862,-2297.375,-98.2651291",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -4045,6 +1820,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -4083,7 +1859,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (8)",
-          "Position": "89.78619,-2557.876,-97.56028",
+          "Position": "89.7861862,-2557.87598,-97.5602798",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -4123,6 +1899,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -4161,7 +1938,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (2)",
-          "Position": "0,-2534.781,0",
+          "Position": "0,-2534.78101,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -4201,6 +1978,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -4239,7 +2017,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (12)",
-          "Position": "1359.233,-1650.982,-90.6191",
+          "Position": "1359.23303,-1650.98206,-90.6191025",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -4279,6 +2057,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -4317,7 +2096,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (11)",
-          "Position": "658.7237,-1650.982,-90.6191",
+          "Position": "658.723694,-1650.98206,-90.6191025",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -4357,6 +2136,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -4395,7 +2175,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (10)",
-          "Position": "221.9129,-1650.982,-90.6191",
+          "Position": "221.912903,-1650.98206,-90.6191025",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -4435,6 +2215,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -4473,7 +2254,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text (1)",
-          "Position": "-161.2635,-1454.847,0",
+          "Position": "-161.263504,-1454.84705,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -4513,6 +2294,7 @@
                 "FontSize": 123.30769,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -4574,7 +2356,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "e0ba99c1-588d-4c2f-ae7a-9a7e58f6079d"
+                  "IdValue": "741c1815-3d35-47e7-b3c4-e405cd7ab0ea"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -4584,7 +2366,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "e0ba99c1-588d-4c2f-ae7a-9a7e58f6079d",
+                  "__guid": "741c1815-3d35-47e7-b3c4-e405cd7ab0ea",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -4605,18 +2387,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "5af6a151-5c1f-4f14-8691-c6010a26f727"
+                  "IdValue": "9a1932ee-3642-4020-b905-b2e5f47b3e6a"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "e0ba99c1-588d-4c2f-ae7a-9a7e58f6079d"
+                  "IdValue": "741c1815-3d35-47e7-b3c4-e405cd7ab0ea"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "5af6a151-5c1f-4f14-8691-c6010a26f727",
+                  "__guid": "9a1932ee-3642-4020-b905-b2e5f47b3e6a",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -4687,7 +2469,7 @@
                   "IdValue": "420ff80e-62ca-4805-b8bd-b5b6e180774d"
                 },
                 "Property": "Position",
-                "Value": "-536.9794,531.5845,3.164188"
+                "Value": "-536.97937,531.584473,3.16418791"
               }
             ],
             "MovedObjects": []
@@ -4712,7 +2494,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "f938e962-c2e0-4514-b254-f05cf4613984"
+                  "IdValue": "2660fb75-12af-4d21-b78a-f7c78ed65779"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -4722,7 +2504,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "f938e962-c2e0-4514-b254-f05cf4613984",
+                  "__guid": "2660fb75-12af-4d21-b78a-f7c78ed65779",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -4743,18 +2525,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "8916b4a7-9dc5-4552-952d-f531cc7c593e"
+                  "IdValue": "8ae946cc-3dac-49c5-a1fb-32aa5cf40ab7"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "f938e962-c2e0-4514-b254-f05cf4613984"
+                  "IdValue": "2660fb75-12af-4d21-b78a-f7c78ed65779"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "8916b4a7-9dc5-4552-952d-f531cc7c593e",
+                  "__guid": "8ae946cc-3dac-49c5-a1fb-32aa5cf40ab7",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -4833,7 +2615,7 @@
                   "IdValue": "420ff80e-62ca-4805-b8bd-b5b6e180774d"
                 },
                 "Property": "Position",
-                "Value": "-531.1053,681.4485,3.164188"
+                "Value": "-531.105286,681.448486,3.16418791"
               }
             ],
             "MovedObjects": []
@@ -4858,7 +2640,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "aae1d1dd-d5c3-4f60-b509-bef992914f1b"
+                  "IdValue": "40cd28a8-f4cd-4841-b30e-79b4f095dcee"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -4868,7 +2650,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "aae1d1dd-d5c3-4f60-b509-bef992914f1b",
+                  "__guid": "40cd28a8-f4cd-4841-b30e-79b4f095dcee",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -4889,18 +2671,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "a88fa80f-d328-4a00-8928-1a1876ee6084"
+                  "IdValue": "684c0295-b64f-4faa-a42b-19d8e2757590"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "aae1d1dd-d5c3-4f60-b509-bef992914f1b"
+                  "IdValue": "40cd28a8-f4cd-4841-b30e-79b4f095dcee"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "a88fa80f-d328-4a00-8928-1a1876ee6084",
+                  "__guid": "684c0295-b64f-4faa-a42b-19d8e2757590",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -4979,7 +2761,7 @@
                   "IdValue": "420ff80e-62ca-4805-b8bd-b5b6e180774d"
                 },
                 "Property": "Position",
-                "Value": "-532.6545,835.5117,3.164188"
+                "Value": "-532.65448,835.511719,3.16418791"
               }
             ],
             "MovedObjects": []
@@ -5004,7 +2786,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "ca05c708-508e-42cb-8d6c-d2fec22115a3"
+                  "IdValue": "1129245d-e96c-4385-b87b-40d6d929d742"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -5014,7 +2796,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "ca05c708-508e-42cb-8d6c-d2fec22115a3",
+                  "__guid": "1129245d-e96c-4385-b87b-40d6d929d742",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -5035,18 +2817,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "5e7d2b60-8792-459c-81ce-63449dc3d389"
+                  "IdValue": "2defa5d2-bac0-462e-af1b-684ccf2d3ce0"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "ca05c708-508e-42cb-8d6c-d2fec22115a3"
+                  "IdValue": "1129245d-e96c-4385-b87b-40d6d929d742"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "5e7d2b60-8792-459c-81ce-63449dc3d389",
+                  "__guid": "2defa5d2-bac0-462e-af1b-684ccf2d3ce0",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -5125,7 +2907,7 @@
                   "IdValue": "420ff80e-62ca-4805-b8bd-b5b6e180774d"
                 },
                 "Property": "Position",
-                "Value": "-662.113,536.2709,0.4545364"
+                "Value": "-662.112976,536.270874,0.454536408"
               }
             ],
             "MovedObjects": []
@@ -5150,7 +2932,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "f1f63d8e-4eb5-4201-8e89-881aca05c257"
+                  "IdValue": "88b4c252-331a-475b-8f41-15f7a1f86849"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -5160,7 +2942,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "f1f63d8e-4eb5-4201-8e89-881aca05c257",
+                  "__guid": "88b4c252-331a-475b-8f41-15f7a1f86849",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -5181,18 +2963,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "74ae2f82-b8c0-4459-b4ee-9c3edab30156"
+                  "IdValue": "fb8fae9d-1272-48f3-9c11-21a13b2d0da4"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "f1f63d8e-4eb5-4201-8e89-881aca05c257"
+                  "IdValue": "88b4c252-331a-475b-8f41-15f7a1f86849"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "74ae2f82-b8c0-4459-b4ee-9c3edab30156",
+                  "__guid": "fb8fae9d-1272-48f3-9c11-21a13b2d0da4",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -5271,7 +3053,7 @@
                   "IdValue": "420ff80e-62ca-4805-b8bd-b5b6e180774d"
                 },
                 "Property": "Position",
-                "Value": "-667.994,683.6324,0.4545364"
+                "Value": "-667.994019,683.632385,0.454536408"
               }
             ],
             "MovedObjects": []
@@ -5296,7 +3078,7 @@
               {
                 "Id": {
                   "Type": "GameObject",
-                  "IdValue": "115a3c06-2716-43ee-8de2-ed289b41682b"
+                  "IdValue": "b19152e7-708d-430c-a411-a2b23c09688a"
                 },
                 "Parent": {
                   "Type": "GameObject",
@@ -5306,7 +3088,7 @@
                 "ContainerProperty": "Children",
                 "IsContainerArray": true,
                 "Data": {
-                  "__guid": "115a3c06-2716-43ee-8de2-ed289b41682b",
+                  "__guid": "b19152e7-708d-430c-a411-a2b23c09688a",
                   "__version": 2,
                   "Flags": 0,
                   "Name": "Clothing - prison_jumpsuit",
@@ -5327,18 +3109,18 @@
               {
                 "Id": {
                   "Type": "Component",
-                  "IdValue": "4c3fb7ae-54ff-489d-95f3-c4892bffbd55"
+                  "IdValue": "4aac9437-de20-47f3-a737-9fc19fd80f71"
                 },
                 "Parent": {
                   "Type": "GameObject",
-                  "IdValue": "115a3c06-2716-43ee-8de2-ed289b41682b"
+                  "IdValue": "b19152e7-708d-430c-a411-a2b23c09688a"
                 },
                 "PreviousElement": null,
                 "ContainerProperty": "Components",
                 "IsContainerArray": true,
                 "Data": {
                   "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "4c3fb7ae-54ff-489d-95f3-c4892bffbd55",
+                  "__guid": "4aac9437-de20-47f3-a737-9fc19fd80f71",
                   "__enabled": true,
                   "Flags": 0,
                   "AnimationGraph": null,
@@ -5417,7 +3199,7 @@
                   "IdValue": "420ff80e-62ca-4805-b8bd-b5b6e180774d"
                 },
                 "Property": "Position",
-                "Value": "-662.0793,833.4805,0.4545479"
+                "Value": "-662.079285,833.48053,0.454547912"
               }
             ],
             "MovedObjects": []
@@ -5440,7 +3222,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "All World Portals",
-      "Position": "41.56892,1410.85,32",
+      "Position": "41.5689201,1410.84998,32",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -5473,7 +3255,7 @@
               "__guid": "a63815dc-e165-4dc0-8b39-40a3c3e7b0f0",
               "__enabled": true,
               "Flags": 0,
-              "Center": "0,-15.46001,0",
+              "Center": "0,-15.4600096,0",
               "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
@@ -5618,7 +3400,7 @@
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
               "RollingResistance": null,
-              "Scale": "74.73003,83.20993,50",
+              "Scale": "74.7300262,83.2099304,50",
               "Static": false,
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
@@ -5716,7 +3498,7 @@
                   "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
                 },
                 "Property": "Position",
-                "Value": "1014.506,1228.583,0.2300569"
+                "Value": "1014.50598,1228.58301,0.230056897"
               },
               {
                 "Target": {
@@ -5724,7 +3506,7 @@
                   "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
                 },
                 "Property": "Rotation",
-                "Value": "0,0,-0.9999999,0.0000001490116"
+                "Value": "0,0,-0.999999881,1.49011598E-07"
               },
               {
                 "Target": {
@@ -5804,7 +3586,7 @@
                   "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
                 },
                 "Property": "Position",
-                "Value": "928.703,1302.716,0.2300569"
+                "Value": "928.703003,1302.71594,0.230056897"
               },
               {
                 "Target": {
@@ -5812,7 +3594,7 @@
                   "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
                 },
                 "Property": "Rotation",
-                "Value": "0,0,-0.9238795,0.3826836"
+                "Value": "0,0,-0.923879504,0.382683605"
               },
               {
                 "Target": {
@@ -9400,7 +7182,7 @@
                   "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
                 },
                 "Property": "Position",
-                "Value": "888.0049,936.3035,0.2300569"
+                "Value": "888.004883,936.303528,0.230056897"
               },
               {
                 "Target": {
@@ -9408,7 +7190,7 @@
                   "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
                 },
                 "Property": "Rotation",
-                "Value": "0,0,-0.9238795,-0.3826833"
+                "Value": "0,0,-0.923879504,-0.382683307"
               },
               {
                 "Target": {
@@ -12996,7 +10778,7 @@
                   "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
                 },
                 "Property": "Position",
-                "Value": "1025.924,998.0781,0.2300569"
+                "Value": "1025.92395,998.078125,0.230056897"
               },
               {
                 "Target": {
@@ -13004,7 +10786,7 @@
                   "IdValue": "79771431-1ea1-4fef-9e7b-9cec0f79dbde"
                 },
                 "Property": "Rotation",
-                "Value": "0,0,-0.7071067,0.7071068"
+                "Value": "0,0,-0.707106709,0.707106829"
               },
               {
                 "Target": {
@@ -16547,8 +14329,8 @@
       "__version": 2,
       "Flags": 0,
       "Name": "All Tables on Map",
-      "Position": "838.6943,-606.7625,96.62088",
-      "Rotation": "0,0,-1,0.0000001947072",
+      "Position": "838.694275,-606.762512,96.6208801",
+      "Rotation": "0,0,-1,1.94707198E-07",
       "Scale": "1,1,1",
       "Tags": "",
       "Enabled": true,
@@ -16564,9 +14346,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "coffeetable_a",
-          "Position": "247.0656,-790.4126,-96.62085",
-          "Rotation": "0,0,1,0.0000001947072",
-          "Scale": "2.092481,2.092481,2.092481",
+          "Position": "247.065598,-790.412598,-96.6208496",
+          "Rotation": "0,0,1,1.94707198E-07",
+          "Scale": "2.0924809,2.0924809,2.0924809",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -16656,9 +14438,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "coffeetable_a (3)",
-          "Position": "247.0655,-910.729,-96.62085",
-          "Rotation": "0,0,1,0.0000001947072",
-          "Scale": "2.092481,2.092481,2.092481",
+          "Position": "247.065506,-910.729004,-96.6208496",
+          "Rotation": "0,0,1,1.94707198E-07",
+          "Scale": "2.0924809,2.0924809,2.0924809",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -16748,9 +14530,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "coffeetable_a (4)",
-          "Position": "247.0656,-673.3634,-96.62085",
-          "Rotation": "0,0,1,0.0000001947072",
-          "Scale": "2.092481,2.092481,2.092481",
+          "Position": "247.065598,-673.363403,-96.6208496",
+          "Rotation": "0,0,1,1.94707198E-07",
+          "Scale": "2.0924809,2.0924809,2.0924809",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -16840,9 +14622,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "coffeetable_a (5)",
-          "Position": "335.5609,-991.4507,-96.62085",
-          "Rotation": "0,0,0.7071069,-0.7071066",
-          "Scale": "2.092481,2.092481,2.092481",
+          "Position": "335.560913,-991.450684,-96.6208496",
+          "Rotation": "0,0,0.707106888,-0.70710659",
+          "Scale": "2.0924809,2.0924809,2.0924809",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -16932,9 +14714,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "coffeetable_a (1)",
-          "Position": "-13.61852,35.89069,-96.62085",
-          "Rotation": "0,0,1,0.0000001947072",
-          "Scale": "2.092481,2.092481,2.092481",
+          "Position": "-13.6185198,35.8906898,-96.6208496",
+          "Rotation": "0,0,1,1.94707198E-07",
+          "Scale": "2.0924809,2.0924809,2.0924809",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -17024,9 +14806,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "coffeetable_a (2)",
-          "Position": "-13.61842,282.3013,-96.62085",
-          "Rotation": "0,0,1,0.0000001947072",
-          "Scale": "2.092481,2.092481,2.092481",
+          "Position": "-13.6184196,282.3013,-96.6208496",
+          "Rotation": "0,0,1,1.94707198E-07",
+          "Scale": "2.0924809,2.0924809,2.0924809",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -17119,7 +14901,7 @@
       "Flags": 0,
       "Name": "Sun",
       "Position": "0,0,0",
-      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Rotation": "-0.0729314983,0.482239604,0.130543306,0.863182724",
       "Scale": "1,1,1",
       "Tags": "light_directional,light",
       "Enabled": true,
@@ -17143,8 +14925,13 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
+          "ShadowBias": 0.0005,
+          "ShadowCascadeCount": 4,
+          "ShadowCascadeSplitRatio": 0.91,
+          "ShadowHardness": 0,
           "Shadows": true,
-          "SkyColor": "0.2532,0.32006,0.35349,1"
+          "SkyColor": "0.2532,0.32006,0.35349,1",
+          "Visualizer": {}
         }
       ],
       "Children": []
@@ -17185,6 +14972,8 @@
           "__guid": "1e93364e-7721-49e1-9092-1a26c5163a0b",
           "__enabled": true,
           "Flags": 0,
+          "__version": 1,
+          "BakedTexture": null,
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -17193,6 +14982,7 @@
           "Feathering": 0.02,
           "FrameInterval": 5,
           "MaxDistance": 512,
+          "Mode": "CustomTexture",
           "MultiBounce": false,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -17200,8 +14990,8 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
+          "Priority": 0,
           "Projection": "Sphere",
-          "RenderDynamically": false,
           "Resolution": "Small",
           "Texture": "textures/cubemaps/default2.vtex",
           "TintColor": "1,1,1,1",
@@ -17306,7 +15096,18 @@
               "IdValue": "77bca3e0-9ead-4a47-afb0-420bf6acb7cc"
             },
             "Property": "Position",
-            "Value": "820.135,1599.954,81.557"
+            "Value": "820.13501,1599.95398,81.5569992"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "ce49499c-7810-4f40-a1ef-746d036f868c"
+            },
+            "Property": "ElevatorObject",
+            "Value": {
+              "_type": "gameobject",
+              "go": "465de3da-e638-44cf-817c-7d7920eb2e2a"
+            }
           }
         ],
         "MovedObjects": []
@@ -17341,7 +15142,7 @@
               "IdValue": "77bca3e0-9ead-4a47-afb0-420bf6acb7cc"
             },
             "Property": "Position",
-            "Value": "820.135,1599.954,81.557"
+            "Value": "820.13501,1599.95398,81.5569992"
           },
           {
             "Target": {
@@ -17349,7 +15150,7 @@
               "IdValue": "5f531212-8324-4b3a-9b1f-86eec42eef07"
             },
             "Property": "Position",
-            "Value": "0,5.440796,203.6105"
+            "Value": "0,5.4407959,203.610504"
           },
           {
             "Target": {
@@ -17392,7 +15193,7 @@
               "IdValue": "77bca3e0-9ead-4a47-afb0-420bf6acb7cc"
             },
             "Property": "Position",
-            "Value": "820.135,1601.013,217.1194"
+            "Value": "820.13501,1601.01294,217.1194"
           },
           {
             "Target": {
@@ -17400,7 +15201,7 @@
               "IdValue": "5f531212-8324-4b3a-9b1f-86eec42eef07"
             },
             "Property": "Position",
-            "Value": "0,5.440796,203.6105"
+            "Value": "0,5.4407959,203.610504"
           },
           {
             "Target": {
@@ -17443,7 +15244,7 @@
               "IdValue": "77bca3e0-9ead-4a47-afb0-420bf6acb7cc"
             },
             "Property": "Position",
-            "Value": "820.135,1601.013,367.2645"
+            "Value": "820.13501,1601.01294,367.264496"
           },
           {
             "Target": {
@@ -17451,7 +15252,7 @@
               "IdValue": "5f531212-8324-4b3a-9b1f-86eec42eef07"
             },
             "Property": "Position",
-            "Value": "0,5.440796,203.6105"
+            "Value": "0,5.4407959,203.610504"
           },
           {
             "Target": {
@@ -17494,7 +15295,7 @@
               "IdValue": "77bca3e0-9ead-4a47-afb0-420bf6acb7cc"
             },
             "Property": "Position",
-            "Value": "820.135,1601.013,527.3538"
+            "Value": "820.13501,1601.01294,527.353821"
           },
           {
             "Target": {
@@ -17502,7 +15303,7 @@
               "IdValue": "5f531212-8324-4b3a-9b1f-86eec42eef07"
             },
             "Property": "Position",
-            "Value": "0,5.440796,203.6105"
+            "Value": "0,5.4407959,203.610504"
           },
           {
             "Target": {
@@ -17537,7 +15338,7 @@
               "IdValue": "a70e73f0-e7db-4cd6-850c-e2d041296f00"
             },
             "Property": "Position",
-            "Value": "923.708,1671.557,220.929"
+            "Value": "923.708008,1671.55701,220.929001"
           }
         ],
         "MovedObjects": []
@@ -17587,7 +15388,7 @@
               "IdValue": "3cb7aca2-44c4-48f7-85f7-ef4bdf8921bd"
             },
             "Property": "Position",
-            "Value": "838.6943,-606.7625,96.62088"
+            "Value": "838.694275,-606.762512,96.6208801"
           },
           {
             "Target": {
@@ -17595,7 +15396,7 @@
               "IdValue": "3cb7aca2-44c4-48f7-85f7-ef4bdf8921bd"
             },
             "Property": "Rotation",
-            "Value": "0,0,-1,0.0000001947072"
+            "Value": "0,0,-1,1.94707198E-07"
           }
         ],
         "MovedObjects": []
@@ -17622,7 +15423,7 @@
               "IdValue": "193e2a21-5246-45f5-82a2-68202bd43de6"
             },
             "Property": "Position",
-            "Value": "854.5444,-602.2001,64.45858"
+            "Value": "854.544373,-602.200073,64.45858"
           },
           {
             "Target": {
@@ -17630,2137 +15431,7 @@
               "IdValue": "193e2a21-5246-45f5-82a2-68202bd43de6"
             },
             "Property": "Rotation",
-            "Value": "0,0,-1,0.0000001947072"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "d215563e-393f-4c7b-9552-bf6f4d22570f"
-            },
-            "Property": "OnObjectTriggerEnter",
-            "Value": {
-              "__version": 9,
-              "__guid": "77ca89ab-2845-487a-b142-f049bfabc615",
-              "__changeId": 477,
-              "UserData": {
-                "Title": "On Object Enter Teacup",
-                "Description": "Detects/Trigger Logic depending on the Ingredients.",
-                "Category": "Microwave",
-                "Icon": "brightness_1",
-                "ReferencedComponentTypes": [
-                  "Food",
-                  "BaseEntity",
-                  "CookableItem"
-                ]
-              },
-              "Variables": [
-                {
-                  "Name": "ObjectEnterRef",
-                  "Type": "Sandbox.GameObject"
-                }
-              ],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input",
-                  "UserData": {
-                    "Position": "-720,84"
-                  }
-                },
-                {
-                  "Id": 13,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "552,72"
-                  }
-                },
-                {
-                  "Id": 26,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "1416,1152"
-                  }
-                },
-                {
-                  "Id": 28,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Tags",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "48,120"
-                  }
-                },
-                {
-                  "Id": 30,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Has",
-                    "_type": "Sandbox.GameTags"
-                  },
-                  "UserData": {
-                    "Position": "300,96"
-                  }
-                },
-                {
-                  "Id": 32,
-                  "Type": "comment",
-                  "UserData": {
-                    "Position": "-192,-48",
-                    "Size": "900,384",
-                    "Title": "Check If Water",
-                    "Layer": 1,
-                    "Color": 3
-                  }
-                },
-                {
-                  "Id": 33,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Tags",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "1200,1260"
-                  }
-                },
-                {
-                  "Id": 34,
-                  "Type": "nop",
-                  "UserData": {
-                    "Position": "1080,1272"
-                  }
-                },
-                {
-                  "Id": 35,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Has",
-                    "_type": "Sandbox.GameTags"
-                  },
-                  "UserData": {
-                    "Position": "1416,1236"
-                  }
-                },
-                {
-                  "Id": 38,
-                  "Type": "comment",
-                  "UserData": {
-                    "Position": "480,1080",
-                    "Size": "1236,384",
-                    "Title": "Check If Tea Bag",
-                    "Layer": 1,
-                    "Color": 3
-                  }
-                },
-                {
-                  "Id": 40,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "ObjectEnterRef"
-                  },
-                  "UserData": {
-                    "Position": "-444,84"
-                  }
-                },
-                {
-                  "Id": 41,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "ObjectEnterRef"
-                  },
-                  "UserData": {
-                    "Position": "-120,120"
-                  }
-                },
-                {
-                  "Id": 42,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "ObjectEnterRef"
-                  },
-                  "UserData": {
-                    "Position": "912,1260"
-                  }
-                },
-                {
-                  "Id": 48,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "ObjectEnterRef"
-                  },
-                  "UserData": {
-                    "Position": "4212,228"
-                  }
-                },
-                {
-                  "Id": 52,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4416,228"
-                  }
-                },
-                {
-                  "Id": 54,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Thirst",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "5268,12"
-                  }
-                },
-                {
-                  "Id": 55,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Health",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4944,12"
-                  }
-                },
-                {
-                  "Id": 58,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Health",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4416,72"
-                  }
-                },
-                {
-                  "Id": 64,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Thirst",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "5064,96"
-                  }
-                },
-                {
-                  "Id": 82,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Ingredients",
-                    "_type": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "-12,264"
-                  }
-                },
-                {
-                  "Id": 83,
-                  "Type": "list.get",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "264,240"
-                  }
-                },
-                {
-                  "Id": 107,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientName",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "408,264"
-                  }
-                },
-                {
-                  "Id": 110,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Ingredients",
-                    "_type": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "996,1380"
-                  }
-                },
-                {
-                  "Id": 111,
-                  "Type": "list.get",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "1272,1356"
-                  }
-                },
-                {
-                  "Id": 112,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientName",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "1416,1380"
-                  }
-                },
-                {
-                  "Id": 118,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Ingredients",
-                    "_type": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "1404,-12"
-                  }
-                },
-                {
-                  "Id": 119,
-                  "Type": "list.get",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "1680,-36"
-                  }
-                },
-                {
-                  "Id": 124,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientDone",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "1572,-60"
-                  }
-                },
-                {
-                  "Id": 125,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "1680,-132"
-                  }
-                },
-                {
-                  "Id": 126,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "BaseEntity"
-                  },
-                  "UserData": {
-                    "Position": "2724,-372"
-                  }
-                },
-                {
-                  "Id": 127,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IsInteractable",
-                    "_type": "BaseEntity"
-                  },
-                  "UserData": {
-                    "Position": "2736,-456"
-                  }
-                },
-                {
-                  "Id": 130,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "ObjectEnterRef"
-                  },
-                  "UserData": {
-                    "Position": "2772,-348"
-                  }
-                },
-                {
-                  "Id": 133,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "2736,-60"
-                  }
-                },
-                {
-                  "Id": 135,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Ingredients",
-                    "_type": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "2184,84"
-                  }
-                },
-                {
-                  "Id": 136,
-                  "Type": "list.get",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2460,60"
-                  }
-                },
-                {
-                  "Id": 138,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientAmount",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2436,24"
-                  }
-                },
-                {
-                  "Id": 139,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "2784,24"
-                  }
-                },
-                {
-                  "Id": 146,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Ingredients",
-                    "_type": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "5376,180"
-                  }
-                },
-                {
-                  "Id": 147,
-                  "Type": "list.get",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "5652,156"
-                  }
-                },
-                {
-                  "Id": 148,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientAmount",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "5820,216"
-                  }
-                },
-                {
-                  "Id": 151,
-                  "Type": "op.subtract",
-                  "UserData": {
-                    "Position": "6108,216"
-                  }
-                },
-                {
-                  "Id": 154,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientAmount",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "6096,132"
-                  }
-                },
-                {
-                  "Id": 157,
-                  "Type": "list.set",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "6156,24"
-                  }
-                },
-                {
-                  "Id": 162,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4668,432"
-                  }
-                },
-                {
-                  "Id": 185,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "4452,432"
-                  }
-                },
-                {
-                  "Id": 186,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "-216,264"
-                  }
-                },
-                {
-                  "Id": 189,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Ingredients",
-                    "_type": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "2400,1284"
-                  }
-                },
-                {
-                  "Id": 190,
-                  "Type": "list.get",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2676,1260"
-                  }
-                },
-                {
-                  "Id": 191,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientDone",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2568,1236"
-                  }
-                },
-                {
-                  "Id": 192,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "2676,1164"
-                  }
-                },
-                {
-                  "Id": 193,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "BaseEntity"
-                  },
-                  "UserData": {
-                    "Position": "3720,924"
-                  }
-                },
-                {
-                  "Id": 194,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IsInteractable",
-                    "_type": "BaseEntity"
-                  },
-                  "UserData": {
-                    "Position": "3732,840"
-                  }
-                },
-                {
-                  "Id": 195,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "ObjectEnterRef"
-                  },
-                  "UserData": {
-                    "Position": "3768,948"
-                  }
-                },
-                {
-                  "Id": 197,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "3732,1236"
-                  }
-                },
-                {
-                  "Id": 199,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Ingredients",
-                    "_type": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "3180,1380"
-                  }
-                },
-                {
-                  "Id": 200,
-                  "Type": "list.get",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "3456,1356"
-                  }
-                },
-                {
-                  "Id": 201,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientAmount",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "3432,1320"
-                  }
-                },
-                {
-                  "Id": 202,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "3780,1320"
-                  }
-                },
-                {
-                  "Id": 213,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "ObjectEnterRef"
-                  },
-                  "UserData": {
-                    "Position": "3768,1632"
-                  }
-                },
-                {
-                  "Id": 214,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "Food"
-                  },
-                  "UserData": {
-                    "Position": "3972,1632"
-                  }
-                },
-                {
-                  "Id": 215,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Thirst",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4776,1296"
-                  }
-                },
-                {
-                  "Id": 216,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Health",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4452,1296"
-                  }
-                },
-                {
-                  "Id": 221,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Ingredients",
-                    "_type": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "5748,1464"
-                  }
-                },
-                {
-                  "Id": 222,
-                  "Type": "list.get",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "6024,1440"
-                  }
-                },
-                {
-                  "Id": 223,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientAmount",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "6192,1500"
-                  }
-                },
-                {
-                  "Id": 224,
-                  "Type": "op.subtract",
-                  "UserData": {
-                    "Position": "6480,1500"
-                  }
-                },
-                {
-                  "Id": 225,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientAmount",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "6468,1416"
-                  }
-                },
-                {
-                  "Id": 226,
-                  "Type": "list.set",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CookableItem",
-                      "Name": "IngredientData"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "6528,1308"
-                  }
-                },
-                {
-                  "Id": 227,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "Food"
-                  },
-                  "UserData": {
-                    "Position": "3936,1416"
-                  }
-                },
-                {
-                  "Id": 228,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "3696,1416"
-                  }
-                },
-                {
-                  "Id": 265,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "1212,24"
-                  }
-                },
-                {
-                  "Id": 266,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "2196,180"
-                  }
-                },
-                {
-                  "Id": 267,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "5472,288"
-                  }
-                },
-                {
-                  "Id": 268,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "2088,1356"
-                  }
-                },
-                {
-                  "Id": 269,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "3180,1404"
-                  }
-                },
-                {
-                  "Id": 270,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "5748,1488"
-                  }
-                },
-                {
-                  "Id": 271,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "ObjectEnterRef"
-                  },
-                  "UserData": {
-                    "Position": "7704,84"
-                  }
-                },
-                {
-                  "Id": 272,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Destroy",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "7692,24"
-                  }
-                },
-                {
-                  "Id": 273,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "ObjectEnterRef"
-                  },
-                  "UserData": {
-                    "Position": "7152,1356"
-                  }
-                },
-                {
-                  "Id": 274,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Destroy",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "7164,1308"
-                  }
-                },
-                {
-                  "Id": 275,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "744,1380"
-                  }
-                },
-                {
-                  "Id": 277,
-                  "Type": "op.add",
-                  "UserData": {
-                    "Position": "4824,72"
-                  }
-                },
-                {
-                  "Id": 279,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Health",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4644,96"
-                  }
-                },
-                {
-                  "Id": 280,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Thirst",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "5076,132"
-                  }
-                },
-                {
-                  "Id": 281,
-                  "Type": "op.add",
-                  "UserData": {
-                    "Position": "5280,96"
-                  }
-                },
-                {
-                  "Id": 282,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Health",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4284,1368"
-                  }
-                },
-                {
-                  "Id": 283,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Thirst",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4656,1380"
-                  }
-                },
-                {
-                  "Id": 284,
-                  "Type": "op.add",
-                  "UserData": {
-                    "Position": "4464,1368"
-                  }
-                },
-                {
-                  "Id": 285,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Health",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4284,1392"
-                  }
-                },
-                {
-                  "Id": 286,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Thirst",
-                    "_type": "Food"
-                  },
-                  "UserData": {
-                    "Position": "4656,1404"
-                  }
-                },
-                {
-                  "Id": 287,
-                  "Type": "op.add",
-                  "UserData": {
-                    "Position": "4836,1380"
-                  }
-                },
-                {
-                  "Id": 324,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "6852,1392"
-                  }
-                },
-                {
-                  "Id": 325,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientMixingSound",
-                    "_type": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "6828,1368"
-                  }
-                },
-                {
-                  "Id": 326,
-                  "Type": "sound.play",
-                  "UserData": {
-                    "Position": "6852,1308"
-                  }
-                },
-                {
-                  "Id": 327,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "6408,108"
-                  }
-                },
-                {
-                  "Id": 328,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IngredientMixingSound",
-                    "_type": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "6396,84"
-                  }
-                },
-                {
-                  "Id": 329,
-                  "Type": "sound.play",
-                  "UserData": {
-                    "Position": "6420,24"
-                  }
-                },
-                {
-                  "Id": 332,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "Add",
-                    "_type": "Sandbox.GameTags"
-                  },
-                  "UserData": {
-                    "Position": "7164,24"
-                  }
-                },
-                {
-                  "Id": 396,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Tags",
-                    "_type": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "6972,48"
-                  }
-                },
-                {
-                  "Id": 454,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "CookableItem"
-                  },
-                  "UserData": {
-                    "Position": "7404,108"
-                  }
-                },
-                {
-                  "Id": 455,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "IsInteractable",
-                    "_type": "BaseEntity"
-                  },
-                  "UserData": {
-                    "Position": "7416,24"
-                  }
-                },
-                {
-                  "Id": 504,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "6744,132"
-                  }
-                },
-                {
-                  "Id": 507,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "5580,1320"
-                  }
-                },
-                {
-                  "Id": 508,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Enabled",
-                    "_type": "Sandbox.Component"
-                  },
-                  "UserData": {
-                    "Position": "6756,24"
-                  }
-                },
-                {
-                  "Id": 510,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Enabled",
-                    "_type": "Sandbox.Component"
-                  },
-                  "UserData": {
-                    "Position": "5724,1296"
-                  }
-                },
-                {
-                  "Id": 513,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "5136,1404"
-                  }
-                },
-                {
-                  "Id": 514,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "Enabled",
-                    "_type": "Sandbox.Component"
-                  },
-                  "UserData": {
-                    "Position": "5148,1296"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "SrcId": 40,
-                  "SrcName": "_signal",
-                  "DstId": 13,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 30,
-                  "SrcName": "_result",
-                  "DstId": 13,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 13,
-                  "SrcName": "false",
-                  "DstId": 26,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 35,
-                  "SrcName": "_result",
-                  "DstId": 26,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 41,
-                  "SrcName": "_result",
-                  "DstId": 28,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 28,
-                  "SrcName": "_result",
-                  "DstId": 30,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 515,
-                  "Value": true,
-                  "DstId": 30,
-                  "DstName": "includeAncestors"
-                },
-                {
-                  "SrcId": 107,
-                  "SrcName": "_result",
-                  "DstId": 30,
-                  "DstName": "tag"
-                },
-                {
-                  "SrcId": 34,
-                  "SrcName": "out",
-                  "DstId": 33,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 42,
-                  "SrcName": "_result",
-                  "DstId": 34,
-                  "DstName": "in"
-                },
-                {
-                  "SrcId": 33,
-                  "SrcName": "_result",
-                  "DstId": 35,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 516,
-                  "Value": true,
-                  "DstId": 35,
-                  "DstName": "includeAncestors"
-                },
-                {
-                  "SrcId": 112,
-                  "SrcName": "_result",
-                  "DstId": 35,
-                  "DstName": "tag"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 40,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "obj",
-                  "DstId": 40,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 48,
-                  "SrcName": "_result",
-                  "DstId": 52,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 55,
-                  "SrcName": "_signal",
-                  "DstId": 54,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 162,
-                  "SrcName": "_result",
-                  "DstId": 54,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 281,
-                  "SrcName": "_result",
-                  "DstId": 54,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 133,
-                  "SrcName": "false",
-                  "DstId": 55,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 162,
-                  "SrcName": "_result",
-                  "DstId": 55,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 277,
-                  "SrcName": "_result",
-                  "DstId": 55,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 52,
-                  "SrcName": "_result",
-                  "DstId": 58,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 52,
-                  "SrcName": "_result",
-                  "DstId": 64,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 186,
-                  "SrcName": "_result",
-                  "DstId": 82,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 517,
-                  "Value": 0,
-                  "DstId": 83,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 82,
-                  "SrcName": "_result",
-                  "DstId": 83,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 83,
-                  "SrcName": "_result",
-                  "DstId": 107,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 275,
-                  "SrcName": "_result",
-                  "DstId": 110,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 518,
-                  "Value": 1,
-                  "DstId": 111,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 110,
-                  "SrcName": "_result",
-                  "DstId": 111,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 111,
-                  "SrcName": "_result",
-                  "DstId": 112,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 265,
-                  "SrcName": "_result",
-                  "DstId": 118,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 519,
-                  "Value": 0,
-                  "DstId": 119,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 118,
-                  "SrcName": "_result",
-                  "DstId": 119,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 119,
-                  "SrcName": "_result",
-                  "DstId": 124,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 13,
-                  "SrcName": "true",
-                  "DstId": 125,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 124,
-                  "SrcName": "_result",
-                  "DstId": 125,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 130,
-                  "SrcName": "_result",
-                  "DstId": 126,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 125,
-                  "SrcName": "true",
-                  "DstId": 127,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 126,
-                  "SrcName": "_result",
-                  "DstId": 127,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 520,
-                  "Value": true,
-                  "DstId": 127,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 125,
-                  "SrcName": "false",
-                  "DstId": 133,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 139,
-                  "SrcName": "_result",
-                  "DstId": 133,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 266,
-                  "SrcName": "_result",
-                  "DstId": 135,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 521,
-                  "Value": 0,
-                  "DstId": 136,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 135,
-                  "SrcName": "_result",
-                  "DstId": 136,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 136,
-                  "SrcName": "_result",
-                  "DstId": 138,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 138,
-                  "SrcName": "_result",
-                  "DstId": 139,
-                  "DstName": "a"
-                },
-                {
-                  "Id": 522,
-                  "Value": 0,
-                  "DstId": 139,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 267,
-                  "SrcName": "_result",
-                  "DstId": 146,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 523,
-                  "Value": 0,
-                  "DstId": 147,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 146,
-                  "SrcName": "_result",
-                  "DstId": 147,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 147,
-                  "SrcName": "_result",
-                  "DstId": 148,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 148,
-                  "SrcName": "_result",
-                  "DstId": 151,
-                  "DstName": "a"
-                },
-                {
-                  "Id": 524,
-                  "Value": 1,
-                  "DstId": 151,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 147,
-                  "SrcName": "_result",
-                  "DstId": 154,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 151,
-                  "SrcName": "_result",
-                  "DstId": 154,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 54,
-                  "SrcName": "_signal",
-                  "DstId": 157,
-                  "DstName": "_signal"
-                },
-                {
-                  "Id": 525,
-                  "Value": 0,
-                  "DstId": 157,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 146,
-                  "SrcName": "_result",
-                  "DstId": 157,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 154,
-                  "SrcName": "_target",
-                  "DstId": 157,
-                  "DstName": "value"
-                },
-                {
-                  "SrcId": 185,
-                  "SrcName": "_result",
-                  "DstId": 162,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 185,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 186,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 268,
-                  "SrcName": "_result",
-                  "DstId": 189,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 526,
-                  "Value": 1,
-                  "DstId": 190,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 189,
-                  "SrcName": "_result",
-                  "DstId": 190,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 190,
-                  "SrcName": "_result",
-                  "DstId": 191,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 26,
-                  "SrcName": "true",
-                  "DstId": 192,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 191,
-                  "SrcName": "_result",
-                  "DstId": 192,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 195,
-                  "SrcName": "_result",
-                  "DstId": 193,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 192,
-                  "SrcName": "true",
-                  "DstId": 194,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 193,
-                  "SrcName": "_result",
-                  "DstId": 194,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 527,
-                  "Value": true,
-                  "DstId": 194,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 192,
-                  "SrcName": "false",
-                  "DstId": 197,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 202,
-                  "SrcName": "_result",
-                  "DstId": 197,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 269,
-                  "SrcName": "_result",
-                  "DstId": 199,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 528,
-                  "Value": 1,
-                  "DstId": 200,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 199,
-                  "SrcName": "_result",
-                  "DstId": 200,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 200,
-                  "SrcName": "_result",
-                  "DstId": 201,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 201,
-                  "SrcName": "_result",
-                  "DstId": 202,
-                  "DstName": "a"
-                },
-                {
-                  "Id": 529,
-                  "Value": 0,
-                  "DstId": 202,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 213,
-                  "SrcName": "_result",
-                  "DstId": 214,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 216,
-                  "SrcName": "_signal",
-                  "DstId": 215,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 227,
-                  "SrcName": "_result",
-                  "DstId": 215,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 287,
-                  "SrcName": "_result",
-                  "DstId": 215,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 197,
-                  "SrcName": "false",
-                  "DstId": 216,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 227,
-                  "SrcName": "_result",
-                  "DstId": 216,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 284,
-                  "SrcName": "_result",
-                  "DstId": 216,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 270,
-                  "SrcName": "_result",
-                  "DstId": 221,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 530,
-                  "Value": 0,
-                  "DstId": 222,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 221,
-                  "SrcName": "_result",
-                  "DstId": 222,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 222,
-                  "SrcName": "_result",
-                  "DstId": 223,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 223,
-                  "SrcName": "_result",
-                  "DstId": 224,
-                  "DstName": "a"
-                },
-                {
-                  "Id": 531,
-                  "Value": 1,
-                  "DstId": 224,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 222,
-                  "SrcName": "_result",
-                  "DstId": 225,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 224,
-                  "SrcName": "_result",
-                  "DstId": 225,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 510,
-                  "SrcName": "_signal",
-                  "DstId": 226,
-                  "DstName": "_signal"
-                },
-                {
-                  "Id": 532,
-                  "Value": 1,
-                  "DstId": 226,
-                  "DstName": "index"
-                },
-                {
-                  "SrcId": 221,
-                  "SrcName": "_result",
-                  "DstId": 226,
-                  "DstName": "list"
-                },
-                {
-                  "SrcId": 225,
-                  "SrcName": "_target",
-                  "DstId": 226,
-                  "DstName": "value"
-                },
-                {
-                  "SrcId": 228,
-                  "SrcName": "_result",
-                  "DstId": 227,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 228,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 265,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 266,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 267,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 268,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 269,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 270,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 455,
-                  "SrcName": "_signal",
-                  "DstId": 272,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 271,
-                  "SrcName": "_result",
-                  "DstId": 272,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 326,
-                  "SrcName": "_signal",
-                  "DstId": 274,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 273,
-                  "SrcName": "_result",
-                  "DstId": 274,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 275,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 58,
-                  "SrcName": "_result",
-                  "DstId": 277,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 279,
-                  "SrcName": "_result",
-                  "DstId": 277,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 162,
-                  "SrcName": "_result",
-                  "DstId": 279,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 162,
-                  "SrcName": "_result",
-                  "DstId": 280,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 64,
-                  "SrcName": "_result",
-                  "DstId": 281,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 280,
-                  "SrcName": "_result",
-                  "DstId": 281,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 214,
-                  "SrcName": "_result",
-                  "DstId": 282,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 214,
-                  "SrcName": "_result",
-                  "DstId": 283,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 282,
-                  "SrcName": "_result",
-                  "DstId": 284,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 285,
-                  "SrcName": "_result",
-                  "DstId": 284,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 227,
-                  "SrcName": "_result",
-                  "DstId": 285,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 227,
-                  "SrcName": "_result",
-                  "DstId": 286,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 283,
-                  "SrcName": "_result",
-                  "DstId": 287,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 286,
-                  "SrcName": "_result",
-                  "DstId": 287,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 324,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 324,
-                  "SrcName": "_result",
-                  "DstId": 325,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 226,
-                  "SrcName": "_signal",
-                  "DstId": 326,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 326,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 325,
-                  "SrcName": "_result",
-                  "DstId": 326,
-                  "DstName": "soundEvent"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 327,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 327,
-                  "SrcName": "_result",
-                  "DstId": 328,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 157,
-                  "SrcName": "_signal",
-                  "DstId": 329,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 329,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 328,
-                  "SrcName": "_result",
-                  "DstId": 329,
-                  "DstName": "soundEvent"
-                },
-                {
-                  "SrcId": 508,
-                  "SrcName": "_signal",
-                  "DstId": 332,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 396,
-                  "SrcName": "_result",
-                  "DstId": 332,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 533,
-                  "Value": "filled",
-                  "DstId": 332,
-                  "DstName": "tags",
-                  "DstIndex": 0
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 396,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 454,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 332,
-                  "SrcName": "_signal",
-                  "DstId": 455,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 454,
-                  "SrcName": "_result",
-                  "DstId": 455,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 534,
-                  "Value": true,
-                  "DstId": 455,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 329,
-                  "SrcName": "_signal",
-                  "DstId": 508,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 504,
-                  "SrcName": "_result",
-                  "DstId": 508,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 535,
-                  "Value": true,
-                  "DstId": 508,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 514,
-                  "SrcName": "_signal",
-                  "DstId": 510,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 507,
-                  "SrcName": "_result",
-                  "DstId": 510,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 536,
-                  "Value": true,
-                  "DstId": 510,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 215,
-                  "SrcName": "_signal",
-                  "DstId": 514,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 513,
-                  "SrcName": "_result",
-                  "DstId": 514,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 537,
-                  "Value": false,
-                  "DstId": 514,
-                  "DstName": "_value"
-                }
-              ],
-              "Defaults": {
-                "$504.component": {
-                  "_type": "component",
-                  "component_id": "c35a6d86-315d-42cf-af70-a523eff00ef6",
-                  "go": "b1aab111-32b0-4e14-85b8-e77fa9b6755b",
-                  "component_type": "ModelRenderer"
-                },
-                "$507.component": {
-                  "_type": "component",
-                  "component_id": "2387479b-b7a5-4c81-901a-45b6f3531a02",
-                  "go": "b1aab111-32b0-4e14-85b8-e77fa9b6755b",
-                  "component_type": "ModelRenderer"
-                },
-                "$513.component": {
-                  "_type": "component",
-                  "component_id": "c35a6d86-315d-42cf-af70-a523eff00ef6",
-                  "go": "b1aab111-32b0-4e14-85b8-e77fa9b6755b",
-                  "component_type": "ModelRenderer"
-                }
-              }
-            }
+            "Value": "0,0,-1,1.94707198E-07"
           },
           {
             "Target": {
@@ -22448,7 +18119,7 @@
               "IdValue": "7741a2a2-19d4-4863-84f8-a872df509700"
             },
             "Property": "Position",
-            "Value": "842.7535,-648.9821,50.75226"
+            "Value": "842.753479,-648.982117,50.7522583"
           },
           {
             "Target": {
@@ -22456,7 +18127,7 @@
               "IdValue": "7741a2a2-19d4-4863-84f8-a872df509700"
             },
             "Property": "Rotation",
-            "Value": "0,0,-1,0.0000001947072"
+            "Value": "0,0,-1,1.94707198E-07"
           }
         ],
         "MovedObjects": []
@@ -22483,7 +18154,7 @@
               "IdValue": "873a37bf-f47c-4489-84e8-0e04a8004867"
             },
             "Property": "Position",
-            "Value": "847.4705,-637.353,45.78673"
+            "Value": "847.47052,-637.353027,45.7867317"
           },
           {
             "Target": {
@@ -22491,7 +18162,7 @@
               "IdValue": "873a37bf-f47c-4489-84e8-0e04a8004867"
             },
             "Property": "Rotation",
-            "Value": "0,0,-1,0.0000001947072"
+            "Value": "0,0,-1,1.94707198E-07"
           },
           {
             "Target": {
@@ -22783,7 +18454,7 @@
               "IdValue": "a9fe3906-c15e-4cb4-86a4-10192f4a9d2a"
             },
             "Property": "Rotation",
-            "Value": "0,0,-0.4815404,0.8764229"
+            "Value": "0,0,-0.481540412,0.876422882"
           }
         ],
         "MovedObjects": []
@@ -22975,7 +18646,7 @@
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
               "RollingResistance": null,
-              "Scale": "135.4,146.5,459.2",
+              "Scale": "135.399994,146.5,459.200012",
               "Static": false,
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
@@ -22990,7 +18661,7 @@
               "IdValue": "100c064e-f6cb-41e6-9fd9-5f9b7155d99b"
             },
             "Property": "Position",
-            "Value": "847.6067,-860.502,55.61832"
+            "Value": "847.606689,-860.502014,55.6183205"
           },
           {
             "Target": {
@@ -22998,7 +18669,7 @@
               "IdValue": "100c064e-f6cb-41e6-9fd9-5f9b7155d99b"
             },
             "Property": "Rotation",
-            "Value": "0,0,0.9999999,0.0000001947072"
+            "Value": "0,0,0.999999881,1.94707198E-07"
           },
           {
             "Target": {
@@ -23030,7 +18701,7 @@
               "IdValue": "7a4d7509-36eb-4f70-a492-87261a8994e2"
             },
             "Property": "Scale",
-            "Value": "48.80002,49.20001,49.8"
+            "Value": "48.8000183,49.2000084,49.7999992"
           },
           {
             "Target": {
@@ -23226,7 +18897,7 @@
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
               "RollingResistance": null,
-              "Scale": "135.4,146.5,459.2",
+              "Scale": "135.399994,146.5,459.200012",
               "Static": false,
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
@@ -23249,7 +18920,7 @@
               "IdValue": "100c064e-f6cb-41e6-9fd9-5f9b7155d99b"
             },
             "Property": "Position",
-            "Value": "822.5613,-917.354,62.15655"
+            "Value": "822.561279,-917.354004,62.1565514"
           },
           {
             "Target": {
@@ -23257,7 +18928,7 @@
               "IdValue": "100c064e-f6cb-41e6-9fd9-5f9b7155d99b"
             },
             "Property": "Rotation",
-            "Value": "0,0,0.9999999,0.0000001947072"
+            "Value": "0,0,0.999999881,1.94707198E-07"
           },
           {
             "Target": {
@@ -23289,7 +18960,7 @@
               "IdValue": "7a4d7509-36eb-4f70-a492-87261a8994e2"
             },
             "Property": "Scale",
-            "Value": "48.80002,49.20001,49.8"
+            "Value": "48.8000183,49.2000084,49.7999992"
           },
           {
             "Target": {
@@ -23325,7 +18996,7 @@
               "IdValue": "97ba509e-28b4-425d-8fff-e238f7164ae0"
             },
             "Property": "Position",
-            "Value": "886.8194,-960.4874,0.1000004"
+            "Value": "886.819397,-960.487427,0.100000396"
           },
           {
             "Target": {
@@ -23333,7 +19004,7 @@
               "IdValue": "97ba509e-28b4-425d-8fff-e238f7164ae0"
             },
             "Property": "Rotation",
-            "Value": "0,0,-1,0.0000001947072"
+            "Value": "0,0,-1,1.94707198E-07"
           },
           {
             "Target": {
@@ -23372,7 +19043,7 @@
               "IdValue": "d985eb61-2d5f-4693-afdc-e75d2364cf02"
             },
             "Property": "Position",
-            "Value": "576.2706,-1340.969,3.753266"
+            "Value": "576.27063,-1340.96899,3.7532661"
           },
           {
             "Target": {
@@ -23380,7 +19051,7 @@
               "IdValue": "d985eb61-2d5f-4693-afdc-e75d2364cf02"
             },
             "Property": "Rotation",
-            "Value": "0,0,0.7071067,0.7071068"
+            "Value": "0,0,0.707106709,0.707106829"
           },
           {
             "Target": {
@@ -23529,7 +19200,7 @@
               "IdValue": "d985eb61-2d5f-4693-afdc-e75d2364cf02"
             },
             "Property": "Position",
-            "Value": "390.1167,382.3008,3.753266"
+            "Value": "390.116699,382.300812,3.7532661"
           },
           {
             "Target": {
@@ -23537,7 +19208,7 @@
               "IdValue": "d985eb61-2d5f-4693-afdc-e75d2364cf02"
             },
             "Property": "Rotation",
-            "Value": "0,0,0.7071069,-0.7071066"
+            "Value": "0,0,0.707106888,-0.70710659"
           },
           {
             "Target": {
@@ -23678,7 +19349,7 @@
               "IdValue": "5517b093-4bca-49b0-9977-371e9b95b28a"
             },
             "Property": "Position",
-            "Value": "586.8145,99.07164,77.35057"
+            "Value": "586.814514,99.07164,77.3505707"
           },
           {
             "Target": {
@@ -23686,7 +19357,7 @@
               "IdValue": "5517b093-4bca-49b0-9977-371e9b95b28a"
             },
             "Property": "Rotation",
-            "Value": "-0.5,0.4999999,-0.4999999,0.5"
+            "Value": "-0.5,0.499999911,-0.499999911,0.5"
           }
         ],
         "MovedObjects": []
@@ -23714,7 +19385,7 @@
               "IdValue": "fb8cb4a0-84ed-414f-946a-c206549d95ed"
             },
             "Property": "Position",
-            "Value": "543.4915,376.4035,51.28505"
+            "Value": "543.491516,376.403503,51.2850494"
           },
           {
             "Target": {
@@ -23722,7 +19393,7 @@
               "IdValue": "fb8cb4a0-84ed-414f-946a-c206549d95ed"
             },
             "Property": "Rotation",
-            "Value": "0,0,-0.7071067,0.7071068"
+            "Value": "0,0,-0.707106709,0.707106829"
           }
         ],
         "MovedObjects": []
@@ -23758,7 +19429,7 @@
               "IdValue": "fb8cb4a0-84ed-414f-946a-c206549d95ed"
             },
             "Property": "Position",
-            "Value": "541.5948,394.0027,48.93533"
+            "Value": "541.594788,394.002686,48.9353294"
           },
           {
             "Target": {
@@ -23766,7 +19437,7 @@
               "IdValue": "fb8cb4a0-84ed-414f-946a-c206549d95ed"
             },
             "Property": "Rotation",
-            "Value": "0,0,-0.7071067,0.7071068"
+            "Value": "0,0,-0.707106709,0.707106829"
           }
         ],
         "MovedObjects": []
@@ -23794,7 +19465,7 @@
               "IdValue": "ec81ead0-4e1a-4419-8b1d-af5a256f2249"
             },
             "Property": "Position",
-            "Value": "581.9727,256.0001,59.20946"
+            "Value": "581.972717,256.000092,59.2094612"
           },
           {
             "Target": {
@@ -23802,7 +19473,7 @@
               "IdValue": "ec81ead0-4e1a-4419-8b1d-af5a256f2249"
             },
             "Property": "Rotation",
-            "Value": "0,0,-0.7071067,0.7071068"
+            "Value": "0,0,-0.707106709,0.707106829"
           },
           {
             "Target": {
@@ -23818,7 +19489,7 @@
               "IdValue": "9d8f1075-9314-4934-8cdc-d1ec604ce8c6"
             },
             "Property": "Position",
-            "Value": "1.227074,0,0.5314426"
+            "Value": "1.22707403,0,0.531442583"
           }
         ],
         "MovedObjects": []
@@ -23860,7 +19531,7 @@
               "IdValue": "ec81ead0-4e1a-4419-8b1d-af5a256f2249"
             },
             "Property": "Position",
-            "Value": "591.3047,204.6385,50.42372"
+            "Value": "591.304688,204.638504,50.4237213"
           },
           {
             "Target": {
@@ -23868,7 +19539,7 @@
               "IdValue": "ec81ead0-4e1a-4419-8b1d-af5a256f2249"
             },
             "Property": "Rotation",
-            "Value": "-0.5,0.4999999,-0.4999999,0.5"
+            "Value": "-0.5,0.499999911,-0.499999911,0.5"
           }
         ],
         "MovedObjects": []
@@ -23902,7 +19573,7 @@
               "IdValue": "ec81ead0-4e1a-4419-8b1d-af5a256f2249"
             },
             "Property": "Position",
-            "Value": "575.5076,187.9462,55.29254"
+            "Value": "575.507629,187.946198,55.2925415"
           },
           {
             "Target": {
@@ -30045,7 +25716,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "metal_fence_post",
-      "Position": "982.3694,6.189986,0.3446004",
+      "Position": "982.369385,6.18998623,0.344600409",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -30171,7 +25842,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "metal_fence_post (1)",
-      "Position": "1421.256,6.189986,0.3446004",
+      "Position": "1421.25598,6.18998623,0.344600409",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -30297,7 +25968,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "metal_fence_post (2)",
-      "Position": "2119.635,6.189986,0.3446004",
+      "Position": "2119.63501,6.18998623,0.344600409",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -30423,7 +26094,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "wooden_crate",
-      "Position": "985.4991,54.24104,0.0000008764858",
+      "Position": "985.499084,54.2410393,8.76485785E-07",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -30549,7 +26220,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "wooden_crate (1)",
-      "Position": "985.4991,170.0051,0.0000008764858",
+      "Position": "985.499084,170.005096,8.76485785E-07",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -30675,7 +26346,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "wooden_crate (2)",
-      "Position": "985.4991,305.1588,0.0000008764858",
+      "Position": "985.499084,305.158813,8.76485785E-07",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -30801,7 +26472,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "wooden_crate (5)",
-      "Position": "1434.627,64.07602,0.0000008764858",
+      "Position": "1434.62695,64.0760193,8.76485785E-07",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -30927,7 +26598,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "wooden_crate (4)",
-      "Position": "1434.627,179.8401,0.0000008764858",
+      "Position": "1434.62695,179.840103,8.76485785E-07",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -31053,7 +26724,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "wooden_crate (3)",
-      "Position": "1434.627,314.9938,0.0000008764858",
+      "Position": "1434.62695,314.993805,8.76485785E-07",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -31179,7 +26850,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "wooden_crate (8)",
-      "Position": "2103.069,98.59981,0.0000008764858",
+      "Position": "2103.06909,98.5998077,8.76485785E-07",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -31305,7 +26976,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "wooden_crate (7)",
-      "Position": "2103.069,214.3639,0.0000008764858",
+      "Position": "2103.06909,214.363907,8.76485785E-07",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -31431,7 +27102,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "wooden_crate (6)",
-      "Position": "2103.069,349.5176,0.0000008764858",
+      "Position": "2103.06909,349.517609,8.76485785E-07",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -31574,7 +27245,7 @@
               "IdValue": "ec81ead0-4e1a-4419-8b1d-af5a256f2249"
             },
             "Property": "Position",
-            "Value": "577.7948,340.6045,44.29205"
+            "Value": "577.7948,340.604492,44.2920494"
           }
         ],
         "MovedObjects": []
@@ -31599,7 +27270,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Partical",
-      "Position": "0,0,115.9741",
+      "Position": "0,0,115.974098",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -31646,32 +27317,7 @@
           "ForceScale": 1,
           "ForceSpace": "World",
           "Friction": 1,
-          "Gradient": {
-            "Type": "Constant",
-            "Evaluation": "Life",
-            "GradientA": {
-              "blend": "Linear",
-              "color": [
-                {
-                  "t": 0.5,
-                  "c": "1,1,1,1"
-                }
-              ],
-              "alpha": []
-            },
-            "GradientB": {
-              "blend": "Linear",
-              "color": [
-                {
-                  "t": 0.5,
-                  "c": "1,1,1,1"
-                }
-              ],
-              "alpha": []
-            },
-            "ConstantA": "1,1,1,1",
-            "ConstantB": "1,1,1,1"
-          },
+          "Gradient": "1,1,1,1",
           "InitialVelocity": {
             "X": 0,
             "Y": 0,
@@ -31704,6 +27350,7 @@
           "SequenceSpeed": 1,
           "SequenceTime": 1,
           "SheetSequence": false,
+          "SnapToFrame": false,
           "StartDelay": 0,
           "StartVelocity": 0,
           "Stretch": 0,
@@ -31720,7 +27367,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Smoke",
-          "Position": "7.524017,-1430.869,-94.29982",
+          "Position": "7.52401686,-1430.86902,-94.2998199",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "particles",
@@ -31805,26 +27452,6 @@
               "Gradient": {
                 "Type": "Range",
                 "Evaluation": "Life",
-                "GradientA": {
-                  "blend": "Linear",
-                  "color": [
-                    {
-                      "t": 0.5,
-                      "c": "1,1,1,1"
-                    }
-                  ],
-                  "alpha": []
-                },
-                "GradientB": {
-                  "blend": "Linear",
-                  "color": [
-                    {
-                      "t": 0.5,
-                      "c": "1,1,1,1"
-                    }
-                  ],
-                  "alpha": []
-                },
                 "ConstantA": "0.18317,0.18317,0.18317,1",
                 "ConstantB": "1,1,1,1"
               },
@@ -31868,6 +27495,7 @@
               "SequenceSpeed": 0.01,
               "SequenceTime": 1,
               "SheetSequence": true,
+              "SnapToFrame": false,
               "StartDelay": 0,
               "StartVelocity": {
                 "Type": "Range",
@@ -31986,7 +27614,7 @@
               "IdValue": "715b5d3a-c021-4364-8cc3-ae238a6ca27f"
             },
             "Property": "Position",
-            "Value": "858.8788,-603.4002,43.94207"
+            "Value": "858.878784,-603.400208,43.94207"
           },
           {
             "Target": {
@@ -31994,7 +27622,7 @@
               "IdValue": "715b5d3a-c021-4364-8cc3-ae238a6ca27f"
             },
             "Property": "Rotation",
-            "Value": "0,0,-1,0.0000001947072"
+            "Value": "0,0,-1,1.94707198E-07"
           },
           {
             "Target": {
@@ -32002,7 +27630,7 @@
               "IdValue": "d04e5c70-4a9c-4e8f-9b6d-1659a664a250"
             },
             "Property": "Center",
-            "Value": "0.024,-0.025,0.1043012"
+            "Value": "0.0240000002,-0.0250000004,0.104301199"
           },
           {
             "Target": {
@@ -32010,7 +27638,7 @@
               "IdValue": "d04e5c70-4a9c-4e8f-9b6d-1659a664a250"
             },
             "Property": "Scale",
-            "Value": "0.1209457,0.13,0.1766023"
+            "Value": "0.1209457,0.129999995,0.176602304"
           }
         ],
         "MovedObjects": []
@@ -32048,7 +27676,19 @@
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "",
-      "IncludedBodies": ""
+      "IncludedBodies": "",
+      "DeferGeneration": false,
+      "CustomBounds": false
+    },
+    "GameObjectSystems": {
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "cb34a536-b2f4-4446-80e8-35c40ad0ee8c"
+        }
+      }
     }
   },
   "ResourceVersion": 3,

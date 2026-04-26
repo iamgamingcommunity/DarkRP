@@ -21,7 +21,7 @@
         "__version": 2,
         "Flags": 0,
         "Name": "core",
-        "Position": "123.2457,123.2458,-174.2958",
+        "Position": "123.245697,123.245796,-174.295807",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Tags": "",
@@ -2294,7 +2294,7 @@
             "OnComponentDisabled": {
               "__version": 9,
               "__guid": "6edd4a77-4d34-4ba4-b7b7-f9615b36f339",
-              "__changeId": 8,
+              "__changeId": 10,
               "UserData": {
                 "Title": "On Component Disabled",
                 "ReferencedComponentTypes": []
@@ -2327,12 +2327,6 @@
               ],
               "Links": [
                 {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 3,
-                  "DstName": "_signal"
-                },
-                {
                   "SrcId": 2,
                   "SrcName": "_result",
                   "DstId": 3,
@@ -2351,7 +2345,7 @@
             "OnComponentEnabled": {
               "__version": 9,
               "__guid": "e0b2726b-63a2-466e-96fc-ac82541f004d",
-              "__changeId": 29,
+              "__changeId": 32,
               "UserData": {
                 "Title": "On Component Enabled",
                 "ReferencedComponentTypes": []
@@ -2370,18 +2364,6 @@
                   }
                 },
                 {
-                  "Id": 3,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "SaveMapDirectly",
-                    "_type": "StorageMapSave"
-                  },
-                  "UserData": {
-                    "Position": "228,-0"
-                  }
-                },
-                {
                   "Id": 4,
                   "Type": "property",
                   "Properties": {
@@ -2394,24 +2376,6 @@
                 }
               ],
               "Links": [
-                {
-                  "SrcId": 4,
-                  "SrcName": "_result",
-                  "DstId": 3,
-                  "DstName": "TestGameOjbect"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 3,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 2,
-                  "SrcName": "_result",
-                  "DstId": 3,
-                  "DstName": "_target"
-                },
                 {
                   "SrcId": 2,
                   "SrcName": "_result",
@@ -2454,7 +2418,7 @@
         "__version": 2,
         "Flags": 0,
         "Name": "Camera",
-        "Position": "123.2458,123.2458,-174.2958",
+        "Position": "123.245796,123.245796,-174.295807",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Tags": "",
@@ -2604,7 +2568,6 @@
             "__enabled": true,
             "Flags": 0,
             "__version": 1,
-            "DenoiseMode": "Temporal",
             "FalloffRange": 1,
             "Intensity": 1,
             "OnComponentDestroy": null,
@@ -2621,7 +2584,6 @@
             "__guid": "a248a807-ba9e-423d-bdb0-ec4debd4b5f2",
             "__enabled": true,
             "Flags": 0,
-            "Denoise": true,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -2747,7 +2709,7 @@
               {
                 "__type": "PropGrabber",
                 "__guid": "a1165533-11c2-495f-be16-add99c9a0af0",
-                "__enabled": true,
+                "__enabled": false,
                 "Flags": 0,
                 "CanThrow": true,
                 "DropFromAngle": true,
@@ -2816,7 +2778,7 @@
                 "OnComponentStart": {
                   "__version": 9,
                   "__guid": "29da3343-0db8-4917-a11b-514c7e80ef46",
-                  "__changeId": 71,
+                  "__changeId": 72,
                   "UserData": {
                     "Title": "DarkRP Gamemode Start",
                     "ReferencedComponentTypes": [],
@@ -3151,7 +3113,7 @@
                       "DstName": "_target"
                     },
                     {
-                      "Id": 21,
+                      "Id": 24,
                       "Value": 0,
                       "DstId": 20,
                       "DstName": "_value"
@@ -3192,13 +3154,15 @@
         "Enabled": false,
         "IncludeStaticBodies": true,
         "IncludeKeyframedBodies": true,
-        "EditorAutoUpdate": true,
+        "EditorAutoUpdate": false,
         "AgentHeight": 64,
         "AgentRadius": 16,
         "AgentStepSize": 18,
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
-        "IncludedBodies": ""
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
       }
     },
     "__variables": []
