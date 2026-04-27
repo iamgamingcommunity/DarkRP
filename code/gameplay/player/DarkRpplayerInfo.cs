@@ -9,7 +9,7 @@ public sealed class DarkrpPlayerInfo : Component
 
 	//Steam Player Related Info
     [Property, ReadOnly, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public SteamId SteamId { get; private set; }
-	[Property, ReadOnly, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string SteamName { get; private set; }
+	[Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string SteamName { get; set; }
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string DisplayName { get; set; }
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public JobResource CurrentJob { get; set; }
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public int PlayerMoney { get; set; }
@@ -167,6 +167,8 @@ public sealed class DarkrpPlayerInfo : Component
 
 	protected override void OnStart()
 	{
+			
+
 		if (!IsBot)
 		{
 			//Gets and sets SteamID to Be the Players SteamID for Using Later
