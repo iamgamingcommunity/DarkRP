@@ -23,6 +23,9 @@ public sealed class PlayerHud : Component
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphOpenChatLogic GraphOpenChatLogic { get; set; }
 
+
+	public bool StopF4MenuOpenCheck {get; set;}
+
 	public void TriggerF2Menu()
     {
 		 F2Menu?.Invoke();
@@ -33,8 +36,11 @@ public sealed class PlayerHud : Component
 		 F3Menu?.Invoke();
     }
 
+	// [Rpc.Owner]
+
 	public void TriggerF4Menu()
     {
+		if ( IsProxy ) return;
 		 F4Menu?.Invoke();
     }
 

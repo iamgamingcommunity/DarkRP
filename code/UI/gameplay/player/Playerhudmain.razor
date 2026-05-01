@@ -140,12 +140,11 @@
 
     <button class="become-job"
             disabled="@(SelectedJob == null)"
-            onclick="@(() => {BecomeJob(); })">
+            onclick="@(() => BecomeJob(PlayerInfo))">
         <div class="becomejobtitle">
             @(SelectedJob != null ? "Become Job" : "Select a Job")
         </div>
     </button>
-
 </div>
 
 @* <div class="job-list-panel"> 
@@ -183,8 +182,8 @@
 
 @{
     // Get the component from this prefab
-    var playerInfo = this.GetComponent<DarkrpPlayerInfo>();
-    var usergroup = playerInfo?.Usergroup ?? "";
+    @* var playerInfo = this.GetComponent<DarkrpPlayerInfo>();
+    var usergroup = playerInfo?.Usergroup ?? ""; *@
 }
 
 <div class="job-menu">
@@ -196,9 +195,7 @@
 
         // Filter jobs by usergroup
         var allowedJobs = category.JobCategoryInfo
-            .Where(jobInfo => jobInfo.JobsInCategory != null &&
-                              (jobInfo.Whitelist == null || jobInfo.Whitelist.Count == 0 ||
-                               jobInfo.Whitelist.Contains(usergroup)))
+            .Where(jobInfo => jobInfo.JobsInCategory != null )
             .ToList();
 
         // Skip category if no allowed jobs
@@ -285,13 +282,13 @@
         }
     </div>
 
-    <button class="Misc-BuyItem"
+    @* <button class="Misc-BuyItem"
             disabled="@(SelectedJob == null)"
             onclick="@(() => {BecomeJob(); })">
         <div class="Misc-BuyItemtitle">
             @(SelectedJob != null ? "Become Job" : "Select a Job")
         </div>
-    </button>
+    </button> *@
 
 </div>
 
@@ -418,6 +415,9 @@ bool IsOpen( CategoryResource category )
   //Is This needed?
     CategoryResource ExpandedCategory;
     
+
+   [Property] public GameObject PlayerInfo;
+
     [Property] JobResource SelectedJob;
 
   //Is This needed?
@@ -439,11 +439,12 @@ bool IsOpen( CategoryResource category )
         Log.Info($"Selected job: {job.Title}, {jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob}");
     }
 
-    void BecomeJob()
+    void BecomeJob(GameObject PlayerInfo)
     {
         if (SelectedJob == null) return;
         // DarkRP logic here
-        GraphBecomeJob?.Invoke(SelectedJob);
+        Player = PlayerInfo;
+        GraphBecomeJob?.Invoke(SelectedJob, Player);
         Log.Info($"Becoming job: {SelectedJob.Title}");
     }
 
@@ -487,7 +488,7 @@ bool IsOpen( CategoryResource category )
 
 
     //Action Graph For Becoming Job
-    public delegate void ActionGraphBecomeJob(JobResource SelectedJob);
+    public delegate void ActionGraphBecomeJob(JobResource SelectedJob, GameObject PlayerInfo);
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphBecomeJob GraphBecomeJob { get; set; }
 
@@ -534,6 +535,12 @@ bool IsOpen( CategoryResource category )
 
     //F4 Menu UI Vars
     [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")] public bool IsF4MenuOpen {get; set;}
+    @* private void OnF4MenuOpen( bool oldValue, bool newValue)
+    {
+        StateHasChanged();
+    }
+     *@
+    
     [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")]  public bool IsF4JobMenuOpen {get; set;}
     [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")]  public bool IsF4MiscMenuOpen {get; set;}
     [Property, Feature("F4 Menu"), Group("Show/Hide Vars"), Description("These are the Vars for showing/hiding the F4 Menus UI.")]  public bool IsF4ShipmentsMenuOpen {get; set;}
@@ -569,10 +576,7 @@ bool IsOpen( CategoryResource category )
 
 
 
-
-
-
-	@* [Property] public DarkrpPlayerInfo Player { get; set; } *@
+    [Property] public GameObject Player { get; set; } 
 
     @* private bool IsActiveSlot(int index)
     {

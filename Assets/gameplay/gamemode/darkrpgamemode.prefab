@@ -2601,7 +2601,320 @@
         "__PrefabInstancePatch": {
           "AddedObjects": [],
           "RemovedObjects": [],
-          "PropertyOverrides": [],
+          "PropertyOverrides": [
+            {
+              "Target": {
+                "Type": "Component",
+                "IdValue": "38d993cb-394e-4d2c-9405-a4ba96e91052"
+              },
+              "Property": "GraphBecomeJob",
+              "Value": {
+                "__version": 9,
+                "__guid": "32f1d1b1-028a-49d6-a686-a50e14eda675",
+                "__changeId": 31,
+                "UserData": {
+                  "Title": "Graph Become Job",
+                  "ReferencedComponentTypes": [
+                    "DarkrpPlayerInfo",
+                    "DarkRPGamemode.DarkRPGamemode"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property",
+                    "Properties": {
+                      "_name": "CurrentJob",
+                      "_type": "DarkrpPlayerInfo"
+                    },
+                    "UserData": {
+                      "Position": "1632,-48"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "log.info",
+                    "UserData": {
+                      "Position": "2160,72"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "scene.findall",
+                    "UserData": {
+                      "Position": "204,96"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "foreach",
+                    "Properties": {
+                      "T": "Sandbox.GameObject"
+                    },
+                    "UserData": {
+                      "Position": "204,0"
+                    }
+                  },
+                  {
+                    "Id": 6,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "DarkRPGamemode.DarkRPGamemode"
+                    },
+                    "UserData": {
+                      "Position": "432,120"
+                    }
+                  },
+                  {
+                    "Id": 7,
+                    "Type": "property",
+                    "Properties": {
+                      "_name": "DisableRespawningAfterBecomingJob",
+                      "_type": "DarkRPGamemode.DarkRPGamemode"
+                    },
+                    "UserData": {
+                      "Position": "384,96"
+                    }
+                  },
+                  {
+                    "Id": 8,
+                    "Type": "if",
+                    "UserData": {
+                      "Position": "636,24"
+                    }
+                  },
+                  {
+                    "Id": 9,
+                    "Type": "scene.findall",
+                    "UserData": {
+                      "Position": "912,216"
+                    }
+                  },
+                  {
+                    "Id": 10,
+                    "Type": "foreach",
+                    "Properties": {
+                      "T": "Sandbox.GameObject"
+                    },
+                    "UserData": {
+                      "Position": "1128,216"
+                    }
+                  },
+                  {
+                    "Id": 11,
+                    "Type": "property",
+                    "Properties": {
+                      "_name": "Network",
+                      "_type": "Sandbox.GameObject"
+                    },
+                    "UserData": {
+                      "Position": "1320,348"
+                    }
+                  },
+                  {
+                    "Id": 12,
+                    "Type": "property",
+                    "Properties": {
+                      "_name": "IsOwner",
+                      "_type": {
+                        "$type": "Nested",
+                        "DeclaringType": "Sandbox.GameObject",
+                        "Name": "NetworkAccessor"
+                      }
+                    },
+                    "UserData": {
+                      "Position": "1308,324"
+                    }
+                  },
+                  {
+                    "Id": 13,
+                    "Type": "if",
+                    "UserData": {
+                      "Position": "1368,240"
+                    }
+                  },
+                  {
+                    "Id": 17,
+                    "Type": "log.info",
+                    "UserData": {
+                      "Position": "1308,-108"
+                    }
+                  },
+                  {
+                    "Id": 22,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "DarkrpPlayerInfo"
+                    },
+                    "UserData": {
+                      "Position": "1488,180"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 17,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 22,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "SelectedJob",
+                    "DstId": 2,
+                    "DstName": "_value"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_signal",
+                    "DstId": 3,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "SelectedJob",
+                    "DstId": 3,
+                    "DstName": "args",
+                    "DstIndex": 0
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "PlayerInfo",
+                    "DstId": 3,
+                    "DstName": "args",
+                    "DstIndex": 1
+                  },
+                  {
+                    "Id": 23,
+                    "Value": "Become Job Logic: New Job Selected {0}, PlayerObjectFound: {1}",
+                    "DstId": 3,
+                    "DstName": "format"
+                  },
+                  {
+                    "Id": 24,
+                    "Value": "DarkRP",
+                    "DstId": 4,
+                    "DstName": "name"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 5,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_result",
+                    "DstId": 5,
+                    "DstName": "enumerable"
+                  },
+                  {
+                    "SrcId": 5,
+                    "SrcName": "body.value",
+                    "DstId": 6,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 6,
+                    "SrcName": "_result",
+                    "DstId": 7,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 5,
+                    "SrcName": "body",
+                    "DstId": 8,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 7,
+                    "SrcName": "_result",
+                    "DstId": 8,
+                    "DstName": "condition"
+                  },
+                  {
+                    "Id": 25,
+                    "Value": "Player",
+                    "DstId": 9,
+                    "DstName": "name"
+                  },
+                  {
+                    "SrcId": 9,
+                    "SrcName": "_result",
+                    "DstId": 10,
+                    "DstName": "enumerable"
+                  },
+                  {
+                    "SrcId": 10,
+                    "SrcName": "body.value",
+                    "DstId": 11,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 11,
+                    "SrcName": "_result",
+                    "DstId": 12,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 10,
+                    "SrcName": "body",
+                    "DstId": 13,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 12,
+                    "SrcName": "_result",
+                    "DstId": 13,
+                    "DstName": "condition"
+                  },
+                  {
+                    "SrcId": 8,
+                    "SrcName": "false",
+                    "DstId": 17,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "PlayerInfo",
+                    "DstId": 17,
+                    "DstName": "args",
+                    "DstIndex": 0
+                  },
+                  {
+                    "Id": 26,
+                    "Value": null,
+                    "DstId": 17,
+                    "DstName": "args",
+                    "DstIndex": 1
+                  },
+                  {
+                    "Id": 27,
+                    "Value": "Become Job Logic: New Job Selected {0}, PlayerObjectFound: {1}",
+                    "DstId": 17,
+                    "DstName": "format"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "PlayerInfo",
+                    "DstId": 22,
+                    "DstName": "_this"
+                  }
+                ]
+              }
+            }
+          ],
           "MovedObjects": []
         },
         "__PrefabIdToInstanceId": {
@@ -2773,11 +3086,11 @@
                 "DisableRespawningAfterBecomingJob": false,
                 "EntityPriceMultiplier": 0,
                 "GiveIllegalSwepsBackOnUnarrest": false,
-                "JailPos": null,
+                "JailPos": [],
                 "JailPositionDebug": false,
                 "JailTime": 10,
                 "LawBoardModel": null,
-                "LicensedEquipment": null,
+                "LicensedEquipment": [],
                 "LockDownOnGoingSFX": null,
                 "LockDownStartSFX": null,
                 "MaxHitPrice": 0,
@@ -2798,10 +3111,12 @@
                 "OnComponentStart": {
                   "__version": 9,
                   "__guid": "29da3343-0db8-4917-a11b-514c7e80ef46",
-                  "__changeId": 72,
+                  "__changeId": 83,
                   "UserData": {
                     "Title": "DarkRP Gamemode Start",
-                    "ReferencedComponentTypes": [],
+                    "ReferencedComponentTypes": [
+                      "DarkRPGamemode.DarkRPGamemode"
+                    ],
                     "Category": "Chat",
                     "Icon": "start",
                     "Description": "Starts all the needed logic for the DarkRP Gamemode"
@@ -2820,13 +3135,6 @@
                       }
                     },
                     {
-                      "Id": 3,
-                      "Type": "scene.ref",
-                      "UserData": {
-                        "Position": "768,108"
-                      }
-                    },
-                    {
                       "Id": 4,
                       "Type": "property",
                       "Properties": {
@@ -2834,7 +3142,7 @@
                         "_type": "DarkRPGamemode.DarkRPGamemode"
                       },
                       "UserData": {
-                        "Position": "888,144"
+                        "Position": "840,144"
                       }
                     },
                     {
@@ -2846,7 +3154,7 @@
                         "_type": "System.Collections.Generic.List`1"
                       },
                       "UserData": {
-                        "Position": "1452,24"
+                        "Position": "1404,24"
                       }
                     },
                     {
@@ -2856,7 +3164,7 @@
                         "T": "ChatCommandResource"
                       },
                       "UserData": {
-                        "Position": "828,-0"
+                        "Position": "780,0"
                       }
                     },
                     {
@@ -2870,7 +3178,7 @@
                       "Id": 8,
                       "Type": "log.info",
                       "UserData": {
-                        "Position": "1224,24"
+                        "Position": "1176,24"
                       }
                     },
                     {
@@ -2896,7 +3204,7 @@
                         "T": "ChatCommandResource"
                       },
                       "UserData": {
-                        "Position": "1140,108"
+                        "Position": "1092,108"
                       }
                     },
                     {
@@ -2983,7 +3291,35 @@
                         "Title": "Reset Job Values",
                         "Description": "When The Server Starts all Jobs categorys get their 'JobSlotTaken' to 0.",
                         "Color": 3,
-                        "Layer": 1
+                        "Layer": 2
+                      }
+                    },
+                    {
+                      "Id": 26,
+                      "Type": "scene.ref",
+                      "UserData": {
+                        "Position": "828,192"
+                      }
+                    },
+                    {
+                      "Id": 27,
+                      "Type": "scene.get",
+                      "Properties": {
+                        "T": "DarkRPGamemode.DarkRPGamemode"
+                      },
+                      "UserData": {
+                        "Position": "828,168"
+                      }
+                    },
+                    {
+                      "Id": 28,
+                      "Type": "comment",
+                      "UserData": {
+                        "Position": "192,-120",
+                        "Size": "1368,444",
+                        "Title": "Get All Chat Commands in Project Files & Fill List",
+                        "Layer": 1,
+                        "Color": 3
                       }
                     }
                   ],
@@ -2995,7 +3331,7 @@
                       "DstName": "_signal"
                     },
                     {
-                      "SrcId": 3,
+                      "SrcId": 27,
                       "SrcName": "_result",
                       "DstId": 4,
                       "DstName": "_target"
@@ -3137,22 +3473,26 @@
                       "Value": 0,
                       "DstId": 20,
                       "DstName": "_value"
+                    },
+                    {
+                      "SrcId": 26,
+                      "SrcName": "_result",
+                      "DstId": 27,
+                      "DstName": "_this"
                     }
                   ],
                   "Defaults": {
-                    "$3.component": {
-                      "_type": "component",
-                      "component_id": "db37f26e-6325-40dd-9d89-cb5f7cfe91ab",
-                      "go": "cf8ef432-5121-4c0d-a966-6fcf052d7670",
-                      "component_type": "DarkRPGamemode"
+                    "$26.gameobject": {
+                      "_type": "gameobject",
+                      "go": "f7e5b3c3-30de-45c8-ab6e-78b70f628d87"
                     }
                   }
                 },
                 "OnComponentUpdate": null,
-                "PDStartingEquipment": null,
+                "PDStartingEquipment": [],
                 "SalaryPaymentMultiplier": 0,
                 "SalaryPaymentSystemCycleTime": 0,
-                "StaffSweps": null,
+                "StaffSweps": [],
                 "StartingEquipment": [],
                 "TempPlayTimeTotalCycleAmount": 0,
                 "ToggleLottery": false,

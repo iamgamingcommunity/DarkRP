@@ -58,7 +58,7 @@
             "GraphBecomeJob": {
               "__version": 9,
               "__guid": "911dc8c1-aedc-4f3b-a955-61b3d5c24f73",
-              "__changeId": 6,
+              "__changeId": 13,
               "UserData": {
                 "Title": "Graph Become Job"
               },
@@ -67,167 +67,9 @@
                 {
                   "Id": 0,
                   "Type": "input"
-                },
-                {
-                  "Id": 1,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "1104,180"
-                  }
-                },
-                {
-                  "Id": 2,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "CurrentJob",
-                    "_type": "DarkrpPlayerInfo"
-                  },
-                  "UserData": {
-                    "Position": "1080,84"
-                  }
-                },
-                {
-                  "Id": 3,
-                  "Type": "log.info",
-                  "UserData": {
-                    "Position": "1392,84"
-                  }
-                },
-                {
-                  "Id": 4,
-                  "Type": "scene.findall",
-                  "UserData": {
-                    "Position": "432,108"
-                  }
-                },
-                {
-                  "Id": 5,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": "Sandbox.GameObject"
-                  },
-                  "UserData": {
-                    "Position": "432,12"
-                  }
-                },
-                {
-                  "Id": 6,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "DarkRPGamemode.DarkRPGamemode"
-                  },
-                  "UserData": {
-                    "Position": "660,132"
-                  }
-                },
-                {
-                  "Id": 7,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "DisableRespawningAfterBecomingJob",
-                    "_type": "DarkRPGamemode.DarkRPGamemode"
-                  },
-                  "UserData": {
-                    "Position": "612,108"
-                  }
-                },
-                {
-                  "Id": 8,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "864,36"
-                  }
                 }
               ],
-              "Links": [
-                {
-                  "SrcId": 8,
-                  "SrcName": "false",
-                  "DstId": 2,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 1,
-                  "SrcName": "_result",
-                  "DstId": 2,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "SelectedJob",
-                  "DstId": 2,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 2,
-                  "SrcName": "_signal",
-                  "DstId": 3,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "SelectedJob",
-                  "DstId": 3,
-                  "DstName": "args",
-                  "DstIndex": 0
-                },
-                {
-                  "Id": 11,
-                  "Value": "Become Job Logic: New Job Selected {0}",
-                  "DstId": 3,
-                  "DstName": "format"
-                },
-                {
-                  "Id": 12,
-                  "Value": "DarkRP",
-                  "DstId": 4,
-                  "DstName": "name"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 5,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 4,
-                  "SrcName": "_result",
-                  "DstId": 5,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 5,
-                  "SrcName": "body.value",
-                  "DstId": 6,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 6,
-                  "SrcName": "_result",
-                  "DstId": 7,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5,
-                  "SrcName": "body",
-                  "DstId": 8,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 7,
-                  "SrcName": "_result",
-                  "DstId": 8,
-                  "DstName": "condition"
-                }
-              ],
-              "Defaults": {
-                "$1.component": {
-                  "_type": "component",
-                  "component_id": "e76150e2-fac2-4851-8c5e-fea454bb06f6",
-                  "go": "ca937267-e3cd-4bf2-acb5-12d480d561de",
-                  "component_type": "DarkrpPlayerInfo"
-                }
-              }
+              "Links": []
             },
             "GraphBuyF4MenuItem": {
               "__version": 9,
@@ -491,7 +333,7 @@
             "GraphCloseF4Menu": {
               "__version": 9,
               "__guid": "8b2a727c-d22c-4d92-8849-9a7e3bdea5c4",
-              "__changeId": 18,
+              "__changeId": 19,
               "UserData": {
                 "Title": "Graph Close F 4Menu",
                 "ReferencedComponentTypes": []
@@ -2237,6 +2079,8 @@
             "OnComponentFixedUpdate": null,
             "OnComponentStart": null,
             "OnComponentUpdate": null,
+            "Player": null,
+            "PlayerInfo": null,
             "SelectedJob": null,
             "Selectedtabindex": 0
           }
