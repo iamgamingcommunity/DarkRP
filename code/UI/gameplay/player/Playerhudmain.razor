@@ -140,7 +140,7 @@
 
     <button class="become-job"
             disabled="@(SelectedJob == null)"
-            onclick="@(() => BecomeJob(PlayerInfo))">
+            onclick="@(() => BecomeJob(PlayerInfo, OldSelectedJob))">
         <div class="becomejobtitle">
             @(SelectedJob != null ? "Become Job" : "Select a Job")
         </div>
@@ -187,7 +187,7 @@
 }
 
 <div class="job-menu">
-    @foreach (var category in CategoryResource.All.Where(c => c.IsJobCategory))
+    @foreach (var category in JobCategories)
     {
         // Skip empty categories
         if (category.JobCategoryInfo == null || !category.JobCategoryInfo.Any())
@@ -415,38 +415,75 @@ bool IsOpen( CategoryResource category )
   //Is This needed?
     CategoryResource ExpandedCategory;
     
-
+    public List<CategoryResource> JobCategories { get; set; } = new();
    [Property] public GameObject PlayerInfo;
 
+    @* [Property] public Component PlayerInfo; *@
+
     [Property] JobResource SelectedJob;
+
+    [Property] JobResource OldSelectedJob;
+    [Property] JobResource SelectedJobForIndex;
+
+    
 
   //Is This needed?
     List<CategoryResource> Categories = new();
     List<JobResource> Jobs = new();
 
+
         //Select Job Button, this is NOT the 'Become Job Button'
     void SelectJob(JobResource job, CategoryResource.JobCategoryInfoStructMain jobInfo)
     {
-        if (jobInfo.JobSlotsTaken >= job.MaxPlayersAllowedOnJob)
+        if ( IsProxy ) return;
+        @* if (jobInfo.JobSlotsTaken >= job.MaxPlayersAllowedOnJob)
         {
             Log.Info($"Job {job.Title} is full ({jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob})");
             return;
-        }
+        } *@
+
+      
+
 
         SelectedJob = job;
-        jobInfo.JobSlotsTaken++;
+
 
         Log.Info($"Selected job: {job.Title}, {jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob}");
     }
 
-    void BecomeJob(GameObject PlayerInfo)
+
+    void BecomeJob(GameObject PlayerInfo, JobResource OldSelectedJob)
     {
-        if (SelectedJob == null) return;
-        // DarkRP logic here
+        if ( IsProxy ) return;
+        
         Player = PlayerInfo;
-        GraphBecomeJob?.Invoke(SelectedJob, Player);
+        var DarkRPInfo = PlayerInfo.GetComponent<DarkrpPlayerInfo>();
+         OldSelectedJob = DarkRPInfo.CurrentJob;
+         
+
+        SelectedJobForIndex = SelectedJob;
+        GraphBecomeJob?.Invoke(SelectedJob, Player, OldSelectedJob);
+
+        if (DarkRPInfo.CurrentJob == OldSelectedJob)
+        {
+
+        }
+                    SetJobSlot(SelectedJob, OldSelectedJob );
+            Log.Info($"Fired:  SetJobSlot ActionGraph");
+        
         Log.Info($"Becoming job: {SelectedJob.Title}");
+        
     }
+    [Rpc.Broadcast]
+    void SetJobSlot(JobResource SelectedJobForIndex, JobResource OldSelectedJob )
+    {
+        @* if ( IsProxy ) return; *@
+
+    
+      
+        GraphSetJobIndex?.Invoke(SelectedJobForIndex, Player, OldSelectedJob);
+    }
+
 
    [Property] int Selectedtabindex { get; set; }
 
@@ -488,7 +525,7 @@ bool IsOpen( CategoryResource category )
 
 
     //Action Graph For Becoming Job
-    public delegate void ActionGraphBecomeJob(JobResource SelectedJob, GameObject PlayerInfo);
+    public delegate void ActionGraphBecomeJob(JobResource SelectedJob, GameObject PlayerInfo, JobResource OldSelectedJob);
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphBecomeJob GraphBecomeJob { get; set; }
 
@@ -504,7 +541,9 @@ bool IsOpen( CategoryResource category )
 	public ActionGraphBuyF4MenuItem GraphBuyF4MenuItem { get; set; }
 
 
-
+    public delegate void ActionGraphSetJobIndex(JobResource SelectedJob, GameObject PlayerInfo, JobResource OldSelectedJob);
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphSetJobIndex GraphSetJobIndex { get; set; }
 
     //Is This needed?
   	[Property] public List<CategoryResource> JobCatagory {get; set;}
@@ -572,8 +611,10 @@ bool IsOpen( CategoryResource category )
 
 
 
+    @* [Sync] public int jobInfo.JobSlotsTaken {get; set;} *@
 
 
+    @* [Sync] public Dictionary<string, int> JobCounts { get; set; } *@
 
 
     [Property] public GameObject Player { get; set; } 
@@ -596,13 +637,31 @@ bool IsOpen( CategoryResource category )
 
 
 
+    protected override void OnStart()
+    {
+        CategoryResource.OnCategoriesLoaded += RefreshCategories;
+        RefreshCategories();
+    }
 
 
+    void RefreshCategories()
+    {
+        JobCategories = CategoryResource.All
+            .Where(c => c.IsJobCategory)
+            .Where(c => c.JobCategoryInfo != null && c.JobCategoryInfo.Any())
+            .ToList();
+
+        StateHasChanged();
+    }
 
 
+@* void UpdateSlots(CategoryResource jobInfo)
+{
+    jobInfo.JobSlotsTaken++;
 
-
-
+    // FORCE SYNC
+    JobCategories = JobCategories.ToList();
+} *@
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt

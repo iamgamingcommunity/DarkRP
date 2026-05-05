@@ -31,18 +31,96 @@ protected override void OnStart()
 
 
 //Become Job Button Logic for DarkRP F4 Job Menu
-void BecomeJob_Server( Connection conn, JobResource job )
-{
-    var jobId = job.ResourcePath;
-    var runtime = JobManager.Instance;
 
-    int taken = runtime.JobSlotsTaken.GetValueOrDefault( jobId );
 
-    if ( taken >= job.MaxPlayersAllowedOnJob )
-        return;
 
-    runtime.JobSlotsTaken[jobId] = taken + 1;
-}
+// private void BecomeJob_Server(string jobId)
+// {
+
+
+//     var job = ResourceLibrary.Get<JobResource>(jobId);
+//     if (job == null)
+//         return;
+
+//     int taken = JobCounts.TryGetValue(jobId, out var count) ? count : 0;
+
+//     if (taken >= job.MaxPlayersAllowedOnJob)
+//     {
+//         Log.Info($"Job {job.Title} is full ({taken}/{job.MaxPlayersAllowedOnJob})");
+//         return;
+//     }
+
+//     JobCounts[jobId] = taken + 1;
+
+//     Log.Info($"Player took job {job.Title} ({JobCounts[jobId]}/{job.MaxPlayersAllowedOnJob})");
+
+// }
+
+
+//     public void SelectJobServer(JobResource job)
+//     {
+//         if (JobCounts >= job.MaxPlayersAllowedOnJob)
+//         {
+//             Log.Info($"Job {job.Title} is full ({JobCounts}/{job.MaxPlayersAllowedOnJob})");
+//             return;
+//         }
+
+//         Playhudmain.SelectedJob = job;
+
+
+
+//         Log.Info($"Selected job: {job.Title}, {JobCounts}/{job.MaxPlayersAllowedOnJob}");
+//     }
+
+
+
+
+
+// [Sync]
+// public Dictionary<string, int> JobCounts { get; set; } = new();
+
+
+// [Rpc.Owner]
+// public void RequestBecomeJob(string jobId)
+// {
+//     BecomeJob_Server(jobId);
+// }
+
+
+
+// 	public static bool CanJoin( DarkrpPlayerInfo player, JobResource job, out string reason )
+// 	{
+// 		reason = null;
+
+// 		if ( player is null || definition is null )
+// 		{
+// 			reason = "Invalid job selection.";
+// 			return false;
+// 		}
+
+// 		if ( string.Equals( player.JobDefinitionPath, definition.ResourcePath, StringComparison.OrdinalIgnoreCase ) )
+// 			return true;
+
+// 		if ( definition.MaxPlayers > 0 && CountPlayers( definition ) >= definition.MaxPlayers )
+// 		{
+// 			reason = "This job is full.";
+// 			return false;
+// 		}
+
+// 		return true;
+// 	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 public void TryAssignJob( DarkrpPlayerInfo player, JobResource job )
 {

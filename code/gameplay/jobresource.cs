@@ -5,6 +5,8 @@ using System.Collections.Generic;
 [GameResource("JobDef", "job", "Defines a DarkRP style job")]
 public class JobResource : GameResource
 {
+
+    //Basic Job Info
     [Property, Group("Basic Job Info")] public string Title { get; set; }
     [Property, Group("Basic Job Info")] public Texture JobImage { get; set; }
     [Property, Group("Basic Job Info")] public string JobCommandName { get; set; }
@@ -14,16 +16,23 @@ public class JobResource : GameResource
     [Property, Group("Basic Job Info")] public List<Clothing> JobClothes { get; set; }
     [Property, Group("Basic Job Info")] public CategoryResource JobCategory { get; set; }
     [Property, Group("Basic Job Info")] public int MaxPlayersAllowedOnJob { get; set; }
+    [Property, Group("Basic Job Info")] public bool IsInfiniteJobSlots { get; set; }
     [Property, Group("Basic Job Info")] public int SortingLevel { get; set; }
+
+    //Job Health Info
     [Property, Group("Job Health Info")] public float JobHealth { get; set; }
     [Property, Group("Job Health Info")] public float JobHealthMax { get; set; }
     [Property, Group("Job Health Info")] public float JobArmor { get; set; }
     [Property, Group("Job Health Info")] public float JobArmorMax { get; set; }
+
+    
+    //Extra Job Info
     [Property, Group("Extra Job Info")] public bool IsPD { get; set; }
     [Property, Group("Extra Job Info")] public bool IsMayor { get; set; }
     [Property, Group("Extra Job Info")] public bool IsUsingDefaultJobEquipment { get; set; }
     [Property, Group("Extra Job Info")] public List<PickupableEntity> StartingEquipment { get; set; }
 
+    //estrictions To Job Info
     [Property, Group("Restrictions To Job")] public bool IsVoteNeeded { get; set; }
     [Property, Group("Restrictions To Job")] public int PlayTimeNeededToPlay { get; set; }
     
