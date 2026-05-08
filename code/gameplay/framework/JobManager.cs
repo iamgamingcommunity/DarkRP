@@ -1,5 +1,6 @@
 using Sandbox;
 using System.Collections.Generic;
+using System.Dynamic;
 
 public sealed class JobManager : Component
 {
@@ -7,27 +8,83 @@ public sealed class JobManager : Component
 
     [Sync] public NetDictionary<string, int> JobSlotsTaken { get; set; } = new();
 
+    [Property] public NetList<CategoryResource> JobSlots { get; set; } = new();
+
+	public delegate void ActionTest();
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Unarrest Logic")]
+	public ActionTest GraTest { get; set; }
+
+
     protected override void OnAwake()
     {
         Instance = this;
     }
 
 
-protected override void OnStart()
-{
-#if SERVER
-    foreach ( var category in JobCategoryInfo )
-    {
-        var job = category.JobsInCategory;
-        if ( job == null ) continue;
 
-        JobRuntimeState.Instance.JobSlotsTaken.TryAdd(
-            job.ResourcePath,
-            0
-        );
+    public void FireChange()
+    {
+    // if ( !Networking.IsHost )
+    //     return;
+
+        GraTest?.Invoke();
+        // JobSlots.Add(new List<CategoryResource>
+        // {
+        //     JobCommandName = "Citizen",
+        //     JobSlotAmount = 1
+        // });
+    // var citizen = JobSlots.FirstOrDefault(x => x.JobCommandName == "Citizen");
+
+    // Log.Info($"Citizen Slots: {citizen.JobSlotAmount}");
     }
-#endif
-}
+
+
+    public void FireDebug(int Number)
+    {
+    Log.Info($"IsProxy: {IsProxy}");
+    Log.Info($"NetworkMode: {GameObject.NetworkMode}");
+    Log.Info($"Owner: {Network.OwnerId}");
+    Log.Info($"Number: {Number}");
+
+    // var citizen = JobSlots.FirstOrDefault(x => x.JobCommandName == "Citizen");
+
+    // if ( citizen == null )
+    // {
+    //     Log.Info("Citizen entry not found!");
+    //     return;
+    // }
+    //  Log.Info($"Citizen Slots: {citizen.JobSlotAmount}");
+    }
+
+
+
+    public class JobSlotInfo
+    {
+        public string JobCommandName {get; set;}
+        public int JobSlotAmount {get; set;}
+    }
+
+
+
+
+
+
+
+// protected override void OnStart()
+// {
+// #if SERVER
+//     foreach ( var category in JobCategoryInfo )
+//     {
+//         var job = category.JobsInCategory;
+//         if ( job == null ) continue;
+
+//         JobRuntimeState.Instance.JobSlotsTaken.TryAdd(
+//             job.ResourcePath,
+//             0
+//         );
+//     }
+// #endif
+// }
 
 
 //Become Job Button Logic for DarkRP F4 Job Menu
@@ -122,15 +179,15 @@ protected override void OnStart()
 
 
 
-public void TryAssignJob( DarkrpPlayerInfo player, JobResource job )
-{
-#if SERVER
-    if ( job == null )
-        return;
+// public void TryAssignJob( DarkrpPlayerInfo player, JobResource job )
+// {
+// #if SERVER
+//     if ( job == null )
+//         return;
 
-    AssignJob( player, job );
-#endif
-}
+//     AssignJob( player, job );
+// #endif
+// }
 
 
 

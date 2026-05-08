@@ -2624,7 +2624,7 @@
         "Scale": "1,1,1",
         "Tags": "",
         "Enabled": true,
-        "NetworkMode": 2,
+        "NetworkMode": 1,
         "NetworkFlags": 0,
         "NetworkOrphaned": 0,
         "NetworkTransmit": true,
@@ -2695,6 +2695,278 @@
             },
             "SpawnPoints": [],
             "StartServer": true
+          },
+          {
+            "__type": "JobManager",
+            "__guid": "5416cc0a-1caf-451c-be87-1a89beeecfa8",
+            "__enabled": true,
+            "Flags": 0,
+            "GraTest": {
+              "__version": 9,
+              "__guid": "c2f5f3b9-3893-4b61-b403-add5429fd145",
+              "__changeId": 88,
+              "UserData": {
+                "Title": "Unarrest Logic",
+                "ReferencedComponentTypes": [
+                  "JobManager"
+                ]
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "_target"
+                  },
+                  "UserData": {
+                    "Position": "-48,144"
+                  }
+                },
+                {
+                  "Id": 2,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "48,144"
+                  }
+                },
+                {
+                  "Id": 3,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobSlots",
+                    "_type": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "312,120"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "CategoryResource"
+                  },
+                  "UserData": {
+                    "Position": "492,12"
+                  }
+                },
+                {
+                  "Id": 5,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobCategoryInfo",
+                    "_type": "CategoryResource"
+                  },
+                  "UserData": {
+                    "Position": "588,168"
+                  }
+                },
+                {
+                  "Id": 6,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "CategoryResource",
+                      "Name": "JobCategoryInfoStructMain"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "720,48"
+                  }
+                },
+                {
+                  "Id": 7,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobSlotsTaken",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CategoryResource",
+                      "Name": "JobCategoryInfoStructMain"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "876,204"
+                  }
+                },
+                {
+                  "Id": 8,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobSlotsTaken",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "CategoryResource",
+                      "Name": "JobCategoryInfoStructMain"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "1440,108"
+                  }
+                },
+                {
+                  "Id": 9,
+                  "Type": "op.add",
+                  "UserData": {
+                    "Position": "1308,204"
+                  }
+                },
+                {
+                  "Id": 11,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "FireDebug",
+                    "_type": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "1824,84"
+                  }
+                },
+                {
+                  "Id": 14,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1188,60"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 2,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 3,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 4,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "_result",
+                  "DstId": 4,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "body.value",
+                  "DstId": 5,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "body",
+                  "DstId": 6,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 5,
+                  "SrcName": "_result",
+                  "DstId": 6,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "body.value",
+                  "DstId": 7,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 14,
+                  "SrcName": "_signal",
+                  "DstId": 8,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "body.value",
+                  "DstId": 8,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 9,
+                  "SrcName": "_result",
+                  "DstId": 8,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 7,
+                  "SrcName": "_result",
+                  "DstId": 9,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 17,
+                  "Value": 1,
+                  "DstId": 9,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 9,
+                  "SrcName": "_result",
+                  "DstId": 11,
+                  "DstName": "Number"
+                },
+                {
+                  "SrcId": 8,
+                  "SrcName": "_signal",
+                  "DstId": 11,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 2,
+                  "SrcName": "_result",
+                  "DstId": 11,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 6,
+                  "SrcName": "body",
+                  "DstId": 14,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 7,
+                  "SrcName": "_result",
+                  "DstId": 14,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "Id": 18,
+                  "Value": "Job Slot Taken:{0}",
+                  "DstId": 14,
+                  "DstName": "format"
+                }
+              ]
+            },
+            "JobSlots": [
+              "gameplay/jobs/categorys/civillain.category"
+            ],
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
           }
         ],
         "Children": [
@@ -2799,7 +3071,7 @@
                 "OnComponentStart": {
                   "__version": 9,
                   "__guid": "29da3343-0db8-4917-a11b-514c7e80ef46",
-                  "__changeId": 83,
+                  "__changeId": 90,
                   "UserData": {
                     "Title": "DarkRP Gamemode Start",
                     "ReferencedComponentTypes": [

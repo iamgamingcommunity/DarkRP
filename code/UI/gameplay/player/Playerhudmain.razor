@@ -435,7 +435,7 @@ bool IsOpen( CategoryResource category )
         //Select Job Button, this is NOT the 'Become Job Button'
     void SelectJob(JobResource job, CategoryResource.JobCategoryInfoStructMain jobInfo)
     {
-        if ( IsProxy ) return;
+        @* if ( IsProxy ) return; *@
         @* if (jobInfo.JobSlotsTaken >= job.MaxPlayersAllowedOnJob)
         {
             Log.Info($"Job {job.Title} is full ({jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob})");
@@ -443,7 +443,7 @@ bool IsOpen( CategoryResource category )
         } *@
 
       
-
+        FireJobManagerChange();
 
         SelectedJob = job;
 
@@ -477,13 +477,23 @@ bool IsOpen( CategoryResource category )
     [Rpc.Broadcast]
     void SetJobSlot(JobResource SelectedJobForIndex, JobResource OldSelectedJob )
     {
-        @* if ( IsProxy ) return; *@
+        if ( IsProxy ) return;
 
     
       
         GraphSetJobIndex?.Invoke(SelectedJobForIndex, Player, OldSelectedJob);
     }
 
+
+
+    void FireJobManagerChange()
+    {
+         JobManagerVar?.FireChange();
+    }
+
+
+
+    JobManager JobManagerVar => Scene.GetAllComponents<JobManager>().FirstOrDefault();
 
    [Property] int Selectedtabindex { get; set; }
 
@@ -641,6 +651,18 @@ bool IsOpen( CategoryResource category )
     {
         CategoryResource.OnCategoriesLoaded += RefreshCategories;
         RefreshCategories();
+
+            @* JobManagerVar.JobSlots.OnChanged += e =>
+    {
+        Log.Info("SYNC CHANGED!");
+
+        foreach ( var slot in JobManagerVar.JobSlots )
+        {
+            Log.Info($"{slot.JobCommandName}: {slot.JobSlotAmount}");
+        }
+
+        StateHasChanged();
+    }; *@
     }
 
 
