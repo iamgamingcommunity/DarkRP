@@ -5,67 +5,119 @@ using System.Dynamic;
 public sealed class JobManager : Component
 {
 
+    [Property] JobResource SelectedJob;
+
+    [Property] JobResource OldSelectedJob;
+    [Property] JobResource SelectedJobForIndex;
+
+
+    [Property] public GameObject Player { get; set; } 
+
     [Sync] [Property] public NetList<JobSlotInfo> JobSlots { get; set; } = new();
     public class JobSlotInfo
     {
         public string JobCommandName {get; set;}
         public int JobSlotAmount {get; set;}
+        public bool IsHidden {get; set;}
     }
 
 
-//     void BecomeJob(GameObject PlayerInfo, JobResource OldSelectedJob)
-//     {
-//         if ( IsProxy ) return;
+
+
+
+
+  //Action Graph For Becoming Job
+    public delegate void ActionGraphBecomeJob(JobResource SelectedJob, GameObject PlayerInfo, JobResource OldSelectedJob);
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphBecomeJob GraphBecomeJob { get; set; }
+  
+  //Action Graph For Selecting Job Index
+    public delegate void ActionGraphSetJobIndex(JobResource SelectedJob, GameObject PlayerInfo, JobResource OldSelectedJob);
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphSetJobIndex GraphSetJobIndex { get; set; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void BecomeJob(GameObject PlayerInfo, JobResource OldSelectedJob)
+    {
         
 
      
 
-//         Player = PlayerInfo;
-//         var DarkRPInfo = PlayerInfo.GetComponent<DarkrpPlayerInfo>();
-//          OldSelectedJob = DarkRPInfo.CurrentJob;
+        Player = PlayerInfo;
+        var DarkRPInfo = PlayerInfo.GetComponent<DarkrpPlayerInfo>();
+         OldSelectedJob = DarkRPInfo.CurrentJob;
          
 
-//         SelectedJobForIndex = SelectedJob;
-//         GraphBecomeJob?.Invoke(SelectedJob, Player, OldSelectedJob);
-//         FireJobManagerChange(PlayerInfo);
-//         if (DarkRPInfo.CurrentJob == OldSelectedJob)
-//         {
+        SelectedJobForIndex = SelectedJob;
+        GraphBecomeJob?.Invoke(SelectedJob, Player, OldSelectedJob);
+        if (DarkRPInfo.CurrentJob == OldSelectedJob)
+        {
 
-//         }
-//                     SetJobSlot(SelectedJob, OldSelectedJob );
-//             Log.Info($"Fired:  SetJobSlot ActionGraph");
+        }
+        SetJobSlot(SelectedJob, OldSelectedJob );
+        Log.Info($"Fired:  SetJobSlot ActionGraph");
         
-//         Log.Info($"Becoming job: {SelectedJob.Title}");
+        Log.Info($"Becoming job: {SelectedJob.Title}");
         
-//     }
+    }
 
 
-//  [Rpc.Broadcast]
-//     void SetJobSlot(JobResource SelectedJobForIndex, JobResource OldSelectedJob )
-//     {
-//         if ( IsProxy ) return;
+    public void SelectJob(JobResource job, CategoryResource.JobCategoryInfoStructMain jobInfo)
+    {
+
+
+ 
+
+        SelectedJob = job;
+
+
+        Log.Info($"Selected job: {job.Title}, {jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob}");
+    }
+
+
+
+
+ [Rpc.Broadcast]
+    void SetJobSlot(JobResource SelectedJobForIndex, JobResource OldSelectedJob )
+    {
+        if ( IsProxy ) return;
 
     
       
-//         GraphSetJobIndex?.Invoke(SelectedJobForIndex, Player, OldSelectedJob);
-//     }
+        GraphSetJobIndex?.Invoke(SelectedJobForIndex, Player, OldSelectedJob);
+    }
 
 
-    public void FireChange(GameObject PlayerInfo)
-    {
-    // if ( !Networking.IsHost )
-    //     return;
+    // public void FireChange(GameObject PlayerInfo)
+    // {
+    // // if ( !Networking.IsHost )
+    // //     return;
 
         
-        // JobSlots.Add(new List<CategoryResource>
-        // {
-        //     JobCommandName = "Citizen",
-        //     JobSlotAmount = 1
-        // });
-    // var citizen = JobSlots.FirstOrDefault(x => x.JobCommandName == "Citizen");
+    //     // JobSlots.Add(new List<CategoryResource>
+    //     // {
+    //     //     JobCommandName = "Citizen",
+    //     //     JobSlotAmount = 1
+    //     // });
+    // // var citizen = JobSlots.FirstOrDefault(x => x.JobCommandName == "Citizen");
 
-    // Log.Info($"Citizen Slots: {citizen.JobSlotAmount}");
-    }
+    // // Log.Info($"Citizen Slots: {citizen.JobSlotAmount}");
+    // }
 
 
 // public void SetJobSlotAmount( string jobName, int amount )

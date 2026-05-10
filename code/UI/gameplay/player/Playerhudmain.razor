@@ -428,7 +428,7 @@ bool IsOpen( CategoryResource category )
     [Property] JobResource OldSelectedJob;
     [Property] JobResource SelectedJobForIndex;
 
-    
+      JobManager JobManagerVar => Scene.GetAllComponents<JobManager>().FirstOrDefault();
 
   //Is This needed?
     List<CategoryResource> Categories = new();
@@ -446,59 +446,41 @@ bool IsOpen( CategoryResource category )
         } *@
 
 
-       
+   
 
         SelectedJob = job;
 
-
-        Log.Info($"Selected job: {job.Title}, {jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob}");
+        JobManagerVar?.SelectJob(job, jobInfo);
+        Log.Info($"Try Selected job: {job.Title}, {jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob}");
     }
 
 
     void TryBecomeJob(GameObject PlayerInfo, JobResource OldSelectedJob)
     {
-        if ( IsProxy ) return;
         
 
-     
+
 
         Player = PlayerInfo;
         var DarkRPInfo = PlayerInfo.GetComponent<DarkrpPlayerInfo>();
          OldSelectedJob = DarkRPInfo.CurrentJob;
-         
 
-        SelectedJobForIndex = SelectedJob;
-        GraphBecomeJob?.Invoke(SelectedJob, Player, OldSelectedJob);
-        FireJobManagerChange(PlayerInfo);
+
+        @* SelectedJobForIndex = SelectedJob; *@
+
         if (DarkRPInfo.CurrentJob == OldSelectedJob)
         {
 
         }
                     @* SetJobSlot(SelectedJob, OldSelectedJob ); *@
-            Log.Info($"Fired:  SetJobSlot ActionGraph");
-        
-        Log.Info($"Becoming job: {SelectedJob.Title}");
-        
-    }
-    @* [Rpc.Broadcast]
-    void SetJobSlot(JobResource SelectedJobForIndex, JobResource OldSelectedJob )
-    {
-        if ( IsProxy ) return;
-
-    
-      
-        GraphSetJobIndex?.Invoke(SelectedJobForIndex, Player, OldSelectedJob);
-    } *@
-
-
-    void FireJobManagerChange(GameObject PlayerInfo)
-    {
+        JobManagerVar?.BecomeJob(PlayerInfo, OldSelectedJob);
+        Log.Info($"Try Becoming job: {SelectedJob.Title}");
         
     }
 
 
 
-    @* JobManager JobManagerVar => Scene.GetAllComponents<JobManager>().FirstOrDefault(); *@
+  
 
    [Property] int Selectedtabindex { get; set; }
 
@@ -539,10 +521,7 @@ bool IsOpen( CategoryResource category )
 	public ActionGraphCloseF4Menu GraphCloseF4Menu { get; set; }
 
 
-    //Action Graph For Becoming Job
-    public delegate void ActionGraphBecomeJob(JobResource SelectedJob, GameObject PlayerInfo, JobResource OldSelectedJob);
-	[Property, Feature("Player Hud Info")]
-	public ActionGraphBecomeJob GraphBecomeJob { get; set; }
+  
 
     //Action Graph For Switching F4 Menu Tabs
     public delegate void ActionGraphSelectedTabIndex(int Selectedtabindex);
@@ -556,12 +535,20 @@ bool IsOpen( CategoryResource category )
 	public ActionGraphBuyF4MenuItem GraphBuyF4MenuItem { get; set; }
 
 
+
+
+  @* //Action Graph For Becoming Job
+    public delegate void ActionGraphBecomeJob(JobResource SelectedJob, GameObject PlayerInfo, JobResource OldSelectedJob);
+	[Property, Feature("Player Hud Info")]
+	public ActionGraphBecomeJob GraphBecomeJob { get; set; }
+  
+  //Action Graph For Selecting Job Index
     public delegate void ActionGraphSetJobIndex(JobResource SelectedJob, GameObject PlayerInfo, JobResource OldSelectedJob);
 	[Property, Feature("Player Hud Info")]
-	public ActionGraphSetJobIndex GraphSetJobIndex { get; set; }
+	public ActionGraphSetJobIndex GraphSetJobIndex { get; set; } *@
 
     //Is This needed?
-  	[Property] public List<CategoryResource> JobCatagory {get; set;}
+  	[Property] public List<CategoryResource> JobCategory {get; set;}
 
 
 
@@ -654,8 +641,8 @@ bool IsOpen( CategoryResource category )
 
     protected override void OnStart()
     {
-        @* CategoryResource.OnCategoriesLoaded += RefreshCategories;
-        RefreshCategories(); *@
+        CategoryResource.OnCategoriesLoaded += RefreshCategories;
+        RefreshCategories();
 
             @* JobManagerVar.JobSlots.OnChanged += e =>
     {
@@ -671,7 +658,7 @@ bool IsOpen( CategoryResource category )
     }
 
 
-    @* void RefreshCategories()
+    void RefreshCategories()
     {
         JobCategories = CategoryResource.All
             .Where(c => c.IsJobCategory)
@@ -679,7 +666,7 @@ bool IsOpen( CategoryResource category )
             .ToList();
 
         StateHasChanged();
-    } *@
+    }
 
 
 @* void UpdateSlots(CategoryResource jobInfo)
