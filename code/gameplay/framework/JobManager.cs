@@ -4,30 +4,59 @@ using System.Dynamic;
 
 public sealed class JobManager : Component
 {
-    public static JobManager Instance { get; private set; }
 
-    [Sync] public NetDictionary<string, int> JobSlotsTaken { get; set; } = new();
-
-    [Property] public NetList<CategoryResource> JobSlots { get; set; } = new();
-
-	public delegate void ActionTest();
-	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Unarrest Logic")]
-	public ActionTest GraTest { get; set; }
-
-
-    protected override void OnAwake()
+    [Sync] [Property] public NetList<JobSlotInfo> JobSlots { get; set; } = new();
+    public class JobSlotInfo
     {
-        Instance = this;
+        public string JobCommandName {get; set;}
+        public int JobSlotAmount {get; set;}
     }
 
 
+//     void BecomeJob(GameObject PlayerInfo, JobResource OldSelectedJob)
+//     {
+//         if ( IsProxy ) return;
+        
 
-    public void FireChange()
+     
+
+//         Player = PlayerInfo;
+//         var DarkRPInfo = PlayerInfo.GetComponent<DarkrpPlayerInfo>();
+//          OldSelectedJob = DarkRPInfo.CurrentJob;
+         
+
+//         SelectedJobForIndex = SelectedJob;
+//         GraphBecomeJob?.Invoke(SelectedJob, Player, OldSelectedJob);
+//         FireJobManagerChange(PlayerInfo);
+//         if (DarkRPInfo.CurrentJob == OldSelectedJob)
+//         {
+
+//         }
+//                     SetJobSlot(SelectedJob, OldSelectedJob );
+//             Log.Info($"Fired:  SetJobSlot ActionGraph");
+        
+//         Log.Info($"Becoming job: {SelectedJob.Title}");
+        
+//     }
+
+
+//  [Rpc.Broadcast]
+//     void SetJobSlot(JobResource SelectedJobForIndex, JobResource OldSelectedJob )
+//     {
+//         if ( IsProxy ) return;
+
+    
+      
+//         GraphSetJobIndex?.Invoke(SelectedJobForIndex, Player, OldSelectedJob);
+//     }
+
+
+    public void FireChange(GameObject PlayerInfo)
     {
     // if ( !Networking.IsHost )
     //     return;
 
-        GraTest?.Invoke();
+        
         // JobSlots.Add(new List<CategoryResource>
         // {
         //     JobCommandName = "Citizen",
@@ -39,6 +68,78 @@ public sealed class JobManager : Component
     }
 
 
+// public void SetJobSlotAmount( string jobName, int amount )
+// {
+//     if ( !Networking.IsHost )
+//         return;
+
+//     var index = JobSlots.FindIndex( x => x.JobCommandName == jobName );
+
+//     // Doesn't exist
+//     if ( index == -1 )
+//     {
+//         JobSlots.Add( new JobSlotInfo
+//         {
+//             JobCommandName = jobName,
+//             JobSlotAmount = amount
+//         } );
+
+//         Log.Info( $"Created {jobName} with {amount}" );
+//         return;
+//     }
+
+//     // Update existing
+//     var slot = JobSlots[index];
+//     slot.JobSlotAmount = amount;
+
+//     // IMPORTANT:
+//     // Reassign back into the list
+//     JobSlots[index] = slot;
+
+//     Log.Info( $"Updated {jobName} to {amount}" );
+// }
+
+
+public void SetJobSlotAmount( string jobName, int amount )
+{
+    if ( !Networking.IsHost )
+        return;
+
+    int foundIndex = -1;
+
+    // Manually search the NetList
+    for ( int i = 0; i < JobSlots.Count; i++ )
+    {
+        if ( JobSlots[i].JobCommandName == jobName )
+        {
+            foundIndex = i;
+            break;
+        }
+    }
+
+    // Create if missing
+    if ( foundIndex == -1 )
+    {
+        JobSlots.Add( new JobSlotInfo
+        {
+            JobCommandName = jobName,
+            JobSlotAmount = amount
+        } );
+
+        Log.Info( $"Created {jobName} with {amount}" );
+        return;
+    }
+
+    // Update existing
+    var slot = JobSlots[foundIndex];
+    slot.JobSlotAmount = amount;
+
+    // IMPORTANT:
+    // Reassign struct back into NetList
+    JobSlots[foundIndex] = slot;
+
+    Log.Info( $"Updated {jobName} to {amount}" );
+}
     public void FireDebug(int Number)
     {
     Log.Info($"IsProxy: {IsProxy}");
@@ -58,11 +159,7 @@ public sealed class JobManager : Component
 
 
 
-    public class JobSlotInfo
-    {
-        public string JobCommandName {get; set;}
-        public int JobSlotAmount {get; set;}
-    }
+
 
 
 

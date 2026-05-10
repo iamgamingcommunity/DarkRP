@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Runtime.CompilerServices;
 
-[GameResource("Category", "category", "Defines a DarkRP style category for Jobs, Entity's, Ammo. Etc.")]
+[GameResource("Category", "category", "Defines a DarkRP style category for Jobs, Entity's, Ammo. Etc.", Flags = AssetTypeFlags.IncludeThumbnails)]
 public class CategoryResource : GameResource
 {
     [Property] public string Name { get; set; }
@@ -86,4 +86,33 @@ public struct MiscCategoryInfoStructMain
 
         OnCategoriesLoaded?.Invoke();
     }
+
+
+
+
+
+
+    //Create Custom File Icon
+    [Property]
+    public PrefabFile Prefab { get; set; }
+
+
+	public override Bitmap RenderThumbnail( ThumbnailOptions options )
+	{
+		// No prefab - can't make a thumbnail
+		if ( Prefab is null ) return default;
+
+		var bitmap = new Bitmap( options.Width, options.Height );
+		bitmap.Clear( Color.Transparent );
+
+		SceneUtility.RenderGameObjectToBitmap( Prefab.GetScene(), bitmap );
+
+		return bitmap;
+	}
+
+	protected override Bitmap CreateAssetTypeIcon( int width, int height )
+	{
+		return CreateSimpleAssetTypeIcon( "📊", width, height, "#2daadb" );
+	}
+
 }

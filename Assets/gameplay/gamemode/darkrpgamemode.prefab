@@ -2601,7 +2601,16 @@
         "__PrefabInstancePatch": {
           "AddedObjects": [],
           "RemovedObjects": [],
-          "PropertyOverrides": [],
+          "PropertyOverrides": [
+            {
+              "Target": {
+                "Type": "GameObject",
+                "IdValue": "12a88f63-f440-4427-a867-5cd50277fd4a"
+              },
+              "Property": "NetworkMode",
+              "Value": 2
+            }
+          ],
           "MovedObjects": []
         },
         "__PrefabIdToInstanceId": {
@@ -2704,7 +2713,7 @@
             "GraTest": {
               "__version": 9,
               "__guid": "c2f5f3b9-3893-4b61-b403-add5429fd145",
-              "__changeId": 88,
+              "__changeId": 145,
               "UserData": {
                 "Title": "Unarrest Logic",
                 "ReferencedComponentTypes": [
@@ -2738,90 +2747,54 @@
                   }
                 },
                 {
-                  "Id": 3,
+                  "Id": 19,
                   "Type": "property",
                   "Properties": {
                     "_name": "JobSlots",
                     "_type": "JobManager"
                   },
                   "UserData": {
-                    "Position": "312,120"
+                    "Position": "312,24"
                   }
                 },
                 {
-                  "Id": 4,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": "CategoryResource"
-                  },
-                  "UserData": {
-                    "Position": "492,12"
-                  }
-                },
-                {
-                  "Id": 5,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategoryInfo",
-                    "_type": "CategoryResource"
-                  },
-                  "UserData": {
-                    "Position": "588,168"
-                  }
-                },
-                {
-                  "Id": 6,
+                  "Id": 20,
                   "Type": "foreach",
                   "Properties": {
                     "T": {
                       "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
+                      "DeclaringType": "JobManager",
+                      "Name": "JobSlotInfo"
                     }
                   },
                   "UserData": {
-                    "Position": "720,48"
+                    "Position": "528,-108"
                   }
                 },
                 {
-                  "Id": 7,
+                  "Id": 21,
                   "Type": "property",
                   "Properties": {
-                    "_name": "JobSlotsTaken",
+                    "_name": "JobSlotAmount",
                     "_type": {
                       "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
+                      "DeclaringType": "JobManager",
+                      "Name": "JobSlotInfo"
                     }
                   },
                   "UserData": {
-                    "Position": "876,204"
+                    "Position": "648,24"
                   }
                 },
                 {
-                  "Id": 8,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobSlotsTaken",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "1440,108"
-                  }
-                },
-                {
-                  "Id": 9,
+                  "Id": 23,
                   "Type": "op.add",
                   "UserData": {
-                    "Position": "1308,204"
+                    "Position": "972,-36"
                   }
                 },
                 {
-                  "Id": 11,
+                  "Id": 25,
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
@@ -2829,14 +2802,19 @@
                     "_type": "JobManager"
                   },
                   "UserData": {
-                    "Position": "1824,84"
+                    "Position": "1344,-156"
                   }
                 },
                 {
-                  "Id": 14,
-                  "Type": "log.info",
+                  "Id": 30,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "SetJobSlotAmount",
+                    "_type": "JobManager"
+                  },
                   "UserData": {
-                    "Position": "1188,60"
+                    "Position": "1032,-156"
                   }
                 }
               ],
@@ -2850,116 +2828,88 @@
                 {
                   "SrcId": 2,
                   "SrcName": "_result",
-                  "DstId": 3,
+                  "DstId": 19,
                   "DstName": "_target"
                 },
                 {
                   "SrcId": 0,
                   "SrcName": "_signal",
-                  "DstId": 4,
+                  "DstId": 20,
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 3,
+                  "SrcId": 19,
                   "SrcName": "_result",
-                  "DstId": 4,
+                  "DstId": 20,
                   "DstName": "enumerable"
                 },
                 {
-                  "SrcId": 4,
+                  "SrcId": 20,
                   "SrcName": "body.value",
-                  "DstId": 5,
+                  "DstId": 21,
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 4,
-                  "SrcName": "body",
-                  "DstId": 6,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 5,
+                  "SrcId": 21,
                   "SrcName": "_result",
-                  "DstId": 6,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 6,
-                  "SrcName": "body.value",
-                  "DstId": 7,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 14,
-                  "SrcName": "_signal",
-                  "DstId": 8,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 6,
-                  "SrcName": "body.value",
-                  "DstId": 8,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 9,
-                  "SrcName": "_result",
-                  "DstId": 8,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 7,
-                  "SrcName": "_result",
-                  "DstId": 9,
+                  "DstId": 23,
                   "DstName": "a"
                 },
                 {
-                  "Id": 17,
+                  "Id": 33,
                   "Value": 1,
-                  "DstId": 9,
+                  "DstId": 23,
                   "DstName": "b"
                 },
                 {
-                  "SrcId": 9,
+                  "SrcId": 23,
                   "SrcName": "_result",
-                  "DstId": 11,
+                  "DstId": 25,
                   "DstName": "Number"
                 },
                 {
-                  "SrcId": 8,
+                  "SrcId": 30,
                   "SrcName": "_signal",
-                  "DstId": 11,
+                  "DstId": 25,
                   "DstName": "_signal"
                 },
                 {
                   "SrcId": 2,
                   "SrcName": "_result",
-                  "DstId": 11,
+                  "DstId": 25,
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 6,
+                  "SrcId": 20,
                   "SrcName": "body",
-                  "DstId": 14,
+                  "DstId": 30,
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 7,
+                  "SrcId": 2,
                   "SrcName": "_result",
-                  "DstId": 14,
-                  "DstName": "args",
-                  "DstIndex": 0
+                  "DstId": 30,
+                  "DstName": "_target"
                 },
                 {
-                  "Id": 18,
-                  "Value": "Job Slot Taken:{0}",
-                  "DstId": 14,
-                  "DstName": "format"
+                  "SrcId": 23,
+                  "SrcName": "_result",
+                  "DstId": 30,
+                  "DstName": "amount"
+                },
+                {
+                  "Id": 34,
+                  "Value": "gundealer",
+                  "DstId": 30,
+                  "DstName": "jobName"
                 }
               ]
             },
             "JobSlots": [
-              "gameplay/jobs/categorys/civillain.category"
+              {
+                "JobCommandName": "gundealer",
+                "JobSlotAmount": 0
+              }
             ],
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,

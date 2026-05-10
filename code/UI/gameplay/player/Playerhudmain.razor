@@ -139,8 +139,8 @@
     </div>
 
     <button class="become-job"
-            disabled="@(SelectedJob == null)"
-            onclick="@(() => BecomeJob(PlayerInfo, OldSelectedJob))">
+            disabled="@(TrySelectJob == null)"
+            onclick="@(() => TryBecomeJob(PlayerInfo, OldSelectedJob))">
         <div class="becomejobtitle">
             @(SelectedJob != null ? "Become Job" : "Select a Job")
         </div>
@@ -215,7 +215,7 @@
                     var job = jobInfo.JobsInCategory;
 
                     <button class="job-button"
-                            onclick="@(() => SelectJob(job, jobInfo))">
+                            onclick="@(() => TrySelectJob(job, jobInfo))">
                         <ul>
                             @if (job.JobImage != null)
                             {
@@ -412,6 +412,9 @@ bool IsOpen( CategoryResource category )
 }
 
 
+
+
+
   //Is This needed?
     CategoryResource ExpandedCategory;
     
@@ -433,7 +436,7 @@ bool IsOpen( CategoryResource category )
 
 
         //Select Job Button, this is NOT the 'Become Job Button'
-    void SelectJob(JobResource job, CategoryResource.JobCategoryInfoStructMain jobInfo)
+    void TrySelectJob(JobResource job, CategoryResource.JobCategoryInfoStructMain jobInfo)
     {
         @* if ( IsProxy ) return; *@
         @* if (jobInfo.JobSlotsTaken >= job.MaxPlayersAllowedOnJob)
@@ -442,8 +445,8 @@ bool IsOpen( CategoryResource category )
             return;
         } *@
 
-      
-        FireJobManagerChange();
+
+       
 
         SelectedJob = job;
 
@@ -452,10 +455,13 @@ bool IsOpen( CategoryResource category )
     }
 
 
-    void BecomeJob(GameObject PlayerInfo, JobResource OldSelectedJob)
+    void TryBecomeJob(GameObject PlayerInfo, JobResource OldSelectedJob)
     {
         if ( IsProxy ) return;
         
+
+     
+
         Player = PlayerInfo;
         var DarkRPInfo = PlayerInfo.GetComponent<DarkrpPlayerInfo>();
          OldSelectedJob = DarkRPInfo.CurrentJob;
@@ -463,18 +469,18 @@ bool IsOpen( CategoryResource category )
 
         SelectedJobForIndex = SelectedJob;
         GraphBecomeJob?.Invoke(SelectedJob, Player, OldSelectedJob);
-
+        FireJobManagerChange(PlayerInfo);
         if (DarkRPInfo.CurrentJob == OldSelectedJob)
         {
 
         }
-                    SetJobSlot(SelectedJob, OldSelectedJob );
+                    @* SetJobSlot(SelectedJob, OldSelectedJob ); *@
             Log.Info($"Fired:  SetJobSlot ActionGraph");
         
         Log.Info($"Becoming job: {SelectedJob.Title}");
         
     }
-    [Rpc.Broadcast]
+    @* [Rpc.Broadcast]
     void SetJobSlot(JobResource SelectedJobForIndex, JobResource OldSelectedJob )
     {
         if ( IsProxy ) return;
@@ -482,18 +488,17 @@ bool IsOpen( CategoryResource category )
     
       
         GraphSetJobIndex?.Invoke(SelectedJobForIndex, Player, OldSelectedJob);
-    }
+    } *@
 
 
-
-    void FireJobManagerChange()
+    void FireJobManagerChange(GameObject PlayerInfo)
     {
-         JobManagerVar?.FireChange();
+        
     }
 
 
 
-    JobManager JobManagerVar => Scene.GetAllComponents<JobManager>().FirstOrDefault();
+    @* JobManager JobManagerVar => Scene.GetAllComponents<JobManager>().FirstOrDefault(); *@
 
    [Property] int Selectedtabindex { get; set; }
 
@@ -649,8 +654,8 @@ bool IsOpen( CategoryResource category )
 
     protected override void OnStart()
     {
-        CategoryResource.OnCategoriesLoaded += RefreshCategories;
-        RefreshCategories();
+        @* CategoryResource.OnCategoriesLoaded += RefreshCategories;
+        RefreshCategories(); *@
 
             @* JobManagerVar.JobSlots.OnChanged += e =>
     {
@@ -666,7 +671,7 @@ bool IsOpen( CategoryResource category )
     }
 
 
-    void RefreshCategories()
+    @* void RefreshCategories()
     {
         JobCategories = CategoryResource.All
             .Where(c => c.IsJobCategory)
@@ -674,7 +679,7 @@ bool IsOpen( CategoryResource category )
             .ToList();
 
         StateHasChanged();
-    }
+    } *@
 
 
 @* void UpdateSlots(CategoryResource jobInfo)
