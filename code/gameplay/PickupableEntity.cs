@@ -166,4 +166,30 @@ public class PickupableEntity : GameResource
         // For multiple jobs, it’s fine — subscribers can check PickupableEntity.All.Count
         OnPickupableEntityLoaded?.Invoke();
     }
+
+
+
+
+    //Create Custom File Icon
+    [Property]
+    public PrefabFile Prefab { get; set; }
+
+
+	public override Bitmap RenderThumbnail( ThumbnailOptions options )
+	{
+		// No prefab - can't make a thumbnail
+		if ( Prefab is null ) return default;
+
+		var bitmap = new Bitmap( options.Width, options.Height );
+		bitmap.Clear( Color.Transparent );
+
+		SceneUtility.RenderGameObjectToBitmap( Prefab.GetScene(), bitmap );
+
+		return bitmap;
+	}
+
+	protected override Bitmap CreateAssetTypeIcon( int width, int height )
+	{
+		return CreateSimpleAssetTypeIcon( "🔫", width, height, "#971e1e" );
+	}
 }

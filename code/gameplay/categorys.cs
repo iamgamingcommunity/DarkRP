@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Runtime.CompilerServices;
 
-[GameResource("Category", "category", "Defines a DarkRP style category for Jobs, Entity's, Ammo. Etc.", Flags = AssetTypeFlags.IncludeThumbnails)]
+[GameResource("Category", "category", "Defines a DarkRP style category for Jobs, Entity's, Ammo. Etc.")]
 public class CategoryResource : GameResource
 {
     [Property] public string Name { get; set; }
