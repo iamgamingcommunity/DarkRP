@@ -1,8 +1,8 @@
 using Sandbox;
 
 
-[Library("swep", Title = "Swep", Description = "Swep(A.K.A Special Weapon) is a Classic DarkRP Term For Weapons that have special features. In this case, we use this for ANYTHING that can be held by the DarkRP Player.")]
-public class PickupableEntityBase : Component
+[Library("swep", Title = "Swep Component", Description = "This is the Swep(A.K.A Special Weapon) Component which is a Classic DarkRP Term For Weapons that have special features. In this case, we use this for ANYTHING that can be held by the DarkRP Player.")]
+public class SwepEntityComponent : Component
 {
 
 	//SwepEntity Info
