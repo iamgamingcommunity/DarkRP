@@ -17,7 +17,7 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Basic Info")] public int SalaryPaymentSystemCycleTime { get; set; }
 	[Property, Feature("Basic Info")] public int SalaryPaymentMultiplier { get; set; }
 	[Property, Feature("Basic Info")] public int EntityPriceMultiplier { get; set; }
-	[Property, Feature("Basic Info")] public List<PickupableEntity> StartingEquipment { get; set; }
+	[Property, Feature("Basic Info")] public List<SwepEntity> StartingEquipment { get; set; }
 	[Property, Feature("Basic Info")] public PrefabFile MoneyEntity { get; set; }
 	[Property, Feature("Basic Info")] public int MaxPropSpawnedAmount { get; set; }
 	[Property, Feature("Basic Info"), Description("If True a Job has ")] public int TempPlayTimeTotalCycleAmount { get; set; }
@@ -36,12 +36,12 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Law Info")] public SoundEvent AlarmSound { get; set; }
 	[Property, Feature("Law Info")] public SoundEvent ArrestedSFX { get; set; }
 	[Property, Feature("Law Info")] public SoundEvent UnArrestedSFX { get; set; }
-	[Property, Feature("Law Info")] public List<PickupableEntity> PDStartingEquipment { get; set; }
-	[Property, Feature("Law Info")] public List<PickupableEntity> LicensedEquipment { get; set; }
+	[Property, Feature("Law Info")] public List<SwepEntity> PDStartingEquipment { get; set; }
+	[Property, Feature("Law Info")] public List<SwepEntity> LicensedEquipment { get; set; }
 
 
 	//DarkRP Admin System Info
-	[Property, Feature("Admin Info"), Description("'Staff Sweps' is the sweps that any staff member will spawn and respawn with.")] public List<PickupableEntity> StaffSweps { get; set; }
+	[Property, Feature("Admin Info"), Description("'Staff Sweps' is the sweps that any staff member will spawn and respawn with.")] public List<SwepEntity> StaffSweps { get; set; }
 	
 	//DarkRP Vote System Info
 	[Property, Feature("Vote Info")] public int DefaultVoteDuration { get; set; }
@@ -76,7 +76,7 @@ public partial class DarkRPGamemode : GameModeBase
 
  	// public struct SwepLists
 	// {
-	// [KeyProperty] public List<PickupableEntity> Swep { get; set; }
+	// [KeyProperty] public List<SwepEntity> Swep { get; set; }
 	// public int SwepPosIndex { get; set; }
 
 	// }

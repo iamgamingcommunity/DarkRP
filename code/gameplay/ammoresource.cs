@@ -2,7 +2,7 @@ using Sandbox;
 using System;
 using System.Collections.Generic;
 
-[GameResource("AmmoDef", "ammo", "Defines a DarkRP style Ammo for Sweps")]
+[GameResource("AmmoDef", "ammo", "Defines a DarkRP style Ammo for Sweps", Category = "DarkRP")]
 public class AmmoResource : GameResource
 {
     [Property, Group("Basic Ammo Info")] public string AmmoName { get; set; }

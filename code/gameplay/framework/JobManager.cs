@@ -54,7 +54,7 @@ public sealed class JobManager : Component
 
     public void BecomeJob(GameObject PlayerInfo, JobResource OldSelectedJob)
     {
-        
+  
 
      
 
@@ -86,7 +86,7 @@ public sealed class JobManager : Component
         SelectedJob = job;
 
 
-        Log.Info($"Selected job: {job.Title}, {jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob}");
+
     }
 
 
@@ -95,14 +95,23 @@ public sealed class JobManager : Component
  [Rpc.Broadcast]
     void SetJobSlot(JobResource SelectedJobForIndex, JobResource OldSelectedJob )
     {
-        if ( IsProxy ) return;
+
 
     
       
         GraphSetJobIndex?.Invoke(SelectedJobForIndex, Player, OldSelectedJob);
     }
 
+public int GetSlotAmount( string jobCommand )
+{
+    for ( int i = 0; i < JobSlots.Count; i++ )
+    {
+        if ( JobSlots[i].JobCommandName == jobCommand )
+            return JobSlots[i].JobSlotAmount;
+    }
 
+    return 0;
+}
     // public void FireChange(GameObject PlayerInfo)
     // {
     // // if ( !Networking.IsHost )
@@ -192,6 +201,12 @@ public void SetJobSlotAmount( string jobName, int amount )
 
     Log.Info( $"Updated {jobName} to {amount}" );
 }
+    
+    
+    
+    
+    
+    
     public void FireDebug(int Number)
     {
     Log.Info($"IsProxy: {IsProxy}");
@@ -320,7 +335,52 @@ public void SetJobSlotAmount( string jobName, int amount )
 
 
 
+    protected override void OnStart()
+    {
+ foreach ( var category in CategoryResource.All )
+    {
+        // Skip non-job categories
+        if ( !category.IsJobCategory )
+            continue;
 
+        // Safety
+        if ( category.JobCategoryInfo == null )
+            continue;
+
+        foreach ( var jobInfo in category.JobCategoryInfo )
+        {
+            // Safety
+            if ( jobInfo == null )
+                continue;
+
+            var job = jobInfo.JobsInCategory;
+
+            // Safety
+            if ( job == null )
+                continue;
+
+            // Prevent duplicates
+            bool alreadyExists = JobSlots.Any(
+                x => x.JobCommandName == job.JobCommandName
+            );
+
+            if ( alreadyExists )
+                continue;
+
+            JobSlots.Add( new JobSlotInfo
+            {
+                JobCommandName = job.JobCommandName,
+                JobSlotAmount = 0,
+                IsHidden = jobInfo.HideUI
+            } );
+
+            Log.Info( $"Added Job Slot: {job.JobCommandName}" );
+        }
+    }
+
+    Log.Info( $"Built {JobSlots.Count} job slots." );
+}
+    }
 
 
 
@@ -338,6 +398,3 @@ public void SetJobSlotAmount( string jobName, int amount )
 // #endif
 // }
 
-
-
-}

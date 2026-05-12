@@ -2,7 +2,7 @@ using Sandbox;
 using System;
 using System.Collections.Generic;
 
-[GameResource("DoorGC", "doorgc", "Defines a DarkRP Door Group.")]
+[GameResource("DoorGC", "doorgc", "Defines a DarkRP Door Group.", Category = "DarkRP")]
 public class DoorGroupCategoryResource : GameResource
 {
     [Property] public string Title { get; set; }

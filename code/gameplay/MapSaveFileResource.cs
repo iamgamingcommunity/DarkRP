@@ -2,7 +2,7 @@ using Sandbox;
 using System;
 using System.Collections.Generic;
 
-[GameResource("MapSaveFile", "maps", "A File that holds all Game Objects Related to the map.", Icon = "")]
+[GameResource("MapSaveFile", "maps", "A File that holds all Game Objects Related to the map.", Category = "DarkRP")]
 public class MapSaveFileResource : GameResource
 {
 

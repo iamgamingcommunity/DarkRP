@@ -2,10 +2,10 @@ using Sandbox;
 using System;
 using System.Collections.Generic;
 
-[GameResource("Swep", "swep", "Swep(A.K.A Special Weapon) Defines anything that is a PickupableEntity that can be held in the DarkRP Player Hands.")]
-public class PickupableEntity : GameResource
+[GameResource("Swep", "swep", "Swep(A.K.A Special Weapon) Defines anything that is a SwepEntity that can be held in the DarkRP Player Hands.", Category = "DarkRP")]
+public class SwepEntity : GameResource
 {
-	//PickupableEntity Info
+	//SwepEntity Info
 	[Property, Feature("Equipment Base Info"), Group("Base Info")] public string EquipmentName { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Info"), TextArea] public string EquipmentDescription { get; set; }
 	[Property, Feature("Equipment Base Info"), Group("Base Info")] public PrefabFile viewmodel { get; set; }
@@ -48,7 +48,7 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment Base Info"), Group("Base Info")] public bool EquipmentUsePresetWeaponSystem { get; set; }
 
 
-	//PickupableEntity Damage Info
+	//SwepEntity Damage Info
 
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Explosive Damage?")] public bool EquipmentExplosiveDamage { get; set; }
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Ammo Info"), Title("Explosive Damage Amount"), Description("Explosive Damage Amount delt to the player in the radius. Note: If you want to heal the player put a negative amount here instead."), ShowIf ( nameof( EquipmentExplosiveDamage ), true)] public int EquipmentExplosiveDamageAmount { get; set; }
@@ -71,7 +71,7 @@ public class PickupableEntity : GameResource
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Damage"), Title("Headshot Damage Multiplier")] public float EquipmentHeadshotDamageMultiplier { get; set; } = 1f;
 	[Property, Feature("Equipment Damage/Ammo Info"), Group("Swep Damage")] public Curve DamageOverDistanceCurve { get; set; }
 	
-	//PickupableEntity SFX Info
+	//SwepEntity SFX Info
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent FireEquipmentSFX { get; set; }
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent DryFireEquipmentSFX { get; set; }
 	[Property, Feature("Equipment SFX Info"), Group("Equipment SFX Info")] public SoundEvent AimEquipmentSFX { get; set; }
@@ -103,7 +103,7 @@ public class PickupableEntity : GameResource
 	{
 		[Property] public string ActionName { get; set; } // e.g. "jump", "attack1", "use"
 		[Property]
-		public PickupableEntity.ActionGraphFireEquipment GraphOtherKeybinds { get; set; }
+		public SwepEntity.ActionGraphFireEquipment GraphOtherKeybinds { get; set; }
 	}
 
  	[Property, Feature("Action Graphs"), Group("Action Graphs")] public List<SwepExtraActionGraphs> ExtraKeyBindings { get; set; } = new();
@@ -149,8 +149,8 @@ public class PickupableEntity : GameResource
 
 
 
-    public static IReadOnlyList<PickupableEntity> All => _all;
-    internal static List<PickupableEntity> _all = new();
+    public static IReadOnlyList<SwepEntity> All => _all;
+    internal static List<SwepEntity> _all = new();
 
     // Event for when all job assets are loaded
     public static event Action OnPickupableEntityLoaded;
@@ -163,7 +163,7 @@ public class PickupableEntity : GameResource
             _all.Add(this);
 
         // Fire the event once (after the first job is loaded)
-        // For multiple jobs, it’s fine — subscribers can check PickupableEntity.All.Count
+        // For multiple jobs, it’s fine — subscribers can check SwepEntity.All.Count
         OnPickupableEntityLoaded?.Invoke();
     }
 

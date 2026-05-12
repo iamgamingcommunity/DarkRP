@@ -9,7 +9,7 @@
 //     public static class RuntimeExtraDataNodes
 //     {
 //         // Helper to get a runtime bool by name
-//         private static PickupableEntity.SwepExtraBools? FindBool(PickupableEntityBase swp, string key)
+//         private static SwepEntity.SwepExtraBools? FindBool(PickupableEntityBase swp, string key)
 //         {
 //             return swp.RunTimeExtraBools.FirstOrDefault(x => x.BoolName == key);
 //         }
@@ -33,7 +33,7 @@
 //         }
 //         else
 //         {
-//             swp.RunTimeExtraBools.Add(new PickupableEntity.SwepExtraBools { BoolName = key, ExtraBools = value });
+//             swp.RunTimeExtraBools.Add(new SwepEntity.SwepExtraBools { BoolName = key, ExtraBools = value });
 //         }
 //     }
 
@@ -57,7 +57,7 @@
 //         }
 //         else
 //         {
-//             swp.RunTimeExtraInt.Add(new PickupableEntity.SwepExtraInt { BoolName = key, ExtraInt = value });
+//             swp.RunTimeExtraInt.Add(new SwepEntity.SwepExtraInt { BoolName = key, ExtraInt = value });
 //         }
 //     }
 
@@ -81,7 +81,7 @@
 //         }
 //         else
 //         {
-//             swp.RunTimeExtraFloat.Add(new PickupableEntity.SwepExtraFloat { BoolName = key, ExtraFloat = value });
+//             swp.RunTimeExtraFloat.Add(new SwepEntity.SwepExtraFloat { BoolName = key, ExtraFloat = value });
 //         }
 //     }
 

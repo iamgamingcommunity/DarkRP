@@ -2,7 +2,7 @@ using Sandbox;
 using System;
 using System.Collections.Generic;
 
-[GameResource("ChatCommand", "chatc", "Defines a DarkRP Chat Command.", Icon = "")]
+[GameResource("ChatCommand", "chatc", "Defines a DarkRP Chat Command.", Category = "DarkRP")]
 public class ChatCommandResource : GameResource
 {
 

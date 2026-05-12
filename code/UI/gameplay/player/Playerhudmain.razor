@@ -202,6 +202,10 @@
         if (!allowedJobs.Any())
             continue;
 
+
+
+      
+
         <div class="category">
             <button class="category-button"
                     style="background-color:@category.Color"
@@ -212,7 +216,13 @@
             <div class="job-list @(IsOpen(category) ? "open" : "")">
                 @foreach (var jobInfo in allowedJobs)
                 {
+                    
                     var job = jobInfo.JobsInCategory;
+
+                    var matchingSlot = JobManagerVar?.JobSlots?
+                        .FirstOrDefault(x => x.JobCommandName == job.JobCommandName);
+
+                    int currentSlots = matchingSlot?.JobSlotAmount ?? 0;
 
                     <button class="job-button"
                             onclick="@(() => TrySelectJob(job, jobInfo))">
@@ -224,7 +234,8 @@
                         </ul>
                         <span>@job.Title</span>
                         <div class="jobcounter">
-                            @jobInfo.JobSlotsTaken/@job.MaxPlayersAllowedOnJob
+
+                            @currentSlots/@job.MaxPlayersAllowedOnJob
                         </div>
                         <div class="jobbottomborder"
                              style="background-color:@job.Color">
@@ -419,8 +430,12 @@ bool IsOpen( CategoryResource category )
     CategoryResource ExpandedCategory;
     
     public List<CategoryResource> JobCategories { get; set; } = new();
-   [Property] public GameObject PlayerInfo;
-
+   @* [Property] public GameObject PlayerInfo; *@
+   
+    public GameObject PlayerInfo =>
+        Scene.GetAllComponents<DarkrpPlayerInfo>()
+            .FirstOrDefault(x => x.Network.OwnerConnection == Connection.Local)
+            ?.GameObject;
     @* [Property] public Component PlayerInfo; *@
 
     [Property] JobResource SelectedJob;
@@ -444,37 +459,68 @@ bool IsOpen( CategoryResource category )
             Log.Info($"Job {job.Title} is full ({jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob})");
             return;
         } *@
+    Log.Info($"Try Become Job {PlayerInfo}");
+    var matchingSlot = JobManagerVar?.JobSlots?
+        .FirstOrDefault(x => x.JobCommandName == job.JobCommandName);
 
-
-   
+    if (matchingSlot != null)
+    {
+        Log.Info("Matched Job Slot:");
+        Log.Info($"Job Name: {matchingSlot.JobCommandName}");
+        Log.Info($"Amount: {matchingSlot.JobSlotAmount}");
+        Log.Info($"Hidden: {matchingSlot.IsHidden}");
+    }
+    else
+    {
+        Log.Info($"No slot found for {job.JobCommandName}");
+    }
+    
 
         SelectedJob = job;
 
         JobManagerVar?.SelectJob(job, jobInfo);
-        Log.Info($"Try Selected job: {job.Title}, {jobInfo.JobSlotsTaken}/{job.MaxPlayersAllowedOnJob}");
+
     }
 
 
     void TryBecomeJob(GameObject PlayerInfo, JobResource OldSelectedJob)
     {
         
+    var localPlayer = PlayerInfo;
 
+    Log.Info($"Try Become Job {PlayerInfo}");
+
+    if (localPlayer == null)
+    {
+        Log.Info("No local player!");
+        return;
+    }
 
 
         Player = PlayerInfo;
-        var DarkRPInfo = PlayerInfo.GetComponent<DarkrpPlayerInfo>();
-         OldSelectedJob = DarkRPInfo.CurrentJob;
+        var darkRPInfo = localPlayer.Components.Get<DarkrpPlayerInfo>();
+
+            if (darkRPInfo == null)
+    {
+        Log.Info("No DarkRPInfo!");
+        return;
+    }
+      var currentJob = darkRPInfo.CurrentJob;
+         OldSelectedJob = PlayerInfo.Components.Get<DarkrpPlayerInfo>()
+            ?.CurrentJob;
 
 
-        @* SelectedJobForIndex = SelectedJob; *@
+    if (currentJob != null &&
+        SelectedJob != null &&
+        currentJob.JobCommandName == SelectedJob.JobCommandName)
+    {
+        Log.Info("Already this job!");
+        return;
+    }
 
-        if (DarkRPInfo.CurrentJob == OldSelectedJob)
-        {
+    JobManagerVar?.BecomeJob(PlayerInfo, OldSelectedJob);
 
-        }
-                    @* SetJobSlot(SelectedJob, OldSelectedJob ); *@
-        JobManagerVar?.BecomeJob(PlayerInfo, OldSelectedJob);
-        Log.Info($"Try Becoming job: {SelectedJob.Title}");
+    Log.Info($"Trying to become: {SelectedJob?.Title}");
         
     }
 
@@ -497,8 +543,8 @@ bool IsOpen( CategoryResource category )
     .GetValueOrDefault( SelectedJob.ResourcePath ); *@
 
 
-    private IReadOnlyList<PickupableEntity> Pickupables
-        = ResourceLibrary.GetAll<PickupableEntity>().ToList();
+    private IReadOnlyList<SwepEntity> Pickupables
+        = ResourceLibrary.GetAll<SwepEntity>().ToList();
 
 
 

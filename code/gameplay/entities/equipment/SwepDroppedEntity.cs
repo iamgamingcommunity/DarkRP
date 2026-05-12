@@ -8,7 +8,7 @@ public partial class SwepDroppedEntity : BaseEntity
 {
 
 	[Property, Feature("Swep Dropped Entity"), Group("Swep Dropped Entity")] 
-	public PickupableEntity SwepDataFile { get; set; }
+	public SwepEntity SwepDataFile { get; set; }
 	
     [Property, Feature("Swep Dropped Entity"), Group("Swep Dropped Entity")] 
 	public GameObject SwepMuzzle { get; set; }

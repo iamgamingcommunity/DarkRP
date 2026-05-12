@@ -2,7 +2,7 @@ using Sandbox;
 using System;
 using System.Collections.Generic;
 
-[GameResource("JobDef", "job", "Defines a DarkRP style job")]
+[GameResource("JobDef", "job", "Defines a DarkRP style job", Category = "DarkRP")]
 public class JobResource : GameResource
 {
 
@@ -30,7 +30,7 @@ public class JobResource : GameResource
     [Property, Group("Extra Job Info")] public bool IsPD { get; set; }
     [Property, Group("Extra Job Info")] public bool IsMayor { get; set; }
     [Property, Group("Extra Job Info")] public bool IsUsingDefaultJobEquipment { get; set; }
-    [Property, Group("Extra Job Info")] public List<PickupableEntity> StartingEquipment { get; set; }
+    [Property, Group("Extra Job Info")] public List<SwepEntity> StartingEquipment { get; set; }
 
     //estrictions To Job Info
     [Property, Group("Restrictions To Job")] public bool IsVoteNeeded { get; set; }
