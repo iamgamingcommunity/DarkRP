@@ -36,10 +36,15 @@ public class JobResource : GameResource
     [Property, Group("Restrictions To Job")] public bool IsVoteNeeded { get; set; }
     [Property, Group("Restrictions To Job")] public int PlayTimeNeededToPlay { get; set; }
     
-    [Property, Group("Restrictions To Job")] public bool IsOnlyForUserGroups { get; set; }
-    [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsOnlyForUserGroups ), true), Description("If True, Only the Usergroups listed will be allowed to get onto the job. If False, every usergroup can use the job.")] public List<string> UserGroupThatCanOnlyUseJob{ get; set; }
-    [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsOnlyForUserGroups ), true), Description("If True, Non Assaigned user groups will have x amount of time to play on the job until the 'TempPlayTimeTotalCycleAmount' resets the time back to the total amount you want the player to be on the job.")] public bool HasTempPlayTime { get; set; }
-    [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsOnlyForUserGroups ), true), Description("0 = Nothing, 60 = 1 minute. So set the total time here to be the total amount of time you want the player to play on the job.")] public int TempPlayTimeTotalAmount { get; set; }
+    //UserGroups
+    [Property, Group("Restrictions To Job")] public bool IsForUserGroups { get; set; }
+    [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsForUserGroups ), true), Description("If True, Only the Usergroups listed will be allowed to get onto the job. If False, every usergroup can use the job.")] public List<string> UserGroupThatCanUseJob{ get; set; }
+    [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsForUserGroups ), true), Description("If True, Non Assaigned user groups will have x amount of time to play on the job until the 'TempPlayTimeTotalCycleAmount' resets the time back to the total amount you want the player to be on the job.")] public bool HasTempPlayTime { get; set; }
+    [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsForUserGroups ), true), Description("0 = Nothing, 60 = 1 minute. So set the total time here to be the total amount of time you want the player to play on the job.")] public int TempPlayTimeTotalAmount { get; set; }
+    
+    //SteamID
+    [Property, Group("Restrictions To Job")] public bool IsForSteamUsers { get; set; }
+    [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsForSteamUsers ), true), Description("If True, Only the Usergroups listed will be allowed to get onto the job. If False, every usergroup can use the job.")] public List<string> SteamIDsThatCanUseJob{ get; set; }
 
     
 

@@ -22,10 +22,7 @@ public class CategoryResource : GameResource
 public class JobCategoryInfoStructMain
 {
     public JobResource JobsInCategory { get; set; }
-    public int JobSlotsTaken { get; set; }
-
-    public bool HideUI { get; set; }
-    [Description("Only Allow Certain Usergroup to Use The jobs.")]public List<string> Whitelist { get; set; }
+    // Not Needed? [Description("Only Allow Certain Usergroup to Use The jobs.")]public List<string> Whitelist { get; set; }
 
 }
 
@@ -93,19 +90,18 @@ public struct MiscCategoryInfoStructMain
 
 
     //Create Custom File Icon
-    [Property]
-    public PrefabFile Prefab { get; set; }
+    private PrefabFile CustomFileIconPrefab { get; set; }
 
 
 	public override Bitmap RenderThumbnail( ThumbnailOptions options )
 	{
 		// No prefab - can't make a thumbnail
-		if ( Prefab is null ) return default;
+		if ( CustomFileIconPrefab is null ) return default;
 
 		var bitmap = new Bitmap( options.Width, options.Height );
 		bitmap.Clear( Color.Transparent );
 
-		SceneUtility.RenderGameObjectToBitmap( Prefab.GetScene(), bitmap );
+		SceneUtility.RenderGameObjectToBitmap( CustomFileIconPrefab.GetScene(), bitmap );
 
 		return bitmap;
 	}

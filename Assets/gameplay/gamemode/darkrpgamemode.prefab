@@ -2619,7 +2619,8 @@
               "Value": [
                 "gameplay/jobs/categorys/civillain.category",
                 "gameplay/jobs/categorys/civil protection.category",
-                "gameplay/jobs/categorys/criminals.category"
+                "gameplay/jobs/categorys/criminals.category",
+                "gameplay/jobs/categorys/other.category"
               ]
             }
           ],
@@ -2725,7 +2726,7 @@
             "GraphBecomeJob": {
               "__version": 9,
               "__guid": "c0e99cbd-0874-400f-9eb6-033d8381666d",
-              "__changeId": 64,
+              "__changeId": 218,
               "UserData": {
                 "Title": "Graph Become Job",
                 "ReferencedComponentTypes": [
@@ -2750,7 +2751,7 @@
                   "Id": 0,
                   "Type": "input",
                   "UserData": {
-                    "Position": "-1644,-132"
+                    "Position": "-7008,-120"
                   }
                 },
                 {
@@ -2775,7 +2776,7 @@
                   "Id": 3,
                   "Type": "scene.findall",
                   "UserData": {
-                    "Position": "-1308,-24"
+                    "Position": "-6672,-12"
                   }
                 },
                 {
@@ -2785,7 +2786,7 @@
                     "T": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "-1308,-120"
+                    "Position": "-6672,-108"
                   }
                 },
                 {
@@ -2795,7 +2796,7 @@
                     "T": "DarkRPGamemode.DarkRPGamemode"
                   },
                   "UserData": {
-                    "Position": "-1080,-0"
+                    "Position": "-6444,12"
                   }
                 },
                 {
@@ -2806,14 +2807,14 @@
                     "_type": "DarkRPGamemode.DarkRPGamemode"
                   },
                   "UserData": {
-                    "Position": "-1128,-24"
+                    "Position": "-6492,-12"
                   }
                 },
                 {
                   "Id": 7,
                   "Type": "if",
                   "UserData": {
-                    "Position": "-876,-96"
+                    "Position": "-6240,-84"
                   }
                 },
                 {
@@ -2870,7 +2871,7 @@
                   "Id": 13,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "-432,-0"
+                    "Position": "-5796,12"
                   }
                 },
                 {
@@ -2881,52 +2882,6 @@
                   },
                   "UserData": {
                     "Position": "5640,24"
-                  }
-                },
-                {
-                  "Id": 15,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategory",
-                    "_type": "JobResource"
-                  },
-                  "UserData": {
-                    "Position": "3732,408"
-                  }
-                },
-                {
-                  "Id": 16,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategoryInfo",
-                    "_type": "CategoryResource"
-                  },
-                  "UserData": {
-                    "Position": "3720,456"
-                  }
-                },
-                {
-                  "Id": 17,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "4020,444"
-                  }
-                },
-                {
-                  "Id": 18,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "SelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "3576,408"
                   }
                 },
                 {
@@ -2950,45 +2905,6 @@
                   }
                 },
                 {
-                  "Id": 21,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobsInCategory",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "4008,564"
-                  }
-                },
-                {
-                  "Id": 22,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "4392,576"
-                  }
-                },
-                {
-                  "Id": 23,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "SelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "4164,600"
-                  }
-                },
-                {
-                  "Id": 24,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "4332,492"
-                  }
-                },
-                {
                   "Id": 25,
                   "Type": "comment",
                   "UserData": {
@@ -2996,28 +2912,17 @@
                     "Size": "468,300",
                     "Title": "Set Player DarkRPInfo Job to New Job",
                     "Color": 3,
-                    "Layer": 5
-                  }
-                },
-                {
-                  "Id": 26,
-                  "Type": "comment",
-                  "UserData": {
-                    "Position": "3540,-240",
-                    "Size": "1896,984",
-                    "Title": "Check If JobSlotsTaken is Equal to MaxPlayersOnJob",
-                    "Layer": 4,
-                    "Color": 1
+                    "Layer": 6
                   }
                 },
                 {
                   "Id": 27,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "-1332,-180",
+                    "Position": "-6696,-168",
                     "Size": "1044,300",
                     "Title": "Check if Gamemode Settings is on",
-                    "Layer": 3,
+                    "Layer": 5,
                     "Color": 3
                   }
                 },
@@ -3061,80 +2966,6 @@
                   }
                 },
                 {
-                  "Id": 32,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobSlotsTaken",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "4680,456"
-                  }
-                },
-                {
-                  "Id": 33,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "SelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "4656,504"
-                  }
-                },
-                {
-                  "Id": 34,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "MaxPlayersAllowedOnJob",
-                    "_type": "JobResource"
-                  },
-                  "UserData": {
-                    "Position": "4788,504"
-                  }
-                },
-                {
-                  "Id": 35,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "4500,132"
-                  }
-                },
-                {
-                  "Id": 36,
-                  "Type": "log.info",
-                  "UserData": {
-                    "Position": "4728,-120"
-                  }
-                },
-                {
-                  "Id": 37,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "SelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "4692,-24"
-                  }
-                },
-                {
-                  "Id": 38,
-                  "Type": "op.greaterthanorequal",
-                  "UserData": {
-                    "Position": "5040,456"
-                  }
-                },
-                {
-                  "Id": 39,
-                  "Type": "log.info",
-                  "UserData": {
-                    "Position": "4824,168"
-                  }
-                },
-                {
                   "Id": 40,
                   "Type": "input.value",
                   "Properties": {
@@ -3151,7 +2982,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "-576,72"
+                    "Position": "-5940,84"
                   }
                 },
                 {
@@ -3161,7 +2992,7 @@
                     "_name": "SelectedJob"
                   },
                   "UserData": {
-                    "Position": "-588,48"
+                    "Position": "-5952,60"
                   }
                 },
                 {
@@ -3181,7 +3012,7 @@
                     "_name": "SelectedJob"
                   },
                   "UserData": {
-                    "Position": "120,144"
+                    "Position": "-5244,156"
                   }
                 },
                 {
@@ -3191,7 +3022,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "-0,252"
+                    "Position": "-5364,264"
                   }
                 },
                 {
@@ -3201,7 +3032,7 @@
                     "T": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "120,252"
+                    "Position": "-5244,264"
                   }
                 },
                 {
@@ -3212,39 +3043,39 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "408,228"
+                    "Position": "-4956,240"
                   }
                 },
                 {
                   "Id": 48,
                   "Type": "op.equal",
                   "UserData": {
-                    "Position": "420,144"
+                    "Position": "-4944,156"
                   }
                 },
                 {
                   "Id": 49,
                   "Type": "if",
                   "UserData": {
-                    "Position": "504,72"
+                    "Position": "-4860,84"
                   }
                 },
                 {
                   "Id": 50,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "864,-168"
+                    "Position": "-4500,-156"
                   }
                 },
                 {
                   "Id": 51,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "-120,-336",
+                    "Position": "-5484,-324",
                     "Size": "1176,768",
                     "Title": "Is Player Already Job?",
                     "Color": 3,
-                    "Layer": 2
+                    "Layer": 4
                   }
                 },
                 {
@@ -3283,7 +3114,7 @@
                     "Size": "492,336",
                     "Title": "Is Job Infinite?",
                     "Color": 3,
-                    "Layer": 3
+                    "Layer": 5
                   }
                 },
                 {
@@ -3325,7 +3156,7 @@
                     "Size": "468,300",
                     "Title": "Set Player DarkRPInfo Job to New Job",
                     "Color": 3,
-                    "Layer": 5
+                    "Layer": 6
                   }
                 },
                 {
@@ -3412,7 +3243,7 @@
                     "Size": "1464,540",
                     "Title": "Update F4 Menu UI",
                     "Color": 3,
-                    "Layer": 1
+                    "Layer": 3
                   }
                 },
                 {
@@ -3423,7 +3254,7 @@
                     "Size": "1356,540",
                     "Title": "Update F4 Menu UI",
                     "Color": 3,
-                    "Layer": 1
+                    "Layer": 3
                   }
                 },
                 {
@@ -3528,7 +3359,7 @@
                     "Position": "1308,-12",
                     "Size": "1164,408",
                     "Title": "Find JobcommandName in JobSlots",
-                    "Layer": 1,
+                    "Layer": 3,
                     "Color": 3
                   }
                 },
@@ -3549,7 +3380,7 @@
                     "Position": "4368,792",
                     "Size": "1272,984",
                     "Title": "Check If JobSlotsTaken is Equal to MaxPlayersOnJob",
-                    "Layer": 5,
+                    "Layer": 6,
                     "Color": 3
                   }
                 },
@@ -3645,7 +3476,7 @@
                     "_type": "JobResource"
                   },
                   "UserData": {
-                    "Position": "804,204"
+                    "Position": "-4560,216"
                   }
                 },
                 {
@@ -3656,7 +3487,1272 @@
                     "_type": "JobResource"
                   },
                   "UserData": {
-                    "Position": "144,96"
+                    "Position": "-5220,108"
+                  }
+                },
+                {
+                  "Id": 196,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "-4056,216"
+                  }
+                },
+                {
+                  "Id": 197,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-5532,-4356"
+                  }
+                },
+                {
+                  "Id": 198,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-5412,-4356"
+                  }
+                },
+                {
+                  "Id": 199,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsForSteamUsers",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "-3816,216"
+                  }
+                },
+                {
+                  "Id": 200,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsForUserGroups",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "-2640,240"
+                  }
+                },
+                {
+                  "Id": 201,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "-3768,132"
+                  }
+                },
+                {
+                  "Id": 202,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "-2568,156"
+                  }
+                },
+                {
+                  "Id": 204,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SteamId",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-5124,-4356"
+                  }
+                },
+                {
+                  "Id": 205,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SteamIDsThatCanUseJob",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "-5604,-4404"
+                  }
+                },
+                {
+                  "Id": 206,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "System.String"
+                  },
+                  "UserData": {
+                    "Position": "-5292,-4476"
+                  }
+                },
+                {
+                  "Id": 207,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "-4968,-4428"
+                  }
+                },
+                {
+                  "Id": 208,
+                  "Type": "sys.tostring",
+                  "Properties": {
+                    "T": "Sandbox.SteamId"
+                  },
+                  "UserData": {
+                    "Position": "-5064,-4380"
+                  }
+                },
+                {
+                  "Id": 209,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "-4836,-4452"
+                  }
+                },
+                {
+                  "Id": 210,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "CurrentJob",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1032,-5688"
+                  }
+                },
+                {
+                  "Id": 211,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "2268,-4776"
+                  }
+                },
+                {
+                  "Id": 212,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "984,-5580"
+                  }
+                },
+                {
+                  "Id": 217,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "2112,-4728"
+                  }
+                },
+                {
+                  "Id": 218,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "840,-5640"
+                  }
+                },
+                {
+                  "Id": 223,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "888,-5820",
+                    "Size": "468,300",
+                    "Title": "Set Player DarkRPInfo Job to New Job",
+                    "Color": 3,
+                    "Layer": 6
+                  }
+                },
+                {
+                  "Id": 225,
+                  "Type": "scene.findall",
+                  "UserData": {
+                    "Position": "1140,-4824"
+                  }
+                },
+                {
+                  "Id": 226,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1356,-4824"
+                  }
+                },
+                {
+                  "Id": 227,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "1320,-4692"
+                  }
+                },
+                {
+                  "Id": 228,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "StateHasChanged",
+                    "_type": "Sandbox.PanelComponent"
+                  },
+                  "UserData": {
+                    "Position": "1596,-4788"
+                  }
+                },
+                {
+                  "Id": 237,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "816,-5568"
+                  }
+                },
+                {
+                  "Id": 238,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2124,-4704"
+                  }
+                },
+                {
+                  "Id": 239,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "-1956,-5316"
+                  }
+                },
+                {
+                  "Id": 240,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsInfiniteJobSlots",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "-1824,-5316"
+                  }
+                },
+                {
+                  "Id": 241,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "-1704,-5388"
+                  }
+                },
+                {
+                  "Id": 242,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-1968,-5532",
+                    "Size": "492,336",
+                    "Title": "Is Job Infinite?",
+                    "Color": 3,
+                    "Layer": 5
+                  }
+                },
+                {
+                  "Id": 243,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "CurrentJob",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-312,-6576"
+                  }
+                },
+                {
+                  "Id": 244,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-348,-6468"
+                  }
+                },
+                {
+                  "Id": 245,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "-492,-6528"
+                  }
+                },
+                {
+                  "Id": 246,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-444,-6708",
+                    "Size": "468,300",
+                    "Title": "Set Player DarkRPInfo Job to New Job",
+                    "Color": 3,
+                    "Layer": 6
+                  }
+                },
+                {
+                  "Id": 247,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-516,-6456"
+                  }
+                },
+                {
+                  "Id": 248,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1284,-6492"
+                  }
+                },
+                {
+                  "Id": 249,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "1140,-6444"
+                  }
+                },
+                {
+                  "Id": 250,
+                  "Type": "scene.findall",
+                  "UserData": {
+                    "Position": "204,-6576"
+                  }
+                },
+                {
+                  "Id": 251,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "420,-6576"
+                  }
+                },
+                {
+                  "Id": 252,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "384,-6444"
+                  }
+                },
+                {
+                  "Id": 253,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "StateHasChanged",
+                    "_type": "Sandbox.PanelComponent"
+                  },
+                  "UserData": {
+                    "Position": "660,-6540"
+                  }
+                },
+                {
+                  "Id": 254,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "1152,-6420"
+                  }
+                },
+                {
+                  "Id": 255,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "1032,-5088",
+                    "Size": "1464,540",
+                    "Title": "Update F4 Menu UI",
+                    "Color": 3,
+                    "Layer": 3
+                  }
+                },
+                {
+                  "Id": 256,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "96,-6696",
+                    "Size": "1356,540",
+                    "Title": "Update F4 Menu UI",
+                    "Color": 3,
+                    "Layer": 3
+                  }
+                },
+                {
+                  "Id": 257,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "_target"
+                  },
+                  "UserData": {
+                    "Position": "-3312,-5304"
+                  }
+                },
+                {
+                  "Id": 258,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "-3192,-5304"
+                  }
+                },
+                {
+                  "Id": 259,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobSlots",
+                    "_type": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "-3180,-5328"
+                  }
+                },
+                {
+                  "Id": 260,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "JobManager",
+                      "Name": "JobSlotInfo"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "-3144,-5424"
+                  }
+                },
+                {
+                  "Id": 261,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobCommandName",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "JobManager",
+                      "Name": "JobSlotInfo"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "-2628,-5280"
+                  }
+                },
+                {
+                  "Id": 262,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "-2340,-5304"
+                  }
+                },
+                {
+                  "Id": 263,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "-2436,-5388"
+                  }
+                },
+                {
+                  "Id": 264,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "-2784,-5304"
+                  }
+                },
+                {
+                  "Id": 265,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobCommandName",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "-2628,-5304"
+                  }
+                },
+                {
+                  "Id": 266,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-3348,-5616",
+                    "Size": "1164,408",
+                    "Title": "Find JobcommandName in JobSlots",
+                    "Layer": 3,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 267,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempJobSlotInfo"
+                  },
+                  "UserData": {
+                    "Position": "-2184,-5400"
+                  }
+                },
+                {
+                  "Id": 268,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-288,-4812",
+                    "Size": "1272,984",
+                    "Title": "Check If JobSlotsTaken is Equal to MaxPlayersOnJob",
+                    "Layer": 6,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 269,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "-228,-4308"
+                  }
+                },
+                {
+                  "Id": 270,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "MaxPlayersAllowedOnJob",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "-96,-4308"
+                  }
+                },
+                {
+                  "Id": 271,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "240,-4452"
+                  }
+                },
+                {
+                  "Id": 272,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "492,-4692"
+                  }
+                },
+                {
+                  "Id": 273,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "456,-4596"
+                  }
+                },
+                {
+                  "Id": 274,
+                  "Type": "op.greaterthanorequal",
+                  "UserData": {
+                    "Position": "156,-4356"
+                  }
+                },
+                {
+                  "Id": 275,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "588,-4404"
+                  }
+                },
+                {
+                  "Id": 276,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempJobSlotInfo"
+                  },
+                  "UserData": {
+                    "Position": "-312,-4356"
+                  }
+                },
+                {
+                  "Id": 277,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobSlotAmount",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "JobManager",
+                      "Name": "JobSlotInfo"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "-144,-4356"
+                  }
+                },
+                {
+                  "Id": 294,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "-4224,-4380"
+                  }
+                },
+                {
+                  "Id": 295,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-4308,-4452",
+                    "Size": "300,300",
+                    "Title": "NEED INFO POPUP HERE",
+                    "Color": 4,
+                    "Layer": 2
+                  }
+                },
+                {
+                  "Id": 296,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-4584,-180",
+                    "Size": "300,300",
+                    "Title": "NEED INFO POPUP HERE",
+                    "Color": 4,
+                    "Layer": 2
+                  }
+                },
+                {
+                  "Id": 380,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-2220,-888"
+                  }
+                },
+                {
+                  "Id": 381,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-2100,-888"
+                  }
+                },
+                {
+                  "Id": 383,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "-1800,-936"
+                  }
+                },
+                {
+                  "Id": 384,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "-1668,-960"
+                  }
+                },
+                {
+                  "Id": 385,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Usergroup",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "-2076,-912"
+                  }
+                },
+                {
+                  "Id": 386,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "-2748,-888"
+                  }
+                },
+                {
+                  "Id": 387,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "UserGroupThatCanUseJob",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "-2604,-888"
+                  }
+                },
+                {
+                  "Id": 388,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "System.String"
+                  },
+                  "UserData": {
+                    "Position": "-2448,-984"
+                  }
+                },
+                {
+                  "Id": 389,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "CurrentJob",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2244,-2664"
+                  }
+                },
+                {
+                  "Id": 390,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "3480,-1752"
+                  }
+                },
+                {
+                  "Id": 391,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2196,-2556"
+                  }
+                },
+                {
+                  "Id": 396,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "3324,-1704"
+                  }
+                },
+                {
+                  "Id": 397,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "2052,-2616"
+                  }
+                },
+                {
+                  "Id": 402,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "2100,-2796",
+                    "Size": "468,300",
+                    "Title": "Set Player DarkRPInfo Job to New Job",
+                    "Color": 3,
+                    "Layer": 6
+                  }
+                },
+                {
+                  "Id": 404,
+                  "Type": "scene.findall",
+                  "UserData": {
+                    "Position": "2352,-1800"
+                  }
+                },
+                {
+                  "Id": 405,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "2568,-1800"
+                  }
+                },
+                {
+                  "Id": 406,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "2532,-1668"
+                  }
+                },
+                {
+                  "Id": 407,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "StateHasChanged",
+                    "_type": "Sandbox.PanelComponent"
+                  },
+                  "UserData": {
+                    "Position": "2808,-1764"
+                  }
+                },
+                {
+                  "Id": 416,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2028,-2544"
+                  }
+                },
+                {
+                  "Id": 417,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "3336,-1680"
+                  }
+                },
+                {
+                  "Id": 418,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "-744,-2292"
+                  }
+                },
+                {
+                  "Id": 419,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "IsInfiniteJobSlots",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "-612,-2292"
+                  }
+                },
+                {
+                  "Id": 420,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "-492,-2364"
+                  }
+                },
+                {
+                  "Id": 421,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-756,-2508",
+                    "Size": "492,336",
+                    "Title": "Is Job Infinite?",
+                    "Color": 3,
+                    "Layer": 5
+                  }
+                },
+                {
+                  "Id": 422,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "CurrentJob",
+                    "_type": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "900,-3552"
+                  }
+                },
+                {
+                  "Id": 423,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "DarkrpPlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "864,-3444"
+                  }
+                },
+                {
+                  "Id": 424,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "720,-3504"
+                  }
+                },
+                {
+                  "Id": 425,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "768,-3684",
+                    "Size": "468,300",
+                    "Title": "Set Player DarkRPInfo Job to New Job",
+                    "Color": 3,
+                    "Layer": 6
+                  }
+                },
+                {
+                  "Id": 426,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "696,-3432"
+                  }
+                },
+                {
+                  "Id": 427,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "2496,-3468"
+                  }
+                },
+                {
+                  "Id": 428,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "2352,-3420"
+                  }
+                },
+                {
+                  "Id": 429,
+                  "Type": "scene.findall",
+                  "UserData": {
+                    "Position": "1416,-3552"
+                  }
+                },
+                {
+                  "Id": 430,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "1632,-3552"
+                  }
+                },
+                {
+                  "Id": 431,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "1596,-3420"
+                  }
+                },
+                {
+                  "Id": 432,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "StateHasChanged",
+                    "_type": "Sandbox.PanelComponent"
+                  },
+                  "UserData": {
+                    "Position": "1872,-3516"
+                  }
+                },
+                {
+                  "Id": 433,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "2364,-3396"
+                  }
+                },
+                {
+                  "Id": 434,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "2244,-2064",
+                    "Size": "1464,540",
+                    "Title": "Update F4 Menu UI",
+                    "Color": 3,
+                    "Layer": 3
+                  }
+                },
+                {
+                  "Id": 435,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "1308,-3672",
+                    "Size": "1356,540",
+                    "Title": "Update F4 Menu UI",
+                    "Color": 3,
+                    "Layer": 3
+                  }
+                },
+                {
+                  "Id": 436,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "_target"
+                  },
+                  "UserData": {
+                    "Position": "-2100,-2280"
+                  }
+                },
+                {
+                  "Id": 437,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "-1980,-2280"
+                  }
+                },
+                {
+                  "Id": 438,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobSlots",
+                    "_type": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "-1968,-2304"
+                  }
+                },
+                {
+                  "Id": 439,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "JobManager",
+                      "Name": "JobSlotInfo"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "-1932,-2400"
+                  }
+                },
+                {
+                  "Id": 440,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobCommandName",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "JobManager",
+                      "Name": "JobSlotInfo"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "-1416,-2256"
+                  }
+                },
+                {
+                  "Id": 441,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "-1128,-2280"
+                  }
+                },
+                {
+                  "Id": 442,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "-1224,-2364"
+                  }
+                },
+                {
+                  "Id": 443,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "-1572,-2280"
+                  }
+                },
+                {
+                  "Id": 444,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobCommandName",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "-1416,-2280"
+                  }
+                },
+                {
+                  "Id": 445,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-2136,-2592",
+                    "Size": "1164,408",
+                    "Title": "Find JobcommandName in JobSlots",
+                    "Layer": 3,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 446,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempJobSlotInfo"
+                  },
+                  "UserData": {
+                    "Position": "-972,-2376"
+                  }
+                },
+                {
+                  "Id": 447,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "924,-1788",
+                    "Size": "1272,984",
+                    "Title": "Check If JobSlotsTaken is Equal to MaxPlayersOnJob",
+                    "Layer": 6,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 448,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "984,-1284"
+                  }
+                },
+                {
+                  "Id": 449,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "MaxPlayersAllowedOnJob",
+                    "_type": "JobResource"
+                  },
+                  "UserData": {
+                    "Position": "1116,-1284"
+                  }
+                },
+                {
+                  "Id": 450,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "1452,-1428"
+                  }
+                },
+                {
+                  "Id": 451,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1704,-1668"
+                  }
+                },
+                {
+                  "Id": 452,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "SelectedJob"
+                  },
+                  "UserData": {
+                    "Position": "1668,-1572"
+                  }
+                },
+                {
+                  "Id": 453,
+                  "Type": "op.greaterthanorequal",
+                  "UserData": {
+                    "Position": "1368,-1332"
+                  }
+                },
+                {
+                  "Id": 454,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1800,-1380"
+                  }
+                },
+                {
+                  "Id": 455,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempJobSlotInfo"
+                  },
+                  "UserData": {
+                    "Position": "900,-1332"
+                  }
+                },
+                {
+                  "Id": 456,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "JobSlotAmount",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "JobManager",
+                      "Name": "JobSlotInfo"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "1068,-1332"
+                  }
+                },
+                {
+                  "Id": 498,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-5376,-4644",
+                    "Size": "840,396",
+                    "Title": "Check Selected Job SteamID List against player SteamID",
+                    "Layer": 1,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 499,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-2556,-1116",
+                    "Size": "1104,396",
+                    "Title": "Check Selected Job Usergroups List against Player Usergroup",
+                    "Layer": 1,
+                    "Color": 3
                   }
                 }
               ],
@@ -3700,13 +4796,13 @@
                   "DstIndex": 1
                 },
                 {
-                  "Id": 184,
+                  "Id": 523,
                   "Value": "SECOND Become Job Logic: New Job Selected {0}, PlayerObjectFound: {1}",
                   "DstId": 2,
                   "DstName": "format"
                 },
                 {
-                  "Id": 185,
+                  "Id": 524,
                   "Value": "DarkRP",
                   "DstId": 3,
                   "DstName": "name"
@@ -3748,7 +4844,7 @@
                   "DstName": "condition"
                 },
                 {
-                  "Id": 186,
+                  "Id": 525,
                   "Value": "Player",
                   "DstId": 8,
                   "DstName": "name"
@@ -3804,7 +4900,7 @@
                   "DstIndex": 1
                 },
                 {
-                  "Id": 187,
+                  "Id": 526,
                   "Value": "FIRST Become Job Logic: New Job Selected {0}, PlayerObjectFound: {1}",
                   "DstId": 13,
                   "DstName": "format"
@@ -3816,55 +4912,7 @@
                   "DstName": "_this"
                 },
                 {
-                  "SrcId": 18,
-                  "SrcName": "_result",
-                  "DstId": 15,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 15,
-                  "SrcName": "_result",
-                  "DstId": 16,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 16,
-                  "SrcName": "_result",
-                  "DstId": 17,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 17,
-                  "SrcName": "body.value",
-                  "DstId": 21,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 21,
-                  "SrcName": "_result",
-                  "DstId": 22,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 23,
-                  "SrcName": "_result",
-                  "DstId": 22,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 17,
-                  "SrcName": "body",
-                  "DstId": 24,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 22,
-                  "SrcName": "_result",
-                  "DstId": 24,
-                  "DstName": "condition"
-                },
-                {
-                  "Id": 188,
+                  "Id": 527,
                   "Value": "MainHud",
                   "DstId": 28,
                   "DstName": "name"
@@ -3898,80 +4946,6 @@
                   "SrcName": "_result",
                   "DstId": 31,
                   "DstName": "_target"
-                },
-                {
-                  "SrcId": 17,
-                  "SrcName": "body.value",
-                  "DstId": 32,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 33,
-                  "SrcName": "_result",
-                  "DstId": 34,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 24,
-                  "SrcName": "true",
-                  "DstId": 35,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 38,
-                  "SrcName": "_result",
-                  "DstId": 35,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 35,
-                  "SrcName": "true",
-                  "DstId": 36,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 37,
-                  "SrcName": "_result",
-                  "DstId": 36,
-                  "DstName": "args",
-                  "DstIndex": 0
-                },
-                {
-                  "Id": 189,
-                  "Value": "MAX Players Allowed on Job:{0}",
-                  "DstId": 36,
-                  "DstName": "format"
-                },
-                {
-                  "SrcId": 32,
-                  "SrcName": "_result",
-                  "DstId": 38,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 34,
-                  "SrcName": "_result",
-                  "DstId": 38,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 35,
-                  "SrcName": "false",
-                  "DstId": 39,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 32,
-                  "SrcName": "_result",
-                  "DstId": 39,
-                  "DstName": "args",
-                  "DstIndex": 0
-                },
-                {
-                  "Id": 190,
-                  "Value": "Current JobSlotTaken :{0}",
-                  "DstId": 39,
-                  "DstName": "format"
                 },
                 {
                   "SrcId": 45,
@@ -4030,7 +5004,7 @@
                   "DstIndex": 1
                 },
                 {
-                  "Id": 191,
+                  "Id": 528,
                   "Value": "WARNING YOU ARE ALREADY THIS JOB! PlayerInfo:{0} Selected Job{1}",
                   "DstId": 50,
                   "DstName": "format"
@@ -4098,13 +5072,13 @@
                   "DstIndex": 1
                 },
                 {
-                  "Id": 192,
+                  "Id": 529,
                   "Value": "SECOND Become Job Logic: New Job Selected {0}, PlayerObjectFound: {1}",
                   "DstId": 61,
                   "DstName": "format"
                 },
                 {
-                  "Id": 193,
+                  "Id": 530,
                   "Value": "MainHud",
                   "DstId": 63,
                   "DstName": "name"
@@ -4152,7 +5126,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 49,
+                  "SrcId": 202,
                   "SrcName": "false",
                   "DstId": 93,
                   "DstName": "_signal"
@@ -4243,7 +5217,7 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 194,
+                  "Id": 531,
                   "Value": "MAX Players Allowed on Job:{0}",
                   "DstId": 105,
                   "DstName": "format"
@@ -4281,7 +5255,7 @@
                   "DstIndex": 1
                 },
                 {
-                  "Id": 195,
+                  "Id": 532,
                   "Value": "Current JobSlotTaken :{0} CurrentSelectedJob Max Allowed Players:{1}",
                   "DstId": 108,
                   "DstName": "format"
@@ -4303,13 +5277,875 @@
                   "SrcName": "_result",
                   "DstId": 171,
                   "DstName": "_target"
+                },
+                {
+                  "SrcId": 197,
+                  "SrcName": "_result",
+                  "DstId": 198,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 196,
+                  "SrcName": "_result",
+                  "DstId": 199,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 196,
+                  "SrcName": "_result",
+                  "DstId": 200,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 49,
+                  "SrcName": "false",
+                  "DstId": 201,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 199,
+                  "SrcName": "_result",
+                  "DstId": 201,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 201,
+                  "SrcName": "false",
+                  "DstId": 202,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 200,
+                  "SrcName": "_result",
+                  "DstId": 202,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 198,
+                  "SrcName": "_result",
+                  "DstId": 204,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 196,
+                  "SrcName": "_result",
+                  "DstId": 205,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 201,
+                  "SrcName": "true",
+                  "DstId": 206,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 205,
+                  "SrcName": "_result",
+                  "DstId": 206,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 206,
+                  "SrcName": "body.value",
+                  "DstId": 207,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 208,
+                  "SrcName": "_result",
+                  "DstId": 207,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 204,
+                  "SrcName": "_result",
+                  "DstId": 208,
+                  "DstName": "input"
+                },
+                {
+                  "SrcId": 206,
+                  "SrcName": "body",
+                  "DstId": 209,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 207,
+                  "SrcName": "_result",
+                  "DstId": 209,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 275,
+                  "SrcName": "_signal",
+                  "DstId": 210,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 212,
+                  "SrcName": "_result",
+                  "DstId": 210,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 218,
+                  "SrcName": "_result",
+                  "DstId": 210,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 228,
+                  "SrcName": "_signal",
+                  "DstId": 211,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 217,
+                  "SrcName": "_result",
+                  "DstId": 211,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "SrcId": 238,
+                  "SrcName": "_result",
+                  "DstId": 211,
+                  "DstName": "args",
+                  "DstIndex": 1
+                },
+                {
+                  "Id": 533,
+                  "Value": "SECOND Become Job Logic: New Job Selected {0}, PlayerObjectFound: {1}",
+                  "DstId": 211,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 237,
+                  "SrcName": "_result",
+                  "DstId": 212,
+                  "DstName": "_this"
+                },
+                {
+                  "Id": 534,
+                  "Value": "MainHud",
+                  "DstId": 225,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 210,
+                  "SrcName": "_signal",
+                  "DstId": 226,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 225,
+                  "SrcName": "_result",
+                  "DstId": 226,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 226,
+                  "SrcName": "body.value",
+                  "DstId": 227,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 226,
+                  "SrcName": "body",
+                  "DstId": 228,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 227,
+                  "SrcName": "_result",
+                  "DstId": 228,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 239,
+                  "SrcName": "_result",
+                  "DstId": 240,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 267,
+                  "SrcName": "_signal",
+                  "DstId": 241,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 240,
+                  "SrcName": "_result",
+                  "DstId": 241,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 241,
+                  "SrcName": "true",
+                  "DstId": 243,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 244,
+                  "SrcName": "_result",
+                  "DstId": 243,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 245,
+                  "SrcName": "_result",
+                  "DstId": 243,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 247,
+                  "SrcName": "_result",
+                  "DstId": 244,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 253,
+                  "SrcName": "_signal",
+                  "DstId": 248,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 249,
+                  "SrcName": "_result",
+                  "DstId": 248,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "SrcId": 254,
+                  "SrcName": "_result",
+                  "DstId": 248,
+                  "DstName": "args",
+                  "DstIndex": 1
+                },
+                {
+                  "Id": 535,
+                  "Value": "SECOND Become Job Logic: New Job Selected {0}, PlayerObjectFound: {1}",
+                  "DstId": 248,
+                  "DstName": "format"
+                },
+                {
+                  "Id": 536,
+                  "Value": "MainHud",
+                  "DstId": 250,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 243,
+                  "SrcName": "_signal",
+                  "DstId": 251,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 250,
+                  "SrcName": "_result",
+                  "DstId": 251,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 251,
+                  "SrcName": "body.value",
+                  "DstId": 252,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 251,
+                  "SrcName": "body",
+                  "DstId": 253,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 252,
+                  "SrcName": "_result",
+                  "DstId": 253,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 257,
+                  "SrcName": "_result",
+                  "DstId": 258,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 258,
+                  "SrcName": "_result",
+                  "DstId": 259,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 209,
+                  "SrcName": "true",
+                  "DstId": 260,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 259,
+                  "SrcName": "_result",
+                  "DstId": 260,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 260,
+                  "SrcName": "body.value",
+                  "DstId": 261,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 265,
+                  "SrcName": "_result",
+                  "DstId": 262,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 261,
+                  "SrcName": "_result",
+                  "DstId": 262,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 260,
+                  "SrcName": "body",
+                  "DstId": 263,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 262,
+                  "SrcName": "_result",
+                  "DstId": 263,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 264,
+                  "SrcName": "_result",
+                  "DstId": 265,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 263,
+                  "SrcName": "true",
+                  "DstId": 267,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 260,
+                  "SrcName": "body.value",
+                  "DstId": 267,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 269,
+                  "SrcName": "_result",
+                  "DstId": 270,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 241,
+                  "SrcName": "false",
+                  "DstId": 271,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 274,
+                  "SrcName": "_result",
+                  "DstId": 271,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 271,
+                  "SrcName": "true",
+                  "DstId": 272,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 273,
+                  "SrcName": "_result",
+                  "DstId": 272,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "Id": 537,
+                  "Value": "MAX Players Allowed on Job:{0}",
+                  "DstId": 272,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 277,
+                  "SrcName": "_result",
+                  "DstId": 274,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 270,
+                  "SrcName": "_result",
+                  "DstId": 274,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 271,
+                  "SrcName": "false",
+                  "DstId": 275,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 277,
+                  "SrcName": "_result",
+                  "DstId": 275,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "SrcId": 270,
+                  "SrcName": "_result",
+                  "DstId": 275,
+                  "DstName": "args",
+                  "DstIndex": 1
+                },
+                {
+                  "Id": 538,
+                  "Value": "Current JobSlotTaken :{0} CurrentSelectedJob Max Allowed Players:{1}",
+                  "DstId": 275,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 276,
+                  "SrcName": "_result",
+                  "DstId": 277,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 209,
+                  "SrcName": "false",
+                  "DstId": 294,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 206,
+                  "SrcName": "body.value",
+                  "DstId": 294,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "SrcId": 208,
+                  "SrcName": "_result",
+                  "DstId": 294,
+                  "DstName": "args",
+                  "DstIndex": 1
+                },
+                {
+                  "Id": 539,
+                  "Value": "WARNING YOU ARE NOT ON STEAMID LIST! List SteamID:{0} Player SteamID:{1} ",
+                  "DstId": 294,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 380,
+                  "SrcName": "_result",
+                  "DstId": 381,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 388,
+                  "SrcName": "body.value",
+                  "DstId": 383,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 385,
+                  "SrcName": "_result",
+                  "DstId": 383,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 388,
+                  "SrcName": "body",
+                  "DstId": 384,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 383,
+                  "SrcName": "_result",
+                  "DstId": 384,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 381,
+                  "SrcName": "_result",
+                  "DstId": 385,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 386,
+                  "SrcName": "_result",
+                  "DstId": 387,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 202,
+                  "SrcName": "true",
+                  "DstId": 388,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 387,
+                  "SrcName": "_result",
+                  "DstId": 388,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 454,
+                  "SrcName": "_signal",
+                  "DstId": 389,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 391,
+                  "SrcName": "_result",
+                  "DstId": 389,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 397,
+                  "SrcName": "_result",
+                  "DstId": 389,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 407,
+                  "SrcName": "_signal",
+                  "DstId": 390,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 396,
+                  "SrcName": "_result",
+                  "DstId": 390,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "SrcId": 417,
+                  "SrcName": "_result",
+                  "DstId": 390,
+                  "DstName": "args",
+                  "DstIndex": 1
+                },
+                {
+                  "Id": 540,
+                  "Value": "SECOND Become Job Logic: New Job Selected {0}, PlayerObjectFound: {1}",
+                  "DstId": 390,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 416,
+                  "SrcName": "_result",
+                  "DstId": 391,
+                  "DstName": "_this"
+                },
+                {
+                  "Id": 541,
+                  "Value": "MainHud",
+                  "DstId": 404,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 389,
+                  "SrcName": "_signal",
+                  "DstId": 405,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 404,
+                  "SrcName": "_result",
+                  "DstId": 405,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 405,
+                  "SrcName": "body.value",
+                  "DstId": 406,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 405,
+                  "SrcName": "body",
+                  "DstId": 407,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 406,
+                  "SrcName": "_result",
+                  "DstId": 407,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 418,
+                  "SrcName": "_result",
+                  "DstId": 419,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 446,
+                  "SrcName": "_signal",
+                  "DstId": 420,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 419,
+                  "SrcName": "_result",
+                  "DstId": 420,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 420,
+                  "SrcName": "true",
+                  "DstId": 422,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 423,
+                  "SrcName": "_result",
+                  "DstId": 422,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 424,
+                  "SrcName": "_result",
+                  "DstId": 422,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 426,
+                  "SrcName": "_result",
+                  "DstId": 423,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 432,
+                  "SrcName": "_signal",
+                  "DstId": 427,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 428,
+                  "SrcName": "_result",
+                  "DstId": 427,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "SrcId": 433,
+                  "SrcName": "_result",
+                  "DstId": 427,
+                  "DstName": "args",
+                  "DstIndex": 1
+                },
+                {
+                  "Id": 542,
+                  "Value": "SECOND Become Job Logic: New Job Selected {0}, PlayerObjectFound: {1}",
+                  "DstId": 427,
+                  "DstName": "format"
+                },
+                {
+                  "Id": 543,
+                  "Value": "MainHud",
+                  "DstId": 429,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 422,
+                  "SrcName": "_signal",
+                  "DstId": 430,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 429,
+                  "SrcName": "_result",
+                  "DstId": 430,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 430,
+                  "SrcName": "body.value",
+                  "DstId": 431,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 430,
+                  "SrcName": "body",
+                  "DstId": 432,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 431,
+                  "SrcName": "_result",
+                  "DstId": 432,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 436,
+                  "SrcName": "_result",
+                  "DstId": 437,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 437,
+                  "SrcName": "_result",
+                  "DstId": 438,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 384,
+                  "SrcName": "true",
+                  "DstId": 439,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 438,
+                  "SrcName": "_result",
+                  "DstId": 439,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 439,
+                  "SrcName": "body.value",
+                  "DstId": 440,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 444,
+                  "SrcName": "_result",
+                  "DstId": 441,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 440,
+                  "SrcName": "_result",
+                  "DstId": 441,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 439,
+                  "SrcName": "body",
+                  "DstId": 442,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 441,
+                  "SrcName": "_result",
+                  "DstId": 442,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 443,
+                  "SrcName": "_result",
+                  "DstId": 444,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 442,
+                  "SrcName": "true",
+                  "DstId": 446,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 439,
+                  "SrcName": "body.value",
+                  "DstId": 446,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 448,
+                  "SrcName": "_result",
+                  "DstId": 449,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 420,
+                  "SrcName": "false",
+                  "DstId": 450,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 453,
+                  "SrcName": "_result",
+                  "DstId": 450,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 450,
+                  "SrcName": "true",
+                  "DstId": 451,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 452,
+                  "SrcName": "_result",
+                  "DstId": 451,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "Id": 544,
+                  "Value": "MAX Players Allowed on Job:{0}",
+                  "DstId": 451,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 456,
+                  "SrcName": "_result",
+                  "DstId": 453,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 449,
+                  "SrcName": "_result",
+                  "DstId": 453,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 450,
+                  "SrcName": "false",
+                  "DstId": 454,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 456,
+                  "SrcName": "_result",
+                  "DstId": 454,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "SrcId": 449,
+                  "SrcName": "_result",
+                  "DstId": 454,
+                  "DstName": "args",
+                  "DstIndex": 1
+                },
+                {
+                  "Id": 545,
+                  "Value": "Current JobSlotTaken :{0} CurrentSelectedJob Max Allowed Players:{1}",
+                  "DstId": 454,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 455,
+                  "SrcName": "_result",
+                  "DstId": 456,
+                  "DstName": "_target"
                 }
               ]
             },
             "GraphSetJobIndex": {
               "__version": 9,
               "__guid": "75169efb-daf4-4c95-b721-32b8899e3571",
-              "__changeId": 235,
+              "__changeId": 242,
               "UserData": {
                 "Title": "Graph Set Job Index",
                 "ReferencedComponentTypes": [
@@ -4344,89 +6180,6 @@
                   }
                 },
                 {
-                  "Id": 1,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategory",
-                    "_type": "JobResource"
-                  },
-                  "UserData": {
-                    "Position": "7176,-204"
-                  }
-                },
-                {
-                  "Id": 2,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategoryInfo",
-                    "_type": "CategoryResource"
-                  },
-                  "UserData": {
-                    "Position": "7164,-156"
-                  }
-                },
-                {
-                  "Id": 3,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "7464,-168"
-                  }
-                },
-                {
-                  "Id": 4,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobSlotsTaken",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "8052,-60"
-                  }
-                },
-                {
-                  "Id": 5,
-                  "Type": "op.add",
-                  "UserData": {
-                    "Position": "8376,-60"
-                  }
-                },
-                {
-                  "Id": 6,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobSlotsTaken",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "8076,-144"
-                  }
-                },
-                {
-                  "Id": 7,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "SelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "7020,-204"
-                  }
-                },
-                {
                   "Id": 8,
                   "Type": "input.value",
                   "Properties": {
@@ -4437,145 +6190,10 @@
                   }
                 },
                 {
-                  "Id": 9,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobsInCategory",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "7452,-48"
-                  }
-                },
-                {
-                  "Id": 10,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "7836,-36"
-                  }
-                },
-                {
-                  "Id": 11,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "SelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "7608,-12"
-                  }
-                },
-                {
-                  "Id": 12,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "7788,-144"
-                  }
-                },
-                {
-                  "Id": 13,
-                  "Type": "comment",
-                  "UserData": {
-                    "Position": "6852,-324",
-                    "Size": "2364,468",
-                    "Title": "Add +1 To Job Slots Taken",
-                    "Layer": 4,
-                    "Color": 1
-                  }
-                },
-                {
                   "Id": 14,
                   "Type": "log.info",
                   "UserData": {
                     "Position": "8592,312"
-                  }
-                },
-                {
-                  "Id": 15,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategory",
-                    "_type": "JobResource"
-                  },
-                  "UserData": {
-                    "Position": "1080,-252"
-                  }
-                },
-                {
-                  "Id": 16,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategoryInfo",
-                    "_type": "CategoryResource"
-                  },
-                  "UserData": {
-                    "Position": "1068,-228"
-                  }
-                },
-                {
-                  "Id": 17,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "1176,-360"
-                  }
-                },
-                {
-                  "Id": 18,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "SelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "948,-252"
-                  }
-                },
-                {
-                  "Id": 19,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobsInCategory",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "1524,-264"
-                  }
-                },
-                {
-                  "Id": 20,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "2244,-312"
-                  }
-                },
-                {
-                  "Id": 21,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "SelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "2088,-288"
-                  }
-                },
-                {
-                  "Id": 22,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "2160,-384"
                   }
                 },
                 {
@@ -4587,21 +6205,6 @@
                     "Title": "Check If JobSlotsTaken is Equal to MaxPlayersOnJob",
                     "Layer": 5,
                     "Color": 3
-                  }
-                },
-                {
-                  "Id": 24,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobSlotsTaken",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "2820,-324"
                   }
                 },
                 {
@@ -4681,156 +6284,6 @@
                   }
                 },
                 {
-                  "Id": 34,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "OldSelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "10320,-372"
-                  }
-                },
-                {
-                  "Id": 35,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategory",
-                    "_type": "JobResource"
-                  },
-                  "UserData": {
-                    "Position": "10476,-372"
-                  }
-                },
-                {
-                  "Id": 36,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategoryInfo",
-                    "_type": "CategoryResource"
-                  },
-                  "UserData": {
-                    "Position": "10464,-324"
-                  }
-                },
-                {
-                  "Id": 37,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "10764,-336"
-                  }
-                },
-                {
-                  "Id": 38,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobsInCategory",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "10752,-216"
-                  }
-                },
-                {
-                  "Id": 39,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "11136,-204"
-                  }
-                },
-                {
-                  "Id": 40,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "11088,-312"
-                  }
-                },
-                {
-                  "Id": 41,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "OldSelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "10992,-144"
-                  }
-                },
-                {
-                  "Id": 42,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobSlotsTaken",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "11340,-288"
-                  }
-                },
-                {
-                  "Id": 43,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobSlotsTaken",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "11280,-156"
-                  }
-                },
-                {
-                  "Id": 44,
-                  "Type": "op.subtract",
-                  "UserData": {
-                    "Position": "11436,-204"
-                  }
-                },
-                {
-                  "Id": 45,
-                  "Type": "comment",
-                  "UserData": {
-                    "Position": "10296,-480",
-                    "Size": "1968,540",
-                    "Title": "Subtract -1 from the old job the player was on",
-                    "Color": 1,
-                    "Layer": 5
-                  }
-                },
-                {
-                  "Id": 46,
-                  "Type": "log.info",
-                  "UserData": {
-                    "Position": "11940,-132"
-                  }
-                },
-                {
-                  "Id": 47,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "OldSelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "11856,-24"
-                  }
-                },
-                {
                   "Id": 48,
                   "Type": "comment",
                   "UserData": {
@@ -4839,139 +6292,6 @@
                     "Title": "Is Selected Job Infinite?",
                     "Layer": 6,
                     "Color": 1
-                  }
-                },
-                {
-                  "Id": 49,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "OldSelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "6444,-1812"
-                  }
-                },
-                {
-                  "Id": 50,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategory",
-                    "_type": "JobResource"
-                  },
-                  "UserData": {
-                    "Position": "6600,-1812"
-                  }
-                },
-                {
-                  "Id": 51,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobCategoryInfo",
-                    "_type": "CategoryResource"
-                  },
-                  "UserData": {
-                    "Position": "6588,-1764"
-                  }
-                },
-                {
-                  "Id": 52,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "6888,-1776"
-                  }
-                },
-                {
-                  "Id": 53,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobsInCategory",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "6876,-1656"
-                  }
-                },
-                {
-                  "Id": 54,
-                  "Type": "op.equal",
-                  "UserData": {
-                    "Position": "7260,-1644"
-                  }
-                },
-                {
-                  "Id": 55,
-                  "Type": "if",
-                  "UserData": {
-                    "Position": "7212,-1752"
-                  }
-                },
-                {
-                  "Id": 56,
-                  "Type": "input.value",
-                  "Properties": {
-                    "_name": "OldSelectedJob"
-                  },
-                  "UserData": {
-                    "Position": "7116,-1584"
-                  }
-                },
-                {
-                  "Id": 57,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobSlotsTaken",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "7464,-1728"
-                  }
-                },
-                {
-                  "Id": 58,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobSlotsTaken",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "CategoryResource",
-                      "Name": "JobCategoryInfoStructMain"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "7404,-1596"
-                  }
-                },
-                {
-                  "Id": 59,
-                  "Type": "op.subtract",
-                  "UserData": {
-                    "Position": "7560,-1644"
-                  }
-                },
-                {
-                  "Id": 60,
-                  "Type": "comment",
-                  "UserData": {
-                    "Position": "6372,-1896",
-                    "Size": "2040,456",
-                    "Title": "Subtract -1 from the old job the player was on",
-                    "Color": 1,
-                    "Layer": 7
                   }
                 },
                 {
@@ -5106,17 +6426,6 @@
                   "Type": "if",
                   "UserData": {
                     "Position": "3696,120"
-                  }
-                },
-                {
-                  "Id": 75,
-                  "Type": "comment",
-                  "UserData": {
-                    "Position": "816,-492",
-                    "Size": "1200,372",
-                    "Title": "Check if job is in Job Category",
-                    "Layer": 2,
-                    "Color": 1
                   }
                 },
                 {
@@ -5322,31 +6631,6 @@
                   },
                   "UserData": {
                     "Position": "4500,264"
-                  }
-                },
-                {
-                  "Id": 115,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "TempJobSlotInfo"
-                  },
-                  "UserData": {
-                    "Position": "7368,-1464"
-                  }
-                },
-                {
-                  "Id": 116,
-                  "Type": "property",
-                  "Properties": {
-                    "_name": "JobSlotAmount",
-                    "_type": {
-                      "$type": "Nested",
-                      "DeclaringType": "JobManager",
-                      "Name": "JobSlotInfo"
-                    }
-                  },
-                  "UserData": {
-                    "Position": "7536,-1464"
                   }
                 },
                 {
@@ -5681,90 +6965,6 @@
               ],
               "Links": [
                 {
-                  "SrcId": 7,
-                  "SrcName": "_result",
-                  "DstId": 1,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 1,
-                  "SrcName": "_result",
-                  "DstId": 2,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 2,
-                  "SrcName": "_result",
-                  "DstId": 3,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 3,
-                  "SrcName": "body.value",
-                  "DstId": 4,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 4,
-                  "SrcName": "_result",
-                  "DstId": 5,
-                  "DstName": "a"
-                },
-                {
-                  "Id": 250,
-                  "Value": 1,
-                  "DstId": 5,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 12,
-                  "SrcName": "true",
-                  "DstId": 6,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 3,
-                  "SrcName": "body.value",
-                  "DstId": 6,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 5,
-                  "SrcName": "_result",
-                  "DstId": 6,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 3,
-                  "SrcName": "body.value",
-                  "DstId": 9,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 9,
-                  "SrcName": "_result",
-                  "DstId": 10,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 11,
-                  "SrcName": "_result",
-                  "DstId": 10,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 3,
-                  "SrcName": "body",
-                  "DstId": 12,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 10,
-                  "SrcName": "_result",
-                  "DstId": 12,
-                  "DstName": "condition"
-                },
-                {
                   "SrcId": 135,
                   "SrcName": "_signal",
                   "DstId": 14,
@@ -5778,64 +6978,10 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 251,
+                  "Id": 246,
                   "Value": "Fired Set Job Index Selected Job: {0}",
                   "DstId": 14,
                   "DstName": "format"
-                },
-                {
-                  "SrcId": 18,
-                  "SrcName": "_result",
-                  "DstId": 15,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 15,
-                  "SrcName": "_result",
-                  "DstId": 16,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 16,
-                  "SrcName": "_result",
-                  "DstId": 17,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 17,
-                  "SrcName": "body.value",
-                  "DstId": 19,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 19,
-                  "SrcName": "_result",
-                  "DstId": 20,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 21,
-                  "SrcName": "_result",
-                  "DstId": 20,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 17,
-                  "SrcName": "body",
-                  "DstId": 22,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 20,
-                  "SrcName": "_result",
-                  "DstId": 22,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 17,
-                  "SrcName": "body.value",
-                  "DstId": 24,
-                  "DstName": "_target"
                 },
                 {
                   "SrcId": 25,
@@ -5869,7 +7015,7 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 252,
+                  "Id": 247,
                   "Value": "MAX Players Allowed on Job:{0}",
                   "DstId": 28,
                   "DstName": "format"
@@ -5907,7 +7053,7 @@
                   "DstIndex": 1
                 },
                 {
-                  "Id": 253,
+                  "Id": 248,
                   "Value": "Current JobSlotTaken :{0} CurrentSelectedJob Max Allowed Players:{1}",
                   "DstId": 31,
                   "DstName": "format"
@@ -5917,194 +7063,6 @@
                   "SrcName": "_result",
                   "DstId": 33,
                   "DstName": "condition"
-                },
-                {
-                  "SrcId": 34,
-                  "SrcName": "_result",
-                  "DstId": 35,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 35,
-                  "SrcName": "_result",
-                  "DstId": 36,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 36,
-                  "SrcName": "_result",
-                  "DstId": 37,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 37,
-                  "SrcName": "body.value",
-                  "DstId": 38,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 38,
-                  "SrcName": "_result",
-                  "DstId": 39,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 41,
-                  "SrcName": "_result",
-                  "DstId": 39,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 37,
-                  "SrcName": "body",
-                  "DstId": 40,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 39,
-                  "SrcName": "_result",
-                  "DstId": 40,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 40,
-                  "SrcName": "true",
-                  "DstId": 42,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 37,
-                  "SrcName": "body.value",
-                  "DstId": 42,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 44,
-                  "SrcName": "_result",
-                  "DstId": 42,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 37,
-                  "SrcName": "body.value",
-                  "DstId": 43,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 43,
-                  "SrcName": "_result",
-                  "DstId": 44,
-                  "DstName": "a"
-                },
-                {
-                  "Id": 254,
-                  "Value": 1,
-                  "DstId": 44,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 42,
-                  "SrcName": "_signal",
-                  "DstId": 46,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 47,
-                  "SrcName": "_result",
-                  "DstId": 46,
-                  "DstName": "args",
-                  "DstIndex": 0
-                },
-                {
-                  "SrcId": 44,
-                  "SrcName": "_result",
-                  "DstId": 46,
-                  "DstName": "args",
-                  "DstIndex": 1
-                },
-                {
-                  "Id": 255,
-                  "Value": "Fired Set Job Index Selected Job: {0} OldJobCurrentSlotIndex: {1}",
-                  "DstId": 46,
-                  "DstName": "format"
-                },
-                {
-                  "SrcId": 49,
-                  "SrcName": "_result",
-                  "DstId": 50,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 50,
-                  "SrcName": "_result",
-                  "DstId": 51,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 51,
-                  "SrcName": "_result",
-                  "DstId": 52,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 52,
-                  "SrcName": "body.value",
-                  "DstId": 53,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 53,
-                  "SrcName": "_result",
-                  "DstId": 54,
-                  "DstName": "a"
-                },
-                {
-                  "SrcId": 56,
-                  "SrcName": "_result",
-                  "DstId": 54,
-                  "DstName": "b"
-                },
-                {
-                  "SrcId": 52,
-                  "SrcName": "body",
-                  "DstId": 55,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 54,
-                  "SrcName": "_result",
-                  "DstId": 55,
-                  "DstName": "condition"
-                },
-                {
-                  "SrcId": 52,
-                  "SrcName": "body.value",
-                  "DstId": 57,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 59,
-                  "SrcName": "_result",
-                  "DstId": 57,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 52,
-                  "SrcName": "body.value",
-                  "DstId": 58,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 116,
-                  "SrcName": "_result",
-                  "DstId": 59,
-                  "DstName": "a"
-                },
-                {
-                  "Id": 256,
-                  "Value": 1,
-                  "DstId": 59,
-                  "DstName": "b"
                 },
                 {
                   "SrcId": 128,
@@ -6127,7 +7085,7 @@
                   "DstIndex": 1
                 },
                 {
-                  "Id": 257,
+                  "Id": 249,
                   "Value": "Fired Set Job Index Selected Job: {0} OldJobCurrentSlotIndex: {1}",
                   "DstId": 61,
                   "DstName": "format"
@@ -6256,7 +7214,7 @@
                   "DstIndex": 2
                 },
                 {
-                  "Id": 258,
+                  "Id": 250,
                   "Value": "WARNING YOU ARE ALREADY THIS JOB! Player Info: {0} Old Job Command:{1} Current Job Command{2}",
                   "DstId": 81,
                   "DstName": "format"
@@ -6340,12 +7298,6 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 115,
-                  "SrcName": "_result",
-                  "DstId": 116,
-                  "DstName": "_target"
-                },
-                {
                   "SrcId": 236,
                   "SrcName": "_result",
                   "DstId": 127,
@@ -6376,7 +7328,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 259,
+                  "Id": 251,
                   "Value": 1,
                   "DstId": 130,
                   "DstName": "b"
@@ -6412,7 +7364,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 260,
+                  "Id": 252,
                   "Value": 1,
                   "DstId": 136,
                   "DstName": "b"
@@ -6438,7 +7390,7 @@
                   "DstIndex": 1
                 },
                 {
-                  "Id": 261,
+                  "Id": 253,
                   "Value": "Fired Set Job Index Selected Job: {0} OldJobCurrentSlotIndex: {1}",
                   "DstId": 139,
                   "DstName": "format"
@@ -6474,14 +7426,14 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 262,
+                  "Id": 254,
                   "Value": 1,
                   "DstId": 144,
                   "DstName": "b"
                 },
                 {
                   "SrcId": 0,
-                  "SrcName": "OldSelectedJob",
+                  "SrcName": "SelectedJob",
                   "DstId": 177,
                   "DstName": "_target"
                 },
@@ -7031,7 +7983,7 @@
                 "OnComponentStart": {
                   "__version": 9,
                   "__guid": "29da3343-0db8-4917-a11b-514c7e80ef46",
-                  "__changeId": 90,
+                  "__changeId": 93,
                   "UserData": {
                     "Title": "DarkRP Gamemode Start",
                     "ReferencedComponentTypes": [
@@ -7131,7 +8083,7 @@
                       "Id": 12,
                       "Type": "Categories/Get Job Categories",
                       "UserData": {
-                        "Position": "1632,24"
+                        "Position": "1764,72"
                       }
                     },
                     {
@@ -7142,14 +8094,14 @@
                         "_type": "CategoryResource"
                       },
                       "UserData": {
-                        "Position": "2112,120"
+                        "Position": "2244,168"
                       }
                     },
                     {
                       "Id": 15,
                       "Type": "if",
                       "UserData": {
-                        "Position": "2208,48"
+                        "Position": "2340,96"
                       }
                     },
                     {
@@ -7159,7 +8111,7 @@
                         "T": "CategoryResource"
                       },
                       "UserData": {
-                        "Position": "1896,24"
+                        "Position": "2028,72"
                       }
                     },
                     {
@@ -7170,7 +8122,7 @@
                         "_type": "CategoryResource"
                       },
                       "UserData": {
-                        "Position": "2460,168"
+                        "Position": "2592,216"
                       }
                     },
                     {
@@ -7184,34 +8136,19 @@
                         }
                       },
                       "UserData": {
-                        "Position": "2580,72"
-                      }
-                    },
-                    {
-                      "Id": 20,
-                      "Type": "property",
-                      "Properties": {
-                        "_name": "JobSlotsTaken",
-                        "_type": {
-                          "$type": "Nested",
-                          "DeclaringType": "CategoryResource",
-                          "Name": "JobCategoryInfoStructMain"
-                        }
-                      },
-                      "UserData": {
-                        "Position": "2808,96"
+                        "Position": "2712,120"
                       }
                     },
                     {
                       "Id": 22,
                       "Type": "comment",
                       "UserData": {
-                        "Position": "1596,-120",
+                        "Position": "1728,-72",
                         "Size": "1644,384",
-                        "Title": "Reset Job Values",
+                        "Title": "Not needed? Reset Job Values",
                         "Description": "When The Server Starts all Jobs categorys get their 'JobSlotTaken' to 0.",
-                        "Color": 3,
-                        "Layer": 2
+                        "Color": 1,
+                        "Layer": 1
                       }
                     },
                     {
@@ -7238,7 +8175,7 @@
                         "Position": "192,-120",
                         "Size": "1368,444",
                         "Title": "Get All Chat Commands in Project Files & Fill List",
-                        "Layer": 1,
+                        "Layer": 2,
                         "Color": 3
                       }
                     }
@@ -7323,12 +8260,6 @@
                       "DstName": "input"
                     },
                     {
-                      "SrcId": 5,
-                      "SrcName": "_signal",
-                      "DstId": 12,
-                      "DstName": "_signal"
-                    },
-                    {
                       "SrcId": 16,
                       "SrcName": "body.value",
                       "DstId": 14,
@@ -7375,24 +8306,6 @@
                       "SrcName": "_result",
                       "DstId": 19,
                       "DstName": "enumerable"
-                    },
-                    {
-                      "SrcId": 19,
-                      "SrcName": "body",
-                      "DstId": 20,
-                      "DstName": "_signal"
-                    },
-                    {
-                      "SrcId": 19,
-                      "SrcName": "body.value",
-                      "DstId": 20,
-                      "DstName": "_target"
-                    },
-                    {
-                      "Id": 30,
-                      "Value": 0,
-                      "DstId": 20,
-                      "DstName": "_value"
                     },
                     {
                       "SrcId": 26,

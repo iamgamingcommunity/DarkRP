@@ -187,15 +187,14 @@
 }
 
 <div class="job-menu">
-    @foreach (var category in JobCategories)
+    @foreach (var category in JobCategory)
     {
         // Skip empty categories
         if (category.JobCategoryInfo == null || !category.JobCategoryInfo.Any())
             continue;
 
         // Filter jobs by usergroup
-        var allowedJobs = category.JobCategoryInfo
-            .Where(jobInfo => jobInfo.JobsInCategory != null )
+        var allowedJobs = category.JobCategoryInfo.Where(jobInfo => jobInfo.JobsInCategory != null )
             .ToList();
 
         // Skip category if no allowed jobs
@@ -429,7 +428,7 @@ bool IsOpen( CategoryResource category )
   //Is This needed?
     CategoryResource ExpandedCategory;
     
-    public List<CategoryResource> JobCategories { get; set; } = new();
+    @* public List<CategoryResource>  { get; set; } = new(); *@
    @* [Property] public GameObject PlayerInfo; *@
    
     public GameObject PlayerInfo =>
@@ -687,26 +686,13 @@ bool IsOpen( CategoryResource category )
 
     protected override void OnStart()
     {
-        CategoryResource.OnCategoriesLoaded += RefreshCategories;
-        RefreshCategories();
 
-            @* JobManagerVar.JobSlots.OnChanged += e =>
-    {
-        Log.Info("SYNC CHANGED!");
-
-        foreach ( var slot in JobManagerVar.JobSlots )
-        {
-            Log.Info($"{slot.JobCommandName}: {slot.JobSlotAmount}");
-        }
-
-        StateHasChanged();
-    }; *@
     }
 
 
     void RefreshCategories()
     {
-        JobCategories = CategoryResource.All
+        JobCategory = CategoryResource.All
             .Where(c => c.IsJobCategory)
             .Where(c => c.JobCategoryInfo != null && c.JobCategoryInfo.Any())
             .ToList();
@@ -715,13 +701,6 @@ bool IsOpen( CategoryResource category )
     }
 
 
-@* void UpdateSlots(CategoryResource jobInfo)
-{
-    jobInfo.JobSlotsTaken++;
-
-    // FORCE SYNC
-    JobCategories = JobCategories.ToList();
-} *@
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
