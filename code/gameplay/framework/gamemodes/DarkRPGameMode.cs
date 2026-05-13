@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Sandbox;
 
 namespace DarkRPGamemode
@@ -12,7 +13,14 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Basic Info")] public bool DisableDefaultScoreboardUI { get; set; }	
 	[Property, Feature("Basic Info")] public bool DisableDefaultModerationSystem { get; set; }	
 	[Property, Feature("Basic Info")] public bool DisableDefaultSpawnProtectionSystem { get; set; }	
-	[Property, Feature("Basic Info")] public bool DisableRespawningAfterBecomingJob { get; set; }	
+	[Property, Feature("Basic Info"), Description("After Respawning Do You Want To Disable Spawning after to have a forced cooldown?")] public bool DisableRespawningAfterBecomingJob { get; set; }	
+
+    [Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Whenever triggered, This forces Users to Switch right after they become the job.")] public bool EnableJobAutoSwitch { get; set; }
+	[Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Can Any Users Listed in 'UserGroupList' skip any job Whitelist?")] public bool IsUserGroupListSkipWhitelists  { get; set; }
+	[Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Can Any Users Listed in 'UserGroupList' skip any job Blacklist?")] public bool IsUserGroupListSkipBlacklists  { get; set; }
+	[Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Show un joinable jobs in the Job Menu?")] public bool IsShowUnJoinableJobs  { get; set; }
+	[Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Show Whitelist/Blacklist System in Context Menu?")] public bool IsShowContextMenu  { get; set; }
+
 	[Property, Feature("Basic Info")] public JobResource DefaultDarkRPCivilianJob { get; set; }
 	[Property, Feature("Basic Info")] public int SalaryPaymentSystemCycleTime { get; set; }
 	[Property, Feature("Basic Info")] public int SalaryPaymentMultiplier { get; set; }

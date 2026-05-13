@@ -64,6 +64,11 @@ public sealed class DarkrpPlayerInfo : Component
 	}
 
 
+	[Property] public List<string> JobsPlayerIsAllowedOn {get; set;}
+
+
+
+
 
 	public struct PickupableEntityHotbarStructure
 	{

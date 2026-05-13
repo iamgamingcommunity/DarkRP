@@ -70,10 +70,6 @@ public sealed class JobManager : Component
 
         }
         SetJobSlot(SelectedJob, OldSelectedJob );
-        Log.Info($"Fired:  SetJobSlot ActionGraph");
-        
-        Log.Info($"Becoming job: {SelectedJob.Title}");
-        
     }
 
 
