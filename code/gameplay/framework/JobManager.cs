@@ -11,7 +11,9 @@ public sealed class JobManager : Component
     [Property] JobResource OldSelectedJob;
     [Property] JobResource SelectedJobForIndex;
 
+    [Property] public bool IsStopBlacklistSearch { get; set; } 
 
+    [Property] public int WhitelistSystemSwitchInt { get; set; } 
     [Property] public GameObject Player { get; set; } 
     [Sync] [Property] public NetList<JobSlotInfo> JobSlots { get; set; } = new();
     public class JobSlotInfo
@@ -27,7 +29,7 @@ public sealed class JobManager : Component
 	[Property, Group("Restrictions To Job"), Description("Enable Job Whitelist & Blacklist System? This will enable the filling of the list of Jobs the player has Whitelisted/Blacklisted.")] public bool JobWhitelistBlacklist { get; set; }	
 	// [Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public WhitelistBlacklist SelectedWhitelistBlacklist { get; set; }
 
-   [Sync] [Property] public NetList<JobWhitelistBlacklistInfo> JobWhitelistBlacklistList {get; set;}
+   [Sync] [Property] public NetList<JobWhitelistBlacklistInfo> SyncedJobList {get; set;} = new();
 
 
 
@@ -66,6 +68,8 @@ public sealed class JobManager : Component
     
     [Property, Group("Basic Job Info")]public int JobSlotAmount {get; set;}
     [Property, Group("Basic Job Info")] public bool IsHidden {get; set;}
+
+    [Property, Group("Basic Job Info")] public int Salary { get; set; }
 
 
 
@@ -260,30 +264,13 @@ public void SetJobSlotAmount( string jobName, int amount )
     
     
     
-    
-    
-    
-    public void FireDebug(int Number)
+
+
+
+
+    public void LoadJobSlots()
     {
-    Log.Info($"IsProxy: {IsProxy}");
-    Log.Info($"NetworkMode: {GameObject.NetworkMode}");
-    Log.Info($"Owner: {Network.OwnerId}");
-    Log.Info($"Number: {Number}");
-
-    // var citizen = JobSlots.FirstOrDefault(x => x.JobCommandName == "Citizen");
-
-    // if ( citizen == null )
-    // {
-    //     Log.Info("Citizen entry not found!");
-    //     return;
-    // }
-    //  Log.Info($"Citizen Slots: {citizen.JobSlotAmount}");
-    }
-
-
-    protected override void OnStart()
-    {
- foreach ( var category in CategoryResource.All )
+         foreach ( var category in CategoryResource.All )
     {
         // Skip non-job categories
         if ( !category.IsJobCategory )
@@ -323,5 +310,110 @@ public void SetJobSlotAmount( string jobName, int amount )
     }
 
     Log.Info( $"Built {JobSlots.Count} job slots." );
+    }
+    
+
+public void SyncedJobInfo()
+{
+    foreach ( var category in CategoryResource.All )
+    {
+        // Skip non-job categories
+        if ( !category.IsJobCategory )
+            continue;
+
+        // Safety
+        if ( category.JobCategoryInfo == null )
+            continue;
+
+        foreach ( var jobInfo in category.JobCategoryInfo )
+        {
+            // Safety
+            if ( jobInfo == null )
+                continue;
+
+            var job = jobInfo.JobsInCategory;
+
+            // Safety
+            if ( job == null )
+                continue;
+
+            // Prevent duplicates
+            bool alreadyExists = SyncedJobList.Any(
+                x => x.JobCommandName == job.JobCommandName
+            );
+
+            if ( alreadyExists )
+                continue;
+
+            SyncedJobList.Add( new JobWhitelistBlacklistInfo
+            {
+                // Basic Info
+                JobCommandName = job.JobCommandName,
+                JobSlotAmount = 0,
+                IsHidden = false,
+                Salary = job.Salary,
+
+                // Whitelist / Blacklist
+                IsWhitelistEnabled = false,
+                IsBlacklistEnabled = false,
+                IsWhitelistToByDefault = false,
+                IsBlacklistFromByDefault = false,
+                IsDisableAutoSwitch = false,
+
+                Whitelist = new List<JobWhitelist>(),
+                Blacklist = new List<JobBlacklist>(),
+                BannedList = new List<JobBannedList>(),
+
+                // Usergroups
+                IsForUserGroups = job.IsForUserGroups,
+                UserGroupThatCanUseJob = job.UserGroupThatCanUseJob,
+                HasTempPlayTime = job.HasTempPlayTime,
+                TempPlayTimeTotalAmount = job.TempPlayTimeTotalAmount,
+
+                // SteamID
+                IsForSteamUsers = job.IsForSteamUsers,
+                SteamIDsThatCanUseJob = job.SteamIDsThatCanUseJob
+            } );
+
+            Log.Info( $"Added Job Whitelist/Blacklist Info: {job.JobCommandName}" );
+        }
+    }
+
+    Log.Info( $"Built {SyncedJobList.Count} JobWhitelistBlacklist entries." );
 }
+    
+
+
+
+
+
+
+
+
+
+
+
+    public void FireDebug(int Number)
+    {
+    Log.Info($"IsProxy: {IsProxy}");
+    Log.Info($"NetworkMode: {GameObject.NetworkMode}");
+    Log.Info($"Owner: {Network.OwnerId}");
+    Log.Info($"Number: {Number}");
+
+    // var citizen = JobSlots.FirstOrDefault(x => x.JobCommandName == "Citizen");
+
+    // if ( citizen == null )
+    // {
+    //     Log.Info("Citizen entry not found!");
+    //     return;
+    // }
+    //  Log.Info($"Citizen Slots: {citizen.JobSlotAmount}");
+    }
+
+
+    protected override void OnStart()
+    {
+    LoadJobSlots();
+    SyncedJobInfo();
+    }
     }

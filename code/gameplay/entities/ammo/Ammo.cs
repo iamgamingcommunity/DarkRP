@@ -10,8 +10,6 @@ public partial class Ammo : BaseEntity
     [Property, Feature("Basic Ammo Info"), Group("Basic Ammo Info")] public AmmoResource AmmoResourceFile { get; set; }
 
 
-
-
      protected override void OnStart()
     {
         // var entity = GameObject.GetComponent<BaseEntity>();
