@@ -7,7 +7,7 @@
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
-    "Tags": "",
+    "Tags": "player",
     "Enabled": true,
     "NetworkMode": 2,
     "NetworkFlags": 0,
@@ -1481,129 +1481,6 @@
           "_type": "gameobject",
           "go": "186d38a3-3ce1-4389-bb0e-bf66fe42e8f3"
         },
-        "GraTest": {
-          "__version": 9,
-          "__guid": "87e2324b-d965-4962-a1cb-8dcf5b99e876",
-          "__changeId": 18,
-          "UserData": {
-            "Title": "Unarrest Logic",
-            "ReferencedComponentTypes": [
-              "DarkrpPlayerInfo",
-              "Sandbox.NameTag"
-            ]
-          },
-          "Variables": [],
-          "Nodes": [
-            {
-              "Id": 0,
-              "Type": "input"
-            },
-            {
-              "Id": 2,
-              "Type": "scene.ref",
-              "UserData": {
-                "Position": "48,132"
-              }
-            },
-            {
-              "Id": 4,
-              "Type": "scene.ref",
-              "UserData": {
-                "Position": "-24,396"
-              }
-            },
-            {
-              "Id": 5,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "DarkrpPlayerInfo"
-              },
-              "UserData": {
-                "Position": "180,360"
-              }
-            },
-            {
-              "Id": 6,
-              "Type": "property",
-              "Properties": {
-                "_name": "DisplayName",
-                "_type": "DarkrpPlayerInfo"
-              },
-              "UserData": {
-                "Position": "384,156"
-              }
-            },
-            {
-              "Id": 7,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "Sandbox.NameTag"
-              },
-              "UserData": {
-                "Position": "228,72"
-              }
-            },
-            {
-              "Id": 8,
-              "Type": "property",
-              "Properties": {
-                "_name": "DisplayName",
-                "_type": "Sandbox.NameTag"
-              },
-              "UserData": {
-                "Position": "504,0"
-              }
-            }
-          ],
-          "Links": [
-            {
-              "SrcId": 4,
-              "SrcName": "_result",
-              "DstId": 5,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 5,
-              "SrcName": "_result",
-              "DstId": 6,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 2,
-              "SrcName": "_result",
-              "DstId": 7,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 0,
-              "SrcName": "_signal",
-              "DstId": 8,
-              "DstName": "_signal"
-            },
-            {
-              "SrcId": 7,
-              "SrcName": "_result",
-              "DstId": 8,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 6,
-              "SrcName": "_result",
-              "DstId": 8,
-              "DstName": "_value"
-            }
-          ],
-          "Defaults": {
-            "$2.gameobject": {
-              "_type": "gameobject",
-              "go": "fcfa2366-07cb-4fa1-ab34-89a7e15e5c70"
-            },
-            "$4.gameobject": {
-              "_type": "gameobject",
-              "go": "ca937267-e3cd-4bf2-acb5-12d480d561de"
-            }
-          }
-        },
         "HotBarSlots": [
           {
             "HotBarSlotInfo": {
@@ -1664,6 +1541,7 @@
         "IsBot": false,
         "IsHasWeaponLicense": true,
         "IsInUIMenu": false,
+        "JobsPlayerIsAllowedOn": [],
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -1671,7 +1549,7 @@
         "OnComponentStart": {
           "__version": 9,
           "__guid": "ff60105e-6fcc-4788-8fe9-c62380410e60",
-          "__changeId": 460,
+          "__changeId": 461,
           "UserData": {
             "Title": "Start DarkRP Player",
             "Description": "Runs Logic Related to DarkRP Logic & Keybinds.",
@@ -33258,6 +33136,1536 @@
           }
         },
         "PlayerMoney": 2000,
+        "RespawnPlayer": {
+          "__version": 9,
+          "__guid": "ff261786-fd68-4613-9b07-04b2b0e50889",
+          "__changeId": 538,
+          "UserData": {
+            "Title": "Respawn Player",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [
+            {
+              "Name": "TempGameModesManager",
+              "Type": "GameModesManager"
+            },
+            {
+              "Name": "TempRespawnPointVar",
+              "Type": {
+                "$type": "Generic",
+                "ElementType": "System.Collections.Generic.List`1",
+                "TypeArguments": [
+                  "Sandbox.GameObject"
+                ]
+              }
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-1752,36"
+              }
+            },
+            {
+              "Id": 1,
+              "Type": "scene.findall",
+              "UserData": {
+                "Position": "-1092,132"
+              }
+            },
+            {
+              "Id": 51,
+              "Type": "log.info",
+              "UserData": {
+                "Position": "2424,504"
+              }
+            },
+            {
+              "Id": 56,
+              "Type": "scene.trace",
+              "UserData": {
+                "Position": "972,912"
+              }
+            },
+            {
+              "Id": 57,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "FromTo",
+                "_type": "Sandbox.SceneTrace"
+              },
+              "UserData": {
+                "Position": "1128,888"
+              }
+            },
+            {
+              "Id": 58,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldTransform",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "648,924"
+              }
+            },
+            {
+              "Id": 59,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Add",
+                "_type": "Transform"
+              },
+              "UserData": {
+                "Position": "936,1032"
+              }
+            },
+            {
+              "Id": 62,
+              "Type": "property",
+              "Properties": {
+                "_name": "Position",
+                "_type": "Transform"
+              },
+              "UserData": {
+                "Position": "1116,1056"
+              }
+            },
+            {
+              "Id": 63,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "UseHitboxes",
+                "_type": "Sandbox.SceneTrace"
+              },
+              "UserData": {
+                "Position": "1332,840"
+              }
+            },
+            {
+              "Id": 64,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "WithTag",
+                "_type": "Sandbox.SceneTrace"
+              },
+              "UserData": {
+                "Position": "1632,816"
+              }
+            },
+            {
+              "Id": 82,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Run",
+                "_type": "Sandbox.SceneTrace"
+              },
+              "UserData": {
+                "Position": "1632,720"
+              }
+            },
+            {
+              "Id": 83,
+              "Type": "property",
+              "Properties": {
+                "_name": "Hit",
+                "_type": "Sandbox.SceneTraceResult"
+              },
+              "UserData": {
+                "Position": "1812,816"
+              }
+            },
+            {
+              "Id": 84,
+              "Type": "if",
+              "UserData": {
+                "Position": "1896,720"
+              }
+            },
+            {
+              "Id": 152,
+              "Type": "log.info",
+              "UserData": {
+                "Position": "2412,828"
+              }
+            },
+            {
+              "Id": 172,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "IgnoreGameObject",
+                "_type": "Sandbox.SceneTrace"
+              },
+              "UserData": {
+                "Position": "1440,936"
+              }
+            },
+            {
+              "Id": 188,
+              "Type": "foreach",
+              "Properties": {
+                "T": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-1092,36"
+              }
+            },
+            {
+              "Id": 190,
+              "Type": "property",
+              "Properties": {
+                "_name": "RespawnPointList",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "-264,360"
+              }
+            },
+            {
+              "Id": 191,
+              "Type": "property",
+              "Properties": {
+                "_name": "Count",
+                "_type": "System.Collections.Generic.List`1"
+              },
+              "UserData": {
+                "Position": "480,984"
+              }
+            },
+            {
+              "Id": 193,
+              "Type": "list.get",
+              "Properties": {
+                "T": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "816,792"
+              }
+            },
+            {
+              "Id": 194,
+              "Type": "random.int",
+              "UserData": {
+                "Position": "480,744"
+              }
+            },
+            {
+              "Id": 196,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempRespawnPointVar"
+              },
+              "UserData": {
+                "Position": "252,900"
+              }
+            },
+            {
+              "Id": 254,
+              "Type": "forrange",
+              "UserData": {
+                "Position": "600,624"
+              }
+            },
+            {
+              "Id": 255,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempRespawnPointVar"
+              },
+              "UserData": {
+                "Position": "2676,180"
+              }
+            },
+            {
+              "Id": 257,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "RemoveAt",
+                "_type": "System.Collections.Generic.List`1"
+              },
+              "UserData": {
+                "Position": "2688,96"
+              }
+            },
+            {
+              "Id": 274,
+              "Type": "property",
+              "Properties": {
+                "_name": "Capacity",
+                "_type": "System.Collections.Generic.List`1"
+              },
+              "UserData": {
+                "Position": "408,900"
+              }
+            },
+            {
+              "Id": 277,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "ReFireRespawnPointLogic",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "2964,504"
+              }
+            },
+            {
+              "Id": 278,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsPreventRespawnDataWipe",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "-576,168"
+              }
+            },
+            {
+              "Id": 279,
+              "Type": "if",
+              "UserData": {
+                "Position": "-420,60"
+              }
+            },
+            {
+              "Id": 280,
+              "Type": "log.info",
+              "UserData": {
+                "Position": "1968,-876"
+              }
+            },
+            {
+              "Id": 281,
+              "Type": "scene.trace",
+              "UserData": {
+                "Position": "516,-468"
+              }
+            },
+            {
+              "Id": 282,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "FromTo",
+                "_type": "Sandbox.SceneTrace"
+              },
+              "UserData": {
+                "Position": "672,-492"
+              }
+            },
+            {
+              "Id": 283,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldTransform",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "192,-456"
+              }
+            },
+            {
+              "Id": 284,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Add",
+                "_type": "Transform"
+              },
+              "UserData": {
+                "Position": "480,-348"
+              }
+            },
+            {
+              "Id": 285,
+              "Type": "property",
+              "Properties": {
+                "_name": "Position",
+                "_type": "Transform"
+              },
+              "UserData": {
+                "Position": "660,-324"
+              }
+            },
+            {
+              "Id": 286,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "UseHitboxes",
+                "_type": "Sandbox.SceneTrace"
+              },
+              "UserData": {
+                "Position": "876,-540"
+              }
+            },
+            {
+              "Id": 287,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "WithTag",
+                "_type": "Sandbox.SceneTrace"
+              },
+              "UserData": {
+                "Position": "1176,-564"
+              }
+            },
+            {
+              "Id": 288,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Run",
+                "_type": "Sandbox.SceneTrace"
+              },
+              "UserData": {
+                "Position": "1176,-660"
+              }
+            },
+            {
+              "Id": 289,
+              "Type": "property",
+              "Properties": {
+                "_name": "Hit",
+                "_type": "Sandbox.SceneTraceResult"
+              },
+              "UserData": {
+                "Position": "1356,-564"
+              }
+            },
+            {
+              "Id": 290,
+              "Type": "if",
+              "UserData": {
+                "Position": "1440,-660"
+              }
+            },
+            {
+              "Id": 291,
+              "Type": "log.info",
+              "UserData": {
+                "Position": "1908,-552"
+              }
+            },
+            {
+              "Id": 292,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "IgnoreGameObject",
+                "_type": "Sandbox.SceneTrace"
+              },
+              "UserData": {
+                "Position": "984,-444"
+              }
+            },
+            {
+              "Id": 293,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.SceneTraceResult"
+              },
+              "UserData": {
+                "Position": "1524,-480"
+              }
+            },
+            {
+              "Id": 294,
+              "Type": "property",
+              "Properties": {
+                "_name": "Count",
+                "_type": "System.Collections.Generic.List`1"
+              },
+              "UserData": {
+                "Position": "24,-396"
+              }
+            },
+            {
+              "Id": 295,
+              "Type": "list.get",
+              "Properties": {
+                "T": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "360,-588"
+              }
+            },
+            {
+              "Id": 296,
+              "Type": "random.int",
+              "UserData": {
+                "Position": "24,-636"
+              }
+            },
+            {
+              "Id": 297,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempRespawnPointVar"
+              },
+              "UserData": {
+                "Position": "-204,-480"
+              }
+            },
+            {
+              "Id": 298,
+              "Type": "forrange",
+              "UserData": {
+                "Position": "144,-756"
+              }
+            },
+            {
+              "Id": 299,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempRespawnPointVar"
+              },
+              "UserData": {
+                "Position": "2208,-1044"
+              }
+            },
+            {
+              "Id": 300,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "RemoveAt",
+                "_type": "System.Collections.Generic.List`1"
+              },
+              "UserData": {
+                "Position": "2220,-1128"
+              }
+            },
+            {
+              "Id": 301,
+              "Type": "property",
+              "Properties": {
+                "_name": "Capacity",
+                "_type": "System.Collections.Generic.List`1"
+              },
+              "UserData": {
+                "Position": "-12,-528"
+              }
+            },
+            {
+              "Id": 302,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "ReFireRespawnPointLogic",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "2484,-876"
+              }
+            },
+            {
+              "Id": 313,
+              "Type": "property",
+              "Properties": {
+                "_name": "TempRespawnPointList",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "-216,828"
+              }
+            },
+            {
+              "Id": 314,
+              "Type": "property",
+              "Properties": {
+                "_name": "TempRespawnPointList",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "-240,-204"
+              }
+            },
+            {
+              "Id": 329,
+              "Type": "property",
+              "Properties": {
+                "_name": "Count",
+                "_type": "System.Collections.Generic.List`1"
+              },
+              "UserData": {
+                "Position": "204,864"
+              }
+            },
+            {
+              "Id": 332,
+              "Type": "property",
+              "Properties": {
+                "_name": "Count",
+                "_type": "System.Collections.Generic.List`1"
+              },
+              "UserData": {
+                "Position": "-12,-492"
+              }
+            },
+            {
+              "Id": 347,
+              "Type": "property",
+              "Properties": {
+                "_name": "TempRespawnPointList",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "-120,252"
+              }
+            },
+            {
+              "Id": 348,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsPreventRespawnDataWipe",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "324,276"
+              }
+            },
+            {
+              "Id": 360,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsPreventRespawnDataWipe",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "2184,-540"
+              }
+            },
+            {
+              "Id": 365,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldTransform",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "3600,840"
+              }
+            },
+            {
+              "Id": 366,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldTransform",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "3600,924"
+              }
+            },
+            {
+              "Id": 396,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "PlaySound",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "3180,840"
+              }
+            },
+            {
+              "Id": 398,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerRespawnSound",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "3120,936"
+              }
+            },
+            {
+              "Id": 399,
+              "Type": "scene.get.inscene",
+              "Properties": {
+                "T": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "-1128,276"
+              }
+            },
+            {
+              "Id": 400,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempGameModesManager"
+              },
+              "UserData": {
+                "Position": "-840,48"
+              }
+            },
+            {
+              "Id": 401,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempGameModesManager"
+              },
+              "UserData": {
+                "Position": "-552,336"
+              }
+            },
+            {
+              "Id": 402,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempGameModesManager"
+              },
+              "UserData": {
+                "Position": "-300,-288"
+              }
+            },
+            {
+              "Id": 403,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempGameModesManager"
+              },
+              "UserData": {
+                "Position": "1884,-240"
+              }
+            },
+            {
+              "Id": 404,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempGameModesManager"
+              },
+              "UserData": {
+                "Position": "2220,1128"
+              }
+            },
+            {
+              "Id": 405,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempGameModesManager"
+              },
+              "UserData": {
+                "Position": "-672,624"
+              }
+            },
+            {
+              "Id": 406,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "Player"
+              },
+              "UserData": {
+                "Position": "3468,864"
+              }
+            },
+            {
+              "Id": 407,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "Player"
+              },
+              "UserData": {
+                "Position": "2628,-540"
+              }
+            },
+            {
+              "Id": 408,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldTransform",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "2736,-564"
+              }
+            },
+            {
+              "Id": 409,
+              "Type": "property",
+              "Properties": {
+                "_name": "WorldTransform",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "2736,-480"
+              }
+            },
+            {
+              "Id": 443,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsPreventRespawnDataWipe",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "2688,840"
+              }
+            },
+            {
+              "Id": 446,
+              "Type": "property",
+              "Properties": {
+                "_name": "RespawnPointList",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "-192,648"
+              }
+            },
+            {
+              "Id": 447,
+              "Type": "property",
+              "Properties": {
+                "_name": "RespawnPointList",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "12,-300"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "Id": 430,
+              "Value": "Gamemodes",
+              "DstId": 1,
+              "DstName": "name"
+            },
+            {
+              "SrcId": 84,
+              "SrcName": "true",
+              "DstId": 51,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 58,
+              "SrcName": "_result",
+              "DstId": 51,
+              "DstName": "args",
+              "DstIndex": 0
+            },
+            {
+              "SrcId": 59,
+              "SrcName": "_result",
+              "DstId": 51,
+              "DstName": "args",
+              "DstIndex": 1
+            },
+            {
+              "SrcId": 193,
+              "SrcName": "_result",
+              "DstId": 51,
+              "DstName": "args",
+              "DstIndex": 2
+            },
+            {
+              "SrcId": 329,
+              "SrcName": "_result",
+              "DstId": 51,
+              "DstName": "args",
+              "DstIndex": 3
+            },
+            {
+              "Id": 431,
+              "Value": "SweatyDebugLogRespawnTRUE: SpawnPos:{0} SpawnEndPos:{1} Hit Object:{2} List Count:{3}",
+              "DstId": 51,
+              "DstName": "format"
+            },
+            {
+              "SrcId": 56,
+              "SrcName": "_result",
+              "DstId": 57,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 58,
+              "SrcName": "_result",
+              "DstId": 57,
+              "DstName": "from"
+            },
+            {
+              "SrcId": 62,
+              "SrcName": "_result",
+              "DstId": 57,
+              "DstName": "to"
+            },
+            {
+              "SrcId": 193,
+              "SrcName": "_result",
+              "DstId": 58,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 58,
+              "SrcName": "_result",
+              "DstId": 59,
+              "DstName": "_target"
+            },
+            {
+              "Id": 432,
+              "Value": "0,0,30",
+              "DstId": 59,
+              "DstName": "position"
+            },
+            {
+              "Id": 433,
+              "Value": true,
+              "DstId": 59,
+              "DstName": "worldSpace"
+            },
+            {
+              "SrcId": 59,
+              "SrcName": "_result",
+              "DstId": 62,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 57,
+              "SrcName": "_result",
+              "DstId": 63,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 172,
+              "SrcName": "_result",
+              "DstId": 64,
+              "DstName": "_target"
+            },
+            {
+              "Id": 434,
+              "Value": "player",
+              "DstId": 64,
+              "DstName": "tag"
+            },
+            {
+              "SrcId": 348,
+              "SrcName": "_signal",
+              "DstId": 82,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 64,
+              "SrcName": "_result",
+              "DstId": 82,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 82,
+              "SrcName": "_result",
+              "DstId": 83,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 82,
+              "SrcName": "_signal",
+              "DstId": 84,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 83,
+              "SrcName": "_result",
+              "DstId": 84,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 84,
+              "SrcName": "false",
+              "DstId": 152,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 58,
+              "SrcName": "_result",
+              "DstId": 152,
+              "DstName": "args",
+              "DstIndex": 0
+            },
+            {
+              "SrcId": 59,
+              "SrcName": "_result",
+              "DstId": 152,
+              "DstName": "args",
+              "DstIndex": 1
+            },
+            {
+              "SrcId": 193,
+              "SrcName": "_result",
+              "DstId": 152,
+              "DstName": "args",
+              "DstIndex": 2
+            },
+            {
+              "SrcId": 329,
+              "SrcName": "_result",
+              "DstId": 152,
+              "DstName": "args",
+              "DstIndex": 3
+            },
+            {
+              "Id": 435,
+              "Value": "SweatyDebugLogRespawnFALSE: SpawnPos:{0} SpawnEndPos:{1} Hit Object:{2} List Count:{3}",
+              "DstId": 152,
+              "DstName": "format"
+            },
+            {
+              "SrcId": 63,
+              "SrcName": "_result",
+              "DstId": 172,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 193,
+              "SrcName": "_result",
+              "DstId": 172,
+              "DstName": "obj"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 188,
+              "DstName": "enumerable"
+            },
+            {
+              "SrcId": 401,
+              "SrcName": "_result",
+              "DstId": 190,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 196,
+              "SrcName": "_result",
+              "DstId": 191,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 194,
+              "SrcName": "_result",
+              "DstId": 193,
+              "DstName": "index"
+            },
+            {
+              "SrcId": 446,
+              "SrcName": "_result",
+              "DstId": 193,
+              "DstName": "list"
+            },
+            {
+              "SrcId": 329,
+              "SrcName": "_result",
+              "DstId": 194,
+              "DstName": "max"
+            },
+            {
+              "SrcId": 274,
+              "SrcName": "_result",
+              "DstId": 254,
+              "DstName": "count"
+            },
+            {
+              "SrcId": 313,
+              "SrcName": "_result",
+              "DstId": 257,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 329,
+              "SrcName": "_result",
+              "DstId": 257,
+              "DstName": "index"
+            },
+            {
+              "SrcId": 313,
+              "SrcName": "_result",
+              "DstId": 274,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 51,
+              "SrcName": "_signal",
+              "DstId": 277,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 404,
+              "SrcName": "_result",
+              "DstId": 277,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 405,
+              "SrcName": "_result",
+              "DstId": 278,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 400,
+              "SrcName": "_signal",
+              "DstId": 279,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 278,
+              "SrcName": "_result",
+              "DstId": 279,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 290,
+              "SrcName": "true",
+              "DstId": 280,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 283,
+              "SrcName": "_result",
+              "DstId": 280,
+              "DstName": "args",
+              "DstIndex": 0
+            },
+            {
+              "SrcId": 284,
+              "SrcName": "_result",
+              "DstId": 280,
+              "DstName": "args",
+              "DstIndex": 1
+            },
+            {
+              "SrcId": 293,
+              "SrcName": "_result",
+              "DstId": 280,
+              "DstName": "args",
+              "DstIndex": 2
+            },
+            {
+              "SrcId": 332,
+              "SrcName": "_result",
+              "DstId": 280,
+              "DstName": "args",
+              "DstIndex": 3
+            },
+            {
+              "Id": 436,
+              "Value": "PREVENTSweatyDebugLogRespawnTRUE: SpawnPos:{0} SpawnEndPos:{1} Hit Object:{2} List Count:{3}",
+              "DstId": 280,
+              "DstName": "format"
+            },
+            {
+              "SrcId": 281,
+              "SrcName": "_result",
+              "DstId": 282,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 283,
+              "SrcName": "_result",
+              "DstId": 282,
+              "DstName": "from"
+            },
+            {
+              "SrcId": 285,
+              "SrcName": "_result",
+              "DstId": 282,
+              "DstName": "to"
+            },
+            {
+              "SrcId": 295,
+              "SrcName": "_result",
+              "DstId": 283,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 283,
+              "SrcName": "_result",
+              "DstId": 284,
+              "DstName": "_target"
+            },
+            {
+              "Id": 437,
+              "Value": "0,0,30",
+              "DstId": 284,
+              "DstName": "position"
+            },
+            {
+              "Id": 438,
+              "Value": true,
+              "DstId": 284,
+              "DstName": "worldSpace"
+            },
+            {
+              "SrcId": 284,
+              "SrcName": "_result",
+              "DstId": 285,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 282,
+              "SrcName": "_result",
+              "DstId": 286,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 292,
+              "SrcName": "_result",
+              "DstId": 287,
+              "DstName": "_target"
+            },
+            {
+              "Id": 439,
+              "Value": "player",
+              "DstId": 287,
+              "DstName": "tag"
+            },
+            {
+              "SrcId": 279,
+              "SrcName": "true",
+              "DstId": 288,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 287,
+              "SrcName": "_result",
+              "DstId": 288,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 288,
+              "SrcName": "_result",
+              "DstId": 289,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 288,
+              "SrcName": "_signal",
+              "DstId": 290,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 289,
+              "SrcName": "_result",
+              "DstId": 290,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 290,
+              "SrcName": "false",
+              "DstId": 291,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 283,
+              "SrcName": "_result",
+              "DstId": 291,
+              "DstName": "args",
+              "DstIndex": 0
+            },
+            {
+              "SrcId": 284,
+              "SrcName": "_result",
+              "DstId": 291,
+              "DstName": "args",
+              "DstIndex": 1
+            },
+            {
+              "SrcId": 295,
+              "SrcName": "_result",
+              "DstId": 291,
+              "DstName": "args",
+              "DstIndex": 2
+            },
+            {
+              "SrcId": 332,
+              "SrcName": "_result",
+              "DstId": 291,
+              "DstName": "args",
+              "DstIndex": 3
+            },
+            {
+              "Id": 440,
+              "Value": "PREVENTSweatyDebugLogRespawnFALSE: SpawnPos:{0} SpawnEndPos:{1} Hit Object:{2} List Count:{3}",
+              "DstId": 291,
+              "DstName": "format"
+            },
+            {
+              "SrcId": 286,
+              "SrcName": "_result",
+              "DstId": 292,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 295,
+              "SrcName": "_result",
+              "DstId": 292,
+              "DstName": "obj"
+            },
+            {
+              "SrcId": 288,
+              "SrcName": "_result",
+              "DstId": 293,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 297,
+              "SrcName": "_result",
+              "DstId": 294,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 296,
+              "SrcName": "_result",
+              "DstId": 295,
+              "DstName": "index"
+            },
+            {
+              "SrcId": 447,
+              "SrcName": "_result",
+              "DstId": 295,
+              "DstName": "list"
+            },
+            {
+              "SrcId": 332,
+              "SrcName": "_result",
+              "DstId": 296,
+              "DstName": "max"
+            },
+            {
+              "SrcId": 301,
+              "SrcName": "_result",
+              "DstId": 298,
+              "DstName": "count"
+            },
+            {
+              "SrcId": 314,
+              "SrcName": "_result",
+              "DstId": 300,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 332,
+              "SrcName": "_result",
+              "DstId": 300,
+              "DstName": "index"
+            },
+            {
+              "SrcId": 314,
+              "SrcName": "_result",
+              "DstId": 301,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 280,
+              "SrcName": "_signal",
+              "DstId": 302,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 403,
+              "SrcName": "_result",
+              "DstId": 302,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 405,
+              "SrcName": "_result",
+              "DstId": 313,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 402,
+              "SrcName": "_result",
+              "DstId": 314,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 446,
+              "SrcName": "_result",
+              "DstId": 329,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 447,
+              "SrcName": "_result",
+              "DstId": 332,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 405,
+              "SrcName": "_result",
+              "DstId": 347,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 190,
+              "SrcName": "_result",
+              "DstId": 347,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 279,
+              "SrcName": "false",
+              "DstId": 348,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 405,
+              "SrcName": "_result",
+              "DstId": 348,
+              "DstName": "_target"
+            },
+            {
+              "Id": 441,
+              "Value": true,
+              "DstId": 348,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 291,
+              "SrcName": "_signal",
+              "DstId": 360,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 403,
+              "SrcName": "_result",
+              "DstId": 360,
+              "DstName": "_target"
+            },
+            {
+              "Id": 442,
+              "Value": false,
+              "DstId": 360,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 396,
+              "SrcName": "_signal",
+              "DstId": 365,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 406,
+              "SrcName": "_result",
+              "DstId": 365,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 366,
+              "SrcName": "_result",
+              "DstId": 365,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 193,
+              "SrcName": "_result",
+              "DstId": 366,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 443,
+              "SrcName": "_signal",
+              "DstId": 396,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 193,
+              "SrcName": "_result",
+              "DstId": 396,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 398,
+              "SrcName": "_result",
+              "DstId": 396,
+              "DstName": "sound"
+            },
+            {
+              "SrcId": 404,
+              "SrcName": "_result",
+              "DstId": 398,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 400,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 399,
+              "SrcName": "_result",
+              "DstId": 400,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 360,
+              "SrcName": "_signal",
+              "DstId": 408,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 407,
+              "SrcName": "_result",
+              "DstId": 408,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 409,
+              "SrcName": "_result",
+              "DstId": 408,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 295,
+              "SrcName": "_result",
+              "DstId": 409,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 152,
+              "SrcName": "_signal",
+              "DstId": 443,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 404,
+              "SrcName": "_result",
+              "DstId": 443,
+              "DstName": "_target"
+            },
+            {
+              "Id": 445,
+              "Value": false,
+              "DstId": 443,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 405,
+              "SrcName": "_result",
+              "DstId": 446,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 402,
+              "SrcName": "_result",
+              "DstId": 447,
+              "DstName": "_target"
+            }
+          ]
+        },
         "SecondaryInteractionTraceHitVar": null,
         "SteamId": 0,
         "SteamName": null,
@@ -46387,7 +47795,7 @@
         ],
         "Children": [
           {
-            "__guid": "6d68aa08-5577-498c-9f4e-0a9fcb92156d",
+            "__guid": "1b45757f-20c9-4d11-8895-8803d8415a52",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - mob boss pants",
@@ -46404,7 +47812,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "dfaac97a-e235-48f3-89ef-3a21c95540de",
+                "__guid": "087ce54c-fd3f-402f-8d87-020c5c072a2d",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -46456,7 +47864,7 @@
             "Children": []
           },
           {
-            "__guid": "873f8c99-38ee-4fc0-b606-3a0f6f72f7d5",
+            "__guid": "306f3f04-0b95-47d9-8e3f-2b9572e10483",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - mob boss shoes",
@@ -46473,7 +47881,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "a14b214d-8b32-483a-a4d2-c1ac6db49e01",
+                "__guid": "c2765657-3842-4ff5-8f09-9bc6b0cd2d09",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -46525,7 +47933,7 @@
             "Children": []
           },
           {
-            "__guid": "cf6e98a8-a5e6-4f7a-861c-56c0ecc0c86b",
+            "__guid": "e6715a5f-b3c0-4dc5-b86d-51af72ed26b1",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - mob boss top",
@@ -46542,7 +47950,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "4aadad0a-1b84-423e-8b1f-e5a552359f2e",
+                "__guid": "d516b176-e966-4a7e-990d-7447062411f5",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -46594,7 +48002,7 @@
             "Children": []
           },
           {
-            "__guid": "50845dbb-30f9-4bc3-bdc2-ed22c3eda8b0",
+            "__guid": "48816b3b-4044-4a9a-ab41-8632b341cfbb",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - rubber_gloves",
@@ -46611,7 +48019,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "132b1288-880f-47eb-8fa5-e7e6e3d2237c",
+                "__guid": "e1974eaa-97c6-41ef-a1ff-42e8b65af666",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -46663,7 +48071,7 @@
             "Children": []
           },
           {
-            "__guid": "864790d9-cbeb-4d43-bee6-9d15547fb0e5",
+            "__guid": "6d334ade-6188-4811-83c3-ab11e88bbdf2",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - hair_shortscruffy_brown",
@@ -46680,7 +48088,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "d365c3a9-feb2-49d9-9036-4dc960a9ae90",
+                "__guid": "368d9056-565e-4550-b5cd-879bc8d3ff4d",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -46732,7 +48140,7 @@
             "Children": []
           },
           {
-            "__guid": "358a2d73-4923-4364-8b98-a67af301cb38",
+            "__guid": "cd35612e-b220-4d41-96cd-3af0f36274b4",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - medium_beard",
@@ -46749,7 +48157,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "5dbef317-a8b0-4abf-9e43-1bdcf732d207",
+                "__guid": "6dab4224-84c0-44d5-b1a7-6b66d4fe8f70",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,

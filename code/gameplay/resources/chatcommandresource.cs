@@ -88,7 +88,6 @@ public class ChatCommandResource : GameResource
 
 
         //Create Custom File Icon
-    [Property]
     public PrefabFile Prefab { get; set; }
 
 

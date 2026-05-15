@@ -36,87 +36,21 @@ public class JobResource : GameResource
     [Property, Group("Restrictions To Job")] public bool IsVoteNeeded { get; set; }
     [Property, Group("Restrictions To Job")] public int PlayTimeNeededToPlay { get; set; }
 
-    //Job Whitelist/Blacklist Restriction System Vars
-	[Property, Group("Restrictions To Job"), Description("Enable Job Whitelist & Blacklist System? This will enable the filling of the list of Jobs the player has Whitelisted/Blacklisted.")] public bool JobWhitelistBlacklist { get; set; }	
-	// [Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public WhitelistBlacklist SelectedWhitelistBlacklist { get; set; }
-	[Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public bool WhitelistEnabled { get; set; }
-    [Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public bool BlacklistEnabled { get; set; }
-	[Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public bool WhitelistToByDefault { get; set; }
-    [Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public bool BlacklistFromByDefault { get; set; }
-    [Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public bool DisableAutoSwitch { get; set; }
-
-    [Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public List<JobWhitelist> Whitelist { get; set; }
-    [Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public List<JobBlacklist> Blacklist { get; set; }
-    [Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public List<JobBannedList> BannedList { get; set; }
-
-    public class JobWhitelist
-    {
-        public string Type {get; set; }
-        public string Value {get; set; }
-        public string PlayerName {get; set; }
-        public string AddedByName {get; set; }
-    } 
-
-        public class JobBlacklist
-    {
-        public string Type {get; set; }
-        public string Value {get; set; }
-        public string PlayerName {get; set; }
-        public string AddedByName {get; set; }
-    } 
-
-        public class JobBannedList
-    {
-        public string Type {get; set; }
-        public string Value {get; set; }
-        public string PlayerName {get; set; }
-        public string PlayerUserGroup {get; set; }
-        public string AddedByName {get; set; }
-    } 
 
 
 
 
-    /// <summary>
-    /// <Whitelist
-    /// Type
-    /// Value
-    /// Player Name
-    /// Added By
-    /// <Blacklist
-    /// Type
-    /// Value
-    /// Player Name
-    /// Added By
-    /// <BannedList
-    /// Type
-    /// Value
-    /// Player Name
-    /// UserGroup
-    /// Added By   
-    /// </summary>
 
-
-	public enum WhitelistBlacklist 
-	{
-		Whitelist,
-		Blacklist,
-	}
-
-    
     //UserGroups
-    [Property, Group("Restrictions To Job"), HideIf ( nameof( JobWhitelistBlacklist ), true)] public bool IsForUserGroups { get; set; }
+    [Property, Group("Restrictions To Job")] public bool IsForUserGroups { get; set; }
     [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsForUserGroups ), true), Description("If True, Only the Usergroups listed will be allowed to get onto the job. If False, every usergroup can use the job.")] public List<string> UserGroupThatCanUseJob{ get; set; }
     [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsForUserGroups ), true), Description("If True, Non Assaigned user groups will have x amount of time to play on the job until the 'TempPlayTimeTotalCycleAmount' resets the time back to the total amount you want the player to be on the job.")] public bool HasTempPlayTime { get; set; }
     [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsForUserGroups ), true), Description("0 = Nothing, 60 = 1 minute. So set the total time here to be the total amount of time you want the player to play on the job.")] public int TempPlayTimeTotalAmount { get; set; }
     
     //SteamID
-    [Property, Group("Restrictions To Job"), HideIf ( nameof( JobWhitelistBlacklist ), true)] public bool IsForSteamUsers { get; set; }
+    [Property, Group("Restrictions To Job")] public bool IsForSteamUsers { get; set; }
     [Property, Group("Restrictions To Job"), ShowIf ( nameof( IsForSteamUsers ), true), Description("If True, Only the Usergroups listed will be allowed to get onto the job. If False, every usergroup can use the job.")] public List<string> SteamIDsThatCanUseJob{ get; set; }
 
-
-
-    
 
 
 
@@ -147,7 +81,6 @@ public class JobResource : GameResource
 
 
     //Create Custom File Icon
-    [Property]
     public PrefabFile Prefab { get; set; }
 
 

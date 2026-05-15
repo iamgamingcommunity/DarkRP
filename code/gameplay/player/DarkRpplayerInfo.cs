@@ -78,11 +78,11 @@ public sealed class DarkrpPlayerInfo : Component
 
 
 
-  [Button, Property, Feature("Debug"), Group("PD"), Title("Arrest Player")]
-	public void DebugTest()
-	{
-		GraTest?.Invoke();
-	}
+//   [Button, Property, Feature("Debug"), Group("PD"), Title("Arrest Player")]
+// 	public void DebugTest()
+// 	{
+// 		GraTest?.Invoke();
+// 	}
 
 
 
@@ -90,6 +90,13 @@ public sealed class DarkrpPlayerInfo : Component
 	public void DebugArrestPlayer()
 	{
 		ArrestedLogic?.Invoke();
+	}
+
+	[Button, Property, Feature("Debug"), Group("Respawn"), Title("Respawn Player")]
+	public void DebugRespawnPlayer()
+	{
+		var Player = this.GameObject;
+		RepawnPlayer(Player);
 	}
 
 
@@ -146,10 +153,13 @@ public sealed class DarkrpPlayerInfo : Component
 	public ActionGraphUnArrest UnArrestLogic { get; set; }
 
 
-	public delegate void ActionTest();
-	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Unarrest Logic")]
-	public ActionTest GraTest { get; set; }
+	// public delegate void ActionTest();
+	// [Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Unarrest Logic")]
+	// public ActionTest GraTest { get; set; }
 
+	public delegate void ActionGraphRespawnPlayer(GameObject Player);
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Respawn Player")]
+	public ActionGraphRespawnPlayer RespawnPlayer { get; set; }
 
 
 
@@ -168,11 +178,16 @@ public sealed class DarkrpPlayerInfo : Component
 
 
 
-
+	public void RepawnPlayer(GameObject Player)
+	{
+		RespawnPlayer?.Invoke(Player);
+	}
 
 	protected override void OnStart()
 	{
-			
+
+			var Player = this.GameObject;
+			RepawnPlayer(Player);
 
 		if (!IsBot)
 		{

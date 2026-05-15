@@ -32,7 +32,6 @@ public class AmmoResource : GameResource
     }
 
         //Create Custom File Icon
-    [Property]
     public PrefabFile Prefab { get; set; }
 
 

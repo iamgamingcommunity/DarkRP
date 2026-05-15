@@ -57,14 +57,14 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Vote Info")] public float DefaultRequiredYesPercentage { get; set; }
 	[Property, Feature("Vote Info")] public SoundEvent VoteStartSFX { get; set; }
 
-
+	//SFX Vars
 
 
 	//Notify SFX Vars
-	[Property, Feature("Notify SFX Info")] public SoundEvent NotifyGenericSound { get; set; }
-	[Property, Feature("Notify SFX Info")] public SoundEvent NotifyErrorSound { get; set; }
-	[Property, Feature("Notify SFX Info")] public SoundEvent NotifySuccessSound { get; set; }
-	[Property, Feature("Notify SFX Info")] public SoundEvent NotifyWarningSound { get; set; }
+	[Property, Feature("SFX Info"), Group("Notify SFX Info")] public SoundEvent NotifyGenericSound { get; set; }
+	[Property, Feature("SFX Info"), Group("Notify SFX Info")] public SoundEvent NotifyErrorSound { get; set; }
+	[Property, Feature("SFX Info"), Group("Notify SFX Info")] public SoundEvent NotifySuccessSound { get; set; }
+	[Property, Feature("SFX Info"), Group("Notify SFX Info")] public SoundEvent NotifyWarningSound { get; set; }
 
 
 	//Chat Related Vars
