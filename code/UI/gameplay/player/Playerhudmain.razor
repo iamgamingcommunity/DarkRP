@@ -218,7 +218,7 @@
                     
                     var job = jobInfo.JobsInCategory;
 
-                    var matchingSlot = JobManagerVar?.JobSlots?
+                    var matchingSlot = JobManagerVar?.SyncedJobList?
                         .FirstOrDefault(x => x.JobCommandName == job.JobCommandName);
 
                     int currentSlots = matchingSlot?.JobSlotAmount ?? 0;

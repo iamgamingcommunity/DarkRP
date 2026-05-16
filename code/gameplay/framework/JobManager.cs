@@ -13,6 +13,8 @@ public sealed class JobManager : Component
 
     [Property] public bool IsStopBlacklistSearch { get; set; } 
 
+    [Property] public bool IsPlayerBlacklisted { get; set; } 
+
     [Property] public int WhitelistSystemSwitchInt { get; set; } 
     [Property] public GameObject Player { get; set; } 
     [Sync] [Property] public NetList<JobSlotInfo> JobSlots { get; set; } = new();
@@ -26,7 +28,7 @@ public sealed class JobManager : Component
 
 
 
-	[Property, Group("Restrictions To Job"), Description("Enable Job Whitelist & Blacklist System? This will enable the filling of the list of Jobs the player has Whitelisted/Blacklisted.")] public bool JobWhitelistBlacklist { get; set; }	
+
 	// [Property, Group("Restrictions To Job"), ShowIf ( nameof( JobWhitelistBlacklist ), true)] public WhitelistBlacklist SelectedWhitelistBlacklist { get; set; }
 
    [Sync] [Property] public NetList<JobWhitelistBlacklistInfo> SyncedJobList {get; set;} = new();
@@ -63,9 +65,9 @@ public sealed class JobManager : Component
         public class JobWhitelistBlacklistInfo
     {
     
-    [Property, Group("Basic Job Info")]public string JobCommandName {get; set;}
+    [Property, Group("Basic Job Info"), Description("The Job Command name is the command you use to become the job via chat. This is also used to check for the job. So NEVER have a duplicate job command name.")]public string JobCommandName {get; set;}
 
-    
+    [Property, Group("Basic Job Info"), Description("Enable Job Whitelist & Blacklist System? This will enable the filling of the list of Jobs the player has Whitelisted/Blacklisted.")] public bool IsJobWhitelistEnabled { get; set; }	
     [Property, Group("Basic Job Info")]public int JobSlotAmount {get; set;}
     [Property, Group("Basic Job Info")] public bool IsHidden {get; set;}
 
@@ -354,6 +356,7 @@ public void SyncedJobInfo()
                 Salary = job.Salary,
 
                 // Whitelist / Blacklist
+                IsJobWhitelistEnabled = job.IsJobWhitelistEnabled,
                 IsWhitelistEnabled = false,
                 IsBlacklistEnabled = false,
                 IsWhitelistToByDefault = false,

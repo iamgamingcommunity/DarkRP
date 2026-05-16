@@ -37,9 +37,8 @@ public class JobResource : GameResource
     [Property, Group("Restrictions To Job")] public int PlayTimeNeededToPlay { get; set; }
 
 
-
-
-
+   
+    [Property, Group("Restrictions To Job"), Description("Enable Job Whitelist & Blacklist System? This will enable the filling of the list of Jobs the player has Whitelisted/Blacklisted.")] public bool IsJobWhitelistEnabled { get; set; }	
 
     //UserGroups
     [Property, Group("Restrictions To Job")] public bool IsForUserGroups { get; set; }
