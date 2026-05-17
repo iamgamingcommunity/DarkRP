@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Sandbox;
 using Sandbox.Utility;
 using PlayerData = NetworkManager.NetworkManager.PlayerData;
@@ -106,6 +107,27 @@ public sealed class DarkrpPlayerInfo : Component
 		UnArrestLogic?.Invoke();
 	}
 
+
+    [Button, Property, Feature("Debug"), Group("AdminSystem"), Title("AddToMod")]
+	public void DebugAddToRank()
+	{
+		TestAddToRank();
+
+	}
+	[Property, Feature("Debug"), Group("AdminSystem"), Title("RankToAddTo")] public string RankToAddTo {get; set;}
+
+
+	[Rpc.Owner]
+	public void TestAddToRank()
+	{
+		Usergroup = RankToAddTo;
+		Log.Info($"Usergroup: {Usergroup}, RankToAddTo{RankToAddTo}");
+	}
+
+
+
+
+
 	[Rpc.Host]
 	public void RequestBecomeJob(JobResource job)
 	{
@@ -122,7 +144,7 @@ public sealed class DarkrpPlayerInfo : Component
 
 
 	//Extra DarkRP Info
-	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info"), ] public string Usergroup { get; set; }
+	[Sync, Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info"), ] public string Usergroup { get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public bool IsBot { get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public int PlayerDoorInt{ get; set; }
 	[Property, Feature("Extra DarkRP Info"), Group("Extra DarkRP Info")] public PlayerData PlayerListData { get; set; }

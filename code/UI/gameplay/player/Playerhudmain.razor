@@ -459,7 +459,7 @@ bool IsOpen( CategoryResource category )
             return;
         } *@
     Log.Info($"Try Become Job {PlayerInfo}");
-    var matchingSlot = JobManagerVar?.JobSlots?
+    var matchingSlot = JobManagerVar?.SyncedJobList?
         .FirstOrDefault(x => x.JobCommandName == job.JobCommandName);
 
     if (matchingSlot != null)
@@ -484,8 +484,8 @@ bool IsOpen( CategoryResource category )
 
     void TryBecomeJob(GameObject PlayerInfo, JobResource OldSelectedJob)
     {
-        
-    var localPlayer = PlayerInfo;
+          Player = PlayerInfo;
+    @* var localPlayer = PlayerInfo;
 
     Log.Info($"Try Become Job {PlayerInfo}");
 
@@ -515,7 +515,7 @@ bool IsOpen( CategoryResource category )
     {
         Log.Info("Already this job!");
         return;
-    }
+    } *@
 
     JobManagerVar?.BecomeJob(PlayerInfo, OldSelectedJob);
 

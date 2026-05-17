@@ -182,7 +182,7 @@ public sealed class JobManager : Component
         {
 
         }
-        SetJobSlot(SelectedJob, OldSelectedJob );
+        SetJobSlot(SelectedJob, OldSelectedJob, PlayerInfo );
     }
 
 
@@ -202,12 +202,9 @@ public sealed class JobManager : Component
 
 
  [Rpc.Broadcast]
-    void SetJobSlot(JobResource SelectedJobForIndex, JobResource OldSelectedJob )
+    void SetJobSlot(JobResource SelectedJobForIndex, JobResource OldSelectedJob, GameObject PlayerInfo)
     {
-
-
-    
-      
+      Player = PlayerInfo;
         GraphSetJobIndex?.Invoke(SelectedJobForIndex, Player, OldSelectedJob);
     }
 
