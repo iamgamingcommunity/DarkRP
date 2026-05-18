@@ -2,6 +2,8 @@ using Sandbox;
 using System.Collections.Generic;
 using System.Data;
 using System.Dynamic;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 public sealed class JobManager : Component
 {
@@ -149,13 +151,17 @@ public sealed class JobManager : Component
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphSetJobIndex GraphSetJobIndex { get; set; }
 
+    public delegate void ActionGraphSetJobClothingRespawn(JobResource SelectedJob, GameObject PlayerInfo, GameObject TempGameModeVar);
+    [Property, Feature("Player Hud Info")]
+	public ActionGraphSetJobClothingRespawn SetJobClothingRespawn { get; set; }
 
 
 
 
-
-
-
+    public void JobClothingRespawn(JobResource SelectedJob, GameObject PlayerInfo, GameObject TempGameModeVar)
+    {
+        SetJobClothingRespawn?.Invoke(SelectedJob, PlayerInfo, TempGameModeVar);
+    }
 
 
 

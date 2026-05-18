@@ -8,14 +8,15 @@ public partial class DarkRPGamemode : GameModeBase
 {
 	//DarkRP Basic Info
 	// Maybe put this on the Respawn Component? [Property, Feature("DarkRP Gamemode Info")] public float SpawnProtection { get; set; }
-	[Property, Feature("Basic Info")] public bool DisableDefaultF2MenuUI { get; set; }
-	[Property, Feature("Basic Info")] public bool DisableDefaultF4MenuUI { get; set; }	
-	[Property, Feature("Basic Info")] public bool DisableDefaultScoreboardUI { get; set; }	
-	[Property, Feature("Basic Info")] public bool DisableDefaultModerationSystem { get; set; }	
-	[Property, Feature("Basic Info")] public bool DisableDefaultSpawnProtectionSystem { get; set; }	
-	[Property, Feature("Basic Info"), Description("After Respawning Do You Want To Disable Spawning after to have a forced cooldown?")] public bool DisableRespawningAfterBecomingJob { get; set; }	
+	[Property, Feature("Basic Info"), Group("Disable Default Settings"), Description("Disable Default F2MenuUI")] public bool IsDisableDefaultF2MenuUI { get; set; }
+	[Property, Feature("Basic Info"), Group("Disable Default Settings"), Description("Disable Default F4MenuUI")] public bool IsDisableDefaultF4MenuUI { get; set; }	
+	[Property, Feature("Basic Info"), Group("Disable Default Settings"), Description("Disable Default ScoreboardUI")] public bool IsDisableDefaultScoreboardUI { get; set; }	
+	[Property, Feature("Basic Info"), Group("Disable Default Settings"), Description("Disable Default Moderation System")] public bool IsDisableDefaultModerationSystem { get; set; }	
+	[Property, Feature("Basic Info"), Group("Disable Default Settings"), Description("Disable Default Spawn Protection?")] public bool IsDisableDefaultSpawnProtectionSystem { get; set; }	
+	[Property, Feature("Basic Info"), Group("Disable Default Settings"), Description("After Respawning Do You Want To Disable Spawning after to have a forced cooldown?")] public bool IsDisableRespawningAfterBecomingJob { get; set; }	
+	[Property, Feature("Basic Info"), Group("Disable Default Settings"), Description("Disable Jobs from changing the base S&Box Player Clothing when they switch jobs.")] public bool IsDisableJobClothing { get; set; }	
 
-    [Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Whenever triggered, This forces Users to Switch right after they become the job.")] public bool EnableJobAutoSwitch { get; set; }
+    [Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Whenever triggered, This forces Users to Switch right after they become the job.")] public bool IsEnableJobAutoSwitch { get; set; }
 	[Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Can Any Users Listed in 'UserGroupList' skip any job Whitelist?")] public bool IsUserGroupListSkipWhitelists  { get; set; }
 	[Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Can Any Users Listed in 'UserGroupList' skip any job Blacklist?")] public bool IsUserGroupListSkipBlacklists  { get; set; }
 	[Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Show un joinable jobs in the Job Menu?")] public bool IsShowUnJoinableJobs  { get; set; }
