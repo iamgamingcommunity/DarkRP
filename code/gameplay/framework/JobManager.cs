@@ -18,6 +18,16 @@ public sealed class JobManager : Component
     [Property] public bool IsPlayerBlacklisted { get; set; } 
 
     [Property] public int WhitelistSystemSwitchInt { get; set; } 
+
+
+    [Property] public Material SkinMaterialMaleWhite { get; set; } 
+    [Property] public Material SkinMaterialMaleDark { get; set; } 
+
+    [Property] public Material SkinMaterialFemaleWhite { get; set; } 
+    [Property] public Material SkinMaterialFemaleDark { get; set; } 
+
+
+
     [Property] public GameObject Player { get; set; } 
     [Sync] [Property] public NetList<JobSlotInfo> JobSlots { get; set; } = new();
     public class JobSlotInfo

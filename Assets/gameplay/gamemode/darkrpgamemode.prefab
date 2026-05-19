@@ -2977,7 +2977,7 @@
             "GraphBecomeJob": {
               "__version": 9,
               "__guid": "c0e99cbd-0874-400f-9eb6-033d8381666d",
-              "__changeId": 2282,
+              "__changeId": 2283,
               "UserData": {
                 "Title": "Graph Become Job Logic",
                 "ReferencedComponentTypes": [
@@ -17221,7 +17221,7 @@
             "GraphSetJobIndex": {
               "__version": 9,
               "__guid": "75169efb-daf4-4c95-b721-32b8899e3571",
-              "__changeId": 756,
+              "__changeId": 757,
               "UserData": {
                 "Title": "Graph Set Job Index",
                 "ReferencedComponentTypes": [
@@ -25402,13 +25402,15 @@
             "SetJobClothingRespawn": {
               "__version": 9,
               "__guid": "cb2a293a-e89b-4942-8b0f-9c7d1a1d9426",
-              "__changeId": 364,
+              "__changeId": 839,
               "UserData": {
                 "Title": "Set Job Clothing Respawn",
                 "ReferencedComponentTypes": [
                   "DarkrpPlayerInfo",
                   "DarkRPGamemode.DarkRPGamemode",
-                  "Sandbox.Dresser"
+                  "Sandbox.Dresser",
+                  "Sandbox.SkinnedModelRenderer",
+                  "JobManager"
                 ]
               },
               "Variables": [
@@ -25437,7 +25439,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "2772,-480"
+                    "Position": "2700,-804"
                   }
                 },
                 {
@@ -25447,7 +25449,7 @@
                     "T": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "2736,-504"
+                    "Position": "2664,-828"
                   }
                 },
                 {
@@ -25459,14 +25461,14 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "2760,-588"
+                    "Position": "2688,-912"
                   }
                 },
                 {
                   "Id": 4,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "2712,-696",
+                    "Position": "2640,-1020",
                     "Size": "300,300",
                     "Title": "Respawn Player Logic",
                     "Color": 3,
@@ -25481,21 +25483,21 @@
                     "_type": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "1824,192"
+                    "Position": "1836,192"
                   }
                 },
                 {
                   "Id": 6,
                   "Type": "op.equal",
                   "UserData": {
-                    "Position": "2028,192"
+                    "Position": "2040,192"
                   }
                 },
                 {
                   "Id": 7,
                   "Type": "if",
                   "UserData": {
-                    "Position": "2004,120"
+                    "Position": "2016,120"
                   }
                 },
                 {
@@ -25505,7 +25507,7 @@
                     "_var": "TempGameModeVar"
                   },
                   "UserData": {
-                    "Position": "216,108"
+                    "Position": "228,108"
                   }
                 },
                 {
@@ -25515,7 +25517,7 @@
                     "T": "DarkRPGamemode.DarkRPGamemode"
                   },
                   "UserData": {
-                    "Position": "396,108"
+                    "Position": "408,108"
                   }
                 },
                 {
@@ -25526,14 +25528,14 @@
                     "_type": "DarkRPGamemode.DarkRPGamemode"
                   },
                   "UserData": {
-                    "Position": "696,108"
+                    "Position": "708,108"
                   }
                 },
                 {
                   "Id": 11,
                   "Type": "if",
                   "UserData": {
-                    "Position": "816,24"
+                    "Position": "828,24"
                   }
                 },
                 {
@@ -25543,7 +25545,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "1464,192"
+                    "Position": "1476,192"
                   }
                 },
                 {
@@ -25553,7 +25555,7 @@
                     "T": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "1584,192"
+                    "Position": "1596,192"
                   }
                 },
                 {
@@ -25563,7 +25565,7 @@
                     "_name": "SelectedJob"
                   },
                   "UserData": {
-                    "Position": "1140,168"
+                    "Position": "1152,168"
                   }
                 },
                 {
@@ -25574,14 +25576,14 @@
                     "_type": "JobResource"
                   },
                   "UserData": {
-                    "Position": "1140,144"
+                    "Position": "1152,144"
                   }
                 },
                 {
                   "Id": 16,
                   "Type": "if",
                   "UserData": {
-                    "Position": "1284,72"
+                    "Position": "1296,72"
                   }
                 },
                 {
@@ -25592,7 +25594,7 @@
                     "_type": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "2316,-84"
+                    "Position": "2172,-408"
                   }
                 },
                 {
@@ -25602,7 +25604,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "2184,-12"
+                    "Position": "2088,-336"
                   }
                 },
                 {
@@ -25612,7 +25614,7 @@
                     "T": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "2316,-12"
+                    "Position": "2196,-336"
                   }
                 },
                 {
@@ -25622,7 +25624,7 @@
                     "_name": "SelectedJob"
                   },
                   "UserData": {
-                    "Position": "2916,24"
+                    "Position": "2856,-300"
                   }
                 },
                 {
@@ -25633,7 +25635,7 @@
                     "_type": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "3168,0"
+                    "Position": "3108,-324"
                   }
                 },
                 {
@@ -25645,7 +25647,7 @@
                     "_type": "System.Collections.Generic.List`1"
                   },
                   "UserData": {
-                    "Position": "3216,-72"
+                    "Position": "3156,-396"
                   }
                 },
                 {
@@ -25656,7 +25658,7 @@
                     "_type": "JobResource"
                   },
                   "UserData": {
-                    "Position": "2892,0"
+                    "Position": "2832,-324"
                   }
                 },
                 {
@@ -25670,7 +25672,7 @@
                     }
                   },
                   "UserData": {
-                    "Position": "2928,-96"
+                    "Position": "2868,-420"
                   }
                 },
                 {
@@ -25681,28 +25683,28 @@
                     "_type": "System.Collections.Generic.List`1"
                   },
                   "UserData": {
-                    "Position": "1896,-48"
+                    "Position": "1836,-372"
                   }
                 },
                 {
                   "Id": 26,
                   "Type": "op.equal",
                   "UserData": {
-                    "Position": "2088,-48"
+                    "Position": "2028,-372"
                   }
                 },
                 {
                   "Id": 27,
                   "Type": "if",
                   "UserData": {
-                    "Position": "2040,-132"
+                    "Position": "1980,-456"
                   }
                 },
                 {
                   "Id": 28,
                   "Type": "log.error",
                   "UserData": {
-                    "Position": "2412,-300"
+                    "Position": "2352,-624"
                   }
                 },
                 {
@@ -25712,7 +25714,7 @@
                     "_name": "SelectedJob"
                   },
                   "UserData": {
-                    "Position": "2412,-204"
+                    "Position": "2352,-528"
                   }
                 },
                 {
@@ -25722,7 +25724,7 @@
                     "_name": "SelectedJob"
                   },
                   "UserData": {
-                    "Position": "1776,12"
+                    "Position": "1716,-312"
                   }
                 },
                 {
@@ -25733,7 +25735,7 @@
                     "_type": "JobResource"
                   },
                   "UserData": {
-                    "Position": "1752,-12"
+                    "Position": "1692,-336"
                   }
                 },
                 {
@@ -25743,7 +25745,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "3312,36"
+                    "Position": "3420,-372"
                   }
                 },
                 {
@@ -25753,7 +25755,7 @@
                     "T": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "3432,36"
+                    "Position": "3540,-372"
                   }
                 },
                 {
@@ -25765,17 +25767,17 @@
                     "_type": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "3336,-96"
+                    "Position": "3564,-420"
                   }
                 },
                 {
                   "Id": 36,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "1740,-360",
-                    "Size": "1956,432",
+                    "Position": "1680,-684",
+                    "Size": "2124,432",
                     "Title": "Check Selected Job Clothing List, Set Player Dresser To Manual, and clear/add the selected job clothing",
-                    "Layer": 1,
+                    "Layer": 3,
                     "Color": 3
                   }
                 },
@@ -25787,21 +25789,21 @@
                     "_type": "System.Collections.Generic.List`1"
                   },
                   "UserData": {
-                    "Position": "2400,600"
+                    "Position": "2220,1596"
                   }
                 },
                 {
                   "Id": 38,
                   "Type": "op.equal",
                   "UserData": {
-                    "Position": "2592,600"
+                    "Position": "2412,1596"
                   }
                 },
                 {
                   "Id": 39,
                   "Type": "if",
                   "UserData": {
-                    "Position": "2532,516"
+                    "Position": "2352,1512"
                   }
                 },
                 {
@@ -25811,7 +25813,7 @@
                     "_name": "SelectedJob"
                   },
                   "UserData": {
-                    "Position": "2280,660"
+                    "Position": "2100,1656"
                   }
                 },
                 {
@@ -25822,14 +25824,14 @@
                     "_type": "JobResource"
                   },
                   "UserData": {
-                    "Position": "2256,636"
+                    "Position": "2076,1632"
                   }
                 },
                 {
                   "Id": 42,
                   "Type": "log.error",
                   "UserData": {
-                    "Position": "2844,288"
+                    "Position": "2664,1284"
                   }
                 },
                 {
@@ -25839,7 +25841,7 @@
                     "_name": "SelectedJob"
                   },
                   "UserData": {
-                    "Position": "2844,384"
+                    "Position": "2664,1380"
                   }
                 },
                 {
@@ -25849,7 +25851,7 @@
                     "_name": "SelectedJob"
                   },
                   "UserData": {
-                    "Position": "3024,684"
+                    "Position": "2844,1680"
                   }
                 },
                 {
@@ -25860,7 +25862,7 @@
                     "_type": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "3276,660"
+                    "Position": "3096,1656"
                   }
                 },
                 {
@@ -25872,7 +25874,7 @@
                     "_type": "System.Collections.Generic.List`1"
                   },
                   "UserData": {
-                    "Position": "3324,588"
+                    "Position": "3144,1584"
                   }
                 },
                 {
@@ -25883,7 +25885,7 @@
                     "_type": "JobResource"
                   },
                   "UserData": {
-                    "Position": "3000,660"
+                    "Position": "2820,1656"
                   }
                 },
                 {
@@ -25897,7 +25899,7 @@
                     }
                   },
                   "UserData": {
-                    "Position": "3036,564"
+                    "Position": "2856,1560"
                   }
                 },
                 {
@@ -25907,7 +25909,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "3420,696"
+                    "Position": "3240,1692"
                   }
                 },
                 {
@@ -25917,7 +25919,7 @@
                     "T": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "3540,696"
+                    "Position": "3360,1692"
                   }
                 },
                 {
@@ -25929,36 +25931,36 @@
                     "_type": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "3540,588"
+                    "Position": "3360,1584"
                   }
                 },
                 {
                   "Id": 53,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "2172,204",
+                    "Position": "1992,1200",
                     "Size": "1668,528",
                     "Title": "Check if Job Clothing List is Empty/Null, Clear List/Add Selected Job Clothing onto Player.",
                     "Color": 3,
-                    "Layer": 1
+                    "Layer": 5
                   }
                 },
                 {
                   "Id": 54,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "1116,-120",
+                    "Position": "1128,-120",
                     "Size": "396,360",
                     "Title": "Check if Job Clothing is Disabled.",
                     "Color": 3,
-                    "Layer": 1
+                    "Layer": 2
                   }
                 },
                 {
                   "Id": 55,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "600,-96",
+                    "Position": "612,-96",
                     "Size": "396,360",
                     "Title": "Check if ALL Job Clothing is Disabled.",
                     "Color": 3,
@@ -25969,8 +25971,8 @@
                   "Id": 56,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "156,-1080",
-                    "Size": "4272,1920",
+                    "Position": "168,-1080",
+                    "Size": "5316,2520",
                     "Title": "Add Job Clothing To Player & Respawn Player Logic",
                     "Color": 3,
                     "Layer": 4
@@ -25983,7 +25985,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "828,-300"
+                    "Position": "840,-300"
                   }
                 },
                 {
@@ -25993,7 +25995,7 @@
                     "T": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "816,-324"
+                    "Position": "828,-324"
                   }
                 },
                 {
@@ -26005,14 +26007,14 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "816,-408"
+                    "Position": "828,-408"
                   }
                 },
                 {
                   "Id": 60,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "768,-516",
+                    "Position": "780,-516",
                     "Size": "300,300",
                     "Title": "Respawn Player Logic",
                     "Color": 3,
@@ -26026,7 +26028,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "1344,-276"
+                    "Position": "1356,-276"
                   }
                 },
                 {
@@ -26036,7 +26038,7 @@
                     "T": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "1332,-300"
+                    "Position": "1344,-300"
                   }
                 },
                 {
@@ -26048,14 +26050,14 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "1332,-384"
+                    "Position": "1344,-384"
                   }
                 },
                 {
                   "Id": 64,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "1284,-492",
+                    "Position": "1296,-492",
                     "Size": "300,300",
                     "Title": "Respawn Player Logic",
                     "Color": 3,
@@ -26066,11 +26068,11 @@
                   "Id": 65,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "1476,60",
+                    "Position": "1488,60",
                     "Size": "696,300",
                     "Title": "Check If Player Dresser Is not on Manual Already",
                     "Color": 3,
-                    "Layer": 2
+                    "Layer": 1
                   }
                 },
                 {
@@ -26080,7 +26082,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "3972,12"
+                    "Position": "4980,-312"
                   }
                 },
                 {
@@ -26090,7 +26092,7 @@
                     "T": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "3960,-12"
+                    "Position": "4944,-336"
                   }
                 },
                 {
@@ -26102,15 +26104,15 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "3960,-96"
+                    "Position": "4968,-420"
                   }
                 },
                 {
                   "Id": 69,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "3912,-204",
-                    "Size": "300,300",
+                    "Position": "4920,-540",
+                    "Size": "300,312",
                     "Title": "Respawn Player Logic",
                     "Color": 3,
                     "Layer": 3
@@ -26123,7 +26125,7 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "4056,672"
+                    "Position": "3852,1656"
                   }
                 },
                 {
@@ -26133,7 +26135,7 @@
                     "T": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "4044,648"
+                    "Position": "3816,1632"
                   }
                 },
                 {
@@ -26145,18 +26147,18 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "4044,564"
+                    "Position": "3840,1548"
                   }
                 },
                 {
                   "Id": 73,
                   "Type": "comment",
                   "UserData": {
-                    "Position": "3996,456",
+                    "Position": "3792,1440",
                     "Size": "300,300",
                     "Title": "Respawn Player Logic",
                     "Color": 3,
-                    "Layer": 3
+                    "Layer": 6
                   }
                 },
                 {
@@ -26166,7 +26168,7 @@
                     "_var": "TempGameModeVar"
                   },
                   "UserData": {
-                    "Position": "276,12"
+                    "Position": "288,12"
                   }
                 },
                 {
@@ -26177,7 +26179,7 @@
                     "_type": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "2772,636"
+                    "Position": "2592,1632"
                   }
                 },
                 {
@@ -26189,7 +26191,7 @@
                     "_type": "System.Collections.Generic.List`1"
                   },
                   "UserData": {
-                    "Position": "2820,564"
+                    "Position": "2640,1560"
                   }
                 },
                 {
@@ -26200,7 +26202,7 @@
                     "_type": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "2604,24"
+                    "Position": "2652,-444"
                   }
                 },
                 {
@@ -26212,7 +26214,7 @@
                     "_type": "System.Collections.Generic.List`1"
                   },
                   "UserData": {
-                    "Position": "2748,-180"
+                    "Position": "2688,-504"
                   }
                 },
                 {
@@ -26223,7 +26225,7 @@
                     "_type": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "3456,84"
+                    "Position": "3912,-264"
                   }
                 },
                 {
@@ -26234,7 +26236,7 @@
                     "_type": "Sandbox.Dresser"
                   },
                   "UserData": {
-                    "Position": "2340,60"
+                    "Position": "2484,72"
                   }
                 },
                 {
@@ -26244,14 +26246,14 @@
                     "_name": "Clothing"
                   },
                   "UserData": {
-                    "Position": "2892,144"
+                    "Position": "4092,864"
                   }
                 },
                 {
                   "Id": 152,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "2868,-312"
+                    "Position": "2808,-636"
                   }
                 },
                 {
@@ -26262,7 +26264,7 @@
                     "_type": "Sandbox.ModelRenderer"
                   },
                   "UserData": {
-                    "Position": "2592,132"
+                    "Position": "2340,180"
                   }
                 },
                 {
@@ -26272,7 +26274,7 @@
                     "_var": "TempMaterialGroup"
                   },
                   "UserData": {
-                    "Position": "2544,-84"
+                    "Position": "2376,132"
                   }
                 },
                 {
@@ -26282,7 +26284,7 @@
                     "_var": "TempMaterialGroup"
                   },
                   "UserData": {
-                    "Position": "3516,-24"
+                    "Position": "4044,-324"
                   }
                 },
                 {
@@ -26293,14 +26295,14 @@
                     "_type": "Sandbox.ModelRenderer"
                   },
                   "UserData": {
-                    "Position": "3528,-96"
+                    "Position": "4068,-420"
                   }
                 },
                 {
                   "Id": 188,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "3852,-228"
+                    "Position": "4776,-420"
                   }
                 },
                 {
@@ -26312,7 +26314,7 @@
                     "_type": "Sandbox.ModelRenderer"
                   },
                   "UserData": {
-                    "Position": "3708,-24"
+                    "Position": "4356,-420"
                   }
                 },
                 {
@@ -26324,7 +26326,7 @@
                     "_type": "Sandbox.ModelRenderer"
                   },
                   "UserData": {
-                    "Position": "2688,60"
+                    "Position": "2616,228"
                   }
                 },
                 {
@@ -26334,7 +26336,7 @@
                     "_var": "TempBodyGroup"
                   },
                   "UserData": {
-                    "Position": "2976,84"
+                    "Position": "2640,300"
                   }
                 },
                 {
@@ -26344,7 +26346,7 @@
                     "_var": "TempBodyGroup"
                   },
                   "UserData": {
-                    "Position": "3492,60"
+                    "Position": "3888,-156"
                   }
                 },
                 {
@@ -26355,7 +26357,7 @@
                     "_type": "Sandbox.Clothing"
                   },
                   "UserData": {
-                    "Position": "3168,156"
+                    "Position": "4308,960"
                   }
                 },
                 {
@@ -26366,14 +26368,14 @@
                     "_type": "Sandbox.Clothing"
                   },
                   "UserData": {
-                    "Position": "3372,120"
+                    "Position": "4644,864"
                   }
                 },
                 {
                   "Id": 338,
                   "Type": "op.equal",
                   "UserData": {
-                    "Position": "3888,168"
+                    "Position": "4920,660"
                   }
                 },
                 {
@@ -26384,7 +26386,7 @@
                     "_type": "Sandbox.Clothing"
                   },
                   "UserData": {
-                    "Position": "3372,156"
+                    "Position": "4260,768"
                   }
                 },
                 {
@@ -26394,69 +26396,124 @@
                     "_name": "PlayerInfo"
                   },
                   "UserData": {
-                    "Position": "2184,180"
+                    "Position": "2196,180"
                   }
                 },
                 {
-                  "Id": 345,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "TryGet",
-                    "_type": "Sandbox.IComponentLister",
-                    "T": "Sandbox.SkinnedModelRenderer"
-                  },
+                  "Id": 427,
+                  "Type": "if",
                   "UserData": {
-                    "Position": "2136,864"
+                    "Position": "5184,660"
                   }
                 },
                 {
-                  "Id": 349,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "GetAll",
-                    "_type": "Sandbox.IComponentLister",
-                    "T": "Sandbox.SkinnedModelRenderer"
-                  },
+                  "Id": 442,
+                  "Type": "log.info",
                   "UserData": {
-                    "Position": "2664,996"
+                    "Position": "4608,672"
                   }
                 },
                 {
-                  "Id": 353,
-                  "Type": "foreach",
-                  "Properties": {
-                    "T": "Sandbox.SkinnedModelRenderer"
-                  },
-                  "UserData": {
-                    "Position": "2784,888"
-                  }
-                },
-                {
-                  "Id": 359,
+                  "Id": 477,
                   "Type": "property",
                   "Properties": {
-                    "_name": "GameObject",
-                    "_type": "Sandbox.Component"
+                    "_name": "Clothing"
                   },
                   "UserData": {
-                    "Position": "3012,1152"
+                    "Position": "4200,684"
                   }
                 },
                 {
-                  "Id": 360,
+                  "Id": 497,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Category",
+                    "_type": "Sandbox.Clothing"
+                  },
+                  "UserData": {
+                    "Position": "4224,708"
+                  }
+                },
+                {
+                  "Id": 521,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Title",
+                    "_type": "Sandbox.Clothing"
+                  },
+                  "UserData": {
+                    "Position": "4284,744"
+                  }
+                },
+                {
+                  "Id": 612,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "HumanAltFemaleModel",
+                    "_type": "Sandbox.Clothing"
+                  },
+                  "UserData": {
+                    "Position": "4620,1512"
+                  }
+                },
+                {
+                  "Id": 613,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "4908,1512"
+                  }
+                },
+                {
+                  "Id": 616,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "4884,1428"
+                  }
+                },
+                {
+                  "Id": 618,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerInfo"
+                  },
+                  "UserData": {
+                    "Position": "5460,816"
+                  }
+                },
+                {
+                  "Id": 620,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Children",
+                    "_type": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "5424,792"
+                  }
+                },
+                {
+                  "Id": 621,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "5484,684"
+                  }
+                },
+                {
+                  "Id": 622,
                   "Type": "property",
                   "Properties": {
                     "_name": "Tags",
                     "_type": "Sandbox.GameObject"
                   },
                   "UserData": {
-                    "Position": "3024,1116"
+                    "Position": "5772,876"
                   }
                 },
                 {
-                  "Id": 361,
+                  "Id": 623,
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
@@ -26464,14 +26521,343 @@
                     "_type": "Sandbox.GameTags"
                   },
                   "UserData": {
-                    "Position": "3060,984"
+                    "Position": "5784,780"
                   }
                 },
                 {
-                  "Id": 372,
+                  "Id": 632,
                   "Type": "if",
                   "UserData": {
-                    "Position": "3084,912"
+                    "Position": "5844,708"
+                  }
+                },
+                {
+                  "Id": 635,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.SkinnedModelRenderer"
+                  },
+                  "UserData": {
+                    "Position": "5796,924"
+                  }
+                },
+                {
+                  "Id": 637,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "GetMaterial",
+                    "_type": "Sandbox.ModelRenderer"
+                  },
+                  "UserData": {
+                    "Position": "6696,756"
+                  }
+                },
+                {
+                  "Id": 646,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "TempMaterialGroup"
+                  },
+                  "UserData": {
+                    "Position": "6276,1500"
+                  }
+                },
+                {
+                  "Id": 647,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "6240,804"
+                  }
+                },
+                {
+                  "Id": 657,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "6612,1464"
+                  }
+                },
+                {
+                  "Id": 668,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "6540,1392"
+                  }
+                },
+                {
+                  "Id": 669,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "6156,732"
+                  }
+                },
+                {
+                  "Id": 684,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "SetMaterial",
+                    "_type": "Sandbox.ModelRenderer"
+                  },
+                  "UserData": {
+                    "Position": "7596,756"
+                  }
+                },
+                {
+                  "Id": 690,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "7080,756"
+                  }
+                },
+                {
+                  "Id": 721,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "GetMaterial",
+                    "_type": "Sandbox.ModelRenderer"
+                  },
+                  "UserData": {
+                    "Position": "7656,1368"
+                  }
+                },
+                {
+                  "Id": 722,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "SetMaterial",
+                    "_type": "Sandbox.ModelRenderer"
+                  },
+                  "UserData": {
+                    "Position": "8280,1380"
+                  }
+                },
+                {
+                  "Id": 723,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "8964,1380"
+                  }
+                },
+                {
+                  "Id": 729,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "8100,1380"
+                  }
+                },
+                {
+                  "Id": 771,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "GetMaterial",
+                    "_type": "Sandbox.ModelRenderer"
+                  },
+                  "UserData": {
+                    "Position": "8556,1380"
+                  }
+                },
+                {
+                  "Id": 807,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "_target"
+                  },
+                  "UserData": {
+                    "Position": "8292,1536"
+                  }
+                },
+                {
+                  "Id": 808,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "8280,1512"
+                  }
+                },
+                {
+                  "Id": 809,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "SkinMaterialMaleWhite",
+                    "_type": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "8280,1488"
+                  }
+                },
+                {
+                  "Id": 869,
+                  "Type": "op.or",
+                  "UserData": {
+                    "Position": "4992,672"
+                  }
+                },
+                {
+                  "Id": 870,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "4920,708"
+                  }
+                },
+                {
+                  "Id": 877,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "4920,768"
+                  }
+                },
+                {
+                  "Id": 880,
+                  "Type": "op.or",
+                  "UserData": {
+                    "Position": "5004,756"
+                  }
+                },
+                {
+                  "Id": 881,
+                  "Type": "op.or",
+                  "UserData": {
+                    "Position": "5064,732"
+                  }
+                },
+                {
+                  "Id": 883,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "4920,816"
+                  }
+                },
+                {
+                  "Id": 887,
+                  "Type": "op.or",
+                  "UserData": {
+                    "Position": "5196,744"
+                  }
+                },
+                {
+                  "Id": 888,
+                  "Type": "op.or",
+                  "UserData": {
+                    "Position": "5052,804"
+                  }
+                },
+                {
+                  "Id": 889,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "4932,888"
+                  }
+                },
+                {
+                  "Id": 893,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "4932,936"
+                  }
+                },
+                {
+                  "Id": 897,
+                  "Type": "op.or",
+                  "UserData": {
+                    "Position": "5148,792"
+                  }
+                },
+                {
+                  "Id": 898,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "4932,1008"
+                  }
+                },
+                {
+                  "Id": 902,
+                  "Type": "op.or",
+                  "UserData": {
+                    "Position": "5076,888"
+                  }
+                },
+                {
+                  "Id": 903,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "4932,1068"
+                  }
+                },
+                {
+                  "Id": 907,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Model",
+                    "_type": "Sandbox.ModelRenderer"
+                  },
+                  "UserData": {
+                    "Position": "6744,1320"
+                  }
+                },
+                {
+                  "Id": 929,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Materials",
+                    "_type": "Sandbox.Model"
+                  },
+                  "UserData": {
+                    "Position": "6756,1296"
+                  }
+                },
+                {
+                  "Id": 930,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.Material"
+                  },
+                  "UserData": {
+                    "Position": "6768,1188"
+                  }
+                },
+                {
+                  "Id": 931,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "Name",
+                    "_type": "Sandbox.Material"
+                  },
+                  "UserData": {
+                    "Position": "6984,1332"
+                  }
+                },
+                {
+                  "Id": 932,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "7056,1152"
+                  }
+                },
+                {
+                  "Id": 948,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "7272,1212"
+                  }
+                },
+                {
+                  "Id": 949,
+                  "Type": "op.or",
+                  "UserData": {
+                    "Position": "7128,1200"
+                  }
+                },
+                {
+                  "Id": 950,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "7044,1248"
                   }
                 }
               ],
@@ -26513,7 +26899,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 323,
+                  "Id": 1023,
                   "Value": {
                     "$type": "Simple",
                     "Type": {
@@ -26599,7 +26985,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 324,
+                  "Id": 988,
                   "Value": "Manual",
                   "DstId": 17,
                   "DstName": "_value"
@@ -26665,7 +27051,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 325,
+                  "Id": 989,
                   "Value": 0,
                   "DstId": 26,
                   "DstName": "b"
@@ -26696,7 +27082,7 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 326,
+                  "Id": 990,
                   "Value": "BECOME JOB LOGIC ERROR: Job Clothes on {0} is null/empty. This needs to be filled or Disable this jobs clothing!",
                   "DstId": 28,
                   "DstName": "format"
@@ -26738,7 +27124,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 327,
+                  "Id": 991,
                   "Value": 0,
                   "DstId": 38,
                   "DstName": "b"
@@ -26775,7 +27161,7 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 328,
+                  "Id": 992,
                   "Value": "BECOME JOB LOGIC ERROR: Job Clothes on {0} is null/empty. This needs to be filled or Disable this jobs clothing!",
                   "DstId": 42,
                   "DstName": "format"
@@ -27016,14 +27402,14 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 329,
+                  "Id": 993,
                   "Value": null,
                   "DstId": 152,
                   "DstName": "args",
                   "DstIndex": 1
                 },
                 {
-                  "Id": 330,
+                  "Id": 994,
                   "Value": "PRE MaterialGroup:{0} TempMaterial:{1}",
                   "DstId": 152,
                   "DstName": "format"
@@ -27078,14 +27464,14 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 331,
+                  "Id": 995,
                   "Value": null,
                   "DstId": 188,
                   "DstName": "args",
                   "DstIndex": 1
                 },
                 {
-                  "Id": 332,
+                  "Id": 996,
                   "Value": "AFTER MaterialGroup:{0} TempMaterial:{1}",
                   "DstId": 188,
                   "DstName": "format"
@@ -27103,13 +27489,13 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 333,
+                  "Id": 997,
                   "Value": "head",
                   "DstId": 298,
                   "DstName": "name"
                 },
                 {
-                  "Id": 334,
+                  "Id": 998,
                   "Value": 1,
                   "DstId": 298,
                   "DstName": "value"
@@ -27127,7 +27513,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 335,
+                  "Id": 999,
                   "Value": "Head",
                   "DstId": 299,
                   "DstName": "name"
@@ -27163,7 +27549,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 339,
+                  "Id": 1000,
                   "Value": {
                     "$type": "Simple",
                     "Type": {
@@ -27171,7 +27557,7 @@
                       "DeclaringType": "Sandbox.Clothing",
                       "Name": "ClothingCategory"
                     },
-                    "Value": "Shorts"
+                    "Value": "Bottoms"
                   },
                   "DstId": 338,
                   "DstName": "b"
@@ -27183,79 +27569,666 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 345,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 348,
-                  "Value": "InChildren",
-                  "DstId": 345,
-                  "DstName": "search"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 349,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 352,
-                  "Value": "InChildren",
-                  "DstId": 349,
-                  "DstName": "search"
-                },
-                {
-                  "SrcId": 349,
-                  "SrcName": "_result",
-                  "DstId": 353,
-                  "DstName": "enumerable"
-                },
-                {
-                  "SrcId": 353,
-                  "SrcName": "body.value",
-                  "DstId": 359,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 359,
-                  "SrcName": "_result",
-                  "DstId": 360,
-                  "DstName": "_target"
-                },
-                {
-                  "SrcId": 360,
-                  "SrcName": "_result",
-                  "DstId": 361,
-                  "DstName": "_target"
-                },
-                {
-                  "Id": 371,
-                  "Value": false,
-                  "DstId": 361,
-                  "DstName": "includeAncestors"
-                },
-                {
-                  "Id": 369,
-                  "Value": "clothing",
-                  "DstId": 361,
-                  "DstName": "tag"
-                },
-                {
-                  "SrcId": 353,
-                  "SrcName": "body",
-                  "DstId": 372,
+                  "SrcId": 442,
+                  "SrcName": "_signal",
+                  "DstId": 427,
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 361,
+                  "SrcId": 887,
                   "SrcName": "_result",
-                  "DstId": 372,
+                  "DstId": 427,
                   "DstName": "condition"
+                },
+                {
+                  "SrcId": 22,
+                  "SrcName": "_signal",
+                  "DstId": 442,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 497,
+                  "SrcName": "_result",
+                  "DstId": 442,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "SrcId": 521,
+                  "SrcName": "_result",
+                  "DstId": 442,
+                  "DstName": "args",
+                  "DstIndex": 1
+                },
+                {
+                  "SrcId": 341,
+                  "SrcName": "_result",
+                  "DstId": 442,
+                  "DstName": "args",
+                  "DstIndex": 2
+                },
+                {
+                  "Id": 1001,
+                  "Value": "Selected Job Clothes: Category {0} Name: {1}  AltHumanModel {2}",
+                  "DstId": 442,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 24,
+                  "SrcName": "body.value",
+                  "DstId": 477,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 477,
+                  "SrcName": "_result",
+                  "DstId": 497,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 477,
+                  "SrcName": "_result",
+                  "DstId": 521,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 109,
+                  "SrcName": "_result",
+                  "DstId": 612,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 612,
+                  "SrcName": "_result",
+                  "DstId": 613,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1002,
+                  "Value": "",
+                  "DstId": 613,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 613,
+                  "SrcName": "_result",
+                  "DstId": 616,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 618,
+                  "SrcName": "_result",
+                  "DstId": 620,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 427,
+                  "SrcName": "true",
+                  "DstId": 621,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 620,
+                  "SrcName": "_result",
+                  "DstId": 621,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 621,
+                  "SrcName": "body.value",
+                  "DstId": 622,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 622,
+                  "SrcName": "_result",
+                  "DstId": 623,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 1003,
+                  "Value": false,
+                  "DstId": 623,
+                  "DstName": "includeAncestors"
+                },
+                {
+                  "Id": 1004,
+                  "Value": "clothing",
+                  "DstId": 623,
+                  "DstName": "tag"
+                },
+                {
+                  "SrcId": 621,
+                  "SrcName": "body",
+                  "DstId": 632,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 623,
+                  "SrcName": "_result",
+                  "DstId": 632,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 621,
+                  "SrcName": "body.value",
+                  "DstId": 635,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 669,
+                  "SrcName": "true",
+                  "DstId": 637,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 635,
+                  "SrcName": "_result",
+                  "DstId": 637,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 646,
+                  "SrcName": "_result",
+                  "DstId": 647,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1005,
+                  "Value": "skin_dark",
+                  "DstId": 647,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 646,
+                  "SrcName": "_result",
+                  "DstId": 657,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1006,
+                  "Value": "skin_light",
+                  "DstId": 657,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 669,
+                  "SrcName": "false",
+                  "DstId": 668,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 657,
+                  "SrcName": "_result",
+                  "DstId": 668,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 632,
+                  "SrcName": "true",
+                  "DstId": 669,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 647,
+                  "SrcName": "_result",
+                  "DstId": 669,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 690,
+                  "SrcName": "_signal",
+                  "DstId": 684,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 635,
+                  "SrcName": "_result",
+                  "DstId": 684,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 809,
+                  "SrcName": "_result",
+                  "DstId": 684,
+                  "DstName": "material"
+                },
+                {
+                  "Id": 1007,
+                  "Value": 0,
+                  "DstId": 684,
+                  "DstName": "triangle"
+                },
+                {
+                  "SrcId": 637,
+                  "SrcName": "_signal",
+                  "DstId": 690,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 1008,
+                  "Value": "Material{0} New Material {1}",
+                  "DstId": 690,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 948,
+                  "SrcName": "true",
+                  "DstId": 721,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 635,
+                  "SrcName": "_result",
+                  "DstId": 721,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 1009,
+                  "Value": 0,
+                  "DstId": 721,
+                  "DstName": "triangle"
+                },
+                {
+                  "SrcId": 729,
+                  "SrcName": "_signal",
+                  "DstId": 722,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 635,
+                  "SrcName": "_result",
+                  "DstId": 722,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 809,
+                  "SrcName": "_result",
+                  "DstId": 722,
+                  "DstName": "material"
+                },
+                {
+                  "Id": 1010,
+                  "Value": 0,
+                  "DstId": 722,
+                  "DstName": "triangle"
+                },
+                {
+                  "SrcId": 771,
+                  "SrcName": "_signal",
+                  "DstId": 723,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 771,
+                  "SrcName": "_result",
+                  "DstId": 723,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "Id": 1011,
+                  "Value": "THIS New Material {0}",
+                  "DstId": 723,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 721,
+                  "SrcName": "_signal",
+                  "DstId": 729,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 721,
+                  "SrcName": "_result",
+                  "DstId": 729,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "Id": 1012,
+                  "Value": "THIS Material{0}",
+                  "DstId": 729,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 722,
+                  "SrcName": "_signal",
+                  "DstId": 771,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 635,
+                  "SrcName": "_result",
+                  "DstId": 771,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 1013,
+                  "Value": 0,
+                  "DstId": 771,
+                  "DstName": "triangle"
+                },
+                {
+                  "SrcId": 807,
+                  "SrcName": "_result",
+                  "DstId": 808,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 808,
+                  "SrcName": "_result",
+                  "DstId": 809,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 338,
+                  "SrcName": "_result",
+                  "DstId": 869,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 870,
+                  "SrcName": "_result",
+                  "DstId": 869,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 337,
+                  "SrcName": "_result",
+                  "DstId": 870,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1014,
+                  "Value": {
+                    "$type": "Simple",
+                    "Type": {
+                      "$type": "Nested",
+                      "DeclaringType": "Sandbox.Clothing",
+                      "Name": "ClothingCategory"
+                    },
+                    "Value": "Trousers"
+                  },
+                  "DstId": 870,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 337,
+                  "SrcName": "_result",
+                  "DstId": 877,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1015,
+                  "Value": {
+                    "$type": "Simple",
+                    "Type": {
+                      "$type": "Nested",
+                      "DeclaringType": "Sandbox.Clothing",
+                      "Name": "ClothingCategory"
+                    },
+                    "Value": "Shorts"
+                  },
+                  "DstId": 877,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 877,
+                  "SrcName": "_result",
+                  "DstId": 880,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 883,
+                  "SrcName": "_result",
+                  "DstId": 880,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 869,
+                  "SrcName": "_result",
+                  "DstId": 881,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 880,
+                  "SrcName": "_result",
+                  "DstId": 881,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 337,
+                  "SrcName": "_result",
+                  "DstId": 883,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1016,
+                  "Value": {
+                    "$type": "Simple",
+                    "Type": {
+                      "$type": "Nested",
+                      "DeclaringType": "Sandbox.Clothing",
+                      "Name": "ClothingCategory"
+                    },
+                    "Value": "Skirt"
+                  },
+                  "DstId": 883,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 881,
+                  "SrcName": "_result",
+                  "DstId": 887,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 897,
+                  "SrcName": "_result",
+                  "DstId": 887,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 893,
+                  "SrcName": "_result",
+                  "DstId": 888,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 889,
+                  "SrcName": "_result",
+                  "DstId": 888,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 337,
+                  "SrcName": "_result",
+                  "DstId": 889,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1017,
+                  "Value": {
+                    "$type": "Simple",
+                    "Type": {
+                      "$type": "Nested",
+                      "DeclaringType": "Sandbox.Clothing",
+                      "Name": "ClothingCategory"
+                    },
+                    "Value": "Underwear"
+                  },
+                  "DstId": 889,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 337,
+                  "SrcName": "_result",
+                  "DstId": 893,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1018,
+                  "Value": {
+                    "$type": "Simple",
+                    "Type": {
+                      "$type": "Nested",
+                      "DeclaringType": "Sandbox.Clothing",
+                      "Name": "ClothingCategory"
+                    },
+                    "Value": "Underpants"
+                  },
+                  "DstId": 893,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 888,
+                  "SrcName": "_result",
+                  "DstId": 897,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 902,
+                  "SrcName": "_result",
+                  "DstId": 897,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 337,
+                  "SrcName": "_result",
+                  "DstId": 898,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1019,
+                  "Value": {
+                    "$type": "Simple",
+                    "Type": {
+                      "$type": "Nested",
+                      "DeclaringType": "Sandbox.Clothing",
+                      "Name": "ClothingCategory"
+                    },
+                    "Value": "Jeans"
+                  },
+                  "DstId": 898,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 898,
+                  "SrcName": "_result",
+                  "DstId": 902,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 903,
+                  "SrcName": "_result",
+                  "DstId": 902,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 337,
+                  "SrcName": "_result",
+                  "DstId": 903,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1020,
+                  "Value": {
+                    "$type": "Simple",
+                    "Type": {
+                      "$type": "Nested",
+                      "DeclaringType": "Sandbox.Clothing",
+                      "Name": "ClothingCategory"
+                    },
+                    "Value": "Dress"
+                  },
+                  "DstId": 903,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 635,
+                  "SrcName": "_result",
+                  "DstId": 907,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 907,
+                  "SrcName": "_result",
+                  "DstId": 929,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 668,
+                  "SrcName": "true",
+                  "DstId": 930,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 929,
+                  "SrcName": "_result",
+                  "DstId": 930,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 930,
+                  "SrcName": "body.value",
+                  "DstId": 931,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 931,
+                  "SrcName": "_result",
+                  "DstId": 932,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1021,
+                  "Value": "body_male_light",
+                  "DstId": 932,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 930,
+                  "SrcName": "body",
+                  "DstId": 948,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 949,
+                  "SrcName": "_result",
+                  "DstId": 948,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 932,
+                  "SrcName": "_result",
+                  "DstId": 949,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 950,
+                  "SrcName": "_result",
+                  "DstId": 949,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 931,
+                  "SrcName": "_result",
+                  "DstId": 950,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 1022,
+                  "Value": "body_male_dark",
+                  "DstId": 950,
+                  "DstName": "b"
                 }
               ]
             },
+            "SkinMaterialFemaleDark": "models/citizen_human/bodies/female/female_body_mode_dark.vmat",
+            "SkinMaterialFemaleWhite": "models/citizen_human/bodies/female/female_body_mode_light.vmat",
+            "SkinMaterialMaleDark": "models/citizen_human/bodies/male/body_mode_dark.vmat",
+            "SkinMaterialMaleWhite": "models/citizen_human/bodies/male/body_male_light.vmat",
             "SyncedJobList": [],
             "WhitelistSystemSwitchInt": 0
           }
