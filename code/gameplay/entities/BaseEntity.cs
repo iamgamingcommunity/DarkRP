@@ -8,6 +8,12 @@ using System;
 		[Property, Feature("Entity Info"), Group("Entity Info")]
 		public bool IsInteractable { get; set; } = true;
 
+		[Property, Feature("Entity Info"), Group("Entity Info"), Title("Able To Put in Pocket System?")]
+		public bool IsPocketable { get; set; }
+
+		[Property, Feature("Entity Info"), Group("Entity Info"), Title("Able To Put in Inventory System?")]
+		public bool IsInventoriable { get; set; }
+
 		[Property, Feature("Entity Info"), Group("Entity Info")]
 		public SoundEvent InteractionSFX { get; set; }
 		
@@ -46,7 +52,7 @@ using System;
 			LastInteractingPlayer = pressEvent.Source as PlayerController;// this is the "presser"
 			Interacted.Invoke(LastInteractingPlayer);
 		}
-		Log.Info($"LOGSTILLFIRED");
+		Log.Info($"Interacted With {this}");
 		return true;
 	}
 

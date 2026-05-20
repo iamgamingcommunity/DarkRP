@@ -14,6 +14,19 @@ public sealed class DarkrpPlayerInfo : Component
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string DisplayName { get; set; }
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public JobResource CurrentJob { get; set; }
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public int PlayerMoney { get; set; }
+	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public NetList<InventoryItem> PlayerPocket { get; set; }
+	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public NetList<InventoryItem> PlayerInventory { get; set; }
+
+	public class InventoryItem
+	{
+		public PrefabFile ItemPrefab {get; set;}
+
+		public Texture ItemIcon {get; set;}
+		public int ItemAmount {get; set;}
+		public int ItemMaxAmount {get; set;}
+	}
+
+
 	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyFireAnimationParameterName { get; set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyclimbingAnimationParameterName { get; set; }
 	[Property, Feature("Basic DarkRP Info"), Group("Base Body Pos Info")] public string BodyDeployAnimationParameterName { get; set; }
