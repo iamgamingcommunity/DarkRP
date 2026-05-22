@@ -2657,6 +2657,10 @@
             "__guid": "be7e380e-9389-458a-bf02-da116669991f",
             "__enabled": true,
             "Flags": 0,
+            "CurrentGameMode": {
+              "_type": "gameobject",
+              "go": "f7e5b3c3-30de-45c8-ab6e-78b70f628d87"
+            },
             "GameModes": [
               {
                 "_type": "gameobject",
@@ -2977,7 +2981,7 @@
             "GraphBecomeJob": {
               "__version": 9,
               "__guid": "c0e99cbd-0874-400f-9eb6-033d8381666d",
-              "__changeId": 2284,
+              "__changeId": 2285,
               "UserData": {
                 "Title": "Graph Become Job Logic",
                 "ReferencedComponentTypes": [
@@ -26923,7 +26927,7 @@
                   "DstName": "a"
                 },
                 {
-                  "Id": 1532,
+                  "Id": 1492,
                   "Value": {
                     "$type": "Simple",
                     "Type": {
@@ -27009,7 +27013,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 1531,
+                  "Id": 1493,
                   "Value": "Manual",
                   "DstId": 17,
                   "DstName": "_value"
@@ -28401,11 +28405,17 @@
                 "AllChatCommands": [],
                 "ArrestedSFX": "sounds/kenney/ui/ui.navigate.forward.sound",
                 "DefaultDarkRPCivilianJob": "gameplay/jobs/citizen.job",
+                "DefaultHungerAmount": 50,
                 "DefaultMinimumVoteRequired": 0,
                 "DefaultRequiredYesPercentage": 0,
+                "DefaultThirstAmount": 75,
                 "DefaultVoteDuration": 0,
                 "EntityPriceMultiplier": 0,
                 "GiveIllegalSwepsBackOnUnarrest": false,
+                "HungerDamage": 5,
+                "HungerDefaultReductionAmount": 5,
+                "HungerDefaultReductionSpeed": 2,
+                "HungerMaxReductionSpeed": 2,
                 "IsDisableDefaultF2MenuUI": false,
                 "IsDisableDefaultF4MenuUI": false,
                 "IsDisableDefaultModerationSystem": false,
@@ -28414,8 +28424,12 @@
                 "IsDisableJobClothing": false,
                 "IsDisableRespawningAfterBecomingJob": false,
                 "IsEnableJobAutoSwitch": false,
+                "IsHungerDamageDisabled": false,
+                "IsHungerDisabled": false,
+                "IsHungerModEnabled": true,
                 "IsShowContextMenu": false,
                 "IsShowUnJoinableJobs": false,
+                "IsThirstDisabled": false,
                 "IsUserGroupListSkipBlacklists": false,
                 "IsUserGroupListSkipWhitelists": false,
                 "JailPos": [],
@@ -28426,9 +28440,11 @@
                 "LockDownOnGoingSFX": null,
                 "LockDownStartSFX": null,
                 "MaxHitPrice": 0,
+                "MaxHungerAmount": 100,
                 "MaxLawsOnBoard": 0,
                 "MaxLotteryPrice": 0,
                 "MaxPropSpawnedAmount": 0,
+                "MaxThirstAmount": 100,
                 "MinHitPrice": 0,
                 "MinLotteryPrice": 0,
                 "MoneyEntity": null,
@@ -28788,6 +28804,10 @@
                 "StaffSweps": [],
                 "StartingEquipment": [],
                 "TempPlayTimeTotalCycleAmount": 0,
+                "ThirstDamage": 10,
+                "ThirstDefaultReductionAmount": 10,
+                "ThirstDefaultReductionSpeed": 5,
+                "ThirstMaxReductionSpeed": 5,
                 "ToggleLottery": false,
                 "UnArrestedSFX": "sounds/kenney/ui/ui.navigate.back.sound",
                 "VoteStartSFX": null

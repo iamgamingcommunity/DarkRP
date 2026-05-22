@@ -334,7 +334,1521 @@
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
+        "OnComponentStart": {
+          "__version": 9,
+          "__guid": "14351422-714a-4557-8039-af27fb8ff00d",
+          "__changeId": 327,
+          "UserData": {
+            "Title": "On Health Component Start",
+            "ReferencedComponentTypes": [
+              "DarkRPGamemode.DarkRPGamemode",
+              "HealthComponent",
+              "DarkrpPlayerInfo"
+            ],
+            "Description": "Fires Health/Hunger related logic",
+            "Category": "Health",
+            "Icon": "health_and_safety"
+          },
+          "Variables": [
+            {
+              "Name": "TempDarkRPGameMod",
+              "Type": "DarkRPGamemode.DarkRPGamemode"
+            },
+            {
+              "Name": "TempHungerWhileBool",
+              "Type": "System.Boolean"
+            },
+            {
+              "Name": "TempThirstWhileBool",
+              "Type": "System.Boolean"
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-288,-12"
+              }
+            },
+            {
+              "Id": 1,
+              "Type": "scene.findall",
+              "UserData": {
+                "Position": "-84,84"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "foreach",
+              "Properties": {
+                "T": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-84,-12"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "204,108"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHungerModEnabled",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "204,84"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "if",
+              "UserData": {
+                "Position": "276,12"
+              }
+            },
+            {
+              "Id": 11,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "396,312"
+              }
+            },
+            {
+              "Id": 12,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "504,312"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "3048,60"
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "3060,792"
+              }
+            },
+            {
+              "Id": 23,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "2196,864"
+              }
+            },
+            {
+              "Id": 24,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "2304,864"
+              }
+            },
+            {
+              "Id": 27,
+              "Type": "property",
+              "Properties": {
+                "_name": "HungerDefaultReductionSpeed",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "2880,132"
+              }
+            },
+            {
+              "Id": 28,
+              "Type": "property",
+              "Properties": {
+                "_name": "ThirstDefaultReductionSpeed",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "2940,864"
+              }
+            },
+            {
+              "Id": 29,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsThirstEnabled",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "2304,840"
+              }
+            },
+            {
+              "Id": 30,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "2280,156"
+              }
+            },
+            {
+              "Id": 31,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "2268,144"
+              }
+            },
+            {
+              "Id": 33,
+              "Type": "if",
+              "UserData": {
+                "Position": "2352,36"
+              }
+            },
+            {
+              "Id": 34,
+              "Type": "if",
+              "UserData": {
+                "Position": "2280,756"
+              }
+            },
+            {
+              "Id": 37,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHungerEnabled",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "2280,120"
+              }
+            },
+            {
+              "Id": 38,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "4428,888"
+              }
+            },
+            {
+              "Id": 39,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "4536,888"
+              }
+            },
+            {
+              "Id": 40,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerThirst",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "4908,852"
+              }
+            },
+            {
+              "Id": 41,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerThirst",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "4548,912"
+              }
+            },
+            {
+              "Id": 42,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "4908,924"
+              }
+            },
+            {
+              "Id": 44,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "4392,204"
+              }
+            },
+            {
+              "Id": 45,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "4500,204"
+              }
+            },
+            {
+              "Id": 48,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "4896,228"
+              }
+            },
+            {
+              "Id": 51,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerHunger",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "4512,228"
+              }
+            },
+            {
+              "Id": 52,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerHunger",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "4896,132"
+              }
+            },
+            {
+              "Id": 53,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "3528,840"
+              }
+            },
+            {
+              "Id": 54,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "3636,840"
+              }
+            },
+            {
+              "Id": 55,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerThirst",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "3648,864"
+              }
+            },
+            {
+              "Id": 56,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "3468,120"
+              }
+            },
+            {
+              "Id": 57,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "3576,120"
+              }
+            },
+            {
+              "Id": 58,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerHunger",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "3588,144"
+              }
+            },
+            {
+              "Id": 59,
+              "Type": "op.lessthanorequal",
+              "UserData": {
+                "Position": "3972,864"
+              }
+            },
+            {
+              "Id": 60,
+              "Type": "op.lessthanorequal",
+              "UserData": {
+                "Position": "3948,144"
+              }
+            },
+            {
+              "Id": 61,
+              "Type": "if",
+              "UserData": {
+                "Position": "3888,72"
+              }
+            },
+            {
+              "Id": 62,
+              "Type": "if",
+              "UserData": {
+                "Position": "3924,792"
+              }
+            },
+            {
+              "Id": 65,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "4512,-192"
+              }
+            },
+            {
+              "Id": 67,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempDarkRPGameMod"
+              },
+              "UserData": {
+                "Position": "576,36"
+              }
+            },
+            {
+              "Id": 68,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempDarkRPGameMod"
+              },
+              "UserData": {
+                "Position": "1092,180"
+              }
+            },
+            {
+              "Id": 94,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempDarkRPGameMod"
+              },
+              "UserData": {
+                "Position": "2844,888"
+              }
+            },
+            {
+              "Id": 95,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempDarkRPGameMod"
+              },
+              "UserData": {
+                "Position": "2880,168"
+              }
+            },
+            {
+              "Id": 97,
+              "Type": "property",
+              "Properties": {
+                "_name": "DefaultHungerAmount",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "804,108"
+              }
+            },
+            {
+              "Id": 98,
+              "Type": "property",
+              "Properties": {
+                "_name": "DefaultThirstAmount",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "1164,108"
+              }
+            },
+            {
+              "Id": 99,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerHunger",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "840,36"
+              }
+            },
+            {
+              "Id": 100,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerThirst",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "1140,36"
+              }
+            },
+            {
+              "Id": 104,
+              "Type": "property",
+              "Properties": {
+                "_name": "MaxHungerAmount",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "1440,108"
+              }
+            },
+            {
+              "Id": 105,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerHungerMax",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "1440,36"
+              }
+            },
+            {
+              "Id": 106,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerThirstMax",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "1740,36"
+              }
+            },
+            {
+              "Id": 107,
+              "Type": "property",
+              "Properties": {
+                "_name": "MaxThirstAmount",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "1728,120"
+              }
+            },
+            {
+              "Id": 108,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempDarkRPGameMod"
+              },
+              "UserData": {
+                "Position": "4248,-144"
+              }
+            },
+            {
+              "Id": 109,
+              "Type": "property",
+              "Properties": {
+                "_name": "HungerDamage",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "4968,-108"
+              }
+            },
+            {
+              "Id": 110,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHungerDamageDisabled",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "4152,-168"
+              }
+            },
+            {
+              "Id": 111,
+              "Type": "if",
+              "UserData": {
+                "Position": "4308,-240"
+              }
+            },
+            {
+              "Id": 122,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "4644,-192"
+              }
+            },
+            {
+              "Id": 123,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "DealDamageToPlayer",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "4992,-216"
+              }
+            },
+            {
+              "Id": 124,
+              "Type": "comment",
+              "UserData": {
+                "Position": "-180,-144",
+                "Size": "972,360",
+                "Title": "Find Gamemode",
+                "Layer": 7,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 125,
+              "Type": "comment",
+              "UserData": {
+                "Position": "804,-108",
+                "Size": "1224,324",
+                "Title": "Set Player Default And Max Hunger/Thirst",
+                "Layer": 6,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 126,
+              "Type": "comment",
+              "UserData": {
+                "Position": "2232,-96",
+                "Size": "372,1152",
+                "Title": "Check If Hunger Or Thirst is Disabled",
+                "Layer": 5,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 127,
+              "Type": "comment",
+              "UserData": {
+                "Position": "2976,-132",
+                "Size": "300,1212",
+                "Title": "Hunger/Thirst Reduction Delay",
+                "Layer": 4,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 128,
+              "Type": "comment",
+              "UserData": {
+                "Position": "3516,-120",
+                "Size": "612,1188",
+                "Title": "Is Player Hunger or Thirst less than or equal to 0?",
+                "Layer": 3,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 139,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "4572,588"
+              }
+            },
+            {
+              "Id": 140,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempDarkRPGameMod"
+              },
+              "UserData": {
+                "Position": "4308,636"
+              }
+            },
+            {
+              "Id": 142,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHungerDamageDisabled",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "4212,612"
+              }
+            },
+            {
+              "Id": 143,
+              "Type": "if",
+              "UserData": {
+                "Position": "4368,540"
+              }
+            },
+            {
+              "Id": 144,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "4704,588"
+              }
+            },
+            {
+              "Id": 145,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "DealDamageToPlayer",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "5052,564"
+              }
+            },
+            {
+              "Id": 146,
+              "Type": "property",
+              "Properties": {
+                "_name": "ThirstDamage",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "5040,660"
+              }
+            },
+            {
+              "Id": 147,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4248,-336",
+                "Size": "1032,300",
+                "Title": "Deal Damage to Player",
+                "Layer": 2,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 148,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4224,432",
+                "Size": "1176,300",
+                "Title": "Deal Damage to Player",
+                "Layer": 2,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 149,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4380,60",
+                "Size": "816,300",
+                "Title": "Remove Player Hunger",
+                "Layer": 1,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 150,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4392,768",
+                "Size": "816,300",
+                "Title": "Remove Player Thirst",
+                "Layer": 1,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 151,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempDarkRPGameMod"
+              },
+              "UserData": {
+                "Position": "4404,276"
+              }
+            },
+            {
+              "Id": 152,
+              "Type": "property",
+              "Properties": {
+                "_name": "HungerDefaultReductionAmount",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "4608,276"
+              }
+            },
+            {
+              "Id": 153,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempDarkRPGameMod"
+              },
+              "UserData": {
+                "Position": "4440,972"
+              }
+            },
+            {
+              "Id": 154,
+              "Type": "property",
+              "Properties": {
+                "_name": "ThirstDefaultReductionAmount",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "4644,972"
+              }
+            },
+            {
+              "Id": 155,
+              "Type": "while",
+              "UserData": {
+                "Position": "2808,60"
+              }
+            },
+            {
+              "Id": 156,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempHungerWhileBool"
+              },
+              "UserData": {
+                "Position": "2772,108"
+              }
+            },
+            {
+              "Id": 158,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempHungerWhileBool"
+              },
+              "UserData": {
+                "Position": "2568,60"
+              }
+            },
+            {
+              "Id": 160,
+              "Type": "while",
+              "UserData": {
+                "Position": "2796,780"
+              }
+            },
+            {
+              "Id": 161,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempThirstWhileBool"
+              },
+              "UserData": {
+                "Position": "2748,840"
+              }
+            },
+            {
+              "Id": 162,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempThirstWhileBool"
+              },
+              "UserData": {
+                "Position": "2568,780"
+              }
+            },
+            {
+              "Id": 165,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": true,
+                "_name": "Clamp",
+                "_type": "System.Single"
+              },
+              "UserData": {
+                "Position": "5052,216"
+              }
+            },
+            {
+              "Id": 179,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": true,
+                "_name": "Clamp",
+                "_type": "System.Single"
+              },
+              "UserData": {
+                "Position": "5076,924"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "Id": 189,
+              "Value": "DarkRP",
+              "DstId": 1,
+              "DstName": "name"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "enumerable"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "body.value",
+              "DstId": 6,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "body",
+              "DstId": 8,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 11,
+              "SrcName": "_result",
+              "DstId": 12,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 155,
+              "SrcName": "body",
+              "DstId": 20,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 27,
+              "SrcName": "_result",
+              "DstId": 20,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 20,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 160,
+              "SrcName": "body",
+              "DstId": 22,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 28,
+              "SrcName": "_result",
+              "DstId": 22,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 22,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 23,
+              "SrcName": "_result",
+              "DstId": 24,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 95,
+              "SrcName": "_result",
+              "DstId": 27,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 94,
+              "SrcName": "_result",
+              "DstId": 28,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 24,
+              "SrcName": "_result",
+              "DstId": 29,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 30,
+              "SrcName": "_result",
+              "DstId": 31,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "_signal",
+              "DstId": 33,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 37,
+              "SrcName": "_result",
+              "DstId": 33,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "_signal",
+              "DstId": 34,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 29,
+              "SrcName": "_result",
+              "DstId": 34,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 31,
+              "SrcName": "_result",
+              "DstId": 37,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 38,
+              "SrcName": "_result",
+              "DstId": 39,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 62,
+              "SrcName": "false",
+              "DstId": 40,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 39,
+              "SrcName": "_result",
+              "DstId": 40,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 179,
+              "SrcName": "_result",
+              "DstId": 40,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 39,
+              "SrcName": "_result",
+              "DstId": 41,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 41,
+              "SrcName": "_result",
+              "DstId": 42,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 42,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 44,
+              "SrcName": "_result",
+              "DstId": 45,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 51,
+              "SrcName": "_result",
+              "DstId": 48,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 152,
+              "SrcName": "_result",
+              "DstId": 48,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 45,
+              "SrcName": "_result",
+              "DstId": 51,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 61,
+              "SrcName": "false",
+              "DstId": 52,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 45,
+              "SrcName": "_result",
+              "DstId": 52,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 165,
+              "SrcName": "_result",
+              "DstId": 52,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 53,
+              "SrcName": "_result",
+              "DstId": 54,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 54,
+              "SrcName": "_result",
+              "DstId": 55,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 56,
+              "SrcName": "_result",
+              "DstId": 57,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 57,
+              "SrcName": "_result",
+              "DstId": 58,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 55,
+              "SrcName": "_result",
+              "DstId": 59,
+              "DstName": "a"
+            },
+            {
+              "Id": 190,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 0
+              },
+              "DstId": 59,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 58,
+              "SrcName": "_result",
+              "DstId": 60,
+              "DstName": "a"
+            },
+            {
+              "Id": 191,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 0
+              },
+              "DstId": 60,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_signal",
+              "DstId": 61,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 60,
+              "SrcName": "_result",
+              "DstId": 61,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 22,
+              "SrcName": "_signal",
+              "DstId": 62,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 59,
+              "SrcName": "_result",
+              "DstId": 62,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "true",
+              "DstId": 67,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_result",
+              "DstId": 67,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 68,
+              "SrcName": "_result",
+              "DstId": 97,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 68,
+              "SrcName": "_result",
+              "DstId": 98,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 67,
+              "SrcName": "_signal",
+              "DstId": 99,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 99,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 97,
+              "SrcName": "_result",
+              "DstId": 99,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 99,
+              "SrcName": "_signal",
+              "DstId": 100,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 100,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 98,
+              "SrcName": "_result",
+              "DstId": 100,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 68,
+              "SrcName": "_result",
+              "DstId": 104,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 100,
+              "SrcName": "_signal",
+              "DstId": 105,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 105,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "_result",
+              "DstId": 105,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "_signal",
+              "DstId": 106,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 68,
+              "SrcName": "_result",
+              "DstId": 107,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "_result",
+              "DstId": 109,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "_result",
+              "DstId": 110,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 61,
+              "SrcName": "true",
+              "DstId": 111,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 110,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 65,
+              "SrcName": "_result",
+              "DstId": 122,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 109,
+              "SrcName": "_result",
+              "DstId": 123,
+              "DstName": "Damage"
+            },
+            {
+              "SrcId": 65,
+              "SrcName": "_result",
+              "DstId": 123,
+              "DstName": "Player"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "false",
+              "DstId": 123,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 122,
+              "SrcName": "_result",
+              "DstId": 123,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 140,
+              "SrcName": "_result",
+              "DstId": 142,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 62,
+              "SrcName": "true",
+              "DstId": 143,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 142,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 139,
+              "SrcName": "_result",
+              "DstId": 144,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 146,
+              "SrcName": "_result",
+              "DstId": 145,
+              "DstName": "Damage"
+            },
+            {
+              "SrcId": 139,
+              "SrcName": "_result",
+              "DstId": 145,
+              "DstName": "Player"
+            },
+            {
+              "SrcId": 143,
+              "SrcName": "false",
+              "DstId": 145,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 144,
+              "SrcName": "_result",
+              "DstId": 145,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 140,
+              "SrcName": "_result",
+              "DstId": 146,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 151,
+              "SrcName": "_result",
+              "DstId": 152,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 153,
+              "SrcName": "_result",
+              "DstId": 154,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 158,
+              "SrcName": "_signal",
+              "DstId": 155,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "_result",
+              "DstId": 155,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 33,
+              "SrcName": "true",
+              "DstId": 158,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 192,
+              "Value": true,
+              "DstId": 158,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 162,
+              "SrcName": "_signal",
+              "DstId": 160,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 161,
+              "SrcName": "_result",
+              "DstId": 160,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 34,
+              "SrcName": "true",
+              "DstId": 162,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 193,
+              "Value": true,
+              "DstId": 162,
+              "DstName": "_value"
+            },
+            {
+              "Id": 194,
+              "Value": 1E+12,
+              "DstId": 165,
+              "DstName": "max"
+            },
+            {
+              "Id": 195,
+              "Value": 0,
+              "DstId": 165,
+              "DstName": "min"
+            },
+            {
+              "SrcId": 48,
+              "SrcName": "_result",
+              "DstId": 165,
+              "DstName": "value"
+            },
+            {
+              "Id": 196,
+              "Value": 1E+12,
+              "DstId": 179,
+              "DstName": "max"
+            },
+            {
+              "Id": 197,
+              "Value": 0,
+              "DstId": 179,
+              "DstName": "min"
+            },
+            {
+              "SrcId": 42,
+              "SrcName": "_result",
+              "DstId": 179,
+              "DstName": "value"
+            }
+          ]
+        },
         "OnComponentUpdate": null,
         "PlayerHunger": 80,
         "PlayerHungerMax": 100,
@@ -1466,6 +2980,452 @@
         "BodySwimAnimationParameterName": "b_swim",
         "BodyWeaponLowerAnimationParameterName": "b_weapon_lower",
         "CurrentJob": null,
+        "DamagePlayer": {
+          "__version": 9,
+          "__guid": "e77b5c64-4901-4dbd-90c9-d7e134a002ca",
+          "__changeId": 45,
+          "UserData": {
+            "Title": "Damage Player",
+            "ReferencedComponentTypes": [
+              "HealthComponent",
+              "DarkrpPlayerInfo"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-840,-12"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "384,132"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "property",
+              "Properties": {
+                "_name": "Health",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "708,144"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "property",
+              "Properties": {
+                "_name": "Health",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "1092,96"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "972,228"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "op.lessthanorequal",
+              "UserData": {
+                "Position": "1500,192"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "if",
+              "UserData": {
+                "Position": "1476,96"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "1836,204"
+              }
+            },
+            {
+              "Id": 9,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "RepawnPlayer",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "1836,120"
+              }
+            },
+            {
+              "Id": 12,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "Damage"
+              },
+              "UserData": {
+                "Position": "804,252"
+              }
+            },
+            {
+              "Id": 13,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "Player"
+              },
+              "UserData": {
+                "Position": "312,192"
+              }
+            },
+            {
+              "Id": 14,
+              "Type": "op.lessthanorequal",
+              "UserData": {
+                "Position": "60,144"
+              }
+            },
+            {
+              "Id": 15,
+              "Type": "if",
+              "UserData": {
+                "Position": "36,48"
+              }
+            },
+            {
+              "Id": 18,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "Player"
+              },
+              "UserData": {
+                "Position": "-648,84"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "-528,84"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsGodMode",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "-516,60"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "if",
+              "UserData": {
+                "Position": "-420,-12"
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "property",
+              "Properties": {
+                "_name": "Health",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "-180,144"
+              }
+            },
+            {
+              "Id": 23,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "456,12"
+              }
+            },
+            {
+              "Id": 24,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "RepawnPlayer",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "456,-72"
+              }
+            },
+            {
+              "Id": 25,
+              "Type": "comment",
+              "UserData": {
+                "Position": "-600,-132",
+                "Size": "396,264",
+                "Title": "Is in God mode?",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 26,
+              "Type": "comment",
+              "UserData": {
+                "Position": "-156,-60",
+                "Size": "396,276",
+                "Title": "Is Health <= 0?",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 27,
+              "Type": "comment",
+              "UserData": {
+                "Position": "432,-192",
+                "Size": "396,252",
+                "Title": "Respawn Player",
+                "Color": 3,
+                "Layer": 1
+              }
+            },
+            {
+              "Id": 28,
+              "Type": "comment",
+              "UserData": {
+                "Position": "1812,24",
+                "Size": "348,252",
+                "Title": "Respawn Player",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 29,
+              "Type": "comment",
+              "UserData": {
+                "Position": "324,48",
+                "Size": "1020,300",
+                "Title": "Take Damage and subtract it from the Player HP",
+                "Color": 3,
+                "Layer": 2
+              }
+            },
+            {
+              "Id": 30,
+              "Type": "comment",
+              "UserData": {
+                "Position": "1440,-0",
+                "Size": "252,300",
+                "Title": "Is Health <= 0?",
+                "Color": 3,
+                "Layer": 3
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "false",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 6,
+              "DstName": "a"
+            },
+            {
+              "Id": 33,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 0
+              },
+              "DstId": 6,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_signal",
+              "DstId": 7,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 9,
+              "DstName": "Player"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "true",
+              "DstId": 9,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "_result",
+              "DstId": 9,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 22,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "a"
+            },
+            {
+              "Id": 34,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 0
+              },
+              "DstId": 14,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "false",
+              "DstId": 15,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_result",
+              "DstId": 15,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 18,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 20,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 21,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_result",
+              "DstId": 21,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 22,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 23,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 24,
+              "DstName": "Player"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "true",
+              "DstId": 24,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 23,
+              "SrcName": "_result",
+              "DstId": 24,
+              "DstName": "_target"
+            }
+          ]
+        },
         "DisplayName": null,
         "DropPlayerMoneyOnDeath": false,
         "F2MenuUIPanel": {
@@ -33523,12 +35483,20 @@
         "RespawnPlayer": {
           "__version": 9,
           "__guid": "ff261786-fd68-4613-9b07-04b2b0e50889",
-          "__changeId": 538,
+          "__changeId": 673,
           "UserData": {
             "Title": "Respawn Player",
-            "ReferencedComponentTypes": []
+            "ReferencedComponentTypes": [
+              "HealthComponent",
+              "DarkrpPlayerInfo",
+              "DarkRPGamemode.DarkRPGamemode"
+            ]
           },
           "Variables": [
+            {
+              "Name": "TempGameModeVar",
+              "Type": "Sandbox.GameObject"
+            },
             {
               "Name": "TempGameModesManager",
               "Type": "GameModesManager"
@@ -33549,14 +35517,7 @@
               "Id": 0,
               "Type": "input",
               "UserData": {
-                "Position": "-1752,36"
-              }
-            },
-            {
-              "Id": 1,
-              "Type": "scene.findall",
-              "UserData": {
-                "Position": "-1092,132"
+                "Position": "-1872,36"
               }
             },
             {
@@ -33690,16 +35651,6 @@
               },
               "UserData": {
                 "Position": "1440,936"
-              }
-            },
-            {
-              "Id": 188,
-              "Type": "foreach",
-              "Properties": {
-                "T": "Sandbox.GameObject"
-              },
-              "UserData": {
-                "Position": "-1092,36"
               }
             },
             {
@@ -34184,7 +36135,7 @@
                 "T": "GameModesManager"
               },
               "UserData": {
-                "Position": "-1128,276"
+                "Position": "-1668,72"
               }
             },
             {
@@ -34194,7 +36145,7 @@
                 "_var": "TempGameModesManager"
               },
               "UserData": {
-                "Position": "-840,48"
+                "Position": "-1668,36"
               }
             },
             {
@@ -34321,15 +36272,524 @@
               "UserData": {
                 "Position": "12,-300"
               }
+            },
+            {
+              "Id": 476,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "Player"
+              },
+              "UserData": {
+                "Position": "4320,1032"
+              }
+            },
+            {
+              "Id": 477,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "4500,996"
+              }
+            },
+            {
+              "Id": 478,
+              "Type": "property",
+              "Properties": {
+                "_name": "Health",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "4728,840"
+              }
+            },
+            {
+              "Id": 479,
+              "Type": "property",
+              "Properties": {
+                "_name": "Armor",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "4980,840"
+              }
+            },
+            {
+              "Id": 480,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerHunger",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "6264,900"
+              }
+            },
+            {
+              "Id": 481,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerThirst",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "6276,1068"
+              }
+            },
+            {
+              "Id": 482,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "4548,1116"
+              }
+            },
+            {
+              "Id": 483,
+              "Type": "property",
+              "Properties": {
+                "_name": "CurrentJob",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "4848,1116"
+              }
+            },
+            {
+              "Id": 484,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobHealth",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "4728,936"
+              }
+            },
+            {
+              "Id": 485,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobArmor",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "4992,936"
+              }
+            },
+            {
+              "Id": 528,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempGameModeVar"
+              },
+              "UserData": {
+                "Position": "5568,1164"
+              }
+            },
+            {
+              "Id": 529,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "5760,1164"
+              }
+            },
+            {
+              "Id": 530,
+              "Type": "property",
+              "Properties": {
+                "_name": "DefaultHungerAmount",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "6264,984"
+              }
+            },
+            {
+              "Id": 531,
+              "Type": "property",
+              "Properties": {
+                "_name": "DefaultThirstAmount",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "6288,1140"
+              }
+            },
+            {
+              "Id": 532,
+              "Type": "scene.findall",
+              "UserData": {
+                "Position": "-1320,132"
+              }
+            },
+            {
+              "Id": 533,
+              "Type": "foreach",
+              "Properties": {
+                "T": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-1320,36"
+              }
+            },
+            {
+              "Id": 534,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempGameModesManager"
+              },
+              "UserData": {
+                "Position": "-1644,216"
+              }
+            },
+            {
+              "Id": 535,
+              "Type": "property",
+              "Properties": {
+                "_name": "CurrentGameMode",
+                "_type": "GameModesManager"
+              },
+              "UserData": {
+                "Position": "-1704,192"
+              }
+            },
+            {
+              "Id": 537,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempGameModeVar"
+              },
+              "UserData": {
+                "Position": "-1140,60"
+              }
+            },
+            {
+              "Id": 538,
+              "Type": "comment",
+              "UserData": {
+                "Position": "-1692,-36",
+                "Size": "792,300",
+                "Title": "Find Gamemode Manager & Gamemode ",
+                "Color": 3,
+                "Layer": 2
+              }
+            },
+            {
+              "Id": 539,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4320,648",
+                "Size": "2280,588",
+                "Title": "Reset Player Health/Armor/Hunger/Thirst",
+                "Layer": 1,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 540,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHungerModEnabled",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "5256,924"
+              }
+            },
+            {
+              "Id": 541,
+              "Type": "if",
+              "UserData": {
+                "Position": "5364,840"
+              }
+            },
+            {
+              "Id": 568,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsThirstDisabled",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "5592,1092"
+              }
+            },
+            {
+              "Id": 569,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHungerDisabled",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "5784,924"
+              }
+            },
+            {
+              "Id": 589,
+              "Type": "if",
+              "UserData": {
+                "Position": "5868,852"
+              }
+            },
+            {
+              "Id": 590,
+              "Type": "if",
+              "UserData": {
+                "Position": "5688,1020"
+              }
+            },
+            {
+              "Id": 591,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "Player"
+              },
+              "UserData": {
+                "Position": "3144,-360"
+              }
+            },
+            {
+              "Id": 592,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "3324,-396"
+              }
+            },
+            {
+              "Id": 593,
+              "Type": "property",
+              "Properties": {
+                "_name": "Health",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "3552,-552"
+              }
+            },
+            {
+              "Id": 594,
+              "Type": "property",
+              "Properties": {
+                "_name": "Armor",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "3804,-552"
+              }
+            },
+            {
+              "Id": 595,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerHunger",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "5088,-492"
+              }
+            },
+            {
+              "Id": 596,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerThirst",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "5100,-324"
+              }
+            },
+            {
+              "Id": 597,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "3372,-276"
+              }
+            },
+            {
+              "Id": 598,
+              "Type": "property",
+              "Properties": {
+                "_name": "CurrentJob",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "3672,-276"
+              }
+            },
+            {
+              "Id": 599,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobHealth",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "3552,-456"
+              }
+            },
+            {
+              "Id": 600,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobArmor",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "3816,-456"
+              }
+            },
+            {
+              "Id": 601,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempGameModeVar"
+              },
+              "UserData": {
+                "Position": "4392,-228"
+              }
+            },
+            {
+              "Id": 602,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "4584,-228"
+              }
+            },
+            {
+              "Id": 603,
+              "Type": "property",
+              "Properties": {
+                "_name": "DefaultHungerAmount",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "5088,-408"
+              }
+            },
+            {
+              "Id": 604,
+              "Type": "property",
+              "Properties": {
+                "_name": "DefaultThirstAmount",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "5112,-252"
+              }
+            },
+            {
+              "Id": 605,
+              "Type": "comment",
+              "UserData": {
+                "Position": "3144,-744",
+                "Size": "2280,588",
+                "Title": "Reset Player Health/Armor/Hunger/Thirst",
+                "Layer": 1,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 606,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHungerModEnabled",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "4080,-468"
+              }
+            },
+            {
+              "Id": 607,
+              "Type": "if",
+              "UserData": {
+                "Position": "4188,-552"
+              }
+            },
+            {
+              "Id": 608,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsThirstDisabled",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "4416,-300"
+              }
+            },
+            {
+              "Id": 609,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHungerDisabled",
+                "_type": "DarkRPGamemode.DarkRPGamemode"
+              },
+              "UserData": {
+                "Position": "4608,-468"
+              }
+            },
+            {
+              "Id": 610,
+              "Type": "if",
+              "UserData": {
+                "Position": "4692,-540"
+              }
+            },
+            {
+              "Id": 611,
+              "Type": "if",
+              "UserData": {
+                "Position": "4512,-372"
+              }
+            },
+            {
+              "Id": 612,
+              "Type": "property",
+              "Properties": {
+                "_name": "Name",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-1548,156"
+              }
+            },
+            {
+              "Id": 668,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "-1416,-192"
+              }
+            },
+            {
+              "Id": 669,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "-1236,-252"
+              }
             }
           ],
           "Links": [
-            {
-              "Id": 462,
-              "Value": "Gamemodes",
-              "DstId": 1,
-              "DstName": "name"
-            },
             {
               "SrcId": 84,
               "SrcName": "true",
@@ -34365,7 +36825,7 @@
               "DstIndex": 3
             },
             {
-              "Id": 463,
+              "Id": 654,
               "Value": "SweatyDebugLogRespawnTRUE: SpawnPos:{0} SpawnEndPos:{1} Hit Object:{2} List Count:{3}",
               "DstId": 51,
               "DstName": "format"
@@ -34401,13 +36861,13 @@
               "DstName": "_target"
             },
             {
-              "Id": 464,
+              "Id": 655,
               "Value": "0,0,30",
               "DstId": 59,
               "DstName": "position"
             },
             {
-              "Id": 465,
+              "Id": 656,
               "Value": true,
               "DstId": 59,
               "DstName": "worldSpace"
@@ -34431,7 +36891,7 @@
               "DstName": "_target"
             },
             {
-              "Id": 466,
+              "Id": 657,
               "Value": "player",
               "DstId": 64,
               "DstName": "tag"
@@ -34501,7 +36961,7 @@
               "DstIndex": 3
             },
             {
-              "Id": 467,
+              "Id": 658,
               "Value": "SweatyDebugLogRespawnFALSE: SpawnPos:{0} SpawnEndPos:{1} Hit Object:{2} List Count:{3}",
               "DstId": 152,
               "DstName": "format"
@@ -34517,12 +36977,6 @@
               "SrcName": "_result",
               "DstId": 172,
               "DstName": "obj"
-            },
-            {
-              "SrcId": 1,
-              "SrcName": "_result",
-              "DstId": 188,
-              "DstName": "enumerable"
             },
             {
               "SrcId": 401,
@@ -34597,7 +37051,7 @@
               "DstName": "_target"
             },
             {
-              "SrcId": 400,
+              "SrcId": 537,
               "SrcName": "_signal",
               "DstId": 279,
               "DstName": "_signal"
@@ -34643,7 +37097,7 @@
               "DstIndex": 3
             },
             {
-              "Id": 468,
+              "Id": 659,
               "Value": "PREVENTSweatyDebugLogRespawnTRUE: SpawnPos:{0} SpawnEndPos:{1} Hit Object:{2} List Count:{3}",
               "DstId": 280,
               "DstName": "format"
@@ -34679,13 +37133,13 @@
               "DstName": "_target"
             },
             {
-              "Id": 469,
+              "Id": 660,
               "Value": "0,0,30",
               "DstId": 284,
               "DstName": "position"
             },
             {
-              "Id": 470,
+              "Id": 661,
               "Value": true,
               "DstId": 284,
               "DstName": "worldSpace"
@@ -34709,7 +37163,7 @@
               "DstName": "_target"
             },
             {
-              "Id": 471,
+              "Id": 662,
               "Value": "player",
               "DstId": 287,
               "DstName": "tag"
@@ -34779,7 +37233,7 @@
               "DstIndex": 3
             },
             {
-              "Id": 472,
+              "Id": 663,
               "Value": "PREVENTSweatyDebugLogRespawnFALSE: SpawnPos:{0} SpawnEndPos:{1} Hit Object:{2} List Count:{3}",
               "DstId": 291,
               "DstName": "format"
@@ -34911,7 +37365,7 @@
               "DstName": "_target"
             },
             {
-              "Id": 473,
+              "Id": 664,
               "Value": true,
               "DstId": 348,
               "DstName": "_value"
@@ -34929,7 +37383,7 @@
               "DstName": "_target"
             },
             {
-              "Id": 474,
+              "Id": 665,
               "Value": false,
               "DstId": 360,
               "DstName": "_value"
@@ -35031,7 +37485,7 @@
               "DstName": "_target"
             },
             {
-              "Id": 475,
+              "Id": 666,
               "Value": false,
               "DstId": 443,
               "DstName": "_value"
@@ -35047,6 +37501,414 @@
               "SrcName": "_result",
               "DstId": 447,
               "DstName": "_target"
+            },
+            {
+              "SrcId": 476,
+              "SrcName": "_result",
+              "DstId": 477,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 365,
+              "SrcName": "_signal",
+              "DstId": 478,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 477,
+              "SrcName": "_result",
+              "DstId": 478,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 484,
+              "SrcName": "_result",
+              "DstId": 478,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 478,
+              "SrcName": "_signal",
+              "DstId": 479,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 477,
+              "SrcName": "_result",
+              "DstId": 479,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 485,
+              "SrcName": "_result",
+              "DstId": 479,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 589,
+              "SrcName": "false",
+              "DstId": 480,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 477,
+              "SrcName": "_result",
+              "DstId": 480,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 530,
+              "SrcName": "_result",
+              "DstId": 480,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 590,
+              "SrcName": "false",
+              "DstId": 481,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 477,
+              "SrcName": "_result",
+              "DstId": 481,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 531,
+              "SrcName": "_result",
+              "DstId": 481,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 476,
+              "SrcName": "_result",
+              "DstId": 482,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 482,
+              "SrcName": "_result",
+              "DstId": 483,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 483,
+              "SrcName": "_result",
+              "DstId": 484,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 483,
+              "SrcName": "_result",
+              "DstId": 485,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 528,
+              "SrcName": "_result",
+              "DstId": 529,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 529,
+              "SrcName": "_result",
+              "DstId": 530,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 529,
+              "SrcName": "_result",
+              "DstId": 531,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 612,
+              "SrcName": "_result",
+              "DstId": 532,
+              "DstName": "name"
+            },
+            {
+              "SrcId": 669,
+              "SrcName": "_signal",
+              "DstId": 533,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 532,
+              "SrcName": "_result",
+              "DstId": 533,
+              "DstName": "enumerable"
+            },
+            {
+              "SrcId": 534,
+              "SrcName": "_result",
+              "DstId": 535,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 533,
+              "SrcName": "body",
+              "DstId": 537,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 533,
+              "SrcName": "body.value",
+              "DstId": 537,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 529,
+              "SrcName": "_result",
+              "DstId": 540,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 479,
+              "SrcName": "_signal",
+              "DstId": 541,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 540,
+              "SrcName": "_result",
+              "DstId": 541,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 529,
+              "SrcName": "_result",
+              "DstId": 568,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 529,
+              "SrcName": "_result",
+              "DstId": 569,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 541,
+              "SrcName": "true",
+              "DstId": 589,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 569,
+              "SrcName": "_result",
+              "DstId": 589,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 541,
+              "SrcName": "true",
+              "DstId": 590,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 568,
+              "SrcName": "_result",
+              "DstId": 590,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 591,
+              "SrcName": "_result",
+              "DstId": 592,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 408,
+              "SrcName": "_signal",
+              "DstId": 593,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 592,
+              "SrcName": "_result",
+              "DstId": 593,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 599,
+              "SrcName": "_result",
+              "DstId": 593,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 593,
+              "SrcName": "_signal",
+              "DstId": 594,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 592,
+              "SrcName": "_result",
+              "DstId": 594,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 600,
+              "SrcName": "_result",
+              "DstId": 594,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 610,
+              "SrcName": "false",
+              "DstId": 595,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 592,
+              "SrcName": "_result",
+              "DstId": 595,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 603,
+              "SrcName": "_result",
+              "DstId": 595,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 611,
+              "SrcName": "false",
+              "DstId": 596,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 592,
+              "SrcName": "_result",
+              "DstId": 596,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 604,
+              "SrcName": "_result",
+              "DstId": 596,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 591,
+              "SrcName": "_result",
+              "DstId": 597,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 597,
+              "SrcName": "_result",
+              "DstId": 598,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 598,
+              "SrcName": "_result",
+              "DstId": 599,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 598,
+              "SrcName": "_result",
+              "DstId": 600,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 601,
+              "SrcName": "_result",
+              "DstId": 602,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 602,
+              "SrcName": "_result",
+              "DstId": 603,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 602,
+              "SrcName": "_result",
+              "DstId": 604,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 602,
+              "SrcName": "_result",
+              "DstId": 606,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 594,
+              "SrcName": "_signal",
+              "DstId": 607,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 606,
+              "SrcName": "_result",
+              "DstId": 607,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 602,
+              "SrcName": "_result",
+              "DstId": 608,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 602,
+              "SrcName": "_result",
+              "DstId": 609,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 607,
+              "SrcName": "true",
+              "DstId": 610,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 609,
+              "SrcName": "_result",
+              "DstId": 610,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 607,
+              "SrcName": "true",
+              "DstId": 611,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 608,
+              "SrcName": "_result",
+              "DstId": 611,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 535,
+              "SrcName": "_result",
+              "DstId": 612,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 400,
+              "SrcName": "_signal",
+              "DstId": 669,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 671,
+              "Value": 0.2,
+              "DstId": 669,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 668,
+              "SrcName": "_result",
+              "DstId": 669,
+              "DstName": "target"
             }
           ]
         },
@@ -48832,7 +51694,25 @@
             "Children": []
           },
           {
-            "__guid": "7cab2fc1-2941-46c6-bc1f-489ea2fa185c",
+            "__guid": "267fa02f-0394-41be-9e2f-14555bb59d55",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "EyesViewPoint",
+            "Position": "6.79761696,0,69.828537",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Tags": "viewpoint",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [],
+            "Children": []
+          },
+          {
+            "__guid": "8b625917-b774-44a9-ac15-be2e98cccf7a",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - scientist_gloves_pink",
@@ -48849,7 +51729,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "a58778f1-2905-477f-aa9f-4a7aec5a5623",
+                "__guid": "31493721-b659-42c5-90d4-f01aa7af0c87",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -48901,7 +51781,7 @@
             "Children": []
           },
           {
-            "__guid": "382642f6-274b-4efe-82ef-560c4bdf7606",
+            "__guid": "78ef2963-5037-49ba-8b73-4a3394b6ba5a",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - mob boss pants",
@@ -48918,7 +51798,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "72bd9f3e-6317-4a15-a991-04c548b839e3",
+                "__guid": "243b9066-3c2f-4143-ba77-a81c8322f17e",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -48970,7 +51850,7 @@
             "Children": []
           },
           {
-            "__guid": "2b697279-ee5c-4532-9553-7d1f645f97ff",
+            "__guid": "151e0be1-35a2-4bc0-a977-eeed911f1119",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - mob boss shoes",
@@ -48987,7 +51867,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "1236b28f-7c22-4ee5-9a98-b223b01e0446",
+                "__guid": "c625ee96-3dde-43bc-8145-59c26f1f6192",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -49039,7 +51919,7 @@
             "Children": []
           },
           {
-            "__guid": "6926762f-83fe-40f4-9a4d-fb2f6790134f",
+            "__guid": "8e453c16-213e-4f80-8c2d-4b11edb9de30",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - mob boss top",
@@ -49056,7 +51936,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "82f522ab-4e9d-46ad-a3f4-7ed93f7cdda9",
+                "__guid": "c17f3b0f-6305-4ff6-909b-a23909122d32",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -49108,7 +51988,7 @@
             "Children": []
           },
           {
-            "__guid": "cb227f93-28a5-4ad3-8d06-b994576531be",
+            "__guid": "433b36fc-2057-4052-b719-8cc3f054510e",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - hair_shortscruffy_brown",
@@ -49125,7 +52005,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "7975e70f-1404-4bd8-9a45-8b9efb249b95",
+                "__guid": "025081d3-ae02-46b6-892a-d53334b15950",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -49177,7 +52057,7 @@
             "Children": []
           },
           {
-            "__guid": "3a3d2520-5ef5-4657-91a4-7f058f6e07e5",
+            "__guid": "485ea0ab-d3d5-4459-a685-64e28cee6854",
             "__version": 2,
             "Flags": 0,
             "Name": "Clothing - medium_beard",
@@ -49194,7 +52074,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "8fb7ca50-e5a5-4944-92cc-1721d5ea12e1",
+                "__guid": "944c6d32-28df-416d-91c4-d22c4dffc7f1",
                 "__enabled": true,
                 "Flags": 0,
                 "AnimationGraph": null,
@@ -49243,24 +52123,6 @@
                 "UseAnimGraph": true
               }
             ],
-            "Children": []
-          },
-          {
-            "__guid": "267fa02f-0394-41be-9e2f-14555bb59d55",
-            "__version": 2,
-            "Flags": 0,
-            "Name": "EyesViewPoint",
-            "Position": "6.79761696,0,69.828537",
-            "Rotation": "0,0,0,1",
-            "Scale": "1,1,1",
-            "Tags": "viewpoint",
-            "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkFlags": 0,
-            "NetworkOrphaned": 0,
-            "NetworkTransmit": true,
-            "OwnerTransfer": 1,
-            "Components": [],
             "Children": []
           }
         ]

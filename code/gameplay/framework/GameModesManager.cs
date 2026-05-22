@@ -7,6 +7,8 @@ public sealed class GameModesManager : Component
 	//SFX Vars
 	[Property, Feature("SFX Info"), Group("Player SFX Info")] public SoundEvent PlayerRespawnSound { get; set; }
 
+
+	[Property] public GameObject CurrentGameMode { get; set; }
 	[Property] public GameObject[] GameModes { get; set; }
 
 	[Property] public Action RespawnPointListLogic { get; set; }

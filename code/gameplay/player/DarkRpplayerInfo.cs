@@ -205,6 +205,18 @@ public sealed class DarkrpPlayerInfo : Component
 	public ActionGraphRespawnPlayer RespawnPlayer { get; set; }
 
 
+	public delegate void ActionGraphDamagePlayer(GameObject Player, int Damage);
+	[Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Damage Player")]
+	public ActionGraphDamagePlayer DamagePlayer { get; set; }
+
+	public void DealDamageToPlayer(GameObject Player, int Damage)
+	{
+		DamagePlayer?.Invoke(Player, Damage);
+
+	}
+
+
+
 
 
 

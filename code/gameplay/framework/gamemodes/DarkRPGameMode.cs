@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using Sandbox;
 
 namespace DarkRPGamemode
@@ -21,6 +22,25 @@ public partial class DarkRPGamemode : GameModeBase
 	[Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Can Any Users Listed in 'UserGroupList' skip any job Blacklist?")] public bool IsUserGroupListSkipBlacklists  { get; set; }
 	[Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Show un joinable jobs in the Job Menu?")] public bool IsShowUnJoinableJobs  { get; set; }
 	[Property, Feature("Basic Info"), Group("Restrictions To Job"), Description("Show Whitelist/Blacklist System in Context Menu?")] public bool IsShowContextMenu  { get; set; }
+
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), Description("Enabled Hunger mod that will enabled the Hunger/Thirst System?")] public bool IsHungerModEnabled  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), Description("Disable the Hunger?")] public bool IsHungerDisabled  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), Description("Disable the Thirst?")] public bool IsThirstDisabled  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), Description("Disable the Damage the player recieves when they are less than or equal to 0?")] public bool IsHungerDamageDisabled  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), Description("Amount of damage to recieve when no hunger or thirst.")] public int HungerDamage  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), Description("Amount of damage to recieve when no hunger or thirst.")] public int ThirstDamage  { get; set; }
+
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), ShowIf ( nameof( IsHungerModEnabled ), true), Description("What is the Default Hunger.")] public float DefaultHungerAmount  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), ShowIf ( nameof( IsHungerModEnabled ), true), Description("What is the Default Thirst?")] public float DefaultThirstAmount  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), ShowIf ( nameof( IsHungerModEnabled ), true), Description("What is the Max Hunger.")] public float MaxHungerAmount  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), ShowIf ( nameof( IsHungerModEnabled ), true), Description("What is the Max Thirst?")] public float MaxThirstAmount  { get; set; }
+		[Property, Feature("Basic Info"), Group("Hunger Mod"), ShowIf ( nameof( IsHungerModEnabled ), true), Description("What is the Default Hunger Reduction amount? This is how much Hunger is taken away from player when Hunger Reduction Triggered.")] public float HungerDefaultReductionAmount  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), ShowIf ( nameof( IsHungerModEnabled ), true), Description("What is the Default Thirst Reduction amount? This is how much Thirst is taken away from player when Thirst Reduction Triggered.")] public float ThirstDefaultReductionAmount  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), ShowIf ( nameof( IsHungerModEnabled ), true), Description("What is the Default Hunger Reduction Speed? 0.1 = 0.1 second, 1 = 1 second.")] public float HungerDefaultReductionSpeed  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), ShowIf ( nameof( IsHungerModEnabled ), true), Description("What is the Default Thirst Reduction Speed? 0.1 = 0.1 second, 1 = 1 second.")] public float ThirstDefaultReductionSpeed  { get; set; }
+
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), ShowIf ( nameof( IsHungerModEnabled ), true), Description("What is the Max Hunger Reduction Speed?")] public float HungerMaxReductionSpeed  { get; set; }
+	[Property, Feature("Basic Info"), Group("Hunger Mod"), ShowIf ( nameof( IsHungerModEnabled ), true), Description("What is the Max Thirst Reduction Speed?")] public float ThirstMaxReductionSpeed  { get; set; }
 
 	[Property, Feature("Basic Info")] public JobResource DefaultDarkRPCivilianJob { get; set; }
 	[Property, Feature("Basic Info")] public int SalaryPaymentSystemCycleTime { get; set; }
