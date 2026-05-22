@@ -1,13 +1,15 @@
 using Sandbox;
+using System.Threading.Tasks;
 
 public static class DarkRPActionGraphs
 {
-    [ActionGraphNode("Scene Trace With Beam")]
-    [Group("DarkRP Action Graphs")]
+    [ActionGraphNode( "Scene Trace With Beam" )]
+    [Group( "DarkRP Action Graphs" )]
     public static SceneTraceResult TraceWithBeam(
         GameObject source,
         Vector3 from,
-        Vector3 to
+        Vector3 to,
+        bool showDebugLog
     )
     {
         if ( source == null || source.Scene == null )
@@ -17,28 +19,55 @@ public static class DarkRPActionGraphs
             .Ray( from, to )
             .Run();
 
-        var beamGO = new GameObject();
-        beamGO.WorldPosition = from;
+        if ( showDebugLog )
+        {
+            Log.Info( $"Trace: {from} → {to} | Hit: {tr.Hit}" );
+        }
 
-        var beam = beamGO.Components.Create<BeamEffect>();
+        var hitPos = tr.Hit ? tr.HitPosition : to;
 
-        beam.TargetPosition = tr.Hit ? tr.HitPosition : to;
-        beam.Scale = 2f;
-        beam.BeamLifetime = 0.1f;
-        beam.BeamsPerSecond = 1;
-
-        beam.BeamColor = tr.Hit ? Color.Green : Color.Red;
-
-        // SAFE runtime destroy (works in all builds)
-        _ = RunDestroyLater( beamGO, 1f );
+        SpawnDebugLine( source.Scene, from, hitPos, tr.Hit );
 
         return tr;
     }
 
-    private static async Task RunDestroyLater(GameObject obj, float seconds)
+    private static async void SpawnDebugLine(
+        Scene scene,
+        Vector3 from,
+        Vector3 to,
+        bool hit
+    )
     {
-        await Task.DelaySeconds(seconds);
-        if ( obj.IsValid() )
-            obj.Destroy();
+        var dir = to - from;
+        var dist = dir.Length;
+
+        if ( dist <= 0.001f )
+            return;
+
+        dir = dir.Normal;
+
+        var go = new GameObject( scene );
+
+        // midpoint positioning
+        go.WorldPosition = from + dir * (dist * 0.5f);
+
+        // rotate toward target
+        go.WorldRotation = Rotation.LookAt( dir );
+
+        var model = go.Components.Create<ModelRenderer>();
+
+        model.Model = Model.Load( "models/dev/box.vmdl" );
+
+        // IMPORTANT: stretch on X axis
+        go.WorldScale = new Vector3( dist, 0.1f, 0.1f );
+
+        model.Tint = hit
+            ? Color.Green
+            : Color.Red;
+
+        await Task.Delay( 100 );
+
+        if ( go.IsValid() )
+            go.Destroy();
     }
 }
