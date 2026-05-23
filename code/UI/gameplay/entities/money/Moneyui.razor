@@ -5,7 +5,7 @@
 
 <root>
 	<div class="money">
-	<p>@MoneyVar.MoneyStackAmount</p>
+	<p>@MoneyStackUIVar</p>
 	
 	</div>
 </root>
@@ -13,13 +13,13 @@
 @code
 {
 
-	[Property] Money MoneyVar { get; set; }
+	[Property] public int MoneyStackUIVar { get; set; }
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
 	protected override int BuildHash() 
 	{
-		return System.HashCode.Combine( MoneyVar );
+		return System.HashCode.Combine( MoneyStackUIVar );
 	}
 }

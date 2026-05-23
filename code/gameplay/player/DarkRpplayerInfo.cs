@@ -1,4 +1,6 @@
+using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
+using Sandbox.Platform;
 using Sandbox;
 using Sandbox.Utility;
 using PlayerData = NetworkManager.NetworkManager.PlayerData;
@@ -252,6 +254,12 @@ public sealed class DarkrpPlayerInfo : Component
 			Log.Info($"Local Player Name: {DisplayName}");
 			Log.Info($"Local Player Name: {SteamId}");
 		}
+
+		Chat.Say("HellO!!");
+		Chat.ShowUI = true;
+
+
+
 	}
 
 	// protected override void OnUpdate()

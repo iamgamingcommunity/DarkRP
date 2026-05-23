@@ -1,7 +1,7 @@
 {
   "RootObject": {
     "__guid": "97ba509e-28b4-425d-8fff-e238f7164ae0",
-    "__version": 1,
+    "__version": 2,
     "Flags": 0,
     "Name": "money",
     "Position": "0,0,0",
@@ -10,14 +10,16 @@
     "Tags": "money,grab",
     "Enabled": true,
     "NetworkMode": 2,
-    "NetworkInterpolation": true,
+    "NetworkFlags": 0,
     "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
         "__guid": "bda2b221-bda6-4ef5-b3e1-35e81dafac43",
         "__enabled": true,
+        "Flags": 0,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
         "LodOverride": null,
@@ -44,8 +46,13 @@
         "__type": "Sandbox.Rigidbody",
         "__guid": "dbe6d867-0e5f-4158-bfc5-73efd1c9f91c",
         "__enabled": true,
+        "Flags": 0,
         "AngularDamping": 0,
+        "EnableImpactDamage": true,
+        "EnhancedCcd": false,
         "Gravity": true,
+        "GravityScale": 1,
+        "ImpactDamage": 0,
         "LinearDamping": 0,
         "Locking": {
           "X": false,
@@ -57,6 +64,7 @@
         },
         "MassCenterOverride": "0,0,0",
         "MassOverride": 0,
+        "MinImpactDamageSpeed": 500,
         "MotionEnabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -66,13 +74,16 @@
         "OnComponentUpdate": null,
         "OverrideMassCenter": false,
         "RigidbodyFlags": 0,
+        "SleepThreshold": 2,
         "StartAsleep": false
       },
       {
         "__type": "Sandbox.BoxCollider",
         "__guid": "61824fb4-944f-40c6-b3f5-08e8e375a644",
         "__enabled": true,
+        "Flags": 0,
         "Center": "0,0,0.5",
+        "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
@@ -87,7 +98,7 @@
         "OnTriggerEnter": null,
         "OnTriggerExit": null,
         "RollingResistance": null,
-        "Scale": "7.300017,3.000034,0.9",
+        "Scale": "7.30001688,3.00003409,0.899999976",
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
@@ -96,10 +107,11 @@
         "__type": "Money",
         "__guid": "3b3bd1f0-153d-4691-b754-cf5ec6460bcc",
         "__enabled": true,
+        "Flags": 0,
         "Interacted": {
           "__version": 9,
           "__guid": "1a71cf0e-a10a-490e-ad3f-776832e4b87a",
-          "__changeId": 26,
+          "__changeId": 27,
           "UserData": {
             "Title": "Interacted With Money",
             "Description": "Interaction Logic with Money & Player",
@@ -258,7 +270,10 @@
             }
           ]
         },
+        "InteractionSFX": null,
         "IsInteractable": true,
+        "IsInventoriable": false,
+        "IsPocketable": false,
         "MoneyStackAmount": 0,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -267,13 +282,16 @@
         "OnComponentStart": {
           "__version": 9,
           "__guid": "bbe9b158-6f22-4f4e-a4d6-0983cabb09ca",
-          "__changeId": 45,
+          "__changeId": 55,
           "UserData": {
-            "Title": "On Component Start",
+            "Title": "On Money Stack Component Start",
             "ReferencedComponentTypes": [
               "Money",
               "Sandbox.Moneyui"
-            ]
+            ],
+            "Description": "Sets the money to the current amount & Sets the UI.",
+            "Category": "Money",
+            "Icon": "attach_money"
           },
           "Variables": [],
           "Nodes": [
@@ -289,16 +307,6 @@
               },
               "UserData": {
                 "Position": "48,36"
-              }
-            },
-            {
-              "Id": 2,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "Sandbox.Moneyui"
-              },
-              "UserData": {
-                "Position": "36,264"
               }
             },
             {
@@ -320,7 +328,59 @@
                 "_type": "Money"
               },
               "UserData": {
-                "Position": "396,-24"
+                "Position": "300,-0"
+              }
+            },
+            {
+              "Id": 16,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "120,324"
+              }
+            },
+            {
+              "Id": 17,
+              "Type": "property",
+              "Properties": {
+                "_name": "Children",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "228,324"
+              }
+            },
+            {
+              "Id": 18,
+              "Type": "list.get",
+              "Properties": {
+                "T": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "264,252"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.Moneyui"
+              },
+              "UserData": {
+                "Position": "264,216"
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "property",
+              "Properties": {
+                "_name": "MoneyStackUIVar",
+                "_type": "Sandbox.Moneyui"
+              },
+              "UserData": {
+                "Position": "588,-0"
               }
             }
           ],
@@ -329,12 +389,6 @@
               "SrcId": 0,
               "SrcName": "_target",
               "DstId": 1,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 0,
-              "SrcName": "_target",
-              "DstId": 2,
               "DstName": "_this"
             },
             {
@@ -360,6 +414,48 @@
               "SrcName": "_result",
               "DstId": 10,
               "DstName": "_value"
+            },
+            {
+              "SrcId": 16,
+              "SrcName": "_result",
+              "DstId": 17,
+              "DstName": "_target"
+            },
+            {
+              "Id": 24,
+              "Value": 0,
+              "DstId": 18,
+              "DstName": "index"
+            },
+            {
+              "SrcId": 17,
+              "SrcName": "_result",
+              "DstId": 18,
+              "DstName": "list"
+            },
+            {
+              "SrcId": 18,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 10,
+              "SrcName": "_signal",
+              "DstId": 22,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 22,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 22,
+              "DstName": "_value"
             }
           ]
         },
@@ -369,7 +465,9 @@
         "__type": "Sandbox.BoxCollider",
         "__guid": "b7521e29-1a39-4605-aee4-8520beec4e9f",
         "__enabled": true,
+        "Flags": 0,
         "Center": "0,0,0.5",
+        "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": true,
@@ -382,14 +480,15 @@
         "OnObjectTriggerEnter": {
           "__version": 9,
           "__guid": "2a458cf4-a94a-4d4c-9c09-ae2d141e5b11",
-          "__changeId": 41,
+          "__changeId": 121,
           "UserData": {
             "Title": "On Object Enter Money Trigger",
             "Description": "Logic on Adding Money Stacks togethers.",
             "Category": "Money",
             "Icon": "money",
             "ReferencedComponentTypes": [
-              "Money"
+              "Money",
+              "Sandbox.Moneyui"
             ]
           },
           "Variables": [],
@@ -438,7 +537,7 @@
                 "T": "Money"
               },
               "UserData": {
-                "Position": "780,96"
+                "Position": "744,156"
               }
             },
             {
@@ -459,7 +558,7 @@
                 "T": "Money"
               },
               "UserData": {
-                "Position": "1032,48"
+                "Position": "996,0"
               }
             },
             {
@@ -500,7 +599,93 @@
                 "_type": "Sandbox.GameObject"
               },
               "UserData": {
-                "Position": "1644,-36"
+                "Position": "2124,-36"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "768,360"
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Money"
+              },
+              "UserData": {
+                "Position": "900,336"
+              }
+            },
+            {
+              "Id": 23,
+              "Type": "op.isnull",
+              "UserData": {
+                "Position": "924,204"
+              }
+            },
+            {
+              "Id": 24,
+              "Type": "if",
+              "UserData": {
+                "Position": "1116,-36"
+              }
+            },
+            {
+              "Id": 25,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "1560,168"
+              }
+            },
+            {
+              "Id": 26,
+              "Type": "property",
+              "Properties": {
+                "_name": "Children",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "1668,168"
+              }
+            },
+            {
+              "Id": 27,
+              "Type": "list.get",
+              "Properties": {
+                "T": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "1704,96"
+              }
+            },
+            {
+              "Id": 29,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.Moneyui"
+              },
+              "UserData": {
+                "Position": "1704,60"
+              }
+            },
+            {
+              "Id": 31,
+              "Type": "property",
+              "Properties": {
+                "_name": "MoneyStackUIVar",
+                "_type": "Sandbox.Moneyui"
+              },
+              "UserData": {
+                "Position": "1740,-12"
               }
             }
           ],
@@ -518,13 +703,13 @@
               "DstName": "_target"
             },
             {
-              "Id": 19,
+              "Id": 37,
               "Value": true,
               "DstId": 2,
               "DstName": "includeAncestors"
             },
             {
-              "Id": 20,
+              "Id": 38,
               "Value": "money",
               "DstId": 2,
               "DstName": "tag"
@@ -560,7 +745,7 @@
               "DstName": "_this"
             },
             {
-              "SrcId": 12,
+              "SrcId": 22,
               "SrcName": "_result",
               "DstId": 13,
               "DstName": "_target"
@@ -578,13 +763,13 @@
               "DstName": "b"
             },
             {
-              "SrcId": 9,
-              "SrcName": "true",
+              "SrcId": 24,
+              "SrcName": "false",
               "DstId": 15,
               "DstName": "_signal"
             },
             {
-              "SrcId": 12,
+              "SrcId": 22,
               "SrcName": "_result",
               "DstId": 15,
               "DstName": "_target"
@@ -596,7 +781,7 @@
               "DstName": "_value"
             },
             {
-              "SrcId": 15,
+              "SrcId": 31,
               "SrcName": "_signal",
               "DstId": 16,
               "DstName": "_signal"
@@ -606,6 +791,72 @@
               "SrcName": "obj",
               "DstId": 16,
               "DstName": "_target"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_result",
+              "DstId": 22,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 22,
+              "SrcName": "_result",
+              "DstId": 23,
+              "DstName": "input"
+            },
+            {
+              "SrcId": 9,
+              "SrcName": "true",
+              "DstId": 24,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 23,
+              "SrcName": "_result",
+              "DstId": 24,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 25,
+              "SrcName": "_result",
+              "DstId": 26,
+              "DstName": "_target"
+            },
+            {
+              "Id": 39,
+              "Value": 0,
+              "DstId": 27,
+              "DstName": "index"
+            },
+            {
+              "SrcId": 26,
+              "SrcName": "_result",
+              "DstId": 27,
+              "DstName": "list"
+            },
+            {
+              "SrcId": 27,
+              "SrcName": "_result",
+              "DstId": 29,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "_signal",
+              "DstId": 31,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 29,
+              "SrcName": "_result",
+              "DstId": 31,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_result",
+              "DstId": 31,
+              "DstName": "_value"
             }
           ]
         },
@@ -613,7 +864,7 @@
         "OnTriggerEnter": null,
         "OnTriggerExit": null,
         "RollingResistance": null,
-        "Scale": "7.900014,3.300035,1.2",
+        "Scale": "7.90001392,3.300035,1.20000005",
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
@@ -622,23 +873,25 @@
     "Children": [
       {
         "__guid": "cc060a80-3a1c-4a0c-ad1e-835e6202ce7c",
-        "__version": 1,
+        "__version": 2,
         "Flags": 0,
         "Name": "World",
-        "Position": "-0.0000001788139,0,1.036696",
-        "Rotation": "0,-0.7071068,0,0.7071068",
+        "Position": "-1.78813906E-07,0,1.03669596",
+        "Rotation": "0,-0.707106829,0,0.707106829",
         "Scale": "1,1,1",
         "Tags": "",
         "Enabled": true,
         "NetworkMode": 2,
-        "NetworkInterpolation": true,
+        "NetworkFlags": 0,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [
           {
             "__type": "Sandbox.WorldPanel",
             "__guid": "6c609e89-444a-45a0-a6fd-6ecec592113b",
             "__enabled": true,
+            "Flags": 0,
             "HorizontalAlign": "Center",
             "InteractionRange": 1000,
             "LookAtCamera": false,
@@ -648,7 +901,7 @@
             "OnComponentFixedUpdate": null,
             "OnComponentStart": null,
             "OnComponentUpdate": null,
-            "PanelSize": "62.80014,142.5",
+            "PanelSize": "62.8001404,142.5",
             "RenderOptions": {
               "GameLayer": true,
               "OverlayLayer": false,
@@ -662,12 +915,8 @@
             "__type": "Sandbox.Moneyui",
             "__guid": "0653a825-c32c-4704-9a8c-aa2cf961a157",
             "__enabled": true,
-            "MoneyVar": {
-              "_type": "component",
-              "component_id": "3b3bd1f0-153d-4691-b754-cf5ec6460bcc",
-              "go": "97ba509e-28b4-425d-8fff-e238f7164ae0",
-              "component_type": "Money"
-            },
+            "Flags": 0,
+            "MoneyStackUIVar": 0,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
@@ -688,13 +937,15 @@
         "Enabled": false,
         "IncludeStaticBodies": true,
         "IncludeKeyframedBodies": true,
-        "EditorAutoUpdate": true,
+        "EditorAutoUpdate": false,
         "AgentHeight": 64,
         "AgentRadius": 16,
         "AgentStepSize": 18,
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
-        "IncludedBodies": ""
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
       }
     },
     "__variables": []
