@@ -1,5 +1,6 @@
 @using Sandbox;
 @using Sandbox.UI;
+@using Sandbox.Platform
 @inherits PanelComponent
 @namespace Sandbox
 
@@ -37,7 +38,7 @@
 <chat-menu-input class="@(IsDefaultDarkRPChatOpen ? "" : "hide")">
  	<div class="chat-input">
     <TextEntry @ref="DefaultDarkRPChatMessage" placeholder="Enter Chat Message..." />
-    <button onclick="@(() => {GraphOpenChatSettings?.Invoke(); })">Send Chat</button>
+    <button onclick="@(() => SendMessageButton())">Send Chat</button>
 	</div>
 </chat-menu-input>
 
@@ -524,6 +525,30 @@ bool IsOpen( CategoryResource category )
     }
 
 
+    public string ChatMessage {get; set;}
+
+
+
+    public void SendChatMessage(string ChatMessage)
+    {
+        Chat.Say($"{ChatMessage}");
+        Log.Info($"{ChatMessage}");
+        IsDefaultDarkRPChatOpen = false;
+        ChatMessage = "";
+
+    }
+
+    public void SendMessageButton()
+    {
+        Chat.Say($"{DefaultDarkRPChatMessage.Text}");
+        Log.Info($"{DefaultDarkRPChatMessage.Text}");
+        IsDefaultDarkRPChatOpen = false;
+        DefaultDarkRPChatMessage.Text = "";
+
+    }
+
+
+
 
   
 
@@ -557,9 +582,9 @@ bool IsOpen( CategoryResource category )
 	[Property, Feature("Player Hud Info")]
 	public ActionGraphOpenChatSettings GraphOpenChatSettings { get; set; }
 
-	public delegate void ActionGraphSendChat(GameObject PlayerController, string ChatMessage);
+	public delegate void ActionGraphSendChat(GameObject PlayerController, GameObject UI, string ChatMessage);
 	[Property, Feature("Player Hud Info")]
-	public ActionGraphSendChat GraphSendChat{ get; set; }
+	public ActionGraphSendChat GraphSendChat { get; set; }
 
 	public delegate void ActionGraphCloseF4Menu();
 	[Property, Feature("Player Hud Info")]
@@ -651,9 +676,9 @@ bool IsOpen( CategoryResource category )
 	public bool IsArrested {get; set;}
 
 
-	public void SendDefaultDarkRPChatMessage(GameObject PlayerController, string ChatMessage)
+	public void SendDefaultDarkRPChatMessage(GameObject PlayerController, GameObject UI ,string ChatMessage)
 	{
-		GraphSendChat?.Invoke(PlayerController, ChatMessage);
+		GraphSendChat?.Invoke(PlayerController, UI, ChatMessage);
 	}
 
 
@@ -722,6 +747,7 @@ bool IsOpen( CategoryResource category )
     hash = hash * 31 + IsF4WeaponsMenuOpen.GetHashCode();
     hash = hash * 31 + IsF4AmmoMenuOpen.GetHashCode();
     hash = hash * 31 + IsF4VehiclesMenuOpen.GetHashCode();
+    hash = hash * 31 + IsDefaultDarkRPChatOpen.GetHashCode();
 
     if (SelectedJob != null)
         hash = hash * 31 + SelectedJob.GetHashCode();

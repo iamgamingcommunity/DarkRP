@@ -58,7 +58,7 @@
             "GraphBuyF4MenuItem": {
               "__version": 9,
               "__guid": "03217fe2-ec8e-44b3-809d-ba75f4b0ead4",
-              "__changeId": 66,
+              "__changeId": 67,
               "UserData": {
                 "Title": "Graph Buy F 4Menu Item",
                 "ReferencedComponentTypes": [
@@ -317,7 +317,7 @@
             "GraphCloseF4Menu": {
               "__version": 9,
               "__guid": "8b2a727c-d22c-4d92-8849-9a7e3bdea5c4",
-              "__changeId": 20,
+              "__changeId": 22,
               "UserData": {
                 "Title": "Graph Close F 4Menu",
                 "ReferencedComponentTypes": []
@@ -380,7 +380,7 @@
             "GraphSelectedTabIndex": {
               "__version": 9,
               "__guid": "3f297506-4b16-40a8-bf31-65015ebac13e",
-              "__changeId": 196,
+              "__changeId": 198,
               "UserData": {
                 "Title": "Graph Selected Tab Index",
                 "ReferencedComponentTypes": [
@@ -1810,8 +1810,8 @@
             },
             "GraphSendChat": {
               "__version": 9,
-              "__guid": "80cde54b-0594-493f-8491-a7794440d672",
-              "__changeId": 84,
+              "__guid": "7d4e24f3-124c-4166-8ffe-983367d35c2f",
+              "__changeId": 78,
               "UserData": {
                 "Title": "Graph Send Chat",
                 "ReferencedComponentTypes": [
@@ -1823,76 +1823,66 @@
               "Nodes": [
                 {
                   "Id": 0,
-                  "Type": "input",
-                  "UserData": {
-                    "Position": "-612,0"
-                  }
+                  "Type": "input"
                 },
                 {
-                  "Id": 1,
+                  "Id": 18,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "1800,-0"
+                    "Position": "2148,24"
                   }
                 },
                 {
-                  "Id": 2,
+                  "Id": 19,
                   "Type": "scene.get",
                   "Properties": {
                     "T": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "744,192"
+                    "Position": "672,192"
                   }
                 },
                 {
-                  "Id": 9,
-                  "Type": "scene.ref",
-                  "UserData": {
-                    "Position": "360,48"
-                  }
-                },
-                {
-                  "Id": 10,
+                  "Id": 20,
                   "Type": "scene.get",
                   "Properties": {
                     "T": "Sandbox.Playerhudmain"
                   },
                   "UserData": {
-                    "Position": "552,84"
+                    "Position": "144,264"
                   }
                 },
                 {
-                  "Id": 11,
+                  "Id": 21,
                   "Type": "property",
                   "Properties": {
                     "_name": "IsDefaultDarkRPChatOpen",
                     "_type": "Sandbox.Playerhudmain"
                   },
                   "UserData": {
-                    "Position": "576,-0"
+                    "Position": "300,0"
                   }
                 },
                 {
-                  "Id": 16,
+                  "Id": 22,
                   "Type": "property",
                   "Properties": {
                     "_name": "DisplayName",
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "1032,192"
+                    "Position": "960,192"
                   }
                 },
                 {
-                  "Id": 21,
+                  "Id": 23,
                   "Type": "ChatCommands/Get Command By Name",
                   "UserData": {
-                    "Position": "984,0"
+                    "Position": "912,0"
                   }
                 },
                 {
-                  "Id": 50,
+                  "Id": 24,
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
@@ -1900,22 +1890,22 @@
                     "_type": "ChatCommandResource"
                   },
                   "UserData": {
-                    "Position": "1404,0"
+                    "Position": "1752,24"
                   }
                 },
                 {
-                  "Id": 53,
+                  "Id": 25,
                   "Type": "property",
                   "Properties": {
                     "_name": "ChatCommands",
                     "_type": "ChatCommandResource"
                   },
                   "UserData": {
-                    "Position": "1176,120"
+                    "Position": "1104,120"
                   }
                 },
                 {
-                  "Id": 54,
+                  "Id": 26,
                   "Type": "property",
                   "Properties": {
                     "_name": "ChatCommandName",
@@ -1926,123 +1916,227 @@
                     }
                   },
                   "UserData": {
-                    "Position": "1500,168"
+                    "Position": "1848,192"
+                  }
+                },
+                {
+                  "Id": 27,
+                  "Type": "sys.isvalid",
+                  "UserData": {
+                    "Position": "1272,72"
+                  }
+                },
+                {
+                  "Id": 28,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "1440,0"
+                  }
+                },
+                {
+                  "Id": 50,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "SendChatMessage",
+                    "_type": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "1968,372"
+                  }
+                },
+                {
+                  "Id": 57,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ChatMessage",
+                    "_type": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "1608,264"
+                  }
+                },
+                {
+                  "Id": 58,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1452,180"
                   }
                 }
               ],
               "Links": [
                 {
-                  "SrcId": 50,
+                  "SrcId": 24,
                   "SrcName": "_signal",
-                  "DstId": 1,
+                  "DstId": 18,
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 16,
+                  "SrcId": 22,
                   "SrcName": "_result",
-                  "DstId": 1,
+                  "DstId": 18,
                   "DstName": "args",
                   "DstIndex": 0
                 },
                 {
-                  "SrcId": 0,
-                  "SrcName": "ChatMessage",
-                  "DstId": 1,
+                  "Id": 73,
+                  "Value": null,
+                  "DstId": 18,
                   "DstName": "args",
                   "DstIndex": 1
                 },
                 {
-                  "SrcId": 54,
+                  "SrcId": 26,
                   "SrcName": "_result",
-                  "DstId": 1,
+                  "DstId": 18,
                   "DstName": "args",
                   "DstIndex": 2
                 },
                 {
-                  "Id": 57,
+                  "Id": 74,
                   "Value": "{0}: {1} ChatCommand Name: {2}",
-                  "DstId": 1,
+                  "DstId": 18,
                   "DstName": "format"
                 },
                 {
                   "SrcId": 0,
                   "SrcName": "PlayerController",
-                  "DstId": 2,
+                  "DstId": 19,
                   "DstName": "_this"
                 },
                 {
-                  "SrcId": 9,
-                  "SrcName": "_result",
-                  "DstId": 10,
+                  "SrcId": 0,
+                  "SrcName": "UI",
+                  "DstId": 20,
                   "DstName": "_this"
                 },
                 {
                   "SrcId": 0,
                   "SrcName": "_signal",
-                  "DstId": 11,
+                  "DstId": 21,
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 10,
+                  "SrcId": 20,
                   "SrcName": "_result",
-                  "DstId": 11,
+                  "DstId": 21,
                   "DstName": "_target"
                 },
                 {
-                  "Id": 58,
+                  "Id": 75,
                   "Value": false,
-                  "DstId": 11,
+                  "DstId": 21,
                   "DstName": "_value"
                 },
                 {
-                  "SrcId": 2,
+                  "SrcId": 19,
                   "SrcName": "_result",
-                  "DstId": 16,
+                  "DstId": 22,
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 11,
+                  "SrcId": 21,
                   "SrcName": "_signal",
-                  "DstId": 21,
+                  "DstId": 23,
                   "DstName": "_signal"
                 },
                 {
                   "SrcId": 0,
                   "SrcName": "ChatMessage",
-                  "DstId": 21,
+                  "DstId": 23,
                   "DstName": "name"
                 },
                 {
-                  "SrcId": 21,
+                  "SrcId": 28,
+                  "SrcName": "true",
+                  "DstId": 24,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_result",
+                  "DstId": 24,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_result",
+                  "DstId": 25,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 25,
+                  "SrcName": "_result",
+                  "DstId": 26,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_result",
+                  "DstId": 27,
+                  "DstName": "obj"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_signal",
+                  "DstId": 28,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 27,
+                  "SrcName": "_result",
+                  "DstId": 28,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "ChatMessage",
+                  "DstId": 50,
+                  "DstName": "ChatMessage"
+                },
+                {
+                  "SrcId": 57,
                   "SrcName": "_signal",
                   "DstId": 50,
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 21,
+                  "SrcId": 20,
                   "SrcName": "_result",
                   "DstId": 50,
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 21,
+                  "SrcId": 58,
+                  "SrcName": "_signal",
+                  "DstId": 57,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 20,
                   "SrcName": "_result",
-                  "DstId": 53,
+                  "DstId": 57,
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 53,
-                  "SrcName": "_result",
-                  "DstId": 54,
-                  "DstName": "_target"
+                  "SrcId": 0,
+                  "SrcName": "ChatMessage",
+                  "DstId": 57,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 28,
+                  "SrcName": "false",
+                  "DstId": 58,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 76,
+                  "Value": "Chat Message",
+                  "DstId": 58,
+                  "DstName": "format"
                 }
-              ],
-              "Defaults": {
-                "$9.gameobject": {
-                  "_type": "gameobject",
-                  "go": "41d587d5-d701-402b-9327-b5362405c58b"
-                }
-              }
+              ]
             },
             "IsF4AmmoMenuOpen": false,
             "IsF4JobMenuOpen": false,
@@ -2051,7 +2145,12 @@
             "IsF4ShipmentsMenuOpen": false,
             "IsF4VehiclesMenuOpen": false,
             "IsF4WeaponsMenuOpen": false,
-            "JobCategory": null,
+            "JobCategory": [
+              "gameplay/jobs/categorys/civillain.category",
+              "gameplay/jobs/categorys/civil protection.category",
+              "gameplay/jobs/categorys/criminals.category",
+              "gameplay/jobs/categorys/other.category"
+            ],
             "MyStringValue": "Hello World!",
             "OldSelectedJob": null,
             "OnComponentDestroy": null,

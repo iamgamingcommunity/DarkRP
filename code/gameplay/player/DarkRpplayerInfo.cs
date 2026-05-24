@@ -19,6 +19,8 @@ public sealed class DarkrpPlayerInfo : Component
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public NetList<GameObject> PlayerPocket { get; set; }
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public NetList<InventoryItem> PlayerInventory { get; set; }
 
+	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public GameObject PlayerhudVar { get; set; }
+
 	public class InventoryItem
 	{
 		public PrefabFile ItemPrefab {get; set;}
@@ -256,7 +258,7 @@ public sealed class DarkrpPlayerInfo : Component
 		}
 
 		Chat.Say("HellO!!");
-		Chat.ShowUI = true;
+		// Chat.ShowUI = true;
 
 
 

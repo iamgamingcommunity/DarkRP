@@ -15,6 +15,7 @@ public sealed class JobManager : Component
 
     [Property] public bool IsStopBlacklistSearch { get; set; } 
 
+    [Property] public GameObject GameManager { get; set; } 
     [Property] public bool IsPlayerBlacklisted { get; set; } 
 
     [Property] public int WhitelistSystemSwitchInt { get; set; } 

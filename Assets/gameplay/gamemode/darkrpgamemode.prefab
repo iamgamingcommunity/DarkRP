@@ -2595,45 +2595,23 @@
         "Children": []
       },
       {
-        "__guid": "e9f6a377-2246-4e6e-a567-9090b98e4bb1",
+        "__guid": "d13fad45-95a8-439c-b6e5-78e358102be2",
         "__version": 2,
         "__Prefab": "prefabs/ui/playerui.prefab",
         "__PrefabInstancePatch": {
           "AddedObjects": [],
           "RemovedObjects": [],
-          "PropertyOverrides": [
-            {
-              "Target": {
-                "Type": "GameObject",
-                "IdValue": "12a88f63-f440-4427-a867-5cd50277fd4a"
-              },
-              "Property": "NetworkMode",
-              "Value": 2
-            },
-            {
-              "Target": {
-                "Type": "Component",
-                "IdValue": "38d993cb-394e-4d2c-9405-a4ba96e91052"
-              },
-              "Property": "JobCategory",
-              "Value": [
-                "gameplay/jobs/categorys/civillain.category",
-                "gameplay/jobs/categorys/civil protection.category",
-                "gameplay/jobs/categorys/criminals.category",
-                "gameplay/jobs/categorys/other.category"
-              ]
-            }
-          ],
+          "PropertyOverrides": [],
           "MovedObjects": []
         },
         "__PrefabIdToInstanceId": {
-          "12a88f63-f440-4427-a867-5cd50277fd4a": "e9f6a377-2246-4e6e-a567-9090b98e4bb1",
-          "41d587d5-d701-402b-9327-b5362405c58b": "36c2d97a-5c4b-4f89-a5a7-72e6d4fc9d57",
-          "64add54d-2e68-4022-9636-d36f503b3717": "6e62aa71-2cd1-435d-bb98-0755f48c4312",
-          "38d993cb-394e-4d2c-9405-a4ba96e91052": "fdeeb6e0-69a6-470d-8e5c-32faab334098",
-          "4c216819-35e5-496a-a76d-55f0a0d6df91": "6dae9e26-f70e-4dd2-bd03-0ac0f30cacfa",
-          "4f596465-910e-4cd2-b050-7593ca886843": "0a52bab2-5ce1-460e-8994-04550a4e2a15",
-          "3738a800-3fb1-42c3-9a44-5918156017f3": "2654e89c-64d4-4ecd-8539-3179b55a3096"
+          "12a88f63-f440-4427-a867-5cd50277fd4a": "d13fad45-95a8-439c-b6e5-78e358102be2",
+          "41d587d5-d701-402b-9327-b5362405c58b": "d65664b1-fdaf-4318-8d0c-965f92563cea",
+          "64add54d-2e68-4022-9636-d36f503b3717": "efa2765f-330b-49a0-9e63-f09b50fc7eab",
+          "38d993cb-394e-4d2c-9405-a4ba96e91052": "29c9e985-507d-48fb-911e-1ab008e987ce",
+          "4c216819-35e5-496a-a76d-55f0a0d6df91": "fe60ff40-9540-4dc4-a4cc-1de4170e46c7",
+          "4f596465-910e-4cd2-b050-7593ca886843": "018bee85-f551-41e6-ba55-513ef465630c",
+          "3738a800-3fb1-42c3-9a44-5918156017f3": "7e0e3971-cac9-42d9-80e5-54a42e53738d"
         }
       },
       {
@@ -2978,10 +2956,11 @@
             "__guid": "5416cc0a-1caf-451c-be87-1a89beeecfa8",
             "__enabled": true,
             "Flags": 0,
+            "GameManager": null,
             "GraphBecomeJob": {
               "__version": 9,
               "__guid": "c0e99cbd-0874-400f-9eb6-033d8381666d",
-              "__changeId": 2285,
+              "__changeId": 2286,
               "UserData": {
                 "Title": "Graph Become Job Logic",
                 "ReferencedComponentTypes": [
@@ -25050,13 +25029,16 @@
             "OnComponentStart": {
               "__version": 9,
               "__guid": "b6484ae5-d2b4-458c-8ace-9c38faba5e3e",
-              "__changeId": 122,
+              "__changeId": 147,
               "UserData": {
-                "Title": "On Component Start",
+                "Title": "On Gamemodes Component Start",
                 "ReferencedComponentTypes": [
                   "Sandbox.Playerhudmain",
                   "JobManager"
-                ]
+                ],
+                "Description": "Set Vars to get/use later.",
+                "Category": "Gamemodes",
+                "Icon": "chrome_reader_mode"
               },
               "Variables": [],
               "Nodes": [
@@ -25064,7 +25046,7 @@
                   "Id": 0,
                   "Type": "input",
                   "UserData": {
-                    "Position": "-84,-144"
+                    "Position": "-60,-540"
                   }
                 },
                 {
@@ -25245,6 +25227,54 @@
                   "UserData": {
                     "Position": "1848,-84"
                   }
+                },
+                {
+                  "Id": 37,
+                  "Type": "scene.findall",
+                  "UserData": {
+                    "Position": "192,-444"
+                  }
+                },
+                {
+                  "Id": 38,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "Sandbox.GameObject"
+                  },
+                  "UserData": {
+                    "Position": "192,-540"
+                  }
+                },
+                {
+                  "Id": 41,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "_target"
+                  },
+                  "UserData": {
+                    "Position": "528,-420"
+                  }
+                },
+                {
+                  "Id": 42,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "504,-444"
+                  }
+                },
+                {
+                  "Id": 43,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "GameManager",
+                    "_type": "JobManager"
+                  },
+                  "UserData": {
+                    "Position": "504,-516"
+                  }
                 }
               ],
               "Links": [
@@ -25261,7 +25291,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 33,
+                  "Id": 49,
                   "Value": 2,
                   "DstId": 4,
                   "DstName": "index"
@@ -25279,7 +25309,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 34,
+                  "Id": 50,
                   "Value": 0,
                   "DstId": 6,
                   "DstName": "index"
@@ -25379,7 +25409,7 @@
                   "DstIndex": 3
                 },
                 {
-                  "Id": 35,
+                  "Id": 51,
                   "Value": "This:{0} Parent:{1} PlayerUI:{2} Other:{3}",
                   "DstId": 21,
                   "DstName": "format"
@@ -25392,10 +25422,46 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 36,
+                  "Id": 52,
                   "Value": "This:{0} ",
                   "DstId": 28,
                   "DstName": "format"
+                },
+                {
+                  "Id": 53,
+                  "Value": "Gamemodes",
+                  "DstId": 37,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 37,
+                  "SrcName": "_result",
+                  "DstId": 38,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 41,
+                  "SrcName": "_result",
+                  "DstId": 42,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "body",
+                  "DstId": 43,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 42,
+                  "SrcName": "_result",
+                  "DstId": 43,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 38,
+                  "SrcName": "body.value",
+                  "DstId": 43,
+                  "DstName": "_value"
                 }
               ]
             },
