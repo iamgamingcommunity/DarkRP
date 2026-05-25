@@ -21,6 +21,10 @@ using System;
 		[Property]
 		public PressedActionDelegate Interacted { get; set; }
 
+		public delegate void OnReleaseActionDelegate( PlayerController LastInteractingPlayer );
+		[Property]
+		public OnReleaseActionDelegate OnRelease { get; set; }
+
 		public PlayerController LastInteractingPlayer { get; set; } 
 		
 
@@ -56,11 +60,30 @@ using System;
 		return true;
 	}
 
+	// public bool OnStopInteraction(Component.IPressable.Event releaseEvent)
+	// {
+	// 	if (Interacted != null)
+	// 	{
+	// 		LastInteractingPlayer = releaseEvent.Source as PlayerController;// this is the "presser"
+	// 		OnRelease.Invoke(LastInteractingPlayer);
+	// 	}
+	// 	Log.Info($"STOPPED Interacted With {this}");
+	// 	return true;
+	// }
+
 		// Called each frame while the use key is held down.
 		public bool Pressing(Component.IPressable.Event pressEvent) => true;
 
 		// Called when the use key is released.
-		public void Release(Component.IPressable.Event pressEvent) { }
+    // RELEASE
+    public void Release( Component.IPressable.Event releaseEvent )
+    {
+        LastInteractingPlayer = releaseEvent.Source as PlayerController;
+
+        OnRelease?.Invoke( LastInteractingPlayer );
+
+        Log.Info( $"STOPPED Interacted With {this}" );
+    }
 
 		protected override void OnUpdate()
 		{

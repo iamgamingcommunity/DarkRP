@@ -1,0 +1,928 @@
+{
+  "RootObject": {
+    "__guid": "450b95d2-0902-4b8e-a959-16fea0525afa",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "healingstation",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "StationHealing",
+        "__guid": "8db1eb03-d6d6-4d6d-8f07-912d04173c00",
+        "__enabled": true,
+        "Flags": 0,
+        "HealingStationDelay": 2,
+        "HealingStationHealAmount": 15,
+        "HealingStationSFX": "sounds/entities/stations/healingstation.sound",
+        "HealingStationSoundHandle": null,
+        "Interacted": {
+          "__version": 9,
+          "__guid": "79a75e93-19ce-41b7-83d2-78d5dff2ca6f",
+          "__changeId": 87,
+          "UserData": {
+            "Title": "Healing Station Interaction Logic",
+            "Description": "When pressed will heal the player X Amount every X Seconds and players SFX.",
+            "Category": "Stations",
+            "Icon": "health_and_safety",
+            "ReferencedComponentTypes": [
+              "StationHealing",
+              "HealthComponent",
+              "DarkrpPlayerInfo"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "408,36"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "636,12"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "StationHealing"
+              },
+              "UserData": {
+                "Position": "624,108"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "property",
+              "Properties": {
+                "_name": "HealingStationSFX",
+                "_type": "StationHealing"
+              },
+              "UserData": {
+                "Position": "624,84"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "property",
+              "Properties": {
+                "_name": "HealingStationSoundHandle",
+                "_type": "StationHealing"
+              },
+              "UserData": {
+                "Position": "960,12"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "while",
+              "UserData": {
+                "Position": "732,636"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "552,864"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "StationHealing"
+              },
+              "UserData": {
+                "Position": "660,864"
+              }
+            },
+            {
+              "Id": 10,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "96,708"
+              }
+            },
+            {
+              "Id": 11,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "StationHealing"
+              },
+              "UserData": {
+                "Position": "204,708"
+              }
+            },
+            {
+              "Id": 12,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHealingStationHealing",
+                "_type": "StationHealing"
+              },
+              "UserData": {
+                "Position": "204,636"
+              }
+            },
+            {
+              "Id": 13,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "1224,660"
+              }
+            },
+            {
+              "Id": 14,
+              "Type": "property",
+              "Properties": {
+                "_name": "HealingStationDelay",
+                "_type": "StationHealing"
+              },
+              "UserData": {
+                "Position": "1164,732"
+              }
+            },
+            {
+              "Id": 15,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "768,888"
+              }
+            },
+            {
+              "Id": 16,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "1020,876"
+              }
+            },
+            {
+              "Id": 17,
+              "Type": "property",
+              "Properties": {
+                "_name": "Health",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "1344,768"
+              }
+            },
+            {
+              "Id": 18,
+              "Type": "property",
+              "Properties": {
+                "_name": "Health",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "1872,660"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "1704,768"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "property",
+              "Properties": {
+                "_name": "HealingStationHealAmount",
+                "_type": "StationHealing"
+              },
+              "UserData": {
+                "Position": "1332,816"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "comment",
+              "UserData": {
+                "Position": "48,564",
+                "Size": "2064,372",
+                "Title": "Heal Player Every X Amount of Seconds",
+                "Color": 3,
+                "Layer": 2
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "comment",
+              "UserData": {
+                "Position": "372,-60",
+                "Size": "936,216",
+                "Title": "Start Healing SFX",
+                "Color": 3,
+                "Layer": 1
+              }
+            },
+            {
+              "Id": 25,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "540,708"
+              }
+            },
+            {
+              "Id": 26,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "StationHealing"
+              },
+              "UserData": {
+                "Position": "636,708"
+              }
+            },
+            {
+              "Id": 51,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHealingStationHealing",
+                "_type": "StationHealing"
+              },
+              "UserData": {
+                "Position": "636,684"
+              }
+            },
+            {
+              "Id": 60,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": true,
+                "_name": "Clamp",
+                "_type": "System.Single"
+              },
+              "UserData": {
+                "Position": "1812,756"
+              }
+            },
+            {
+              "Id": 62,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "1716,900"
+              }
+            },
+            {
+              "Id": 63,
+              "Type": "property",
+              "Properties": {
+                "_name": "CurrentJob",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "1740,876"
+              }
+            },
+            {
+              "Id": 64,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobHealthMax",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "1692,852"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_signal",
+              "DstId": 5,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_signal",
+              "DstId": 6,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 51,
+              "SrcName": "_result",
+              "DstId": 6,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 10,
+              "SrcName": "_result",
+              "DstId": 11,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_signal",
+              "DstId": 12,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 11,
+              "SrcName": "_result",
+              "DstId": 12,
+              "DstName": "_target"
+            },
+            {
+              "Id": 56,
+              "Value": true,
+              "DstId": 12,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "body",
+              "DstId": 13,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_result",
+              "DstId": 13,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 13,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "LastInteractingPlayer",
+              "DstId": 15,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "_result",
+              "DstId": 16,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 16,
+              "SrcName": "_result",
+              "DstId": 17,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_signal",
+              "DstId": 18,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 16,
+              "SrcName": "_result",
+              "DstId": 18,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 60,
+              "SrcName": "_result",
+              "DstId": 18,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 17,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "_result",
+              "DstId": 20,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 25,
+              "SrcName": "_result",
+              "DstId": 26,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 26,
+              "SrcName": "_result",
+              "DstId": 51,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 64,
+              "SrcName": "_result",
+              "DstId": 60,
+              "DstName": "max"
+            },
+            {
+              "Id": 61,
+              "Value": 0,
+              "DstId": 60,
+              "DstName": "min"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 60,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "_result",
+              "DstId": 62,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 62,
+              "SrcName": "_result",
+              "DstId": 63,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 63,
+              "SrcName": "_result",
+              "DstId": 64,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "InteractionSFX": "sounds/entities/stations/healingstation.sound",
+        "IsHealingStationHealing": false,
+        "IsInteractable": true,
+        "IsInventoriable": false,
+        "IsPocketable": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnRelease": {
+          "__version": 9,
+          "__guid": "7c4a5ab8-377a-4e9c-b253-eb83b9f034a0",
+          "__changeId": 56,
+          "UserData": {
+            "Title": "Healing Station Release Logic",
+            "ReferencedComponentTypes": [
+              "StationHealing"
+            ],
+            "Description": "When release stop healing player and stop healing SFX.",
+            "Icon": "health_and_safety",
+            "Category": "Stations"
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 3,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "408,72"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "StationHealing"
+              },
+              "UserData": {
+                "Position": "516,72"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsHealingStationHealing",
+                "_type": "StationHealing"
+              },
+              "UserData": {
+                "Position": "516,0"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "property",
+              "Properties": {
+                "_name": "HealingStationSoundHandle",
+                "_type": "StationHealing"
+              },
+              "UserData": {
+                "Position": "876,72"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Stop",
+                "_type": "Sandbox.SoundHandle"
+              },
+              "UserData": {
+                "Position": "900,0"
+              }
+            },
+            {
+              "Id": 9,
+              "Type": "comment",
+              "UserData": {
+                "Position": "396,-60",
+                "Size": "828,180",
+                "Title": "Stop healing Logic & SFX",
+                "Color": 3,
+                "Layer": 1
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 5,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "_target"
+            },
+            {
+              "Id": 11,
+              "Value": false,
+              "DstId": 5,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_signal",
+              "DstId": 8,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "_target"
+            }
+          ]
+        }
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "e18eebaa-4ac0-411c-9c9d-f0c4c26f4cc1",
+        "__enabled": true,
+        "Flags": 0,
+        "Center": "-0.173496246,-0.369018555,0",
+        "ColliderFlags": 0,
+        "Elasticity": null,
+        "Friction": null,
+        "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
+        "Scale": "52.1010742,52.0882721,50",
+        "Static": false,
+        "Surface": null,
+        "SurfaceVelocity": "0,0,0"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "daa77514-6410-4cca-bcac-c740fe0d243d",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "Body",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "world",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.MeshComponent",
+            "__guid": "0ecd3ece-943c-4d36-9d98-9446c15c6e0f",
+            "__enabled": true,
+            "Flags": 0,
+            "ColliderFlags": 0,
+            "Collision": "Mesh",
+            "Color": "1,1,1,1",
+            "Elasticity": null,
+            "Friction": null,
+            "HideInGame": false,
+            "IsTrigger": false,
+            "Mesh": {
+              "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f+laMRGsohUVbFn1+t04ANs+Z0VsM69AwfgBFyAKZ9MPXdgk3qLnsI+Um/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt+ivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+              "Positions": [
+                "-1.60791016,-13.3780994,19.6652107",
+                "1.75106049,-13.5323429,19.6652107",
+                "1.72058105,13.5746899,19.6652069",
+                "-1.63838959,13.72188,19.6652069",
+                "-1.63838959,13.72188,-19.6652069",
+                "1.72058105,13.5746899,-19.6652069",
+                "1.75106049,-13.5323429,-19.6652031",
+                "-1.60791016,-13.3780994,-19.6652031"
+              ],
+              "Blends": [
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0"
+              ],
+              "Colors": [
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0",
+                "0,0,0,0"
+              ],
+              "TextureCoord": [
+                "-0.34870103,-0.0571839213",
+                "0,0",
+                "-0.348939151,-0.268957615",
+                "0,0",
+                "-0.375181109,-0.270107538",
+                "28.6813431,-1.00000024",
+                "-0.374942988,-0.0583889484",
+                "3.00250602,-0.999999881",
+                "-0.348939151,-0.268957615",
+                "28.993845,-1.58676428E-07",
+                "-0.34870103,-0.0571839213",
+                "1,1",
+                "-0.374942988,-0.0583889484",
+                "0.3125,1",
+                "-0.375181109,-0.270107538",
+                "3.9801085,-9.98226213E-08",
+                "3.9801085,-1",
+                "0,1",
+                "3.00250602,-1.3099001E-08",
+                "28.9938431,-1.00000024",
+                "0,1",
+                "0.3125,0",
+                "1,0",
+                "28.681345,-1.48435646E-07"
+              ],
+              "MaterialIndex": [
+                0,
+                0,
+                1,
+                1,
+                1,
+                1
+              ],
+              "EdgeFlags": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "Materials": [
+                "materials/dev/reflectivity_30.vmat",
+                "mount://hl1/valve/materials/halflife/+0MEDKIT.vmat"
+              ]
+            },
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "OnObjectTriggerEnter": null,
+            "OnObjectTriggerExit": null,
+            "OnTriggerEnter": null,
+            "OnTriggerExit": null,
+            "RenderType": "On",
+            "RollingResistance": null,
+            "SmoothingAngle": 40,
+            "Static": true,
+            "Surface": null,
+            "SurfaceVelocity": "0,0,0"
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}
