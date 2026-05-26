@@ -16,28 +16,4280 @@
     "OwnerTransfer": 1,
     "Components": [
       {
-        "__type": "StationHealing",
-        "__guid": "8db1eb03-d6d6-4d6d-8f07-912d04173c00",
+        "__type": "Station",
+        "__guid": "6999b13b-8133-49d2-a46b-3b6d1818cd9a",
         "__enabled": true,
         "Flags": 0,
-        "HealingStationDelay": 2,
-        "HealingStationHealAmount": 15,
-        "HealingStationSFX": "sounds/entities/stations/healingstation.sound",
-        "HealingStationSoundHandle": null,
         "Interacted": {
           "__version": 9,
-          "__guid": "79a75e93-19ce-41b7-83d2-78d5dff2ca6f",
-          "__changeId": 87,
+          "__guid": "d3600294-887b-478d-ba11-b2619eae7446",
+          "__changeId": 439,
           "UserData": {
-            "Title": "Healing Station Interaction Logic",
-            "Description": "When pressed will heal the player X Amount every X Seconds and players SFX.",
-            "Category": "Stations",
-            "Icon": "health_and_safety",
+            "Title": "Station on Interacted",
             "ReferencedComponentTypes": [
-              "StationHealing",
+              "Station",
               "HealthComponent",
               "DarkrpPlayerInfo"
-            ]
+            ],
+            "Description": "When interacted fire Station Logic.",
+            "Category": "Station",
+            "Icon": "device_hub"
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-1020,96"
+              }
+            },
+            {
+              "Id": 1,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "2088,168"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "2316,144"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "while",
+              "UserData": {
+                "Position": "5532,-1104"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "5292,-924"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "4956,-1020"
+              }
+            },
+            {
+              "Id": 9,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "6024,-1080"
+              }
+            },
+            {
+              "Id": 10,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "5568,-852"
+              }
+            },
+            {
+              "Id": 11,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "5820,-864"
+              }
+            },
+            {
+              "Id": 12,
+              "Type": "property",
+              "Properties": {
+                "_name": "Health",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "6144,-972"
+              }
+            },
+            {
+              "Id": 13,
+              "Type": "property",
+              "Properties": {
+                "_name": "Health",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "6996,-996"
+              }
+            },
+            {
+              "Id": 14,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "6504,-972"
+              }
+            },
+            {
+              "Id": 15,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4848,-1176",
+                "Size": "2064,372",
+                "Title": "Heal Player Every X Amount of Seconds",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 16,
+              "Type": "comment",
+              "UserData": {
+                "Position": "2052,72",
+                "Size": "936,216",
+                "Title": "Start Healing SFX",
+                "Color": 3,
+                "Layer": 7
+              }
+            },
+            {
+              "Id": 17,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": true,
+                "_name": "Clamp",
+                "_type": "System.Single"
+              },
+              "UserData": {
+                "Position": "6612,-984"
+              }
+            },
+            {
+              "Id": 18,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6516,-840"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "property",
+              "Properties": {
+                "_name": "CurrentJob",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6540,-864"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobHealthMax",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "6492,-888"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "732,324"
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "732,300"
+              }
+            },
+            {
+              "Id": 23,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "732,360"
+              }
+            },
+            {
+              "Id": 24,
+              "Type": "property",
+              "Properties": {
+                "_name": "Health",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "1056,288"
+              }
+            },
+            {
+              "Id": 25,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "1344,276"
+              }
+            },
+            {
+              "Id": 26,
+              "Type": "property",
+              "Properties": {
+                "_name": "CurrentJob",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "1020,324"
+              }
+            },
+            {
+              "Id": 27,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobHealthMax",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "1020,348"
+              }
+            },
+            {
+              "Id": 28,
+              "Type": "if",
+              "UserData": {
+                "Position": "1308,96"
+              }
+            },
+            {
+              "Id": 29,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationSoundHandle"
+              },
+              "UserData": {
+                "Position": "2592,144"
+              }
+            },
+            {
+              "Id": 30,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationSFX"
+              },
+              "UserData": {
+                "Position": "2292,216"
+              }
+            },
+            {
+              "Id": 31,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5052,-1104"
+              }
+            },
+            {
+              "Id": 32,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5412,-1056"
+              }
+            },
+            {
+              "Id": 33,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceGivenDelay"
+              },
+              "UserData": {
+                "Position": "5880,-1008"
+              }
+            },
+            {
+              "Id": 34,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceAmountGiven"
+              },
+              "UserData": {
+                "Position": "6120,-936"
+              }
+            },
+            {
+              "Id": 35,
+              "Type": "comment",
+              "UserData": {
+                "Position": "684,-12",
+                "Size": "792,564",
+                "Title": "Is Player Max HP already?",
+                "Color": 3,
+                "Layer": 6
+              }
+            },
+            {
+              "Id": 36,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "1500,-108"
+              }
+            },
+            {
+              "Id": 39,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "1656,-180"
+              }
+            },
+            {
+              "Id": 44,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "-444,96"
+              }
+            },
+            {
+              "Id": 45,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6384,-1260"
+              }
+            },
+            {
+              "Id": 46,
+              "Type": "property",
+              "Properties": {
+                "_name": "CurrentJob",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6396,-1284"
+              }
+            },
+            {
+              "Id": 47,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobHealthMax",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "6408,-1308"
+              }
+            },
+            {
+              "Id": 48,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "6564,-1356"
+              }
+            },
+            {
+              "Id": 49,
+              "Type": "if",
+              "UserData": {
+                "Position": "6564,-1440"
+              }
+            },
+            {
+              "Id": 50,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "7008,-1344"
+              }
+            },
+            {
+              "Id": 53,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "7164,-1416"
+              }
+            },
+            {
+              "Id": 54,
+              "Type": "comment",
+              "UserData": {
+                "Position": "6384,-1536",
+                "Size": "432,300",
+                "Title": "I did Player hit max HP?",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 55,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "-624,192"
+              }
+            },
+            {
+              "Id": 67,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "-528,192"
+              }
+            },
+            {
+              "Id": 68,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationInteractionDelay",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "-528,168"
+              }
+            },
+            {
+              "Id": 69,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "1596,-108"
+              }
+            },
+            {
+              "Id": 70,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "2292,240"
+              }
+            },
+            {
+              "Id": 71,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "5064,-1020"
+              }
+            },
+            {
+              "Id": 72,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "5436,-924"
+              }
+            },
+            {
+              "Id": 73,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "7116,-1344"
+              }
+            },
+            {
+              "Id": 74,
+              "Type": "comment",
+              "UserData": {
+                "Position": "-636,-24",
+                "Size": "408,240",
+                "Title": "Interaction Delay",
+                "Color": 3,
+                "Layer": 5
+              }
+            },
+            {
+              "Id": 76,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "-60,216"
+              }
+            },
+            {
+              "Id": 77,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "36,216"
+              }
+            },
+            {
+              "Id": 78,
+              "Type": "switch",
+              "UserData": {
+                "Position": "4368,-696"
+              }
+            },
+            {
+              "Id": 79,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "2292,936"
+              }
+            },
+            {
+              "Id": 80,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "2388,936"
+              }
+            },
+            {
+              "Id": 83,
+              "Type": "switch",
+              "UserData": {
+                "Position": "2664,888"
+              }
+            },
+            {
+              "Id": 84,
+              "Type": "switch",
+              "UserData": {
+                "Position": "4572,1476"
+              }
+            },
+            {
+              "Id": 86,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "4728,-552"
+              }
+            },
+            {
+              "Id": 87,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "4236,-552"
+              }
+            },
+            {
+              "Id": 88,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "4248,1536"
+              }
+            },
+            {
+              "Id": 89,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "4344,1536"
+              }
+            },
+            {
+              "Id": 94,
+              "Type": "while",
+              "UserData": {
+                "Position": "5496,-144"
+              }
+            },
+            {
+              "Id": 95,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "5256,36"
+              }
+            },
+            {
+              "Id": 96,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "4920,-60"
+              }
+            },
+            {
+              "Id": 97,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "5988,-120"
+              }
+            },
+            {
+              "Id": 98,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "5532,108"
+              }
+            },
+            {
+              "Id": 99,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "5784,96"
+              }
+            },
+            {
+              "Id": 102,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "6468,-12"
+              }
+            },
+            {
+              "Id": 103,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4812,-216",
+                "Size": "2064,372",
+                "Title": "Give Armor Player Every X Amount of Seconds",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 104,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": true,
+                "_name": "Clamp",
+                "_type": "System.Single"
+              },
+              "UserData": {
+                "Position": "6576,-24"
+              }
+            },
+            {
+              "Id": 105,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6480,120"
+              }
+            },
+            {
+              "Id": 106,
+              "Type": "property",
+              "Properties": {
+                "_name": "CurrentJob",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6504,96"
+              }
+            },
+            {
+              "Id": 108,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5016,-144"
+              }
+            },
+            {
+              "Id": 109,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5376,-96"
+              }
+            },
+            {
+              "Id": 110,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceGivenDelay"
+              },
+              "UserData": {
+                "Position": "5844,-48"
+              }
+            },
+            {
+              "Id": 111,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceAmountGiven"
+              },
+              "UserData": {
+                "Position": "6084,24"
+              }
+            },
+            {
+              "Id": 112,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6348,-300"
+              }
+            },
+            {
+              "Id": 113,
+              "Type": "property",
+              "Properties": {
+                "_name": "CurrentJob",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6360,-324"
+              }
+            },
+            {
+              "Id": 115,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "6528,-396"
+              }
+            },
+            {
+              "Id": 116,
+              "Type": "if",
+              "UserData": {
+                "Position": "6528,-480"
+              }
+            },
+            {
+              "Id": 117,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "6972,-384"
+              }
+            },
+            {
+              "Id": 119,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "7128,-456"
+              }
+            },
+            {
+              "Id": 120,
+              "Type": "comment",
+              "UserData": {
+                "Position": "6348,-576",
+                "Size": "432,300",
+                "Title": "I did Player hit max Armor?",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 121,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "5028,-60"
+              }
+            },
+            {
+              "Id": 122,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "5400,36"
+              }
+            },
+            {
+              "Id": 123,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "7080,-384"
+              }
+            },
+            {
+              "Id": 128,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "LastInteractingPlayer"
+              },
+              "UserData": {
+                "Position": "576,324"
+              }
+            },
+            {
+              "Id": 129,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "LastInteractingPlayer"
+              },
+              "UserData": {
+                "Position": "5520,-828"
+              }
+            },
+            {
+              "Id": 130,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "LastInteractingPlayer"
+              },
+              "UserData": {
+                "Position": "5544,144"
+              }
+            },
+            {
+              "Id": 131,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobArmorMax",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "6360,-348"
+              }
+            },
+            {
+              "Id": 132,
+              "Type": "property",
+              "Properties": {
+                "_name": "Armor",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "7032,-48"
+              }
+            },
+            {
+              "Id": 133,
+              "Type": "property",
+              "Properties": {
+                "_name": "Armor",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "6144,-60"
+              }
+            },
+            {
+              "Id": 134,
+              "Type": "while",
+              "UserData": {
+                "Position": "5412,480"
+              }
+            },
+            {
+              "Id": 135,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "5172,660"
+              }
+            },
+            {
+              "Id": 136,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "4836,564"
+              }
+            },
+            {
+              "Id": 137,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "5904,504"
+              }
+            },
+            {
+              "Id": 138,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "5448,732"
+              }
+            },
+            {
+              "Id": 140,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "6384,612"
+              }
+            },
+            {
+              "Id": 141,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4728,408",
+                "Size": "2064,372",
+                "Title": "Give Money Player Every X Amount of Seconds",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 146,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "4932,480"
+              }
+            },
+            {
+              "Id": 147,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5292,528"
+              }
+            },
+            {
+              "Id": 148,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceGivenDelay"
+              },
+              "UserData": {
+                "Position": "5760,576"
+              }
+            },
+            {
+              "Id": 149,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceAmountGiven"
+              },
+              "UserData": {
+                "Position": "6000,648"
+              }
+            },
+            {
+              "Id": 158,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "4944,564"
+              }
+            },
+            {
+              "Id": 159,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "5316,660"
+              }
+            },
+            {
+              "Id": 161,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "LastInteractingPlayer"
+              },
+              "UserData": {
+                "Position": "5232,744"
+              }
+            },
+            {
+              "Id": 169,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "5784,624"
+              }
+            },
+            {
+              "Id": 170,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerMoney",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6096,612"
+              }
+            },
+            {
+              "Id": 171,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerMoney",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6480,504"
+              }
+            },
+            {
+              "Id": 173,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceType",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "4260,-576"
+              }
+            },
+            {
+              "Id": 174,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationActionType",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "2376,912"
+              }
+            },
+            {
+              "Id": 175,
+              "Type": "log.error",
+              "UserData": {
+                "Position": "4560,-984"
+              }
+            },
+            {
+              "Id": 273,
+              "Type": "log.error",
+              "UserData": {
+                "Position": "2904,672"
+              }
+            },
+            {
+              "Id": 297,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4164,-1596",
+                "Size": "3696,2436",
+                "Title": "Add Station 'Resource' to Player",
+                "Color": 3,
+                "Layer": 4
+              }
+            },
+            {
+              "Id": 298,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceType",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "4320,1512"
+              }
+            },
+            {
+              "Id": 299,
+              "Type": "while",
+              "UserData": {
+                "Position": "5676,1452"
+              }
+            },
+            {
+              "Id": 300,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "5880,1572"
+              }
+            },
+            {
+              "Id": 301,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "5100,1536"
+              }
+            },
+            {
+              "Id": 302,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "6168,1476"
+              }
+            },
+            {
+              "Id": 303,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "6660,1524"
+              }
+            },
+            {
+              "Id": 308,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4992,1380",
+                "Size": "2376,372",
+                "Title": "Damage Player Every X Amount of Seconds",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 313,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5196,1452"
+              }
+            },
+            {
+              "Id": 314,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5556,1500"
+              }
+            },
+            {
+              "Id": 315,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceGivenDelay"
+              },
+              "UserData": {
+                "Position": "6024,1548"
+              }
+            },
+            {
+              "Id": 316,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceAmountGiven"
+              },
+              "UserData": {
+                "Position": "6912,1572"
+              }
+            },
+            {
+              "Id": 317,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6648,1500"
+              }
+            },
+            {
+              "Id": 326,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "5208,1536"
+              }
+            },
+            {
+              "Id": 327,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "6024,1572"
+              }
+            },
+            {
+              "Id": 329,
+              "Type": "while",
+              "UserData": {
+                "Position": "5640,2412"
+              }
+            },
+            {
+              "Id": 330,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "5400,2592"
+              }
+            },
+            {
+              "Id": 331,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "5064,2496"
+              }
+            },
+            {
+              "Id": 332,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "6132,2436"
+              }
+            },
+            {
+              "Id": 333,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "5676,2664"
+              }
+            },
+            {
+              "Id": 334,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "5928,2652"
+              }
+            },
+            {
+              "Id": 336,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4956,2340",
+                "Size": "2064,372",
+                "Title": "Subtract Armor Player Every X Amount of Seconds",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 337,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": true,
+                "_name": "Clamp",
+                "_type": "System.Single"
+              },
+              "UserData": {
+                "Position": "6720,2532"
+              }
+            },
+            {
+              "Id": 338,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6624,2676"
+              }
+            },
+            {
+              "Id": 339,
+              "Type": "property",
+              "Properties": {
+                "_name": "CurrentJob",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6648,2652"
+              }
+            },
+            {
+              "Id": 341,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5160,2412"
+              }
+            },
+            {
+              "Id": 342,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5520,2460"
+              }
+            },
+            {
+              "Id": 343,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceGivenDelay"
+              },
+              "UserData": {
+                "Position": "5988,2508"
+              }
+            },
+            {
+              "Id": 344,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceAmountGiven"
+              },
+              "UserData": {
+                "Position": "6228,2580"
+              }
+            },
+            {
+              "Id": 345,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6276,2340"
+              }
+            },
+            {
+              "Id": 347,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "6672,2160"
+              }
+            },
+            {
+              "Id": 348,
+              "Type": "if",
+              "UserData": {
+                "Position": "6672,2076"
+              }
+            },
+            {
+              "Id": 349,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "7116,2172"
+              }
+            },
+            {
+              "Id": 351,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "7272,2100"
+              }
+            },
+            {
+              "Id": 352,
+              "Type": "comment",
+              "UserData": {
+                "Position": "6492,1980",
+                "Size": "432,300",
+                "Title": "I did Player hit max Armor?",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 353,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "5172,2496"
+              }
+            },
+            {
+              "Id": 354,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "5544,2592"
+              }
+            },
+            {
+              "Id": 355,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "7224,2172"
+              }
+            },
+            {
+              "Id": 356,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "LastInteractingPlayer"
+              },
+              "UserData": {
+                "Position": "6612,1548"
+              }
+            },
+            {
+              "Id": 357,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "LastInteractingPlayer"
+              },
+              "UserData": {
+                "Position": "5688,2700"
+              }
+            },
+            {
+              "Id": 359,
+              "Type": "property",
+              "Properties": {
+                "_name": "Armor",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "7176,2508"
+              }
+            },
+            {
+              "Id": 360,
+              "Type": "property",
+              "Properties": {
+                "_name": "Armor",
+                "_type": "HealthComponent"
+              },
+              "UserData": {
+                "Position": "6288,2496"
+              }
+            },
+            {
+              "Id": 361,
+              "Type": "while",
+              "UserData": {
+                "Position": "5556,3036"
+              }
+            },
+            {
+              "Id": 362,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "5316,3216"
+              }
+            },
+            {
+              "Id": 363,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "4980,3120"
+              }
+            },
+            {
+              "Id": 364,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "6048,3060"
+              }
+            },
+            {
+              "Id": 365,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "5592,3288"
+              }
+            },
+            {
+              "Id": 367,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4872,2964",
+                "Size": "2064,372",
+                "Title": "Subtract Money Player Every X Amount of Seconds",
+                "Color": 3,
+                "Layer": 3
+              }
+            },
+            {
+              "Id": 368,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5076,3036"
+              }
+            },
+            {
+              "Id": 369,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "5436,3084"
+              }
+            },
+            {
+              "Id": 370,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceGivenDelay"
+              },
+              "UserData": {
+                "Position": "5904,3132"
+              }
+            },
+            {
+              "Id": 371,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationResourceAmountGiven"
+              },
+              "UserData": {
+                "Position": "6144,3204"
+              }
+            },
+            {
+              "Id": 372,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "5088,3120"
+              }
+            },
+            {
+              "Id": 373,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "5460,3216"
+              }
+            },
+            {
+              "Id": 374,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "LastInteractingPlayer"
+              },
+              "UserData": {
+                "Position": "5376,3300"
+              }
+            },
+            {
+              "Id": 375,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "5928,3180"
+              }
+            },
+            {
+              "Id": 376,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerMoney",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6240,3168"
+              }
+            },
+            {
+              "Id": 377,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerMoney",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6672,3060"
+              }
+            },
+            {
+              "Id": 378,
+              "Type": "log.error",
+              "UserData": {
+                "Position": "4716,1212"
+              }
+            },
+            {
+              "Id": 379,
+              "Type": "comment",
+              "UserData": {
+                "Position": "4164,960",
+                "Size": "3708,2436",
+                "Title": "Subtract Station 'Resource' to Player",
+                "Color": 3,
+                "Layer": 4
+              }
+            },
+            {
+              "Id": 401,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "6600,2544"
+              }
+            },
+            {
+              "Id": 402,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "6552,3180"
+              }
+            },
+            {
+              "Id": 404,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobArmorMax",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "6648,2628"
+              }
+            },
+            {
+              "Id": 405,
+              "Type": "property",
+              "Properties": {
+                "_name": "JobArmorMax",
+                "_type": "JobResource"
+              },
+              "UserData": {
+                "Position": "6504,72"
+              }
+            },
+            {
+              "Id": 408,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "DealDamageToPlayer",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "6960,1476"
+              }
+            },
+            {
+              "Id": 423,
+              "Type": "comment",
+              "UserData": {
+                "Position": "2268,624",
+                "Size": "888,408",
+                "Title": "Add Or Subtract Station Resource",
+                "Color": 3,
+                "Layer": 2
+              }
+            },
+            {
+              "Id": 440,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "24,192"
+              }
+            },
+            {
+              "Id": 443,
+              "Type": "op.lessthanorequal",
+              "UserData": {
+                "Position": "84,132"
+              }
+            },
+            {
+              "Id": 444,
+              "Type": "if",
+              "UserData": {
+                "Position": "144,96"
+              }
+            },
+            {
+              "Id": 446,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "312,-192"
+              }
+            },
+            {
+              "Id": 448,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "468,-264"
+              }
+            },
+            {
+              "Id": 449,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "408,-192"
+              }
+            },
+            {
+              "Id": 450,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "7044,-852"
+              }
+            },
+            {
+              "Id": 451,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "7140,-852"
+              }
+            },
+            {
+              "Id": 452,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7296,-996"
+              }
+            },
+            {
+              "Id": 453,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7080,-876"
+              }
+            },
+            {
+              "Id": 454,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "7296,-924"
+              }
+            },
+            {
+              "Id": 455,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "7152,96"
+              }
+            },
+            {
+              "Id": 456,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "7248,96"
+              }
+            },
+            {
+              "Id": 457,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7404,-48"
+              }
+            },
+            {
+              "Id": 458,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7188,72"
+              }
+            },
+            {
+              "Id": 459,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "7404,24"
+              }
+            },
+            {
+              "Id": 460,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "6876,648"
+              }
+            },
+            {
+              "Id": 461,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "6972,648"
+              }
+            },
+            {
+              "Id": 462,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7128,504"
+              }
+            },
+            {
+              "Id": 463,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "6912,624"
+              }
+            },
+            {
+              "Id": 464,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "7128,576"
+              }
+            },
+            {
+              "Id": 465,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "7464,2652"
+              }
+            },
+            {
+              "Id": 466,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "7560,2652"
+              }
+            },
+            {
+              "Id": 467,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7716,2508"
+              }
+            },
+            {
+              "Id": 468,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7500,2628"
+              }
+            },
+            {
+              "Id": 469,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "7716,2580"
+              }
+            },
+            {
+              "Id": 470,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "7224,3192"
+              }
+            },
+            {
+              "Id": 471,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "7320,3192"
+              }
+            },
+            {
+              "Id": 472,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7476,3048"
+              }
+            },
+            {
+              "Id": 473,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7260,3168"
+              }
+            },
+            {
+              "Id": 474,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "7476,3120"
+              }
+            },
+            {
+              "Id": 475,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "7320,1620"
+              }
+            },
+            {
+              "Id": 476,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "7416,1620"
+              }
+            },
+            {
+              "Id": 477,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7572,1476"
+              }
+            },
+            {
+              "Id": 478,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7356,1596"
+              }
+            },
+            {
+              "Id": 479,
+              "Type": "op.subtract",
+              "UserData": {
+                "Position": "7572,1548"
+              }
+            },
+            {
+              "Id": 480,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationDeniedSFX",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "1596,-132"
+              }
+            },
+            {
+              "Id": 482,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationDeniedSFX",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7080,-1368"
+              }
+            },
+            {
+              "Id": 483,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationDeniedSFX",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7092,-408"
+              }
+            },
+            {
+              "Id": 484,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationDeniedSFX",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "7224,2148"
+              }
+            },
+            {
+              "Id": 485,
+              "Type": "comment",
+              "UserData": {
+                "Position": "-72,-72",
+                "Size": "528,384",
+                "Title": "Is Station Resource Empty?",
+                "Layer": 1,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 486,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationNoResourceLeftSFX",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "384,-216"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 28,
+              "SrcName": "false",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 30,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 31,
+              "SrcName": "_signal",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 32,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "body",
+              "DstId": 9,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 33,
+              "SrcName": "_result",
+              "DstId": 9,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 9,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 129,
+              "SrcName": "_result",
+              "DstId": 10,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 10,
+              "SrcName": "_result",
+              "DstId": 11,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 11,
+              "SrcName": "_result",
+              "DstId": 12,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 49,
+              "SrcName": "false",
+              "DstId": 13,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 11,
+              "SrcName": "_result",
+              "DstId": 13,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 17,
+              "SrcName": "_result",
+              "DstId": 13,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 34,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_result",
+              "DstId": 17,
+              "DstName": "max"
+            },
+            {
+              "Id": 424,
+              "Value": 0,
+              "DstId": 17,
+              "DstName": "min"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_result",
+              "DstId": 17,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 10,
+              "SrcName": "_result",
+              "DstId": 18,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 18,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 20,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 128,
+              "SrcName": "_result",
+              "DstId": 21,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_result",
+              "DstId": 22,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_result",
+              "DstId": 23,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 23,
+              "SrcName": "_result",
+              "DstId": 24,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 24,
+              "SrcName": "_result",
+              "DstId": 25,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 27,
+              "SrcName": "_result",
+              "DstId": 25,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 22,
+              "SrcName": "_result",
+              "DstId": 26,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 26,
+              "SrcName": "_result",
+              "DstId": 27,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 444,
+              "SrcName": "false",
+              "DstId": 28,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 25,
+              "SrcName": "_result",
+              "DstId": 28,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_signal",
+              "DstId": 29,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 70,
+              "SrcName": "_result",
+              "DstId": 29,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 29,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 70,
+              "SrcName": "_result",
+              "DstId": 30,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 78,
+              "SrcName": "e:Health",
+              "DstId": 31,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 71,
+              "SrcName": "_result",
+              "DstId": 31,
+              "DstName": "_target"
+            },
+            {
+              "Id": 425,
+              "Value": true,
+              "DstId": 31,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 71,
+              "SrcName": "_result",
+              "DstId": 32,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 72,
+              "SrcName": "_result",
+              "DstId": 33,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 72,
+              "SrcName": "_result",
+              "DstId": 34,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 28,
+              "SrcName": "true",
+              "DstId": 39,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 39,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 480,
+              "SrcName": "_result",
+              "DstId": 39,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 44,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 68,
+              "SrcName": "_result",
+              "DstId": 44,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 44,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 10,
+              "SrcName": "_result",
+              "DstId": 45,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 45,
+              "SrcName": "_result",
+              "DstId": 46,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 46,
+              "SrcName": "_result",
+              "DstId": 47,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 12,
+              "SrcName": "_result",
+              "DstId": 48,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 47,
+              "SrcName": "_result",
+              "DstId": 48,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 9,
+              "SrcName": "_signal",
+              "DstId": 49,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 48,
+              "SrcName": "_result",
+              "DstId": 49,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 49,
+              "SrcName": "true",
+              "DstId": 53,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 53,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 482,
+              "SrcName": "_result",
+              "DstId": 53,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 55,
+              "SrcName": "_result",
+              "DstId": 67,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 67,
+              "SrcName": "_result",
+              "DstId": 68,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 36,
+              "SrcName": "_result",
+              "DstId": 69,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 70,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "_result",
+              "DstId": 71,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_result",
+              "DstId": 72,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 50,
+              "SrcName": "_result",
+              "DstId": 73,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 76,
+              "SrcName": "_result",
+              "DstId": 77,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 83,
+              "SrcName": "e:Add",
+              "DstId": 78,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 173,
+              "SrcName": "_result",
+              "DstId": 78,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 79,
+              "SrcName": "_result",
+              "DstId": 80,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 29,
+              "SrcName": "_signal",
+              "DstId": 83,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 174,
+              "SrcName": "_result",
+              "DstId": 83,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 83,
+              "SrcName": "e:Subtract",
+              "DstId": 84,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 298,
+              "SrcName": "_result",
+              "DstId": 84,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 86,
+              "SrcName": "_result",
+              "DstId": 87,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 88,
+              "SrcName": "_result",
+              "DstId": 89,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "_signal",
+              "DstId": 94,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 109,
+              "SrcName": "_result",
+              "DstId": 94,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 94,
+              "SrcName": "body",
+              "DstId": 97,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 110,
+              "SrcName": "_result",
+              "DstId": 97,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 97,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 130,
+              "SrcName": "_result",
+              "DstId": 98,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 98,
+              "SrcName": "_result",
+              "DstId": 99,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 133,
+              "SrcName": "_result",
+              "DstId": 102,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "_result",
+              "DstId": 102,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 405,
+              "SrcName": "_result",
+              "DstId": 104,
+              "DstName": "max"
+            },
+            {
+              "Id": 428,
+              "Value": 0,
+              "DstId": 104,
+              "DstName": "min"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 104,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 98,
+              "SrcName": "_result",
+              "DstId": 105,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 78,
+              "SrcName": "e:Armor",
+              "DstId": 108,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 121,
+              "SrcName": "_result",
+              "DstId": 108,
+              "DstName": "_target"
+            },
+            {
+              "Id": 429,
+              "Value": true,
+              "DstId": 108,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 121,
+              "SrcName": "_result",
+              "DstId": 109,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 122,
+              "SrcName": "_result",
+              "DstId": 110,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 122,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 98,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 112,
+              "SrcName": "_result",
+              "DstId": 113,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 133,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 131,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 97,
+              "SrcName": "_signal",
+              "DstId": 116,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 115,
+              "SrcName": "_result",
+              "DstId": 116,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "true",
+              "DstId": 119,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 119,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 483,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 96,
+              "SrcName": "_result",
+              "DstId": 121,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 95,
+              "SrcName": "_result",
+              "DstId": 122,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 117,
+              "SrcName": "_result",
+              "DstId": 123,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 113,
+              "SrcName": "_result",
+              "DstId": 131,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "false",
+              "DstId": 132,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 99,
+              "SrcName": "_result",
+              "DstId": 132,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "_result",
+              "DstId": 132,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 99,
+              "SrcName": "_result",
+              "DstId": 133,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 146,
+              "SrcName": "_signal",
+              "DstId": 134,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 147,
+              "SrcName": "_result",
+              "DstId": 134,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 134,
+              "SrcName": "body",
+              "DstId": 137,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 148,
+              "SrcName": "_result",
+              "DstId": 137,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 137,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 161,
+              "SrcName": "_result",
+              "DstId": 138,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 170,
+              "SrcName": "_result",
+              "DstId": 140,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 149,
+              "SrcName": "_result",
+              "DstId": 140,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 78,
+              "SrcName": "e:DarkRPMoney",
+              "DstId": 146,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 158,
+              "SrcName": "_result",
+              "DstId": 146,
+              "DstName": "_target"
+            },
+            {
+              "Id": 430,
+              "Value": true,
+              "DstId": 146,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 158,
+              "SrcName": "_result",
+              "DstId": 147,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 159,
+              "SrcName": "_result",
+              "DstId": 148,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 159,
+              "SrcName": "_result",
+              "DstId": 149,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 136,
+              "SrcName": "_result",
+              "DstId": 158,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 135,
+              "SrcName": "_result",
+              "DstId": 159,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 138,
+              "SrcName": "_result",
+              "DstId": 169,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 169,
+              "SrcName": "_result",
+              "DstId": 170,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 137,
+              "SrcName": "_signal",
+              "DstId": 171,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 169,
+              "SrcName": "_result",
+              "DstId": 171,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 140,
+              "SrcName": "_result",
+              "DstId": 171,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 87,
+              "SrcName": "_result",
+              "DstId": 173,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 80,
+              "SrcName": "_result",
+              "DstId": 174,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 78,
+              "SrcName": "default",
+              "DstId": 175,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 86,
+              "SrcName": "_result",
+              "DstId": 175,
+              "DstName": "args",
+              "DstIndex": 0
+            },
+            {
+              "Id": 431,
+              "Value": "This Station: {0} Resource Type of Invalid.",
+              "DstId": 175,
+              "DstName": "format"
+            },
+            {
+              "SrcId": 83,
+              "SrcName": "default",
+              "DstId": 273,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 79,
+              "SrcName": "_result",
+              "DstId": 273,
+              "DstName": "args",
+              "DstIndex": 0
+            },
+            {
+              "Id": 432,
+              "Value": "This Station: {0} Action is Invalid.",
+              "DstId": 273,
+              "DstName": "format"
+            },
+            {
+              "SrcId": 89,
+              "SrcName": "_result",
+              "DstId": 298,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 313,
+              "SrcName": "_signal",
+              "DstId": 299,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 314,
+              "SrcName": "_result",
+              "DstId": 299,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 299,
+              "SrcName": "body",
+              "DstId": 302,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 315,
+              "SrcName": "_result",
+              "DstId": 302,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 302,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 356,
+              "SrcName": "_result",
+              "DstId": 303,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 84,
+              "SrcName": "e:Health",
+              "DstId": 313,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 326,
+              "SrcName": "_result",
+              "DstId": 313,
+              "DstName": "_target"
+            },
+            {
+              "Id": 433,
+              "Value": true,
+              "DstId": 313,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 326,
+              "SrcName": "_result",
+              "DstId": 314,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 327,
+              "SrcName": "_result",
+              "DstId": 315,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 327,
+              "SrcName": "_result",
+              "DstId": 316,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 303,
+              "SrcName": "_result",
+              "DstId": 317,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 301,
+              "SrcName": "_result",
+              "DstId": 326,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 300,
+              "SrcName": "_result",
+              "DstId": 327,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 341,
+              "SrcName": "_signal",
+              "DstId": 329,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 342,
+              "SrcName": "_result",
+              "DstId": 329,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 329,
+              "SrcName": "body",
+              "DstId": 332,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 343,
+              "SrcName": "_result",
+              "DstId": 332,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 332,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 357,
+              "SrcName": "_result",
+              "DstId": 333,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 333,
+              "SrcName": "_result",
+              "DstId": 334,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 404,
+              "SrcName": "_result",
+              "DstId": 337,
+              "DstName": "max"
+            },
+            {
+              "Id": 434,
+              "Value": 0,
+              "DstId": 337,
+              "DstName": "min"
+            },
+            {
+              "SrcId": 401,
+              "SrcName": "_result",
+              "DstId": 337,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 333,
+              "SrcName": "_result",
+              "DstId": 338,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 338,
+              "SrcName": "_result",
+              "DstId": 339,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 84,
+              "SrcName": "e:Armor",
+              "DstId": 341,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 353,
+              "SrcName": "_result",
+              "DstId": 341,
+              "DstName": "_target"
+            },
+            {
+              "Id": 435,
+              "Value": true,
+              "DstId": 341,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 353,
+              "SrcName": "_result",
+              "DstId": 342,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 354,
+              "SrcName": "_result",
+              "DstId": 343,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 354,
+              "SrcName": "_result",
+              "DstId": 344,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 333,
+              "SrcName": "_result",
+              "DstId": 345,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 360,
+              "SrcName": "_result",
+              "DstId": 347,
+              "DstName": "a"
+            },
+            {
+              "Id": 436,
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 0
+              },
+              "DstId": 347,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 332,
+              "SrcName": "_signal",
+              "DstId": 348,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 347,
+              "SrcName": "_result",
+              "DstId": 348,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 348,
+              "SrcName": "true",
+              "DstId": 351,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 351,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 484,
+              "SrcName": "_result",
+              "DstId": 351,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 331,
+              "SrcName": "_result",
+              "DstId": 353,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 330,
+              "SrcName": "_result",
+              "DstId": 354,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 349,
+              "SrcName": "_result",
+              "DstId": 355,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 348,
+              "SrcName": "false",
+              "DstId": 359,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 334,
+              "SrcName": "_result",
+              "DstId": 359,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 337,
+              "SrcName": "_result",
+              "DstId": 359,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 334,
+              "SrcName": "_result",
+              "DstId": 360,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 368,
+              "SrcName": "_signal",
+              "DstId": 361,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 369,
+              "SrcName": "_result",
+              "DstId": 361,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 361,
+              "SrcName": "body",
+              "DstId": 364,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 370,
+              "SrcName": "_result",
+              "DstId": 364,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 364,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 374,
+              "SrcName": "_result",
+              "DstId": 365,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 84,
+              "SrcName": "e:DarkRPMoney",
+              "DstId": 368,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 372,
+              "SrcName": "_result",
+              "DstId": 368,
+              "DstName": "_target"
+            },
+            {
+              "Id": 437,
+              "Value": true,
+              "DstId": 368,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 372,
+              "SrcName": "_result",
+              "DstId": 369,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 373,
+              "SrcName": "_result",
+              "DstId": 370,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 373,
+              "SrcName": "_result",
+              "DstId": 371,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 363,
+              "SrcName": "_result",
+              "DstId": 372,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 362,
+              "SrcName": "_result",
+              "DstId": 373,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 365,
+              "SrcName": "_result",
+              "DstId": 375,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 375,
+              "SrcName": "_result",
+              "DstId": 376,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 364,
+              "SrcName": "_signal",
+              "DstId": 377,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 375,
+              "SrcName": "_result",
+              "DstId": 377,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 402,
+              "SrcName": "_result",
+              "DstId": 377,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 84,
+              "SrcName": "default",
+              "DstId": 378,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 438,
+              "Value": null,
+              "DstId": 378,
+              "DstName": "args",
+              "DstIndex": 0
+            },
+            {
+              "Id": 439,
+              "Value": "This Station: {0} Resource Type of Invalid.",
+              "DstId": 378,
+              "DstName": "format"
+            },
+            {
+              "SrcId": 360,
+              "SrcName": "_result",
+              "DstId": 401,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 344,
+              "SrcName": "_result",
+              "DstId": 401,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 376,
+              "SrcName": "_result",
+              "DstId": 402,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 371,
+              "SrcName": "_result",
+              "DstId": 402,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 339,
+              "SrcName": "_result",
+              "DstId": 404,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "_result",
+              "DstId": 405,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 316,
+              "SrcName": "_result",
+              "DstId": 408,
+              "DstName": "Damage"
+            },
+            {
+              "SrcId": 303,
+              "SrcName": "_result",
+              "DstId": 408,
+              "DstName": "Player"
+            },
+            {
+              "SrcId": 302,
+              "SrcName": "_signal",
+              "DstId": 408,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 317,
+              "SrcName": "_result",
+              "DstId": 408,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 77,
+              "SrcName": "_result",
+              "DstId": 440,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 440,
+              "SrcName": "_result",
+              "DstId": 443,
+              "DstName": "a"
+            },
+            {
+              "Id": 445,
+              "Value": 0,
+              "DstId": 443,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 44,
+              "SrcName": "_signal",
+              "DstId": 444,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 443,
+              "SrcName": "_result",
+              "DstId": 444,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 444,
+              "SrcName": "true",
+              "DstId": 448,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 448,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 486,
+              "SrcName": "_result",
+              "DstId": 448,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 446,
+              "SrcName": "_result",
+              "DstId": 449,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 450,
+              "SrcName": "_result",
+              "DstId": 451,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_signal",
+              "DstId": 452,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 451,
+              "SrcName": "_result",
+              "DstId": 452,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 454,
+              "SrcName": "_result",
+              "DstId": 452,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 451,
+              "SrcName": "_result",
+              "DstId": 453,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 453,
+              "SrcName": "_result",
+              "DstId": 454,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 34,
+              "SrcName": "_result",
+              "DstId": 454,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 455,
+              "SrcName": "_result",
+              "DstId": 456,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 132,
+              "SrcName": "_signal",
+              "DstId": 457,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 456,
+              "SrcName": "_result",
+              "DstId": 457,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 459,
+              "SrcName": "_result",
+              "DstId": 457,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 456,
+              "SrcName": "_result",
+              "DstId": 458,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 458,
+              "SrcName": "_result",
+              "DstId": 459,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "_result",
+              "DstId": 459,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 460,
+              "SrcName": "_result",
+              "DstId": 461,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 171,
+              "SrcName": "_signal",
+              "DstId": 462,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 461,
+              "SrcName": "_result",
+              "DstId": 462,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 464,
+              "SrcName": "_result",
+              "DstId": 462,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 461,
+              "SrcName": "_result",
+              "DstId": 463,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 463,
+              "SrcName": "_result",
+              "DstId": 464,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 149,
+              "SrcName": "_result",
+              "DstId": 464,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 465,
+              "SrcName": "_result",
+              "DstId": 466,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 359,
+              "SrcName": "_signal",
+              "DstId": 467,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 466,
+              "SrcName": "_result",
+              "DstId": 467,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 469,
+              "SrcName": "_result",
+              "DstId": 467,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 466,
+              "SrcName": "_result",
+              "DstId": 468,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 468,
+              "SrcName": "_result",
+              "DstId": 469,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 344,
+              "SrcName": "_result",
+              "DstId": 469,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 470,
+              "SrcName": "_result",
+              "DstId": 471,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 377,
+              "SrcName": "_signal",
+              "DstId": 472,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 471,
+              "SrcName": "_result",
+              "DstId": 472,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 474,
+              "SrcName": "_result",
+              "DstId": 472,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 471,
+              "SrcName": "_result",
+              "DstId": 473,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 473,
+              "SrcName": "_result",
+              "DstId": 474,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 371,
+              "SrcName": "_result",
+              "DstId": 474,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 475,
+              "SrcName": "_result",
+              "DstId": 476,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 408,
+              "SrcName": "_signal",
+              "DstId": 477,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 476,
+              "SrcName": "_result",
+              "DstId": 477,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 479,
+              "SrcName": "_result",
+              "DstId": 477,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 476,
+              "SrcName": "_result",
+              "DstId": 478,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 478,
+              "SrcName": "_result",
+              "DstId": 479,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 316,
+              "SrcName": "_result",
+              "DstId": 479,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 69,
+              "SrcName": "_result",
+              "DstId": 480,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 73,
+              "SrcName": "_result",
+              "DstId": 482,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 123,
+              "SrcName": "_result",
+              "DstId": 483,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 355,
+              "SrcName": "_result",
+              "DstId": 484,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 449,
+              "SrcName": "_result",
+              "DstId": 486,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "InteractionSFX": null,
+        "IsInteractable": true,
+        "IsInventoriable": false,
+        "IsPocketable": false,
+        "IsReplenishAlways": false,
+        "IsStationGivingResource": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": {
+          "__version": 9,
+          "__guid": "7274b025-bd0d-421c-af06-5b920e163270",
+          "__changeId": 77,
+          "UserData": {
+            "Title": "On Station Start",
+            "ReferencedComponentTypes": [
+              "Station"
+            ],
+            "Description": "Replenish Station Resource amount every x amount of seconds.",
+            "Category": "Station",
+            "Icon": "device_hub"
+          },
+          "Variables": [
+            {
+              "Name": "TempIsCheckingStationToReplenish",
+              "Type": "System.Boolean"
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "732,240"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "852,240"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "while",
+              "UserData": {
+                "Position": "576,0"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "time.delayobj",
+              "UserData": {
+                "Position": "780,24"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredMaxResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "2076,144"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationReplienishDelay",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "696,108"
+              }
+            },
+            {
+              "Id": 9,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempIsCheckingStationToReplenish"
+              },
+              "UserData": {
+                "Position": "468,60"
+              }
+            },
+            {
+              "Id": 10,
+              "Type": "var",
+              "Properties": {
+                "_var": "TempIsCheckingStationToReplenish"
+              },
+              "UserData": {
+                "Position": "240,0"
+              }
+            },
+            {
+              "Id": 14,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "2088,72"
+              }
+            },
+            {
+              "Id": 15,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredMaxResourceAmount",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "1152,84"
+              }
+            },
+            {
+              "Id": 16,
+              "Type": "op.greaterthan",
+              "UserData": {
+                "Position": "1476,84"
+              }
+            },
+            {
+              "Id": 18,
+              "Type": "if",
+              "UserData": {
+                "Position": "1572,24"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "op.and",
+              "UserData": {
+                "Position": "1584,96"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsReplenishAlways",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "1320,156"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "op.compliment",
+              "UserData": {
+                "Position": "1512,132"
+              }
+            },
+            {
+              "Id": 24,
+              "Type": "comment",
+              "UserData": {
+                "Position": "-36,-72",
+                "Size": "2880,408",
+                "Title": "Replenish Station Resource amount every x amount of seconds.",
+                "Color": 3,
+                "Layer": 1
+              }
+            },
+            {
+              "Id": 25,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "2448,144"
+              }
+            },
+            {
+              "Id": 26,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "2568,144"
+              }
+            },
+            {
+              "Id": 27,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "2568,72"
+              }
+            },
+            {
+              "Id": 28,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationStoredResourceReplienished",
+                "_type": "Station"
+              },
+              "UserData": {
+                "Position": "2484,120"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 10,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 9,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "body",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 4,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 10,
+              "DstName": "_signal"
+            },
+            {
+              "Id": 13,
+              "Value": true,
+              "DstId": 10,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 18,
+              "SrcName": "false",
+              "DstId": 14,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 15,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "_result",
+              "DstId": 16,
+              "DstName": "a"
+            },
+            {
+              "Id": 17,
+              "Value": 0,
+              "DstId": 16,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_signal",
+              "DstId": 18,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 18,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 16,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 20,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 20,
+              "SrcName": "_result",
+              "DstId": 21,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 25,
+              "SrcName": "_result",
+              "DstId": 26,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_signal",
+              "DstId": 27,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 27,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 28,
+              "SrcName": "_result",
+              "DstId": 27,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 26,
+              "SrcName": "_result",
+              "DstId": 28,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "OnComponentUpdate": null,
+        "OnRelease": {
+          "__version": 9,
+          "__guid": "8157cd92-6d69-419e-b9c2-08b8857ac123",
+          "__changeId": 10,
+          "UserData": {
+            "Title": "On Station Release",
+            "ReferencedComponentTypes": [
+              "Station"
+            ],
+            "Description": "When player Releases reset Station Vars.",
+            "Category": "Station",
+            "Icon": "device_hub"
           },
           "Variables": [],
           "Nodes": [
@@ -52,576 +4304,11 @@
                 "_name": "_target"
               },
               "UserData": {
-                "Position": "408,36"
-              }
-            },
-            {
-              "Id": 2,
-              "Type": "sound.play",
-              "UserData": {
-                "Position": "636,12"
+                "Position": "288,72"
               }
             },
             {
               "Id": 3,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "StationHealing"
-              },
-              "UserData": {
-                "Position": "624,108"
-              }
-            },
-            {
-              "Id": 4,
-              "Type": "property",
-              "Properties": {
-                "_name": "HealingStationSFX",
-                "_type": "StationHealing"
-              },
-              "UserData": {
-                "Position": "624,84"
-              }
-            },
-            {
-              "Id": 5,
-              "Type": "property",
-              "Properties": {
-                "_name": "HealingStationSoundHandle",
-                "_type": "StationHealing"
-              },
-              "UserData": {
-                "Position": "960,12"
-              }
-            },
-            {
-              "Id": 6,
-              "Type": "while",
-              "UserData": {
-                "Position": "732,636"
-              }
-            },
-            {
-              "Id": 7,
-              "Type": "input.value",
-              "Properties": {
-                "_name": "_target"
-              },
-              "UserData": {
-                "Position": "552,864"
-              }
-            },
-            {
-              "Id": 8,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "StationHealing"
-              },
-              "UserData": {
-                "Position": "660,864"
-              }
-            },
-            {
-              "Id": 10,
-              "Type": "input.value",
-              "Properties": {
-                "_name": "_target"
-              },
-              "UserData": {
-                "Position": "96,708"
-              }
-            },
-            {
-              "Id": 11,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "StationHealing"
-              },
-              "UserData": {
-                "Position": "204,708"
-              }
-            },
-            {
-              "Id": 12,
-              "Type": "property",
-              "Properties": {
-                "_name": "IsHealingStationHealing",
-                "_type": "StationHealing"
-              },
-              "UserData": {
-                "Position": "204,636"
-              }
-            },
-            {
-              "Id": 13,
-              "Type": "time.delayobj",
-              "UserData": {
-                "Position": "1224,660"
-              }
-            },
-            {
-              "Id": 14,
-              "Type": "property",
-              "Properties": {
-                "_name": "HealingStationDelay",
-                "_type": "StationHealing"
-              },
-              "UserData": {
-                "Position": "1164,732"
-              }
-            },
-            {
-              "Id": 15,
-              "Type": "property",
-              "Properties": {
-                "_name": "GameObject",
-                "_type": "Sandbox.Component"
-              },
-              "UserData": {
-                "Position": "768,888"
-              }
-            },
-            {
-              "Id": 16,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "HealthComponent"
-              },
-              "UserData": {
-                "Position": "1020,876"
-              }
-            },
-            {
-              "Id": 17,
-              "Type": "property",
-              "Properties": {
-                "_name": "Health",
-                "_type": "HealthComponent"
-              },
-              "UserData": {
-                "Position": "1344,768"
-              }
-            },
-            {
-              "Id": 18,
-              "Type": "property",
-              "Properties": {
-                "_name": "Health",
-                "_type": "HealthComponent"
-              },
-              "UserData": {
-                "Position": "1872,660"
-              }
-            },
-            {
-              "Id": 19,
-              "Type": "op.add",
-              "UserData": {
-                "Position": "1704,768"
-              }
-            },
-            {
-              "Id": 20,
-              "Type": "property",
-              "Properties": {
-                "_name": "HealingStationHealAmount",
-                "_type": "StationHealing"
-              },
-              "UserData": {
-                "Position": "1332,816"
-              }
-            },
-            {
-              "Id": 21,
-              "Type": "comment",
-              "UserData": {
-                "Position": "48,564",
-                "Size": "2064,372",
-                "Title": "Heal Player Every X Amount of Seconds",
-                "Color": 3,
-                "Layer": 2
-              }
-            },
-            {
-              "Id": 22,
-              "Type": "comment",
-              "UserData": {
-                "Position": "372,-60",
-                "Size": "936,216",
-                "Title": "Start Healing SFX",
-                "Color": 3,
-                "Layer": 1
-              }
-            },
-            {
-              "Id": 25,
-              "Type": "input.value",
-              "Properties": {
-                "_name": "_target"
-              },
-              "UserData": {
-                "Position": "540,708"
-              }
-            },
-            {
-              "Id": 26,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "StationHealing"
-              },
-              "UserData": {
-                "Position": "636,708"
-              }
-            },
-            {
-              "Id": 51,
-              "Type": "property",
-              "Properties": {
-                "_name": "IsHealingStationHealing",
-                "_type": "StationHealing"
-              },
-              "UserData": {
-                "Position": "636,684"
-              }
-            },
-            {
-              "Id": 60,
-              "Type": "call",
-              "Properties": {
-                "_isStatic": true,
-                "_name": "Clamp",
-                "_type": "System.Single"
-              },
-              "UserData": {
-                "Position": "1812,756"
-              }
-            },
-            {
-              "Id": 62,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "DarkrpPlayerInfo"
-              },
-              "UserData": {
-                "Position": "1716,900"
-              }
-            },
-            {
-              "Id": 63,
-              "Type": "property",
-              "Properties": {
-                "_name": "CurrentJob",
-                "_type": "DarkrpPlayerInfo"
-              },
-              "UserData": {
-                "Position": "1740,876"
-              }
-            },
-            {
-              "Id": 64,
-              "Type": "property",
-              "Properties": {
-                "_name": "JobHealthMax",
-                "_type": "JobResource"
-              },
-              "UserData": {
-                "Position": "1692,852"
-              }
-            }
-          ],
-          "Links": [
-            {
-              "SrcId": 0,
-              "SrcName": "_signal",
-              "DstId": 2,
-              "DstName": "_signal"
-            },
-            {
-              "SrcId": 1,
-              "SrcName": "_result",
-              "DstId": 2,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 4,
-              "SrcName": "_result",
-              "DstId": 2,
-              "DstName": "soundEvent"
-            },
-            {
-              "SrcId": 1,
-              "SrcName": "_result",
-              "DstId": 3,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 3,
-              "SrcName": "_result",
-              "DstId": 4,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 2,
-              "SrcName": "_signal",
-              "DstId": 5,
-              "DstName": "_signal"
-            },
-            {
-              "SrcId": 3,
-              "SrcName": "_result",
-              "DstId": 5,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 2,
-              "SrcName": "_result",
-              "DstId": 5,
-              "DstName": "_value"
-            },
-            {
-              "SrcId": 12,
-              "SrcName": "_signal",
-              "DstId": 6,
-              "DstName": "_signal"
-            },
-            {
-              "SrcId": 51,
-              "SrcName": "_result",
-              "DstId": 6,
-              "DstName": "condition"
-            },
-            {
-              "SrcId": 7,
-              "SrcName": "_result",
-              "DstId": 8,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 10,
-              "SrcName": "_result",
-              "DstId": 11,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 5,
-              "SrcName": "_signal",
-              "DstId": 12,
-              "DstName": "_signal"
-            },
-            {
-              "SrcId": 11,
-              "SrcName": "_result",
-              "DstId": 12,
-              "DstName": "_target"
-            },
-            {
-              "Id": 56,
-              "Value": true,
-              "DstId": 12,
-              "DstName": "_value"
-            },
-            {
-              "SrcId": 6,
-              "SrcName": "body",
-              "DstId": 13,
-              "DstName": "_signal"
-            },
-            {
-              "SrcId": 14,
-              "SrcName": "_result",
-              "DstId": 13,
-              "DstName": "seconds"
-            },
-            {
-              "SrcId": 0,
-              "SrcName": "_target",
-              "DstId": 13,
-              "DstName": "target"
-            },
-            {
-              "SrcId": 8,
-              "SrcName": "_result",
-              "DstId": 14,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 0,
-              "SrcName": "LastInteractingPlayer",
-              "DstId": 15,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 15,
-              "SrcName": "_result",
-              "DstId": 16,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 16,
-              "SrcName": "_result",
-              "DstId": 17,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 13,
-              "SrcName": "_signal",
-              "DstId": 18,
-              "DstName": "_signal"
-            },
-            {
-              "SrcId": 16,
-              "SrcName": "_result",
-              "DstId": 18,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 60,
-              "SrcName": "_result",
-              "DstId": 18,
-              "DstName": "_value"
-            },
-            {
-              "SrcId": 17,
-              "SrcName": "_result",
-              "DstId": 19,
-              "DstName": "a"
-            },
-            {
-              "SrcId": 20,
-              "SrcName": "_result",
-              "DstId": 19,
-              "DstName": "b"
-            },
-            {
-              "SrcId": 8,
-              "SrcName": "_result",
-              "DstId": 20,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 25,
-              "SrcName": "_result",
-              "DstId": 26,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 26,
-              "SrcName": "_result",
-              "DstId": 51,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 64,
-              "SrcName": "_result",
-              "DstId": 60,
-              "DstName": "max"
-            },
-            {
-              "Id": 61,
-              "Value": 0,
-              "DstId": 60,
-              "DstName": "min"
-            },
-            {
-              "SrcId": 19,
-              "SrcName": "_result",
-              "DstId": 60,
-              "DstName": "value"
-            },
-            {
-              "SrcId": 15,
-              "SrcName": "_result",
-              "DstId": 62,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 62,
-              "SrcName": "_result",
-              "DstId": 63,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 63,
-              "SrcName": "_result",
-              "DstId": 64,
-              "DstName": "_target"
-            }
-          ]
-        },
-        "InteractionSFX": "sounds/entities/stations/healingstation.sound",
-        "IsHealingStationHealing": false,
-        "IsInteractable": true,
-        "IsInventoriable": false,
-        "IsPocketable": false,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "OnRelease": {
-          "__version": 9,
-          "__guid": "7c4a5ab8-377a-4e9c-b253-eb83b9f034a0",
-          "__changeId": 56,
-          "UserData": {
-            "Title": "Healing Station Release Logic",
-            "ReferencedComponentTypes": [
-              "StationHealing"
-            ],
-            "Description": "When release stop healing player and stop healing SFX.",
-            "Icon": "health_and_safety",
-            "Category": "Stations"
-          },
-          "Variables": [],
-          "Nodes": [
-            {
-              "Id": 0,
-              "Type": "input"
-            },
-            {
-              "Id": 3,
-              "Type": "input.value",
-              "Properties": {
-                "_name": "_target"
-              },
-              "UserData": {
-                "Position": "408,72"
-              }
-            },
-            {
-              "Id": 4,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "StationHealing"
-              },
-              "UserData": {
-                "Position": "516,72"
-              }
-            },
-            {
-              "Id": 5,
-              "Type": "property",
-              "Properties": {
-                "_name": "IsHealingStationHealing",
-                "_type": "StationHealing"
-              },
-              "UserData": {
-                "Position": "516,0"
-              }
-            },
-            {
-              "Id": 7,
-              "Type": "property",
-              "Properties": {
-                "_name": "HealingStationSoundHandle",
-                "_type": "StationHealing"
-              },
-              "UserData": {
-                "Position": "876,72"
-              }
-            },
-            {
-              "Id": 8,
               "Type": "call",
               "Properties": {
                 "_isStatic": false,
@@ -629,27 +4316,63 @@
                 "_type": "Sandbox.SoundHandle"
               },
               "UserData": {
-                "Position": "900,0"
+                "Position": "780,0"
               }
             },
             {
-              "Id": 9,
+              "Id": 4,
               "Type": "comment",
               "UserData": {
-                "Position": "396,-60",
+                "Position": "276,-60",
                 "Size": "828,180",
                 "Title": "Stop healing Logic & SFX",
                 "Color": 3,
                 "Layer": 1
               }
+            },
+            {
+              "Id": 5,
+              "Type": "property",
+              "Properties": {
+                "_name": "IsStationGivingResource"
+              },
+              "UserData": {
+                "Position": "396,0"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "property",
+              "Properties": {
+                "_name": "StationSoundHandle"
+              },
+              "UserData": {
+                "Position": "744,72"
+              }
+            },
+            {
+              "Id": 9,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Station"
+              },
+              "UserData": {
+                "Position": "396,72"
+              }
             }
           ],
           "Links": [
             {
-              "SrcId": 3,
+              "SrcId": 5,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 6,
               "SrcName": "_result",
-              "DstId": 4,
-              "DstName": "_this"
+              "DstId": 3,
+              "DstName": "_target"
             },
             {
               "SrcId": 0,
@@ -658,37 +4381,44 @@
               "DstName": "_signal"
             },
             {
-              "SrcId": 4,
+              "SrcId": 9,
               "SrcName": "_result",
               "DstId": 5,
               "DstName": "_target"
             },
             {
-              "Id": 11,
+              "Id": 8,
               "Value": false,
               "DstId": 5,
               "DstName": "_value"
             },
             {
-              "SrcId": 4,
+              "SrcId": 9,
               "SrcName": "_result",
-              "DstId": 7,
+              "DstId": 6,
               "DstName": "_target"
             },
             {
-              "SrcId": 5,
-              "SrcName": "_signal",
-              "DstId": 8,
-              "DstName": "_signal"
-            },
-            {
-              "SrcId": 7,
+              "SrcId": 1,
               "SrcName": "_result",
-              "DstId": 8,
-              "DstName": "_target"
+              "DstId": 9,
+              "DstName": "_this"
             }
           ]
-        }
+        },
+        "StationActionType": "Add",
+        "StationDeniedSFX": "sounds/entities/stations/healingstation_healingdenied.sound",
+        "StationInteractionDelay": 3,
+        "StationNoResourceLeftSFX": "sounds/entities/stations/healingstation_nohealleft.sound",
+        "StationReplienishDelay": 25,
+        "StationResourceAmountGiven": 5,
+        "StationResourceGivenDelay": 2,
+        "StationResourceType": "Health",
+        "StationSFX": "sounds/entities/stations/healingstation.sound",
+        "StationSoundHandle": null,
+        "StationStoredMaxResourceAmount": 50,
+        "StationStoredResourceAmount": 50,
+        "StationStoredResourceReplienished": "sounds/entities/stations/healingstation_replenished.sound"
       },
       {
         "__type": "Sandbox.BoxCollider",
