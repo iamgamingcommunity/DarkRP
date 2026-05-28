@@ -1811,7 +1811,7 @@
             "GraphSendChat": {
               "__version": 9,
               "__guid": "7d4e24f3-124c-4166-8ffe-983367d35c2f",
-              "__changeId": 78,
+              "__changeId": 230,
               "UserData": {
                 "Title": "Graph Send Chat",
                 "ReferencedComponentTypes": [
@@ -1823,13 +1823,16 @@
               "Nodes": [
                 {
                   "Id": 0,
-                  "Type": "input"
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "-384,0"
+                  }
                 },
                 {
                   "Id": 18,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "2148,24"
+                    "Position": "3168,84"
                   }
                 },
                 {
@@ -1839,7 +1842,7 @@
                     "T": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "672,192"
+                    "Position": "1680,252"
                   }
                 },
                 {
@@ -1849,7 +1852,7 @@
                     "T": "Sandbox.Playerhudmain"
                   },
                   "UserData": {
-                    "Position": "144,264"
+                    "Position": "-72,108"
                   }
                 },
                 {
@@ -1860,7 +1863,7 @@
                     "_type": "Sandbox.Playerhudmain"
                   },
                   "UserData": {
-                    "Position": "300,0"
+                    "Position": "-84,0"
                   }
                 },
                 {
@@ -1871,14 +1874,14 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "960,192"
+                    "Position": "1968,252"
                   }
                 },
                 {
                   "Id": 23,
                   "Type": "ChatCommands/Get Command By Name",
                   "UserData": {
-                    "Position": "912,0"
+                    "Position": "648,0"
                   }
                 },
                 {
@@ -1890,7 +1893,7 @@
                     "_type": "ChatCommandResource"
                   },
                   "UserData": {
-                    "Position": "1752,24"
+                    "Position": "2724,84"
                   }
                 },
                 {
@@ -1901,7 +1904,7 @@
                     "_type": "ChatCommandResource"
                   },
                   "UserData": {
-                    "Position": "1104,120"
+                    "Position": "2112,180"
                   }
                 },
                 {
@@ -1916,21 +1919,21 @@
                     }
                   },
                   "UserData": {
-                    "Position": "1848,192"
+                    "Position": "2868,252"
                   }
                 },
                 {
                   "Id": 27,
                   "Type": "sys.isvalid",
                   "UserData": {
-                    "Position": "1272,72"
+                    "Position": "2280,132"
                   }
                 },
                 {
                   "Id": 28,
                   "Type": "if",
                   "UserData": {
-                    "Position": "1440,0"
+                    "Position": "2460,60"
                   }
                 },
                 {
@@ -1942,7 +1945,7 @@
                     "_type": "Sandbox.Playerhudmain"
                   },
                   "UserData": {
-                    "Position": "1968,372"
+                    "Position": "2988,432"
                   }
                 },
                 {
@@ -1953,14 +1956,178 @@
                     "_type": "Sandbox.Playerhudmain"
                   },
                   "UserData": {
-                    "Position": "1608,264"
+                    "Position": "2628,324"
                   }
                 },
                 {
                   "Id": 58,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "1452,180"
+                    "Position": "2472,240"
+                  }
+                },
+                {
+                  "Id": 69,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "1320,108"
+                  }
+                },
+                {
+                  "Id": 70,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "1296,24"
+                  }
+                },
+                {
+                  "Id": 83,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ChatCommands",
+                    "_type": "ChatCommandResource"
+                  },
+                  "UserData": {
+                    "Position": "600,48"
+                  }
+                },
+                {
+                  "Id": 84,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "ChatCommandName",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "ChatCommandResource",
+                      "Name": "ChatCommand"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "636,72"
+                  }
+                },
+                {
+                  "Id": 85,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "System.String"
+                  },
+                  "UserData": {
+                    "Position": "1008,-0"
+                  }
+                },
+                {
+                  "Id": 86,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "-108,-96",
+                    "Size": "372,300",
+                    "Title": "Close Chat UI After sending chat Message",
+                    "Layer": 3,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 87,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "588,-108",
+                    "Size": "888,300",
+                    "Title": "Find If Chat command exists, if so fire chat command logic.",
+                    "Layer": 2,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 88,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "2364,12",
+                    "Size": "960,516",
+                    "Title": "If Valid, Fire Chat Command Logic",
+                    "Color": 3,
+                    "Layer": 1
+                  }
+                },
+                {
+                  "Id": 89,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "ChatMessage"
+                  },
+                  "UserData": {
+                    "Position": "456,24"
+                  }
+                },
+                {
+                  "Id": 90,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "ChatMessage"
+                  },
+                  "UserData": {
+                    "Position": "1140,108"
+                  }
+                },
+                {
+                  "Id": 91,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "ChatMessage"
+                  },
+                  "UserData": {
+                    "Position": "2460,384"
+                  }
+                },
+                {
+                  "Id": 92,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "ChatMessage"
+                  },
+                  "UserData": {
+                    "Position": "2796,480"
+                  }
+                },
+                {
+                  "Id": 93,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerController"
+                  },
+                  "UserData": {
+                    "Position": "1512,252"
+                  }
+                },
+                {
+                  "Id": 94,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "PlayerController"
+                  },
+                  "UserData": {
+                    "Position": "2712,156"
+                  }
+                },
+                {
+                  "Id": 95,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1980,48"
+                  }
+                },
+                {
+                  "Id": 105,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1524,132"
+                  }
+                },
+                {
+                  "Id": 146,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "300,-0"
                   }
                 }
               ],
@@ -1979,8 +2146,8 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 73,
-                  "Value": null,
+                  "SrcId": 23,
+                  "SrcName": "_result",
                   "DstId": 18,
                   "DstName": "args",
                   "DstIndex": 1
@@ -1993,14 +2160,14 @@
                   "DstIndex": 2
                 },
                 {
-                  "Id": 74,
+                  "Id": 177,
                   "Value": "{0}: {1} ChatCommand Name: {2}",
                   "DstId": 18,
                   "DstName": "format"
                 },
                 {
-                  "SrcId": 0,
-                  "SrcName": "PlayerController",
+                  "SrcId": 93,
+                  "SrcName": "_result",
                   "DstId": 19,
                   "DstName": "_this"
                 },
@@ -2023,7 +2190,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 75,
+                  "Id": 178,
                   "Value": false,
                   "DstId": 21,
                   "DstName": "_value"
@@ -2035,16 +2202,22 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 21,
+                  "SrcId": 146,
                   "SrcName": "_signal",
                   "DstId": 23,
                   "DstName": "_signal"
                 },
                 {
-                  "SrcId": 0,
-                  "SrcName": "ChatMessage",
+                  "SrcId": 89,
+                  "SrcName": "_result",
                   "DstId": 23,
                   "DstName": "name"
+                },
+                {
+                  "SrcId": 94,
+                  "SrcName": "_result",
+                  "DstId": 24,
+                  "DstName": "Player"
                 },
                 {
                   "SrcId": 28,
@@ -2077,7 +2250,7 @@
                   "DstName": "obj"
                 },
                 {
-                  "SrcId": 23,
+                  "SrcId": 95,
                   "SrcName": "_signal",
                   "DstId": 28,
                   "DstName": "_signal"
@@ -2089,8 +2262,8 @@
                   "DstName": "condition"
                 },
                 {
-                  "SrcId": 0,
-                  "SrcName": "ChatMessage",
+                  "SrcId": 92,
+                  "SrcName": "_result",
                   "DstId": 50,
                   "DstName": "ChatMessage"
                 },
@@ -2119,8 +2292,8 @@
                   "DstName": "_target"
                 },
                 {
-                  "SrcId": 0,
-                  "SrcName": "ChatMessage",
+                  "SrcId": 91,
+                  "SrcName": "_result",
                   "DstId": 57,
                   "DstName": "_value"
                 },
@@ -2131,9 +2304,107 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 76,
+                  "Id": 179,
                   "Value": "Chat Message",
                   "DstId": 58,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 90,
+                  "SrcName": "_result",
+                  "DstId": 69,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 85,
+                  "SrcName": "body.value",
+                  "DstId": 69,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 85,
+                  "SrcName": "body",
+                  "DstId": 70,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 69,
+                  "SrcName": "_result",
+                  "DstId": 70,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_result",
+                  "DstId": 83,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 83,
+                  "SrcName": "_result",
+                  "DstId": 84,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_signal",
+                  "DstId": 85,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 84,
+                  "SrcName": "_result",
+                  "DstId": 85,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 70,
+                  "SrcName": "true",
+                  "DstId": 95,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 180,
+                  "Value": "Sent Chat",
+                  "DstId": 95,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 70,
+                  "SrcName": "false",
+                  "DstId": 105,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 85,
+                  "SrcName": "body.value",
+                  "DstId": 105,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "Id": 181,
+                  "Value": "Wrong Command name: Command name {0}",
+                  "DstId": 105,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 21,
+                  "SrcName": "_signal",
+                  "DstId": 146,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 176,
+                  "Value": null,
+                  "DstId": 146,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "Id": 182,
+                  "Value": "SEND CHAT: SEND CHAT {0}",
+                  "DstId": 146,
                   "DstName": "format"
                 }
               ]

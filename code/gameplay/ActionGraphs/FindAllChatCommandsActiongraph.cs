@@ -5,21 +5,39 @@ using System.Linq;
 
 public static class ChatCommandActionGraphNodes
 {
-    // Returns a specific chat command resource by name
+      // Returns a specific chat command resource by name
     [ActionGraphNode("ChatCommands/Get Command By Name")]
     [Group("DarkRP Action Graphs")]
-    [Description("Gets a Chat Command by name by searching through all the possible commands in /addons and /chatcommands.")]
-    public static ChatCommandResource GetChatCommandByName(string name)
+    [Description("Gets a Chat Command by name.")]
+    public static ChatCommandResource GetChatCommandByName( string name )
     {
-        if (string.IsNullOrEmpty(name))
+        if ( string.IsNullOrWhiteSpace( name ) )
             return null;
 
-        // Match using the struct's ChatCommandName property (case-insensitive)
-        return ChatCommandResource.All
-            .FirstOrDefault(c => c.ChatCommands.ChatCommandName.Equals(name, StringComparison.OrdinalIgnoreCase));
+        foreach ( var resource in ChatCommandResource.All )
+        {
+            if ( resource == null )
+                continue;
+
+            // Safety
+            if ( resource.ChatCommands.ChatCommandName == null )
+                continue;
+
+            // Search through aliases/names
+            bool found = resource.ChatCommands.ChatCommandName
+                .Any( x => string.Equals(
+                    x,
+                    name,
+                    StringComparison.OrdinalIgnoreCase ) );
+
+            if ( found )
+                return resource;
+        }
+
+        return null;
     }
 
-    // Returns all chat command resources as a list
+    // Returns all chat command resources
     [ActionGraphNode("ChatCommands/Get All Commands")]
     [Group("DarkRP Action Graphs")]
     public static List<ChatCommandResource> GetAllChatCommands()
