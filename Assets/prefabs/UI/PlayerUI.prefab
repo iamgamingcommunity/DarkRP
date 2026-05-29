@@ -1811,15 +1811,21 @@
             "GraphSendChat": {
               "__version": 9,
               "__guid": "7d4e24f3-124c-4166-8ffe-983367d35c2f",
-              "__changeId": 230,
+              "__changeId": 585,
               "UserData": {
                 "Title": "Graph Send Chat",
                 "ReferencedComponentTypes": [
                   "DarkrpPlayerInfo",
-                  "Sandbox.Playerhudmain"
+                  "Sandbox.Playerhudmain",
+                  "NetworkManager.NetworkManager"
                 ]
               },
-              "Variables": [],
+              "Variables": [
+                {
+                  "Name": "Bool",
+                  "Type": "System.Boolean"
+                }
+              ],
               "Nodes": [
                 {
                   "Id": 0,
@@ -1832,7 +1838,7 @@
                   "Id": 18,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "3168,84"
+                    "Position": "3408,-1668"
                   }
                 },
                 {
@@ -1842,7 +1848,7 @@
                     "T": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "1680,252"
+                    "Position": "2712,-1452"
                   }
                 },
                 {
@@ -1874,7 +1880,7 @@
                     "_type": "DarkrpPlayerInfo"
                   },
                   "UserData": {
-                    "Position": "1968,252"
+                    "Position": "3000,-1452"
                   }
                 },
                 {
@@ -1885,18 +1891,6 @@
                   }
                 },
                 {
-                  "Id": 24,
-                  "Type": "call",
-                  "Properties": {
-                    "_isStatic": false,
-                    "_name": "ChatCommandLogic",
-                    "_type": "ChatCommandResource"
-                  },
-                  "UserData": {
-                    "Position": "2724,84"
-                  }
-                },
-                {
                   "Id": 25,
                   "Type": "property",
                   "Properties": {
@@ -1904,7 +1898,7 @@
                     "_type": "ChatCommandResource"
                   },
                   "UserData": {
-                    "Position": "2112,180"
+                    "Position": "2580,-1512"
                   }
                 },
                 {
@@ -1919,7 +1913,7 @@
                     }
                   },
                   "UserData": {
-                    "Position": "2868,252"
+                    "Position": "2940,-1512"
                   }
                 },
                 {
@@ -2013,7 +2007,7 @@
                     "T": "System.String"
                   },
                   "UserData": {
-                    "Position": "1008,-0"
+                    "Position": "1020,-12"
                   }
                 },
                 {
@@ -2023,7 +2017,7 @@
                     "Position": "-108,-96",
                     "Size": "372,300",
                     "Title": "Close Chat UI After sending chat Message",
-                    "Layer": 3,
+                    "Layer": 6,
                     "Color": 3
                   }
                 },
@@ -2034,7 +2028,7 @@
                     "Position": "588,-108",
                     "Size": "888,300",
                     "Title": "Find If Chat command exists, if so fire chat command logic.",
-                    "Layer": 2,
+                    "Layer": 5,
                     "Color": 3
                   }
                 },
@@ -2046,7 +2040,7 @@
                     "Size": "960,516",
                     "Title": "If Valid, Fire Chat Command Logic",
                     "Color": 3,
-                    "Layer": 1
+                    "Layer": 4
                   }
                 },
                 {
@@ -2056,7 +2050,7 @@
                     "_name": "ChatMessage"
                   },
                   "UserData": {
-                    "Position": "456,24"
+                    "Position": "216,240"
                   }
                 },
                 {
@@ -2096,7 +2090,7 @@
                     "_name": "PlayerController"
                   },
                   "UserData": {
-                    "Position": "1512,252"
+                    "Position": "2544,-1452"
                   }
                 },
                 {
@@ -2106,7 +2100,7 @@
                     "_name": "PlayerController"
                   },
                   "UserData": {
-                    "Position": "2712,156"
+                    "Position": "2580,-1668"
                   }
                 },
                 {
@@ -2127,13 +2121,466 @@
                   "Id": 146,
                   "Type": "log.info",
                   "UserData": {
-                    "Position": "300,-0"
+                    "Position": "324,-108"
+                  }
+                },
+                {
+                  "Id": 179,
+                  "Type": "list.get",
+                  "Properties": {
+                    "T": "System.String"
+                  },
+                  "UserData": {
+                    "Position": "3372,-1524"
+                  }
+                },
+                {
+                  "Id": 185,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "ChatCommandLogic",
+                    "_type": "ChatCommandResource"
+                  },
+                  "UserData": {
+                    "Position": "2748,-1716"
+                  }
+                },
+                {
+                  "Id": 188,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "ChatMessage"
+                  },
+                  "UserData": {
+                    "Position": "2220,-420"
+                  }
+                },
+                {
+                  "Id": 203,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "System.String"
+                  },
+                  "UserData": {
+                    "Position": "2400,-540"
+                  }
+                },
+                {
+                  "Id": 332,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": "System.String"
+                  },
+                  "UserData": {
+                    "Position": "528,180"
+                  }
+                },
+                {
+                  "Id": 333,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "1152,228"
+                  }
+                },
+                {
+                  "Id": 343,
+                  "Type": "time.delayobj",
+                  "UserData": {
+                    "Position": "816,324"
+                  }
+                },
+                {
+                  "Id": 345,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Split",
+                    "_type": "System.String"
+                  },
+                  "UserData": {
+                    "Position": "516,276"
+                  }
+                },
+                {
+                  "Id": 346,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "2724,-396"
+                  }
+                },
+                {
+                  "Id": 347,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2808,-492"
+                  }
+                },
+                {
+                  "Id": 349,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "3048,-300"
+                  }
+                },
+                {
+                  "Id": 350,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "3060,-360"
+                  }
+                },
+                {
+                  "Id": 356,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": true,
+                    "_name": "Parse",
+                    "_type": "System.Int32"
+                  },
+                  "UserData": {
+                    "Position": "3600,-240"
+                  }
+                },
+                {
+                  "Id": 359,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "UI"
+                  },
+                  "UserData": {
+                    "Position": "2196,-1608"
+                  }
+                },
+                {
+                  "Id": 360,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "2280,-1572"
+                  }
+                },
+                {
+                  "Id": 361,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RecipientName",
+                    "_type": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "2712,-1548"
+                  }
+                },
+                {
+                  "Id": 362,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RecipientMoneyAmount",
+                    "_type": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "2412,-1620"
+                  }
+                },
+                {
+                  "Id": 363,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "UI"
+                  },
+                  "UserData": {
+                    "Position": "3120,-492"
+                  }
+                },
+                {
+                  "Id": 364,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "3216,-492"
+                  }
+                },
+                {
+                  "Id": 365,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RecipientName",
+                    "_type": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "3216,-564"
+                  }
+                },
+                {
+                  "Id": 366,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RecipientMoneyAmount",
+                    "_type": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "3540,-336"
+                  }
+                },
+                {
+                  "Id": 367,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "UI"
+                  },
+                  "UserData": {
+                    "Position": "3576,-1896"
+                  }
+                },
+                {
+                  "Id": 368,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "3660,-1860"
+                  }
+                },
+                {
+                  "Id": 369,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RecipientName",
+                    "_type": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "3852,-1812"
+                  }
+                },
+                {
+                  "Id": 370,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RecipientMoneyAmount",
+                    "_type": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "4152,-1812"
+                  }
+                },
+                {
+                  "Id": 376,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "UI"
+                  },
+                  "UserData": {
+                    "Position": "2052,-1056"
+                  }
+                },
+                {
+                  "Id": 377,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "2148,-1056"
+                  }
+                },
+                {
+                  "Id": 378,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RecipientMoneyAmount",
+                    "_type": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "2136,-1080"
+                  }
+                },
+                {
+                  "Id": 380,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "2484,-1152"
+                  }
+                },
+                {
+                  "Id": 382,
+                  "Type": "log.info",
+                  "UserData": {
+                    "Position": "2676,-1284"
+                  }
+                },
+                {
+                  "Id": 383,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "2604,-1332",
+                    "Size": "300,300",
+                    "Title": "Need UI popup here",
+                    "Layer": 2
+                  }
+                },
+                {
+                  "Id": 423,
+                  "Type": "input.value",
+                  "Properties": {
+                    "_name": "UI"
+                  },
+                  "UserData": {
+                    "Position": "3324,-960"
+                  }
+                },
+                {
+                  "Id": 424,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "3420,-960"
+                  }
+                },
+                {
+                  "Id": 425,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "RecipientName",
+                    "_type": "Sandbox.Playerhudmain"
+                  },
+                  "UserData": {
+                    "Position": "3372,-984"
+                  }
+                },
+                {
+                  "Id": 426,
+                  "Type": "scene.find",
+                  "UserData": {
+                    "Position": "3012,-948"
+                  }
+                },
+                {
+                  "Id": 442,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "NetworkManager.NetworkManager"
+                  },
+                  "UserData": {
+                    "Position": "3000,-984"
+                  }
+                },
+                {
+                  "Id": 443,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerList",
+                    "_type": "NetworkManager.NetworkManager"
+                  },
+                  "UserData": {
+                    "Position": "3024,-1008"
+                  }
+                },
+                {
+                  "Id": 444,
+                  "Type": "foreach",
+                  "Properties": {
+                    "T": {
+                      "$type": "Nested",
+                      "DeclaringType": "NetworkManager.NetworkManager",
+                      "Name": "PlayerData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3084,-1104"
+                  }
+                },
+                {
+                  "Id": 446,
+                  "Type": "property",
+                  "Properties": {
+                    "_name": "PlayerID",
+                    "_type": {
+                      "$type": "Nested",
+                      "DeclaringType": "NetworkManager.NetworkManager",
+                      "Name": "PlayerData"
+                    }
+                  },
+                  "UserData": {
+                    "Position": "3408,-1008"
+                  }
+                },
+                {
+                  "Id": 447,
+                  "Type": "op.equal",
+                  "UserData": {
+                    "Position": "3636,-1008"
+                  }
+                },
+                {
+                  "Id": 448,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "3636,-1080"
+                  }
+                },
+                {
+                  "Id": 451,
+                  "Type": "op.lessthanorequal",
+                  "UserData": {
+                    "Position": "2508,-1080"
+                  }
+                },
+                {
+                  "Id": 453,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "2040,-1380",
+                    "Size": "876,360",
+                    "Title": "Check if Sending Player has no Money",
+                    "Layer": 3,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 454,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "2928,-1284",
+                    "Size": "876,432",
+                    "Title": "Check if Sending Player Recipient name is in the server Player list.",
+                    "Layer": 3,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 455,
+                  "Type": "comment",
+                  "UserData": {
+                    "Position": "2148,-660",
+                    "Size": "1476,504",
+                    "Title": "Seperate Chat Message Into 3 Pieces for us to use",
+                    "Layer": 1,
+                    "Color": 3
+                  }
+                },
+                {
+                  "Id": 456,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Split",
+                    "_type": "System.String"
+                  },
+                  "UserData": {
+                    "Position": "2400,-444"
                   }
                 }
               ],
               "Links": [
                 {
-                  "SrcId": 24,
+                  "SrcId": 185,
                   "SrcName": "_signal",
                   "DstId": 18,
                   "DstName": "_signal"
@@ -2153,14 +2600,14 @@
                   "DstIndex": 1
                 },
                 {
-                  "SrcId": 26,
+                  "SrcId": 179,
                   "SrcName": "_result",
                   "DstId": 18,
                   "DstName": "args",
                   "DstIndex": 2
                 },
                 {
-                  "Id": 177,
+                  "Id": 257,
                   "Value": "{0}: {1} ChatCommand Name: {2}",
                   "DstId": 18,
                   "DstName": "format"
@@ -2190,7 +2637,7 @@
                   "DstName": "_target"
                 },
                 {
-                  "Id": 178,
+                  "Id": 258,
                   "Value": false,
                   "DstId": 21,
                   "DstName": "_value"
@@ -2212,24 +2659,6 @@
                   "SrcName": "_result",
                   "DstId": 23,
                   "DstName": "name"
-                },
-                {
-                  "SrcId": 94,
-                  "SrcName": "_result",
-                  "DstId": 24,
-                  "DstName": "Player"
-                },
-                {
-                  "SrcId": 28,
-                  "SrcName": "true",
-                  "DstId": 24,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 23,
-                  "SrcName": "_result",
-                  "DstId": 24,
-                  "DstName": "_target"
                 },
                 {
                   "SrcId": 23,
@@ -2304,7 +2733,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 179,
+                  "Id": 259,
                   "Value": "Chat Message",
                   "DstId": 58,
                   "DstName": "format"
@@ -2364,7 +2793,7 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 180,
+                  "Id": 260,
                   "Value": "Sent Chat",
                   "DstId": 95,
                   "DstName": "format"
@@ -2383,7 +2812,7 @@
                   "DstIndex": 0
                 },
                 {
-                  "Id": 181,
+                  "Id": 261,
                   "Value": "Wrong Command name: Command name {0}",
                   "DstId": 105,
                   "DstName": "format"
@@ -2395,17 +2824,414 @@
                   "DstName": "_signal"
                 },
                 {
-                  "Id": 176,
+                  "Id": 262,
                   "Value": null,
                   "DstId": 146,
                   "DstName": "args",
                   "DstIndex": 0
                 },
                 {
-                  "Id": 182,
+                  "Id": 263,
                   "Value": "SEND CHAT: SEND CHAT {0}",
                   "DstId": 146,
                   "DstName": "format"
+                },
+                {
+                  "Id": 264,
+                  "Value": 0,
+                  "DstId": 179,
+                  "DstName": "index"
+                },
+                {
+                  "SrcId": 26,
+                  "SrcName": "_result",
+                  "DstId": 179,
+                  "DstName": "list"
+                },
+                {
+                  "Id": 265,
+                  "Value": true,
+                  "DstId": 185,
+                  "DstName": "Bool"
+                },
+                {
+                  "Id": 266,
+                  "Value": 0,
+                  "DstId": 185,
+                  "DstName": "Float"
+                },
+                {
+                  "SrcId": 362,
+                  "SrcName": "_result",
+                  "DstId": 185,
+                  "DstName": "Int"
+                },
+                {
+                  "SrcId": 94,
+                  "SrcName": "_result",
+                  "DstId": 185,
+                  "DstName": "Player"
+                },
+                {
+                  "SrcId": 361,
+                  "SrcName": "_result",
+                  "DstId": 185,
+                  "DstName": "String"
+                },
+                {
+                  "SrcId": 448,
+                  "SrcName": "true",
+                  "DstId": 185,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 23,
+                  "SrcName": "_result",
+                  "DstId": 185,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 28,
+                  "SrcName": "true",
+                  "DstId": 203,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 456,
+                  "SrcName": "_result",
+                  "DstId": 203,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 345,
+                  "SrcName": "_result",
+                  "DstId": 332,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 343,
+                  "SrcName": "_signal",
+                  "DstId": 333,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 332,
+                  "SrcName": "body.value",
+                  "DstId": 333,
+                  "DstName": "args",
+                  "DstIndex": 0
+                },
+                {
+                  "Id": 336,
+                  "Value": "IT'S ABOUT TO SPLIT!!!: Messeage{0}",
+                  "DstId": 333,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 332,
+                  "SrcName": "body",
+                  "DstId": 343,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 344,
+                  "Value": 1,
+                  "DstId": 343,
+                  "DstName": "seconds"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 343,
+                  "DstName": "target"
+                },
+                {
+                  "SrcId": 89,
+                  "SrcName": "_result",
+                  "DstId": 345,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 203,
+                  "SrcName": "body.index",
+                  "DstId": 346,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 348,
+                  "Value": 1,
+                  "DstId": 346,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 203,
+                  "SrcName": "body",
+                  "DstId": 347,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 346,
+                  "SrcName": "_result",
+                  "DstId": 347,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 203,
+                  "SrcName": "body.index",
+                  "DstId": 349,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 353,
+                  "Value": 2,
+                  "DstId": 349,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 347,
+                  "SrcName": "false",
+                  "DstId": 350,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 349,
+                  "SrcName": "_result",
+                  "DstId": 350,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 203,
+                  "SrcName": "body.value",
+                  "DstId": 356,
+                  "DstName": "s"
+                },
+                {
+                  "SrcId": 359,
+                  "SrcName": "_result",
+                  "DstId": 360,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 360,
+                  "SrcName": "_result",
+                  "DstId": 361,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 360,
+                  "SrcName": "_result",
+                  "DstId": 362,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 363,
+                  "SrcName": "_result",
+                  "DstId": 364,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 347,
+                  "SrcName": "true",
+                  "DstId": 365,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 364,
+                  "SrcName": "_result",
+                  "DstId": 365,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 203,
+                  "SrcName": "body.value",
+                  "DstId": 365,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 350,
+                  "SrcName": "true",
+                  "DstId": 366,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 364,
+                  "SrcName": "_result",
+                  "DstId": 366,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 356,
+                  "SrcName": "_result",
+                  "DstId": 366,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 367,
+                  "SrcName": "_result",
+                  "DstId": 368,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 18,
+                  "SrcName": "_signal",
+                  "DstId": 369,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 368,
+                  "SrcName": "_result",
+                  "DstId": 369,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 372,
+                  "Value": "",
+                  "DstId": 369,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 369,
+                  "SrcName": "_signal",
+                  "DstId": 370,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 368,
+                  "SrcName": "_result",
+                  "DstId": 370,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 375,
+                  "Value": 0,
+                  "DstId": 370,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 376,
+                  "SrcName": "_result",
+                  "DstId": 377,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 377,
+                  "SrcName": "_result",
+                  "DstId": 378,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 203,
+                  "SrcName": "_signal",
+                  "DstId": 380,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 451,
+                  "SrcName": "_result",
+                  "DstId": 380,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 380,
+                  "SrcName": "true",
+                  "DstId": 382,
+                  "DstName": "_signal"
+                },
+                {
+                  "Id": 422,
+                  "Value": "WARNING: Invalid Money Amount",
+                  "DstId": 382,
+                  "DstName": "format"
+                },
+                {
+                  "SrcId": 423,
+                  "SrcName": "_result",
+                  "DstId": 424,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 424,
+                  "SrcName": "_result",
+                  "DstId": 425,
+                  "DstName": "_target"
+                },
+                {
+                  "Id": 441,
+                  "Value": "Gamemodes",
+                  "DstId": 426,
+                  "DstName": "name"
+                },
+                {
+                  "SrcId": 426,
+                  "SrcName": "_result",
+                  "DstId": 442,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 442,
+                  "SrcName": "_result",
+                  "DstId": 443,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 380,
+                  "SrcName": "false",
+                  "DstId": 444,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 443,
+                  "SrcName": "_result",
+                  "DstId": 444,
+                  "DstName": "enumerable"
+                },
+                {
+                  "SrcId": 444,
+                  "SrcName": "body.value",
+                  "DstId": 446,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 446,
+                  "SrcName": "_result",
+                  "DstId": 447,
+                  "DstName": "a"
+                },
+                {
+                  "SrcId": 425,
+                  "SrcName": "_result",
+                  "DstId": 447,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 444,
+                  "SrcName": "body",
+                  "DstId": 448,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 447,
+                  "SrcName": "_result",
+                  "DstId": 448,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 378,
+                  "SrcName": "_result",
+                  "DstId": 451,
+                  "DstName": "a"
+                },
+                {
+                  "Id": 452,
+                  "Value": 0,
+                  "DstId": 451,
+                  "DstName": "b"
+                },
+                {
+                  "SrcId": 188,
+                  "SrcName": "_result",
+                  "DstId": 456,
+                  "DstName": "_target"
                 }
               ]
             },
@@ -2431,6 +3257,8 @@
             "OnComponentStart": null,
             "OnComponentUpdate": null,
             "Player": null,
+            "RecipientMoneyAmount": 0,
+            "RecipientName": null,
             "SelectedJob": null,
             "SelectedJobForIndex": null,
             "Selectedtabindex": 0

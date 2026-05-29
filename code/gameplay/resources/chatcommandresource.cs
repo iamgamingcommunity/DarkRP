@@ -22,6 +22,12 @@ public class ChatCommandResource : GameResource
 	[Property, Feature("Extra"), Group("Extra")] public List<SwepExtraFloat> ExtraFloats { get; set; }
 	[Property, Feature("Extra"), Group("Extra")] public List<string> ExtraStrings { get; set; }
 
+
+	// public delegate void ActionGraphChatCommand(bool Bool, int Int, float Float, string String);
+	// [Property, Feature("Action Graphs"), Group("Action Graphs"), Title("Respawn Player")]
+	// public ActionGraphChatCommand ChatCommandLogic { get; set; }
+
+
 	public struct SwepExtraActionGraphs
 	{
 		[Property] public string ActionName { get; set; } // e.g. "jump", "attack1", "use"
@@ -56,17 +62,22 @@ public class ChatCommandResource : GameResource
     public struct ChatCommand
 	{
         [KeyProperty, Group("Chat Command Info")] public List<string> ChatCommandName { get; set; }
+
+
+
+
+
         //Action Graph
-		public delegate void ActionGraphChatCommand(GameObject Player);
+		public delegate void ActionGraphChatCommand(GameObject Player, bool Bool, int Int, float Float, string String);
 	    [KeyProperty, Feature("Action Graphs"), Group("Action Graphs"), Title("Chat Command")]
 	    public ActionGraphChatCommand GraphChatCommand { get; set; }
 	}
 
 
 
-	public void ChatCommandLogic(GameObject Player)
+	public void ChatCommandLogic(GameObject Player, bool Bool, int Int, float Float, string String)
 	{
-		ChatCommands.GraphChatCommand?.Invoke(Player);
+		ChatCommands.GraphChatCommand?.Invoke(Player, Bool, Int, Float, String);
 	}
 
 

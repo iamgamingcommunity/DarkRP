@@ -6,11 +6,14 @@
     ],
     "GraphChatCommand": {
       "__version": 9,
-      "__guid": "ddec9385-d501-47fd-9716-467dd39e7de2",
-      "__changeId": 172,
+      "__guid": "8b1dfe2a-6f3d-47c8-986b-e234c48dc2b9",
+      "__changeId": 36,
       "UserData": {
         "Title": "Chat Command",
-        "ReferencedComponentTypes": []
+        "ReferencedComponentTypes": [
+          "Check",
+          "DarkrpPlayerInfo"
+        ]
       },
       "Variables": [
         {
@@ -21,16 +24,13 @@
       "Nodes": [
         {
           "Id": 0,
-          "Type": "input",
-          "UserData": {
-            "Position": "-468,12"
-          }
+          "Type": "input"
         },
         {
           "Id": 1,
           "Type": "scene.trace",
           "UserData": {
-            "Position": "1212,204"
+            "Position": "1932,312"
           }
         },
         {
@@ -42,7 +42,7 @@
             "_type": "Sandbox.SceneTrace"
           },
           "UserData": {
-            "Position": "1380,180"
+            "Position": "2100,288"
           }
         },
         {
@@ -54,7 +54,7 @@
             "_type": "Sandbox.SceneTrace"
           },
           "UserData": {
-            "Position": "1572,168"
+            "Position": "2292,276"
           }
         },
         {
@@ -66,7 +66,7 @@
             "_type": "Sandbox.SceneTrace"
           },
           "UserData": {
-            "Position": "1572,60"
+            "Position": "2292,168"
           }
         },
         {
@@ -76,11 +76,11 @@
             "_name": "Player"
           },
           "UserData": {
-            "Position": "-228,84"
+            "Position": "492,204"
           }
         },
         {
-          "Id": 7,
+          "Id": 6,
           "Type": "call",
           "Properties": {
             "_isStatic": false,
@@ -89,85 +89,85 @@
             "T": "Sandbox.LineRenderer"
           },
           "UserData": {
-            "Position": "-228,12"
+            "Position": "492,120"
           }
         },
         {
-          "Id": 8,
+          "Id": 7,
           "Type": "input.value",
           "Properties": {
             "_name": "Player"
           },
           "UserData": {
-            "Position": "348,324"
+            "Position": "1116,360"
           }
         },
         {
-          "Id": 9,
+          "Id": 8,
           "Type": "property",
           "Properties": {
             "_name": "WorldTransform",
             "_type": "Sandbox.GameObject"
           },
           "UserData": {
-            "Position": "720,312"
+            "Position": "1380,384"
           }
         },
         {
-          "Id": 10,
+          "Id": 9,
           "Type": "property",
           "Properties": {
             "_name": "Children",
             "_type": "Sandbox.GameObject"
           },
           "UserData": {
-            "Position": "396,216"
+            "Position": "1116,324"
           }
         },
         {
-          "Id": 11,
+          "Id": 10,
           "Type": "list.get",
           "Properties": {
             "T": "Sandbox.GameObject"
           },
           "UserData": {
-            "Position": "432,132"
+            "Position": "1152,240"
+          }
+        },
+        {
+          "Id": 11,
+          "Type": "property",
+          "Properties": {
+            "_name": "Children",
+            "_type": "Sandbox.GameObject"
+          },
+          "UserData": {
+            "Position": "1104,216"
+          }
+        },
+        {
+          "Id": 12,
+          "Type": "foreach",
+          "Properties": {
+            "T": "Sandbox.GameObject"
+          },
+          "UserData": {
+            "Position": "1176,120"
           }
         },
         {
           "Id": 13,
           "Type": "property",
           "Properties": {
-            "_name": "Children",
-            "_type": "Sandbox.GameObject"
-          },
-          "UserData": {
-            "Position": "384,108"
-          }
-        },
-        {
-          "Id": 14,
-          "Type": "foreach",
-          "Properties": {
-            "T": "Sandbox.GameObject"
-          },
-          "UserData": {
-            "Position": "456,12"
-          }
-        },
-        {
-          "Id": 16,
-          "Type": "property",
-          "Properties": {
             "_name": "Tags",
             "_type": "Sandbox.GameObject"
           },
           "UserData": {
-            "Position": "648,132"
+            "Position": "1368,240"
           }
         },
         {
-          "Id": 17,
+          "Id": 14,
           "Type": "call",
           "Properties": {
             "_isStatic": false,
@@ -175,79 +175,79 @@
             "_type": "Sandbox.GameTags"
           },
           "UserData": {
-            "Position": "852,108"
+            "Position": "1572,216"
           }
         },
         {
-          "Id": 28,
+          "Id": 15,
           "Type": "if",
           "UserData": {
-            "Position": "864,36"
+            "Position": "1584,144"
           }
         },
         {
-          "Id": 29,
+          "Id": 16,
           "Type": "property",
           "Properties": {
             "_name": "WorldRotation",
             "_type": "Sandbox.GameObject"
           },
           "UserData": {
-            "Position": "624,444"
+            "Position": "1344,552"
           }
         },
         {
-          "Id": 30,
+          "Id": 17,
           "Type": "property",
           "Properties": {
             "_name": "Forward",
             "_type": "Rotation"
           },
           "UserData": {
-            "Position": "888,444"
+            "Position": "1608,552"
           }
         },
         {
-          "Id": 31,
+          "Id": 18,
           "Type": "property",
           "Properties": {
             "_name": "Position",
             "_type": "Transform"
           },
           "UserData": {
-            "Position": "948,324"
+            "Position": "1728,432"
           }
         },
         {
-          "Id": 32,
+          "Id": 19,
           "Type": "op.multiply",
           "UserData": {
-            "Position": "1212,396"
+            "Position": "1932,504"
           }
         },
         {
-          "Id": 33,
+          "Id": 20,
           "Type": "input.value",
           "Properties": {
             "_name": "_target"
           },
           "UserData": {
-            "Position": "816,588"
+            "Position": "1392,696"
           }
         },
         {
-          "Id": 40,
+          "Id": 21,
           "Type": "property",
           "Properties": {
             "_name": "ExtraFloats",
             "_type": "ChatCommandResource"
           },
           "UserData": {
-            "Position": "864,588"
+            "Position": "1548,696"
           }
         },
         {
-          "Id": 41,
+          "Id": 22,
           "Type": "list.get",
           "Properties": {
             "T": {
@@ -257,11 +257,11 @@
             }
           },
           "UserData": {
-            "Position": "948,516"
+            "Position": "1620,600"
           }
         },
         {
-          "Id": 43,
+          "Id": 23,
           "Type": "property",
           "Properties": {
             "_name": "ExtraFloat",
@@ -272,105 +272,304 @@
             }
           },
           "UserData": {
-            "Position": "1080,540"
+            "Position": "1800,648"
           }
         },
         {
-          "Id": 48,
+          "Id": 24,
           "Type": "op.add",
           "UserData": {
-            "Position": "1320,324"
+            "Position": "2040,432"
           }
         },
         {
-          "Id": 49,
+          "Id": 25,
           "Type": "var",
           "Properties": {
             "_var": "TempLineRenderer"
           },
           "UserData": {
-            "Position": "180,12"
+            "Position": "900,120"
           }
         },
         {
-          "Id": 50,
+          "Id": 26,
           "Type": "var",
           "Properties": {
             "_var": "TempLineRenderer"
           },
           "UserData": {
-            "Position": "1896,132"
+            "Position": "3096,1224"
           }
         },
         {
-          "Id": 51,
-          "Type": "property",
-          "Properties": {
-            "_name": "UseVectorPoints",
-            "_type": "Sandbox.LineRenderer"
-          },
-          "UserData": {
-            "Position": "1920,60"
-          }
-        },
-        {
-          "Id": 53,
+          "Id": 27,
           "Type": "property",
           "Properties": {
             "_name": "VectorPoints",
             "_type": "Sandbox.LineRenderer"
           },
           "UserData": {
-            "Position": "2220,300"
+            "Position": "3396,1308"
           }
         },
         {
-          "Id": 56,
+          "Id": 28,
           "Type": "list.set",
           "Properties": {
             "T": "Vector3"
           },
           "UserData": {
-            "Position": "2352,72"
+            "Position": "3576,1092"
           }
         },
         {
-          "Id": 58,
+          "Id": 29,
           "Type": "list.set",
           "Properties": {
             "T": "Vector3"
           },
           "UserData": {
-            "Position": "2628,72"
+            "Position": "3852,1092"
           }
         },
         {
-          "Id": 62,
+          "Id": 30,
           "Type": "property",
           "Properties": {
             "_name": "EndPosition",
             "_type": "Sandbox.SceneTraceResult"
           },
           "UserData": {
-            "Position": "2028,408"
+            "Position": "3252,1428"
           }
         },
         {
-          "Id": 63,
+          "Id": 31,
           "Type": "property",
           "Properties": {
             "_name": "StartPosition",
             "_type": "Sandbox.SceneTraceResult"
           },
           "UserData": {
-            "Position": "1980,360"
+            "Position": "3204,1380"
           }
         },
         {
-          "Id": 71,
+          "Id": 32,
           "Type": "log.info",
           "UserData": {
-            "Position": "-120,-204"
+            "Position": "480,0"
+          }
+        },
+        {
+          "Id": 33,
+          "Type": "log.info",
+          "UserData": {
+            "Position": "1440,60"
+          }
+        },
+        {
+          "Id": 34,
+          "Type": "property",
+          "Properties": {
+            "_name": "Points",
+            "_type": "Sandbox.LineRenderer"
+          },
+          "UserData": {
+            "Position": "3420,1200"
+          }
+        },
+        {
+          "Id": 35,
+          "Type": "log.info",
+          "UserData": {
+            "Position": "2688,168"
+          }
+        },
+        {
+          "Id": 36,
+          "Type": "property",
+          "Properties": {
+            "_name": "UseVectorPoints",
+            "_type": "Sandbox.LineRenderer"
+          },
+          "UserData": {
+            "Position": "3216,1092"
+          }
+        },
+        {
+          "Id": 37,
+          "Type": "call",
+          "Properties": {
+            "_isStatic": false,
+            "_name": "Add",
+            "_type": "System.Collections.Generic.List`1"
+          },
+          "UserData": {
+            "Position": "3540,948"
+          }
+        },
+        {
+          "Id": 38,
+          "Type": "call",
+          "Properties": {
+            "_isStatic": false,
+            "_name": "Add",
+            "_type": "System.Collections.Generic.List`1"
+          },
+          "UserData": {
+            "Position": "3852,924"
+          }
+        },
+        {
+          "Id": 39,
+          "Type": "comment",
+          "UserData": {
+            "Position": "2928,876",
+            "Size": "1176,612",
+            "Title": "Not Needed?",
+            "Color": 1,
+            "Layer": 1
+          }
+        },
+        {
+          "Id": 40,
+          "Type": "scene.instantiate",
+          "UserData": {
+            "Position": "3360,168"
+          }
+        },
+        {
+          "Id": 41,
+          "Type": "input.value",
+          "Properties": {
+            "_name": "_target"
+          },
+          "UserData": {
+            "Position": "2988,192"
+          }
+        },
+        {
+          "Id": 42,
+          "Type": "property",
+          "Properties": {
+            "_name": "Prefab",
+            "_type": "ChatCommandResource"
+          },
+          "UserData": {
+            "Position": "3084,192"
+          }
+        },
+        {
+          "Id": 43,
+          "Type": "scene.get",
+          "Properties": {
+            "T": "Check"
+          },
+          "UserData": {
+            "Position": "4308,252"
+          }
+        },
+        {
+          "Id": 44,
+          "Type": "property",
+          "Properties": {
+            "_name": "MoneyStackAmount",
+            "_type": "Check"
+          },
+          "UserData": {
+            "Position": "4572,168"
+          }
+        },
+        {
+          "Id": 45,
+          "Type": "property",
+          "Properties": {
+            "_name": "PlayerName",
+            "_type": "Check"
+          },
+          "UserData": {
+            "Position": "4908,168"
+          }
+        },
+        {
+          "Id": 82,
+          "Type": "input.value",
+          "Properties": {
+            "_name": "String"
+          },
+          "UserData": {
+            "Position": "4920,252"
+          }
+        },
+        {
+          "Id": 83,
+          "Type": "input.value",
+          "Properties": {
+            "_name": "Int"
+          },
+          "UserData": {
+            "Position": "4572,240"
+          }
+        },
+        {
+          "Id": 95,
+          "Type": "input.value",
+          "Properties": {
+            "_name": "Player"
+          },
+          "UserData": {
+            "Position": "3696,312"
+          }
+        },
+        {
+          "Id": 96,
+          "Type": "scene.get",
+          "Properties": {
+            "T": "DarkrpPlayerInfo"
+          },
+          "UserData": {
+            "Position": "3804,312"
+          }
+        },
+        {
+          "Id": 99,
+          "Type": "op.subtract",
+          "UserData": {
+            "Position": "4056,240"
+          }
+        },
+        {
+          "Id": 100,
+          "Type": "input.value",
+          "Properties": {
+            "_name": "Int"
+          },
+          "UserData": {
+            "Position": "3948,264"
+          }
+        },
+        {
+          "Id": 101,
+          "Type": "property",
+          "Properties": {
+            "_name": "PlayerMoney",
+            "_type": "DarkrpPlayerInfo"
+          },
+          "UserData": {
+            "Position": "3924,168"
+          }
+        },
+        {
+          "Id": 102,
+          "Type": "property",
+          "Properties": {
+            "_name": "PlayerMoney",
+            "_type": "DarkrpPlayerInfo"
+          },
+          "UserData": {
+            "Position": "3780,240"
           }
         }
       ],
@@ -382,13 +581,13 @@
           "DstName": "_target"
         },
         {
-          "SrcId": 9,
+          "SrcId": 8,
           "SrcName": "_result",
           "DstId": 2,
           "DstName": "from"
         },
         {
-          "SrcId": 48,
+          "SrcId": 24,
           "SrcName": "_result",
           "DstId": 2,
           "DstName": "to"
@@ -400,7 +599,7 @@
           "DstName": "_target"
         },
         {
-          "SrcId": 28,
+          "SrcId": 15,
           "SrcName": "true",
           "DstId": 4,
           "DstName": "_signal"
@@ -412,61 +611,97 @@
           "DstName": "_target"
         },
         {
-          "SrcId": 71,
+          "SrcId": 32,
           "SrcName": "_signal",
-          "DstId": 7,
+          "DstId": 6,
           "DstName": "_signal"
         },
         {
           "SrcId": 5,
           "SrcName": "_result",
-          "DstId": 7,
+          "DstId": 6,
           "DstName": "_target"
         },
         {
-          "SrcId": 14,
+          "SrcId": 12,
           "SrcName": "body.value",
+          "DstId": 8,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 7,
+          "SrcName": "_result",
           "DstId": 9,
           "DstName": "_target"
         },
         {
-          "SrcId": 8,
-          "SrcName": "_result",
+          "Id": 103,
+          "Value": 0,
           "DstId": 10,
-          "DstName": "_target"
+          "DstName": "index"
         },
         {
-          "Id": 64,
-          "Value": 0,
-          "DstId": 11,
-          "DstName": "index"
+          "SrcId": 9,
+          "SrcName": "_result",
+          "DstId": 10,
+          "DstName": "list"
         },
         {
           "SrcId": 10,
           "SrcName": "_result",
           "DstId": 11,
-          "DstName": "list"
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 25,
+          "SrcName": "_signal",
+          "DstId": 12,
+          "DstName": "_signal"
         },
         {
           "SrcId": 11,
           "SrcName": "_result",
-          "DstId": 13,
-          "DstName": "_target"
+          "DstId": 12,
+          "DstName": "enumerable"
         },
         {
-          "SrcId": 49,
-          "SrcName": "_signal",
-          "DstId": 14,
-          "DstName": "_signal"
+          "SrcId": 12,
+          "SrcName": "body.value",
+          "DstId": 13,
+          "DstName": "_target"
         },
         {
           "SrcId": 13,
           "SrcName": "_result",
           "DstId": 14,
-          "DstName": "enumerable"
+          "DstName": "_target"
+        },
+        {
+          "Id": 104,
+          "Value": true,
+          "DstId": 14,
+          "DstName": "includeAncestors"
+        },
+        {
+          "Id": 105,
+          "Value": "viewpoint",
+          "DstId": 14,
+          "DstName": "tag"
+        },
+        {
+          "SrcId": 33,
+          "SrcName": "_signal",
+          "DstId": 15,
+          "DstName": "_signal"
         },
         {
           "SrcId": 14,
+          "SrcName": "_result",
+          "DstId": 15,
+          "DstName": "condition"
+        },
+        {
+          "SrcId": 12,
           "SrcName": "body.value",
           "DstId": 16,
           "DstName": "_target"
@@ -478,202 +713,362 @@
           "DstName": "_target"
         },
         {
-          "Id": 65,
-          "Value": true,
-          "DstId": 17,
-          "DstName": "includeAncestors"
-        },
-        {
-          "Id": 66,
-          "Value": "viewpoint",
-          "DstId": 17,
-          "DstName": "tag"
-        },
-        {
-          "SrcId": 14,
-          "SrcName": "body",
-          "DstId": 28,
-          "DstName": "_signal"
+          "SrcId": 8,
+          "SrcName": "_result",
+          "DstId": 18,
+          "DstName": "_target"
         },
         {
           "SrcId": 17,
           "SrcName": "_result",
-          "DstId": 28,
-          "DstName": "condition"
+          "DstId": 19,
+          "DstName": "a"
         },
         {
-          "SrcId": 14,
-          "SrcName": "body.value",
-          "DstId": 29,
+          "SrcId": 23,
+          "SrcName": "_result",
+          "DstId": 19,
+          "DstName": "b"
+        },
+        {
+          "SrcId": 20,
+          "SrcName": "_result",
+          "DstId": 21,
           "DstName": "_target"
         },
         {
-          "SrcId": 29,
+          "Id": 106,
+          "Value": 0,
+          "DstId": 22,
+          "DstName": "index"
+        },
+        {
+          "SrcId": 21,
+          "SrcName": "_result",
+          "DstId": 22,
+          "DstName": "list"
+        },
+        {
+          "SrcId": 22,
+          "SrcName": "_result",
+          "DstId": 23,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 18,
+          "SrcName": "_result",
+          "DstId": 24,
+          "DstName": "a"
+        },
+        {
+          "SrcId": 19,
+          "SrcName": "_result",
+          "DstId": 24,
+          "DstName": "b"
+        },
+        {
+          "SrcId": 6,
+          "SrcName": "_signal",
+          "DstId": 25,
+          "DstName": "_signal"
+        },
+        {
+          "SrcId": 6,
+          "SrcName": "_result",
+          "DstId": 25,
+          "DstName": "_value"
+        },
+        {
+          "SrcId": 6,
+          "SrcName": "_result",
+          "DstId": 27,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 36,
+          "SrcName": "_signal",
+          "DstId": 28,
+          "DstName": "_signal"
+        },
+        {
+          "Id": 107,
+          "Value": 0,
+          "DstId": 28,
+          "DstName": "index"
+        },
+        {
+          "SrcId": 27,
+          "SrcName": "_result",
+          "DstId": 28,
+          "DstName": "list"
+        },
+        {
+          "SrcId": 31,
+          "SrcName": "_result",
+          "DstId": 28,
+          "DstName": "value"
+        },
+        {
+          "SrcId": 28,
+          "SrcName": "_signal",
+          "DstId": 29,
+          "DstName": "_signal"
+        },
+        {
+          "Id": 108,
+          "Value": 1,
+          "DstId": 29,
+          "DstName": "index"
+        },
+        {
+          "SrcId": 27,
+          "SrcName": "_result",
+          "DstId": 29,
+          "DstName": "list"
+        },
+        {
+          "SrcId": 30,
+          "SrcName": "_result",
+          "DstId": 29,
+          "DstName": "value"
+        },
+        {
+          "SrcId": 4,
           "SrcName": "_result",
           "DstId": 30,
           "DstName": "_target"
         },
         {
-          "SrcId": 9,
+          "SrcId": 4,
           "SrcName": "_result",
           "DstId": 31,
           "DstName": "_target"
         },
         {
-          "SrcId": 30,
-          "SrcName": "_result",
+          "SrcId": 0,
+          "SrcName": "_signal",
           "DstId": 32,
-          "DstName": "a"
+          "DstName": "_signal"
         },
         {
-          "SrcId": 43,
+          "SrcId": 5,
           "SrcName": "_result",
           "DstId": 32,
-          "DstName": "b"
+          "DstName": "args",
+          "DstIndex": 0
         },
         {
-          "SrcId": 33,
+          "Id": 109,
+          "Value": "Fired ChatCommand 'WriteCheck' Player :{0}",
+          "DstId": 32,
+          "DstName": "format"
+        },
+        {
+          "SrcId": 12,
+          "SrcName": "body",
+          "DstId": 33,
+          "DstName": "_signal"
+        },
+        {
+          "SrcId": 12,
+          "SrcName": "body.value",
+          "DstId": 33,
+          "DstName": "args",
+          "DstIndex": 0
+        },
+        {
+          "Id": 110,
+          "Value": "Fired ChatCommand Body :{0}",
+          "DstId": 33,
+          "DstName": "format"
+        },
+        {
+          "SrcId": 26,
           "SrcName": "_result",
-          "DstId": 40,
+          "DstId": 34,
           "DstName": "_target"
         },
         {
-          "Id": 67,
-          "Value": 0,
-          "DstId": 41,
-          "DstName": "index"
+          "SrcId": 4,
+          "SrcName": "_signal",
+          "DstId": 35,
+          "DstName": "_signal"
         },
         {
-          "SrcId": 40,
+          "SrcId": 31,
           "SrcName": "_result",
-          "DstId": 41,
-          "DstName": "list"
+          "DstId": 35,
+          "DstName": "args",
+          "DstIndex": 0
         },
         {
-          "SrcId": 41,
+          "SrcId": 30,
           "SrcName": "_result",
-          "DstId": 43,
+          "DstId": 35,
+          "DstName": "args",
+          "DstIndex": 1
+        },
+        {
+          "Id": 111,
+          "Value": "Fired ChatCommand SCENE!!!! Start :{0} End: {1}",
+          "DstId": 35,
+          "DstName": "format"
+        },
+        {
+          "SrcId": 26,
+          "SrcName": "_result",
+          "DstId": 36,
+          "DstName": "_target"
+        },
+        {
+          "Id": 112,
+          "Value": true,
+          "DstId": 36,
+          "DstName": "_value"
+        },
+        {
+          "SrcId": 27,
+          "SrcName": "_result",
+          "DstId": 37,
           "DstName": "_target"
         },
         {
           "SrcId": 31,
           "SrcName": "_result",
-          "DstId": 48,
-          "DstName": "a"
+          "DstId": 37,
+          "DstName": "item"
         },
         {
-          "SrcId": 32,
-          "SrcName": "_result",
-          "DstId": 48,
-          "DstName": "b"
-        },
-        {
-          "SrcId": 7,
+          "SrcId": 37,
           "SrcName": "_signal",
-          "DstId": 49,
+          "DstId": 38,
           "DstName": "_signal"
         },
         {
-          "SrcId": 7,
+          "SrcId": 27,
           "SrcName": "_result",
-          "DstId": 49,
-          "DstName": "_value"
-        },
-        {
-          "SrcId": 4,
-          "SrcName": "_signal",
-          "DstId": 51,
-          "DstName": "_signal"
-        },
-        {
-          "SrcId": 50,
-          "SrcName": "_result",
-          "DstId": 51,
+          "DstId": 38,
           "DstName": "_target"
         },
         {
-          "Id": 68,
-          "Value": true,
-          "DstId": 51,
-          "DstName": "_value"
-        },
-        {
-          "SrcId": 50,
+          "SrcId": 30,
           "SrcName": "_result",
-          "DstId": 53,
-          "DstName": "_target"
+          "DstId": 38,
+          "DstName": "item"
         },
         {
-          "SrcId": 51,
+          "SrcId": 35,
           "SrcName": "_signal",
-          "DstId": 56,
-          "DstName": "_signal"
-        },
-        {
-          "Id": 69,
-          "Value": 0,
-          "DstId": 56,
-          "DstName": "index"
-        },
-        {
-          "SrcId": 53,
-          "SrcName": "_result",
-          "DstId": 56,
-          "DstName": "list"
-        },
-        {
-          "SrcId": 63,
-          "SrcName": "_result",
-          "DstId": 56,
-          "DstName": "value"
-        },
-        {
-          "SrcId": 56,
-          "SrcName": "_signal",
-          "DstId": 58,
-          "DstName": "_signal"
-        },
-        {
-          "Id": 70,
-          "Value": 1,
-          "DstId": 58,
-          "DstName": "index"
-        },
-        {
-          "SrcId": 53,
-          "SrcName": "_result",
-          "DstId": 58,
-          "DstName": "list"
-        },
-        {
-          "SrcId": 62,
-          "SrcName": "_result",
-          "DstId": 58,
-          "DstName": "value"
-        },
-        {
-          "SrcId": 4,
-          "SrcName": "_result",
-          "DstId": 62,
-          "DstName": "_target"
-        },
-        {
-          "SrcId": 4,
-          "SrcName": "_result",
-          "DstId": 63,
-          "DstName": "_target"
-        },
-        {
-          "SrcId": 0,
-          "SrcName": "_signal",
-          "DstId": 71,
+          "DstId": 40,
           "DstName": "_signal"
         },
         {
           "Id": 113,
-          "Value": "Fired ChatCommand 'WriteCheck'",
-          "DstId": 71,
-          "DstName": "format"
+          "Value": "Check",
+          "DstId": 40,
+          "DstName": "name"
+        },
+        {
+          "SrcId": 30,
+          "SrcName": "_result",
+          "DstId": 40,
+          "DstName": "position"
+        },
+        {
+          "SrcId": 42,
+          "SrcName": "_result",
+          "DstId": 40,
+          "DstName": "prefab"
+        },
+        {
+          "SrcId": 41,
+          "SrcName": "_result",
+          "DstId": 42,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 40,
+          "SrcName": "_result",
+          "DstId": 43,
+          "DstName": "_this"
+        },
+        {
+          "SrcId": 101,
+          "SrcName": "_signal",
+          "DstId": 44,
+          "DstName": "_signal"
+        },
+        {
+          "SrcId": 43,
+          "SrcName": "_result",
+          "DstId": 44,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 83,
+          "SrcName": "_result",
+          "DstId": 44,
+          "DstName": "_value"
+        },
+        {
+          "SrcId": 44,
+          "SrcName": "_signal",
+          "DstId": 45,
+          "DstName": "_signal"
+        },
+        {
+          "SrcId": 43,
+          "SrcName": "_result",
+          "DstId": 45,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 82,
+          "SrcName": "_result",
+          "DstId": 45,
+          "DstName": "_value"
+        },
+        {
+          "SrcId": 95,
+          "SrcName": "_result",
+          "DstId": 96,
+          "DstName": "_this"
+        },
+        {
+          "SrcId": 102,
+          "SrcName": "_result",
+          "DstId": 99,
+          "DstName": "a"
+        },
+        {
+          "SrcId": 100,
+          "SrcName": "_result",
+          "DstId": 99,
+          "DstName": "b"
+        },
+        {
+          "SrcId": 40,
+          "SrcName": "_signal",
+          "DstId": 101,
+          "DstName": "_signal"
+        },
+        {
+          "SrcId": 96,
+          "SrcName": "_result",
+          "DstId": 101,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 99,
+          "SrcName": "_result",
+          "DstId": 101,
+          "DstName": "_value"
+        },
+        {
+          "SrcId": 96,
+          "SrcName": "_result",
+          "DstId": 102,
+          "DstName": "_target"
         }
       ]
     }
@@ -682,7 +1077,12 @@
   "ExtraKeyBindings": [],
   "ExtraBools": [],
   "ExtraInts": [],
-  "ExtraFloats": [],
+  "ExtraFloats": [
+    {
+      "BoolName": "Reach",
+      "ExtraFloat": 250
+    }
+  ],
   "ExtraStrings": [],
   "PrefabFileIcon": null,
   "__references": [],

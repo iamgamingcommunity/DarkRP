@@ -16,6 +16,7 @@ public sealed class DarkrpPlayerInfo : Component
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public string DisplayName { get; set; }
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public JobResource CurrentJob { get; set; }
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public int PlayerMoney { get; set; }
+
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public NetList<GameObject> PlayerPocket { get; set; }
 	[Sync, Property, Feature("Basic DarkRP Info"), Group("Basic DarkRP Info")] public NetList<InventoryItem> PlayerInventory { get; set; }
 
