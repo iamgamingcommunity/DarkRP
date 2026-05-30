@@ -11,7 +11,20 @@ public class Check : BaseEntity
 
 
 		[Property, Feature("Money Info")]
-		public string PlayerName { get; set; }
+		public string PlayerRecipientName { get; set; }
+
+		
+		[Property, Feature("Money Info")]
+		public string PlayerRecipientSteamID { get; set; }
+
+		[Property, Feature("Money Info")]
+		public string PlayerSenderName { get; set; }
+
+		[Property, Feature("Money Info")]
+		public string PlayerSenderSteamID { get; set; }
+
+
+		
 
 
 

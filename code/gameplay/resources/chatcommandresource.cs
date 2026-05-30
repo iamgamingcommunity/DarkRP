@@ -9,9 +9,8 @@ public class ChatCommandResource : GameResource
 {
 
 
-    [Property, Group("Chat Command Info")] public ChatCommand ChatCommands { get; set; }
+    [Property, Group("Chat Command Info")] public ChatCommand ChatCommands { get; set; } 
     [Property, Description("When need to spawn something in, use this prefab file var."), Group("Chat Command Info")] public PrefabFile Prefab { get; set; }
-
 
 
 	[Property, Feature("Action Graphs"), Group("Action Graphs")] public List<SwepExtraActionGraphs> ExtraKeyBindings { get; set; } = new();

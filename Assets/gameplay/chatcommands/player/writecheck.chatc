@@ -7,7 +7,7 @@
     "GraphChatCommand": {
       "__version": 9,
       "__guid": "8b1dfe2a-6f3d-47c8-986b-e234c48dc2b9",
-      "__changeId": 36,
+      "__changeId": 100,
       "UserData": {
         "Title": "Chat Command",
         "ReferencedComponentTypes": [
@@ -468,7 +468,7 @@
             "T": "Check"
           },
           "UserData": {
-            "Position": "4308,252"
+            "Position": "4248,300"
           }
         },
         {
@@ -480,17 +480,6 @@
           },
           "UserData": {
             "Position": "4572,168"
-          }
-        },
-        {
-          "Id": 45,
-          "Type": "property",
-          "Properties": {
-            "_name": "PlayerName",
-            "_type": "Check"
-          },
-          "UserData": {
-            "Position": "4908,168"
           }
         },
         {
@@ -571,6 +560,91 @@
           "UserData": {
             "Position": "3780,240"
           }
+        },
+        {
+          "Id": 125,
+          "Type": "property",
+          "Properties": {
+            "_name": "PlayerRecipientName",
+            "_type": "Check"
+          },
+          "UserData": {
+            "Position": "4884,168"
+          }
+        },
+        {
+          "Id": 126,
+          "Type": "property",
+          "Properties": {
+            "_name": "PlayerSenderName",
+            "_type": "Check"
+          },
+          "UserData": {
+            "Position": "5220,168"
+          }
+        },
+        {
+          "Id": 128,
+          "Type": "property",
+          "Properties": {
+            "_name": "PlayerSenderSteamID",
+            "_type": "Check"
+          },
+          "UserData": {
+            "Position": "5556,168"
+          }
+        },
+        {
+          "Id": 146,
+          "Type": "input.value",
+          "Properties": {
+            "_name": "Player"
+          },
+          "UserData": {
+            "Position": "5064,288"
+          }
+        },
+        {
+          "Id": 147,
+          "Type": "scene.get",
+          "Properties": {
+            "T": "DarkrpPlayerInfo"
+          },
+          "UserData": {
+            "Position": "5172,288"
+          }
+        },
+        {
+          "Id": 148,
+          "Type": "property",
+          "Properties": {
+            "_name": "DisplayName",
+            "_type": "DarkrpPlayerInfo"
+          },
+          "UserData": {
+            "Position": "5184,252"
+          }
+        },
+        {
+          "Id": 149,
+          "Type": "property",
+          "Properties": {
+            "_name": "SteamId",
+            "_type": "DarkrpPlayerInfo"
+          },
+          "UserData": {
+            "Position": "5520,276"
+          }
+        },
+        {
+          "Id": 150,
+          "Type": "sys.tostring",
+          "Properties": {
+            "T": "Sandbox.SteamId"
+          },
+          "UserData": {
+            "Position": "5568,240"
+          }
         }
       ],
       "Links": [
@@ -635,7 +709,7 @@
           "DstName": "_target"
         },
         {
-          "Id": 103,
+          "Id": 135,
           "Value": 0,
           "DstId": 10,
           "DstName": "index"
@@ -677,13 +751,13 @@
           "DstName": "_target"
         },
         {
-          "Id": 104,
+          "Id": 136,
           "Value": true,
           "DstId": 14,
           "DstName": "includeAncestors"
         },
         {
-          "Id": 105,
+          "Id": 137,
           "Value": "viewpoint",
           "DstId": 14,
           "DstName": "tag"
@@ -737,7 +811,7 @@
           "DstName": "_target"
         },
         {
-          "Id": 106,
+          "Id": 138,
           "Value": 0,
           "DstId": 22,
           "DstName": "index"
@@ -791,7 +865,7 @@
           "DstName": "_signal"
         },
         {
-          "Id": 107,
+          "Id": 139,
           "Value": 0,
           "DstId": 28,
           "DstName": "index"
@@ -815,7 +889,7 @@
           "DstName": "_signal"
         },
         {
-          "Id": 108,
+          "Id": 140,
           "Value": 1,
           "DstId": 29,
           "DstName": "index"
@@ -858,7 +932,7 @@
           "DstIndex": 0
         },
         {
-          "Id": 109,
+          "Id": 141,
           "Value": "Fired ChatCommand 'WriteCheck' Player :{0}",
           "DstId": 32,
           "DstName": "format"
@@ -877,7 +951,7 @@
           "DstIndex": 0
         },
         {
-          "Id": 110,
+          "Id": 142,
           "Value": "Fired ChatCommand Body :{0}",
           "DstId": 33,
           "DstName": "format"
@@ -909,7 +983,7 @@
           "DstIndex": 1
         },
         {
-          "Id": 111,
+          "Id": 143,
           "Value": "Fired ChatCommand SCENE!!!! Start :{0} End: {1}",
           "DstId": 35,
           "DstName": "format"
@@ -921,7 +995,7 @@
           "DstName": "_target"
         },
         {
-          "Id": 112,
+          "Id": 144,
           "Value": true,
           "DstId": 36,
           "DstName": "_value"
@@ -963,7 +1037,7 @@
           "DstName": "_signal"
         },
         {
-          "Id": 113,
+          "Id": 145,
           "Value": "Check",
           "DstId": 40,
           "DstName": "name"
@@ -1011,24 +1085,6 @@
           "DstName": "_value"
         },
         {
-          "SrcId": 44,
-          "SrcName": "_signal",
-          "DstId": 45,
-          "DstName": "_signal"
-        },
-        {
-          "SrcId": 43,
-          "SrcName": "_result",
-          "DstId": 45,
-          "DstName": "_target"
-        },
-        {
-          "SrcId": 82,
-          "SrcName": "_result",
-          "DstId": 45,
-          "DstName": "_value"
-        },
-        {
           "SrcId": 95,
           "SrcName": "_result",
           "DstId": 96,
@@ -1069,6 +1125,84 @@
           "SrcName": "_result",
           "DstId": 102,
           "DstName": "_target"
+        },
+        {
+          "SrcId": 44,
+          "SrcName": "_signal",
+          "DstId": 125,
+          "DstName": "_signal"
+        },
+        {
+          "SrcId": 43,
+          "SrcName": "_result",
+          "DstId": 125,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 82,
+          "SrcName": "_result",
+          "DstId": 125,
+          "DstName": "_value"
+        },
+        {
+          "SrcId": 125,
+          "SrcName": "_signal",
+          "DstId": 126,
+          "DstName": "_signal"
+        },
+        {
+          "SrcId": 43,
+          "SrcName": "_result",
+          "DstId": 126,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 148,
+          "SrcName": "_result",
+          "DstId": 126,
+          "DstName": "_value"
+        },
+        {
+          "SrcId": 126,
+          "SrcName": "_signal",
+          "DstId": 128,
+          "DstName": "_signal"
+        },
+        {
+          "SrcId": 43,
+          "SrcName": "_result",
+          "DstId": 128,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 150,
+          "SrcName": "_result",
+          "DstId": 128,
+          "DstName": "_value"
+        },
+        {
+          "SrcId": 146,
+          "SrcName": "_result",
+          "DstId": 147,
+          "DstName": "_this"
+        },
+        {
+          "SrcId": 147,
+          "SrcName": "_result",
+          "DstId": 148,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 147,
+          "SrcName": "_result",
+          "DstId": 149,
+          "DstName": "_target"
+        },
+        {
+          "SrcId": 149,
+          "SrcName": "_result",
+          "DstId": 150,
+          "DstName": "input"
         }
       ]
     }

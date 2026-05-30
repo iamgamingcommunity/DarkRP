@@ -377,10 +377,22 @@
 {
 
 
-    [Property, Group("Chat Command Info")] public string RecipientName { get; set; } 
-    [Property, Group("Chat Command Info")] public int RecipientMoneyAmount { get; set; } 
+    [Property, Group("Money Info")] public string RecipientName { get; set; } 
+    [Property, Group("Money Info")] public int RecipientMoneyAmount { get; set; } 
 
 
+
+		[Property, Feature("Money Info")]
+		public string PlayerSenderName { get; set; }
+
+    
+		[Property, Feature("Money Info")]
+		public string PlayerSenderSteamID { get; set; }
+
+
+		
+		[Property, Feature("Money Info")]
+		public string PlayerRecipientSteamID { get; set; }
 
 
 //F4 Job Menu Functions/Vars

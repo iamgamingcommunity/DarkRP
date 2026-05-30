@@ -23,20 +23,822 @@
         "Interacted": {
           "__version": 9,
           "__guid": "24406087-8ce6-42fb-8260-fe6a3ecce783",
-          "__changeId": 2,
+          "__changeId": 81,
           "UserData": {
-            "Title": "Interacted"
+            "Title": "Interacted With Check",
+            "ReferencedComponentTypes": [
+              "DarkrpPlayerInfo",
+              "Check"
+            ],
+            "Description": "Gives players money depending on if they are the Sender or the Recipient.",
+            "Category": "Money",
+            "Icon": "attach_money"
           },
           "Variables": [],
           "Nodes": [
             {
               "Id": 0,
-              "Type": "input"
+              "Type": "input",
+              "UserData": {
+                "Position": "-552,-36"
+              }
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "960,108"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "1200,108"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "property",
+              "Properties": {
+                "_name": "SteamId",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "1224,84"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "984,60"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Check"
+              },
+              "UserData": {
+                "Position": "1080,60"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerSenderSteamID",
+                "_type": "Check"
+              },
+              "UserData": {
+                "Position": "1344,60"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "sys.tostring",
+              "Properties": {
+                "T": "Sandbox.SteamId"
+              },
+              "UserData": {
+                "Position": "1476,84"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "1668,60"
+              }
+            },
+            {
+              "Id": 9,
+              "Type": "if",
+              "UserData": {
+                "Position": "1764,12"
+              }
+            },
+            {
+              "Id": 12,
+              "Type": "comment",
+              "UserData": {
+                "Position": "948,-108",
+                "Size": "1008,312",
+                "Title": "Check if Sender of Check",
+                "Color": 3,
+                "Layer": 2
+              }
+            },
+            {
+              "Id": 13,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerMoney",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "2088,156"
+              }
+            },
+            {
+              "Id": 14,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerMoney",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "2292,36"
+              }
+            },
+            {
+              "Id": 15,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "2352,156"
+              }
+            },
+            {
+              "Id": 16,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "1992,204"
+              }
+            },
+            {
+              "Id": 17,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Check"
+              },
+              "UserData": {
+                "Position": "2088,204"
+              }
+            },
+            {
+              "Id": 18,
+              "Type": "property",
+              "Properties": {
+                "_name": "MoneyStackAmount",
+                "_type": "Check"
+              },
+              "UserData": {
+                "Position": "2064,180"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "2928,60"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Destroy",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "3024,36"
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "2556,60"
+              }
+            },
+            {
+              "Id": 23,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "2664,36"
+              }
+            },
+            {
+              "Id": 25,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Check"
+              },
+              "UserData": {
+                "Position": "2628,144"
+              }
+            },
+            {
+              "Id": 26,
+              "Type": "property",
+              "Properties": {
+                "_name": "InteractionSFX",
+                "_type": "BaseEntity"
+              },
+              "UserData": {
+                "Position": "2640,108"
+              }
+            },
+            {
+              "Id": 27,
+              "Type": "comment",
+              "UserData": {
+                "Position": "1980,-108",
+                "Size": "1296,420",
+                "Title": "Pickup Check Money",
+                "Layer": 1,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 31,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "-228,60"
+              }
+            },
+            {
+              "Id": 32,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "12,60"
+              }
+            },
+            {
+              "Id": 33,
+              "Type": "property",
+              "Properties": {
+                "_name": "SteamId",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "36,36"
+              }
+            },
+            {
+              "Id": 34,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "-204,12"
+              }
+            },
+            {
+              "Id": 35,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Check"
+              },
+              "UserData": {
+                "Position": "-108,12"
+              }
+            },
+            {
+              "Id": 37,
+              "Type": "sys.tostring",
+              "Properties": {
+                "T": "Sandbox.SteamId"
+              },
+              "UserData": {
+                "Position": "288,36"
+              }
+            },
+            {
+              "Id": 38,
+              "Type": "op.equal",
+              "UserData": {
+                "Position": "480,12"
+              }
+            },
+            {
+              "Id": 39,
+              "Type": "if",
+              "UserData": {
+                "Position": "576,-36"
+              }
+            },
+            {
+              "Id": 40,
+              "Type": "comment",
+              "UserData": {
+                "Position": "-240,-156",
+                "Size": "1008,312",
+                "Title": "Check if Sender of Check",
+                "Color": 3,
+                "Layer": 1
+              }
+            },
+            {
+              "Id": 41,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerRecipientSteamID",
+                "_type": "Check"
+              },
+              "UserData": {
+                "Position": "168,12"
+              }
+            },
+            {
+              "Id": 42,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerMoney",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "660,-444"
+              }
+            },
+            {
+              "Id": 43,
+              "Type": "property",
+              "Properties": {
+                "_name": "PlayerMoney",
+                "_type": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "864,-564"
+              }
+            },
+            {
+              "Id": 44,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "924,-444"
+              }
+            },
+            {
+              "Id": 45,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "564,-396"
+              }
+            },
+            {
+              "Id": 46,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Check"
+              },
+              "UserData": {
+                "Position": "660,-396"
+              }
+            },
+            {
+              "Id": 47,
+              "Type": "property",
+              "Properties": {
+                "_name": "MoneyStackAmount",
+                "_type": "Check"
+              },
+              "UserData": {
+                "Position": "636,-420"
+              }
+            },
+            {
+              "Id": 48,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "1500,-540"
+              }
+            },
+            {
+              "Id": 49,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Destroy",
+                "_type": "Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "1596,-564"
+              }
+            },
+            {
+              "Id": 50,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "1128,-540"
+              }
+            },
+            {
+              "Id": 51,
+              "Type": "sound.play",
+              "UserData": {
+                "Position": "1236,-564"
+              }
+            },
+            {
+              "Id": 52,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Check"
+              },
+              "UserData": {
+                "Position": "1200,-456"
+              }
+            },
+            {
+              "Id": 53,
+              "Type": "property",
+              "Properties": {
+                "_name": "InteractionSFX",
+                "_type": "BaseEntity"
+              },
+              "UserData": {
+                "Position": "1212,-492"
+              }
+            },
+            {
+              "Id": 54,
+              "Type": "comment",
+              "UserData": {
+                "Position": "552,-684",
+                "Size": "1296,396",
+                "Title": "Pickup Check Money",
+                "Layer": 1,
+                "Color": 3
+              }
+            },
+            {
+              "Id": 55,
+              "Type": "property",
+              "Properties": {
+                "_name": "GameObject",
+                "_type": "Sandbox.Component"
+              },
+              "UserData": {
+                "Position": "192,-540"
+              }
+            },
+            {
+              "Id": 56,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "DarkrpPlayerInfo"
+              },
+              "UserData": {
+                "Position": "432,-540"
+              }
             }
           ],
-          "Links": []
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "LastInteractingPlayer",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_result",
+              "DstId": 6,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "input"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 39,
+              "SrcName": "false",
+              "DstId": 9,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "_result",
+              "DstId": 9,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 13,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 9,
+              "SrcName": "true",
+              "DstId": 14,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "_result",
+              "DstId": 14,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 13,
+              "SrcName": "_result",
+              "DstId": 15,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 18,
+              "SrcName": "_result",
+              "DstId": 15,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 16,
+              "SrcName": "_result",
+              "DstId": 17,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 17,
+              "SrcName": "_result",
+              "DstId": 18,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 23,
+              "SrcName": "_signal",
+              "DstId": 21,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 21,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_signal",
+              "DstId": 23,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 22,
+              "SrcName": "_result",
+              "DstId": 23,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 26,
+              "SrcName": "_result",
+              "DstId": 23,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 22,
+              "SrcName": "_result",
+              "DstId": 25,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 25,
+              "SrcName": "_result",
+              "DstId": 26,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "LastInteractingPlayer",
+              "DstId": 31,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 31,
+              "SrcName": "_result",
+              "DstId": 32,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 32,
+              "SrcName": "_result",
+              "DstId": 33,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 34,
+              "SrcName": "_result",
+              "DstId": 35,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 33,
+              "SrcName": "_result",
+              "DstId": 37,
+              "DstName": "input"
+            },
+            {
+              "SrcId": 41,
+              "SrcName": "_result",
+              "DstId": 38,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 37,
+              "SrcName": "_result",
+              "DstId": 38,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 39,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 38,
+              "SrcName": "_result",
+              "DstId": 39,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 35,
+              "SrcName": "_result",
+              "DstId": 41,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 56,
+              "SrcName": "_result",
+              "DstId": 42,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 39,
+              "SrcName": "true",
+              "DstId": 43,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 56,
+              "SrcName": "_result",
+              "DstId": 43,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 44,
+              "SrcName": "_result",
+              "DstId": 43,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 42,
+              "SrcName": "_result",
+              "DstId": 44,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 47,
+              "SrcName": "_result",
+              "DstId": 44,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 45,
+              "SrcName": "_result",
+              "DstId": 46,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 46,
+              "SrcName": "_result",
+              "DstId": 47,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 51,
+              "SrcName": "_signal",
+              "DstId": 49,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 48,
+              "SrcName": "_result",
+              "DstId": 49,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 43,
+              "SrcName": "_signal",
+              "DstId": 51,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 50,
+              "SrcName": "_result",
+              "DstId": 51,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 53,
+              "SrcName": "_result",
+              "DstId": 51,
+              "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 50,
+              "SrcName": "_result",
+              "DstId": 52,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 52,
+              "SrcName": "_result",
+              "DstId": 53,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "LastInteractingPlayer",
+              "DstId": 55,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 55,
+              "SrcName": "_result",
+              "DstId": 56,
+              "DstName": "_this"
+            }
+          ]
         },
-        "InteractionSFX": null,
+        "InteractionSFX": "sounds/impacts/bullets/impact-bullet-cloth.sound",
         "IsInteractable": true,
         "IsInventoriable": false,
         "IsPocketable": false,
@@ -48,7 +850,10 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "OnRelease": null,
-        "PlayerName": null
+        "PlayerRecipientName": null,
+        "PlayerRecipientSteamID": null,
+        "PlayerSenderName": null,
+        "PlayerSenderSteamID": null
       }
     ],
     "Children": [
